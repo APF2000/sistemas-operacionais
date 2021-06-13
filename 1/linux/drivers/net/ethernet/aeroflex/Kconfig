@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c136cb5a1eaf06524ff33efe9a855ffc456b46bbb55f20b080397dec05b13aa1
-size 255
+#
+# Aeroflex Gaisler network device configuration
+#
+
+config GRETH
+	tristate "Aeroflex Gaisler GRETH Ethernet MAC support"
+	depends on SPARC
+	select PHYLIB
+	select CRC32
+	---help---
+	  Say Y here if you want to use the Aeroflex Gaisler GRETH Ethernet MAC.

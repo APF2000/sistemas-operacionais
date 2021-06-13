@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:3b10a06378431910cbd90ce4860c2d3e560098d06d969fcbfcd4b5e73f3f6e48
-size 176
+config WL18XX
+	tristate "TI wl18xx support"
+	depends on MAC80211
+	select WLCORE
+	---help---
+	  This module adds support for wireless adapters based on TI
+	  WiLink 8 chipsets.

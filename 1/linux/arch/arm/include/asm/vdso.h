@@ -1,3 +1,32 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a8ea1628813ed3bcada74c739fb65f4624f72ff9e0d79d9c3dee7758393c5b72
-size 503
+#ifndef __ASM_VDSO_H
+#define __ASM_VDSO_H
+
+#ifdef __KERNEL__
+
+#ifndef __ASSEMBLY__
+
+struct mm_struct;
+
+#ifdef CONFIG_VDSO
+
+void arm_install_vdso(struct mm_struct *mm, unsigned long addr);
+
+extern char vdso_start, vdso_end;
+
+extern unsigned int vdso_total_pages;
+
+#else /* CONFIG_VDSO */
+
+static inline void arm_install_vdso(struct mm_struct *mm, unsigned long addr)
+{
+}
+
+#define vdso_total_pages 0
+
+#endif /* CONFIG_VDSO */
+
+#endif /* __ASSEMBLY__ */
+
+#endif /* __KERNEL__ */
+
+#endif /* __ASM_VDSO_H */

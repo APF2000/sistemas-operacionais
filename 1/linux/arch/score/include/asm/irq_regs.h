@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e3ce8b40479b5748c689a9cc4ef1b01dd2efbb2987b3c1b0a5017a4f2214f927
-size 219
+#ifndef _ASM_SCORE_IRQ_REGS_H
+#define _ASM_SCORE_IRQ_REGS_H
+
+#include <linux/thread_info.h>
+
+static inline struct pt_regs *get_irq_regs(void)
+{
+	return current_thread_info()->regs;
+}
+
+#endif /* _ASM_SCORE_IRQ_REGS_H */

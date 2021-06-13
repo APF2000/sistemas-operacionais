@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:daa91655e4cc65b99fdfeaf03902b2a57b243058b9da9629e1274d3dfb8db5af
-size 273
+#ifndef __MACH_X3PROTO_HARDWARE_H
+#define __MACH_X3PROTO_HARDWARE_H
+
+struct gpio_chip;
+
+/* arch/sh/boards/mach-x3proto/gpio.c */
+int x3proto_gpio_setup(void);
+extern struct gpio_chip x3proto_gpio_chip;
+
+#define NR_BASEBOARD_GPIOS	16
+
+#endif /* __MACH_X3PROTO_HARDWARE_H */

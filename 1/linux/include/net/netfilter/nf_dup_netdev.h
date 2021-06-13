@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:dd248f6f9785b67c991d422de5ab65945dd2469fb8342661b7e92a11aaca8f15
-size 195
+#ifndef _NF_DUP_NETDEV_H_
+#define _NF_DUP_NETDEV_H_
+
+void nf_dup_netdev_egress(const struct nft_pktinfo *pkt, int oif);
+void nf_fwd_netdev_egress(const struct nft_pktinfo *pkt, int oif);
+
+#endif

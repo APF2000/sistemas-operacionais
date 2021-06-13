@@ -1,3 +1,4 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:8382231af5fd3633a36a334057a1930d6ada5e543400b510522ce015ba59a963
-size 127
+#ifndef VIRTIO_RING_H
+#define VIRTIO_RING_H
+#include "../../../../include/uapi/linux/virtio_ring.h"
+#endif /* VIRTIO_RING_H */

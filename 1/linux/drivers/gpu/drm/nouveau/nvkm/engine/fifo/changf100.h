@@ -1,3 +1,24 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c60540e3253b83496a03b71ab4b4de2e7efdfd16ffadc54ff7897aad68dd39a7
-size 506
+#ifndef __GF100_FIFO_CHAN_H__
+#define __GF100_FIFO_CHAN_H__
+#define gf100_fifo_chan(p) container_of((p), struct gf100_fifo_chan, base)
+#include "chan.h"
+#include "gf100.h"
+
+struct gf100_fifo_chan {
+	struct nvkm_fifo_chan base;
+	struct gf100_fifo *fifo;
+
+	struct list_head head;
+	bool killed;
+
+	struct nvkm_gpuobj *pgd;
+	struct nvkm_vm *vm;
+
+	struct {
+		struct nvkm_gpuobj *inst;
+		struct nvkm_vma vma;
+	} engn[NVKM_SUBDEV_NR];
+};
+
+extern const struct nvkm_fifo_chan_oclass gf100_fifo_gpfifo_oclass;
+#endif

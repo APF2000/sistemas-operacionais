@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:275a49bceb7dd8fbbe1f7b7728728ef6903a9b7ff725e40fdf4ea27b0a5c40a5
-size 340
+#ifndef BCM63XX_IRQ_H_
+#define BCM63XX_IRQ_H_
+
+#include <bcm63xx_cpu.h>
+
+#define IRQ_INTERNAL_BASE		8
+#define IRQ_EXTERNAL_BASE		100
+#define IRQ_EXT_0			(IRQ_EXTERNAL_BASE + 0)
+#define IRQ_EXT_1			(IRQ_EXTERNAL_BASE + 1)
+#define IRQ_EXT_2			(IRQ_EXTERNAL_BASE + 2)
+#define IRQ_EXT_3			(IRQ_EXTERNAL_BASE + 3)
+
+#endif /* ! BCM63XX_IRQ_H_ */

@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:8a3ba352e213b8df67a374c013322c696fd4a8a029dd8d0604766acc64fbb75e
-size 518
+config QNX4FS_FS
+	tristate "QNX4 file system support (read only)"
+	depends on BLOCK
+	help
+	  This is the file system used by the real-time operating systems
+	  QNX 4 and QNX 6 (the latter is also called QNX RTP).
+	  Further information is available at <http://www.qnx.com/>.
+	  Say Y if you intend to mount QNX hard disks or floppies.
+
+	  To compile this file system support as a module, choose M here: the
+	  module will be called qnx4.
+
+	  If you don't know whether you need it, then you don't need it:
+	  answer N.

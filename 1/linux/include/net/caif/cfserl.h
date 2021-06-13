@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:6d76e12e8ea7b6384cd14b63504ea516cb08e8f2c663bd8f90b693449495722f
-size 269
+/*
+ * Copyright (C) ST-Ericsson AB 2010
+ * Author:	Sjur Brendeland
+ * License terms: GNU General Public License (GPL) version 2
+ */
+
+#ifndef CFSERL_H_
+#define CFSERL_H_
+#include <net/caif/caif_layer.h>
+
+struct cflayer *cfserl_create(int instance, bool use_stx);
+#endif

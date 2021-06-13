@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:13cc313004e998da2b80fd743d2a5e8633f01fdac0387583770c736872dd995e
-size 155
+#ifndef __ASM_IRQ_WORK_H
+#define __ASM_IRQ_WORK_H
+
+static inline bool arch_irq_work_has_interrupt(void)
+{
+	return false;
+}
+
+#endif /* __ASM_IRQ_WORK_H */
+

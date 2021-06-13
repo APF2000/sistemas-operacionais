@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:9a2b2a835682cb2862d41fdd8bacc03da95512b086ee09b2533947561b078760
-size 190
+#
+# Copyright (C) 2002 - 2007 Jeff Dike (jdike@{linux.intel,addtoit}.com)
+# Licensed under the GPL
+#
+
+obj-y := mem.o process.o
+
+USER_OBJS := $(obj-y)
+
+include arch/um/scripts/Makefile.rules

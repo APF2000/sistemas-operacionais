@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:460616c33a7abfe51a6cf7f1b9d020ef3f3cf9d292cfe6a665fffab4d66b5729
-size 310
+#ifndef _XEN_TMEM_H
+#define _XEN_TMEM_H
+
+#include <linux/types.h>
+
+#ifdef CONFIG_XEN_TMEM_MODULE
+#define tmem_enabled true
+#else
+/* defined in drivers/xen/tmem.c */
+extern bool tmem_enabled;
+#endif
+
+#ifdef CONFIG_XEN_SELFBALLOONING
+extern int xen_selfballoon_init(bool, bool);
+#endif
+
+#endif /* _XEN_TMEM_H */

@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:7174d704216afa1f17e4bc6dc57c598ff8090e3e0dabfb02a28f5cd62065cddb
-size 414
+/*
+ * bd6107.h - Rohm BD6107 LEDs Driver
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 2 as
+ * published by the Free Software Foundation.
+ */
+#ifndef __BD6107_H__
+#define __BD6107_H__
+
+struct device;
+
+struct bd6107_platform_data {
+	struct device *fbdev;
+	int reset;			/* Reset GPIO */
+	unsigned int def_value;
+};
+
+#endif

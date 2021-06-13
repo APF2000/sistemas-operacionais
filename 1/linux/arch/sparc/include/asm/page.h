@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:10503e0e85f054f1747eaf3159ddb83b5ec0e4f0a27047fb17508a2f6b7e143a
-size 235
+#ifndef ___ASM_SPARC_PAGE_H
+#define ___ASM_SPARC_PAGE_H
+
+#define page_to_phys(page)	(page_to_pfn(page) << PAGE_SHIFT)
+
+#if defined(__sparc__) && defined(__arch64__)
+#include <asm/page_64.h>
+#else
+#include <asm/page_32.h>
+#endif
+#endif

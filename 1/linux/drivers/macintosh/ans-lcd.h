@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e76a3b0361cd6a2003534d22d2dba4d6be2907af369497a8ed53a2b0380e9993
-size 206
+#ifndef _PPC_ANS_LCD_H
+#define _PPC_ANS_LCD_H
+
+#define ANSLCD_MINOR		156
+
+#define ANSLCD_CLEAR		0x01
+#define ANSLCD_SENDCTRL		0x02
+#define ANSLCD_SETSHORTDELAY	0x03
+#define ANSLCD_SETLONGDELAY	0x04
+
+#endif

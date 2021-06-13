@@ -1,3 +1,5 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:773aa2243fda9f236e4b49c11ec71f54c0ac8d102652303d17be140238690988
-size 221
+# NXP STB225
+platform-$(CONFIG_SOC_PNX833X)	+= pnx833x/
+cflags-$(CONFIG_SOC_PNX833X)	+= -Iarch/mips/include/asm/mach-pnx833x
+load-$(CONFIG_NXP_STB220)	+= 0xffffffff80001000
+load-$(CONFIG_NXP_STB225)	+= 0xffffffff80001000

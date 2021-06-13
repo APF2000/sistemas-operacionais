@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:9bf7362941689ec7790bb753f61f53d7c2ffb6924bad9faa91a896e8c24560b0
-size 268
+#ifndef _XT_STATE_H
+#define _XT_STATE_H
+
+#define XT_STATE_BIT(ctinfo) (1 << ((ctinfo)%IP_CT_IS_REPLY+1))
+#define XT_STATE_INVALID (1 << 0)
+
+#define XT_STATE_UNTRACKED (1 << (IP_CT_NUMBER + 1))
+
+struct xt_state_info {
+	unsigned int statemask;
+};
+#endif /*_XT_STATE_H*/

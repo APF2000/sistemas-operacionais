@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:692ff8d81958a19b84fae4fa364b58ac9e62852135b2daeac0ca01091a2ab7cc
-size 493
+MVEBU System Controller
+-----------------------
+MVEBU (Marvell SOCs: Armada 370/375/XP, Dove, mv78xx0, Kirkwood, Orion5x)
+
+Required properties:
+
+- compatible: one of:
+	- "marvell,orion-system-controller"
+	- "marvell,armada-370-xp-system-controller"
+	- "marvell,armada-375-system-controller"
+- reg: Should contain system controller registers location and length.
+
+Example:
+
+	system-controller@d0018200 {
+		compatible = "marvell,armada-370-xp-system-controller";
+		reg = <0xd0018200 0x500>;
+	};

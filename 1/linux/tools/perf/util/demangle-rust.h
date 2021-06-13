@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:05426bc60d11b8ab8a8c4f2d5a58319b3ae33bc5ab9b1488461efdad345593dc
-size 170
+#ifndef __PERF_DEMANGLE_RUST
+#define __PERF_DEMANGLE_RUST 1
+
+bool rust_is_mangled(const char *str);
+void rust_demangle_sym(char *str);
+
+#endif /* __PERF_DEMANGLE_RUST */

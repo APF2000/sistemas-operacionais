@@ -1,3 +1,23 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:86ebfdb2fc23b8d2700c3a00f292a9c2ee80c599f4894729f7c04a844421657f
-size 502
+/*
+ * include/asm-xtensa/signal.h
+ *
+ * Swiped from SH.
+ *
+ * This file is subject to the terms and conditions of the GNU General Public
+ * License.  See the file "COPYING" in the main directory of this archive
+ * for more details.
+ *
+ * Copyright (C) 2001 - 2005 Tensilica Inc.
+ */
+#ifndef _XTENSA_SIGNAL_H
+#define _XTENSA_SIGNAL_H
+
+#include <uapi/asm/signal.h>
+
+#ifndef __ASSEMBLY__
+#define __ARCH_HAS_SA_RESTORER
+
+#include <asm/sigcontext.h>
+
+#endif	/* __ASSEMBLY__ */
+#endif	/* _XTENSA_SIGNAL_H */

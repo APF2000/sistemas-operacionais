@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:0b22fb7e532da48b260010b6186dc2b8777cc03d9cadb6441e5eb09e6ea467a2
-size 219
+LG Corporation 7" WXGA TFT LCD panel
+
+Required properties:
+- compatible: should be "lg,ld070wx3-sl01"
+
+This binding is compatible with the simple-panel binding, which is specified
+in simple-panel.txt in this directory.

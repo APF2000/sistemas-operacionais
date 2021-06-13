@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e414a78f09e47a3a320fce9a2cd7621e6e07f8c4769c026c7998ed83d0f72bd0
-size 301
+#ifndef _ASM_ALPHA_UNALIGNED_H
+#define _ASM_ALPHA_UNALIGNED_H
+
+#include <linux/unaligned/le_struct.h>
+#include <linux/unaligned/be_byteshift.h>
+#include <linux/unaligned/generic.h>
+
+#define get_unaligned __get_unaligned_le
+#define put_unaligned __put_unaligned_le
+
+#endif /* _ASM_ALPHA_UNALIGNED_H */

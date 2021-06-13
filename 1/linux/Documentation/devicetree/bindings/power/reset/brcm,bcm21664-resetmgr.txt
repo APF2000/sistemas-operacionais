@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:67d3e3e638b65249e3b5dba3e433a29960759c848e88be9de7344f6dfe8afdfb
-size 328
+Broadcom Kona Family Reset Manager
+----------------------------------
+
+The reset manager is used on the Broadcom BCM21664 SoC.
+
+Required properties:
+  - compatible: brcm,bcm21664-resetmgr
+  - reg: memory address & range
+
+Example:
+	brcm,resetmgr@35001f00 {
+		compatible = "brcm,bcm21664-resetmgr";
+		reg = <0x35001f00 0x24>;
+	};

@@ -1,3 +1,21 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2ac6f7c8c2696247f24711f16d1f5cdbdbb7508b65022d9d6802744a21840d91
-size 628
+Device Tree bindings for MVEBU SDRAM controllers
+
+The Marvell EBU SoCs all have a SDRAM controller. The SDRAM controller
+differs from one SoC variant to another, but they also share a number
+of commonalities.
+
+For now, this Device Tree binding documentation only documents the
+Armada XP SDRAM controller.
+
+Required properties:
+
+ - compatible: for Armada XP, "marvell,armada-xp-sdram-controller"
+ - reg: a resource specifier for the register space, which should
+   include all SDRAM controller registers as per the datasheet.
+
+Example:
+
+sdramc@1400 {
+	compatible = "marvell,armada-xp-sdram-controller";
+	reg = <0x1400 0x500>;
+};

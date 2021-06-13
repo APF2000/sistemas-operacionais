@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a6faab6287f3f1d86ede86c0eb9f88ce4e0076dc0cea007a5275b6743eb4c43c
-size 231
+nvkm-y += nvkm/subdev/bus/base.o
+nvkm-y += nvkm/subdev/bus/hwsq.o
+nvkm-y += nvkm/subdev/bus/nv04.o
+nvkm-y += nvkm/subdev/bus/nv31.o
+nvkm-y += nvkm/subdev/bus/nv50.o
+nvkm-y += nvkm/subdev/bus/g94.o
+nvkm-y += nvkm/subdev/bus/gf100.o

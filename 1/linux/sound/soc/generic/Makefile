@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:cfe57fd5324dd622bddbdb77939e224e1da5e1d7e49a13415537519558909a81
-size 333
+snd-soc-simple-card-utils-objs	:= simple-card-utils.o
+snd-soc-simple-card-objs	:= simple-card.o
+snd-soc-simple-scu-card-objs	:= simple-scu-card.o
+
+obj-$(CONFIG_SND_SIMPLE_CARD_UTILS)	+= snd-soc-simple-card-utils.o
+obj-$(CONFIG_SND_SIMPLE_CARD)		+= snd-soc-simple-card.o
+obj-$(CONFIG_SND_SIMPLE_SCU_CARD)	+= snd-soc-simple-scu-card.o

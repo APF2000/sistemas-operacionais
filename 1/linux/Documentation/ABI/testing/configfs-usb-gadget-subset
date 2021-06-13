@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2c58eef074c935b866f22ab13f1403f9dd7160b6afdf62c5cd0d997ec39274ab
-size 421
+What:		/config/usb-gadget/gadget/functions/geth.name
+Date:		Jun 2013
+KernelVersion:	3.11
+Description:
+		The attributes:
+
+		ifname		- network device interface name associated with
+				this function instance
+		qmult		- queue length multiplier for high and
+				super speed
+		host_addr	- MAC address of host's end of this
+				Ethernet over USB link
+		dev_addr	- MAC address of device's end of this
+				Ethernet over USB link

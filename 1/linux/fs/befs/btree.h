@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:011a15d1e2dc7aea77bc78f71bd571176ddf8925e4462b2ed0b6677d1e03de6f
-size 304
+/*
+ * btree.h
+ *
+ */
+
+int befs_btree_find(struct super_block *sb, const befs_data_stream *ds,
+		    const char *key, befs_off_t *value);
+
+int befs_btree_read(struct super_block *sb, const befs_data_stream *ds,
+		    loff_t key_no, size_t bufsize, char *keybuf,
+		    size_t *keysize, befs_off_t *value);

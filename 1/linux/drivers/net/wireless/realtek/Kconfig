@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b4b0785e0901d534b9c2e55fdc6b1f140dd23efc6777011a4b2163bdfde4c02c
-size 606
+config WLAN_VENDOR_REALTEK
+	bool "Realtek devices"
+	default y
+	---help---
+	  If you have a wireless card belonging to this class, say Y.
+
+	  Note that the answer to this question doesn't directly affect the
+	  kernel: saying N will just cause the configurator to skip all
+	  the questions about  cards. If you say Y, you will be asked for
+	  your specific card in the following questions.
+
+if WLAN_VENDOR_REALTEK
+
+source "drivers/net/wireless/realtek/rtl818x/Kconfig"
+source "drivers/net/wireless/realtek/rtlwifi/Kconfig"
+source "drivers/net/wireless/realtek/rtl8xxxu/Kconfig"
+
+endif # WLAN_VENDOR_REALTEK

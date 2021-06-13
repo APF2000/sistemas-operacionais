@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:588b6079cbf37f56afde3d9fe684dfd5145ca7f6b88880d0da112894236b3343
-size 222
+/*
+ * L2TP-over-IP socket for L2TPv3.
+ *
+ * Author: James Chapman <jchapman@katalix.com>
+ */
+#ifndef _LINUX_L2TP_H_
+#define _LINUX_L2TP_H_
+
+#include <linux/in.h>
+#include <linux/in6.h>
+#include <uapi/linux/l2tp.h>
+
+#endif

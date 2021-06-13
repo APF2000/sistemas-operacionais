@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:718affa3911fa8fc22b7596120ce1c49487ad00535f36f1364d27ae771272303
-size 227
+obj-$(CONFIG_LNET) += lnet.o
+
+lnet-y := api-ni.o config.o nidstrings.o net_fault.o		\
+	  lib-me.o lib-msg.o lib-eq.o lib-md.o lib-ptl.o	\
+	  lib-socket.o lib-move.o module.o lo.o			\
+	  router.o router_proc.o acceptor.o peer.o

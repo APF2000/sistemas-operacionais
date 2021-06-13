@@ -1,3 +1,5 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:da9080296230d9cbbcf3000686574bde05f3f360a68d9a3338f6ad496b995ba5
-size 110
+obj-$(CONFIG_AIM_V4L2) += aim_v4l2.o
+
+aim_v4l2-objs := video.o
+
+ccflags-y += -Idrivers/staging/most/mostcore/

@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b3f4203b089134a3b3e458bfe654c57ff1b29862939df893e2f41159c7a23c24
-size 234
+p54common-objs			:= eeprom.o fwio.o txrx.o main.o
+p54common-$(CONFIG_P54_LEDS)	+= led.o
+
+obj-$(CONFIG_P54_COMMON)	+= p54common.o
+obj-$(CONFIG_P54_USB)		+= p54usb.o
+obj-$(CONFIG_P54_PCI)		+= p54pci.o
+obj-$(CONFIG_P54_SPI)		+= p54spi.o

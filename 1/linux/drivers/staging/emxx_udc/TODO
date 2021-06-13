@@ -1,3 +1,4 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:321934445c93d55c81f728c6ca09399b83acd9e8d05ad83518e1761ca005bdbd
-size 193
+* add clock framework support (platform device with CCF needs special care)
+* break out board-specific VBUS GPIO to work with multiplatform
+* DT bindings
+* move driver into drivers/usb/gadget/

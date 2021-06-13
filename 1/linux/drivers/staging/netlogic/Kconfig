@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:7a3637f7042da7a9aeef44cbe1566950defcd256cf9b84995abe7a161eb32c2d
-size 180
+config NETLOGIC_XLR_NET
+	tristate "Netlogic XLR/XLS network device"
+	depends on CPU_XLR
+	select PHYLIB
+	---help---
+	This driver support Netlogic XLR/XLS on chip gigabit
+	Ethernet.

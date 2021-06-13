@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:fb378cbaf5f583d46485d1747b075e46c75146254771bb8a6bb90c178066f284
-size 277
+obj-y	+= clk-uniphier-core.o
+
+obj-y	+= clk-uniphier-cpugear.o
+obj-y	+= clk-uniphier-fixed-factor.o
+obj-y	+= clk-uniphier-fixed-rate.o
+obj-y	+= clk-uniphier-gate.o
+obj-y	+= clk-uniphier-mux.o
+
+obj-y	+= clk-uniphier-sys.o
+obj-y	+= clk-uniphier-mio.o
+obj-y	+= clk-uniphier-peri.o

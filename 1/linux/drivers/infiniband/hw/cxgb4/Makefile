@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:3b9450c278ac13d2acda46226852e356d17240828d1787a04ce7461856d7f9b0
-size 232
+ccflags-y := -Idrivers/net/ethernet/chelsio/cxgb4
+ccflags-y += -Idrivers/net/ethernet/chelsio/libcxgb
+
+obj-$(CONFIG_INFINIBAND_CXGB4) += iw_cxgb4.o
+
+iw_cxgb4-y :=  device.o cm.o provider.o mem.o cq.o qp.o resource.o ev.o id_table.o

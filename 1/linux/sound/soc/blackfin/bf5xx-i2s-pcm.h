@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:58f94aeb790da974a638b33f6805b2fc6e90fd626cfd6a66729dace5823ec2cf
-size 378
+/*
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 2 as
+ * published by the Free Software Foundation.
+ */
+
+#ifndef _BF5XX_TDM_PCM_H
+#define _BF5XX_TDM_PCM_H
+
+#define BFIN_TDM_DAI_MAX_SLOTS 8
+
+struct bf5xx_i2s_pcm_data {
+	unsigned int map[BFIN_TDM_DAI_MAX_SLOTS];
+	bool tdm_mode;
+};
+
+#endif

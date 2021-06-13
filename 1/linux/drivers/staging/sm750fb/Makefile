@@ -1,3 +1,4 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:3fd820bab2e7fad7640e1d17fb2db0fbc9e66b830fc5471a4e270dd0b9191a4f
-size 238
+obj-$(CONFIG_FB_SM750)	+= sm750fb.o
+
+sm750fb-objs		:= sm750.o sm750_hw.o sm750_accel.o sm750_cursor.o ddk750_chip.o ddk750_power.o ddk750_mode.o
+sm750fb-objs		+= ddk750_display.o ddk750_swi2c.o ddk750_sii164.o ddk750_dvi.o ddk750_hwi2c.o

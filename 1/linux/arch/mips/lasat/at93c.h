@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:58218a91cb50b43aac9954a8cc6bb0adf7d4f281695bb755fe72de48ad0108b3
-size 292
+/*
+ * Atmel AT93C46 serial eeprom driver
+ *
+ * Brian Murphy <brian.murphy@eicon.com>
+ *
+ */
+
+extern struct at93c_defs {
+	volatile u32 *reg;
+	volatile u32 *rdata_reg;
+	int rdata_shift;
+	int wdata_shift;
+	u32 cs;
+	u32 clk;
+} *at93c;
+
+u8 at93c_read(u8 addr);
+void at93c_write(u8 addr, u8 data);

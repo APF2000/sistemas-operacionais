@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:704cf233771662a9b1a987104aba56a8ebb9b9a89d23802ff057204efc89aceb
-size 277
+qla2xxx-y := qla_os.o qla_init.o qla_mbx.o qla_iocb.o qla_isr.o qla_gs.o \
+		qla_dbg.o qla_sup.o qla_attr.o qla_mid.o qla_dfs.o qla_bsg.o \
+		qla_nx.o qla_mr.o qla_nx2.o qla_target.o qla_tmpl.o
+
+obj-$(CONFIG_SCSI_QLA_FC) += qla2xxx.o
+obj-$(CONFIG_TCM_QLA2XXX) += tcm_qla2xxx.o

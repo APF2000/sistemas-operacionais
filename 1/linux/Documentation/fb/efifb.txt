@@ -1,3 +1,31 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:9a5fd54a68786f796765aeee307344de3f8b8dead3eace46ebff743700660579
-size 593
+
+What is efifb?
+===============
+
+This is a generic EFI platform driver for Intel based Apple computers.
+efifb is only for EFI booted Intel Macs.
+
+Supported Hardware
+==================
+
+iMac 17"/20"
+Macbook
+Macbook Pro 15"/17"
+MacMini
+
+How to use it?
+==============
+
+efifb does not have any kind of autodetection of your machine.
+You have to add the following kernel parameters in your elilo.conf:
+	Macbook :
+		video=efifb:macbook
+	MacMini :
+		video=efifb:mini
+	Macbook Pro 15", iMac 17" :
+		video=efifb:i17
+	Macbook Pro 17", iMac 20" :
+		video=efifb:i20
+
+--
+Edgar Hucek <gimli@dark-green.com>

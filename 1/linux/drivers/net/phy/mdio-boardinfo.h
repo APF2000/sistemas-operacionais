@@ -1,3 +1,22 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c0600c859f256640cf4a1cdf99eec2a6b52ee066c4a0b6ed5fff01701defd145
-size 470
+/*
+ * mdio-boardinfo.h - board info interface internal to the mdio_bus
+ * component
+ */
+
+#ifndef __MDIO_BOARD_INFO_H
+#define __MDIO_BOARD_INFO_H
+
+#include <linux/phy.h>
+#include <linux/mutex.h>
+
+struct mdio_board_entry {
+	struct list_head	list;
+	struct mdio_board_info	board_info;
+};
+
+void mdiobus_setup_mdiodev_from_board_info(struct mii_bus *bus,
+					   int (*cb)
+					   (struct mii_bus *bus,
+					    struct mdio_board_info *bi));
+
+#endif /* __MDIO_BOARD_INFO_H */

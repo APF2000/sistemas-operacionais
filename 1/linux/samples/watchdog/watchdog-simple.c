@@ -1,3 +1,24 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:67121fb4040553f1da42bc847d86b8b1f168cc3ae35a9d03e97ce24fc15397dd
-size 346
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <fcntl.h>
+
+int main(void)
+{
+	int fd = open("/dev/watchdog", O_WRONLY);
+	int ret = 0;
+	if (fd == -1) {
+		perror("watchdog");
+		exit(EXIT_FAILURE);
+	}
+	while (1) {
+		ret = write(fd, "\0", 1);
+		if (ret != 1) {
+			ret = -1;
+			break;
+		}
+		sleep(10);
+	}
+	close(fd);
+	return ret;
+}

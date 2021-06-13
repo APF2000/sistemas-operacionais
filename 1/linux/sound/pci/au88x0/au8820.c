@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:8b97514e8fd99f7b578922c513b2b7a4c4b46b063bcfb7203bfa241602f0fae3
-size 337
+#include "au8820.h"
+#include "au88x0.h"
+static const struct pci_device_id snd_vortex_ids[] = {
+	{PCI_VDEVICE(AUREAL, PCI_DEVICE_ID_AUREAL_VORTEX_1), 0,},
+	{0,}
+};
+
+#include "au88x0_synth.c"
+#include "au88x0_core.c"
+#include "au88x0_pcm.c"
+#include "au88x0_mpu401.c"
+#include "au88x0_game.c"
+#include "au88x0_mixer.c"
+#include "au88x0.c"

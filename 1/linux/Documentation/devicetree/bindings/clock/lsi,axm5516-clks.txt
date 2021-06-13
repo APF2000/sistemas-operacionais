@@ -1,3 +1,29 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:124535d96f90c2e17074a75e207553dce7df1431121405ec0be1d6c12d657123
-size 801
+AXM5516 clock driver bindings
+-----------------------------
+
+Required properties :
+- compatible : shall contain "lsi,axm5516-clks"
+- reg : shall contain base register location and length
+- #clock-cells : shall contain 1
+
+The consumer specifies the desired clock by having the clock ID in its "clocks"
+phandle cell. See <dt-bindings/clock/lsi,axxia-clock.h> for the list of
+supported clock IDs.
+
+Example:
+
+	clks: clock-controller@2010020000 {
+		compatible = "lsi,axm5516-clks";
+		#clock-cells = <1>;
+		reg = <0x20 0x10020000 0 0x20000>;
+	};
+
+	serial0: uart@2010080000 {
+		compatible = "arm,pl011", "arm,primecell";
+		reg = <0x20 0x10080000 0 0x1000>;
+		interrupts = <GIC_SPI 56 IRQ_TYPE_LEVEL_HIGH>;
+		clocks = <&clks AXXIA_CLK_PER>;
+		clock-names = "apb_pclk";
+	};
+																																};
+

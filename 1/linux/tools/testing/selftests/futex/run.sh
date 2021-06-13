@@ -1,3 +1,33 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:19c2eeaaa73d220a91e5798f0182be3575df17869fa40f662b06758a1dd3efe7
-size 990
+#!/bin/sh
+
+###############################################################################
+#
+#   Copyright © International Business Machines  Corp., 2009
+#
+#   This program is free software;  you can redistribute it and/or modify
+#   it under the terms of the GNU General Public License as published by
+#   the Free Software Foundation; either version 2 of the License, or
+#   (at your option) any later version.
+#
+# DESCRIPTION
+#      Run all tests under the functional, performance, and stress directories.
+#      Format and summarize the results.
+#
+# AUTHOR
+#      Darren Hart <dvhart@linux.intel.com>
+#
+# HISTORY
+#      2009-Nov-9: Initial version by Darren Hart <dvhart@linux.intel.com>
+#
+###############################################################################
+
+# Test for a color capable shell and pass the result to the subdir scripts
+USE_COLOR=0
+tput setf 7 || tput setaf 7
+if [ $? -eq 0 ]; then
+    USE_COLOR=1
+    tput sgr0
+fi
+export USE_COLOR
+
+(cd functional; ./run.sh)

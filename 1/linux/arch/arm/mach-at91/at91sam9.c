@@ -1,3 +1,34 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:19c1f90f363d6af46f58e11864b96fe5da9ed355b6e47f8848e3748fd96e6efe
-size 662
+/*
+ *  Setup code for AT91SAM9
+ *
+ *  Copyright (C) 2011 Atmel,
+ *                2011 Nicolas Ferre <nicolas.ferre@atmel.com>
+ *
+ * Licensed under GPLv2 or later.
+ */
+
+#include <linux/of.h>
+#include <linux/of_platform.h>
+
+#include <asm/mach/arch.h>
+#include <asm/system_misc.h>
+
+#include "generic.h"
+
+static void __init at91sam9_init(void)
+{
+	of_platform_default_populate(NULL, NULL, NULL);
+
+	at91sam9_pm_init();
+}
+
+static const char *const at91_dt_board_compat[] __initconst = {
+	"atmel,at91sam9",
+	NULL
+};
+
+DT_MACHINE_START(at91sam_dt, "Atmel AT91SAM9")
+	/* Maintainer: Atmel */
+	.init_machine	= at91sam9_init,
+	.dt_compat	= at91_dt_board_compat,
+MACHINE_END

@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5841e8fefd94ebff4acd475c8480641d5453e25315d70da2a150025a4022ed0e
-size 561
+Binding for simple gpio clock multiplexer.
+
+This binding uses the common clock binding[1].
+
+[1] Documentation/devicetree/bindings/clock/clock-bindings.txt
+
+Required properties:
+- compatible : shall be "gpio-mux-clock".
+- clocks: list of two references to parent clocks.
+- #clock-cells : from common clock binding; shall be set to 0.
+- select-gpios : GPIO reference for selecting the parent clock.
+
+Example:
+	clock {
+		compatible = "gpio-mux-clock";
+		clocks = <&parentclk1>, <&parentclk2>;
+		#clock-cells = <0>;
+		select-gpios = <&gpio 1 GPIO_ACTIVE_HIGH>;
+	};

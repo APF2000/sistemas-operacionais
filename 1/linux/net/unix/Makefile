@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e8b6984844de45e348f0c5ef59b6dc379764ec2c3731b2d6947a88bb59e8539c
-size 224
+#
+# Makefile for the Linux unix domain socket layer.
+#
+
+obj-$(CONFIG_UNIX)	+= unix.o
+
+unix-y			:= af_unix.o garbage.o
+unix-$(CONFIG_SYSCTL)	+= sysctl_net_unix.o
+
+obj-$(CONFIG_UNIX_DIAG)	+= unix_diag.o
+unix_diag-y		:= diag.o

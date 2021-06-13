@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a3d33fd838436c7e93ab2220c6c4467b8e5d78b5550a2dcf4f50789dc54813f7
-size 292
+obj-$(CONFIG_MOSTCORE)	+= mostcore/
+obj-$(CONFIG_AIM_CDEV)	+= aim-cdev/
+obj-$(CONFIG_AIM_NETWORK)	+= aim-network/
+obj-$(CONFIG_AIM_SOUND)	+= aim-sound/
+obj-$(CONFIG_AIM_V4L2)	+= aim-v4l2/
+obj-$(CONFIG_HDM_DIM2)	+= hdm-dim2/
+obj-$(CONFIG_HDM_I2C)	+= hdm-i2c/
+obj-$(CONFIG_HDM_USB)	+= hdm-usb/

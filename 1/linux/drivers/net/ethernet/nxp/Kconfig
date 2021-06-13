@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:3b8981e0d759f390a2f076bebbf7e036ad680cd9497bef1b2a6703165ef4cb33
-size 312
+config LPC_ENET
+        tristate "NXP ethernet MAC on LPC devices"
+        depends on ARCH_LPC32XX
+        select PHYLIB
+        help
+	  Say Y or M here if you want to use the NXP ethernet MAC included on
+	  some NXP LPC devices. You can safely enable this option for LPC32xx
+	  SoC. Also available as a module.

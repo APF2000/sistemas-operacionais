@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a897481c6e4ccbf2ee06e8d78273593af2f4bbf7dc98ee338c26a3a388c3a25d
-size 193
+#include <linux/types.h>
+#include <linux/errno.h>
+#include <linux/uaccess.h>
+
+int fre(void *frD, void *frB)
+{
+#ifdef DEBUG
+	printk("%s: %p %p\n", __func__, frD, frB);
+#endif
+	return -ENOSYS;
+}

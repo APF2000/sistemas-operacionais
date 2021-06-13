@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f513ffa48d7e6fde9b92dbd0fba6e29744bd519a73ca6ca3c3e57f02683cdccc
-size 481
+menu "NVIDIA Tegra thermal drivers"
+depends on ARCH_TEGRA
+
+config TEGRA_SOCTHERM
+	tristate "Tegra SOCTHERM thermal management"
+	help
+	  Enable this option for integrated thermal management support on NVIDIA
+	  Tegra systems-on-chip. The driver supports four thermal zones
+	  (CPU, GPU, MEM, PLLX). Cooling devices can be bound to the thermal
+	  zones to manage temperatures. This option is also required for the
+	  emergency thermal reset (thermtrip) feature to function.
+
+endmenu

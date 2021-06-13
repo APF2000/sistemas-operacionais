@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:0a5f1ebaedb960cfa0a06af748a8ed8a127a4306d814675218809022def22835
-size 450
+TPS65217 Charger
+
+Required Properties:
+-compatible: "ti,tps65217-charger"
+-interrupts: TPS65217 interrupt numbers for the AC and USB charger input change.
+             Should be <0> for the USB charger and <1> for the AC adapter.
+-interrupt-names: Should be "USB" and "AC"
+
+This node is a subnode of the tps65217 PMIC.
+
+Example:
+
+	tps65217-charger {
+		compatible = "ti,tps65217-charger";
+		interrupts = <0>, <1>;
+		interrupt-names = "USB", "AC";
+	};

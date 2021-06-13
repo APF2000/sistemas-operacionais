@@ -1,3 +1,26 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2635d079dc25b781afb6356f4b35578d6100a8285a4324065f4bb160ee2081da
-size 867
+* Texas Instruments OPT3001 Ambient Light Sensor
+
+The driver supports interrupt-driven and interrupt-less operation, depending
+on whether an interrupt property has been populated into the DT. Note that
+the optional generation of IIO events on rising/falling light threshold changes
+requires the use of interrupts. Without interrupts, only the simple reading
+of the current light value is supported through the IIO API.
+
+http://www.ti.com/product/opt3001
+
+Required properties:
+  - compatible: should be "ti,opt3001"
+  - reg: the I2C address of the sensor
+
+Optional properties:
+  - interrupt-parent: should be the phandle for the interrupt controller
+  - interrupts: interrupt mapping for GPIO IRQ (configure for falling edge)
+
+Example:
+
+opt3001@44 {
+	compatible = "ti,opt3001";
+	reg = <0x44>;
+	interrupt-parent = <&gpio1>;
+	interrupts = <28 IRQ_TYPE_EDGE_FALLING>;
+};

@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:db46bfbec825cba681fa21eed5f57aa98182ea1eaf94deeeb00a255a234fa2dc
-size 315
+#ifndef ASM_ARM_CRYPTO_SHA1_H
+#define ASM_ARM_CRYPTO_SHA1_H
+
+#include <linux/crypto.h>
+#include <crypto/sha.h>
+
+extern int sha1_update_arm(struct shash_desc *desc, const u8 *data,
+			   unsigned int len);
+
+extern int sha1_finup_arm(struct shash_desc *desc, const u8 *data,
+			   unsigned int len, u8 *out);
+
+#endif

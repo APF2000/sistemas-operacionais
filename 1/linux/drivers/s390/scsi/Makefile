@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:fd83f716c82e8c61c072f650e9055f3bedf89bb0b54c79cac2f19d92678ffb9e
-size 227
+#
+# Makefile for the S/390 specific device drivers
+#
+
+zfcp-objs := zfcp_aux.o zfcp_ccw.o zfcp_dbf.o zfcp_erp.o \
+	     zfcp_fc.o zfcp_fsf.o zfcp_qdio.o zfcp_scsi.o zfcp_sysfs.o \
+	     zfcp_unit.o
+
+obj-$(CONFIG_ZFCP) += zfcp.o

@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:219dfe804bf9fd6e6338f43192f8d4ac0be60dda0eee182ca959a4d044b035e1
-size 239
+config TYPEC_FUSB302
+	tristate "Fairchild FUSB302 Type-C chip driver"
+	depends on I2C
+	help
+	  The Fairchild FUSB302 Type-C chip driver that works with
+	  Type-C Port Controller Manager to provide USB PD and USB
+	  Type-C functionalities.

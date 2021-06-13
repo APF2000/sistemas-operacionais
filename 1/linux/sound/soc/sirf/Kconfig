@@ -1,3 +1,20 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:aad9e04295314ac440e3f3adaff568cb1829844cc43d6434398ca88c2b41e915
-size 524
+config SND_SOC_SIRF
+	tristate "SoC Audio for the SiRF SoC chips"
+	depends on ARCH_SIRF || COMPILE_TEST
+	select SND_SOC_GENERIC_DMAENGINE_PCM
+
+config SND_SOC_SIRF_AUDIO
+	tristate "SoC Audio support for SiRF internal audio codec"
+	depends on SND_SOC_SIRF
+	select SND_SOC_SIRF_AUDIO_CODEC
+	select SND_SOC_SIRF_AUDIO_PORT
+
+config SND_SOC_SIRF_AUDIO_PORT
+	select REGMAP_MMIO
+	tristate
+
+config SND_SOC_SIRF_USP
+	tristate "SoC Audio (I2S protocol) for SiRF SoC USP interface"
+	depends on SND_SOC_SIRF
+	select REGMAP_MMIO
+	tristate

@@ -1,3 +1,5 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d054fe8fbca1506f4c2ab2320d350eec61ef78fcffa2c0769300023fc509cdd2
-size 148
+config CAN_M_CAN
+	depends on HAS_IOMEM
+	tristate "Bosch M_CAN devices"
+	---help---
+	  Say Y here if you want to support for Bosch M_CAN controller.

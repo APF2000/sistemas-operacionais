@@ -1,3 +1,29 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:75a2649bd7388a3da1ecd40d33221ffa9eace60093a7b6d654f610b61a74fa91
-size 500
+/*
+ * Copyright (C) 2001 - 2007 Jeff Dike (jdike@{addtoit,linux.intel}.com)
+ * Licensed under the GPL
+ */
+
+#ifndef __DAEMON_H__
+#define __DAEMON_H__
+
+#include <net_user.h>
+
+#define SWITCH_VERSION 3
+
+struct daemon_data {
+	char *sock_type;
+	char *ctl_sock;
+	void *ctl_addr;
+	void *data_addr;
+	void *local_addr;
+	int fd;
+	int control;
+	void *dev;
+};
+
+extern const struct net_user_info daemon_user_info;
+
+extern int daemon_user_write(int fd, void *buf, int len,
+			     struct daemon_data *pri);
+
+#endif

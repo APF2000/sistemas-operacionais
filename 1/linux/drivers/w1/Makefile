@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:362f6a4c642eb7ac6dca3396d567e40c4c9489cfb74df51f808998bc53c38aa1
-size 163
+#
+# Makefile for the Dallas's 1-wire bus.
+#
+
+obj-$(CONFIG_W1)	+= wire.o
+wire-objs		:= w1.o w1_int.o w1_family.o w1_netlink.o w1_io.o
+
+obj-y			+= masters/ slaves/
+

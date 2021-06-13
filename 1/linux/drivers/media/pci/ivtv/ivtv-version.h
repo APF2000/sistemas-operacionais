@@ -1,3 +1,26 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1f140c4296f4eb072553cc56554da98c90a7af3221488f26a669b1e4a82acfc7
-size 944
+/*
+    ivtv driver version information
+    Copyright (C) 2005-2007  Hans Verkuil <hverkuil@xs4all.nl>
+
+    This program is free software; you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation; either version 2 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program; if not, write to the Free Software
+    Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+ */
+
+#ifndef IVTV_VERSION_H
+#define IVTV_VERSION_H
+
+#define IVTV_DRIVER_NAME "ivtv"
+#define IVTV_VERSION "1.4.3"
+
+#endif

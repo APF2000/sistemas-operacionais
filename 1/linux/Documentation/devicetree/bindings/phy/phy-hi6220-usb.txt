@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:bccee67804906f890f9cf6565a594e8a851a1be28e5b7e5bc24d985d0fa56b47
-size 458
+Hisilicon hi6220 usb PHY
+-----------------------
+
+Required properties:
+- compatible: should be "hisilicon,hi6220-usb-phy"
+- #phy-cells: must be 0
+- hisilicon,peripheral-syscon: phandle of syscon used to control phy.
+Refer to phy/phy-bindings.txt for the generic PHY binding properties
+
+Example:
+	usb_phy: usbphy {
+		compatible = "hisilicon,hi6220-usb-phy";
+		#phy-cells = <0>;
+		phy-supply = <&fixed_5v_hub>;
+		hisilicon,peripheral-syscon = <&sys_ctrl>;
+	};

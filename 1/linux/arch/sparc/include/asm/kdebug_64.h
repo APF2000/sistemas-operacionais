@@ -1,3 +1,23 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:209e507bdf6c751995ace75128b78439431782f628f12583fd93a6fe0bd05f42
-size 354
+#ifndef _SPARC64_KDEBUG_H
+#define _SPARC64_KDEBUG_H
+
+struct pt_regs;
+
+void bad_trap(struct pt_regs *, long);
+
+/* Grossly misnamed. */
+enum die_val {
+	DIE_OOPS = 1,
+	DIE_DEBUG,	/* ta 0x70 */
+	DIE_DEBUG_2,	/* ta 0x71 */
+	DIE_BPT,	/* ta 0x73 */
+	DIE_SSTEP,	/* ta 0x74 */
+	DIE_DIE,
+	DIE_TRAP,
+	DIE_TRAP_TL1,
+	DIE_CALL,
+	DIE_NMI,
+	DIE_NMIWATCHDOG,
+};
+
+#endif

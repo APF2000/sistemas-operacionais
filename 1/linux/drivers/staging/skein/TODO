@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:fdb646005b439fde203ae5b7be0d15e9285346d2c7d3e01d362ad77d2e1f65a3
-size 217
+skein/threefish TODO
+
+ - move macros into appropriate header files
+ - add / pass test vectors
+ - module support
+
+Please send patches to Jason Cooper <jason@lakedaemon.net> in addition to the
+staging tree mailinglist.

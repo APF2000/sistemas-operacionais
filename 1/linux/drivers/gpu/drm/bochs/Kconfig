@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ee2715c542959bcde158834b572fdd58f00a64cfb4dac2b0490dc8a1940b03da
-size 249
+config DRM_BOCHS
+	tristate "DRM Support for bochs dispi vga interface (qemu stdvga)"
+	depends on DRM && PCI && MMU
+	select DRM_KMS_HELPER
+	select DRM_TTM
+	help
+	  Choose this option for qemu.
+	  If M is selected the module will be called bochs-drm.

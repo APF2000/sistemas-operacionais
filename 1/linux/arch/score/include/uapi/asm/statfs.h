@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4cfe30a047b2dcdbf8e1d35ee21066af9b292853af195f0aad4598e8daea332c
-size 123
+#ifndef _ASM_SCORE_STATFS_H
+#define _ASM_SCORE_STATFS_H
+
+#include <asm-generic/statfs.h>
+
+#endif /* _ASM_SCORE_STATFS_H */

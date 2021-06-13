@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:0a1fa6e8ab398cb23656c5942bcae90d076dfe7fe75f06055e3b58ad59773fa2
-size 301
+/*
+ *  include/asm-parisc/bugs.h
+ *
+ *  Copyright (C) 1999	Mike Shaver
+ */
+
+/*
+ * This is included by init/main.c to check for architecture-dependent bugs.
+ *
+ * Needs:
+ *	void check_bugs(void);
+ */
+
+#include <asm/processor.h>
+
+static inline void check_bugs(void)
+{
+//	identify_cpu(&boot_cpu_data);
+}

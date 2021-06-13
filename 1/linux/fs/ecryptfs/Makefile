@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:82ae0115deb865c2f76dbdb260692b663adea3dea997f07f5213c2025838828d
-size 263
+#
+# Makefile for the Linux eCryptfs
+#
+
+obj-$(CONFIG_ECRYPT_FS) += ecryptfs.o
+
+ecryptfs-y := dentry.o file.o inode.o main.o super.o mmap.o read_write.o \
+	      crypto.o keystore.o kthread.o debug.o
+
+ecryptfs-$(CONFIG_ECRYPT_FS_MESSAGING) += messaging.o miscdev.o

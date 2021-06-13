@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:bf71511c9e2fe769e45c1f67d809261c1267a502281337742ab7d4827e722238
-size 122
+#ifndef __ASM_CPU_SH2_TIMER_H
+#define __ASM_CPU_SH2_TIMER_H
+
+/* Nothing needed yet */
+
+#endif /* __ASM_CPU_SH2_TIMER_H */

@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d0b0f53dcfe7b921014fe0e4cb17754bf6e88356cda3f540edb6cfd8a5853ef4
-size 270
+Axxia AXM55xx device tree bindings
+
+Boards using the AXM55xx SoC need to have the following properties:
+
+Required root node property:
+
+  - compatible = "lsi,axm5516"
+
+Boards:
+
+  LSI AXM5516 Validation board (Amarillo)
+	compatible = "lsi,axm5516-amarillo", "lsi,axm5516"

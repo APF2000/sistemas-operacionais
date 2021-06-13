@@ -1,3 +1,21 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a4ef6b7ddc35be381159d985657f21ab235233614ca6c1145464213a77b491e8
-size 618
+#
+# Makefile for the Cavium Octeon specific kernel interface routines
+# under Linux.
+#
+# This file is subject to the terms and conditions of the GNU General Public
+# License.  See the file "COPYING" in the main directory of this archive
+# for more details.
+#
+# Copyright (C) 2005-2009 Cavium Networks
+#
+
+obj-y := cpu.o setup.o octeon-platform.o octeon-irq.o csrc-octeon.o
+obj-y += dma-octeon.o
+obj-y += octeon-memcpy.o
+obj-y += executive/
+obj-y += crypto/
+
+obj-$(CONFIG_MTD)		      += flash_setup.o
+obj-$(CONFIG_SMP)		      += smp.o
+obj-$(CONFIG_OCTEON_ILM)	      += oct_ilm.o
+obj-$(CONFIG_USB)		      += octeon-usb.o

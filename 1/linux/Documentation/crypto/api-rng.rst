@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:513e6bf83b91f1f9fd01171b998870986211ab1cde0c0871d2347f9b92056bb8
-size 446
+Random Number Algorithm Definitions
+-----------------------------------
+
+.. kernel-doc:: include/crypto/rng.h
+   :functions: rng_alg
+
+Crypto API Random Number API
+----------------------------
+
+.. kernel-doc:: include/crypto/rng.h
+   :doc: Random number generator API
+
+.. kernel-doc:: include/crypto/rng.h
+   :functions: crypto_alloc_rng crypto_rng_alg crypto_free_rng crypto_rng_generate crypto_rng_get_bytes crypto_rng_reset crypto_rng_seedsize

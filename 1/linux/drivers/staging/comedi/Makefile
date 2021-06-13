@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:84714cfefe4c3bdb49ae2d3ba9d83e8f60ea6e8445902c07ef7402123871ea15
-size 461
+ccflags-$(CONFIG_COMEDI_DEBUG)		:= -DDEBUG
+
+comedi-y				:= comedi_fops.o range.o drivers.o \
+					   comedi_buf.o
+comedi-$(CONFIG_PROC_FS)		+= proc.o
+comedi-$(CONFIG_COMPAT)			+= comedi_compat32.o
+
+obj-$(CONFIG_COMEDI_PCI_DRIVERS)	+= comedi_pci.o
+obj-$(CONFIG_COMEDI_PCMCIA_DRIVERS)	+= comedi_pcmcia.o
+obj-$(CONFIG_COMEDI_USB_DRIVERS)	+= comedi_usb.o
+
+obj-$(CONFIG_COMEDI)			+= comedi.o
+
+obj-$(CONFIG_COMEDI)			+= kcomedilib/
+obj-$(CONFIG_COMEDI)			+= drivers/

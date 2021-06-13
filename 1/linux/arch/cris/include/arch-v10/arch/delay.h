@@ -1,3 +1,20 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:77d728e57de0cd42ae1652f78aeb6d734611626ad82c067c6c30f990eade8c6f
-size 355
+#ifndef _CRIS_ARCH_DELAY_H
+#define _CRIS_ARCH_DELAY_H
+
+static inline void __delay(int loops)
+{
+	__asm__ __volatile__ (
+			      "move.d %0,$r9\n\t"
+			      "beq 2f\n\t"
+			      "subq 1,$r9\n\t"
+			      "1:\n\t"
+			      "bne 1b\n\t"
+			      "subq 1,$r9\n"
+			      "2:"
+			      : : "g" (loops) : "r9");
+}
+
+#endif /* defined(_CRIS_ARCH_DELAY_H) */
+
+
+

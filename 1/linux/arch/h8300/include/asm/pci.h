@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:43eaae7bd4ddb9d5586a8d08729be489fb595bffae746c4c280011dc0db19e39
-size 382
+#ifndef _ASM_H8300_PCI_H
+#define _ASM_H8300_PCI_H
+
+/*
+ * asm-h8300/pci.h - H8/300 specific PCI declarations.
+ *
+ * Yoshinori Sato <ysato@users.sourceforge.jp>
+ */
+
+#define pcibios_assign_all_busses()	0
+
+static inline void pcibios_penalize_isa_irq(int irq, int active)
+{
+	/* We don't do dynamic PCI IRQ allocation */
+}
+
+#define PCI_DMA_BUS_IS_PHYS	(1)
+
+#endif /* _ASM_H8300_PCI_H */

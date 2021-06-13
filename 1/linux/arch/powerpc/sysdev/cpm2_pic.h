@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c38226ae4b05a5e8b27e7aa1c51ed62a9b575eec880ed1c6e319caf6562a3792
-size 178
+#ifndef _PPC_KERNEL_CPM2_H
+#define _PPC_KERNEL_CPM2_H
+
+extern unsigned int cpm2_get_irq(void);
+
+extern void cpm2_pic_init(struct device_node *);
+
+#endif /* _PPC_KERNEL_CPM2_H */

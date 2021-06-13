@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:bb5f93a0a585cfd0c2f66c8a85455e6fa0d95ca2296e0a663ceec82f2f3ebaf0
-size 237
+BOE OPTOELECTRONICS TECHNOLOGY 10.1" WXGA TFT LCD panel
+
+Required properties:
+- compatible: should be "boe,nv101wxmn51"
+
+This binding is compatible with the simple-panel binding, which is specified
+in simple-panel.txt in this directory.

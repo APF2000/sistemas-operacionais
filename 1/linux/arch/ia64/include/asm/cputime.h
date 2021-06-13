@@ -1,3 +1,25 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:625a232f1108dd17b68aeb541899232768f04d6fccacae0e4a3f43db1d981ee7
-size 855
+/*
+ * Definitions for measuring cputime on ia64 machines.
+ *
+ * Based on <asm-powerpc/cputime.h>.
+ *
+ * Copyright (C) 2007 FUJITSU LIMITED
+ * Copyright (C) 2007 Hidetoshi Seto <seto.hidetoshi@jp.fujitsu.com>
+ *
+ * This program is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License
+ * as published by the Free Software Foundation; either version
+ * 2 of the License, or (at your option) any later version.
+ *
+ * If we have CONFIG_VIRT_CPU_ACCOUNTING_NATIVE, we measure cpu time in nsec.
+ * Otherwise we measure cpu time in jiffies using the generic definitions.
+ */
+
+#ifndef __IA64_CPUTIME_H
+#define __IA64_CPUTIME_H
+
+#ifdef CONFIG_VIRT_CPU_ACCOUNTING_NATIVE
+extern void arch_vtime_task_switch(struct task_struct *tsk);
+#endif /* CONFIG_VIRT_CPU_ACCOUNTING_NATIVE */
+
+#endif /* __IA64_CPUTIME_H */

@@ -1,3 +1,4 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e4f5e461849df6b09de8746c73338240601d19a9244b7ca17e2793b19fe84885
-size 126
+Common display properties
+-------------------------
+
+- rotation:	Display rotation in degrees counter clockwise (0,90,180,270)

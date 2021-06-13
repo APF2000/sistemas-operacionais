@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ee677942feabbb4430353ef5f1aa20bfbf20f7309849883f5cab193b6d2add47
-size 170
+obj-$(CONFIG_DAX) += dax.o
+obj-$(CONFIG_DEV_DAX) += device_dax.o
+obj-$(CONFIG_DEV_DAX_PMEM) += dax_pmem.o
+
+dax-y := super.o
+dax_pmem-y := pmem.o
+device_dax-y := device.o

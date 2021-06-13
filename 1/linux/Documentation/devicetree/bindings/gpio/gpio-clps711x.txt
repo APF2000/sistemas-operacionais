@@ -1,3 +1,28 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f5efe95e68c86a13134560e1f5ef697a80e6841db3fc8bb98a9e8d6fd8e825c4
-size 769
+Cirrus Logic CLPS711X GPIO controller
+
+Required properties:
+- compatible: Should be "cirrus,ep7209-gpio"
+- reg: Physical base GPIO controller registers location and length.
+  There should be two registers, first is DATA register, the second
+  is DIRECTION.
+- gpio-controller: Marks the device node as a gpio controller.
+- #gpio-cells: Should be two. The first cell is the pin number and
+  the second cell is used to specify the gpio polarity:
+    0 = active high
+    1 = active low
+
+Note: Each GPIO port should have an alias correctly numbered in "aliases"
+node.
+
+Example:
+
+aliases {
+	gpio0 = &porta;
+};
+
+porta: gpio@80000000 {
+	compatible = "cirrus,ep7312-gpio","cirrus,ep7209-gpio";
+	reg = <0x80000000 0x1>, <0x80000040 0x1>;
+	gpio-controller;
+	#gpio-cells = <2>;
+};

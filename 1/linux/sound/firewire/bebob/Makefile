@@ -1,3 +1,5 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:cfaf781f2187179080df602a3bf9eded6b5d6bbff30b17968373a118088f1ff4
-size 240
+snd-bebob-objs := bebob_command.o bebob_stream.o bebob_proc.o bebob_midi.o \
+		  bebob_pcm.o bebob_hwdep.o bebob_terratec.o \
+		  bebob_yamaha_terratec.o bebob_focusrite.o bebob_maudio.o \
+		  bebob.o
+obj-$(CONFIG_SND_BEBOB) += snd-bebob.o

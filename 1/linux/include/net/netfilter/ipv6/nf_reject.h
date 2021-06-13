@@ -1,3 +1,21 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:821a22563a2a59ee6bc4beef705f45a0120992d4b9b6181fa223b7867b38979a
-size 734
+#ifndef _IPV6_NF_REJECT_H
+#define _IPV6_NF_REJECT_H
+
+#include <linux/icmpv6.h>
+
+void nf_send_unreach6(struct net *net, struct sk_buff *skb_in, unsigned char code,
+		      unsigned int hooknum);
+
+void nf_send_reset6(struct net *net, struct sk_buff *oldskb, int hook);
+
+const struct tcphdr *nf_reject_ip6_tcphdr_get(struct sk_buff *oldskb,
+					      struct tcphdr *otcph,
+					      unsigned int *otcplen, int hook);
+struct ipv6hdr *nf_reject_ip6hdr_put(struct sk_buff *nskb,
+				     const struct sk_buff *oldskb,
+				     __u8 protocol, int hoplimit);
+void nf_reject_ip6_tcphdr_put(struct sk_buff *nskb,
+			      const struct sk_buff *oldskb,
+			      const struct tcphdr *oth, unsigned int otcplen);
+
+#endif /* _IPV6_NF_REJECT_H */

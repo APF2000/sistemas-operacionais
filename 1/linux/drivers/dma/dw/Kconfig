@@ -1,3 +1,28 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:53a2d1a2d1f7026de7b76117dde5942ff607d91c8ffaba6fe0353f4b1bfc9384
-size 703
+#
+# DMA engine configuration for dw
+#
+
+config DW_DMAC_CORE
+	tristate
+	select DMA_ENGINE
+
+config DW_DMAC_BIG_ENDIAN_IO
+	bool
+
+config DW_DMAC
+	tristate "Synopsys DesignWare AHB DMA platform driver"
+	select DW_DMAC_CORE
+	select DW_DMAC_BIG_ENDIAN_IO if AVR32
+	default y if CPU_AT32AP7000
+	help
+	  Support the Synopsys DesignWare AHB DMA controller. This
+	  can be integrated in chips such as the Atmel AT32ap7000.
+
+config DW_DMAC_PCI
+	tristate "Synopsys DesignWare AHB DMA PCI driver"
+	depends on PCI
+	select DW_DMAC_CORE
+	help
+	  Support the Synopsys DesignWare AHB DMA controller on the
+	  platforms that enumerate it as a PCI device. For example,
+	  Intel Medfield has integrated this GPDMA controller.

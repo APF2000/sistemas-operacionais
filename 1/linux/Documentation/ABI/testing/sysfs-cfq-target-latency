@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:0b20b24f8cba9acf4740e5b2fd37d0cb769068d11c671d9f5003999ea7fae235
-size 358
+What:		/sys/block/<device>/iosched/target_latency
+Date:		March 2012
+contact:	Tao Ma <boyu.mt@taobao.com>
+Description:
+		The /sys/block/<device>/iosched/target_latency only exists
+		when the user sets cfq to /sys/block/<device>/scheduler.
+		It contains an estimated latency time for the cfq. cfq will
+		use it to calculate the time slice used for every task.

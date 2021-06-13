@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:be5d98b56c8dfa0e464e466446cd3a5c326961666cb589d51a2301b93f761286
-size 540
+digraph node_states {
+	Secondary -> Primary           [ label = "ioctl_set_state()" ]
+	Primary   -> Secondary 	       [ label = "ioctl_set_state()" ]
+}
+
+digraph peer_states {
+	Secondary -> Primary           [ label = "recv state packet" ]
+	Primary   -> Secondary 	       [ label = "recv state packet" ]
+	Primary   -> Unknown 	       [ label = "connection lost" ]
+	Secondary  -> Unknown  	       [ label = "connection lost" ]
+	Unknown   -> Primary           [ label = "connected" ]
+	Unknown   -> Secondary         [ label = "connected" ]
+}
+

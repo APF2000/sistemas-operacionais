@@ -1,3 +1,21 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:18c8699e3d465b0a6347d733a97b21ef9c4f2b7d5008b56dc71fae85b4cd8817
-size 667
+#ifndef _IP6T_LOG_H
+#define _IP6T_LOG_H
+
+#warning "Please update iptables, this file will be removed soon!"
+
+/* make sure not to change this without changing netfilter.h:NF_LOG_* (!) */
+#define IP6T_LOG_TCPSEQ		0x01	/* Log TCP sequence numbers */
+#define IP6T_LOG_TCPOPT		0x02	/* Log TCP options */
+#define IP6T_LOG_IPOPT		0x04	/* Log IP options */
+#define IP6T_LOG_UID		0x08	/* Log UID owning local socket */
+#define IP6T_LOG_NFLOG		0x10	/* Unsupported, don't use */
+#define IP6T_LOG_MACDECODE	0x20	/* Decode MAC header */
+#define IP6T_LOG_MASK		0x2f
+
+struct ip6t_log_info {
+	unsigned char level;
+	unsigned char logflags;
+	char prefix[30];
+};
+
+#endif /*_IPT_LOG_H*/

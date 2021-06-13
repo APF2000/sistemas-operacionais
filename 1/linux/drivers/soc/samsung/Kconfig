@@ -1,3 +1,23 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:03cf6c2e52aae2a2e2be999e4dd29da1888f2b20bfc20d3d916b45e650f6faf8
-size 598
+#
+# SAMSUNG SoC drivers
+#
+menuconfig SOC_SAMSUNG
+	bool "Samsung SoC driver support" if COMPILE_TEST
+
+if SOC_SAMSUNG
+
+config EXYNOS_PMU
+	bool "Exynos PMU controller driver" if COMPILE_TEST
+	depends on ARCH_EXYNOS || ((ARM || ARM64) && COMPILE_TEST)
+	select EXYNOS_PMU_ARM_DRIVERS if ARM && ARCH_EXYNOS
+
+# There is no need to enable these drivers for ARMv8
+config EXYNOS_PMU_ARM_DRIVERS
+	bool "Exynos PMU ARMv7-specific driver extensions" if COMPILE_TEST
+	depends on EXYNOS_PMU
+
+config EXYNOS_PM_DOMAINS
+	bool "Exynos PM domains" if COMPILE_TEST
+	depends on PM_GENERIC_DOMAINS || COMPILE_TEST
+
+endif

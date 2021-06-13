@@ -1,3 +1,48 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:876ac78278a286761f2fd057e5a6a3870f02ffb42f0b31edc19b04a3cd47ee81
-size 753
+/*
+ * Broadcom BCM470X / BCM5301X ARM platform code.
+ * DTS for BCM4708 SoC.
+ *
+ * Copyright 2013-2014 Hauke Mehrtens <hauke@hauke-m.de>
+ *
+ * Licensed under the GNU/GPL. See COPYING for details.
+ */
+
+#include "bcm5301x.dtsi"
+
+/ {
+	compatible = "brcm,bcm4708";
+
+	aliases {
+		serial0 = &uart0;
+	};
+
+	chosen {
+		stdout-path = "serial0:115200n8";
+	};
+
+	cpus {
+		#address-cells = <1>;
+		#size-cells = <0>;
+		enable-method = "brcm,bcm-nsp-smp";
+
+		cpu@0 {
+			device_type = "cpu";
+			compatible = "arm,cortex-a9";
+			next-level-cache = <&L2>;
+			reg = <0x0>;
+		};
+
+		cpu@1 {
+			device_type = "cpu";
+			compatible = "arm,cortex-a9";
+			next-level-cache = <&L2>;
+			secondary-boot-reg = <0xffff0400>;
+			reg = <0x1>;
+		};
+	};
+
+};
+
+&uart0 {
+	status = "okay";
+};

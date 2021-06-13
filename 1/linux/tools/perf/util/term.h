@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:00a922dfe9ed60128573d9161fdeb0e1b01c1886505152a7117a3966a79c0d3c
-size 200
+#ifndef __PERF_TERM_H
+#define __PERF_TERM_H
+
+struct termios;
+struct winsize;
+
+void get_term_dimensions(struct winsize *ws);
+void set_term_quiet_input(struct termios *old);
+
+#endif /* __PERF_TERM_H */

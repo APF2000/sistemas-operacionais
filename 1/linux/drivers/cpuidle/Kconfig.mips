@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:9fe9d823198aae94d63fb096424f2cdf09229be839e7a2a8c1b3c39f6a15e312
-size 618
+#
+# MIPS CPU Idle Drivers
+#
+config MIPS_CPS_CPUIDLE
+	bool "CPU Idle driver for MIPS CPS platforms"
+	depends on CPU_IDLE && MIPS_CPS
+	depends on SYS_SUPPORTS_MIPS_CPS
+	select ARCH_NEEDS_CPU_IDLE_COUPLED if MIPS_MT || CPU_MIPSR6
+	select GENERIC_CLOCKEVENTS_BROADCAST if SMP
+	select MIPS_CPS_PM
+	default y
+	help
+	  Select this option to enable processor idle state management
+	  through cpuidle for systems built around the MIPS Coherent
+	  Processing System (CPS) architecture. In order to make use of
+	  the deepest idle states you will need to ensure that you are
+	  also using the CONFIG_MIPS_CPS SMP implementation.

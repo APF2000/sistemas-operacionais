@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5209dcb2d5769eb5308010123a4e44e617f01ec9da4c6e5f7e0d81e91ac2cbc9
-size 218
+Olimex 4.3" TFT LCD panel
+
+Required properties:
+- compatible: should be "olimex,lcd-olinuxino-43-ts"
+
+This binding is compatible with the simple-panel binding, which is specified
+in simple-panel.txt in this directory.

@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:264dd28472f151dbbfe4b50d72613bfa24c9a5af0444fb2d4ccb51d7aa5d71be
-size 258
+#include <liblockdep/mutex.h>
+#include "common.h"
+
+void main(void)
+{
+	pthread_mutex_t a, b, c;
+
+	pthread_mutex_init(&a, NULL);
+	pthread_mutex_init(&b, NULL);
+	pthread_mutex_init(&c, NULL);
+
+	LOCK_UNLOCK_2(a, b);
+	LOCK_UNLOCK_2(c, a);
+	LOCK_UNLOCK_2(b, c);
+}

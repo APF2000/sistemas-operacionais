@@ -1,3 +1,22 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:6dbac84d708a76cbf7d90136d6fedb4f4f161ef42f52ae510768c6d0311f984d
-size 572
+Mediatek ethsys controller
+============================
+
+The Mediatek ethsys controller provides various clocks to the system.
+
+Required Properties:
+
+- compatible: Should be:
+	- "mediatek,mt2701-ethsys", "syscon"
+- #clock-cells: Must be 1
+
+The ethsys controller uses the common clk binding from
+Documentation/devicetree/bindings/clock/clock-bindings.txt
+The available clocks are defined in dt-bindings/clock/mt*-clk.h.
+
+Example:
+
+ethsys: clock-controller@1b000000 {
+	compatible = "mediatek,mt2701-ethsys", "syscon";
+	reg = <0 0x1b000000 0 0x1000>;
+	#clock-cells = <1>;
+};

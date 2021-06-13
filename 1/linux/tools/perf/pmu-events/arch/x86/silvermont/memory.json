@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:efa820704446f482d66560251f6949f8acd579e95c999045bb73af4faba5e7e8
-size 374
+[
+    {
+        "PublicDescription": "This event counts the number of times that pipeline was cleared due to memory ordering issues.",
+        "EventCode": "0xC3",
+        "Counter": "0,1",
+        "UMask": "0x2",
+        "EventName": "MACHINE_CLEARS.MEMORY_ORDERING",
+        "SampleAfterValue": "200003",
+        "BriefDescription": "Stalls due to Memory ordering"
+    }
+]

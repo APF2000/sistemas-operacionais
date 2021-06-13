@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1866252328271d4dfc76f55ae0dae8dccd867cc13afc244782f24a5abc299bbb
-size 553
+#
+# Makefile for ALSA
+# Copyright (c) 2001 by Jaroslav Kysela <perex@perex.cz>
+#
+
+snd-emu10k1-objs := emu10k1.o emu10k1_main.o \
+		    irq.o memory.o voice.o emumpu401.o emupcm.o io.o \
+		    emumixer.o emufx.o timer.o p16v.o
+snd-emu10k1-$(CONFIG_SND_PROC_FS) += emuproc.o
+snd-emu10k1-synth-objs := emu10k1_synth.o emu10k1_callback.o emu10k1_patch.o
+snd-emu10k1x-objs := emu10k1x.o
+
+# Toplevel Module Dependency
+obj-$(CONFIG_SND_EMU10K1) += snd-emu10k1.o
+obj-$(CONFIG_SND_EMU10K1_SEQ) += snd-emu10k1-synth.o
+obj-$(CONFIG_SND_EMU10K1X) += snd-emu10k1x.o

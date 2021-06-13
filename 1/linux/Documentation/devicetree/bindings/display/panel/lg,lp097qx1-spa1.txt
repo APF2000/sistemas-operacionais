@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:273b5e1c0f3fadc9efde213acf2df65a18d3f52e22a9e8cc075a99a9c06413f8
-size 223
+LG 9.7" (2048x1536 pixels) TFT LCD panel
+
+Required properties:
+- compatible: should be "lg,lp097qx1-spa1"
+
+This binding is compatible with the simple-panel binding, which is specified
+in simple-panel.txt in this directory.

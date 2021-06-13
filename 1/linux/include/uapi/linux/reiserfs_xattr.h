@@ -1,3 +1,24 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5d2562fc12c8f5d01fbdbcd33a758ef0b0ce32830c02957928af9f774e51cd73
-size 470
+/*
+  File: linux/reiserfs_xattr.h
+*/
+
+#ifndef _LINUX_REISERFS_XATTR_H
+#define _LINUX_REISERFS_XATTR_H
+
+#include <linux/types.h>
+
+/* Magic value in header */
+#define REISERFS_XATTR_MAGIC 0x52465841	/* "RFXA" */
+
+struct reiserfs_xattr_header {
+	__le32 h_magic;		/* magic number for identification */
+	__le32 h_hash;		/* hash of the value */
+};
+
+struct reiserfs_security_handle {
+	const char *name;
+	void *value;
+	size_t length;
+};
+
+#endif  /*  _LINUX_REISERFS_XATTR_H  */

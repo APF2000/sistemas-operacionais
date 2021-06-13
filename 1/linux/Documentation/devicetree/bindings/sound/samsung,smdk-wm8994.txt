@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:cc6d2bdab1d392acf58445c52104278158168b6f70b6c5e2783af812fafadf0c
-size 347
+Samsung SMDK audio complex
+
+Required properties:
+- compatible : "samsung,smdk-wm8994"
+- samsung,i2s-controller: The phandle of the Samsung I2S0 controller
+- samsung,audio-codec: The phandle of the WM8994 audio codec
+Example:
+
+sound {
+		compatible = "samsung,smdk-wm8994";
+
+		samsung,i2s-controller = <&i2s0>;
+		samsung,audio-codec = <&wm8994>;
+};

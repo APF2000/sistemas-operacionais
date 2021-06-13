@@ -1,3 +1,23 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:10354597cdca7dfc6d0c505448d616f14e0a9c7387b08218e29a085b85727b90
-size 927
+/******************************************************************************
+*******************************************************************************
+**
+**  Copyright (C) Sistina Software, Inc.  1997-2003  All rights reserved.
+**  Copyright (C) 2004-2005 Red Hat, Inc.  All rights reserved.
+**
+**  This copyrighted material is made available to anyone wishing to use,
+**  modify, copy, or redistribute it subject to the terms and conditions
+**  of the GNU General Public License v.2.
+**
+*******************************************************************************
+******************************************************************************/
+
+#ifndef __RECOVERD_DOT_H__
+#define __RECOVERD_DOT_H__
+
+void dlm_recoverd_stop(struct dlm_ls *ls);
+int dlm_recoverd_start(struct dlm_ls *ls);
+void dlm_recoverd_suspend(struct dlm_ls *ls);
+void dlm_recoverd_resume(struct dlm_ls *ls);
+
+#endif				/* __RECOVERD_DOT_H__ */
+

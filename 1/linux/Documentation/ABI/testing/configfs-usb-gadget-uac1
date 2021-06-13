@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a39ac47a4a23a4bae26a34fa45b26bdb7c9d72ecc7328c0933275baa4c74131c
-size 376
+What:		/config/usb-gadget/gadget/functions/uac1.name
+Date:		Sep 2014
+KernelVersion:	3.18
+Description:
+		The attributes:
+
+		audio_buf_size - audio buffer size
+		fn_cap - capture pcm device file name
+		fn_cntl - control device file name
+		fn_play - playback pcm device file name
+		req_buf_size - ISO OUT endpoint request buffer size
+		req_count - ISO OUT endpoint request count

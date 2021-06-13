@@ -1,3 +1,22 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b72f0e247287c2dc1373f652cb2b5f8b5d43527f625b03b46692496b968d66ca
-size 418
+#ifndef _LINUX_ATARI_JOYSTICK_H
+#define _LINUX_ATARI_JOYSTICK_H
+
+/*
+ * linux/include/linux/atari_joystick.h
+ * header file for Atari Joystick driver
+ * by Robert de Vries (robert@and.nl) on 19Jul93
+ */
+
+void atari_joystick_interrupt(char*);
+int atari_joystick_init(void);
+extern int atari_mouse_buttons;
+
+struct joystick_status {
+	char		fire;
+	char		dir;
+	int		ready;
+	int		active;
+	wait_queue_head_t wait;
+};
+
+#endif

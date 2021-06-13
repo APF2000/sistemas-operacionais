@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:374527c15376fc7177b2eb6c50b2682a84ba421bf3d096d227542b0b543f89ea
-size 264
+Device-Tree bindings for dummy HDMI codec
+
+Required properties:
+	- compatible: should be "linux,hdmi-audio".
+
+CODEC output pins:
+  * TX
+
+CODEC input pins:
+  * RX
+
+Example node:
+
+	hdmi_audio: hdmi_audio@0 {
+		compatible = "linux,hdmi-audio";
+		status = "okay";
+	};

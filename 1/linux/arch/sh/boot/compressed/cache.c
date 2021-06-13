@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2d4bd59c48785bd0234567bf5d2bced0b47c4200f3c803931d8f0b139b9d3d28
-size 214
+int cache_control(unsigned int command)
+{
+	volatile unsigned int *p = (volatile unsigned int *) 0x80000000;
+	int i;
+
+	for (i = 0; i < (32 * 1024); i += 32) {
+		(void)*p;
+		p += (32 / sizeof(int));
+	}
+
+	return 0;
+}

@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:dfe43898b14f34811cd31fa67f6f0adfcca64c5ccaefbd752f4ed3266fb8cc7b
-size 554
+00-INDEX
+	- this file.
+sched-arch.txt
+	- CPU Scheduler implementation hints for architecture specific code.
+sched-bwc.txt
+	- CFS bandwidth control overview.
+sched-design-CFS.txt
+	- goals, design and implementation of the Completely Fair Scheduler.
+sched-domains.txt
+	- information on scheduling domains.
+sched-nice-design.txt
+	- How and why the scheduler's nice levels are implemented.
+sched-rt-group.txt
+	- real-time group scheduling.
+sched-deadline.txt
+	- deadline scheduling.
+sched-stats.txt
+	- information on schedstats (Linux Scheduler Statistics).

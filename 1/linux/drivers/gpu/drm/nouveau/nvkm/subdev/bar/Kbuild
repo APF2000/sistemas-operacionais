@@ -1,3 +1,5 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c5813aa634d268e31689cce7952e4284f7c754f7c10ec3d45fabe1f0a9e172a7
-size 166
+nvkm-y += nvkm/subdev/bar/base.o
+nvkm-y += nvkm/subdev/bar/nv50.o
+nvkm-y += nvkm/subdev/bar/g84.o
+nvkm-y += nvkm/subdev/bar/gf100.o
+nvkm-y += nvkm/subdev/bar/gk20a.o

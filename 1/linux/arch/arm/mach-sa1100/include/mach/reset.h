@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:384f02dcd0c77fdfe4b3a46af0786d928d75d74011aec6b7e30d92acb024bc57
-size 495
+#ifndef __ASM_ARCH_RESET_H
+#define __ASM_ARCH_RESET_H
+
+#include "hardware.h"
+
+#define RESET_STATUS_HARDWARE	(1 << 0)	/* Hardware Reset */
+#define RESET_STATUS_WATCHDOG	(1 << 1)	/* Watchdog Reset */
+#define RESET_STATUS_LOWPOWER	(1 << 2)	/* Exit from Low Power/Sleep */
+#define RESET_STATUS_GPIO	(1 << 3)	/* GPIO Reset */
+#define RESET_STATUS_ALL	(0xf)
+
+extern unsigned int reset_status;
+static inline void clear_reset_status(unsigned int mask)
+{
+	RCSR = mask;
+}
+
+#endif /* __ASM_ARCH_RESET_H */

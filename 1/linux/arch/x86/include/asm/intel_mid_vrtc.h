@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4fdf86b60e2bf45ca2021e8c99b60e92087bb05b8b00ad766b8814d26ccb7864
-size 287
+#ifndef _INTEL_MID_VRTC_H
+#define _INTEL_MID_VRTC_H
+
+extern unsigned char vrtc_cmos_read(unsigned char reg);
+extern void vrtc_cmos_write(unsigned char val, unsigned char reg);
+extern void vrtc_get_time(struct timespec *now);
+extern int vrtc_set_mmss(const struct timespec *now);
+
+#endif

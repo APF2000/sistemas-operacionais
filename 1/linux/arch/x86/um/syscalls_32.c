@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a3b6998a1009330dfdd4ab1399d545e3de0f908b0c7f33d043b84f3b38e3fc0d
-size 128
+#include <linux/syscalls.h>
+#include <os.h>
+
+SYSCALL_DEFINE2(arch_prctl, int, option, unsigned long, arg2)
+{
+	return -EINVAL;
+}

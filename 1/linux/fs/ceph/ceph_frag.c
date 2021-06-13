@@ -1,3 +1,22 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:3b7fe70f0e00b263975351e064a7069dc1515d46d26b5c2a4da1590722256883
-size 365
+/*
+ * Ceph 'frag' type
+ */
+#include <linux/module.h>
+#include <linux/ceph/types.h>
+
+int ceph_frag_compare(__u32 a, __u32 b)
+{
+	unsigned va = ceph_frag_value(a);
+	unsigned vb = ceph_frag_value(b);
+	if (va < vb)
+		return -1;
+	if (va > vb)
+		return 1;
+	va = ceph_frag_bits(a);
+	vb = ceph_frag_bits(b);
+	if (va < vb)
+		return -1;
+	if (va > vb)
+		return 1;
+	return 0;
+}

@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5037a3a390c26078c672abbd67854d6c426849ca4b45415c17be7dc33b1815a9
-size 289
+#ifndef _UAPI__ASM_SH_PTRACE_64_H
+#define _UAPI__ASM_SH_PTRACE_64_H
+
+struct pt_regs {
+	unsigned long long pc;
+	unsigned long long sr;
+	long long syscall_nr;
+	unsigned long long regs[63];
+	unsigned long long tregs[8];
+	unsigned long long pad[2];
+};
+
+
+#endif /* _UAPI__ASM_SH_PTRACE_64_H */

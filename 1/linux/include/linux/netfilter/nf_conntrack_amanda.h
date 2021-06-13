@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:3610902f96d9f171d5582ab83e309bc9a6fa0fa72d17cf62f9742323b0ab7c73
-size 353
+#ifndef _NF_CONNTRACK_AMANDA_H
+#define _NF_CONNTRACK_AMANDA_H
+/* AMANDA tracking. */
+
+extern unsigned int (*nf_nat_amanda_hook)(struct sk_buff *skb,
+					  enum ip_conntrack_info ctinfo,
+					  unsigned int protoff,
+					  unsigned int matchoff,
+					  unsigned int matchlen,
+					  struct nf_conntrack_expect *exp);
+#endif /* _NF_CONNTRACK_AMANDA_H */

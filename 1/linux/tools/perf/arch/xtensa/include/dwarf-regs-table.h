@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:39a156cc633b51cfaa881fca6fafac249b5f8b494cd62e00c35c8b045a4392fd
-size 247
+#ifdef DEFINE_DWARF_REGSTR_TABLE
+/* This is included in perf/util/dwarf-regs.c */
+
+static const char * const xtensa_regstr_tbl[] = {
+	"a0", "a1", "a2", "a3", "a4", "a5", "a6", "a7",
+	"a8", "a9", "a10", "a11", "a12", "a13", "a14", "a15",
+};
+#endif

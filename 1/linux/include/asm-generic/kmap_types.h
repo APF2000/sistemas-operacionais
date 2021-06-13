@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ffe343f5db69ea64b2b726644bcdc33f5f1ee5d70e32c87e8a63038f8a64aadc
-size 159
+#ifndef _ASM_GENERIC_KMAP_TYPES_H
+#define _ASM_GENERIC_KMAP_TYPES_H
+
+#ifdef __WITH_KM_FENCE
+# define KM_TYPE_NR 41
+#else
+# define KM_TYPE_NR 20
+#endif
+
+#endif

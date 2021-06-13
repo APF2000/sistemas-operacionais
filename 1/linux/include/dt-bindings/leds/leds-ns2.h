@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:cb3965aa7e4517467767433702210be4157cca68f7c10cbb4782e8cf3308b402
-size 145
+#ifndef _DT_BINDINGS_LEDS_NS2_H
+#define _DT_BINDINGS_LEDS_NS2_H
+
+#define NS_V2_LED_OFF	0
+#define NS_V2_LED_ON	1
+#define NS_V2_LED_SATA	2
+
+#endif

@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e9965b664ba573feefbce034da1b00e6053d32994ba87ea4d72fffacc5f2e4e9
-size 326
+config DRM_OMAP
+	tristate "OMAP DRM"
+	depends on DRM
+	depends on ARCH_OMAP2PLUS || ARCH_MULTIPLATFORM
+	select OMAP2_DSS
+	select DRM_KMS_HELPER
+	default n
+	help
+	  DRM display driver for OMAP2/3/4 based boards.
+
+if DRM_OMAP
+
+source "drivers/gpu/drm/omapdrm/dss/Kconfig"
+source "drivers/gpu/drm/omapdrm/displays/Kconfig"
+
+endif

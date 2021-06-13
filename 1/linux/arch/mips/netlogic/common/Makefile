@@ -1,3 +1,5 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:bc57e47354be0dd9c70d0f8e1c4c8e87e2e491a5935c298ebd5b230354015ac9
-size 147
+obj-y				+= irq.o time.o
+obj-y				+= nlm-dma.o
+obj-y				+= reset.o
+obj-$(CONFIG_SMP)		+= smp.o smpboot.o
+obj-$(CONFIG_EARLY_PRINTK)	+= earlycons.o

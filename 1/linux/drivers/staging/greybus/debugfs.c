@@ -1,3 +1,31 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d7d6b3bc5539edee108acc5a78959ca8a51893624589444d5ab0f523808e3a45
-size 511
+/*
+ * Greybus debugfs code
+ *
+ * Copyright 2014 Google Inc.
+ * Copyright 2014 Linaro Ltd.
+ *
+ * Released under the GPLv2 only.
+ */
+
+#include <linux/debugfs.h>
+
+#include "greybus.h"
+
+static struct dentry *gb_debug_root;
+
+void __init gb_debugfs_init(void)
+{
+	gb_debug_root = debugfs_create_dir("greybus", NULL);
+}
+
+void gb_debugfs_cleanup(void)
+{
+	debugfs_remove_recursive(gb_debug_root);
+	gb_debug_root = NULL;
+}
+
+struct dentry *gb_debugfs_get(void)
+{
+	return gb_debug_root;
+}
+EXPORT_SYMBOL_GPL(gb_debugfs_get);

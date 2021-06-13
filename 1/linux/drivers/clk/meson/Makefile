@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:01bbba9bbb22abcdc61c5d1f130c7f398b07551a75d5783f33f3e37a9fdec6a5
-size 226
+#
+# Makefile for Meson specific clk
+#
+
+obj-$(CONFIG_COMMON_CLK_AMLOGIC) += clk-pll.o clk-cpu.o clk-mpll.o clk-audio-divider.o
+obj-$(CONFIG_COMMON_CLK_MESON8B) += meson8b.o
+obj-$(CONFIG_COMMON_CLK_GXBB)	 += gxbb.o gxbb-aoclk.o

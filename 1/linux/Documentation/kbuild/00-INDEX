@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:32049cfdaa44f5c6152f60a79603ed8131bc2460232a75ad46768202413522db
-size 427
+00-INDEX
+	- this file: info on the kernel build process
+headers_install.txt
+	- how to export Linux headers for use by userspace
+kbuild.txt
+	- developer information on kbuild
+kconfig.txt
+	- usage help for make *config
+kconfig-language.txt
+	- specification of Config Language, the language in Kconfig files
+makefiles.txt
+	- developer information for linux kernel makefiles
+modules.txt
+	- how to build modules and to install them

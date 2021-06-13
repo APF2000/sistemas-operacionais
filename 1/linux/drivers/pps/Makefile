@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:9c7108ed96f213e86915bcc97aeccb8bf55e630ee9b0272ad9c6ac8b3616c528
-size 212
+#
+# Makefile for the PPS core.
+#
+
+pps_core-y			:= pps.o kapi.o sysfs.o
+pps_core-$(CONFIG_NTP_PPS)	+= kc.o
+obj-$(CONFIG_PPS)		:= pps_core.o
+obj-y				+= clients/ generators/
+
+ccflags-$(CONFIG_PPS_DEBUG) := -DDEBUG

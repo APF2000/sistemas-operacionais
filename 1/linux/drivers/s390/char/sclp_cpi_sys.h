@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:8d0528a526af6aab0c60e10d02c772b369a6cb38bd9ec4bc322b7dc12f2a0fcf
-size 341
+/*
+ *    SCLP control program identification sysfs interface
+ *
+ *    Copyright IBM Corp. 2007
+ *    Author(s): Michael Ernst <mernst@de.ibm.com>
+ */
+
+#ifndef __SCLP_CPI_SYS_H__
+#define __SCLP_CPI_SYS_H__
+
+int sclp_cpi_set_data(const char *system, const char *sysplex,
+		      const char *type, u64 level);
+
+#endif	 /* __SCLP_CPI_SYS_H__ */

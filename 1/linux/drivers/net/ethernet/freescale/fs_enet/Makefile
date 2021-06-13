@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e926c21018aed7c761ceac0bc9bbf5673c6f984b6ff5af200785816ed5c4272a
-size 370
+#
+# Makefile for the Freescale Ethernet controllers
+#
+
+obj-$(CONFIG_FS_ENET) += fs_enet.o
+
+fs_enet-$(CONFIG_FS_ENET_HAS_SCC) += mac-scc.o
+fs_enet-$(CONFIG_FS_ENET_HAS_FEC) += mac-fec.o
+fs_enet-$(CONFIG_FS_ENET_HAS_FCC) += mac-fcc.o
+
+obj-$(CONFIG_FS_ENET_MDIO_FEC) += mii-fec.o
+obj-$(CONFIG_FS_ENET_MDIO_FCC) += mii-bitbang.o
+
+fs_enet-objs := fs_enet-main.o $(fs_enet-m)

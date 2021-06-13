@@ -1,3 +1,30 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:3b4d13266017e208f4babf6fdd9f50082914e485287e1d16fd92e0b2917c18f1
-size 553
+#include "xyarray.h"
+#include "util.h"
+#include <stdlib.h>
+#include <string.h>
+
+struct xyarray *xyarray__new(int xlen, int ylen, size_t entry_size)
+{
+	size_t row_size = ylen * entry_size;
+	struct xyarray *xy = zalloc(sizeof(*xy) + xlen * row_size);
+
+	if (xy != NULL) {
+		xy->entry_size = entry_size;
+		xy->row_size   = row_size;
+		xy->entries    = xlen * ylen;
+	}
+
+	return xy;
+}
+
+void xyarray__reset(struct xyarray *xy)
+{
+	size_t n = xy->entries * xy->entry_size;
+
+	memset(xy->contents, 0, n);
+}
+
+void xyarray__delete(struct xyarray *xy)
+{
+	free(xy);
+}

@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c0845482348ecd170ecf23443a2cfc1df1e8d5934470b3d4ad73568674d4cfc8
-size 469
+#ifndef TOOLS_ARCH_TILE_UAPI_ASM_MMAN_FIX_H
+#define TOOLS_ARCH_TILE_UAPI_ASM_MMAN_FIX_H
+#define MAP_DENYWRITE	0x0800
+#define MAP_EXECUTABLE	0x1000
+#define MAP_GROWSDOWN	0x0100
+#define MAP_HUGETLB	0x4000
+#define MAP_LOCKED	0x0200
+#define MAP_NONBLOCK	0x0080
+#define MAP_NORESERVE	0x0400
+#define MAP_POPULATE	0x0040
+#define MAP_STACK	MAP_GROWSDOWN
+#include <uapi/asm-generic/mman-common.h>
+/* MAP_32BIT is undefined on tile, fix it for perf */
+#define MAP_32BIT	0
+#endif

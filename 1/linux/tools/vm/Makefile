@@ -1,3 +1,30 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ea40e81bc8d786b63b489a65122537110c6cad0599fd1edae408e2b3f225da6a
-size 506
+# Makefile for vm tools
+#
+TARGETS=page-types slabinfo page_owner_sort
+
+LIB_DIR = ../lib/api
+LIBS = $(LIB_DIR)/libapi.a
+
+CC = $(CROSS_COMPILE)gcc
+CFLAGS = -Wall -Wextra -I../lib/
+LDFLAGS = $(LIBS)
+
+all: $(TARGETS)
+
+$(TARGETS): $(LIBS)
+
+$(LIBS):
+	make -C $(LIB_DIR)
+
+%: %.c
+	$(CC) $(CFLAGS) -o $@ $< $(LDFLAGS)
+
+clean:
+	$(RM) page-types slabinfo page_owner_sort
+	make -C $(LIB_DIR) clean
+
+sbindir ?= /usr/sbin
+
+install: all
+	install -d $(DESTDIR)$(sbindir)
+	install -m 755 -p $(TARGETS) $(DESTDIR)$(sbindir)

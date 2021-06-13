@@ -1,3 +1,22 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ae9f0c6a7bbde7451820f90c382546c08c940c63b6827ea2c1988096985ca868
-size 601
+/*
+ * This file is subject to the terms and conditions of the GNU General Public
+ * License.  See the file "COPYING" in the main directory of this archive
+ * for more details.
+ *
+ * Copyright (C) 2001 - 2005 Tensilica Inc.
+ */
+
+#ifndef _XTENSA_SWITCH_TO_H
+#define _XTENSA_SWITCH_TO_H
+
+/* * switch_to(n) should switch tasks to task nr n, first
+ * checking that n isn't the current task, in which case it does nothing.
+ */
+extern void *_switch_to(void *last, void *next);
+
+#define switch_to(prev,next,last)		\
+do {						\
+	(last) = _switch_to(prev, next);	\
+} while(0)
+
+#endif /* _XTENSA_SWITCH_TO_H */

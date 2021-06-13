@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d2f68cb4bc89d220622cc53217022b0cb3657fc216e25b9a81c4574e9dde87aa
-size 389
+#
+# This file is subject to the terms and conditions of the GNU General Public
+# License.  See the file "COPYING" in the main directory of this archive
+# for more details.
+#
+# Copyright (C) 2000-2004 Silicon Graphics, Inc.  All Rights Reserved.
+#
+# Makefile for the sn pci general routines.
+
+ccflags-y := -Iarch/ia64/sn/include
+
+obj-y := pci_dma.o tioca_provider.o tioce_provider.o pcibr/

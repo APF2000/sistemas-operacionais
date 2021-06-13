@@ -1,3 +1,34 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:31e339b9b3406289a3d74e50f908c2f5d3a1e9bb767eb6d91ac2da09d095f412
-size 971
+/*
+ * Support for Intel Camera Imaging ISP subsystem.
+ * Copyright (c) 2015, Intel Corporation.
+ *
+ * This program is free software; you can redistribute it and/or modify it
+ * under the terms and conditions of the GNU General Public License,
+ * version 2, as published by the Free Software Foundation.
+ *
+ * This program is distributed in the hope it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+ * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for
+ * more details.
+ */
+
+#ifndef __GP_TIMER_PUBLIC_H_INCLUDED__
+#define __GP_TIMER_PUBLIC_H_INCLUDED__
+
+#include "system_types.h"
+
+/*! initialize mentioned timer
+param ID		timer_id
+*/
+extern void
+gp_timer_init(gp_timer_ID_t ID);
+
+
+/*! read timer value for (platform selected)selected timer.
+param ID		timer_id
+ \return uint32_t	32 bit timer value
+*/
+extern uint32_t
+gp_timer_read(gp_timer_ID_t ID);
+
+#endif /* __GP_TIMER_PUBLIC_H_INCLUDED__ */

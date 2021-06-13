@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d88fe6c472b8b65c1584d5d6d156160db71f74c458222b45256ffa86f87cdfea
-size 227
+/*
+ *  Copyright IBM Corp. 2012
+ *  Author(s): Holger Dengler <hd@linux.vnet.ibm.com>
+ */
+
+#ifndef _ZCRYPT_CEX4_H_
+#define _ZCRYPT_CEX4_H_
+
+int zcrypt_cex4_init(void);
+void zcrypt_cex4_exit(void);
+
+#endif /* _ZCRYPT_CEX4_H_ */

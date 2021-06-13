@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e72f09808f1be0344dd18a9400cdb8af8f62d0ddc7a24d2a0a9857cc7c3c70bc
-size 191
+#ifndef __DT_TLV320AIC31XX_MICBIAS_H
+#define __DT_TLV320AIC31XX_MICBIAS_H
+
+#define MICBIAS_2_0V		1
+#define MICBIAS_2_5V		2
+#define MICBIAS_AVDDV		3
+
+#endif /* __DT_TLV320AIC31XX_MICBIAS_H */

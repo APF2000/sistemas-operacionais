@@ -1,3 +1,1 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:fea397aacf4d3c174d9ba97973b003f026318b58741a31e967cc0e3a92add0a8
-size 29
+#include "qcom-ipq8064.dtsi"

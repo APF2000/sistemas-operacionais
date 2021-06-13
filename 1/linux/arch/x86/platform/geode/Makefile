@@ -1,3 +1,3 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:82d786284961d7de79c4edffe28a1c01a3490ceb20811df1cfe5954b13d9aae5
-size 96
+obj-$(CONFIG_ALIX)		+= alix.o
+obj-$(CONFIG_NET5501)		+= net5501.o
+obj-$(CONFIG_GEOS)		+= geos.o

@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:10abaf27fa29eeb76669a20218d889189e0dc3b9ec2faeb583447c530a5982df
-size 362
+#ifndef _IPT_AH_H
+#define _IPT_AH_H
+
+#include <linux/types.h>
+
+struct ipt_ah {
+	__u32 spis[2];			/* Security Parameter Index */
+	__u8  invflags;			/* Inverse flags */
+};
+
+
+
+/* Values for "invflags" field in struct ipt_ah. */
+#define IPT_AH_INV_SPI		0x01	/* Invert the sense of spi. */
+#define IPT_AH_INV_MASK	0x01	/* All possible flags. */
+
+#endif /*_IPT_AH_H*/

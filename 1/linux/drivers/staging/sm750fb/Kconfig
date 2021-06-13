@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1ed4d36e7ec26b0a5d977140aaff19ac6e869f8e9965b0b029046f2987691884
-size 485
+config FB_SM750
+	tristate "Silicon Motion SM750 framebuffer support"
+	depends on FB && PCI
+	select FB_MODE_HELPERS
+	select FB_CFB_FILLRECT
+	select FB_CFB_COPYAREA
+	select FB_CFB_IMAGEBLIT
+	help
+	  Frame buffer driver for the Silicon Motion SM750 chip
+	  with 2D accelearion and dual head support.
+
+	  This driver is also available as a module. The module will be
+	  called sm750fb. If you want to compile it as a module, say M
+	  here and read <file:Documentation/kbuild/modules.txt>.

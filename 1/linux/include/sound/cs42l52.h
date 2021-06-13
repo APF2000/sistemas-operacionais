@@ -1,3 +1,32 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:06a62084795b4cf2f5a16d8e3bac50efef9b96c4f666dd5eb15cb484d23f7593
-size 738
+/*
+ * linux/sound/cs42l52.h -- Platform data for CS42L52
+ *
+ * Copyright (c) 2012 Cirrus Logic Inc.
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 2 as
+ * published by the Free Software Foundation.
+ */
+
+#ifndef __CS42L52_H
+#define __CS42L52_H
+
+struct cs42l52_platform_data {
+
+	/* MICBIAS Level. Check datasheet Pg48 */
+	unsigned int micbias_lvl;
+
+	/* MICA mode selection Differential or Single-ended */
+	bool mica_diff_cfg;
+
+	/* MICB mode selection Differential or Single-ended */
+	bool micb_diff_cfg;
+
+	/* Charge Pump Freq. Check datasheet Pg73 */
+	unsigned int chgfreq;
+
+	/* Reset GPIO */
+	unsigned int reset_gpio;
+};
+
+#endif /* __CS42L52_H */

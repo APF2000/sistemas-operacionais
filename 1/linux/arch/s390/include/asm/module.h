@@ -1,3 +1,34 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:581217de0b0d6fc5828ecb28a23270ed4986c95a5ae8e0467c2ace8ed6e48f31
-size 763
+#ifndef _ASM_S390_MODULE_H
+#define _ASM_S390_MODULE_H
+
+#include <asm-generic/module.h>
+
+/*
+ * This file contains the s390 architecture specific module code.
+ */
+
+struct mod_arch_syminfo
+{
+	unsigned long got_offset;
+	unsigned long plt_offset;
+	int got_initialized;
+	int plt_initialized;
+};
+
+struct mod_arch_specific
+{
+	/* Starting offset of got in the module core memory. */
+	unsigned long got_offset;
+	/* Starting offset of plt in the module core memory. */
+	unsigned long plt_offset;
+	/* Size of the got. */
+	unsigned long got_size;
+	/* Size of the plt. */
+	unsigned long plt_size;
+	/* Number of symbols in syminfo. */
+	int nsyms;
+	/* Additional symbol information (got and plt offsets). */
+	struct mod_arch_syminfo *syminfo;
+};
+
+#endif /* _ASM_S390_MODULE_H */

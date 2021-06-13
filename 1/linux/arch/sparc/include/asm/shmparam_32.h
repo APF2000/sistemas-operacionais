@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d116dc43d0377b36f6a0b9643cc0fe94b9b6072070c6ce55d157a88e742fd6d4
-size 214
+#ifndef _ASMSPARC_SHMPARAM_H
+#define _ASMSPARC_SHMPARAM_H
+
+#define __ARCH_FORCE_SHMLBA 	1
+
+extern int vac_cache_size;
+#define SHMLBA (vac_cache_size ? vac_cache_size : PAGE_SIZE)
+
+#endif /* _ASMSPARC_SHMPARAM_H */

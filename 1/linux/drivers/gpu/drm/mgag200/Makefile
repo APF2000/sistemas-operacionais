@@ -1,3 +1,5 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:51c6b618882258220ddfb65473241e8ddc347f595cbfcc8b2a5baffee7167a9f
-size 187
+ccflags-y := -Iinclude/drm
+mgag200-y   := mgag200_main.o mgag200_mode.o mgag200_cursor.o \
+	mgag200_drv.o mgag200_fb.o mgag200_i2c.o mgag200_ttm.o
+
+obj-$(CONFIG_DRM_MGAG200) += mgag200.o

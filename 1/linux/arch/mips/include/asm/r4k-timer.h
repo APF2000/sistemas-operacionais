@@ -1,3 +1,30 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:63fa35fce71cbd58da63753a27f453cae3ee8b28d89027117c2006110a96c328
-size 604
+/*
+ * This file is subject to the terms and conditions of the GNU General Public
+ * License.  See the file "COPYING" in the main directory of this archive
+ * for more details.
+ *
+ * Copyright (C) 2008 by Ralf Baechle (ralf@linux-mips.org)
+ */
+#ifndef __ASM_R4K_TYPES_H
+#define __ASM_R4K_TYPES_H
+
+#include <linux/compiler.h>
+
+#ifdef CONFIG_SYNC_R4K
+
+extern void synchronise_count_master(int cpu);
+extern void synchronise_count_slave(int cpu);
+
+#else
+
+static inline void synchronise_count_master(int cpu)
+{
+}
+
+static inline void synchronise_count_slave(int cpu)
+{
+}
+
+#endif
+
+#endif /* __ASM_R4K_TYPES_H */

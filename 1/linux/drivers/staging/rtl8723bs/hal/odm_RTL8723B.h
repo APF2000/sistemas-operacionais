@@ -1,3 +1,22 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ef98dbd71d50473244af690eed8c824f441ba04d51a3c85b1d723f89754e278a
-size 821
+/******************************************************************************
+ *
+ * Copyright(c) 2007 - 2011 Realtek Corporation. All rights reserved.
+ *
+ * This program is free software; you can redistribute it and/or modify it
+ * under the terms of version 2 of the GNU General Public License as
+ * published by the Free Software Foundation.
+ *
+ * This program is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+ * FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for
+ * more details.
+ *
+ ******************************************************************************/
+#ifndef	__ODM_RTL8723B_H__
+#define __ODM_RTL8723B_H__
+
+#define	DM_DIG_MIN_NIC_8723	0x1C
+
+s8 odm_CCKRSSI_8723B(u8 LNA_idx, u8 VGA_idx);
+
+#endif

@@ -1,3 +1,25 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a6a0f5067deace725978417859c8efb743ae63462e3b12e2c61b93fe0eab67fb
-size 636
+#ifndef __REGULATOR_PLATFORM_CONSUMER_H_
+#define __REGULATOR_PLATFORM_CONSUMER_H_
+
+struct regulator_consumer_supply;
+
+/**
+ * struct regulator_userspace_consumer_data - line consumer
+ * initialisation data.
+ *
+ * @name: Name for the consumer line
+ * @num_supplies: Number of supplies feeding the line
+ * @supplies: Supplies configuration.
+ * @init_on: Set if the regulators supplying the line should be
+ *           enabled during initialisation
+ */
+struct regulator_userspace_consumer_data {
+	const char *name;
+
+	int num_supplies;
+	struct regulator_bulk_data *supplies;
+
+	bool init_on;
+};
+
+#endif /* __REGULATOR_PLATFORM_CONSUMER_H_ */

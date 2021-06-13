@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c9205b2086660a95eabc0cc526a1b69bfe0a7774822fc64eccad4875185b9e67
-size 391
+/* K8 NUMA support */
+/* Copyright 2002,2003 by Andi Kleen, SuSE Labs */
+/* 2.5 Version loosely based on the NUMAQ Code by Pat Gaughen. */
+#ifndef _ASM_X86_MMZONE_64_H
+#define _ASM_X86_MMZONE_64_H
+
+#ifdef CONFIG_NUMA
+
+#include <linux/mmdebug.h>
+#include <asm/smp.h>
+
+extern struct pglist_data *node_data[];
+
+#define NODE_DATA(nid)		(node_data[nid])
+
+#endif
+#endif /* _ASM_X86_MMZONE_64_H */

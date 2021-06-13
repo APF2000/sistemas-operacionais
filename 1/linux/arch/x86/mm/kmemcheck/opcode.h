@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:94f3897edaad536309ed16bd09f34fb3d1ea6400f2992aaec636f3d1ac2d2300
-size 254
+#ifndef ARCH__X86__MM__KMEMCHECK__OPCODE_H
+#define ARCH__X86__MM__KMEMCHECK__OPCODE_H
+
+#include <linux/types.h>
+
+void kmemcheck_opcode_decode(const uint8_t *op, unsigned int *size);
+const uint8_t *kmemcheck_opcode_get_primary(const uint8_t *op);
+
+#endif

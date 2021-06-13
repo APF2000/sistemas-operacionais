@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:aed70f3493c6a86071b18fbc725c02c916632629efc3e9b49d6cb94711014257
-size 158
+#ifndef _ASM_M32R_SHMPARAM_H
+#define _ASM_M32R_SHMPARAM_H
+
+#define	SHMLBA PAGE_SIZE		 /* attach addr a multiple of this */
+
+#endif /* _ASM_M32R_SHMPARAM_H */

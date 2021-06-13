@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d44b1fe742ab04d85eb6e643700e7c911ea44534f7542fcf1c9f3fa79a119cca
-size 376
+# arch/ia64/uv/kernel/Makefile
+#
+# This file is subject to the terms and conditions of the GNU General Public
+# License.  See the file "COPYING" in the main directory of this archive
+# for more details.
+#
+# Copyright (C) 2008 Silicon Graphics, Inc.  All Rights Reserved.
+#
+
+ccflags-y := -Iarch/ia64/sn/include
+
+obj-y				+= setup.o
+obj-$(CONFIG_IA64_GENERIC)      += machvec.o

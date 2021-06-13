@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ae48e1e87a5340211bde9f15e302d86f24a9136470a5cb38ab22ff1a10e029f8
-size 207
+#ifndef TOOLS_ARCH_H8300_UAPI_ASM_MMAN_FIX_H
+#define TOOLS_ARCH_H8300_UAPI_ASM_MMAN_FIX_H
+#include <uapi/asm-generic/mman.h>
+/* MAP_32BIT is undefined on h8300, fix it for perf */
+#define MAP_32BIT	0
+#endif

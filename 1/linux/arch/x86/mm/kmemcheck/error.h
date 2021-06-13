@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:58c5c40c3bb3a83539570b8e5781a62c50a721e2794d3e7a40ff26f0abf1064e
-size 352
+#ifndef ARCH__X86__MM__KMEMCHECK__ERROR_H
+#define ARCH__X86__MM__KMEMCHECK__ERROR_H
+
+#include <linux/ptrace.h>
+
+#include "shadow.h"
+
+void kmemcheck_error_save(enum kmemcheck_shadow state,
+	unsigned long address, unsigned int size, struct pt_regs *regs);
+
+void kmemcheck_error_save_bug(struct pt_regs *regs);
+
+void kmemcheck_error_recall(void);
+
+#endif

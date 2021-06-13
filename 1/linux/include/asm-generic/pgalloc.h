@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:7c01983f6a4dee497f3884b3e39137273debab2943a4863ff858d8d2879c965b
-size 303
+#ifndef __ASM_GENERIC_PGALLOC_H
+#define __ASM_GENERIC_PGALLOC_H
+/*
+ * an empty file is enough for a nommu architecture
+ */
+#ifdef CONFIG_MMU
+#error need to implement an architecture specific asm/pgalloc.h
+#endif
+
+#define check_pgt_cache()          do { } while (0)
+
+#endif /* __ASM_GENERIC_PGALLOC_H */

@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:bda638011e6b40ff78bf4713e9b63fd81a445987641e679b811d43bb95a85b6b
-size 368
+#ifndef __NET_SYSFS_H__
+#define __NET_SYSFS_H__
+
+int __init netdev_kobject_init(void);
+int netdev_register_kobject(struct net_device *);
+void netdev_unregister_kobject(struct net_device *);
+int net_rx_queue_update_kobjects(struct net_device *, int old_num, int new_num);
+int netdev_queue_update_kobjects(struct net_device *net,
+				 int old_num, int new_num);
+
+#endif

@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:fc425990c23a23065951d509aad41cf79420fcddbd655f8b5c745ab0b6ba03d4
-size 312
+#
+# Makefile for the Linux/SuperH SH-5 backends.
+#
+obj-y := entry.o probe.o switchto.o
+
+obj-$(CONFIG_SH_FPU)		+= fpu.o
+obj-$(CONFIG_KALLSYMS)		+= unwind.o
+
+# CPU subtype setup
+obj-$(CONFIG_CPU_SH5)		+= setup-sh5.o
+
+# Primary on-chip clocks (common)
+clock-$(CONFIG_CPU_SH5)		:= clock-sh5.o
+
+obj-y			+= $(clock-y)

@@ -1,3 +1,4 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d167091730ceec85e4f58b9135411542551c17c4201b9678941bcbb689463a29
-size 34
+vmlinux*
+uImage*
+ramdisk.*
+*.dtb*

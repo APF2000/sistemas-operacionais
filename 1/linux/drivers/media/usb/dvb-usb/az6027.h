@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1d7687ca3e1e1d885b490f68f2ec72b5a6a58fa5ad54f6eb88cc412cd74682a3
-size 427
+#ifndef _DVB_USB_VP6027_H_
+#define _DVB_USB_VP6027_H_
+
+#define DVB_USB_LOG_PREFIX "az6027"
+#include "dvb-usb.h"
+
+
+extern int dvb_usb_az6027_debug;
+#define deb_info(args...) dprintk(dvb_usb_az6027_debug, 0x01, args)
+#define deb_xfer(args...) dprintk(dvb_usb_az6027_debug, 0x02, args)
+#define deb_rc(args...)   dprintk(dvb_usb_az6027_debug, 0x04, args)
+#define deb_fe(args...)   dprintk(dvb_usb_az6027_debug, 0x08, args)
+
+#endif

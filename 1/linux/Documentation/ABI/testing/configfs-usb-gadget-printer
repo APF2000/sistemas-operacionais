@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f255718975cd70a400005d5e9d45cd0614bac2eb4efa9eb6a4717fcd4ed9500b
-size 226
+What:		/config/usb-gadget/gadget/functions/printer.name
+Date:		Apr 2015
+KernelVersion:	4.1
+Description:
+		The attributes:
+
+		pnp_string	- Data to be passed to the host in pnp string
+		q_len		- Number of requests per endpoint
+

@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:fb64eb6fad4987f46d6734f1d9a570115345baaefe531b7403b4dc772cfaf5d5
-size 285
+#ifndef __NVKM_SEC2_H__
+#define __NVKM_SEC2_H__
+#include <core/engine.h>
+
+struct nvkm_sec2 {
+	struct nvkm_engine engine;
+	struct nvkm_falcon *falcon;
+	struct nvkm_msgqueue *queue;
+	struct work_struct work;
+};
+
+int gp102_sec2_new(struct nvkm_device *, int, struct nvkm_sec2 **);
+#endif

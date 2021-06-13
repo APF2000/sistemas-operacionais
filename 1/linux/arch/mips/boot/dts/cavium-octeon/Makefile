@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:58cabb8f5a13a46081786959307902c59f4543f7ef8093427be138c93a0384ff
-size 244
+dtb-$(CONFIG_CAVIUM_OCTEON_SOC)	+= octeon_3xxx.dtb octeon_68xx.dtb
+
+obj-y				+= $(patsubst %.dtb, %.dtb.o, $(dtb-y))
+
+# Force kbuild to make empty built-in.o if necessary
+obj-				+= dummy.o
+
+always				:= $(dtb-y)
+clean-files			:= *.dtb *.dtb.S

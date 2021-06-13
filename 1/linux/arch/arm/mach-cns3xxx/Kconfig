@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:feec394aaa3f2aa133f7ac99769ad619ff48c92f1cd4b376c4d94373f834273f
-size 477
+menuconfig ARCH_CNS3XXX
+	bool "Cavium Networks CNS3XXX family"
+	depends on ARCH_MULTI_V6
+	select ARM_GIC
+	help
+	  Support for Cavium Networks CNS3XXX platform.
+
+if ARCH_CNS3XXX
+
+config MACH_CNS3420VB
+	bool "Support for CNS3420 Validation Board"
+	depends on ATAGS
+	help
+	  Include support for the Cavium Networks CNS3420 MPCore Platform
+	  Baseboard.
+	  This is a platform with an on-board ARM11 MPCore and has support
+	  for USB, USB-OTG, MMC/SD/SDIO, SATA, PCI-E, etc.
+
+endif

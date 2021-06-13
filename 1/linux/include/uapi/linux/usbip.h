@@ -1,3 +1,26 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:40fc09914811f0362cfc5eb06725d1446ae55753998ca9216a126e0e0084b788
-size 592
+/*
+ *	usbip.h
+ *
+ *	USBIP uapi defines and function prototypes etc.
+*/
+
+#ifndef _UAPI_LINUX_USBIP_H
+#define _UAPI_LINUX_USBIP_H
+
+/* usbip device status - exported in usbip device sysfs status */
+enum usbip_device_status {
+	/* sdev is available. */
+	SDEV_ST_AVAILABLE = 0x01,
+	/* sdev is now used. */
+	SDEV_ST_USED,
+	/* sdev is unusable because of a fatal error. */
+	SDEV_ST_ERROR,
+
+	/* vdev does not connect a remote device. */
+	VDEV_ST_NULL,
+	/* vdev is used, but the USB address is not assigned yet */
+	VDEV_ST_NOTASSIGNED,
+	VDEV_ST_USED,
+	VDEV_ST_ERROR
+};
+#endif /* _UAPI_LINUX_USBIP_H */

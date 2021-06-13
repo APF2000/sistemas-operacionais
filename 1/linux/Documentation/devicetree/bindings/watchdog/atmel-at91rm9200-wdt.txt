@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:363b3cd911d1988aef48ba8440407b94bc7b31f1ce6b57cbcfae3b16ad98bff7
-size 182
+Atmel AT91RM9200 System Timer Watchdog
+
+Required properties:
+- compatible: must be "atmel,at91sam9260-wdt".
+
+Example:
+	watchdog@fffffd00 {
+		compatible = "atmel,at91rm9200-wdt";
+	};

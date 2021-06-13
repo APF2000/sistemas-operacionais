@@ -1,3 +1,5 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:6101cafa610bc8572f84941f8e46dab0a70d2040111497fdb93c4a14f8413fa8
-size 145
+config IEEE802154_6LOWPAN
+	tristate "6lowpan support over IEEE 802.15.4"
+	depends on 6LOWPAN
+	---help---
+	  IPv6 compression over IEEE 802.15.4.

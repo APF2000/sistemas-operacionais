@@ -1,3 +1,26 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e042eca08fe94ba80f2e02fc7b87ff93f620b1e983231cf99c21944b3cb378e3
-size 905
+Aeroflex Gaisler GRGPIO General Purpose I/O cores.
+
+The GRGPIO GPIO core is available in the GRLIB VHDL IP core library.
+
+Note: In the ordinary environment for the GRGPIO core, a Leon SPARC system,
+these properties are built from information in the AMBA plug&play.
+
+Required properties:
+
+- name : Should be "GAISLER_GPIO" or "01_01a"
+
+- reg : Address and length of the register set for the device
+
+- interrupts : Interrupt numbers for this device
+
+Optional properties:
+
+- nbits : The number of gpio lines. If not present driver assumes 32 lines.
+
+- irqmap : An array with an index for each gpio line. An index is either a valid
+	index into the interrupts property array, or 0xffffffff that indicates
+	no irq for that line. Driver provides no interrupt support if not
+	present.
+
+For further information look in the documentation for the GLIB IP core library:
+http://www.gaisler.com/products/grlib/grip.pdf

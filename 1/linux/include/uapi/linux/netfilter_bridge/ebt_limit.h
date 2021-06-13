@@ -1,3 +1,24 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:21f6aca998ce02b03b3f08dd5ada5c79a18c28bb0ee2f150948a8bccae353dcd
-size 553
+#ifndef __LINUX_BRIDGE_EBT_LIMIT_H
+#define __LINUX_BRIDGE_EBT_LIMIT_H
+
+#include <linux/types.h>
+
+#define EBT_LIMIT_MATCH "limit"
+
+/* timings are in milliseconds. */
+#define EBT_LIMIT_SCALE 10000
+
+/* 1/10,000 sec period => max of 10,000/sec.  Min rate is then 429490
+   seconds, or one every 59 hours. */
+
+struct ebt_limit_info {
+	__u32 avg;    /* Average secs between packets * scale */
+	__u32 burst;  /* Period multiplier for upper limit. */
+
+	/* Used internally by the kernel */
+	unsigned long prev;
+	__u32 credit;
+	__u32 credit_cap, cost;
+};
+
+#endif

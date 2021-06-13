@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:0da104ef5d0a4544a9811efadc426d8d44ed2013874297ab1238b8b4c3b13eca
-size 224
+#ifndef __NR_perf_event_open
+# define __NR_perf_event_open 298
+#endif
+#ifndef __NR_futex
+# define __NR_futex 202
+#endif
+#ifndef __NR_gettid
+# define __NR_gettid 186
+#endif
+#ifndef __NR_getcpu
+# define __NR_getcpu 309
+#endif

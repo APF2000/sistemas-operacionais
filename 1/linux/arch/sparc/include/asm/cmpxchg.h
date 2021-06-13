@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ee5a0839ec024e3233e7a8990e1777614dccc16c841ba246667f1843f190b46e
-size 184
+#ifndef ___ASM_SPARC_CMPXCHG_H
+#define ___ASM_SPARC_CMPXCHG_H
+#if defined(__sparc__) && defined(__arch64__)
+#include <asm/cmpxchg_64.h>
+#else
+#include <asm/cmpxchg_32.h>
+#endif
+#endif

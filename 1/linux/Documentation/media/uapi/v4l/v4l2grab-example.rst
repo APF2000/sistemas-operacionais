@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:68c5cef56ed084c5fed99c5879913ecc9ba6206e46b7c64b0586d34d659822ae
-size 382
+.. -*- coding: utf-8; mode: rst -*-
+
+.. _v4l2grab-example:
+
+**********************************
+Video Grabber example using libv4l
+**********************************
+
+This program demonstrates how to grab V4L2 images in ppm format by using
+libv4l handlers. The advantage is that this grabber can potentially work
+with any V4L2 driver.
+
+
+.. toctree::
+    :maxdepth: 1
+
+    v4l2grab.c

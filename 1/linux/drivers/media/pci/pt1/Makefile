@@ -1,3 +1,5 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:76a60168eb8a1a8b695bc2a02f5561245a25cd4b75ea0c7e581233623b0ff5b9
-size 161
+earth-pt1-objs := pt1.o va1j5jf8007s.o va1j5jf8007t.o
+
+obj-$(CONFIG_DVB_PT1) += earth-pt1.o
+
+ccflags-y += -Idrivers/media/dvb-core -Idrivers/media/dvb-frontends

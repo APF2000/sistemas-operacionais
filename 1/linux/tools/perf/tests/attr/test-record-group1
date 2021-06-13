@@ -1,3 +1,21 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:63b40a15f4ccb8d045675d5d40f5570afc637a5540bf621551ce9834e9e11845
-size 281
+[config]
+command = record
+args    = -e '{cycles,instructions}' kill >/dev/null 2>&1
+
+[event-1:base-record]
+fd=1
+group_fd=-1
+sample_type=327
+read_format=4
+
+[event-2:base-record]
+fd=2
+group_fd=1
+type=0
+config=1
+sample_type=327
+read_format=4
+mmap=0
+comm=0
+enable_on_exec=0
+disabled=0

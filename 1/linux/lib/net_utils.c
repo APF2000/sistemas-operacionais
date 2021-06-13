@@ -1,3 +1,26 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:897fc30d5ba1176284a03d14c791a8eabbb24fd32a31483b5969b0cbc1977418
-size 604
+#include <linux/string.h>
+#include <linux/if_ether.h>
+#include <linux/ctype.h>
+#include <linux/kernel.h>
+
+bool mac_pton(const char *s, u8 *mac)
+{
+	int i;
+
+	/* XX:XX:XX:XX:XX:XX */
+	if (strlen(s) < 3 * ETH_ALEN - 1)
+		return false;
+
+	/* Don't dirty result unless string is valid MAC. */
+	for (i = 0; i < ETH_ALEN; i++) {
+		if (!isxdigit(s[i * 3]) || !isxdigit(s[i * 3 + 1]))
+			return false;
+		if (i != ETH_ALEN - 1 && s[i * 3 + 2] != ':')
+			return false;
+	}
+	for (i = 0; i < ETH_ALEN; i++) {
+		mac[i] = (hex_to_bin(s[i * 3]) << 4) | hex_to_bin(s[i * 3 + 1]);
+	}
+	return true;
+}
+EXPORT_SYMBOL(mac_pton);

@@ -1,3 +1,21 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:94b353dc92d8a543d5d015d70f2b4a29a3e632eb30b4661c0fb65f66399acdaf
-size 170
+
+int a(void);
+int b(void);
+int c(void);
+int d(void);
+int e(void);
+int f(void);
+int inc(void);
+
+int main(void)
+{
+	a();
+	b();
+	c();
+	d();
+	e();
+	f();
+	inc();
+
+	return 0;
+}

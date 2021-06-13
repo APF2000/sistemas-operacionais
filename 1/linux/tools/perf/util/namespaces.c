@@ -1,3 +1,37 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:8e4561b0037e119d22e9f3d1f16782926e8a5259f68efa25718b698d35b3e5ab
-size 899
+/*
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License, version 2, as
+ * published by the Free Software Foundation.
+ *
+ * Copyright (C) 2017 Hari Bathini, IBM Corporation
+ */
+
+#include "namespaces.h"
+#include "util.h"
+#include "event.h"
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+
+struct namespaces *namespaces__new(struct namespaces_event *event)
+{
+	struct namespaces *namespaces;
+	u64 link_info_size = ((event ? event->nr_namespaces : NR_NAMESPACES) *
+			      sizeof(struct perf_ns_link_info));
+
+	namespaces = zalloc(sizeof(struct namespaces) + link_info_size);
+	if (!namespaces)
+		return NULL;
+
+	namespaces->end_time = -1;
+
+	if (event)
+		memcpy(namespaces->link_info, event->link_info, link_info_size);
+
+	return namespaces;
+}
+
+void namespaces__free(struct namespaces *namespaces)
+{
+	free(namespaces);
+}

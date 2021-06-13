@@ -1,3 +1,2 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:673cccec26a3a878eb919cc17ee125ef6a98856385fca6b19b7f403b86958ac1
-size 94
+obj-$(CONFIG_VIDEO_SAMSUNG_S5P_CEC)	+= s5p-cec.o
+s5p-cec-y += s5p_cec.o exynos_hdmi_cecctrl.o

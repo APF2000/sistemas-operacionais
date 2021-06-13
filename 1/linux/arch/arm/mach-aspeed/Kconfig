@@ -1,3 +1,34 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:de31d9ff3f5bb5704cc199c7bc77a8d2b13b01945d24eb22701e96f3de669759
-size 804
+menuconfig ARCH_ASPEED
+	bool "Aspeed BMC architectures"
+	depends on ARCH_MULTI_V5 || ARCH_MULTI_V6
+	select SRAM
+	select WATCHDOG
+	select ASPEED_WATCHDOG
+	select MOXART_TIMER
+	select MFD_SYSCON
+	select PINCTRL
+	help
+	  Say Y here if you want to run your kernel on an ASpeed BMC SoC.
+
+if ARCH_ASPEED
+
+config MACH_ASPEED_G4
+	bool "Aspeed SoC 4th Generation"
+	depends on ARCH_MULTI_V5
+	select CPU_ARM926T
+	select PINCTRL_ASPEED_G4
+	help
+	 Say yes if you intend to run on an Aspeed ast2400 or similar
+	 fourth generation BMCs, such as those used by OpenPower Power8
+	 systems.
+
+config MACH_ASPEED_G5
+	bool "Aspeed SoC 5th Generation"
+	depends on ARCH_MULTI_V6
+	select CPU_V6
+	select PINCTRL_ASPEED_G5
+	help
+	 Say yes if you intend to run on an Aspeed ast2500 or similar
+	 fifth generation Aspeed BMCs.
+
+endif

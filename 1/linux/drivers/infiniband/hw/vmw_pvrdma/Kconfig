@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:dadc0a16cdba720e7d0e4ec25b55b9b71d01f2d52e97e6b3492b86697ac39b62
-size 308
+config INFINIBAND_VMWARE_PVRDMA
+	tristate "VMware Paravirtualized RDMA Driver"
+	depends on NETDEVICES && ETHERNET && PCI && INET && VMXNET3
+	---help---
+	  This driver provides low-level support for VMware Paravirtual
+	  RDMA adapter. It interacts with the VMXNet3 driver to provide
+	  Ethernet capabilities.

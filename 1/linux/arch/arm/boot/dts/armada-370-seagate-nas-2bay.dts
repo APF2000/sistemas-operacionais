@@ -1,3 +1,36 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c895ff2d9b482fe7c2c32a246ecd5f7620a1cb928e89af6f6072997d84498b01
-size 875
+/*
+ * Device Tree file for Seagate NAS 2-Bay (Armada 370 SoC).
+ *
+ * Copyright (C) 2015 Seagate
+ *
+ * Author: Vincent Donnefort <vdonnefort@gmail.com>
+ *
+ * This file is licensed under the terms of the GNU General Public
+ * License version 2.  This program is licensed "as is" without any
+ * warranty of any kind, whether express or implied.
+ */
+
+/*
+ * Here are some information allowing to identify the device:
+ *
+ * Product name                 : Seagate NAS 2-Bay
+ * Code name (board/PCB)        : Dart 2-Bay
+ * Model name (case sticker)    : SRPD20
+ * Material desc (product spec) : STCTxxxxxxx
+ */
+
+/dts-v1/;
+#include "armada-370-seagate-nas-xbay.dtsi"
+
+/ {
+	model = "Seagate NAS 2-Bay (Dart, SRPD20)";
+	compatible = "seagate,dart-2", "marvell,armada370", "marvell,armada-370-xp";
+
+	gpio-fan {
+		gpio-fan,speed-map =
+			<   0 3
+			  950 2
+			 1400 1
+			 1800 0>;
+	};
+};

@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:6750f9f36180f50558699131b3067bf3f8dcb55a2011ab36f09fe9b1efe51f02
-size 142
+ex-y += ex.o
+ex-y += a.o
+ex-y += b.o
+ex-y += b.o
+ex-y += empty/
+ex-y += empty2/
+ex-y += inc.o
+
+libex-y += c.o
+libex-y += d.o
+libex-y += arch/

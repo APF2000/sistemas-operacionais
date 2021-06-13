@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5e74ccc66dc166bfbb684f45fb7c15f29deccb569cef9c4f99a83a7f51f0cfe3
-size 213
+* PXA RTC
+
+PXA specific RTC driver.
+
+Required properties:
+- compatible : Should be "marvell,pxa-rtc"
+
+Examples:
+
+rtc@40900000 {
+	compatible = "marvell,pxa-rtc";
+	reg = <0x40900000 0x3c>;
+	interrupts = <30 31>;
+};

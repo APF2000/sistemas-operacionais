@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e6c7f8d5af57ce73343885d6e35f3639fbc60c867a1bf697b474574a311a1557
-size 190
+#ifndef __OMAP1_BL_H__
+#define __OMAP1_BL_H__
+
+#include <linux/device.h>
+
+struct omap_backlight_config {
+	int default_intensity;
+	int (*set_power)(struct device *dev, int state);
+};
+
+#endif

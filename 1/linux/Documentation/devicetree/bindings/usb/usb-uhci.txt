@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:af96cb598b69246e2751857df507ca14c9101a47f0662915ab5173180ebafded
-size 383
+Generic Platform UHCI Controller
+-----------------------------------------------------
+
+Required properties:
+- compatible : "generic-uhci" (deprecated: "platform-uhci")
+- reg : Should contain 1 register ranges(address and length)
+- interrupts : UHCI controller interrupt
+
+Example:
+
+	uhci@d8007b00 {
+		compatible = "generic-uhci";
+		reg = <0xd8007b00 0x200>;
+		interrupts = <43>;
+	};

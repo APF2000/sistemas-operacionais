@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:3f27c68e2dd93ffcfe900d23aca20a7c5a0eababbc70b2330cce333463c541a7
-size 348
+#include <linux/types.h>
+#include <linux/errno.h>
+#include <linux/uaccess.h>
+
+#include <asm/sfp-machine.h>
+#include <math-emu/double.h>
+
+int
+lfd(void *frD, void *ea)
+{
+	if (copy_from_user(frD, ea, sizeof(double)))
+		return -EFAULT;
+#ifdef DEBUG
+	printk("%s: D %p, ea %p: ", __func__, frD, ea);
+	dump_double(frD);
+	printk("\n");
+#endif
+	return 0;
+}

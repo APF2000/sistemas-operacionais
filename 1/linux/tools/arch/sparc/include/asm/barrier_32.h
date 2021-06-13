@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:9e85940434c3d01cab0b4effb6bab3f822e2c1bb49ba6794dfe0b1425527bd3d
-size 154
+#ifndef __TOOLS_PERF_SPARC_BARRIER_H
+#define __TOOLS_PERF_SPARC_BARRIER_H
+
+#include <asm-generic/barrier.h>
+
+#endif /* !(__TOOLS_PERF_SPARC_BARRIER_H) */

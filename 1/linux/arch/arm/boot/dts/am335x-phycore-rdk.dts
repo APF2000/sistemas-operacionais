@@ -1,3 +1,27 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:655159217cf3ebf8b475dd9eda51dc3f219aa1f04504e53f77019d715906e4d2
-size 484
+/*
+ * Copyright (C) 2014 PHYTEC Messtechnik GmbH
+ * Author: Wadim Egorov <w.egorov@phytec.de>
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 2 as
+ * published by the Free Software Foundation.
+ */
+
+/dts-v1/;
+
+#include "am335x-phycore-som.dtsi"
+#include "am335x-pcm-953.dtsi"
+
+/* SoM */
+&i2c_eeprom {
+	status = "okay";
+};
+
+&i2c_rtc {
+	status = "okay";
+};
+
+&serial_flash {
+	status = "okay";
+
+};

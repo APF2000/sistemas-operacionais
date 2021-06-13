@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4d4cb7e67ee0a42de21240b1dd36ea126edceb2b300f7852efb0c94c1c0f4520
-size 244
+#ifndef _PARISC_SECTIONS_H
+#define _PARISC_SECTIONS_H
+
+/* nothing to see, move along */
+#include <asm-generic/sections.h>
+
+#ifdef CONFIG_64BIT
+#undef dereference_function_descriptor
+void *dereference_function_descriptor(void *);
+#endif
+
+#endif

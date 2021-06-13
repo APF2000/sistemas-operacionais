@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1cc263c119b8f915af78ab4a03c98d80161b88eb652f24101dd220db0b0949dd
-size 283
+#ifndef _XEN_XEN_ASM_H
+#define _XEN_XEN_ASM_H
+
+#include <linux/linkage.h>
+
+#define RELOC(x, v)	.globl x##_reloc; x##_reloc=v
+#define ENDPATCH(x)	.globl x##_end; x##_end=.
+
+/* Pseudo-flag used for virtual NMI, which we don't implement yet */
+#define XEN_EFLAGS_NMI	0x80000000
+
+#endif

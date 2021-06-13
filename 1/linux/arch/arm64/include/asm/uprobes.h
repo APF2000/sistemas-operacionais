@@ -1,3 +1,36 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:678254630a6a1a66535ebd4a0b5bd7a1913ed68d9f1d1611a54edecd61d7cb9e
-size 777
+/*
+ * Copyright (C) 2014-2016 Pratyush Anand <panand@redhat.com>
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 2 as
+ * published by the Free Software Foundation.
+ */
+
+#ifndef _ASM_UPROBES_H
+#define _ASM_UPROBES_H
+
+#include <asm/debug-monitors.h>
+#include <asm/insn.h>
+#include <asm/probes.h>
+
+#define MAX_UINSN_BYTES		AARCH64_INSN_SIZE
+
+#define UPROBE_SWBP_INSN	BRK64_OPCODE_UPROBES
+#define UPROBE_SWBP_INSN_SIZE	AARCH64_INSN_SIZE
+#define UPROBE_XOL_SLOT_BYTES	MAX_UINSN_BYTES
+
+typedef u32 uprobe_opcode_t;
+
+struct arch_uprobe_task {
+};
+
+struct arch_uprobe {
+	union {
+		u8 insn[MAX_UINSN_BYTES];
+		u8 ixol[MAX_UINSN_BYTES];
+	};
+	struct arch_probe_insn api;
+	bool simulate;
+};
+
+#endif

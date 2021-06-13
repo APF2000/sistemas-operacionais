@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2fe8691b070a21006dc4d2e54d3b8136546b89772aa8b983bc0fc153b180dd21
-size 289
+#ifndef __ASM_ARCH_CAMERA_H_
+#define __ASM_ARCH_CAMERA_H_
+
+#include <linux/platform_data/media/omap1_camera.h>
+
+void omap1_camera_init(void *);
+
+static inline void omap1_set_camera_info(struct omap1_cam_platform_data *info)
+{
+	omap1_camera_init(info);
+}
+
+#endif /* __ASM_ARCH_CAMERA_H_ */

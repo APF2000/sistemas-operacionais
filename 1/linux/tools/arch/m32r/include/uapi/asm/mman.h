@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4c26ed2147c5c3169a9d833fb32aaed1c717aae8cd99ed507abdeaa501740bec
-size 204
+#ifndef TOOLS_ARCH_M32R_UAPI_ASM_MMAN_FIX_H
+#define TOOLS_ARCH_M32R_UAPI_ASM_MMAN_FIX_H
+#include <uapi/asm-generic/mman.h>
+/* MAP_32BIT is undefined on m32r, fix it for perf */
+#define MAP_32BIT	0
+#endif

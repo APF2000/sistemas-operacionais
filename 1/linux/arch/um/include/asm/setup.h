@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:0db46d4fa416e765a55372ce6963a48d5af41bac8147d918a7e3e06803a3dd22
-size 234
+#ifndef SETUP_H_INCLUDED
+#define SETUP_H_INCLUDED
+
+/* POSIX mandated with _POSIX_ARG_MAX that we can rely on 4096 chars in the
+ * command line, so this choice is ok.
+ */
+
+#define COMMAND_LINE_SIZE 4096
+
+#endif		/* SETUP_H_INCLUDED */

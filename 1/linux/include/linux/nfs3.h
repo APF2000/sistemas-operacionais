@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:71d5137445c35f6824298b6190d98f13bd202dfc47ecd5939d1018ef68d50285
-size 221
+/*
+ * NFSv3 protocol definitions
+ */
+#ifndef _LINUX_NFS3_H
+#define _LINUX_NFS3_H
+
+#include <uapi/linux/nfs3.h>
+
+
+/* Number of 32bit words in post_op_attr */
+#define NFS3_POST_OP_ATTR_WORDS		22
+
+#endif /* _LINUX_NFS3_H */

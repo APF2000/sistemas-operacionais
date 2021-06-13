@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:106673eb8c8c0d301d3351b2280ca66718fa35eae2b3188f1e3cd3bd9e83d918
-size 228
+#include "builtin.h"
+#include "perf.h"
+#include <linux/compiler.h>
+#include <stdio.h>
+
+int cmd_version(int argc __maybe_unused, const char **argv __maybe_unused)
+{
+	printf("perf version %s\n", perf_version_string);
+	return 0;
+}

@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:62e0196d1b4dc19652526d7e7b1391af5a117a2c7f67afbbb1814f5c9368fc2c
-size 196
+#ifndef CAIAQ_AUDIO_H
+#define CAIAQ_AUDIO_H
+
+int snd_usb_caiaq_audio_init(struct snd_usb_caiaqdev *cdev);
+void snd_usb_caiaq_audio_free(struct snd_usb_caiaqdev *cdev);
+
+#endif /* CAIAQ_AUDIO_H */

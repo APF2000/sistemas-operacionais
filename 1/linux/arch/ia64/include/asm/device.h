@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:21bfb8aba7b6e9ba72b86a3b3b207ad5ee43f22426243bc64a899d47e69a2ca5
-size 323
+/*
+ * Arch specific extensions to struct device
+ *
+ * This file is released under the GPLv2
+ */
+#ifndef _ASM_IA64_DEVICE_H
+#define _ASM_IA64_DEVICE_H
+
+struct dev_archdata {
+#ifdef CONFIG_INTEL_IOMMU
+	void *iommu; /* hook for IOMMU specific extension */
+#endif
+};
+
+struct pdev_archdata {
+};
+
+#endif /* _ASM_IA64_DEVICE_H */

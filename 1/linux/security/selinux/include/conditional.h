@@ -1,3 +1,22 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c43e50b45dc27df4a8200caca57c27363c2839d9537a67e3494f72bacfb3a639
-size 618
+/*
+ * Interface to booleans in the security server. This is exported
+ * for the selinuxfs.
+ *
+ * Author: Karl MacMillan <kmacmillan@tresys.com>
+ *
+ * Copyright (C) 2003 - 2004 Tresys Technology, LLC
+ *	This program is free software; you can redistribute it and/or modify
+ *  	it under the terms of the GNU General Public License as published by
+ *	the Free Software Foundation, version 2.
+ */
+
+#ifndef _SELINUX_CONDITIONAL_H_
+#define _SELINUX_CONDITIONAL_H_
+
+int security_get_bools(int *len, char ***names, int **values);
+
+int security_set_bools(int len, int *values);
+
+int security_get_bool_value(int index);
+
+#endif

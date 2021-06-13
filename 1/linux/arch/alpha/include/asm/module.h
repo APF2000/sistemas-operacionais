@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:9ead88b5f919f1bea077531f8cde6c61e2b993131bf596026f01b47b3d0859d0
-size 290
+#ifndef _ALPHA_MODULE_H
+#define _ALPHA_MODULE_H
+
+#include <asm-generic/module.h>
+
+struct mod_arch_specific
+{
+	unsigned int gotsecindex;
+};
+
+#define ARCH_SHF_SMALL SHF_ALPHA_GPREL
+
+#ifdef MODULE
+asm(".section .got,\"aws\",@progbits; .align 3; .previous");
+#endif
+
+#endif /*_ALPHA_MODULE_H*/

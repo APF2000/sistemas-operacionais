@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:27f3b10981f858dbc344d6c9bd53c45526e57868852df5962fe611536d195cfd
-size 223
+#ifndef __I2C_SH_MOBILE_H__
+#define __I2C_SH_MOBILE_H__
+
+#include <linux/platform_device.h>
+
+struct i2c_sh_mobile_platform_data {
+	unsigned long bus_speed;
+	unsigned int clks_per_count;
+};
+
+#endif /* __I2C_SH_MOBILE_H__ */

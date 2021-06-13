@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ebab0282a8052cd9829dae01d5de966a792a5cafa0b9ea65ba9dd6c51fed8891
-size 265
+# Platform specific code goes here
+obj-y	+= atom/
+obj-y	+= ce4100/
+obj-y	+= efi/
+obj-y	+= geode/
+obj-y	+= goldfish/
+obj-y	+= iris/
+obj-y	+= intel/
+obj-y	+= intel-mid/
+obj-y	+= intel-quark/
+obj-y	+= olpc/
+obj-y	+= scx200/
+obj-y	+= sfi/
+obj-y	+= ts5500/
+obj-y	+= uv/

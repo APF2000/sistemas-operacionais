@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5fd9ffbec89d4dd140d354d869218eea0239dd986f9edcd262ab914851a07a7a
-size 164
+#
+# Makefile for the Cirrus network device drivers.
+#
+
+obj-$(CONFIG_CS89x0) += cs89x0.o
+obj-$(CONFIG_EP93XX_ETH) += ep93xx_eth.o
+obj-$(CONFIG_MAC89x0) += mac89x0.o

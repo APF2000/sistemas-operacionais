@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:733ce5fc9d5a286719a4a7985301f848d4cb14b868cf9c42f281ef54a6a46efb
-size 496
+img-ir-y			:= img-ir-core.o
+img-ir-$(CONFIG_IR_IMG_RAW)	+= img-ir-raw.o
+img-ir-$(CONFIG_IR_IMG_HW)	+= img-ir-hw.o
+img-ir-$(CONFIG_IR_IMG_NEC)	+= img-ir-nec.o
+img-ir-$(CONFIG_IR_IMG_JVC)	+= img-ir-jvc.o
+img-ir-$(CONFIG_IR_IMG_SONY)	+= img-ir-sony.o
+img-ir-$(CONFIG_IR_IMG_SHARP)	+= img-ir-sharp.o
+img-ir-$(CONFIG_IR_IMG_SANYO)	+= img-ir-sanyo.o
+img-ir-$(CONFIG_IR_IMG_RC5)	+= img-ir-rc5.o
+img-ir-$(CONFIG_IR_IMG_RC6)	+= img-ir-rc6.o
+img-ir-objs			:= $(img-ir-y)
+
+obj-$(CONFIG_IR_IMG)		+= img-ir.o

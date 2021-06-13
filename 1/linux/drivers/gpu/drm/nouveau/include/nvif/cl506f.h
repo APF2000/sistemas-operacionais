@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ebed09b015b9891bc05b8a5aafdb21ad221ce655c944f5bdd2888a2da02e8bf5
-size 200
+#ifndef __NVIF_CL506F_H__
+#define __NVIF_CL506F_H__
+
+struct nv50_channel_gpfifo_v0 {
+	__u8  version;
+	__u8  chid;
+	__u8  pad02[2];
+	__u32 ilength;
+	__u64 ioffset;
+	__u64 pushbuf;
+	__u64 vm;
+};
+#endif

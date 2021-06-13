@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:93eb92c9a72ed64da7923ddbdc99d4211fcf877d324555c0205d46e6b9490b13
-size 161
+config VT6655
+   tristate "VIA Technologies VT6655 support"
+   depends on PCI && MAC80211 && m
+   ---help---
+   This is a vendor-written driver for VIA VT6655.
+

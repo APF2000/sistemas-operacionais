@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d9dff27832f88a8a613ed9ffefd33eb3054986ac302b77a5b3cd68c622f08539
-size 180
+#ifndef ___ASM_SPARC_ATOMIC_H
+#define ___ASM_SPARC_ATOMIC_H
+#if defined(__sparc__) && defined(__arch64__)
+#include <asm/atomic_64.h>
+#else
+#include <asm/atomic_32.h>
+#endif
+#endif

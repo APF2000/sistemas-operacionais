@@ -1,3 +1,5 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ec7979ed2ea0da08d8cffc51ae01ee67849b4731f050bd8902fb10cbdc3a3c3d
-size 248
+obj-$(CONFIG_NILFS2_FS) += nilfs2.o
+nilfs2-y := inode.o file.o dir.o super.o namei.o page.o mdt.o \
+	btnode.o bmap.o btree.o direct.o dat.o recovery.o \
+	the_nilfs.o segbuf.o segment.o cpfile.o sufile.o \
+	ifile.o alloc.o gcinode.o ioctl.o sysfs.o

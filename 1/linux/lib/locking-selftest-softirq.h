@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:daff4e584d892b0be0e29a30368c0d66d2756e0c34b1dba9510fa6a50ec5940c
-size 207
+#undef IRQ_DISABLE
+#undef IRQ_ENABLE
+#undef IRQ_ENTER
+#undef IRQ_EXIT
+
+#define IRQ_DISABLE		SOFTIRQ_DISABLE
+#define IRQ_ENABLE		SOFTIRQ_ENABLE
+#define IRQ_ENTER		SOFTIRQ_ENTER
+#define IRQ_EXIT		SOFTIRQ_EXIT

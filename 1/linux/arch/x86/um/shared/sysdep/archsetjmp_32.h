@@ -1,3 +1,22 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:018de94b48dd3137606811addf9683dba3ff094bc3c160f106d3a1c75e446bdf
-size 363
+/*
+ * arch/um/include/sysdep-i386/archsetjmp.h
+ */
+
+#ifndef _KLIBC_ARCHSETJMP_H
+#define _KLIBC_ARCHSETJMP_H
+
+struct __jmp_buf {
+	unsigned int __ebx;
+	unsigned int __esp;
+	unsigned int __ebp;
+	unsigned int __esi;
+	unsigned int __edi;
+	unsigned int __eip;
+};
+
+typedef struct __jmp_buf jmp_buf[1];
+
+#define JB_IP __eip
+#define JB_SP __esp
+
+#endif				/* _SETJMP_H */

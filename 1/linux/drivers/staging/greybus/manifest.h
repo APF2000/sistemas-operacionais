@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1879777a3ebb903bd34adc128590a250ab874b4153887f2f6aaa3acc005b7c16
-size 303
+/*
+ * Greybus manifest parsing
+ *
+ * Copyright 2014 Google Inc.
+ * Copyright 2014 Linaro Ltd.
+ *
+ * Released under the GPLv2 only.
+ */
+
+#ifndef __MANIFEST_H
+#define __MANIFEST_H
+
+struct gb_interface;
+bool gb_manifest_parse(struct gb_interface *intf, void *data, size_t size);
+
+#endif /* __MANIFEST_H */

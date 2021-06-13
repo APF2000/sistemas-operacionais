@@ -1,3 +1,20 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:56f829d7b459be10e1afa4ca1e01d9984fe158f639867c5b278bac6f7b4cbb6e
-size 412
+#ifndef _LINUX_PATH_H
+#define _LINUX_PATH_H
+
+struct dentry;
+struct vfsmount;
+
+struct path {
+	struct vfsmount *mnt;
+	struct dentry *dentry;
+};
+
+extern void path_get(const struct path *);
+extern void path_put(const struct path *);
+
+static inline int path_equal(const struct path *path1, const struct path *path2)
+{
+	return path1->mnt == path2->mnt && path1->dentry == path2->dentry;
+}
+
+#endif  /* _LINUX_PATH_H */

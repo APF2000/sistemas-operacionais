@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:03b5365a6eb7c33b3ebab467f9004fc655d8effab3ca6fe075b1c2d452b2de0a
-size 373
+#include <asm/mach/arch.h>
+
+#include "core.h"
+
+static const char * const v2m_dt_match[] __initconst = {
+	"arm,vexpress",
+	NULL,
+};
+
+DT_MACHINE_START(VEXPRESS_DT, "ARM-Versatile Express")
+	.dt_compat	= v2m_dt_match,
+	.l2c_aux_val	= 0x00400000,
+	.l2c_aux_mask	= 0xfe0fffff,
+	.smp		= smp_ops(vexpress_smp_dt_ops),
+	.smp_init	= smp_init_ops(vexpress_smp_init_ops),
+MACHINE_END

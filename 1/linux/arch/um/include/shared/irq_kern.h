@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:fffdfd640602c800a1dfd226b4962c755fbe80271daecb3319572d64c142f767
-size 409
+/*
+ * Copyright (C) 2001, 2002 Jeff Dike (jdike@karaya.com)
+ * Licensed under the GPL
+ */
+
+#ifndef __IRQ_KERN_H__
+#define __IRQ_KERN_H__
+
+#include <linux/interrupt.h>
+#include <asm/ptrace.h>
+
+extern int um_request_irq(unsigned int irq, int fd, int type,
+			  irq_handler_t handler,
+			  unsigned long irqflags,  const char * devname,
+			  void *dev_id);
+void um_free_irq(unsigned int irq, void *dev);
+#endif
+

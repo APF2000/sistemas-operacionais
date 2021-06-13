@@ -1,3 +1,20 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:74f51733031fa9326b21b8d8d63c8b0b680acea409e31891304613349048f631
-size 580
+#ifndef _NET_INET_DATALINK_H_
+#define _NET_INET_DATALINK_H_
+
+struct datalink_proto {
+        unsigned char   type[8];
+
+	struct llc_sap   *sap;
+
+        unsigned short  header_length;
+
+        int     (*rcvfunc)(struct sk_buff *, struct net_device *,
+                                struct packet_type *, struct net_device *);
+	int     (*request)(struct datalink_proto *, struct sk_buff *,
+                                        unsigned char *);
+	struct list_head node;
+};
+
+struct datalink_proto *make_EII_client(void);
+void destroy_EII_client(struct datalink_proto *dl);
+#endif

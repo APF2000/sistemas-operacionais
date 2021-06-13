@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4de1e5f633c17a6650136dcfee01be4229e3704a8431da3f93e77c750d3f07a0
-size 501
+00-INDEX
+	- this file
+highres.txt
+	- High resolution timers and dynamic ticks design notes
+hpet.txt
+	- High Precision Event Timer Driver for Linux
+hrtimers.txt
+	- subsystem for high-resolution kernel timers
+NO_HZ.txt
+	- Summary of the different methods for the scheduler clock-interrupts management.
+timekeeping.txt
+	- Clock sources, clock events, sched_clock() and delay timer notes
+timers-howto.txt
+	- how to insert delays in the kernel the right (tm) way.
+timer_stats.txt
+	- timer usage statistics

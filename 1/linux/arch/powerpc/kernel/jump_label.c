@@ -1,3 +1,25 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f9a6fdc538377744c628b9c6b723e68c00457c146299c2b85916224f966d2c9b
-size 690
+/*
+ * Copyright 2010 Michael Ellerman, IBM Corp.
+ *
+ * This program is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License
+ * as published by the Free Software Foundation; either version
+ * 2 of the License, or (at your option) any later version.
+ */
+
+#include <linux/kernel.h>
+#include <linux/jump_label.h>
+#include <asm/code-patching.h>
+
+#ifdef HAVE_JUMP_LABEL
+void arch_jump_label_transform(struct jump_entry *entry,
+			       enum jump_label_type type)
+{
+	u32 *addr = (u32 *)(unsigned long)entry->code;
+
+	if (type == JUMP_LABEL_JMP)
+		patch_branch(addr, entry->target, 0);
+	else
+		patch_instruction(addr, PPC_INST_NOP);
+}
+#endif

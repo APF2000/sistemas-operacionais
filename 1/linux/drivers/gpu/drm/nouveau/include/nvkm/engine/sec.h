@@ -1,3 +1,5 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:54160fa89ab2247911c1057a87874af5e2d5df92441c5016217b4518f61bf3b5
-size 147
+#ifndef __NVKM_SEC_H__
+#define __NVKM_SEC_H__
+#include <engine/falcon.h>
+int g98_sec_new(struct nvkm_device *, int, struct nvkm_engine **);
+#endif

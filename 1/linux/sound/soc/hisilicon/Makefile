@@ -1,3 +1,1 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5513e0b3f2298b77e815950f8afb68b5c194aecd02170bc96bef55ab662c2e9a
-size 49
+obj-$(CONFIG_SND_I2S_HI6210_I2S) += hi6210-i2s.o

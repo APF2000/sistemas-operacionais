@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:742d56a357ddfdd2f652df289cf84b3e6be6fb98928adbd090654878473216d9
-size 445
+What:		/sys/bus/platform/devices/tahvo-usb/otg_mode
+Date:		December 2013
+Contact:	Aaro Koskinen <aaro.koskinen@iki.fi>
+Description:
+		Set or read the current OTG mode. Valid values are "host" and
+		"peripheral".
+
+		Reading: returns the current mode.
+
+What:		/sys/bus/platform/devices/tahvo-usb/vbus
+Date:		December 2013
+Contact:	Aaro Koskinen <aaro.koskinen@iki.fi>
+Description:
+		Read the current VBUS state.
+
+		Reading: returns "on" or "off".

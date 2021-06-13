@@ -1,3 +1,22 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2179be9a1ce00d625dbc8594d78a3eebce3c9c177fdb2f6776f86bd0081a7d5d
-size 1035
+dtb-$(CONFIG_ARCH_MESON) += meson-gxbb-nexbox-a95x.dtb
+dtb-$(CONFIG_ARCH_MESON) += meson-gxbb-odroidc2.dtb
+dtb-$(CONFIG_ARCH_MESON) += meson-gxbb-p200.dtb
+dtb-$(CONFIG_ARCH_MESON) += meson-gxbb-p201.dtb
+dtb-$(CONFIG_ARCH_MESON) += meson-gxbb-vega-s95-pro.dtb
+dtb-$(CONFIG_ARCH_MESON) += meson-gxbb-vega-s95-meta.dtb
+dtb-$(CONFIG_ARCH_MESON) += meson-gxbb-vega-s95-telos.dtb
+dtb-$(CONFIG_ARCH_MESON) += meson-gxbb-wetek-hub.dtb
+dtb-$(CONFIG_ARCH_MESON) += meson-gxbb-wetek-play2.dtb
+dtb-$(CONFIG_ARCH_MESON) += meson-gxl-s905x-khadas-vim.dtb
+dtb-$(CONFIG_ARCH_MESON) += meson-gxl-s905x-p212.dtb
+dtb-$(CONFIG_ARCH_MESON) += meson-gxl-s905d-p230.dtb
+dtb-$(CONFIG_ARCH_MESON) += meson-gxl-s905d-p231.dtb
+dtb-$(CONFIG_ARCH_MESON) += meson-gxl-s905x-hwacom-amazetv.dtb
+dtb-$(CONFIG_ARCH_MESON) += meson-gxl-s905x-nexbox-a95x.dtb
+dtb-$(CONFIG_ARCH_MESON) += meson-gxm-q200.dtb
+dtb-$(CONFIG_ARCH_MESON) += meson-gxm-q201.dtb
+dtb-$(CONFIG_ARCH_MESON) += meson-gxm-nexbox-a1.dtb
+
+always		:= $(dtb-y)
+subdir-y	:= $(dts-dirs)
+clean-files	:= *.dtb

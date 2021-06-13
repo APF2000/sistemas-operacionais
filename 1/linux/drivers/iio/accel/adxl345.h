@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:75fe393ed9e726b2fc7732703681ee327a7675e6d81716b527d135ee0abfa8bc
-size 505
+/*
+ * ADXL345 3-Axis Digital Accelerometer
+ *
+ * Copyright (c) 2017 Eva Rachel Retuya <eraretuya@gmail.com>
+ *
+ * This file is subject to the terms and conditions of version 2 of
+ * the GNU General Public License. See the file COPYING in the main
+ * directory of this archive for more details.
+ */
+
+#ifndef _ADXL345_H_
+#define _ADXL345_H_
+
+int adxl345_core_probe(struct device *dev, struct regmap *regmap,
+		       const char *name);
+int adxl345_core_remove(struct device *dev);
+
+#endif /* _ADXL345_H_ */

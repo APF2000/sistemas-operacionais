@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d1022e93ba47cd5ffd3b6297e049b38e9d972a4f9a25e04830891473db04d18c
-size 304
+#ifndef _ASM_FCNTL_H
+#define _ASM_FCNTL_H
+
+#define O_DIRECTORY      040000	/* must be a directory */
+#define O_NOFOLLOW      0100000	/* don't follow links */
+#define O_LARGEFILE     0200000
+#define O_DIRECT	0400000	/* direct disk access hint */
+
+#include <asm-generic/fcntl.h>
+
+#endif /* _ASM_FCNTL_H */

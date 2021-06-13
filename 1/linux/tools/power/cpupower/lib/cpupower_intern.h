@@ -1,3 +1,5 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:0fcc680da0c92b362200886df48f600e5219ae0a16bc0eaf315184ca2477f3ab
-size 175
+#define PATH_TO_CPU "/sys/devices/system/cpu/"
+#define MAX_LINE_LEN 4096
+#define SYSFS_PATH_MAX 255
+
+unsigned int sysfs_read_file(const char *path, char *buf, size_t buflen);

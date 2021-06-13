@@ -1,3 +1,4 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ec8464e735ffbb7fa6666d16da2aabf85e16d395d9c3997fdd45695beed6f893
-size 226
+obj-$(CONFIG_VMWARE_VMCI) += vmw_vmci.o
+vmw_vmci-y += vmci_context.o vmci_datagram.o vmci_doorbell.o \
+	vmci_driver.o vmci_event.o vmci_guest.o vmci_handle_array.o \
+	vmci_host.o vmci_queue_pair.o vmci_resource.o vmci_route.o

@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:41cf9cc434361fa1c35d91ddb9c32c85b0821f498046dbd58b16ab5b06189194
-size 572
+* Dallas DS1390		SPI Serial Real-Time Clock
+
+Required properties:
+- compatible: Should contain "dallas,ds1390".
+- reg: SPI address for chip
+
+Optional properties:
+- trickle-resistor-ohms : Selected resistor for trickle charger
+	Values usable for ds1390 are 250, 2000, 4000
+	Should be given if trickle charger should be enabled
+- trickle-diode-disable : Do not use internal trickle charger diode
+	Should be given if internal trickle charger diode should be disabled
+Example:
+	ds1390: rtc@0 {
+		compatible = "dallas,ds1390";
+		trickle-resistor-ohms = <250>;
+		reg = <0>;
+	};

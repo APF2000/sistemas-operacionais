@@ -1,3 +1,1 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1eb088a5d4678c6c71300df161e57a01338fea02aede14f3424f8081df542ecd
-size 32
+nvkm-y += nvkm/engine/bsp/g84.o

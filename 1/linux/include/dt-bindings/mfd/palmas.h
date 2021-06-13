@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:7d5e0f18af3a97b1d10b06e051fec8828492b03ecded1344dbde010794f0c2c9
-size 419
+/*
+ * This header provides macros for Palmas device bindings.
+ *
+ * Copyright (c) 2013, NVIDIA Corporation.
+ *
+ * Author: Laxman Dewangan <ldewangan@nvidia.com>
+ *
+ */
+
+#ifndef __DT_BINDINGS_PALMAS_H
+#define __DT_BINDINGS_PALMAS_H
+
+/* External control pins */
+#define PALMAS_EXT_CONTROL_PIN_ENABLE1	1
+#define PALMAS_EXT_CONTROL_PIN_ENABLE2	2
+#define PALMAS_EXT_CONTROL_PIN_NSLEEP	3
+
+#endif /* __DT_BINDINGS_PALMAS_H */

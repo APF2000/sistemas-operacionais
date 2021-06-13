@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5e95e26bf0db1c56f5ce27a09fc6ef0368073966868bb2716627ecdb51059f92
-size 252
+/*
+ * mach/bfin_serial.h - Blackfin UART/Serial definitions
+ *
+ * Copyright 2006-2010 Analog Devices Inc.
+ *
+ * Licensed under the GPL-2 or later.
+ */
+
+#ifndef __BFIN_MACH_SERIAL_H__
+#define __BFIN_MACH_SERIAL_H__
+
+#define BFIN_UART_NR_PORTS	2
+
+#endif

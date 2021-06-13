@@ -1,3 +1,21 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:31e36c1ad06795a58f020502afaa4a3305631b68ad145fc75acfeccb8a1462df
-size 450
+#ifndef _BMC150_ACCEL_H_
+#define _BMC150_ACCEL_H_
+
+struct regmap;
+
+enum {
+	bmc150,
+	bmi055,
+	bma255,
+	bma250e,
+	bma222e,
+	bma280,
+};
+
+int bmc150_accel_core_probe(struct device *dev, struct regmap *regmap, int irq,
+			    const char *name, bool block_supported);
+int bmc150_accel_core_remove(struct device *dev);
+extern const struct dev_pm_ops bmc150_accel_pm_ops;
+extern const struct regmap_config bmc150_regmap_conf;
+
+#endif  /* _BMC150_ACCEL_H_ */

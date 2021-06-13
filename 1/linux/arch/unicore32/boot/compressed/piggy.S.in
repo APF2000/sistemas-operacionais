@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:7f99049bf89c742812d608d31eb56b58ff818b0de4d907c5ed628c1c6b9585b8
-size 160
+	.section .piggydata,#alloc
+	.globl	input_data
+input_data:
+	.incbin	"arch/unicore32/boot/compressed/piggy.DECOMP_SUFFIX"
+	.globl	input_data_end
+input_data_end:

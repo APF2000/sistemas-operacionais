@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:90cd211fc31254151351a2f26e1d31ffdb810d2255c839edbd80cbc02a276f99
-size 212
+Xilinx Zynq Platforms Device Tree Bindings
+
+Boards with Zynq-7000 SOC based on an ARM Cortex A9 processor
+shall have the following properties.
+
+Required root node properties:
+    - compatible = "xlnx,zynq-7000";

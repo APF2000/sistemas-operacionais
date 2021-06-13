@@ -1,3 +1,24 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c24f903e96fa23df9744a6193be261ba3e20da6f7757839b6d54c5e33a98dcfb
-size 588
+#
+# Makefile - Intel Management Engine Interface (Intel MEI) Linux driver
+# Copyright (c) 2010-2014, Intel Corporation.
+#
+obj-$(CONFIG_INTEL_MEI) += mei.o
+mei-objs := init.o
+mei-objs += hbm.o
+mei-objs += interrupt.o
+mei-objs += client.o
+mei-objs += main.o
+mei-objs += bus.o
+mei-objs += bus-fixup.o
+mei-$(CONFIG_DEBUG_FS) += debugfs.o
+
+obj-$(CONFIG_INTEL_MEI_ME) += mei-me.o
+mei-me-objs := pci-me.o
+mei-me-objs += hw-me.o
+
+obj-$(CONFIG_INTEL_MEI_TXE) += mei-txe.o
+mei-txe-objs := pci-txe.o
+mei-txe-objs += hw-txe.o
+
+mei-$(CONFIG_EVENT_TRACING) += mei-trace.o
+CFLAGS_mei-trace.o = -I$(src)

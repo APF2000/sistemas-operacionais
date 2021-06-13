@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:98ca022fdacfc911ad63edbda6580879ec43c4dba89ba43922dac9146e8c585a
-size 559
+# Makefile for linux/drivers/net/arcnet
+#
+
+obj-$(CONFIG_ARCNET) += arcnet.o
+obj-$(CONFIG_ARCNET_1201) += rfc1201.o
+obj-$(CONFIG_ARCNET_1051) += rfc1051.o
+obj-$(CONFIG_ARCNET_RAW) += arc-rawmode.o
+obj-$(CONFIG_ARCNET_CAP) += capmode.o
+obj-$(CONFIG_ARCNET_COM90xx) += com90xx.o
+obj-$(CONFIG_ARCNET_COM90xxIO) += com90io.o
+obj-$(CONFIG_ARCNET_RIM_I) += arc-rimi.o
+obj-$(CONFIG_ARCNET_COM20020) += com20020.o
+obj-$(CONFIG_ARCNET_COM20020_ISA) += com20020-isa.o
+obj-$(CONFIG_ARCNET_COM20020_PCI) += com20020-pci.o
+obj-$(CONFIG_ARCNET_COM20020_CS) += com20020_cs.o

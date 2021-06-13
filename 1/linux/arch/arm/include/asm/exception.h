@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:cac05cdb3e3fac1e99efff7494c2839552052dcae1c2329a037ba8306ae14bd4
-size 532
+/*
+ * Annotations for marking C functions as exception handlers.
+ *
+ * These should only be used for C functions that are called from the low
+ * level exception entry code and not any intervening C code.
+ */
+#ifndef __ASM_ARM_EXCEPTION_H
+#define __ASM_ARM_EXCEPTION_H
+
+#include <linux/interrupt.h>
+
+#define __exception	__attribute__((section(".exception.text")))
+#ifdef CONFIG_FUNCTION_GRAPH_TRACER
+#define __exception_irq_entry	__irq_entry
+#else
+#define __exception_irq_entry	__exception
+#endif
+
+#endif /* __ASM_ARM_EXCEPTION_H */

@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:046dbf8cdf0ca01e6640578ceb435c1b6c74c665e08a00e3dea7cc50e2738432
-size 178
+#ifndef __ASM_MACH_LOONGSON64_WORKAROUNDS_H_
+#define __ASM_MACH_LOONGSON64_WORKAROUNDS_H_
+
+#define WORKAROUND_CPUFREQ	0x00000001
+#define WORKAROUND_CPUHOTPLUG	0x00000002
+
+#endif

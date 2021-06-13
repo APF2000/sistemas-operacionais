@@ -1,3 +1,39 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:6bb5616cefc3b5147a3967b71794c64362b0b5d337d835067604973bc64e3567
-size 964
+#if !defined(_TRACE_SPUFS_H) || defined(TRACE_HEADER_MULTI_READ)
+#define _TRACE_SPUFS_H
+
+#include <linux/tracepoint.h>
+
+#undef TRACE_SYSTEM
+#define TRACE_SYSTEM spufs
+
+TRACE_EVENT(spufs_context,
+	TP_PROTO(struct spu_context *ctx, struct spu *spu, const char *name),
+	TP_ARGS(ctx, spu, name),
+
+	TP_STRUCT__entry(
+		__field(const char *, name)
+		__field(int, owner_tid)
+		__field(int, number)
+	),
+
+	TP_fast_assign(
+		__entry->name = name;
+		__entry->owner_tid = ctx->tid;
+		__entry->number = spu ? spu->number : -1;
+	),
+
+	TP_printk("%s (ctxthread = %d, spu = %d)",
+		__entry->name, __entry->owner_tid, __entry->number)
+);
+
+#define spu_context_trace(name, ctx, spu) \
+	trace_spufs_context(ctx, spu, __stringify(name))
+#define spu_context_nospu_trace(name, ctx) \
+	trace_spufs_context(ctx, NULL, __stringify(name))
+
+#endif /* _TRACE_SPUFS_H */
+
+#undef TRACE_INCLUDE_PATH
+#define TRACE_INCLUDE_PATH .
+#define TRACE_INCLUDE_FILE sputrace
+#include <trace/define_trace.h>

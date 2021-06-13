@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:fd883639a5a357b08782ba4ff6d74988f0dc8e3f0fb0e3d5ce9ac20b2c8ff41e
-size 292
+extern void epapr_platform_init(unsigned long r3, unsigned long r4,
+				unsigned long r5, unsigned long r6,
+				unsigned long r7);
+
+void platform_init(unsigned long r3, unsigned long r4, unsigned long r5,
+		   unsigned long r6, unsigned long r7)
+{
+	epapr_platform_init(r3, r4, r5, r6, r7);
+}

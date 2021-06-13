@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:cb7eaa6cf4aafc9f1a7e261df7a2f898fe7f9392c31eec75ee1c8bf3bc6d0f19
-size 203
+nvkm-y += nvkm/subdev/ltc/base.o
+nvkm-y += nvkm/subdev/ltc/gf100.o
+nvkm-y += nvkm/subdev/ltc/gk104.o
+nvkm-y += nvkm/subdev/ltc/gm107.o
+nvkm-y += nvkm/subdev/ltc/gm200.o
+nvkm-y += nvkm/subdev/ltc/gp100.o

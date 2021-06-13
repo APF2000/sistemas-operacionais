@@ -1,3 +1,21 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c5ac0ad2d7b28677a2fe708cf6e078b3d32cadd910cfe1a53c259bbd2f0d3518
-size 645
+#ifndef __ASM_POWERPC_SYSCALLS_H
+#define __ASM_POWERPC_SYSCALLS_H
+#ifdef __KERNEL__
+
+#include <linux/compiler.h>
+#include <linux/linkage.h>
+#include <linux/types.h>
+
+struct rtas_args;
+
+asmlinkage long sys_mmap(unsigned long addr, size_t len,
+		unsigned long prot, unsigned long flags,
+		unsigned long fd, off_t offset);
+asmlinkage long sys_mmap2(unsigned long addr, size_t len,
+		unsigned long prot, unsigned long flags,
+		unsigned long fd, unsigned long pgoff);
+asmlinkage long ppc64_personality(unsigned long personality);
+asmlinkage int ppc_rtas(struct rtas_args __user *uargs);
+
+#endif /* __KERNEL__ */
+#endif /* __ASM_POWERPC_SYSCALLS_H */

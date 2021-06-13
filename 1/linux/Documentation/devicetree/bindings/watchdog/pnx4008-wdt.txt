@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:61c1accce014432b2e27520326474d718536483ac3078f32a340f6f35969f0dd
-size 372
+* NXP PNX watchdog timer
+
+Required properties:
+- compatible: must be "nxp,pnx4008-wdt"
+- reg: physical base address of the controller and length of memory mapped
+  region.
+
+Optional properties:
+- timeout-sec: contains the watchdog timeout in seconds.
+
+Example:
+
+	watchdog@4003C000 {
+		compatible = "nxp,pnx4008-wdt";
+		reg = <0x4003C000 0x1000>;
+		timeout-sec = <10>;
+	};

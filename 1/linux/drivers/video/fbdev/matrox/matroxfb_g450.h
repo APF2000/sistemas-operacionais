@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:92aca519c7af3f6176ee237534268dade64e5892af548e48182d3c2fa8560321
-size 428
+#ifndef __MATROXFB_G450_H__
+#define __MATROXFB_G450_H__
+
+#include "matroxfb_base.h"
+
+#ifdef CONFIG_FB_MATROX_G
+void matroxfb_g450_connect(struct matrox_fb_info *minfo);
+void matroxfb_g450_shutdown(struct matrox_fb_info *minfo);
+#else
+static inline void matroxfb_g450_connect(struct matrox_fb_info *minfo) { };
+static inline void matroxfb_g450_shutdown(struct matrox_fb_info *minfo) { };
+#endif
+
+#endif /* __MATROXFB_G450_H__ */

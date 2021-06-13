@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:6cc004b244fc3a480493aaa0179fd66dad83634835e0d1bf6c1700e15d41c544
-size 110
+[config]
+command = record
+args    = --call-graph fp kill >/dev/null 2>&1
+
+[event:base-record]
+sample_type=295

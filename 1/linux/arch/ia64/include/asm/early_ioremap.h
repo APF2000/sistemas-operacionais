@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:cec378e746951f8a364b291504f94d8b3680a163eeb911bf24a4298915a6ccaf
-size 389
+#ifndef _ASM_IA64_EARLY_IOREMAP_H
+#define _ASM_IA64_EARLY_IOREMAP_H
+
+extern void __iomem * early_ioremap (unsigned long phys_addr, unsigned long size);
+#define early_memremap(phys_addr, size)        early_ioremap(phys_addr, size)
+
+extern void early_iounmap (volatile void __iomem *addr, unsigned long size);
+#define early_memunmap(addr, size)             early_iounmap(addr, size)
+
+#endif

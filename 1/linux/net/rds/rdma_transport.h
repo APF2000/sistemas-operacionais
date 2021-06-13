@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:03785e0939383879fd869552f4e62b768f4f25dad39a97d6981b776fb964d931
-size 439
+#ifndef _RDMA_TRANSPORT_H
+#define _RDMA_TRANSPORT_H
+
+#include <rdma/ib_verbs.h>
+#include <rdma/rdma_cm.h>
+#include "rds.h"
+
+#define RDS_RDMA_RESOLVE_TIMEOUT_MS     5000
+
+int rds_rdma_conn_connect(struct rds_connection *conn);
+int rds_rdma_cm_event_handler(struct rdma_cm_id *cm_id,
+			      struct rdma_cm_event *event);
+
+/* from ib.c */
+extern struct rds_transport rds_ib_transport;
+int rds_ib_init(void);
+void rds_ib_exit(void);
+
+#endif

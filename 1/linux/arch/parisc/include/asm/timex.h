@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:9bf858becffa8f854d75711804c5e06e261287a04ca02ca2118a5f72160c09bb
-size 304
+/*
+ * linux/include/asm-parisc/timex.h
+ *
+ * PARISC architecture timex specifications
+ */
+#ifndef _ASMPARISC_TIMEX_H
+#define _ASMPARISC_TIMEX_H
+
+
+#define CLOCK_TICK_RATE	1193180 /* Underlying HZ */
+
+typedef unsigned long cycles_t;
+
+static inline cycles_t get_cycles (void)
+{
+	return mfctl(16);
+}
+
+#endif

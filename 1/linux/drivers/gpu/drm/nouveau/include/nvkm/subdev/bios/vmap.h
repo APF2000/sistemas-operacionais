@@ -1,3 +1,24 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:30c2d82cc6818b1cae4d16dbabf25b8f0d3dc9addde9f17ba2e8b3a3d363aa25
-size 573
+#ifndef __NVBIOS_VMAP_H__
+#define __NVBIOS_VMAP_H__
+struct nvbios_vmap {
+	u8  max0;
+	u8  max1;
+	u8  max2;
+};
+
+u32 nvbios_vmap_table(struct nvkm_bios *, u8 *ver, u8 *hdr, u8 *cnt, u8 *len);
+u32 nvbios_vmap_parse(struct nvkm_bios *, u8 *ver, u8 *hdr, u8 *cnt, u8 *len,
+		      struct nvbios_vmap *);
+
+struct nvbios_vmap_entry {
+	u8  mode;
+	u8  link;
+	u32 min;
+	u32 max;
+	s32 arg[6];
+};
+
+u32 nvbios_vmap_entry(struct nvkm_bios *, int idx, u8 *ver, u8 *len);
+u32 nvbios_vmap_entry_parse(struct nvkm_bios *, int idx, u8 *ver, u8 *len,
+			    struct nvbios_vmap_entry *);
+#endif

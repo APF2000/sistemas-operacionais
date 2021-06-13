@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f778afd891af56b23a18a8c5955f2f78c22af9ff3b10ddf8a773ed21aeadf3dd
-size 250
+#ifndef __KVM_VFIO_H
+#define __KVM_VFIO_H
+
+#ifdef CONFIG_KVM_VFIO
+int kvm_vfio_ops_init(void);
+void kvm_vfio_ops_exit(void);
+#else
+static inline int kvm_vfio_ops_init(void)
+{
+	return 0;
+}
+static inline void kvm_vfio_ops_exit(void)
+{
+}
+#endif
+
+#endif

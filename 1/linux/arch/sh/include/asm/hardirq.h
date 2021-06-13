@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5120e5a6b5808452d13d62f87151ad3571f995a1b9699ab43e6bc2b14f2a3a4f
-size 401
+#ifndef __ASM_SH_HARDIRQ_H
+#define __ASM_SH_HARDIRQ_H
+
+#include <linux/threads.h>
+#include <linux/irq.h>
+
+typedef struct {
+	unsigned int __softirq_pending;
+	unsigned int __nmi_count;		/* arch dependent */
+} ____cacheline_aligned irq_cpustat_t;
+
+#include <linux/irq_cpustat.h>	/* Standard mappings for irq_cpustat_t above */
+
+extern void ack_bad_irq(unsigned int irq);
+
+#endif /* __ASM_SH_HARDIRQ_H */

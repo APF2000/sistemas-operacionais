@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e25e4126a32d7280ced3c29b45c06235c2cf80ac52008fc710080dec1117278c
-size 168
+config PPC_XIVE
+	bool
+	default n
+	select PPC_SMP_MUXED_IPI
+	select HARDIRQS_SW_RESEND
+
+config PPC_XIVE_NATIVE
+	bool
+	default n
+	select PPC_XIVE
+	depends on PPC_POWERNV

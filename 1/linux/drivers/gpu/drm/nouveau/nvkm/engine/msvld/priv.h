@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a3ac1f1ebe58814a0a672d5832c7d28b10950be98c60779e49268807ffc12255
-size 300
+#ifndef __NVKM_MSVLD_PRIV_H__
+#define __NVKM_MSVLD_PRIV_H__
+#include <engine/msvld.h>
+
+int nvkm_msvld_new_(const struct nvkm_falcon_func *, struct nvkm_device *,
+		    int index, struct nvkm_engine **);
+
+void g98_msvld_init(struct nvkm_falcon *);
+
+void gf100_msvld_init(struct nvkm_falcon *);
+#endif

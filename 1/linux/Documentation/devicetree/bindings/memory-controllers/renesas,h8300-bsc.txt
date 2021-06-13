@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c73db4e38a1c679045135d7119aef786c687154ce4c0a0e38520f4afbe56bc6e
-size 270
+* H8/300 bus controller
+
+Required properties:
+  - compatible: Must be "renesas,h8300-bsc".
+  - reg: Base address and length of BSC registers.
+
+Example.
+	bsc: memory-controller@fee01e {
+		compatible = "renesas,h8300h-bsc", "renesas,h8300-bsc";
+		reg = <0xfee01e 8>;
+	};
+

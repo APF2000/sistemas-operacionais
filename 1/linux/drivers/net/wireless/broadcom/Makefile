@@ -1,3 +1,5 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2f79f9d24c425338d4593dc8ab68d9d4865e61ed3289b9b31f72cea5862073bc
-size 141
+obj-$(CONFIG_B43)		+= b43/
+obj-$(CONFIG_B43LEGACY)		+= b43legacy/
+
+obj-$(CONFIG_BRCMFMAC)	+= brcm80211/
+obj-$(CONFIG_BRCMSMAC)	+= brcm80211/

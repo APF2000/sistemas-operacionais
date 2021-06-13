@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:40eea1683f21b99ec55d90d958de3c194ba48659f2ce4babd676978739f3ba02
-size 240
+#ifndef DECOMPRESS_UNLZO_H
+#define DECOMPRESS_UNLZO_H
+
+int unlzo(unsigned char *inbuf, long len,
+	long (*fill)(void*, unsigned long),
+	long (*flush)(void*, unsigned long),
+	unsigned char *output,
+	long *pos,
+	void(*error)(char *x));
+#endif

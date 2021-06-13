@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:7834efa43dceef14e5fcab484be4669e5e618cf325949236f4d94835abe57510
-size 187
+shmob-drm-y := shmob_drm_backlight.o \
+	       shmob_drm_crtc.o \
+	       shmob_drm_drv.o \
+	       shmob_drm_kms.o \
+	       shmob_drm_plane.o
+
+obj-$(CONFIG_DRM_SHMOBILE)	+= shmob-drm.o

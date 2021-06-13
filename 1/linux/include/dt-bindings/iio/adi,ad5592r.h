@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c33268b65faa7182edc24cab3895152d528c4c4aeb4cc9088bbf294540d3b5ff
-size 375
+
+#ifndef _DT_BINDINGS_ADI_AD5592R_H
+#define _DT_BINDINGS_ADI_AD5592R_H
+
+#define CH_MODE_UNUSED			0
+#define CH_MODE_ADC			1
+#define CH_MODE_DAC			2
+#define CH_MODE_DAC_AND_ADC		3
+#define CH_MODE_GPIO			8
+
+#define CH_OFFSTATE_PULLDOWN		0
+#define CH_OFFSTATE_OUT_LOW		1
+#define CH_OFFSTATE_OUT_HIGH		2
+#define CH_OFFSTATE_OUT_TRISTATE	3
+
+#endif /* _DT_BINDINGS_ADI_AD5592R_H */

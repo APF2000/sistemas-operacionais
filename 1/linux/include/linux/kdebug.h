@@ -1,3 +1,22 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:16d95727f8fd3f3ab775489f7ac8c306c02789a4bc569e6f5143052d773128b7
-size 448
+#ifndef _LINUX_KDEBUG_H
+#define _LINUX_KDEBUG_H
+
+#include <asm/kdebug.h>
+
+struct notifier_block;
+
+struct die_args {
+	struct pt_regs *regs;
+	const char *str;
+	long err;
+	int trapnr;
+	int signr;
+};
+
+int register_die_notifier(struct notifier_block *nb);
+int unregister_die_notifier(struct notifier_block *nb);
+
+int notify_die(enum die_val val, const char *str,
+	       struct pt_regs *regs, long err, int trap, int sig);
+
+#endif /* _LINUX_KDEBUG_H */

@@ -1,3 +1,25 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d5206b061533422c2104e7a33a44bbbe1411eaa0e49b2862d94951b6181f0096
-size 846
+/*
+ * Host1x init for T20 and T30 Architecture Chips
+ *
+ * Copyright (c) 2011-2013, NVIDIA Corporation.
+ *
+ * This program is free software; you can redistribute it and/or modify it
+ * under the terms and conditions of the GNU General Public License,
+ * version 2, as published by the Free Software Foundation.
+ *
+ * This program is distributed in the hope it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+ * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for
+ * more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+#ifndef HOST1X_HOST1X01_H
+#define HOST1X_HOST1X01_H
+
+struct host1x;
+
+int host1x01_init(struct host1x *host);
+
+#endif /* HOST1X_HOST1X01_H_ */

@@ -1,3 +1,3 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5e0443d74fba0b2ab04bcd19043fd936125fac843f58adc5f2ab0b8b9151c96b
-size 118
+snd-usb-6fire-objs += chip.o comm.o midi.o control.o firmware.o pcm.o
+obj-$(CONFIG_SND_USB_6FIRE) += snd-usb-6fire.o
+

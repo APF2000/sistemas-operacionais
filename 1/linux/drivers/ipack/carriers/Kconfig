@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d45da84dc0be1e42a7a4130ddc175a1f9cd592a573047975425c7e80fb0ac02b
-size 222
+config BOARD_TPCI200
+	tristate "Support for the TEWS TPCI-200 IndustryPack carrier board"
+	depends on IPACK_BUS
+	depends on PCI
+	help
+	  This driver adds support for the TEWS TPCI200 IndustryPack carrier board.
+	default n

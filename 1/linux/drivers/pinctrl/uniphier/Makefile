@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:0f9c1875e7620a69c29c32f48c7fd9bc4f57893602989cd3acd6795a6a892822
-size 540
+obj-y					+= pinctrl-uniphier-core.o
+
+obj-$(CONFIG_PINCTRL_UNIPHIER_LD4)	+= pinctrl-uniphier-ld4.o
+obj-$(CONFIG_PINCTRL_UNIPHIER_PRO4)	+= pinctrl-uniphier-pro4.o
+obj-$(CONFIG_PINCTRL_UNIPHIER_SLD8)	+= pinctrl-uniphier-sld8.o
+obj-$(CONFIG_PINCTRL_UNIPHIER_PRO5)	+= pinctrl-uniphier-pro5.o
+obj-$(CONFIG_PINCTRL_UNIPHIER_PXS2)	+= pinctrl-uniphier-pxs2.o
+obj-$(CONFIG_PINCTRL_UNIPHIER_LD6B)	+= pinctrl-uniphier-ld6b.o
+obj-$(CONFIG_PINCTRL_UNIPHIER_LD11)	+= pinctrl-uniphier-ld11.o
+obj-$(CONFIG_PINCTRL_UNIPHIER_LD20)	+= pinctrl-uniphier-ld20.o

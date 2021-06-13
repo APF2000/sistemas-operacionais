@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:213790a7bce73d5e01f47b7d991d1d6e5c262015b950131fc681f029185f0a6b
-size 404
+#ifndef __ASM_SH_SPARSEMEM_H
+#define __ASM_SH_SPARSEMEM_H
+
+#ifdef __KERNEL__
+/*
+ * SECTION_SIZE_BITS		2^N: how big each section will be
+ * MAX_PHYSADDR_BITS		2^N: how much physical address space we have
+ * MAX_PHYSMEM_BITS		2^N: how much memory we can have in that space
+ */
+#define SECTION_SIZE_BITS	26
+#define MAX_PHYSADDR_BITS	32
+#define MAX_PHYSMEM_BITS	32
+
+#endif
+
+#endif /* __ASM_SH_SPARSEMEM_H */

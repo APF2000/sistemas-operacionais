@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:28b6ea07ca4288f7a5f99b31be3cb544cfbdb6cab1e29a20dff7cf08bf97b6e8
-size 209
+ifdef CONFIG_FUNCTION_TRACER
+CFLAGS_REMOVE_core.o = $(CC_FLAGS_FTRACE)
+endif
+
+obj-y := core.o ring_buffer.o callchain.o
+
+obj-$(CONFIG_HAVE_HW_BREAKPOINT) += hw_breakpoint.o
+obj-$(CONFIG_UPROBES) += uprobes.o
+

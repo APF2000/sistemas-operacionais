@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f0bac70e31cc0231daf8a6f05f43ef0890b04f0be776e5c1787da8bf835e80e1
-size 390
+vfio-platform-base-y := vfio_platform_common.o vfio_platform_irq.o
+vfio-platform-y := vfio_platform.o
+
+obj-$(CONFIG_VFIO_PLATFORM) += vfio-platform.o
+obj-$(CONFIG_VFIO_PLATFORM) += vfio-platform-base.o
+obj-$(CONFIG_VFIO_PLATFORM) += reset/
+
+vfio-amba-y := vfio_amba.o
+
+obj-$(CONFIG_VFIO_AMBA) += vfio-amba.o
+obj-$(CONFIG_VFIO_AMBA) += vfio-platform-base.o
+obj-$(CONFIG_VFIO_AMBA) += reset/

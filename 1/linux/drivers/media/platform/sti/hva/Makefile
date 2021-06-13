@@ -1,3 +1,3 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b1a29144974a67d1374e6dc05ec2a8e2306a67c5f0e469753d39854d903fc72e
-size 149
+obj-$(CONFIG_VIDEO_STI_HVA) := st-hva.o
+st-hva-y := hva-v4l2.o hva-hw.o hva-mem.o hva-h264.o
+st-hva-$(CONFIG_VIDEO_STI_HVA_DEBUGFS) += hva-debugfs.o

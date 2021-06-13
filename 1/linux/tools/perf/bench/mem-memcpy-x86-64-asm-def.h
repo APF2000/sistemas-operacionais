@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:7405b97ad04323da144540b3649b2e4a2d3b3dc4c4e5578d2820ee9ea0878fc8
-size 279
+
+MEMCPY_FN(memcpy_orig,
+	"x86-64-unrolled",
+	"unrolled memcpy() in arch/x86/lib/memcpy_64.S")
+
+MEMCPY_FN(__memcpy,
+	"x86-64-movsq",
+	"movsq-based memcpy() in arch/x86/lib/memcpy_64.S")
+
+MEMCPY_FN(memcpy_erms,
+	"x86-64-movsb",
+	"movsb-based memcpy() in arch/x86/lib/memcpy_64.S")

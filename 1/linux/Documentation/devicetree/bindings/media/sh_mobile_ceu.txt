@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a81a3fab8b67a446ffc07e5666e82bbf8c85d5d5e72b6df5fb052611bb7a595c
-size 566
+Bindings, specific for the sh_mobile_ceu_camera.c driver:
+ - compatible: Should be "renesas,sh-mobile-ceu"
+ - reg: register base and size
+ - interrupts: the interrupt number
+ - interrupt-parent: the interrupt controller
+ - renesas,max-width: maximum image width, supported on this SoC
+ - renesas,max-height: maximum image height, supported on this SoC
+
+Example:
+
+ceu0: ceu@0xfe910000 {
+	compatible = "renesas,sh-mobile-ceu";
+	reg = <0xfe910000 0xa0>;
+	interrupt-parent = <&intcs>;
+	interrupts = <0x880>;
+	renesas,max-width = <8188>;
+	renesas,max-height = <8188>;
+};

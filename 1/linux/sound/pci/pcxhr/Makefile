@@ -1,3 +1,2 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2320679f35dec5323df00ce6127513c782284224dd10c878efce720ba2488649
-size 120
+snd-pcxhr-objs := pcxhr.o pcxhr_hwdep.o pcxhr_mixer.o pcxhr_core.o pcxhr_mix22.o
+obj-$(CONFIG_SND_PCXHR) += snd-pcxhr.o

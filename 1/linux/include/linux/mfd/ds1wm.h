@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:54832c5c4b8be0d30a9e6cebfa7e665a00eaef1b02e7755480e1c08cb7c61b2d
-size 425
+/* MFD cell driver data for the DS1WM driver */
+
+struct ds1wm_driver_data {
+	int active_high;
+	int clock_rate;
+	/* in milliseconds, the amount of time to */
+	/* sleep following a reset pulse. Zero    */
+	/* should work if your bus devices recover*/
+	/* time respects the 1-wire spec since the*/
+	/* ds1wm implements the precise timings of*/
+	/* a reset pulse/presence detect sequence.*/
+	unsigned int reset_recover_delay;
+};

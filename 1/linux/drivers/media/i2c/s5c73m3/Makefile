@@ -1,3 +1,2 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:12ac56dbd0a186d0a9f4f51ece9b7996ff16b42e45f843cbce57cb4aa4634cc8
-size 104
+s5c73m3-objs			:= s5c73m3-core.o s5c73m3-spi.o s5c73m3-ctrls.o
+obj-$(CONFIG_VIDEO_S5C73M3)	+= s5c73m3.o

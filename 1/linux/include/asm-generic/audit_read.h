@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:99691d00a5743f9195cf5645b244f67cebc9b354727b6aac3cae15d2e8819da4
-size 202
+#ifdef __NR_readlink
+__NR_readlink,
+#endif
+__NR_quotactl,
+__NR_listxattr,
+__NR_llistxattr,
+__NR_flistxattr,
+__NR_getxattr,
+__NR_lgetxattr,
+__NR_fgetxattr,
+#ifdef __NR_readlinkat
+__NR_readlinkat,
+#endif

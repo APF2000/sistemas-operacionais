@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:614cce843c9aea433e34f62e4ebc3ca45ef0b657cc3b0d67bf9440a9ab73e640
-size 435
+/*
+ * Copyright (C) ST-Ericsson 2013
+ * Author: Hongbo Zhang <hongbo.zhang@linaro.com>
+ * License terms: GNU General Public License v2
+ */
+
+#ifndef PWR_AB8500_H
+#define PWR_AB8500_H
+
+extern const struct abx500_res_to_temp ab8500_temp_tbl_a_thermistor[];
+extern const int ab8500_temp_tbl_a_size;
+
+extern const struct abx500_res_to_temp ab8500_temp_tbl_b_thermistor[];
+extern const int ab8500_temp_tbl_b_size;
+
+#endif /* PWR_AB8500_H */

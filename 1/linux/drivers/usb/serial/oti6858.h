@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e7f2ed844a3b31a696e87bc2f8cd3f1a630d958d6dddb88e0a1b974e1b0dae91
-size 475
+/*
+ * Ours Technology Inc. OTi-6858 USB to serial adapter driver.
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ */
+#ifndef __LINUX_USB_SERIAL_OTI6858_H
+#define __LINUX_USB_SERIAL_OTI6858_H
+
+#define OTI6858_VENDOR_ID	0x0ea0
+#define OTI6858_PRODUCT_ID	0x6858
+
+#endif

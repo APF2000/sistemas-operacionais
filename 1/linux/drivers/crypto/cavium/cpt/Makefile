@@ -1,3 +1,3 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b63153d41acdc18da0fda763444982abb55134948c0dca29b761a601c5bd598a
-size 156
+obj-$(CONFIG_CAVIUM_CPT) += cptpf.o cptvf.o
+cptpf-objs := cptpf_main.o cptpf_mbox.o
+cptvf-objs := cptvf_main.o cptvf_reqmanager.o cptvf_mbox.o cptvf_algs.o

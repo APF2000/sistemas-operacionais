@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d4e1711657678c6c4a7bab530eb8324067a4319bcb8194e8a5d938a8de252ff8
-size 303
+#
+# for Renesas USB
+#
+
+obj-$(CONFIG_USB_RENESAS_USBHS)	+= renesas_usbhs.o
+
+renesas_usbhs-y			:= common.o mod.o pipe.o fifo.o rcar2.o rcar3.o
+
+ifneq ($(CONFIG_USB_RENESAS_USBHS_HCD),)
+	renesas_usbhs-y		+= mod_host.o
+endif
+
+ifneq ($(CONFIG_USB_RENESAS_USBHS_UDC),)
+	renesas_usbhs-y		+= mod_gadget.o
+endif

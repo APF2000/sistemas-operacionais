@@ -1,3 +1,26 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:439f1cae8c11d46b053c793bbd04fdae90aecb16c4ca5f757071e2cf2a3f6a4d
-size 957
+/*
+ * This file is subject to the terms and conditions of the GNU General Public
+ * License.  See the file "COPYING" in the main directory of this archive
+ * for more details.
+ *
+ * Copyright (C) 1999,2001-2003 Silicon Graphics, Inc.  All Rights Reserved.
+ * Copyright (C) 1999 by Ralf Baechle
+ */
+#ifndef _ASM_IA64_SN_TYPES_H
+#define _ASM_IA64_SN_TYPES_H
+
+#include <linux/types.h>
+
+typedef unsigned long 	cpuid_t;
+typedef signed short	nasid_t;	/* node id in numa-as-id space */
+typedef signed char	partid_t;	/* partition ID type */
+typedef unsigned int    moduleid_t;     /* user-visible module number type */
+typedef unsigned int    cmoduleid_t;    /* kernel compact module id type */
+typedef unsigned char	slotid_t;	/* slot (blade) within module */
+typedef unsigned char	slabid_t;	/* slab (asic) within slot */
+typedef u64 nic_t;
+typedef unsigned long iopaddr_t;
+typedef unsigned long paddr_t;
+typedef short cnodeid_t;
+
+#endif /* _ASM_IA64_SN_TYPES_H */

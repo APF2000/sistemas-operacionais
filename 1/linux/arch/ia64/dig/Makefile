@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:344eac420a03851a9e3f36b52e91ec8f0f768092a0fe3a0ad209a1e2aaa0e334
-size 298
+#
+# ia64/platform/dig/Makefile
+#
+# Copyright (C) 1999 Silicon Graphics, Inc.
+# Copyright (C) Srinivasa Thirumalachar (sprasad@engr.sgi.com)
+#
+
+obj-y := setup.o
+ifeq ($(CONFIG_INTEL_IOMMU), y)
+obj-$(CONFIG_IA64_GENERIC) += machvec.o machvec_vtd.o
+else
+obj-$(CONFIG_IA64_GENERIC) += machvec.o
+endif
+

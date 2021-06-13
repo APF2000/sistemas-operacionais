@@ -1,3 +1,24 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:aa7ac699b65b55ab9fb1220f03beebe88d4aae5d7154687508757aea45cd4931
-size 559
+#ifndef __ASM_SH_PGTABLE_2LEVEL_H
+#define __ASM_SH_PGTABLE_2LEVEL_H
+
+#define __ARCH_USE_5LEVEL_HACK
+#include <asm-generic/pgtable-nopmd.h>
+
+/*
+ * traditional two-level paging structure
+ */
+#define PAGETABLE_LEVELS	2
+
+/* PTE bits */
+#define PTE_MAGNITUDE		2	/* 32-bit PTEs */
+
+#define PTE_SHIFT		PAGE_SHIFT
+#define PTE_BITS		(PTE_SHIFT - PTE_MAGNITUDE)
+
+/* PGD bits */
+#define PGDIR_SHIFT		(PTE_SHIFT + PTE_BITS)
+
+#define PTRS_PER_PGD		(PAGE_SIZE / (1 << PTE_MAGNITUDE))
+#define USER_PTRS_PER_PGD	(TASK_SIZE/PGDIR_SIZE)
+
+#endif /* __ASM_SH_PGTABLE_2LEVEL_H */

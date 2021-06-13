@@ -1,3 +1,20 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:0d79ccdb53cef43c930f9b164095c18c9e7fd19bee7ad2ce234b4bd3796ece97
-size 589
+#ifndef _LINUX_SPI_SPI_OC_TINY_H
+#define _LINUX_SPI_SPI_OC_TINY_H
+
+/**
+ * struct tiny_spi_platform_data - platform data of the OpenCores tiny SPI
+ * @freq:	input clock freq to the core.
+ * @baudwidth:	baud rate divider width of the core.
+ * @gpio_cs_count:	number of gpio pins used for chipselect.
+ * @gpio_cs:	array of gpio pins used for chipselect.
+ *
+ * freq and baudwidth are used only if the divider is programmable.
+ */
+struct tiny_spi_platform_data {
+	unsigned int freq;
+	unsigned int baudwidth;
+	unsigned int gpio_cs_count;
+	int *gpio_cs;
+};
+
+#endif /* _LINUX_SPI_SPI_OC_TINY_H */

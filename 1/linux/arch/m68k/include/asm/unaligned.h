@@ -1,3 +1,25 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a6334b5f7ba437f12d64905b4c3107b15b1162d93262292aa80e47b9867522c9
-size 561
+#ifndef _ASM_M68K_UNALIGNED_H
+#define _ASM_M68K_UNALIGNED_H
+
+
+#ifdef CONFIG_CPU_HAS_NO_UNALIGNED
+#include <linux/unaligned/be_struct.h>
+#include <linux/unaligned/le_byteshift.h>
+#include <linux/unaligned/generic.h>
+
+#define get_unaligned	__get_unaligned_be
+#define put_unaligned	__put_unaligned_be
+
+#else
+/*
+ * The m68k can do unaligned accesses itself.
+ */
+#include <linux/unaligned/access_ok.h>
+#include <linux/unaligned/generic.h>
+
+#define get_unaligned	__get_unaligned_be
+#define put_unaligned	__put_unaligned_be
+
+#endif
+
+#endif /* _ASM_M68K_UNALIGNED_H */

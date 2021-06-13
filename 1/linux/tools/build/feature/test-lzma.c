@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:3fecfb23e98777aaab30638abcbbe2e65fab713d1608e797950871c286ed5853
-size 175
+#include <lzma.h>
+
+int main(void)
+{
+	lzma_stream strm = LZMA_STREAM_INIT;
+	int ret;
+
+	ret = lzma_stream_decoder(&strm, UINT64_MAX, LZMA_CONCATENATED);
+	return ret ? -1 : 0;
+}

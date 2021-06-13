@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:8f58a82b6c5b11ecf47f27942ea95b721048291fdf0c2e5aad4a0e27fa9e0bfe
-size 280
+#ifndef __CRYPTOHASH_H
+#define __CRYPTOHASH_H
+
+#include <uapi/linux/types.h>
+
+#define SHA_DIGEST_WORDS 5
+#define SHA_MESSAGE_BYTES (512 /*bits*/ / 8)
+#define SHA_WORKSPACE_WORDS 16
+
+void sha_init(__u32 *buf);
+void sha_transform(__u32 *digest, const char *data, __u32 *W);
+
+#endif

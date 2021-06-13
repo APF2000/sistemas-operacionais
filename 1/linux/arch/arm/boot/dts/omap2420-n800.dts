@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:acd837a14f0a08e4ed18e5dc130ca9e1e06992430e760214681da7a2293ae9fb
-size 148
+/dts-v1/;
+
+#include "omap2420-n8x0-common.dtsi"
+
+/ {
+	model = "Nokia N800";
+	compatible = "nokia,n800", "nokia,n8x0", "ti,omap2420", "ti,omap2";
+};

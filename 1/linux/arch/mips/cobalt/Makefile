@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f615ebe300e508235544294f7dda571413b1bf97efc3c2977430db2bbf33b4e6
-size 191
+#
+# Makefile for the Cobalt micro systems family specific parts of the kernel
+#
+
+obj-y := buttons.o irq.o lcd.o led.o mtd.o reset.o rtc.o serial.o setup.o time.o
+
+obj-$(CONFIG_PCI)		+= pci.o

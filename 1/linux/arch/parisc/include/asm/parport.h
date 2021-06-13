@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:71869eb3bbf145e6a1e50d7f3c0f0c9d09b65f98070468a3eb27c3922015398e
-size 319
+/* 
+ *
+ * parport.h: ia32-compatible parport initialisation
+ *
+ * This file should only be included by drivers/parport/parport_pc.c.
+ */
+#ifndef _ASM_PARPORT_H
+#define _ASM_PARPORT_H 1
+
+
+static int parport_pc_find_nonpci_ports (int autoirq, int autodma)
+{
+	/* nothing ! */
+	return 0;
+}
+
+
+#endif /* !(_ASM_PARPORT_H) */

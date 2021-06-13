@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4fd6ede76999b075ed61a4cbe81a2913b9a3bbc9f13ff1a77a5eef01dd76adf1
-size 553
+/*
+ * include/asm-xtensa/param.h
+ *
+ * This file is subject to the terms and conditions of the GNU General Public
+ * License.  See the file "COPYING" in the main directory of this archive
+ * for more details.
+ *
+ * Copyright (C) 2001 - 2005 Tensilica Inc.
+ */
+#ifndef _XTENSA_PARAM_H
+#define _XTENSA_PARAM_H
+
+#include <uapi/asm/param.h>
+
+# define HZ		CONFIG_HZ	/* internal timer frequency */
+# define USER_HZ	100		/* for user interfaces in "ticks" */
+# define CLOCKS_PER_SEC (USER_HZ)	/* frequnzy at which times() counts */
+#endif /* _XTENSA_PARAM_H */

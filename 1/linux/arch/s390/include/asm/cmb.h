@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:963c5ce11cd759e89384db4f42ef7c988f14fb48ac0f3edd8f82fb06a573a94c
-size 386
+#ifndef S390_CMB_H
+#define S390_CMB_H
+
+#include <uapi/asm/cmb.h>
+
+struct ccw_device;
+extern int enable_cmf(struct ccw_device *cdev);
+extern int disable_cmf(struct ccw_device *cdev);
+extern int __disable_cmf(struct ccw_device *cdev);
+extern u64 cmf_read(struct ccw_device *cdev, int index);
+extern int cmf_readall(struct ccw_device *cdev, struct cmbdata *data);
+
+#endif /* S390_CMB_H */

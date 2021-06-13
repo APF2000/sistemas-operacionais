@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d6a65b73a745dd3fe1552b7f358f5cf6016aa0941e78ed9682a6e68871ff4ff9
-size 295
+/* hardirq.h: 32-bit Sparc hard IRQ support.
+ *
+ * Copyright (C) 1997 David S. Miller (davem@caip.rutgers.edu)
+ * Copyright (C) 1998-2000 Anton Blanchard (anton@samba.org)
+ */
+
+#ifndef __SPARC_HARDIRQ_H
+#define __SPARC_HARDIRQ_H
+
+#include <asm-generic/hardirq.h>
+
+#endif /* __SPARC_HARDIRQ_H */

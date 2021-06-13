@@ -1,3 +1,36 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:72c2347bb29f7b4ebbfa691c61215d184abb3cfa299a7c542cc6d734c3541841
-size 784
+#ifndef _LINUX_FTRACE_IRQ_H
+#define _LINUX_FTRACE_IRQ_H
+
+
+#ifdef CONFIG_FTRACE_NMI_ENTER
+extern void arch_ftrace_nmi_enter(void);
+extern void arch_ftrace_nmi_exit(void);
+#else
+static inline void arch_ftrace_nmi_enter(void) { }
+static inline void arch_ftrace_nmi_exit(void) { }
+#endif
+
+#ifdef CONFIG_HWLAT_TRACER
+extern bool trace_hwlat_callback_enabled;
+extern void trace_hwlat_callback(bool enter);
+#endif
+
+static inline void ftrace_nmi_enter(void)
+{
+#ifdef CONFIG_HWLAT_TRACER
+	if (trace_hwlat_callback_enabled)
+		trace_hwlat_callback(true);
+#endif
+	arch_ftrace_nmi_enter();
+}
+
+static inline void ftrace_nmi_exit(void)
+{
+	arch_ftrace_nmi_exit();
+#ifdef CONFIG_HWLAT_TRACER
+	if (trace_hwlat_callback_enabled)
+		trace_hwlat_callback(false);
+#endif
+}
+
+#endif /* _LINUX_FTRACE_IRQ_H */

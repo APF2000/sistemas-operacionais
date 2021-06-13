@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b5372eeb0cda982a250f94ea863773b5e553635063b5a6fe596d967983924290
-size 246
+config USB_HACKRF
+	tristate "HackRF"
+	depends on VIDEO_V4L2
+	select VIDEOBUF2_VMALLOC
+	---help---
+	  This is a video4linux2 driver for HackRF SDR device.
+
+	  To compile this driver as a module, choose M here: the
+	  module will be called hackrf
+

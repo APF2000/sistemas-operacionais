@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1703c92ef0fda883dad5b067a89a112a2cb0877731f876b76158363777b655c0
-size 470
+/*
+ * Shared crypto simd helpers
+ */
+
+#ifndef _CRYPTO_INTERNAL_SIMD_H
+#define _CRYPTO_INTERNAL_SIMD_H
+
+struct simd_skcipher_alg;
+
+struct simd_skcipher_alg *simd_skcipher_create_compat(const char *algname,
+						      const char *drvname,
+						      const char *basename);
+struct simd_skcipher_alg *simd_skcipher_create(const char *algname,
+					       const char *basename);
+void simd_skcipher_free(struct simd_skcipher_alg *alg);
+
+#endif /* _CRYPTO_INTERNAL_SIMD_H */

@@ -1,3 +1,34 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:3ae829e4a6ea3014e95870f1e7e3048117f9b926a449f2610683bafe5e3d6570
-size 817
+/* linux/include/linux/mtd/plat-ram.h
+ *
+ * (c) 2004 Simtec Electronics
+ *	http://www.simtec.co.uk/products/SWLINUX/
+ *	Ben Dooks <ben@simtec.co.uk>
+ *
+ * Generic platform device based RAM map
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 2 as
+ * published by the Free Software Foundation.
+ *
+ */
+
+#ifndef __LINUX_MTD_PLATRAM_H
+#define __LINUX_MTD_PLATRAM_H __FILE__
+
+#define PLATRAM_RO (0)
+#define PLATRAM_RW (1)
+
+struct platdata_mtd_ram {
+	const char		*mapname;
+	const char * const      *map_probes;
+	const char * const      *probes;
+	struct mtd_partition	*partitions;
+	int			 nr_partitions;
+	int			 bankwidth;
+
+	/* control callbacks */
+
+	void	(*set_rw)(struct device *dev, int to);
+};
+
+#endif /* __LINUX_MTD_PLATRAM_H */

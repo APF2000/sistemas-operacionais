@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:baa698613df95ac2a5d03b8aa9001d75a43d0684d2cc61f2ec09123d0113059d
-size 309
+#ifndef __NVKM_DEVICE_CTRL_H__
+#define __NVKM_DEVICE_CTRL_H__
+#define nvkm_control(p) container_of((p), struct nvkm_control, object)
+#include <core/device.h>
+
+struct nvkm_control {
+	struct nvkm_object object;
+	struct nvkm_device *device;
+};
+
+extern const struct nvkm_device_oclass nvkm_control_oclass;
+#endif

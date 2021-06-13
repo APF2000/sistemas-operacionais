@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5d03ed83038c096e8b7e29069241214f4222e38d06fbe61330b2370cb2b23a61
-size 263
+#ifndef _ASM_METAG_SETUP_H
+#define _ASM_METAG_SETUP_H
+
+#include <uapi/asm/setup.h>
+
+extern const struct machine_desc *setup_machine_fdt(void *dt);
+void per_cpu_trap_init(unsigned long);
+extern void __init dump_machine_table(void);
+#endif /* _ASM_METAG_SETUP_H */

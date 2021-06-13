@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:97409b27e3499ac37c992d06df213dfa8f05091422fe929da476aae4e45e2ef9
-size 226
+#ifndef __ASM_SPI_H__
+#define __ASM_SPI_H__
+
+struct sh_spi_info;
+
+struct sh_spi_info {
+	int			 bus_num;
+	int			 num_chipselect;
+
+	void (*chip_select)(struct sh_spi_info *spi, int cs, int state);
+};
+
+#endif /* __ASM_SPI_H__ */

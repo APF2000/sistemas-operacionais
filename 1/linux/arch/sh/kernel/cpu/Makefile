@@ -1,3 +1,21 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e45b39f5a2c077bce85c552d0ecd3e24ccd1632b1fbff300da160865f64b6a53
-size 475
+#
+# Makefile for the Linux/SuperH CPU-specific backends.
+#
+
+obj-$(CONFIG_CPU_SH2)		= sh2/
+obj-$(CONFIG_CPU_SH2A)		= sh2a/
+obj-$(CONFIG_CPU_SH3)		= sh3/
+obj-$(CONFIG_CPU_SH4)		= sh4/
+obj-$(CONFIG_CPU_SH5)		= sh5/
+
+# Special cases for family ancestry.
+
+obj-$(CONFIG_CPU_SH4A)		+= sh4a/
+obj-$(CONFIG_ARCH_SHMOBILE)	+= shmobile/
+
+# Common interfaces.
+
+obj-$(CONFIG_SH_ADC)		+= adc.o
+obj-$(CONFIG_SH_CLK_CPG_LEGACY)	+= clock-cpg.o
+
+obj-y	+= irq/ init.o clock.o fpu.o pfc.o proc.o

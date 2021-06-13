@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b2d7c010d8f5ab300582dcf32d9559641df8209a425c74a6a2ad58749246c120
-size 559
+# builds the trace events example kernel modules;
+# then to use one (as root):  insmod <module_name.ko>
+
+# If you include a trace header outside of include/trace/events
+# then the file that does the #define CREATE_TRACE_POINTS must
+# have that tracer file in its main search path. This is because
+# define_trace.h will include it, and must be able to find it from
+# the include/trace directory.
+#
+# Here trace-events-sample.c does the CREATE_TRACE_POINTS.
+#
+CFLAGS_trace-events-sample.o := -I$(src)
+
+obj-$(CONFIG_SAMPLE_TRACE_EVENTS) += trace-events-sample.o

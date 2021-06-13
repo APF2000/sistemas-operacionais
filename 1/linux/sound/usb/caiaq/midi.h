@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a2209dbdffff8f9222eb070c78277d97e03734a7adf644936f1d22f1a0d622e8
-size 298
+#ifndef CAIAQ_MIDI_H
+#define CAIAQ_MIDI_H
+
+int snd_usb_caiaq_midi_init(struct snd_usb_caiaqdev *cdev);
+void snd_usb_caiaq_midi_handle_input(struct snd_usb_caiaqdev *cdev,
+				     int port, const char *buf, int len);
+void snd_usb_caiaq_midi_output_done(struct urb *urb);
+
+#endif /* CAIAQ_MIDI_H */

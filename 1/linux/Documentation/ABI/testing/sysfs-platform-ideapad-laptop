@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:7c998d8504a274351d089e1698eba5dc57374d0c5ab6042b0df3c182554f40e0
-size 531
+What:		/sys/devices/platform/ideapad/camera_power
+Date:		Dec 2010
+KernelVersion:	2.6.37
+Contact:	"Ike Panhc <ike.pan@canonical.com>"
+Description:
+		Control the power of camera module. 1 means on, 0 means off.
+
+What:		/sys/devices/platform/ideapad/fan_mode
+Date:		June 2012
+KernelVersion:	3.6
+Contact:	"Maxim Mikityanskiy <maxtram95@gmail.com>"
+Description:
+		Change fan mode
+		There are four available modes:
+			* 0 -> Super Silent Mode
+			* 1 -> Standard Mode
+			* 2 -> Dust Cleaning
+			* 4 -> Efficient Thermal Dissipation Mode
+

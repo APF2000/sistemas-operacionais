@@ -1,3 +1,37 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:19ef60ac0170472b79e8a2d9863a44a6a0bdeaeba0bacb1c789e70c933654eb7
-size 1434
+/*
+ * Copyright 2012 Red Hat Inc.
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a
+ * copy of this software and associated documentation files (the "Software"),
+ * to deal in the Software without restriction, including without limitation
+ * the rights to use, copy, modify, merge, publish, distribute, sublicense,
+ * and/or sell copies of the Software, and to permit persons to whom the
+ * Software is furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL
+ * THE COPYRIGHT HOLDER(S) OR AUTHOR(S) BE LIABLE FOR ANY CLAIM, DAMAGES OR
+ * OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
+ * ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+ * OTHER DEALINGS IN THE SOFTWARE.
+ *
+ * Authors: Ben Skeggs
+ */
+#include "channv50.h"
+#include "rootnv50.h"
+
+#include <nvif/class.h>
+
+const struct nv50_disp_pioc_oclass
+gf119_disp_curs_oclass = {
+	.base.oclass = GF110_DISP_CURSOR,
+	.base.minver = 0,
+	.base.maxver = 0,
+	.ctor = nv50_disp_curs_new,
+	.func = &gf119_disp_pioc_func,
+	.chid = { 13, 13 },
+};

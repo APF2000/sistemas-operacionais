@@ -1,3 +1,42 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1dc75d1147c0308dcadf1406349fc71ccf6fff52d215533adcee805e1a73f6b7
-size 897
+/*
+ * arch/arm/plat-spear/include/plat/uncompress.h
+ *
+ * Serial port stubs for kernel decompress status messages
+ *
+ * Copyright (C) 2009 ST Microelectronics
+ * Viresh Kumar <vireshk@kernel.org>
+ *
+ * This file is licensed under the terms of the GNU General Public
+ * License version 2. This program is licensed "as is" without any
+ * warranty of any kind, whether express or implied.
+ */
+
+#include <linux/io.h>
+#include <linux/amba/serial.h>
+#include <mach/spear.h>
+
+#ifndef __PLAT_UNCOMPRESS_H
+#define __PLAT_UNCOMPRESS_H
+/*
+ * This does not append a newline
+ */
+static inline void putc(int c)
+{
+	void __iomem *base = (void __iomem *)SPEAR_DBG_UART_BASE;
+
+	while (readl_relaxed(base + UART01x_FR) & UART01x_FR_TXFF)
+		barrier();
+
+	writel_relaxed(c, base + UART01x_DR);
+}
+
+static inline void flush(void)
+{
+}
+
+/*
+ * nothing to do
+ */
+#define arch_decomp_setup()
+
+#endif /* __PLAT_UNCOMPRESS_H */

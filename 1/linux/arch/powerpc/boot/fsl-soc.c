@@ -1,3 +1,57 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:728f4b9788744bc7bdd65a871007c8dbd3231671b518094114ab78b0fc8c4b5c
-size 1115
+/*
+ * Freescale SOC support functions
+ *
+ * Author: Scott Wood <scottwood@freescale.com>
+ *
+ * Copyright (c) 2007 Freescale Semiconductor, Inc.
+ *
+ * This program is free software; you can redistribute it and/or modify it
+ * under the terms of the GNU General Public License version 2 as published
+ * by the Free Software Foundation.
+ */
+
+#include "ops.h"
+#include "types.h"
+#include "fsl-soc.h"
+#include "stdio.h"
+
+static u32 prop_buf[MAX_PROP_LEN / 4];
+
+u32 *fsl_get_immr(void)
+{
+	void *soc;
+	unsigned long ret = 0;
+
+	soc = find_node_by_devtype(NULL, "soc");
+	if (soc) {
+		int size;
+		u32 naddr;
+
+		size = getprop(soc, "#address-cells", prop_buf, MAX_PROP_LEN);
+		if (size == 4)
+			naddr = prop_buf[0];
+		else
+			naddr = 2;
+
+		if (naddr != 1 && naddr != 2)
+			goto err;
+
+		size = getprop(soc, "ranges", prop_buf, MAX_PROP_LEN);
+
+		if (size < 12)
+			goto err;
+		if (prop_buf[0] != 0)
+			goto err;
+		if (naddr == 2 && prop_buf[1] != 0)
+			goto err;
+
+		if (!dt_xlate_addr(soc, prop_buf + naddr, 8, &ret))
+			ret = 0;
+	}
+
+err:
+	if (!ret)
+		printf("fsl_get_immr: Failed to find immr base\r\n");
+
+	return (u32 *)ret;
+}

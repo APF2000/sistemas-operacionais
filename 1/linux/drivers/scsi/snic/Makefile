@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a7013d256783c2b4ea0958a1e6d90d780abbc5cdd5d59569ce202120e9266264
-size 280
+obj-$(CONFIG_SCSI_SNIC) += snic.o
+
+snic-y := \
+	snic_attrs.o \
+	snic_main.o \
+	snic_res.o \
+	snic_isr.o \
+	snic_ctl.o \
+	snic_io.o \
+	snic_scsi.o \
+	snic_disc.o \
+	vnic_cq.o \
+	vnic_intr.o \
+	vnic_dev.o \
+	vnic_wq.o
+
+snic-$(CONFIG_SCSI_SNIC_DEBUG_FS) += snic_debugfs.o snic_trc.o

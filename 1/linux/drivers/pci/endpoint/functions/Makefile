@@ -1,3 +1,5 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:0a320750a64086aa30c74ce6d4098785b3547de12fceadb1f547225d4d5c06c8
-size 89
+#
+# Makefile for PCI Endpoint Functions
+#
+
+obj-$(CONFIG_PCI_EPF_TEST)		+= pci-epf-test.o

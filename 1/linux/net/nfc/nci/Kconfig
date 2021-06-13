@@ -1,3 +1,28 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4a402ffdbccab22ab8335f15ae08428709c3b88f51e6bfff31df744f2e85ca85
-size 788
+config NFC_NCI
+	depends on NFC
+	tristate "NCI protocol support"
+	default n
+	help
+	  NCI (NFC Controller Interface) is a communication protocol between
+	  an NFC Controller (NFCC) and a Device Host (DH).
+
+	  Say Y here to compile NCI support into the kernel or say M to
+	  compile it as module (nci).
+
+config NFC_NCI_SPI
+	depends on NFC_NCI && SPI
+	select CRC_CCITT
+	tristate "NCI over SPI protocol support"
+	default n
+	help
+	  NCI (NFC Controller Interface) is a communication protocol between
+	  an NFC Controller (NFCC) and a Device Host (DH).
+
+	  Say yes if you use an NCI driver that requires SPI link layer.
+
+config NFC_NCI_UART
+	depends on NFC_NCI && TTY
+	tristate "NCI over UART protocol support"
+	default n
+	help
+	  Say yes if you use an NCI driver that requires UART link layer.

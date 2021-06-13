@@ -1,3 +1,4 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:500b23e4cd0acee608a039e922c761126dbdaad3769153589bd1c860219eadbb
-size 82
+#
+# Makefile for the ia64-specific parts of the pci bus
+#
+obj-y		:= pci.o fixup.o

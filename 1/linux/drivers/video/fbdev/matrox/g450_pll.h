@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ae30b94adb41718b1f6a889f6e6121a5ad11a58806ee347f96f52525e70f9425
-size 388
+#ifndef __G450_PLL_H__
+#define __G450_PLL_H__
+
+#include "matroxfb_base.h"
+
+int matroxfb_g450_setclk(struct matrox_fb_info *minfo, unsigned int fout,
+			 unsigned int pll);
+unsigned int g450_mnp2f(const struct matrox_fb_info *minfo, unsigned int mnp);
+void matroxfb_g450_setpll_cond(struct matrox_fb_info *minfo, unsigned int mnp,
+			       unsigned int pll);
+
+#endif	/* __G450_PLL_H__ */

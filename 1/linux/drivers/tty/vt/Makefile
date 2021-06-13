@@ -1,3 +1,32 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:0e117fbebe4b0112d89984a641bd006df4bc8aa3d2a19046d7ae729c161874e5
-size 853
+#
+# This file contains the font map for the default (hardware) font
+#
+FONTMAPFILE = cp437.uni
+
+obj-$(CONFIG_VT)			+= vt_ioctl.o vc_screen.o \
+					   selection.o keyboard.o
+obj-$(CONFIG_CONSOLE_TRANSLATIONS)	+= consolemap.o consolemap_deftbl.o
+obj-$(CONFIG_HW_CONSOLE)		+= vt.o defkeymap.o
+
+# Files generated that shall be removed upon make clean
+clean-files := consolemap_deftbl.c defkeymap.c
+
+quiet_cmd_conmk = CONMK   $@
+      cmd_conmk = scripts/conmakehash $< > $@
+
+$(obj)/consolemap_deftbl.c: $(src)/$(FONTMAPFILE)
+	$(call cmd,conmk)
+
+$(obj)/defkeymap.o:  $(obj)/defkeymap.c
+
+# Uncomment if you're changing the keymap and have an appropriate
+# loadkeys version for the map. By default, we'll use the shipped
+# versions.
+# GENERATE_KEYMAP := 1
+
+ifdef GENERATE_KEYMAP
+
+$(obj)/defkeymap.c: $(obj)/%.c: $(src)/%.map
+	loadkeys --mktable $< > $@
+
+endif

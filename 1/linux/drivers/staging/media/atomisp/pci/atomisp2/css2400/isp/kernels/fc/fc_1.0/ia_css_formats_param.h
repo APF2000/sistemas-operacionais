@@ -1,3 +1,25 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:0f6dbde3e786c9312be286b8233b4e7d9e854f273cb64121694b44e777fc2639
-size 789
+/*
+ * Support for Intel Camera Imaging ISP subsystem.
+ * Copyright (c) 2015, Intel Corporation.
+ *
+ * This program is free software; you can redistribute it and/or modify it
+ * under the terms and conditions of the GNU General Public License,
+ * version 2, as published by the Free Software Foundation.
+ *
+ * This program is distributed in the hope it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+ * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for
+ * more details.
+ */
+
+#ifndef __IA_CSS_FORMATS_PARAM_H
+#define __IA_CSS_FORMATS_PARAM_H
+
+#include "type_support.h"
+
+/* FORMATS (Format conversion) */
+struct sh_css_isp_formats_params {
+	int32_t video_full_range_flag;
+};
+
+#endif /* __IA_CSS_FORMATS_PARAM_H */

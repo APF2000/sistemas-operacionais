@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a043a911ce900770d71743ee7a3c0f91f37fe0b367ee1d6bcde8368ab9c8993a
-size 122
+#
+# Makefile for USB monitor
+#
+
+usbmon-y := mon_main.o mon_stat.o mon_text.o mon_bin.o
+
+obj-$(CONFIG_USB_MON)	+= usbmon.o

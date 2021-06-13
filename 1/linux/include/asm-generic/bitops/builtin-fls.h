@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:7d25c1c8f2bf5441e3100be24c51f11cba934e2d98976cde3df19c91b93ce09e
-size 364
+#ifndef _ASM_GENERIC_BITOPS_BUILTIN_FLS_H_
+#define _ASM_GENERIC_BITOPS_BUILTIN_FLS_H_
+
+/**
+ * fls - find last (most-significant) bit set
+ * @x: the word to search
+ *
+ * This is defined the same way as ffs.
+ * Note fls(0) = 0, fls(1) = 1, fls(0x80000000) = 32.
+ */
+static __always_inline int fls(int x)
+{
+	return x ? sizeof(x) * 8 - __builtin_clz(x) : 0;
+}
+
+#endif

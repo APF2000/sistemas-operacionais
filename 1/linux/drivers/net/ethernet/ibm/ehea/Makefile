@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:284fcd4c7346720b3b88af8acd115d096ec2a571f36f63f2a8acd17f66078784
-size 165
+#
+# Makefile for the eHEA ethernet device driver for IBM eServer System p
+#
+ehea-y = ehea_main.o ehea_phyp.o ehea_qmr.o ehea_ethtool.o
+obj-$(CONFIG_EHEA) += ehea.o
+

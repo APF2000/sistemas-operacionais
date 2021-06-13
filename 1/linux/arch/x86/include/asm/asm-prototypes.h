@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:bee217c061655fa1656928a34118a2b2a31acee0bc22cb2c6f0ffbb422518d69
-size 338
+#include <asm/ftrace.h>
+#include <linux/uaccess.h>
+#include <asm/string.h>
+#include <asm/page.h>
+#include <asm/checksum.h>
+
+#include <asm-generic/asm-prototypes.h>
+
+#include <asm/page.h>
+#include <asm/pgtable.h>
+#include <asm/special_insns.h>
+#include <asm/preempt.h>
+
+#ifndef CONFIG_X86_CMPXCHG64
+extern void cmpxchg8b_emu(void);
+#endif

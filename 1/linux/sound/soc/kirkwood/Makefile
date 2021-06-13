@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1a1288d724ece2ad2c779cdefe8e6937d8adc32db70e156e971478692d4a22d0
-size 228
+snd-soc-kirkwood-objs := kirkwood-dma.o kirkwood-i2s.o
+
+obj-$(CONFIG_SND_KIRKWOOD_SOC) += snd-soc-kirkwood.o
+
+snd-soc-armada-370-db-objs := armada-370-db.o
+
+obj-$(CONFIG_SND_KIRKWOOD_SOC_ARMADA370_DB) += snd-soc-armada-370-db.o

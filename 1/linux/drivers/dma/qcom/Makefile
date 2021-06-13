@@ -1,3 +1,5 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a1835ce5a55a2136cb8e610bc7f4e9834ab31f4ca403712677d579256f5ac3ce
-size 221
+obj-$(CONFIG_QCOM_BAM_DMA) += bam_dma.o
+obj-$(CONFIG_QCOM_HIDMA_MGMT) += hdma_mgmt.o
+hdma_mgmt-objs	 := hidma_mgmt.o hidma_mgmt_sys.o
+obj-$(CONFIG_QCOM_HIDMA) +=  hdma.o
+hdma-objs        := hidma_ll.o hidma.o hidma_dbg.o

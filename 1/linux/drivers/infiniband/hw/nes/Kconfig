@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:9116392ed99b5a59bfda9c3b70613194e1b9830e6ada97af831d3b40f443765b
-size 463
+config INFINIBAND_NES
+	tristate "NetEffect RNIC Driver"
+	depends on PCI && INET && INFINIBAND
+	select LIBCRC32C
+	---help---
+	  This is the RDMA Network Interface Card (RNIC) driver for
+	  NetEffect Ethernet Cluster Server Adapters.
+
+config INFINIBAND_NES_DEBUG
+	bool "Verbose debugging output"
+	depends on INFINIBAND_NES
+	default n
+	---help---
+	  This option enables debug messages from the NetEffect RNIC
+	  driver.  Select this if you are diagnosing a problem.

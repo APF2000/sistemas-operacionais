@@ -1,3 +1,24 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2e01a7d385c8bd0166553f466ee19c28938b0c4ab5aee70813b99363ae678303
-size 603
+/*
+ * wm8960.h  --  WM8960 Soc Audio driver platform data
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 2 as
+ * published by the Free Software Foundation.
+ */
+
+#ifndef _WM8960_PDATA_H
+#define _WM8960_PDATA_H
+
+#define WM8960_DRES_400R 0
+#define WM8960_DRES_200R 1
+#define WM8960_DRES_600R 2
+#define WM8960_DRES_150R 3
+#define WM8960_DRES_MAX  3
+
+struct wm8960_data {
+	bool capless;  /* Headphone outputs configured in capless mode */
+
+	bool shared_lrclk;  /* DAC and ADC LRCLKs are wired together */
+};
+
+#endif

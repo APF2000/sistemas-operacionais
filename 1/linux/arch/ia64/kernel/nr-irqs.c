@@ -1,3 +1,21 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:717d74e61c994dbfea38cedf6564f9356fc046673dc0ab4a6952bb49cb31f70f
-size 436
+/*
+ * calculate
+ * NR_IRQS = max(IA64_NATIVE_NR_IRQS, XEN_NR_IRQS, FOO_NR_IRQS...)
+ * depending on config.
+ * This must be calculated before processing asm-offset.c.
+ */
+
+#define ASM_OFFSETS_C 1
+
+#include <linux/kbuild.h>
+#include <linux/threads.h>
+#include <asm/native/irq.h>
+
+void foo(void)
+{
+	union paravirt_nr_irqs_max {
+		char ia64_native_nr_irqs[IA64_NATIVE_NR_IRQS];
+	};
+
+	DEFINE(NR_IRQS, sizeof (union paravirt_nr_irqs_max));
+}

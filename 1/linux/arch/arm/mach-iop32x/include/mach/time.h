@@ -1,3 +1,4 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e6cd0cef040d712fdcd66125802ed311721489faff4051db2909b82450ffb9f9
-size 96
+#ifndef _IOP32X_TIME_H_
+#define _IOP32X_TIME_H_
+#define IRQ_IOP_TIMER0 IRQ_IOP32X_TIMER0
+#endif

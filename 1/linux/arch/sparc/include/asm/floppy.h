@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:7c8e51793303403d32958fa5d05be6343baa0ec81aae217986b3fdd074215a1c
-size 180
+#ifndef ___ASM_SPARC_FLOPPY_H
+#define ___ASM_SPARC_FLOPPY_H
+#if defined(__sparc__) && defined(__arch64__)
+#include <asm/floppy_64.h>
+#else
+#include <asm/floppy_32.h>
+#endif
+#endif

@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:fe02d50925d46c03dcd12371e4eefa13b75e0981d59ee59dafff018bba288214
-size 225
+config DVB_DRX39XYJ
+	tristate "Micronas DRX-J demodulator"
+	depends on DVB_CORE && I2C
+	default m if !MEDIA_SUBDRV_AUTOSELECT
+	help
+	  An ATSC 8VSB and QAM64/256 tuner module. Say Y when you want
+	  to support this frontend.

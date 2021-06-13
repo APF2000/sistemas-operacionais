@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:563f11c61ac182d8b410a8ad89ff2786bc089e7d67d0ca2cb83b6f5a268a3a63
-size 192
+#ifndef __DT_APQ8016_LPASS_H
+#define __DT_APQ8016_LPASS_H
+
+#define MI2S_PRIMARY	0
+#define MI2S_SECONDARY	1
+#define MI2S_TERTIARY	2
+#define MI2S_QUATERNARY	3
+
+#endif /* __DT_APQ8016_LPASS_H */

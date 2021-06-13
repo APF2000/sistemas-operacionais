@@ -1,3 +1,1 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:898af0fe9627ffd64793fa2c8d59f9fcedc2e3ddde44b8f95bf916c4891aa5f6
-size 38
+test_cbmc_options="-DFORCE_FAILURE_3"

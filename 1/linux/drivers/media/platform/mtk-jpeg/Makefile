@@ -1,3 +1,2 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:fca67f32a1155126b4b7e01b95e4cdd580eae64e23dbaa56d924267584b251da
-size 112
+mtk_jpeg-objs := mtk_jpeg_core.o mtk_jpeg_hw.o mtk_jpeg_parse.o
+obj-$(CONFIG_VIDEO_MEDIATEK_JPEG) += mtk_jpeg.o

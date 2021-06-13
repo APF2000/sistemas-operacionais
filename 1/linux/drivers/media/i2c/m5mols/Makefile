@@ -1,3 +1,3 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ccdf3a85bde6afcf01358fa84990892a2dff5b9c3911493c288c7f436b575a11
-size 105
+m5mols-objs	:= m5mols_core.o m5mols_controls.o m5mols_capture.o
+
+obj-$(CONFIG_VIDEO_M5MOLS)		+= m5mols.o

@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d9dd8bfa39b3e32e5d68d99b3c0368ddf13f9a63111e2285a1add83b14ed1afd
-size 213
+#
+# Makefile for industrial I/O accelerometer drivers
+#
+
+obj-$(CONFIG_ADIS16201) += adis16201.o
+obj-$(CONFIG_ADIS16203) += adis16203.o
+obj-$(CONFIG_ADIS16209) += adis16209.o
+obj-$(CONFIG_ADIS16240) += adis16240.o

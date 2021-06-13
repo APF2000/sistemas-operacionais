@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:85a054762a3cf4a326f89c975315974f4465f770031453cbe412d19f24cb308e
-size 248
+#
+# Makefile for the linux udf-filesystem routines.
+#
+
+obj-$(CONFIG_UDF_FS) += udf.o
+
+udf-objs     := balloc.o dir.o file.o ialloc.o inode.o lowlevel.o namei.o \
+		partition.o super.o truncate.o symlink.o \
+		directory.o misc.o udftime.o unicode.o

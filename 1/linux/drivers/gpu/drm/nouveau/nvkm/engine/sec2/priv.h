@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ef460a981bc1bbd4cdfb30f23461efc7424175bdbb657a510af84b2276ea3781
-size 226
+#ifndef __NVKM_SEC2_PRIV_H__
+#define __NVKM_SEC2_PRIV_H__
+#include <engine/sec2.h>
+
+#define nvkm_sec2(p) container_of((p), struct nvkm_sec2, engine)
+
+int nvkm_sec2_new_(struct nvkm_device *, int, struct nvkm_sec2 **);
+
+#endif

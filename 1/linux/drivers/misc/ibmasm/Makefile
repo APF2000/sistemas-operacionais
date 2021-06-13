@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:fc028a3549996b7f5ff32a26789a1f4d8ee80fc15b42488b57705f4be29285ec
-size 244
+
+obj-$(CONFIG_IBM_ASM) := ibmasm.o
+
+ibmasm-y :=	module.o      \
+		ibmasmfs.o    \
+		event.o       \
+		command.o     \
+		remote.o      \
+		heartbeat.o   \
+		r_heartbeat.o \
+		dot_command.o \
+		lowlevel.o
+
+ibmasm-$(CONFIG_SERIAL_8250) += uart.o
+

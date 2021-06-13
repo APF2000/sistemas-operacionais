@@ -1,3 +1,5 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:80181dd39af76358e8bce0be2942bc378cf17883fc3037e93624a58019a8378f
-size 182
+nvkm-y += nvkm/engine/mspdec/base.o
+nvkm-y += nvkm/engine/mspdec/g98.o
+nvkm-y += nvkm/engine/mspdec/gt215.o
+nvkm-y += nvkm/engine/mspdec/gf100.o
+nvkm-y += nvkm/engine/mspdec/gk104.o

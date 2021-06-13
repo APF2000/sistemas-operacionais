@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:351f09199723ee2ab328055e59265b42f1c3b18c2e168d407304994f9146da4d
-size 635
+/*
+ * Copyright (C) 2015 Broadcom Corporation
+ *
+ * This program is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License as
+ * published by the Free Software Foundation version 2.
+ *
+ * This program is distributed "as is" WITHOUT ANY WARRANTY of any
+ * kind, whether express or implied; without even the implied warranty
+ * of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ */
+
+#define BCM2835_AUX_CLOCK_UART		0
+#define BCM2835_AUX_CLOCK_SPI1		1
+#define BCM2835_AUX_CLOCK_SPI2		2
+#define BCM2835_AUX_CLOCK_COUNT		3

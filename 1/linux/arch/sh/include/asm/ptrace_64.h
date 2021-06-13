@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ae0697526c97153e501f1399eeb6ee7fd63817cf14d133012ca446cfa791bb1d
-size 273
+#ifndef __ASM_SH_PTRACE_64_H
+#define __ASM_SH_PTRACE_64_H
+
+#include <uapi/asm/ptrace_64.h>
+
+
+#define MAX_REG_OFFSET		offsetof(struct pt_regs, tregs[7])
+static inline long regs_return_value(struct pt_regs *regs)
+{
+	return regs->regs[3];
+}
+
+#endif /* __ASM_SH_PTRACE_64_H */

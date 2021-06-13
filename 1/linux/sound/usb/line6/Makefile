@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d52302d32cbbec58a0558ee95ddeaef07b8b7512e9bf6c6e7b4f9e527717af98
-size 453
+snd-usb-line6-y := 		\
+		capture.o	\
+		driver.o	\
+		midi.o		\
+		midibuf.o	\
+		pcm.o		\
+		playback.o
+
+snd-usb-pod-y := pod.o
+snd-usb-podhd-y := podhd.o
+snd-usb-toneport-y := toneport.o
+snd-usb-variax-y := variax.o
+
+obj-$(CONFIG_SND_USB_LINE6)	+= snd-usb-line6.o
+obj-$(CONFIG_SND_USB_POD)	+= snd-usb-pod.o
+obj-$(CONFIG_SND_USB_PODHD)	+= snd-usb-podhd.o
+obj-$(CONFIG_SND_USB_TONEPORT)	+= snd-usb-toneport.o
+obj-$(CONFIG_SND_USB_VARIAX)	+= snd-usb-variax.o

@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c12e2393e51697fe62af8a8629e9b030caf056330b14968ba97152fcbd105ce7
-size 385
+#ifndef _LIVEPATCH_TRANSITION_H
+#define _LIVEPATCH_TRANSITION_H
+
+#include <linux/livepatch.h>
+
+extern struct klp_patch *klp_transition_patch;
+
+void klp_init_transition(struct klp_patch *patch, int state);
+void klp_cancel_transition(void);
+void klp_start_transition(void);
+void klp_try_complete_transition(void);
+void klp_reverse_transition(void);
+
+#endif /* _LIVEPATCH_TRANSITION_H */

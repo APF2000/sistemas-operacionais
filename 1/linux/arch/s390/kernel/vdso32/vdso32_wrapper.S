@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:671e37ca9cdcf67fcc104d1ffe16065696dff191bcc6bb417e582ed1f19916b5
-size 250
+#include <linux/init.h>
+#include <linux/linkage.h>
+#include <asm/page.h>
+
+	__PAGE_ALIGNED_DATA
+
+	.globl vdso32_start, vdso32_end
+	.balign PAGE_SIZE
+vdso32_start:
+	.incbin "arch/s390/kernel/vdso32/vdso32.so"
+	.balign PAGE_SIZE
+vdso32_end:
+
+	.previous

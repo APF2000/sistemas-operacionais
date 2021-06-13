@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:de6fd4af9df1656f4c5cdcbb5e255070da0f91657303187c32e056df9d3d18cd
-size 421
+/*
+ * Copyright 2004-2008 Analog Devices Inc.
+ *
+ * Licensed under the GPL-2 or later.
+ */
+
+#ifndef _UAPI_BFIN_FCNTL_H
+#define _UAPI_BFIN_FCNTL_H
+
+#define O_DIRECTORY	 040000	/* must be a directory */
+#define O_NOFOLLOW	0100000	/* don't follow links */
+#define O_DIRECT	0200000	/* direct disk access hint - currently ignored */
+#define O_LARGEFILE	0400000
+
+#include <asm-generic/fcntl.h>
+
+#endif /* _UAPI_BFIN_FCNTL_H */

@@ -1,3 +1,22 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5bda3330458f204b1356d8b624986d00797732b3fc19ece0109ec1ba8dff2e98
-size 589
+* ARC-HS incore Interrupt Controller (Provided by cores implementing ARCv2 ISA)
+
+Properties:
+
+- compatible: "snps,archs-intc"
+- interrupt-controller: This is an interrupt controller.
+- #interrupt-cells: Must be <1>.
+
+  Single Cell "interrupts" property of a device specifies the IRQ number
+  between 16 to 256
+
+  intc accessed via the special ARC AUX register interface, hence "reg" property
+  is not specified.
+
+Example:
+
+	intc: interrupt-controller {
+		compatible = "snps,archs-intc";
+		interrupt-controller;
+		#interrupt-cells = <1>;
+		interrupts = <16 17 18 19 20 21 22 23 24 25>;
+	};

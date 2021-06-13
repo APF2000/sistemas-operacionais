@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:fd2844b93ed9291f2d5f958b1464885fba1a820e9212e0632fd8ea21c30f1922
-size 258
+#ifndef _ASM_METAG_CPU_H
+#define _ASM_METAG_CPU_H
+
+#include <linux/percpu.h>
+
+struct cpuinfo_metag {
+	struct cpu cpu;
+#ifdef CONFIG_SMP
+	unsigned long loops_per_jiffy;
+#endif
+};
+
+DECLARE_PER_CPU(struct cpuinfo_metag, cpu_data);
+#endif /* _ASM_METAG_CPU_H */

@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:15ce0da2f75cb55704f4bbb0c3d648387e6d83763257721076ec950ae4a1ac22
-size 446
+# Makefile for the kernel cdrom device drivers.
+#
+# 30 Jan 1998, Michael Elizabeth Chastain, <mailto:mec@shout.net>
+# Rewritten to use lists instead of if-statements.
+
+# Each configuration option enables a list of files.
+
+obj-$(CONFIG_BLK_DEV_IDECD)	+=              cdrom.o
+obj-$(CONFIG_BLK_DEV_SR)	+=              cdrom.o
+obj-$(CONFIG_PARIDE_PCD)	+=		cdrom.o
+obj-$(CONFIG_CDROM_PKTCDVD)	+=		cdrom.o
+
+obj-$(CONFIG_GDROM)		+= gdrom.o      cdrom.o

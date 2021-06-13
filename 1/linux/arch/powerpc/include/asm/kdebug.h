@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:034dca59428b28a04646c050bdc30df5b13c89666cc6306bfc72432f10b1742b
-size 252
+#ifndef _ASM_POWERPC_KDEBUG_H
+#define _ASM_POWERPC_KDEBUG_H
+#ifdef __KERNEL__
+
+/* Grossly misnamed. */
+enum die_val {
+	DIE_OOPS = 1,
+	DIE_IABR_MATCH,
+	DIE_DABR_MATCH,
+	DIE_BPT,
+	DIE_SSTEP,
+};
+
+#endif /* __KERNEL__ */
+#endif /* _ASM_POWERPC_KDEBUG_H */

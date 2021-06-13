@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:9f783640f936bc328f68715e02b9a0e8708c450fb28e03e5268f30d14d775e1c
-size 342
+#
+# Configuration for NCSI support
+#
+
+config NET_NCSI
+	bool "NCSI interface support"
+	depends on INET
+	---help---
+	  This module provides NCSI (Network Controller Sideband Interface)
+	  support. Enable this only if your system connects to a network
+	  device via NCSI and the ethernet driver you're using supports
+	  the protocol explicitly.

@@ -1,3 +1,37 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:02fef6499d25d8231534d829d8ab535f68bcf127342ce0e82a8921ee03757398
-size 781
+#ifndef RELOCS_H
+#define RELOCS_H
+
+#include <stdio.h>
+#include <stdarg.h>
+#include <stdlib.h>
+#include <stdint.h>
+#include <inttypes.h>
+#include <string.h>
+#include <errno.h>
+#include <unistd.h>
+#include <elf.h>
+#include <byteswap.h>
+#define USE_BSD
+#include <endian.h>
+#include <regex.h>
+#include <tools/le_byteshift.h>
+
+void die(char *fmt, ...) __attribute__((noreturn));
+
+#define ARRAY_SIZE(x) (sizeof(x) / sizeof((x)[0]))
+
+enum symtype {
+	S_ABS,
+	S_REL,
+	S_SEG,
+	S_LIN,
+	S_NSYMTYPES
+};
+
+void process_32(FILE *fp, int use_real_mode, int as_text,
+		int show_absolute_syms, int show_absolute_relocs,
+		int show_reloc_info);
+void process_64(FILE *fp, int use_real_mode, int as_text,
+		int show_absolute_syms, int show_absolute_relocs,
+		int show_reloc_info);
+#endif /* RELOCS_H */

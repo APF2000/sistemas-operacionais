@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:7fdfcd6c77a3d828291b5c031372946f678580ba6cc115ff0a13c9b5758ba042
-size 206
+obj-$(CONFIG_ACPI_APEI)		+= apei.o
+obj-$(CONFIG_ACPI_APEI_GHES)	+= ghes.o
+obj-$(CONFIG_ACPI_APEI_EINJ)	+= einj.o
+obj-$(CONFIG_ACPI_APEI_ERST_DEBUG) += erst-dbg.o
+
+apei-y := apei-base.o hest.o erst.o bert.o

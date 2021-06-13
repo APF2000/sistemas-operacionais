@@ -1,3 +1,24 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1ce00e8d68567ea2e1792d8dab7901c4eac4cc3a8cc8d536735e376b8901354d
-size 718
+* Holt HI-311X stand-alone CAN controller device tree bindings
+
+Required properties:
+ - compatible: Should be one of the following:
+   - "holt,hi3110" for HI-3110
+ - reg: SPI chip select.
+ - clocks: The clock feeding the CAN controller.
+ - interrupt-parent: The parent interrupt controller.
+ - interrupts: Should contain IRQ line for the CAN controller.
+
+Optional properties:
+ - vdd-supply: Regulator that powers the CAN controller.
+ - xceiver-supply: Regulator that powers the CAN transceiver.
+
+Example:
+	can0: can@1 {
+		compatible = "holt,hi3110";
+		reg = <1>;
+		clocks = <&clk32m>;
+		interrupt-parent = <&gpio4>;
+		interrupts = <13 IRQ_TYPE_EDGE_RISING>;
+		vdd-supply = <&reg5v0>;
+		xceiver-supply = <&reg5v0>;
+	};

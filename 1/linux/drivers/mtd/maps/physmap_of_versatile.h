@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e2e818a892a4c181d225da816670e3efc89aaf6d28f84dec7732fd12a5064b62
-size 374
+#include <linux/of.h>
+#include <linux/mtd/map.h>
+
+#ifdef CONFIG_MTD_PHYSMAP_OF_VERSATILE
+int of_flash_probe_versatile(struct platform_device *pdev,
+			     struct device_node *np,
+			     struct map_info *map);
+#else
+static inline
+int of_flash_probe_versatile(struct platform_device *pdev,
+			     struct device_node *np,
+			     struct map_info *map)
+{
+	return 0;
+}
+#endif

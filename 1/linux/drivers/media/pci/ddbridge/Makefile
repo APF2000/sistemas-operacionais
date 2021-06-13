@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:fa7e4c03b9e7b7b1c2eda19bae7cce8cd33fdced66f0937eee1dbdcecc0a266c
-size 326
+#
+# Makefile for the ddbridge device driver
+#
+
+ddbridge-objs := ddbridge-core.o
+
+obj-$(CONFIG_DVB_DDBRIDGE) += ddbridge.o
+
+ccflags-y += -Idrivers/media/dvb-core/
+ccflags-y += -Idrivers/media/dvb-frontends/
+ccflags-y += -Idrivers/media/tuners/
+
+# For the staging CI driver cxd2099
+ccflags-y += -Idrivers/staging/media/cxd2099/

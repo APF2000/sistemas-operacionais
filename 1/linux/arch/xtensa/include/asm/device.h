@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:8f5fbe1716c166a0abdb69403e02275f94304266b0983833f3c6ba81e226122c
-size 242
+/*
+ * Arch specific extensions to struct device
+ *
+ * This file is released under the GPLv2
+ */
+#ifndef _ASM_XTENSA_DEVICE_H
+#define _ASM_XTENSA_DEVICE_H
+
+struct dev_archdata {
+};
+
+struct pdev_archdata {
+};
+
+#endif /* _ASM_XTENSA_DEVICE_H */

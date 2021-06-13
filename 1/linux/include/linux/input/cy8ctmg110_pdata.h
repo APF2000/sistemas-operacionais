@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:0ef83472176f369373058f35298177366860d2e889dee36d93a34007eedb5437
-size 223
+#ifndef _LINUX_CY8CTMG110_PDATA_H
+#define _LINUX_CY8CTMG110_PDATA_H
+
+struct cy8ctmg110_pdata
+{
+	int reset_pin;		/* Reset pin is wired to this GPIO (optional) */
+	int irq_pin;		/* IRQ pin is wired to this GPIO */
+};
+
+#endif

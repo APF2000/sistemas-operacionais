@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:6a24f4baa11d0b8b4659ffe59896a83f6f06c99e9e77c88dd41a5dbeaaab539c
-size 267
+CFLAGS_amdtp-motu.o	:= -I$(src)
+
+snd-firewire-motu-objs := motu.o amdtp-motu.o motu-transaction.o motu-stream.o \
+			  motu-proc.o motu-pcm.o motu-midi.o motu-hwdep.o \
+			  motu-protocol-v2.o motu-protocol-v3.o
+obj-$(CONFIG_SND_FIREWIRE_MOTU) += snd-firewire-motu.o

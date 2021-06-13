@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:bf5a3e7b7d3e5c63a5fef1061cdc46715dad10a6f560c072a94a34db7d7a6202
-size 530
+obj-$(CONFIG_FSL_DPAA)                          += bman_ccsr.o qman_ccsr.o \
+						   bman_portal.o qman_portal.o \
+						   bman.o qman.o
+
+obj-$(CONFIG_FSL_BMAN_TEST)                     += bman-test.o
+bman-test-y                                      = bman_test.o
+bman-test-$(CONFIG_FSL_BMAN_TEST_API)           += bman_test_api.o
+
+obj-$(CONFIG_FSL_QMAN_TEST)			+= qman-test.o
+qman-test-y					 = qman_test.o
+qman-test-$(CONFIG_FSL_QMAN_TEST_API)		+= qman_test_api.o
+qman-test-$(CONFIG_FSL_QMAN_TEST_STASH)		+= qman_test_stash.o

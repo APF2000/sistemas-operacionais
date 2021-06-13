@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:feecf4e3c7ffc3d5f121d399eaef763f2b036b3eb321d3c4a034319e97479e3d
-size 466
+What:		/sys/firmware/sfi/tables/
+Date:		May 2010
+Contact:	Len Brown <lenb@kernel.org>
+Description:
+		SFI defines a number of small static memory tables
+		so the kernel can get platform information from firmware.
+
+		The tables are defined in the latest SFI specification:
+		http://simplefirmware.org/documentation
+
+		While the tables are used by the kernel, user-space
+		can observe them this way:
+
+		# cd /sys/firmware/sfi/tables
+		# cat $TABLENAME > $TABLENAME.bin

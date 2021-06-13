@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:50a950302efc422e799868470997f5b40e87d08fdf4c0c7a5d41176d95699652
-size 249
+#ifndef __ASM_GENERIC_SEGMENT_H
+#define __ASM_GENERIC_SEGMENT_H
+/*
+ * Only here because we have some old header files that expect it...
+ *
+ * New architectures probably don't want to have their own version.
+ */
+
+#endif /* __ASM_GENERIC_SEGMENT_H */

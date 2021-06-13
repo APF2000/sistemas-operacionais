@@ -1,3 +1,5 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f347a25471d9fb68c0805bb3de0ad0a6edac5e73011096c65192b55784158a27
-size 158
+smiapp-objs			+= smiapp-core.o smiapp-regs.o \
+				   smiapp-quirk.o smiapp-limits.o
+obj-$(CONFIG_VIDEO_SMIAPP)	+= smiapp.o
+
+ccflags-y += -Idrivers/media/i2c

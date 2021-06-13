@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ec8d99c7d58caa84e932bfb20fd5db9001b523321baf42eaa20db6dc9f171bef
-size 249
+#ifndef ARCH_TESTS_H
+#define ARCH_TESTS_H
+
+#ifdef HAVE_DWARF_UNWIND_SUPPORT
+struct thread;
+struct perf_sample;
+int test__arch_unwind_sample(struct perf_sample *sample,
+			     struct thread *thread);
+#endif
+
+extern struct test arch_tests[];
+
+#endif

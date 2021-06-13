@@ -1,3 +1,24 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:3f50a3321c7f8766383131ceee20f74cac73cc46c4096853e01908827b099d54
-size 477
+* Renesas H8/300 divider clock
+
+Required Properties:
+
+  - compatible: Must be "renesas,h8300-div-clock"
+
+  - clocks: Reference to the parent clocks ("extal1" and "extal2")
+
+  - #clock-cells: Must be 1
+
+  - reg: Base address and length of the divide rate selector
+
+  - renesas,width: bit width of selector
+
+Example
+-------
+
+		cclk: cclk {
+			compatible = "renesas,h8300-div-clock";
+			clocks = <&xclk>;
+			#clock-cells = <0>;
+			reg = <0xfee01b 2>;
+			renesas,width = <2>;
+		};

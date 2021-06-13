@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d5c158ab16dfa7e82a2e563b46f17247ffee5d9317d79d6120f1eaf20ac834b8
-size 462
+OpenCores tiny SPI
+
+Required properties:
+- compatible : should be "opencores,tiny-spi-rtlsvn2".
+- gpios : should specify GPIOs used for chipselect.
+Optional properties:
+- clock-frequency : input clock frequency to the core.
+- baud-width: width, in bits, of the programmable divider used to scale
+	the input clock to SCLK.
+
+The clock-frequency and baud-width properties are needed only if the divider
+is programmable. They are not needed if the divider is fixed.

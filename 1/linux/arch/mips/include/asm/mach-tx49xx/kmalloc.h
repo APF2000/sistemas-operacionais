@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e6062b8b090ab7d1e912612b74de81190b39a973a0c2a0d95bb95d55d29f9b02
-size 156
+#ifndef __ASM_MACH_TX49XX_KMALLOC_H
+#define __ASM_MACH_TX49XX_KMALLOC_H
+
+#define ARCH_DMA_MINALIGN L1_CACHE_BYTES
+
+#endif /* __ASM_MACH_TX49XX_KMALLOC_H */

@@ -1,3 +1,37 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4285bb78e553f16e98ed198b3539dc6fbe6c2eeca89fbf55f55000d8cf2b97da
-size 764
+#ifndef _ASM_CRIS_ARCH_SYSTEM_H
+#define _ASM_CRIS_ARCH_SYSTEM_H
+
+
+/* Read the CPU version register. */
+static inline unsigned long rdvr(void)
+{
+	unsigned char vr;
+
+	__asm__ __volatile__ ("move $vr, %0" : "=rm" (vr));
+	return vr;
+}
+
+#define cris_machine_name "crisv32"
+
+/* Read the user-mode stack pointer. */
+static inline unsigned long rdusp(void)
+{
+	unsigned long usp;
+
+	__asm__ __volatile__ ("move $usp, %0" : "=rm" (usp));
+	return usp;
+}
+
+/* Read the current stack pointer. */
+static inline unsigned long rdsp(void)
+{
+	unsigned long sp;
+
+	__asm__ __volatile__ ("move.d $sp, %0" : "=rm" (sp));
+	return sp;
+}
+
+/* Write the user-mode stack pointer. */
+#define wrusp(usp) __asm__ __volatile__ ("move %0, $usp" : : "rm" (usp))
+
+#endif /* _ASM_CRIS_ARCH_SYSTEM_H */

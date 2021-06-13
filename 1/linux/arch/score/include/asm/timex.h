@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:31d1abd4a04e48a32ac7ab53c17df311ef58dfecfc554c6255bc555624b03bb5
-size 177
+#ifndef _ASM_SCORE_TIMEX_H
+#define _ASM_SCORE_TIMEX_H
+
+#define CLOCK_TICK_RATE 27000000 /* Timer input freq. */
+
+#include <asm-generic/timex.h>
+
+#endif /* _ASM_SCORE_TIMEX_H */

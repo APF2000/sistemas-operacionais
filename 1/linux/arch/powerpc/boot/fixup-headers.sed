@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e331452fb95eb8576de159e8d28fd53c8a03779a72d7a5cc357a417bede8242b
-size 379
+# Copyright 2016 IBM Corporation.
+#
+# This program is free software; you can redistribute it and/or modify it
+# under the terms of the GNU General Public License version 2 or later as
+# published by the Free Software Foundation.
+
+s@#include <linux/decompress/mm\.h>@@;
+s@\"zlib_inflate/\([^\"]*\).*@"\1"@;
+s@<linux/kernel.h>@<stddef.h>@;
+
+s@__used@@;
+s@<linux/\([^>]*\).*@"\1"@;

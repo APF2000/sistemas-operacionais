@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:013a44620eda520967e7f64b7ec57b1f61c56d88b83b7788199fe61a1dda299d
-size 246
+config USB_AIRSPY
+	tristate "AirSpy"
+	depends on VIDEO_V4L2
+	select VIDEOBUF2_VMALLOC
+	---help---
+	  This is a video4linux2 driver for AirSpy SDR device.
+
+	  To compile this driver as a module, choose M here: the
+	  module will be called airspy
+

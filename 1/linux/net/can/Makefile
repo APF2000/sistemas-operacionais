@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e4380dd571bb32019226301e9ebaf7c49eef9612d2d1a8900696d3823882008b
-size 304
+#
+#  Makefile for the Linux Controller Area Network core.
+#
+
+obj-$(CONFIG_CAN)	+= can.o
+can-y			:= af_can.o
+can-$(CONFIG_PROC_FS)	+= proc.o
+
+obj-$(CONFIG_CAN_RAW)	+= can-raw.o
+can-raw-y		:= raw.o
+
+obj-$(CONFIG_CAN_BCM)	+= can-bcm.o
+can-bcm-y		:= bcm.o
+
+obj-$(CONFIG_CAN_GW)	+= can-gw.o
+can-gw-y		:= gw.o

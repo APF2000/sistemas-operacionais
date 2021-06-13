@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ba1bdaea6af1f427c24e9bf04bffeee3a3fd7e49ff1cc43ed931c4d3737c05eb
-size 210
+obj-$(CONFIG_ZD1211RW) += zd1211rw.o
+
+zd1211rw-objs := zd_chip.o zd_mac.o \
+		zd_rf_al2230.o zd_rf_rf2959.o \
+		zd_rf_al7230b.o zd_rf_uw2453.o \
+		zd_rf.o zd_usb.o
+
+ccflags-$(CONFIG_ZD1211RW_DEBUG) := -DDEBUG
+

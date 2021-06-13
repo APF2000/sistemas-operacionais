@@ -1,3 +1,20 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:02c6b5d01ec08a526caccc06a90b9f1013e59ef4c3e830da7607e9752a6b48a2
-size 789
+Asymmetric Cipher Algorithm Definitions
+---------------------------------------
+
+.. kernel-doc:: include/crypto/akcipher.h
+   :functions: akcipher_alg akcipher_request
+
+Asymmetric Cipher API
+---------------------
+
+.. kernel-doc:: include/crypto/akcipher.h
+   :doc: Generic Public Key API
+
+.. kernel-doc:: include/crypto/akcipher.h
+   :functions: crypto_alloc_akcipher crypto_free_akcipher crypto_akcipher_set_pub_key crypto_akcipher_set_priv_key crypto_akcipher_maxsize crypto_akcipher_encrypt crypto_akcipher_decrypt crypto_akcipher_sign crypto_akcipher_verify
+
+Asymmetric Cipher Request Handle
+--------------------------------
+
+.. kernel-doc:: include/crypto/akcipher.h
+   :functions: akcipher_request_alloc akcipher_request_free akcipher_request_set_callback akcipher_request_set_crypt

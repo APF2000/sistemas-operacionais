@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:eac040100dcdf460fc13a040c4ddbc6ca6048e691680058ab69a7ec221ce22c7
-size 223
+#ifndef __LINUX_BRIDGE_EBT_REDIRECT_H
+#define __LINUX_BRIDGE_EBT_REDIRECT_H
+
+struct ebt_redirect_info {
+	/* EBT_ACCEPT, EBT_DROP, EBT_CONTINUE or EBT_RETURN */
+	int target;
+};
+#define EBT_REDIRECT_TARGET "redirect"
+
+#endif

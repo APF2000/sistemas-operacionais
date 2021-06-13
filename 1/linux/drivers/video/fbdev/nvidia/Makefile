@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:648e80aff3eb540e186e4c2cc1a0fa63a85c4547de592bd73147d0206ccead39
-size 352
+#
+# Makefile for the nVidia framebuffer driver
+#
+
+obj-$(CONFIG_FB_NVIDIA)          += nvidiafb.o
+
+nvidiafb-y                       := nvidia.o nv_hw.o nv_setup.o \
+			            nv_accel.o nv_of.o
+nvidiafb-$(CONFIG_FB_NVIDIA_I2C) += nv_i2c.o
+nvidiafb-$(CONFIG_FB_NVIDIA_BACKLIGHT)  += nv_backlight.o
+
+nvidiafb-objs                    := $(nvidiafb-y)

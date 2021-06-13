@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5afafc70fe18ceb5f7c8ae27de7088029263c037548ed3e920d61995c6c03391
-size 391
+#
+# Copyright (C) 2004, 2007-2010, 2011-2012 Synopsys, Inc. (www.synopsys.com)
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License version 2 as
+# published by the Free Software Foundation.
+#
+
+obj-y	:= extable.o ioremap.o dma.o fault.o init.o
+obj-y	+= tlb.o tlbex.o cache.o mmap.o
+obj-$(CONFIG_HIGHMEM)	+= highmem.o

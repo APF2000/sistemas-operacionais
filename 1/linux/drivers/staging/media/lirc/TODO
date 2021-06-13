@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4909cbd2281a36a854437e4f9e67ec3add44d14494ff622fdbe2dd6c9e9e05cf
-size 532
+- All drivers should either be ported to ir-core, or dropped entirely
+  (see drivers/media/IR/mceusb.c vs. lirc_mceusb.c in lirc cvs for an
+  example of a previously completed port).
+
+- lirc_bt829 uses registers on a Mach64 VT, which has a separate kernel
+  framebuffer driver (atyfb) and userland X driver (mach64).  It can't
+  simply be converted to a normal PCI driver, but ideally it should be
+  coordinated with the other drivers.
+
+Please send patches to:
+Jarod Wilson <jarod@wilsonet.com>
+Greg Kroah-Hartman <greg@kroah.com>
+

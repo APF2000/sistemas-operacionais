@@ -1,3 +1,22 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:56a0fc35eeb30bbe1e498c26f1c46322adfc65b6566da0aaf31efe4fe854e5a8
-size 522
+#ifndef EADM_SCH_H
+#define EADM_SCH_H
+
+#include <linux/completion.h>
+#include <linux/device.h>
+#include <linux/timer.h>
+#include <linux/list.h>
+#include "orb.h"
+
+struct eadm_private {
+	union orb orb;
+	enum {EADM_IDLE, EADM_BUSY, EADM_NOT_OPER} state;
+	struct completion *completion;
+	struct subchannel *sch;
+	struct timer_list timer;
+	struct list_head head;
+} __aligned(8);
+
+#define get_eadm_private(n) ((struct eadm_private *)dev_get_drvdata(&n->dev))
+#define set_eadm_private(n, p) (dev_set_drvdata(&n->dev, p))
+
+#endif

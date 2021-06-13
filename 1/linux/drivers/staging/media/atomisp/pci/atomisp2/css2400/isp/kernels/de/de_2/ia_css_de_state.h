@@ -1,3 +1,21 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:73b8da4fd4da9bbb560b9269e856084419cb71ad43f89247d1496ea507a7b11f
-size 708
+/*
+ * Support for Intel Camera Imaging ISP subsystem.
+ * Copyright (c) 2015, Intel Corporation.
+ *
+ * This program is free software; you can redistribute it and/or modify it
+ * under the terms and conditions of the GNU General Public License,
+ * version 2, as published by the Free Software Foundation.
+ *
+ * This program is distributed in the hope it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+ * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for
+ * more details.
+ */
+
+#ifndef __IA_CSS_DE2_STATE_H
+#define __IA_CSS_DE2_STATE_H
+
+/* Reuse DE1 states */
+#include "../de_1.0/ia_css_de_state.h"
+
+#endif /* __IA_CSS_DE2_STATE_H */

@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b917f17dc63d18dd59aa67b8fe5ea3003d3266b5ba8cc977be2cbd1c1e7d945f
-size 428
+STMPE gpio
+----------
+
+Required properties:
+ - compatible: "st,stmpe-gpio"
+
+Optional properties:
+ - st,norequest-mask: bitmask specifying which GPIOs should _not_ be requestable
+   due to different usage (e.g. touch, keypad)
+
+Node name must be stmpe_gpio and should be child node of stmpe node to which it
+belongs.
+
+Example:
+	stmpe_gpio {
+		compatible = "st,stmpe-gpio";
+		st,norequest-mask = <0x20>;	//gpio 5 can't be used
+	};

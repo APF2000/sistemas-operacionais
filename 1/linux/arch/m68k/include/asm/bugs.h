@@ -1,3 +1,20 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:9ec54878441edd6d55c69b7377949c4da1bef286f8cd8476a2f5343a132a0afd
-size 330
+/*
+ *  include/asm-m68k/bugs.h
+ *
+ *  Copyright (C) 1994  Linus Torvalds
+ */
+
+/*
+ * This is included by init/main.c to check for architecture-dependent bugs.
+ *
+ * Needs:
+ *	void check_bugs(void);
+ */
+
+#ifdef CONFIG_MMU
+extern void check_bugs(void);	/* in arch/m68k/kernel/setup.c */
+#else
+static void check_bugs(void)
+{
+}
+#endif

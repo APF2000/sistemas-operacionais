@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ea81447c4cde303289a6b82945a9ff737c76a355c20519feb14762e03453fcf0
-size 249
+#ifndef _LINUX_BLK_MQ_VIRTIO_H
+#define _LINUX_BLK_MQ_VIRTIO_H
+
+struct blk_mq_tag_set;
+struct virtio_device;
+
+int blk_mq_virtio_map_queues(struct blk_mq_tag_set *set,
+		struct virtio_device *vdev, int first_vec);
+
+#endif /* _LINUX_BLK_MQ_VIRTIO_H */

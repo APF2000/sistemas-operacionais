@@ -1,3 +1,24 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:0d3e8ee22b2aafa4c8a20a699f466987f73c56f592aaf32f516bb237093befe1
-size 394
+/*
+ * linux/include/asm-cris/timex.h
+ *
+ * CRIS architecture timex specifications
+ */
+
+#ifndef _ASM_CRIS_TIMEX_H
+#define _ASM_CRIS_TIMEX_H
+
+#include <arch/timex.h>
+
+/*
+ * We don't have a cycle-counter.. but we do not support SMP anyway where this is
+ * used so it does not matter.
+ */
+
+typedef unsigned long long cycles_t;
+
+static inline cycles_t get_cycles(void)
+{
+        return 0;
+}
+
+#endif

@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:60db2dc6fd7bea5257712c757e7a959f0b06f8a9f8c7bd8777e659b266c5ae4e
-size 275
+#ifndef _ASM_X86_PARPORT_H
+#define _ASM_X86_PARPORT_H
+
+static int parport_pc_find_isa_ports(int autoirq, int autodma);
+static int parport_pc_find_nonpci_ports(int autoirq, int autodma)
+{
+	return parport_pc_find_isa_ports(autoirq, autodma);
+}
+
+#endif /* _ASM_X86_PARPORT_H */

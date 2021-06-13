@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b8b646308711d01076187c2e569bf48d06d25d7a45ec98eff0b13f70722780ec
-size 130
+#include "blacklist.h"
+
+const char __initdata *const blacklist_hashes[] = {
+#include CONFIG_SYSTEM_BLACKLIST_HASH_LIST
+	, NULL
+};

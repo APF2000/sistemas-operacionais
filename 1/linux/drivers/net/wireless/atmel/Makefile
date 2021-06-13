@@ -1,3 +1,5 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:69479543daf1902f71436b1d9ed887fece1d6aea35fe1510089052ddbc477364
-size 188
+obj-$(CONFIG_ATMEL)             += atmel.o
+obj-$(CONFIG_PCI_ATMEL)         += atmel_pci.o 
+obj-$(CONFIG_PCMCIA_ATMEL)      += atmel_cs.o
+
+obj-$(CONFIG_AT76C50X_USB)      += at76c50x-usb.o

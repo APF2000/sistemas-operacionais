@@ -1,3 +1,20 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:dace0e9a91e9d5d62279e84a2d5a1e9fb3dbcff43f69d12554ddbcc6df551e2e
-size 493
+/*
+ * based on the mips/cachectl.h
+ *
+ * Copyright 2010 Analog Devices Inc.
+ * Copyright (C) 1994, 1995, 1996 by Ralf Baechle
+ *
+ * Licensed under the GPL-2 or later.
+ */
+
+#ifndef _UAPI_ASM_CACHECTL
+#define _UAPI_ASM_CACHECTL
+
+/*
+ * Options for cacheflush system call
+ */
+#define	ICACHE	(1<<0)		/* flush instruction cache        */
+#define	DCACHE	(1<<1)		/* writeback and flush data cache */
+#define	BCACHE	(ICACHE|DCACHE)	/* flush both caches              */
+
+#endif /* _UAPI_ASM_CACHECTL */

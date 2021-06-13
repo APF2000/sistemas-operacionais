@@ -1,3 +1,3 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:593585102978c5393e0ac84b6e569c051cbfb77413e26a88e77967ddfc52a1a6
-size 182
+obj-$(CONFIG_INFINIBAND_VMWARE_PVRDMA) += vmw_pvrdma.o
+
+vmw_pvrdma-y := pvrdma_cmd.o pvrdma_cq.o pvrdma_doorbell.o pvrdma_main.o pvrdma_misc.o pvrdma_mr.o pvrdma_qp.o pvrdma_verbs.o

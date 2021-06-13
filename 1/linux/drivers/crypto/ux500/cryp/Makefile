@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5fb2b655333cd32f417d7979a4950964853040d4e5960a480b54411e7ed43508
-size 395
+#/*
+# * Copyright (C) ST-Ericsson SA 2010
+# * Author: shujuan.chen@stericsson.com for ST-Ericsson.
+# * License terms: GNU General Public License (GPL) version 2  */
+
+ifdef CONFIG_CRYPTO_DEV_UX500_DEBUG
+CFLAGS_cryp_core.o := -DDEBUG
+CFLAGS_cryp.o := -DDEBUG
+CFLAGS_cryp_irq.o := -DDEBUG
+endif
+
+obj-$(CONFIG_CRYPTO_DEV_UX500_CRYP) += ux500_cryp.o
+ux500_cryp-objs :=  cryp.o cryp_irq.o cryp_core.o

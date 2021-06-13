@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:170a900da9dab6fc5ad02c51e3ae2d376332a4463c8cae2753486a81795902d2
-size 379
+/*
+ *  This program is free software; you can redistribute it and/or modify it
+ *  under the terms of the GNU General Public License version 2 as published
+ *  by the Free Software Foundation.
+ *
+ *  Copyright (C) 2010 John Crispin <john@phrozen.org>
+ */
+
+#ifndef __LANTIQ_IRQ_H
+#define __LANTIQ_IRQ_H
+
+#include <lantiq_irq.h>
+
+#define NR_IRQS 256
+
+#include_next <irq.h>
+
+#endif

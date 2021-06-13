@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:02c8d9a88bc0f8331ec645024fd7372d736611c2d118a8ecd3c3b4e6c9548964
-size 651
+What:		/sys/class/net/<iface>/termination
+Date:		May 2010
+KernelVersion:	2.6.35
+Contact:	Ira W. Snyder <ira.snyder@gmail.com>
+Description:
+		Value representing the can bus termination
+
+		Default: 1 (termination active)
+		Reading: get actual termination state
+		Writing: set actual termination state (0=no termination, 1=termination active)
+
+What:		/sys/class/net/<iface>/fwinfo
+Date:		May 2015
+KernelVersion:	3.19
+Contact:	Andreas Gröger <andreas24groeger@gmail.com>
+Description:
+		Firmware stamp of ican3 module
+		Read-only: 32 byte string identification of the ICAN3 module
+		(known values: "JANZ-ICAN3 ICANOS 1.xx", "JANZ-ICAN3 CAL/CANopen 1.xx")

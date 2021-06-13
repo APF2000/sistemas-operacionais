@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:04002c37d5581ed9d4dbe5fca98086d50cd8a8fb87ca9628491d9fa57e05447d
-size 141
+#ifndef _MEDIA_MT9T001_H
+#define _MEDIA_MT9T001_H
+
+struct mt9t001_platform_data {
+	unsigned int clk_pol:1;
+	unsigned int ext_clk;
+};
+
+#endif

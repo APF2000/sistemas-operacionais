@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:63b16e3918b0d15e68d026f48b6449f957214b6d3a423ca6eeb0388f8d9483b6
-size 459
+#
+# DECnet netfilter configuration
+#
+
+menu "DECnet: Netfilter Configuration"
+	depends on DECNET && NETFILTER
+	depends on NETFILTER_ADVANCED
+
+config DECNET_NF_GRABULATOR
+	tristate "Routing message grabulator (for userland routing daemon)"
+	help
+	  Enable this module if you want to use the userland DECnet routing
+	  daemon. You will also need to enable routing support for DECnet
+	  unless you just want to monitor routing messages from other nodes.
+
+endmenu

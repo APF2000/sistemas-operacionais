@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c4a975b3c475c84eb038dbc80dcdaa5592c9c70ff332c346d7de831245771bcb
-size 337
+/*
+ * at91rm9200_pqfp.dtsi - Device Tree Include file for AT91RM9200 PQFP family SoC
+ *
+ * Copyright (C) 2013 Jean-Christophe PLAGNIOL-VILLARD <plagnioj@jcrosoft.com>
+ *
+ * Licensed under GPLv2 or later.
+ */
+
+#include "at91rm9200.dtsi"
+
+/ {
+	compatible = "atmel,at91rm9200-pqfp", "atmel,at91rm9200";
+};
+
+&pioD {
+	status = "disabled";
+};

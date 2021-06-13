@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:8db50f0272d178eb9a0b57aae3e8888934827323ae02670d24846b9dfb2ddce3
-size 333
+00-INDEX
+	- This file
+ds2482
+	- The Maxim/Dallas Semiconductor DS2482 provides 1-wire busses.
+ds2490
+	- The Maxim/Dallas Semiconductor DS2490 builds USB <-> W1 bridges.
+mxc-w1
+	- W1 master controller driver found on Freescale MX2/MX3 SoCs
+omap-hdq
+	- HDQ/1-wire module of TI OMAP 2430/3430.
+w1-gpio
+	- GPIO 1-wire bus master driver.

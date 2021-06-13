@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4044581393374cc8777f012cd11fb13afcc1cad0d21832479f1a4ef7ba09b42c
-size 187
+#ifndef __ASM_ARCH_PXA930_TRKBALL_H
+#define __ASM_ARCH_PXA930_TRKBALL_H
+
+struct pxa930_trkball_platform_data {
+	int x_filter;
+	int y_filter;
+};
+
+#endif /* __ASM_ARCH_PXA930_TRKBALL_H */
+

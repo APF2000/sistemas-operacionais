@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:48c5487dc6a8a509e3481a5322e2c064a74b823044be76914033ca575e38d903
-size 143
+#
+# Makefile for FDP NCI based NFC driver
+#
+
+obj-$(CONFIG_NFC_FDP)     += fdp.o
+obj-$(CONFIG_NFC_FDP_I2C) += fdp_i2c.o
+
+fdp_i2c-objs  = i2c.o
+

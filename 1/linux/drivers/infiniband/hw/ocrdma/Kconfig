@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:53cf404c20a7084ae6f9f23571c167a6ed6567b8919bd20f56bd7bc523c6863f
-size 314
+config INFINIBAND_OCRDMA
+	tristate "Emulex One Connect HCA support"
+	depends on ETHERNET && NETDEVICES && PCI && INET && (IPV6 || IPV6=n)
+	select NET_VENDOR_EMULEX
+	select BE2NET
+	---help---
+	  This driver provides low-level InfiniBand over Ethernet
+	  support for Emulex One Connect host channel adapters (HCAs).

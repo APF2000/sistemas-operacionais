@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:dac81bd3d8270ac6a41d97e4356d331080fc3fffd7fcb524c37e896a8895bbd6
-size 337
+What:		/sys/kernel/profiling
+Date:		September 2008
+Contact:	Dave Hansen <dave@linux.vnet.ibm.com>
+Description:
+		/sys/kernel/profiling is the runtime equivalent
+		of the boot-time profile= option.
+
+		You can get the same effect running:
+
+			echo 2 > /sys/kernel/profiling
+
+		as you would by issuing profile=2 on the boot
+		command line.

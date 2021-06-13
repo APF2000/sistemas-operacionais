@@ -1,3 +1,31 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:daa0edf96337e8a3118f9a7515feb697b677d7c4fadac4b102db8229dd3d64d4
-size 594
+#ifndef __ASM_LINKAGE_H
+#define __ASM_LINKAGE_H
+
+#include <linux/stringify.h>
+
+#define __ALIGN .align 4, 0x07
+#define __ALIGN_STR __stringify(__ALIGN)
+
+#ifndef __ASSEMBLY__
+
+/*
+ * Helper macro for exception table entries
+ */
+#define EX_TABLE(_fault, _target)	\
+	".section __ex_table,\"a\"\n"	\
+	".align	4\n"			\
+	".long	(" #_fault ") - .\n"	\
+	".long	(" #_target ") - .\n"	\
+	".previous\n"
+
+#else /* __ASSEMBLY__ */
+
+#define EX_TABLE(_fault, _target)	\
+	.section __ex_table,"a"	;	\
+	.align	4 ;			\
+	.long	(_fault) - . ;		\
+	.long	(_target) - . ;		\
+	.previous
+
+#endif /* __ASSEMBLY__ */
+#endif

@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ef16e346c4db4cbf0928c43821d2b1f0cf71fe7f11e0dbf667af6ab8b16521c8
-size 355
+#ifndef _XT_ESP_H
+#define _XT_ESP_H
+
+#include <linux/types.h>
+
+struct xt_esp {
+	__u32 spis[2];	/* Security Parameter Index */
+	__u8  invflags;	/* Inverse flags */
+};
+
+/* Values for "invflags" field in struct xt_esp. */
+#define XT_ESP_INV_SPI	0x01	/* Invert the sense of spi. */
+#define XT_ESP_INV_MASK	0x01	/* All possible flags. */
+
+#endif /*_XT_ESP_H*/

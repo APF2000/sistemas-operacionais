@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a4c1845be88a6b70ef8f3f30e42631ae0fb251b144affdf1a61b883e47bc24f2
-size 312
+#
+# Makefile for the SMSC network device drivers.
+#
+
+obj-$(CONFIG_SMC9194) += smc9194.o
+obj-$(CONFIG_SMC91X) += smc91x.o
+obj-$(CONFIG_PCMCIA_SMC91C92) += smc91c92_cs.o
+obj-$(CONFIG_EPIC100) += epic100.o
+obj-$(CONFIG_SMSC9420) += smsc9420.o
+obj-$(CONFIG_SMC911X) += smc911x.o
+obj-$(CONFIG_SMSC911X) += smsc911x.o

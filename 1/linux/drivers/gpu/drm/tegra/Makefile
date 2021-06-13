@@ -1,3 +1,20 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c516e3a4cb1e840e596aa05601fab75ebc869b058abfd99716e2af3f74dd816a
-size 250
+ccflags-$(CONFIG_DRM_TEGRA_DEBUG) += -DDEBUG
+
+tegra-drm-y := \
+	drm.o \
+	gem.o \
+	fb.o \
+	dc.o \
+	output.o \
+	rgb.o \
+	hdmi.o \
+	mipi-phy.o \
+	dsi.o \
+	sor.o \
+	dpaux.o \
+	gr2d.o \
+	gr3d.o \
+	falcon.o \
+	vic.o
+
+obj-$(CONFIG_DRM_TEGRA) += tegra-drm.o

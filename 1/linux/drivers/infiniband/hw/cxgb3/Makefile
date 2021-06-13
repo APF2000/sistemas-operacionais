@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a04e06668b8fe30985414211499908442793b6a31a560c991e10ae7413782a3a
-size 276
+ccflags-y := -Idrivers/net/ethernet/chelsio/cxgb3
+
+obj-$(CONFIG_INFINIBAND_CXGB3) += iw_cxgb3.o
+
+iw_cxgb3-y :=  iwch_cm.o iwch_ev.o iwch_cq.o iwch_qp.o iwch_mem.o \
+	       iwch_provider.o iwch.o cxio_hal.o cxio_resource.o
+
+ccflags-$(CONFIG_INFINIBAND_CXGB3_DEBUG) += -DDEBUG

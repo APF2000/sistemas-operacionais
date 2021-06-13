@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b1d61d641b142ed6d758eba978d1c40ca2d7b058848af7a12de45fb1cf233c87
-size 166
+#
+# Makefile - Intel MIC COSM Client Driver
+# Copyright(c) 2015, Intel Corporation.
+#
+obj-$(CONFIG_MIC_COSM) += cosm_client.o
+
+cosm_client-objs += cosm_scif_client.o

@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:6c41f3bea7f466771394d3cb208d05dde5d67d0587742ed815cb6ebca4b45838
-size 429
+TEST_GEN_PROGS := switch_endian_test
+
+ASFLAGS += -O2 -Wall -g -nostdlib -m64
+
+EXTRA_CLEAN = $(OUTPUT)/*.o $(OUTPUT)/check-reversed.S
+
+include ../../lib.mk
+
+$(OUTPUT)/switch_endian_test: $(OUTPUT)/check-reversed.S
+
+$(OUTPUT)/check-reversed.o: $(OUTPUT)/check.o
+	$(CROSS_COMPILE)objcopy -j .text --reverse-bytes=4 -O binary $< $@
+
+$(OUTPUT)/check-reversed.S: $(OUTPUT)/check-reversed.o
+	hexdump -v -e '/1 ".byte 0x%02X\n"' $< > $@

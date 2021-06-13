@@ -1,3 +1,21 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:acbb3bbef98bcbe0881ee10b51aa57c20eba7b3ff442bc9b362d288d4ab2040a
-size 387
+#ifndef __ASM_SPINLOCK_TYPES_H
+#define __ASM_SPINLOCK_TYPES_H
+
+#ifndef __LINUX_SPINLOCK_TYPES_H
+# error "please don't include this file directly"
+#endif
+
+typedef struct {
+	int lock;
+} __attribute__ ((aligned (4))) arch_spinlock_t;
+
+#define __ARCH_SPIN_LOCK_UNLOCKED { .lock = 0, }
+
+typedef struct {
+	int lock;
+	int owner;
+} arch_rwlock_t;
+
+#define __ARCH_RW_LOCK_UNLOCKED		{ 0 }
+
+#endif

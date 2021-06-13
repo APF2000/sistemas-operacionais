@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:3c01eeec89a03055b33a9a8ea262fb9d4d2700e2d2bb1b1e32359022378df399
-size 245
+DIO2125 Audio Driver
+
+Required properties:
+- compatible : "dioo,dio2125"
+- enable-gpios : the gpio connected to the enable pin of the dio2125
+
+Example:
+
+amp: analog-amplifier {
+	compatible = "dioo,dio2125";
+	enable-gpios = <&gpio GPIOH_3 0>;
+};

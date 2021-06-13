@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d7e95915478b2ecdc00f277297899a02730c66979f93c63eac010c555cca62e8
-size 229
+AU Optronics Corporation 10.1" WXGA TFT LCD panel
+
+Required properties:
+- compatible: should be "auo,b101xtn01"
+
+This binding is compatible with the simple-panel binding, which is specified
+in simple-panel.txt in this directory.

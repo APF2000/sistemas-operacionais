@@ -1,3 +1,27 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2dbdb0a0374993a9a484fde22e1f9d73a5ef00d1501ec00179fa2da8212bcd1d
-size 347
+#ifndef _S390_KDEBUG_H
+#define _S390_KDEBUG_H
+
+/*
+ * Feb 2006 Ported to s390 <grundym@us.ibm.com>
+ */
+
+struct pt_regs;
+
+enum die_val {
+	DIE_OOPS = 1,
+	DIE_BPT,
+	DIE_SSTEP,
+	DIE_PANIC,
+	DIE_NMI,
+	DIE_DIE,
+	DIE_NMIWATCHDOG,
+	DIE_KERNELDEBUG,
+	DIE_TRAP,
+	DIE_GPF,
+	DIE_CALL,
+	DIE_NMI_IPI,
+};
+
+extern void die(struct pt_regs *, const char *);
+
+#endif

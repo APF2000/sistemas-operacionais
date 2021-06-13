@@ -1,3 +1,20 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:516dfe50fa50e3501a754ab38b81f5a02be8a7e9659e6db249ad800c359f39f9
-size 378
+#ifndef BOOT_CPUFLAGS_H
+#define BOOT_CPUFLAGS_H
+
+#include <asm/cpufeatures.h>
+#include <asm/processor-flags.h>
+
+struct cpu_features {
+	int level;		/* Family, or 64 for x86-64 */
+	int family;		/* Family, always */
+	int model;
+	u32 flags[NCAPINTS];
+};
+
+extern struct cpu_features cpu;
+extern u32 cpu_vendor[3];
+
+int has_eflag(unsigned long mask);
+void get_cpuflags(void);
+
+#endif

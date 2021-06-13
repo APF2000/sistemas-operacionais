@@ -1,3 +1,26 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:bb67fb7d8a7c08226dcfed4dc438069df08199a1a3a01aaa7e43859fb149d6fb
-size 869
+/*
+ * Copyright (C) 2012 Texas Instruments
+ * Author: Rob Clark <robdclark@gmail.com>
+ *
+ * This program is free software; you can redistribute it and/or modify it
+ * under the terms of the GNU General Public License version 2 as published by
+ * the Free Software Foundation.
+ *
+ * This program is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+ * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for
+ * more details.
+ *
+ * You should have received a copy of the GNU General Public License along with
+ * this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+#ifndef __TILCDC_PANEL_H__
+#define __TILCDC_PANEL_H__
+
+/* sub-module for generic lcd panel output */
+
+int tilcdc_panel_init(void);
+void tilcdc_panel_fini(void);
+
+#endif /* __TILCDC_PANEL_H__ */

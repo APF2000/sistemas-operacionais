@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5c4600bc169207fec4df08be418b4b1c273a51d8107317a83e372a602c862358
-size 200
+#ifndef ___ASM_SPARC_THREAD_INFO_H
+#define ___ASM_SPARC_THREAD_INFO_H
+#if defined(__sparc__) && defined(__arch64__)
+#include <asm/thread_info_64.h>
+#else
+#include <asm/thread_info_32.h>
+#endif
+#endif

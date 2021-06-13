@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a3e15fe9f0ede44ee9384f1eba635865882f4e80765c95dc8b01006d2c547519
-size 141
+#ifndef __DATA_CONVERT_H
+#define __DATA_CONVERT_H
+
+struct perf_data_convert_opts {
+	bool force;
+	bool all;
+};
+
+#endif /* __DATA_CONVERT_H */

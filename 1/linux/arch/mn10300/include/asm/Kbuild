@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:7838088cfeaf0d25f34621bdfe5cb3d86e65461e4041d123c4580262a4563e4b
-size 274
+
+generic-y += barrier.h
+generic-y += clkdev.h
+generic-y += exec.h
+generic-y += extable.h
+generic-y += irq_work.h
+generic-y += mcs_spinlock.h
+generic-y += mm-arch-hooks.h
+generic-y += preempt.h
+generic-y += sections.h
+generic-y += trace_clock.h
+generic-y += word-at-a-time.h

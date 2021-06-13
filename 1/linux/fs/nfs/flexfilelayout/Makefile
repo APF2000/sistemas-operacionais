@@ -1,3 +1,5 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:afdbeadfe702036ebbba788c5c71aa77cd6249b6a7257b13850eeac9d5a3632d
-size 189
+#
+# Makefile for the pNFS Flexfile Layout Driver kernel module
+#
+obj-$(CONFIG_PNFS_FLEXFILE_LAYOUT) += nfs_layout_flexfiles.o
+nfs_layout_flexfiles-y := flexfilelayout.o flexfilelayoutdev.o

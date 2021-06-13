@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1863eb70bd3bc837f7c1a9ef5746057f0db6e761e4f424a25dae4afd1c4c4a99
-size 186
+/dts-v1/;
+/include/ "xtfpga.dtsi"
+/include/ "xtfpga-flash-16m.dtsi"
+
+/ {
+	compatible = "cdns,xtensa-ml605";
+	memory@0 {
+		device_type = "memory";
+		reg = <0x00000000 0x08000000>;
+	};
+};

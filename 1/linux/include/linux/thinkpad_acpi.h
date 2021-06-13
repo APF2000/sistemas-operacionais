@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2e0b051e7abb8b46722065bd2ef360b9e9edafb2463ac5d23cda7a34f1018c2a
-size 281
+#ifndef __THINKPAD_ACPI_H__
+#define __THINKPAD_ACPI_H__
+
+/* These two functions return 0 if success, or negative error code
+   (e g -ENODEV if no led present) */
+
+enum {
+	TPACPI_LED_MUTE,
+	TPACPI_LED_MICMUTE,
+	TPACPI_LED_MAX,
+};
+
+int tpacpi_led_set(int whichled, bool on);
+
+#endif

@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:11158b473319ae181d6cfaaed850c52e5038db9f8b8783c02b28bed85c4dcaf1
-size 263
+#ifndef _ASM_IA64_UV_UV_H
+#define _ASM_IA64_UV_UV_H
+
+#include <asm/sn/simulator.h>
+
+static inline int is_uv_system(void)
+{
+	/* temporary support for running on hardware simulator */
+	return IS_MEDUSA() || ia64_platform_is("uv");
+}
+
+#endif	/* _ASM_IA64_UV_UV_H */

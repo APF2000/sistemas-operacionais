@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b23469f5ea61c320c2929f572badf415f28b1cd70b45b00dcc2c224eb3699ae1
-size 414
+#
+# Gain Amplifiers, etc.
+#
+# When adding new entries keep the list in alphabetical order
+
+menu "Amplifiers"
+
+config AD8366
+	tristate "Analog Devices AD8366 VGA"
+	depends on SPI
+	select BITREVERSE
+	help
+	  Say yes here to build support for Analog Devices AD8366
+	  SPI Dual-Digital Variable Gain Amplifier (VGA).
+
+	  To compile this driver as a module, choose M here: the
+	  module will be called ad8366.
+
+endmenu

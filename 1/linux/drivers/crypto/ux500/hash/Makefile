@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:887591f286a6daff86064c8241a346b3bbfaee2ad41593875b15f702866ce16d
-size 310
+#
+# Copyright (C) ST-Ericsson SA 2010
+# Author: Shujuan Chen (shujuan.chen@stericsson.com)
+# License terms: GNU General Public License (GPL) version 2
+#
+ifdef CONFIG_CRYPTO_DEV_UX500_DEBUG
+CFLAGS_hash_core.o := -DDEBUG
+endif
+
+obj-$(CONFIG_CRYPTO_DEV_UX500_HASH) += ux500_hash.o
+ux500_hash-objs :=  hash_core.o

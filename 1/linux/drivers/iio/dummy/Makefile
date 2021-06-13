@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:fa08e56983597a3c56147211fe92a1c0f33e2f686b45383b9da0133a662a2370
-size 319
+#
+# Makefile for the IIO Dummy Driver
+#
+
+obj-$(CONFIG_IIO_SIMPLE_DUMMY) += iio_dummy.o
+iio_dummy-y := iio_simple_dummy.o
+iio_dummy-$(CONFIG_IIO_SIMPLE_DUMMY_EVENTS) += iio_simple_dummy_events.o
+iio_dummy-$(CONFIG_IIO_SIMPLE_DUMMY_BUFFER) += iio_simple_dummy_buffer.o
+
+obj-$(CONFIG_IIO_DUMMY_EVGEN) += iio_dummy_evgen.o

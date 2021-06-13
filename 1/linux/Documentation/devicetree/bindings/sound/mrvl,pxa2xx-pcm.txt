@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:79c6430cf6641796a48b5c142cf052b6eee9636814d74e97e506512da05d28c3
-size 310
+DT bindings for ARM PXA2xx PCM platform driver
+
+This is just a dummy driver that registers the PXA ASoC platform driver.
+It does not have any resources assigned.
+
+Required properties:
+
+	- compatible		'mrvl,pxa-pcm-audio'
+
+Example:
+
+	pxa_pcm_audio: snd_soc_pxa_audio {
+		compatible = "mrvl,pxa-pcm-audio";
+	};
+

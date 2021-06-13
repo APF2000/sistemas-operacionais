@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e31748c7625f99d144f7f3475e27874db64a79214418d17455a3161a2752f915
-size 428
+/* Routines to test for presence/absence of hardware registers:
+ * see arch/m68k/mm/hwtest.c.
+ *  -- PMM <pmaydell@chiark.greenend.org.uk> 05/1998
+ *
+ * Removed __init from decls.  We might want them in modules, and
+ * the code is tiny anyway.  16/5/98 pb
+ */
+
+#ifndef __ASM_HWTEST_H
+#define __ASM_HWTEST_H
+
+extern int hwreg_present(volatile void *regp);
+extern int hwreg_write(volatile void *regp, unsigned short val);
+
+#endif

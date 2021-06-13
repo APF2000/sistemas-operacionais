@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:37ae1d680cddf4826c88df8047f1e3bb81c724d353bfc3a8b244af5c1211a21c
-size 184
+#ifndef ___ASM_SPARC_PGALLOC_H
+#define ___ASM_SPARC_PGALLOC_H
+#if defined(__sparc__) && defined(__arch64__)
+#include <asm/pgalloc_64.h>
+#else
+#include <asm/pgalloc_32.h>
+#endif
+#endif

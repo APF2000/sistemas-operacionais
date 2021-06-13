@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c8e13bfe6686dfeda588d9771e72ddae0ee227ef11b9121999c1ca0b32f2785f
-size 253
+
+#ifndef PERF_DWARF2_H
+#define PERF_DWARF2_H
+
+/* dwarf2.h ... dummy header file for including arch/x86/lib/mem{cpy,set}_64.S */
+
+#define CFI_STARTPROC
+#define CFI_ENDPROC
+#define CFI_REMEMBER_STATE
+#define CFI_RESTORE_STATE
+
+#endif	/* PERF_DWARF2_H */
+

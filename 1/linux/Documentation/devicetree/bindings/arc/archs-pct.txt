@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f60afb266fae0c8be0c27298a4d770409b62b44146a10351e6d99c6c5df659f2
-size 424
+* ARC HS Performance Counters
+
+The ARC HS can be configured with a pipeline performance monitor for counting
+CPU and cache events like cache misses and hits. Like conventional PCT there
+are 100+ hardware conditions dynamically mapped to up to 32 counters.
+It also supports overflow interrupts.
+
+Required properties:
+
+- compatible : should contain
+	"snps,archs-pct"
+
+Example:
+
+pmu {
+        compatible = "snps,archs-pct";
+};

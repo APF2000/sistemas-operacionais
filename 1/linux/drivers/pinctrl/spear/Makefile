@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2524c9d8c78611bac97a3df1e05d00da07f94926e71f5fb1b8e06abb8d7a27c2
-size 429
+# SPEAr pinmux support
+
+obj-$(CONFIG_PINCTRL_SPEAR_PLGPIO)	+= pinctrl-plgpio.o
+obj-y				+= pinctrl-spear.o
+obj-$(CONFIG_PINCTRL_SPEAR3XX)	+= pinctrl-spear3xx.o
+obj-$(CONFIG_PINCTRL_SPEAR300)	+= pinctrl-spear300.o
+obj-$(CONFIG_PINCTRL_SPEAR310)	+= pinctrl-spear310.o
+obj-$(CONFIG_PINCTRL_SPEAR320)	+= pinctrl-spear320.o
+obj-$(CONFIG_PINCTRL_SPEAR1310)	+= pinctrl-spear1310.o
+obj-$(CONFIG_PINCTRL_SPEAR1340)	+= pinctrl-spear1340.o

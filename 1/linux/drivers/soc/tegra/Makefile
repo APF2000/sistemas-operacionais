@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:91998030413ad616098c503d0170e9ef0d2660ce47f895c322351986f3e7d872
-size 173
+obj-y += fuse/
+
+obj-y += common.o
+obj-$(CONFIG_SOC_TEGRA_FLOWCTRL) += flowctrl.o
+obj-$(CONFIG_SOC_TEGRA_PMC) += pmc.o
+obj-$(CONFIG_SOC_TEGRA_PMC_TEGRA186) += pmc-tegra186.o

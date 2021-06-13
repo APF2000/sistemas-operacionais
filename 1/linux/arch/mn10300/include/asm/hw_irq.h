@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:20c57f08f518b125cea7b362cfa579409b5d4434515ce9ca1f7fb9bf81020da3
-size 483
+/* MN10300 Hardware interrupt definitions
+ *
+ * Copyright (C) 2007 Red Hat, Inc. All Rights Reserved.
+ * Written by David Howells (dhowells@redhat.com)
+ *
+ * This program is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU General Public Licence
+ * as published by the Free Software Foundation; either version
+ * 2 of the Licence, or (at your option) any later version.
+ */
+#ifndef _ASM_HW_IRQ_H
+#define _ASM_HW_IRQ_H
+
+#endif /* _ASM_HW_IRQ_H */

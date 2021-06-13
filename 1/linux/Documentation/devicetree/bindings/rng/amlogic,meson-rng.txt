@@ -1,3 +1,21 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5ccb46aaf86b9b76311a37a8a18013a2010b3c322a7a28a51fb8956f72338b0b
-size 474
+Amlogic Meson Random number generator
+=====================================
+
+Required properties:
+
+- compatible : should be "amlogic,meson-rng"
+- reg : Specifies base physical address and size of the registers.
+
+Optional properties:
+
+- clocks : phandle to the following named clocks
+- clock-names: Name of core clock, must be "core"
+
+Example:
+
+rng {
+	compatible = "amlogic,meson-rng";
+	reg = <0x0 0xc8834000 0x0 0x4>;
+	clocks = <&clkc CLKID_RNG0>;
+	clock-names = "core";
+};

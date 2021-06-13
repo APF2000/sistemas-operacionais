@@ -1,3 +1,31 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:81e1c3431f4ad43c088f5d01cf55cad087c58fd6cd69b52140a47bc48775bdf5
-size 872
+/*
+ * Driver for MT9M032 CMOS Image Sensor from Micron
+ *
+ * Copyright (C) 2010-2011 Lund Engineering
+ * Contact: Gil Lund <gwlund@lundeng.com>
+ * Author: Martin Hostettler <martin@neutronstar.dyndns.org>
+ *
+ * This program is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License
+ * version 2 as published by the Free Software Foundation.
+ *
+ * This program is distributed in the hope that it will be useful, but
+ * WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * General Public License for more details.
+ *
+ */
+
+#ifndef MT9M032_H
+#define MT9M032_H
+
+#define MT9M032_NAME		"mt9m032"
+#define MT9M032_I2C_ADDR	(0xb8 >> 1)
+
+struct mt9m032_platform_data {
+	u32 ext_clock;
+	u32 pix_clock;
+	bool invert_pixclock;
+
+};
+#endif /* MT9M032_H */

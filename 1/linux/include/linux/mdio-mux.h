@@ -1,3 +1,23 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:191d9cb930ce2c5b51d4b4623500671123ad6a45302407735df4fea8c6fb8f2a
-size 603
+/*
+ * MDIO bus multiplexer framwork.
+ *
+ * This file is subject to the terms and conditions of the GNU General Public
+ * License.  See the file "COPYING" in the main directory of this archive
+ * for more details.
+ *
+ * Copyright (C) 2011, 2012 Cavium, Inc.
+ */
+#ifndef __LINUX_MDIO_MUX_H
+#define __LINUX_MDIO_MUX_H
+#include <linux/device.h>
+#include <linux/phy.h>
+
+int mdio_mux_init(struct device *dev,
+		  int (*switch_fn) (int cur, int desired, void *data),
+		  void **mux_handle,
+		  void *data,
+		  struct mii_bus *mux_bus);
+
+void mdio_mux_uninit(void *mux_handle);
+
+#endif /* __LINUX_MDIO_MUX_H */

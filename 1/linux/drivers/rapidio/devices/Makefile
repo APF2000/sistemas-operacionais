@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:012f1c8c029b668f7c1ce6b5bfe738f31ab0b7c42cb10bf8ffe262309ba664ca
-size 223
+#
+# Makefile for RapidIO devices
+#
+
+obj-$(CONFIG_RAPIDIO_TSI721)	+= tsi721_mport.o
+tsi721_mport-y			:= tsi721.o
+tsi721_mport-$(CONFIG_RAPIDIO_DMA_ENGINE) += tsi721_dma.o
+obj-$(CONFIG_RAPIDIO_MPORT_CDEV) += rio_mport_cdev.o

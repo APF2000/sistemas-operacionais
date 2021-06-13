@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1119b92ab765ea7f45e98e938b2af712497b22fe0c77f44a1d4805ea5e58d0f3
-size 147
+#
+# Makefile for the Apple network device drivers.
+#
+
+obj-$(CONFIG_MACE) += mace.o
+obj-$(CONFIG_BMAC) += bmac.o
+obj-$(CONFIG_MACMACE) += macmace.o

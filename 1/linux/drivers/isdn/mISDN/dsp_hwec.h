@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c13a58f628b5f27a65a3516b5d4b64f735f205c6b3c234128bf1b4cdb0061d65
-size 241
+/*
+ * dsp_hwec.h
+ */
+
+extern struct mISDN_dsp_element *dsp_hwec;
+extern void dsp_hwec_enable(struct dsp *dsp, const char *arg);
+extern void dsp_hwec_disable(struct dsp *dsp);
+extern int  dsp_hwec_init(void);
+extern void dsp_hwec_exit(void);

@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:8c04b3115410a1aa44821762c40959651680845d16bb813fdd3a7cf46b482c29
-size 198
+#
+# Makefile for the linux RomFS filesystem routines.
+#
+
+obj-$(CONFIG_ROMFS_FS) += romfs.o
+
+romfs-y := storage.o super.o
+
+ifneq ($(CONFIG_MMU),y)
+romfs-$(CONFIG_ROMFS_ON_MTD) += mmap-nommu.o
+endif
+

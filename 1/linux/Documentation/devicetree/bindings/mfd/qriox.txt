@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:843b96f6f92b9810d06ee2e50cee09e96e1c29cc4e3c1ddc895004a5e19af502
-size 442
+KEYMILE qrio Board Control CPLD
+
+The qrio is a multifunction device that controls the KEYMILE boards based on
+the kmp204x design.
+It is consists of a reset controller, watchdog timer, LEDs, and 2 IRQ capable
+GPIO blocks.
+
+Required properties:
+- compatible: "keymile,qriox"
+- reg: access on the parent local bus (chip select, offset in chip select, size)
+
+Example:
+
+	board-control@1,0 {
+		compatible = "keymile,qriox";
+		reg = <1 0 0x80>;
+	};

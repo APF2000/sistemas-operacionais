@@ -1,3 +1,27 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ec72791561d01bdb2e321cefc4d6b5012204e339bb6b7f7b5466c605e4491f81
-size 554
+#include <stdio.h>
+#include "api/fs/fs.h"
+#include "util/group.h"
+
+/*
+ * Check whether we can use a group for top down.
+ * Without a group may get bad results due to multiplexing.
+ */
+bool arch_topdown_check_group(bool *warn)
+{
+	int n;
+
+	if (sysctl__read_int("kernel/nmi_watchdog", &n) < 0)
+		return false;
+	if (n > 0) {
+		*warn = true;
+		return false;
+	}
+	return true;
+}
+
+void arch_topdown_group_warn(void)
+{
+	fprintf(stderr,
+		"nmi_watchdog enabled with topdown. May give wrong results.\n"
+		"Disable with echo 0 > /proc/sys/kernel/nmi_watchdog\n");
+}

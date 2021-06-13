@@ -1,3 +1,27 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c2a0e71764a2dcfbd2a085e9f02f596f15c1e0db5985cb4b730e0ec1e3f7f586
-size 718
+/*
+ * This file is subject to the terms and conditions of the GNU General Public
+ * License.  See the file "COPYING" in the main directory of this archive
+ * for more details.
+ *
+ * Copyright (C) 1995, 96, 99, 2001 Ralf Baechle <ralf@linux-mips.org>
+ * Copyright (C) 2009 Wind River Systems
+ * Written by Ralf Baechle <ralf@linux-mips.org>
+ */
+#ifndef __ASM_IOCTL_H
+#define __ASM_IOCTL_H
+
+#define _IOC_SIZEBITS	13
+#define _IOC_DIRBITS	3
+
+/*
+ * Direction bits _IOC_NONE could be 0, but OSF/1 gives it a bit.
+ * And this turns out useful to catch old ioctl numbers in header
+ * files for us.
+ */
+#define _IOC_NONE	1U
+#define _IOC_READ	2U
+#define _IOC_WRITE	4U
+
+#include <asm-generic/ioctl.h>
+
+#endif /* __ASM_IOCTL_H */

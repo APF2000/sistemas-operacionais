@@ -1,3 +1,3 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:dea9a36526ce61165286190d31ec5cd9dffdba092f902589bd0895c7402277b3
-size 84
+   zreladdr-y	+= 0xa0008000
+params_phys-y	:= 0xa0000100
+initrd_phys-y	:= 0xa0800000

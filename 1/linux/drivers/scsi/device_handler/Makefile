@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:eb6f921db3d731c18b5269efd46aaea8587ce73f0d4986fc6a2e0e484936d43f
-size 206
+#
+# SCSI Device Handler
+#
+obj-$(CONFIG_SCSI_DH_RDAC)	+= scsi_dh_rdac.o
+obj-$(CONFIG_SCSI_DH_HP_SW)	+= scsi_dh_hp_sw.o
+obj-$(CONFIG_SCSI_DH_EMC)	+= scsi_dh_emc.o
+obj-$(CONFIG_SCSI_DH_ALUA)	+= scsi_dh_alua.o

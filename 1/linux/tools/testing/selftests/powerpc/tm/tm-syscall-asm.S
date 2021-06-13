@@ -1,3 +1,27 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4b038878ba189d2986743e6f77a43f3f52b32ec1898827a1315e083328b8596a
-size 284
+#include <ppc-asm.h>
+#include <asm/unistd.h>
+
+	.text
+FUNC_START(getppid_tm_active)
+	tbegin.
+	beq 1f
+	li	r0, __NR_getppid
+	sc
+	tend.
+	blr
+1:
+	li	r3, -1
+	blr
+
+FUNC_START(getppid_tm_suspended)
+	tbegin.
+	beq 1f
+	li	r0, __NR_getppid
+	tsuspend.
+	sc
+	tresume.
+	tend.
+	blr
+1:
+	li	r3, -1
+	blr

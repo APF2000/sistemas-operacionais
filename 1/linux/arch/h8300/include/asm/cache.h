@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2067053839d49612dca65e5734dbab0f88ca9e9aad8b4c42351f9b92f48b08fa
-size 242
+#ifndef __ARCH_H8300_CACHE_H
+#define __ARCH_H8300_CACHE_H
+
+/* bytes per L1 cache line */
+#define        L1_CACHE_SHIFT  2
+#define        L1_CACHE_BYTES  (1 << L1_CACHE_SHIFT)
+
+#define __cacheline_aligned
+#define ____cacheline_aligned
+
+#endif

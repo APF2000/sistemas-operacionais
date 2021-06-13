@@ -1,3 +1,24 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:618022eb446afb2167293a167ba484a64a265dd32a069277f61a25b1f79a7fc0
-size 595
+* ARC700 incore Interrupt Controller
+
+  The core interrupt controller provides 32 prioritised interrupts (2 levels)
+  to ARC700 core.
+
+Properties:
+
+- compatible: "snps,arc700-intc"
+- interrupt-controller: This is an interrupt controller.
+- #interrupt-cells: Must be <1>.
+
+  Single Cell "interrupts" property of a device specifies the IRQ number
+  between 0 to 31
+
+  intc accessed via the special ARC AUX register interface, hence "reg" property
+  is not specified.
+
+Example:
+
+	intc: interrupt-controller {
+		compatible = "snps,arc700-intc";
+		interrupt-controller;
+		#interrupt-cells = <1>;
+	};

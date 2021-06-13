@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:23311083a049f0c0247c9617d126cb4f5fd192fea5ac7ee51d7ae6b511725ae1
-size 481
+#
+# Copyright (C) 2016 Imagination Technologies
+# Author: Paul Burton <paul.burton@imgtec.com>
+#
+# This program is free software; you can redistribute it and/or modify it
+# under the terms of the GNU General Public License as published by the
+# Free Software Foundation;  either version 2 of the  License, or (at your
+# option) any later version.
+#
+
+obj-y += init.o
+obj-y += irq.o
+obj-y += proc.o
+
+obj-$(CONFIG_LEGACY_BOARD_SEAD3)	+= board-sead3.o
+obj-$(CONFIG_KEXEC)			+= kexec.o

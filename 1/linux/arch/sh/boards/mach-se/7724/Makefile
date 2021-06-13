@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:8acc70d2bd25fc574881a5b201ef6ee6ac8d993682a11a5c2600e4df6ab59e3d
-size 290
+#
+# Makefile for the HITACHI UL SolutionEngine 7724 specific parts of the kernel
+#
+# This file is subject to the terms and conditions of the GNU General Public
+# License.  See the file "COPYING" in the main directory of this archive
+# for more details.
+#
+#
+
+obj-y	 := setup.o irq.o sdram.o

@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e4622c38d171fd690ba3f3c74dadc49c6eafade76f00ed91f0af6aa8ef2f466c
-size 284
+/*
+  * Copyright (C) 2014 Linaro Ltd
+ *
+ * Author: Ulf Hansson <ulf.hansson@linaro.org>
+ *
+ * License terms: GNU General Public License (GPL) version 2
+ */
+#ifndef _MMC_CORE_SLOTGPIO_H
+#define _MMC_CORE_SLOTGPIO_H
+
+struct mmc_host;
+
+int mmc_gpio_alloc(struct mmc_host *host);
+
+#endif

@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:07428fd27c618a3630266b5fd94d4b8068c8b372f1703cb54e62c87b5e605acd
-size 175
+obj-$(CONFIG_X86_INTEL_MID) += intel-mid.o intel_mid_vrtc.o mfld.o mrfld.o pwr.o
+
+# SFI specific code
+ifdef CONFIG_X86_INTEL_MID
+obj-$(CONFIG_SFI) += sfi.o device_libs/
+endif

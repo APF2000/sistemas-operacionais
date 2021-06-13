@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c2f85e94a6192d3375d4fd7e0776686d59e255dfeffaffd43d3b96224887a2c2
-size 240
+#ifndef __STE_CLK_AB8500_H__
+#define __STE_CLK_AB8500_H__
+
+#define AB8500_SYSCLK_BUF2	0
+#define AB8500_SYSCLK_BUF3	1
+#define AB8500_SYSCLK_BUF4	2
+#define AB8500_SYSCLK_ULP	3
+#define AB8500_SYSCLK_INT	4
+#define AB8500_SYSCLK_AUDIO	5
+
+#endif

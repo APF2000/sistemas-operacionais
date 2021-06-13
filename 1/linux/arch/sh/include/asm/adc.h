@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4688e73789eec24c05d17c353297222d617b18830cdaa5a388ad97269148adba
-size 214
+#ifndef __ASM_ADC_H
+#define __ASM_ADC_H
+#ifdef __KERNEL__
+/*
+ * Copyright (C) 2004  Andriy Skulysh
+ */
+
+#include <cpu/adc.h>
+
+int adc_single(unsigned int channel);
+
+#endif /* __KERNEL__ */
+#endif /* __ASM_ADC_H */

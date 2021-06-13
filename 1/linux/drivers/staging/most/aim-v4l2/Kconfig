@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d3b1fa7964efc307a9d3307276402ba7472b3df712ae3018411e2fd1c4de7992
-size 256
+#
+# MOST V4L2 configuration
+#
+
+config AIM_V4L2
+	tristate "V4L2 AIM"
+	depends on VIDEO_V4L2
+	---help---
+	  Say Y here if you want to commumicate via Video 4 Linux.
+
+	  To compile this driver as a module, choose M here: the
+	  module will be called aim_v4l2.

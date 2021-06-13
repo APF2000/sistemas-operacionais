@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f4b3a8a82c44d4db1d5b166810182eb7600d7d14d196b49125e75761abfbe712
-size 713
+/*
+ * Copyright 2012 Tilera Corporation. All Rights Reserved.
+ *
+ *   This program is free software; you can redistribute it and/or
+ *   modify it under the terms of the GNU General Public License
+ *   as published by the Free Software Foundation, version 2.
+ *
+ *   This program is distributed in the hope that it will be useful, but
+ *   WITHOUT ANY WARRANTY; without even the implied warranty of
+ *   MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE, GOOD TITLE or
+ *   NON INFRINGEMENT.  See the GNU General Public License for
+ *   more details.
+ */
+
+/* Machine-generated file; do not edit. */
+
+#ifndef __ARCH_TRIO_SHM_DEF_H__
+#define __ARCH_TRIO_SHM_DEF_H__
+#endif /* !defined(__ARCH_TRIO_SHM_DEF_H__) */

@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4a6f3a5d9bdea910f95ea11fe82ef35b7918d440c9d443e63b1aa2ea60421cbf
-size 149
+
+KERNEL_STACK_SIZE = 4096 * (1 << CONFIG_KERNEL_STACK_ORDER);
+
+#ifdef CONFIG_LD_SCRIPT_STATIC
+#include "uml.lds.S"
+#else
+#include "dyn.lds.S"
+#endif

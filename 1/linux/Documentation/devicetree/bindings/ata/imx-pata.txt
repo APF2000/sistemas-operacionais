@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f7dc1078bd0c1a493793b1f0de45f25e2c5dcccec539911c6d7ef111d4b1853d
-size 412
+* Freescale i.MX PATA Controller
+
+Required properties:
+- compatible: "fsl,imx27-pata"
+- reg: Address range of the PATA Controller
+- interrupts: The interrupt of the PATA Controller
+- clocks: the clocks for the PATA Controller
+
+Example:
+
+	pata: pata@83fe0000 {
+		compatible = "fsl,imx51-pata", "fsl,imx27-pata";
+		reg = <0x83fe0000 0x4000>;
+		interrupts = <70>;
+		clocks = <&clks 161>;
+		status = "disabled";
+	};

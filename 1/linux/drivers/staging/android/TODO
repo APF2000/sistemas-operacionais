@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:544f66883f00a3b62b844565beff49f16ca2ce3639a4ef4c569ae743093a093c
-size 617
+TODO:
+	- checkpatch.pl cleanups
+	- sparse fixes
+	- rename files to be not so "generic"
+	- add proper arch dependencies as needed
+	- audit userspace interfaces to make sure they are sane
+
+
+ion/
+ - Add dt-bindings for remaining heaps (chunk and carveout heaps). This would
+   involve putting appropriate bindings in a memory node for Ion to find.
+ - Split /dev/ion up into multiple nodes (e.g. /dev/ion/heap0)
+ - Better test framework (integration with VGEM was suggested)
+
+Please send patches to Greg Kroah-Hartman <greg@kroah.com> and Cc:
+Arve Hjønnevåg <arve@android.com> and Riley Andrews <riandrews@android.com>

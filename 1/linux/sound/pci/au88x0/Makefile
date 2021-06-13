@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:318beff3969750f437262d89a79a5c7642ff95a26b49040d16a377bea5762580
-size 208
+snd-au8810-objs := au8810.o
+snd-au8820-objs := au8820.o
+snd-au8830-objs := au8830.o
+
+obj-$(CONFIG_SND_AU8810) += snd-au8810.o
+obj-$(CONFIG_SND_AU8820) += snd-au8820.o
+obj-$(CONFIG_SND_AU8830) += snd-au8830.o

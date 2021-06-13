@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:35db010110f77fe276e8417511babdc61499b84375da33a8ad6997cf861947ca
-size 321
+menuconfig FSL_DPAA_ETH
+	tristate "DPAA Ethernet"
+	depends on FSL_DPAA && FSL_FMAN
+	select PHYLIB
+	select FSL_FMAN_MAC
+	---help---
+	  Data Path Acceleration Architecture Ethernet driver,
+	  supporting the Freescale QorIQ chips.
+	  Depends on Freescale Buffer Manager and Queue Manager
+	  driver and Frame Manager Driver.

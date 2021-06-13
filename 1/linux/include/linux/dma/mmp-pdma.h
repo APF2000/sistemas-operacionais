@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c8eda3b135e991aa70544b84baeb3681303dbaf73c7c09d99e96c1a5b95cf0af
-size 278
+#ifndef _MMP_PDMA_H_
+#define _MMP_PDMA_H_
+
+struct dma_chan;
+
+#ifdef CONFIG_MMP_PDMA
+bool mmp_pdma_filter_fn(struct dma_chan *chan, void *param);
+#else
+static inline bool mmp_pdma_filter_fn(struct dma_chan *chan, void *param)
+{
+	return false;
+}
+#endif
+
+#endif /* _MMP_PDMA_H_ */

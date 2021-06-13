@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:7c990414c4b860a1494d1df5754a225ddb81da6a8e7b34c0562f6bcf24f081e9
-size 255
+#
+# Makefile for the Intel Centrino wireless drivers
+#
+
+obj-$(CONFIG_IPW2100) += ipw2100.o
+obj-$(CONFIG_IPW2200) += ipw2200.o
+
+obj-$(CONFIG_LIBIPW) += libipw.o
+libipw-objs := \
+	libipw_module.o \
+	libipw_tx.o \
+	libipw_rx.o \
+	libipw_wx.o \
+	libipw_geo.o

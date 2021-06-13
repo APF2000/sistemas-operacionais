@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:7044ab7403771eb877b565cf2352f149a073f9ae687790afd3917bc7416ac3a0
-size 410
+#ifndef __ASM_CRIS_SWITCH_TO_H
+#define __ASM_CRIS_SWITCH_TO_H
+
+/* the switch_to macro calls resume, an asm function in entry.S which does the actual
+ * task switching.
+ */
+
+extern struct task_struct *resume(struct task_struct *prev, struct task_struct *next, int);
+#define switch_to(prev,next,last) last = resume(prev,next, \
+					 (int)&((struct task_struct *)0)->thread)
+
+#endif /* __ASM_CRIS_SWITCH_TO_H */

@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c23314ca2ff08556c6a31c3a362862b5238d503a9ca52f6db8eb627e3b5bc248
-size 415
+#include <linux/stddef.h>
+#include <linux/kbuild.h>
+#include "pm.h"
+
+int main(void)
+{
+	DEFINE(PM_DATA_PMC,		offsetof(struct at91_pm_data, pmc));
+	DEFINE(PM_DATA_RAMC0,		offsetof(struct at91_pm_data, ramc[0]));
+	DEFINE(PM_DATA_RAMC1,		offsetof(struct at91_pm_data, ramc[1]));
+	DEFINE(PM_DATA_MEMCTRL,	offsetof(struct at91_pm_data, memctrl));
+	DEFINE(PM_DATA_MODE,		offsetof(struct at91_pm_data, mode));
+	return 0;
+}

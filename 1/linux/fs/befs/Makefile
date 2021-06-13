@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:766b670cd441e153ee2546ec2e3cd159c30fe1206fb3d901b88feeed3f23cfd8
-size 206
+#
+# Makefile for the linux BeOS filesystem routines.
+#
+ 
+obj-$(CONFIG_BEFS_FS) += befs.o
+ccflags-$(CONFIG_BEFS_DEBUG)    += -DDEBUG
+befs-objs := datastream.o btree.o super.o inode.o debug.o io.o linuxvfs.o

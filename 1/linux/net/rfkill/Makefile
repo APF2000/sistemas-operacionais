@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:9ebf02b18387ff04fa706c915022140296a7fdaf69c107213e6509ce0a83df43
-size 184
+#
+# Makefile for the RF switch subsystem.
+#
+
+rfkill-y			+= core.o
+rfkill-$(CONFIG_RFKILL_INPUT)	+= input.o
+obj-$(CONFIG_RFKILL)		+= rfkill.o
+obj-$(CONFIG_RFKILL_GPIO)	+= rfkill-gpio.o

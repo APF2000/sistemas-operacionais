@@ -1,3 +1,35 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1565117465c2d6943832e2bd16c6ccdda8cd6a1a5942a3331910be686473c805
-size 508
+
+/ {
+	testcase-data {
+		platform-tests {
+			#address-cells = <1>;
+			#size-cells = <0>;
+
+			test-device@0 {
+				compatible = "test-device";
+				reg = <0x0>;
+
+				#address-cells = <1>;
+				#size-cells = <0>;
+
+				dev@100 {
+					compatible = "test-sub-device";
+					reg = <0x100>;
+				};
+			};
+
+			test-device@1 {
+				compatible = "test-device";
+				reg = <0x1>;
+
+				#address-cells = <1>;
+				#size-cells = <0>;
+
+				dev@100 {
+					compatible = "test-sub-device";
+					reg = <0x100>;
+				};
+			};
+		};
+	};
+};

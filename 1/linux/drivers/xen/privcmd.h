@@ -1,3 +1,3 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:bd39106948fe5400362f062fcbb45e0dc17c53f5492b92a5c3bbea00e021af53
-size 77
+#include <linux/fs.h>
+
+extern const struct file_operations xen_privcmd_fops;

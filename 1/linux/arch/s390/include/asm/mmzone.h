@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b80090c4deed8244c76fcbca946b651a5b1aa7ea3d776a2a9f2fdebc3a8ae00f
-size 277
+/*
+ * NUMA support for s390
+ *
+ * Copyright IBM Corp. 2015
+ */
+
+#ifndef _ASM_S390_MMZONE_H
+#define _ASM_S390_MMZONE_H
+
+#ifdef CONFIG_NUMA
+
+extern struct pglist_data *node_data[];
+#define NODE_DATA(nid) (node_data[nid])
+
+#endif /* CONFIG_NUMA */
+#endif /* _ASM_S390_MMZONE_H */

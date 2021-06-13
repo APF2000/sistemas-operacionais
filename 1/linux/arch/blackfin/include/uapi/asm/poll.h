@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:96e60dfa9d82c586d1a62757458a5983ce649340ad275b31c220446c770a74a0
-size 272
+/*
+ * Copyright 2004-2009 Analog Devices Inc.
+ *
+ * Licensed under the GPL-2 or later.
+ *
+ */
+
+#ifndef _UAPI__BFIN_POLL_H
+#define _UAPI__BFIN_POLL_H
+
+#define POLLWRNORM	4 /* POLLOUT */
+#define POLLWRBAND	256
+
+#include <asm-generic/poll.h>
+
+#endif /* _UAPI__BFIN_POLL_H */

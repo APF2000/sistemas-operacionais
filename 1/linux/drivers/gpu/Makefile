@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:88842a4c29bd9c78e647be78a6eb3a2e42478376c82d589448a6bfc5f24a53c0
-size 279
+# drm/tegra depends on host1x, so if both drivers are built-in care must be
+# taken to initialize them in the correct order. Link order is the only way
+# to ensure this currently.
+obj-$(CONFIG_TEGRA_HOST1X)	+= host1x/
+obj-y			+= drm/ vga/
+obj-$(CONFIG_IMX_IPUV3_CORE)	+= ipu-v3/

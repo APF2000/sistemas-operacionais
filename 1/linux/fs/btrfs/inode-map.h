@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:3d6bf2db20850cb1716aa5e2e380383a99312fcd89344e77334f99bb1bba4524
-size 528
+#ifndef __BTRFS_INODE_MAP
+#define __BTRFS_INODE_MAP
+
+void btrfs_init_free_ino_ctl(struct btrfs_root *root);
+void btrfs_unpin_free_ino(struct btrfs_root *root);
+void btrfs_return_ino(struct btrfs_root *root, u64 objectid);
+int btrfs_find_free_ino(struct btrfs_root *root, u64 *objectid);
+int btrfs_save_ino_cache(struct btrfs_root *root,
+			 struct btrfs_trans_handle *trans);
+
+int btrfs_find_free_objectid(struct btrfs_root *root, u64 *objectid);
+int btrfs_find_highest_objectid(struct btrfs_root *root, u64 *objectid);
+
+#endif

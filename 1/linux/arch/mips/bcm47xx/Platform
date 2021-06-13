@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:59194f0a6266c72b7eb2f7faac0be733ae5ece14902fda0416e71ce90032c5e3
-size 199
+#
+# Broadcom BCM47XX boards
+#
+platform-$(CONFIG_BCM47XX)	+= bcm47xx/
+cflags-$(CONFIG_BCM47XX)	+=					\
+		-I$(srctree)/arch/mips/include/asm/mach-bcm47xx
+load-$(CONFIG_BCM47XX)		:= 0xffffffff80001000

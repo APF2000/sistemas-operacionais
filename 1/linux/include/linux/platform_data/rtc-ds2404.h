@@ -1,3 +1,20 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d8d7889049a7b5a84de9396bc15e6422209e3e1adf022a94da9ba80017e422ed
-size 467
+/*
+ * ds2404.h - platform data structure for the DS2404 RTC.
+ *
+ * This file is subject to the terms and conditions of the GNU General Public
+ * License.  See the file "COPYING" in the main directory of this archive
+ * for more details.
+ *
+ * Copyright (C) 2012 Sven Schnelle <svens@stackframe.org>
+ */
+
+#ifndef __LINUX_DS2404_H
+#define __LINUX_DS2404_H
+
+struct ds2404_platform_data {
+
+	unsigned int gpio_rst;
+	unsigned int gpio_clk;
+	unsigned int gpio_dq;
+};
+#endif

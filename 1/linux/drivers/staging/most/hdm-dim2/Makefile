@@ -1,3 +1,5 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1ab3ea93585e867813d339562b486ba5872f5f862f63924b151f79d512153249
-size 185
+obj-$(CONFIG_HDM_DIM2) += hdm_dim2.o
+
+hdm_dim2-objs := dim2_hdm.o dim2_hal.o dim2_sysfs.o
+ccflags-y += -Idrivers/staging/most/mostcore/
+ccflags-y += -Idrivers/staging/most/aim-network/

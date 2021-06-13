@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:9646c476451c8dd0bdfb01f16f00ed0eaf20fd08959fb2022a2f9709494e75ee
-size 354
+WM8750 and WM8987 audio CODECs
+
+These devices support both I2C and SPI (configured with pin strapping
+on the board).
+
+Required properties:
+
+  - compatible : "wlf,wm8750" or "wlf,wm8987"
+
+  - reg : the I2C address of the device for I2C, the chip select
+          number for SPI.
+
+Example:
+
+codec: wm8750@1a {
+	compatible = "wlf,wm8750";
+	reg = <0x1a>;
+};

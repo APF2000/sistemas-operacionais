@@ -1,3 +1,21 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:62263f2c1477af773ae3c077d1b9c4462d6d0ac43e4d87a10f6e5a8d69e8b257
-size 595
+dtb-y	+= skeleton.dtb
+dtb-y	+= tz1090_generic.dtb
+
+# Built-in dtb
+builtindtb-y				:= skeleton
+builtindtb-$(CONFIG_SOC_TZ1090)		:= tz1090_generic
+
+ifneq ($(CONFIG_METAG_BUILTIN_DTB_NAME),"")
+	builtindtb-y			:= $(patsubst "%",%,$(CONFIG_METAG_BUILTIN_DTB_NAME))
+endif
+
+dtb-$(CONFIG_METAG_BUILTIN_DTB)	+= $(builtindtb-y).dtb
+obj-$(CONFIG_METAG_BUILTIN_DTB)	+= $(builtindtb-y).dtb.o
+
+dtstree		:= $(srctree)/$(src)
+dtb-$(CONFIG_OF_ALL_DTBS) := $(patsubst $(dtstree)/%.dts,%.dtb, $(wildcard $(dtstree)/*.dts))
+
+.SECONDARY: $(obj)/$(builtindtb-y).dtb.S
+
+always += $(dtb-y)
+clean-files += *.dtb *.dtb.S

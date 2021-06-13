@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:9a12cfcdffb04a1188ca37146720fdf57cadd6700a670c0c8895ff7dd9de30b9
-size 374
+/*
+ *  Copyright (C) 2008 Ilya Yanok, Emcraft Systems
+ *
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 2 as
+ * published by the Free Software Foundation.
+ *
+ */
+
+#ifndef SOCRATES_FPGA_PIC_H
+#define SOCRATES_FPGA_PIC_H
+
+void socrates_fpga_pic_init(struct device_node *pic);
+
+#endif

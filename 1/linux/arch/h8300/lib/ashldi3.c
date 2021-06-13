@@ -1,3 +1,24 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:83f5a0d274f1adbe1f27a5834c8a8f1aa8d6b8ae890392a1d481fcd0f6e3f05f
-size 430
+#include "libgcc.h"
+
+DWtype
+__ashldi3(DWtype u, word_type b)
+{
+	const DWunion uu = {.ll = u};
+	const word_type bm = (sizeof (Wtype) * BITS_PER_UNIT) - b;
+	DWunion w;
+
+	if (b == 0)
+		return u;
+
+	if (bm <= 0) {
+		w.s.low = 0;
+		w.s.high = (UWtype) uu.s.low << -bm;
+	} else {
+		const UWtype carries = (UWtype) uu.s.low >> bm;
+
+		w.s.low = (UWtype) uu.s.low << b;
+		w.s.high = ((UWtype) uu.s.high << b) | carries;
+	}
+
+	return w.ll;
+}

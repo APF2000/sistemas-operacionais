@@ -1,3 +1,20 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2b821a99543e5a0134afece5454c0fd59caa5a7f12bc6f78a31dd2c62168c73d
-size 670
+What:		/sys/devices/system/xen_cpu/
+Date:		May 2012
+Contact:	Liu, Jinsong <jinsong.liu@intel.com>
+Description:
+		A collection of global/individual Xen physical cpu attributes
+
+		Individual physical cpu attributes are contained in
+		subdirectories named by the Xen's logical cpu number, e.g.:
+		/sys/devices/system/xen_cpu/xen_cpu#/
+
+
+What:		/sys/devices/system/xen_cpu/xen_cpu#/online
+Date:		May 2012
+Contact:	Liu, Jinsong <jinsong.liu@intel.com>
+Description:
+		Interface to online/offline Xen physical cpus
+
+		When running under Xen platform, it provide user interface
+		to online/offline physical cpus, except cpu0 due to several
+		logic restrictions and assumptions.

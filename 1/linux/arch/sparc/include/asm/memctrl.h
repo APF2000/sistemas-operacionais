@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:332c16c4847895f05bb5938c61cddae4a20e6ffc5d852c3799ba1f9d29dfdf3b
-size 272
+#ifndef _SPARC_MEMCTRL_H
+#define _SPARC_MEMCTRL_H
+
+typedef int (*dimm_printer_t)(int synd_code, unsigned long paddr, char *buf, int buflen);
+
+int register_dimm_printer(dimm_printer_t func);
+void unregister_dimm_printer(dimm_printer_t func);
+
+#endif /* _SPARC_MEMCTRL_H */

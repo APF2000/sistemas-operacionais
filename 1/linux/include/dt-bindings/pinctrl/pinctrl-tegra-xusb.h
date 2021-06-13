@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:903d1e99e417d174bd04f97b34fcbd53f0d0f5457fc6e40da25703ab0fb82497
-size 201
+#ifndef _DT_BINDINGS_PINCTRL_TEGRA_XUSB_H
+#define _DT_BINDINGS_PINCTRL_TEGRA_XUSB_H 1
+
+#define TEGRA_XUSB_PADCTL_PCIE 0
+#define TEGRA_XUSB_PADCTL_SATA 1
+
+#endif /* _DT_BINDINGS_PINCTRL_TEGRA_XUSB_H */

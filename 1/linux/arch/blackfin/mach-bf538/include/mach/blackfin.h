@@ -1,3 +1,33 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a54671800140b5777cefc9b16dff14a2c610fb30f77518c22aed458673712946
-size 519
+/*
+ * Copyright 2008-2010 Analog Devices Inc.
+ *
+ * Licensed under the GPL-2 or later.
+ */
+
+#ifndef _MACH_BLACKFIN_H_
+#define _MACH_BLACKFIN_H_
+
+#define BF538_FAMILY
+
+#include "bf538.h"
+#include "anomaly.h"
+
+#include <asm/def_LPBlackfin.h>
+#ifdef CONFIG_BF538
+# include "defBF538.h"
+#endif
+#ifdef CONFIG_BF539
+# include "defBF539.h"
+#endif
+
+#ifndef __ASSEMBLY__
+# include <asm/cdef_LPBlackfin.h>
+# ifdef CONFIG_BF538
+#  include "cdefBF538.h"
+# endif
+# ifdef CONFIG_BF539
+#  include "cdefBF539.h"
+# endif
+#endif
+
+#endif

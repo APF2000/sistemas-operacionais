@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1dd9a0ea460ccd5ae611f742669ee2f32497befb76976d791af12d986647417e
-size 190
+#ifndef _XT_TCPMSS_MATCH_H
+#define _XT_TCPMSS_MATCH_H
+
+#include <linux/types.h>
+
+struct xt_tcpmss_match_info {
+    __u16 mss_min, mss_max;
+    __u8 invert;
+};
+
+#endif /*_XT_TCPMSS_MATCH_H*/

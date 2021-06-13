@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ffc4dadeb581c8e1e103de44aed62ec0280ca1caa1c50e88d7b9b27134f51de6
-size 306
+#ifndef _ASM_CRIS_UNALIGNED_H
+#define _ASM_CRIS_UNALIGNED_H
+
+/*
+ * CRIS can do unaligned accesses itself. 
+ */
+#include <linux/unaligned/access_ok.h>
+#include <linux/unaligned/generic.h>
+
+#define get_unaligned	__get_unaligned_le
+#define put_unaligned	__put_unaligned_le
+
+#endif /* _ASM_CRIS_UNALIGNED_H */

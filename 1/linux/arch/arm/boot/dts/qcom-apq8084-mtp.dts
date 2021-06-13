@@ -1,3 +1,22 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:802a343780e91689f636666eb3754bccd3fa2847affdc35c83224d0ec60c9bb3
-size 322
+#include "qcom-apq8084.dtsi"
+#include "qcom-pma8084.dtsi"
+
+/ {
+	model = "Qualcomm APQ 8084-MTP";
+	compatible = "qcom,apq8084-mtp", "qcom,apq8084";
+
+	aliases {
+		serial0 = &blsp2_uart2;
+		usid0 = &pma8084_0;
+	};
+
+	chosen {
+		stdout-path = "serial0:115200n8";
+	};
+
+	soc {
+		serial@f995e000 {
+			status = "okay";
+		};
+	};
+};

@@ -1,3 +1,48 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4f01bb3e5794f8d483ac07a2d549bc05f730a8fa0edc181c325628823f05e0a2
-size 1192
+/*
+ * linux/sound/cs42l56.h -- Platform data for CS42L56
+ *
+ * Copyright (c) 2014 Cirrus Logic Inc.
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 2 as
+ * published by the Free Software Foundation.
+ */
+
+#ifndef __CS42L56_H
+#define __CS42L56_H
+
+struct cs42l56_platform_data {
+
+	/* GPIO for Reset */
+	unsigned int gpio_nreset;
+
+	/* MICBIAS Level. Check datasheet Pg48 */
+	unsigned int micbias_lvl;
+
+	/* Analog Input 1A Reference 0=Single 1=Pseudo-Differential */
+	unsigned int ain1a_ref_cfg;
+
+	/* Analog Input 2A Reference 0=Single 1=Pseudo-Differential */
+	unsigned int ain2a_ref_cfg;
+
+	/* Analog Input 1B Reference 0=Single 1=Pseudo-Differential */
+	unsigned int ain1b_ref_cfg;
+
+	/* Analog Input 2B Reference 0=Single 1=Pseudo-Differential */
+	unsigned int ain2b_ref_cfg;
+
+	/* Charge Pump Freq. Check datasheet Pg62 */
+	unsigned int chgfreq;
+
+	/* HighPass Filter Right Channel Corner Frequency */
+	unsigned int hpfb_freq;
+
+	/* HighPass Filter Left Channel Corner Frequency */
+	unsigned int hpfa_freq;
+
+	/* Adaptive Power Control for LO/HP */
+	unsigned int adaptive_pwr;
+
+};
+
+#endif /* __CS42L56_H */

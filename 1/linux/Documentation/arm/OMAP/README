@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:985b99bf687e88acff5280213ca88f8351a5e531adfd055336ba3453bfda23c9
-size 224
+This file contains documentation for running mainline
+kernel on omaps.
+
+KERNEL		NEW DEPENDENCIES
+v4.3+		Update is needed for custom .config files to make sure
+		CONFIG_REGULATOR_PBIAS is enabled for MMC1 to work
+		properly.

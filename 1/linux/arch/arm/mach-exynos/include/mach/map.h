@@ -1,3 +1,23 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ca4ae5b9959eb2d3857d078ba1f89e187130a806343bbe4cf5d21eb5b52c1e64
-size 544
+/*
+ * Copyright (c) 2010-2011 Samsung Electronics Co., Ltd.
+ *		http://www.samsung.com/
+ *
+ * EXYNOS - Memory map definitions
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 2 as
+ * published by the Free Software Foundation.
+*/
+
+#ifndef __ASM_ARCH_MAP_H
+#define __ASM_ARCH_MAP_H __FILE__
+
+#include <plat/map-base.h>
+
+#include <plat/map-s5p.h>
+
+#define EXYNOS_PA_CHIPID		0x10000000
+
+#define EXYNOS4_PA_COREPERI		0x10500000
+
+#endif /* __ASM_ARCH_MAP_H */

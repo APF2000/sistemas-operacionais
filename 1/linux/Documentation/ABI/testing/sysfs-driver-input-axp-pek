@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b4555903ae9921bbe0a914c0cb14bca0b79d55f5f7e9420d4ddc9a853d35ef7c
-size 437
+What:		/sys/class/input/input(x)/device/startup
+Date:		March 2014
+Contact:	Carlo Caione <carlo@caione.org>
+Description:	Startup time in us. Board is powered on if the button is pressed
+		for more than <startup_time>
+
+What:		/sys/class/input/input(x)/device/shutdown
+Date:		March 2014
+Contact:	Carlo Caione <carlo@caione.org>
+Description:	Shutdown time in us. Board is powered off if the button is pressed
+		for more than <shutdown_time>

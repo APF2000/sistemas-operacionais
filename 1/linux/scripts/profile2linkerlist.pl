@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:28cdc1d870ae3f1844e0c9ed007950ca82020e76640d7c97b4f431f917200628
-size 375
+#!/usr/bin/perl
+
+#
+# Takes a (sorted) output of readprofile and turns it into a list suitable for
+# linker scripts
+#
+# usage:
+#	 readprofile | sort -rn | perl profile2linkerlist.pl > functionlist
+#
+use strict;
+
+while (<>) {
+  my $line = $_;
+
+  $_ =~ /\W*[0-9]+\W*([a-zA-Z\_0-9]+)\W*[0-9]+/;
+
+  print "*(.text.$1)\n"
+      unless ($line =~ /unknown/) || ($line =~ /total/);
+}

@@ -1,3 +1,5 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:26e89ae09d0b91ebf1e994d7c0cafa6539a4379b02bab0131364b38e3f06bf49
-size 151
+# Makefile for s3c244x/s3c64xx CAMIF driver
+
+s3c-camif-objs := camif-core.o camif-capture.o camif-regs.o
+
+obj-$(CONFIG_VIDEO_S3C_CAMIF) += s3c-camif.o

@@ -1,3 +1,4 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:72dcbec70ca1e30eb46e97ac16d81b7c2da39eab90bf3600f319ab06a5896d6e
-size 89
+libperf-y += setup.o
+libperf-y += util.o
+libperf-y += helpline.o
+libperf-y += progress.o

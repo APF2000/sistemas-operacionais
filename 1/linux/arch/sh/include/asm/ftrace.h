@@ -1,3 +1,47 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:802725dc8302cc2f9116cd2f4406fdd3f814e1de5b567b0af41a329f70dca2a2
-size 1099
+#ifndef __ASM_SH_FTRACE_H
+#define __ASM_SH_FTRACE_H
+
+#ifdef CONFIG_FUNCTION_TRACER
+
+#define MCOUNT_INSN_SIZE	4 /* sizeof mcount call */
+#define FTRACE_SYSCALL_MAX	NR_syscalls
+
+#ifndef __ASSEMBLY__
+extern void mcount(void);
+
+#define MCOUNT_ADDR		((unsigned long)(mcount))
+
+#ifdef CONFIG_DYNAMIC_FTRACE
+#define CALL_ADDR		((long)(ftrace_call))
+#define STUB_ADDR		((long)(ftrace_stub))
+#define GRAPH_ADDR		((long)(ftrace_graph_call))
+#define CALLER_ADDR		((long)(ftrace_caller))
+
+#define MCOUNT_INSN_OFFSET	((STUB_ADDR - CALL_ADDR) - 4)
+#define GRAPH_INSN_OFFSET	((CALLER_ADDR - GRAPH_ADDR) - 4)
+
+struct dyn_arch_ftrace {
+	/* No extra data needed on sh */
+};
+
+#endif /* CONFIG_DYNAMIC_FTRACE */
+
+static inline unsigned long ftrace_call_adjust(unsigned long addr)
+{
+	/* 'addr' is the memory table address. */
+	return addr;
+}
+
+#endif /* __ASSEMBLY__ */
+#endif /* CONFIG_FUNCTION_TRACER */
+
+#ifndef __ASSEMBLY__
+
+/* arch/sh/kernel/return_address.c */
+extern void *return_address(unsigned int);
+
+#define ftrace_return_address(n) return_address(n)
+
+#endif /* __ASSEMBLY__ */
+
+#endif /* __ASM_SH_FTRACE_H */

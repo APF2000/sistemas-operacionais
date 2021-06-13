@@ -1,3 +1,20 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ce4adb7fb4f5bc0da8964d62c3040534daaa73b618df70d81996b1033b7304a0
-size 444
+Axxia Restart Driver
+
+This driver can do reset of the Axxia SoC. It uses the registers in the syscon
+block to initiate a chip reset.
+
+Required Properties:
+  -compatible: "lsi,axm55xx-reset"
+  -syscon: phandle to the syscon node.
+
+Example:
+
+	syscon: syscon@2010030000 {
+		compatible = "lsi,axxia-syscon", "syscon";
+		reg = <0x20 0x10030000 0 0x2000>;
+	};
+
+	reset: reset@2010031000 {
+		compatible = "lsi,axm55xx-reset";
+		syscon = <&syscon>;
+	};

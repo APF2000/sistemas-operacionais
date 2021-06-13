@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:182d2654913cfd005e1f6ea388832e94095f6d99c82726d123de307e6cd38811
-size 191
+#ifndef __NVBIOS_BIT_H__
+#define __NVBIOS_BIT_H__
+struct bit_entry {
+	u8  id;
+	u8  version;
+	u16 length;
+	u16 offset;
+};
+
+int bit_entry(struct nvkm_bios *, u8 id, struct bit_entry *);
+#endif

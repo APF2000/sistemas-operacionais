@@ -1,3 +1,44 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:0669b78d1ac71ff5f9a77cdb739ed7bb2986721ccc62f11dbc084c92d3da4b2d
-size 670
+.. -*- coding: utf-8; mode: rst -*-
+
+.. _DMX_SET_SOURCE:
+
+==============
+DMX_SET_SOURCE
+==============
+
+Name
+----
+
+DMX_SET_SOURCE
+
+
+Synopsis
+--------
+
+.. c:function:: int ioctl(fd, DMX_SET_SOURCE, struct dmx_source *src)
+    :name: DMX_SET_SOURCE
+
+
+Arguments
+---------
+
+
+``fd``
+    File descriptor returned by :c:func:`open() <dvb-dmx-open>`.
+
+``src``
+   Undocumented.
+
+
+Description
+-----------
+
+.. note:: This ioctl is undocumented. Documentation is welcome.
+
+
+Return Value
+------------
+
+On success 0 is returned, on error -1 and the ``errno`` variable is set
+appropriately. The generic error codes are described at the
+:ref:`Generic Error Codes <gen-errors>` chapter.

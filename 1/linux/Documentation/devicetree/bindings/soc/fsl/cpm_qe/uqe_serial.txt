@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4f40f11239929eba96c999d748c90cfe5a4de0802c8df0ff23ddbcd1aff37384
-size 431
+* Serial
+
+Required Properties:
+compatible : must be "fsl,<chip>-ucc-uart". For t1040, must be
+"fsl,t1040-ucc-uart".
+port-number : port number of UCC-UART
+tx/rx-clock-name : should be "brg1"-"brg16" for internal clock source,
+		   should be "clk1"-"clk28" for external clock source.
+
+Example:
+
+	ucc_serial: ucc@2200 {
+		compatible = "fsl,t1040-ucc-uart";
+		port-number = <0>;
+		rx-clock-name = "brg2";
+		tx-clock-name = "brg2";
+	};

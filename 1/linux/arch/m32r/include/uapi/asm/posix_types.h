@@ -1,3 +1,25 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:0db992362685381c6a9afbbade853cfb0580be330e505e45f4590457a3f8cdca
-size 697
+#ifndef _ASM_M32R_POSIX_TYPES_H
+#define _ASM_M32R_POSIX_TYPES_H
+
+/*
+ * This file is generally used by user-level software, so you need to
+ * be a little careful about namespace pollution etc.  Also, we cannot
+ * assume GCC is being used.
+ */
+
+typedef unsigned short	__kernel_mode_t;
+#define __kernel_mode_t __kernel_mode_t
+
+typedef unsigned short	__kernel_ipc_pid_t;
+#define __kernel_ipc_pid_t __kernel_ipc_pid_t
+
+typedef unsigned short	__kernel_uid_t;
+typedef unsigned short	__kernel_gid_t;
+#define __kernel_uid_t __kernel_uid_t
+
+typedef unsigned short	__kernel_old_dev_t;
+#define __kernel_old_dev_t __kernel_old_dev_t
+
+#include <asm-generic/posix_types.h>
+
+#endif  /* _ASM_M32R_POSIX_TYPES_H */

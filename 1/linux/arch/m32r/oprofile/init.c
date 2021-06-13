@@ -1,3 +1,22 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1a7052e76cac1d05e851b86be5a4548ade857242c51edf57d25dbb84425bb9a5
-size 378
+/**
+ * @file init.c
+ *
+ * @remark Copyright 2002 OProfile authors
+ * @remark Read the file COPYING
+ *
+ * @author John Levon <levon@movementarian.org>
+ */
+
+#include <linux/kernel.h>
+#include <linux/oprofile.h>
+#include <linux/errno.h>
+#include <linux/init.h>
+
+int __init oprofile_arch_init(struct oprofile_operations *ops)
+{
+	return -ENODEV;
+}
+
+void oprofile_arch_exit(void)
+{
+}

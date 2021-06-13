@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:996d8efe4ccf9843e9a8d228709f3b298e6983a13da9b1608a24221397b71d02
-size 317
+#
+# MOSTCore configuration
+#
+
+config MOSTCORE
+	tristate "MOST Core"
+	depends on HAS_DMA
+
+	---help---
+	  Say Y here if you want to enable MOST support.
+	  This device driver needs at least an additional AIM and HDM to work.
+
+	  To compile this driver as a module, choose M here: the
+	  module will be called mostcore.

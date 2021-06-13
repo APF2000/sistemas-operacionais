@@ -1,3 +1,27 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:73a9d34fd4de2b33ab5237020895fd7fe20b71611ca813fa6498816473c78a31
-size 816
+* Allwinner GMAC ethernet controller
+
+This device is a platform glue layer for stmmac.
+Please see stmmac.txt for the other unchanged properties.
+
+Required properties:
+ - compatible:  Should be "allwinner,sun7i-a20-gmac"
+ - clocks: Should contain the GMAC main clock, and tx clock
+   The tx clock type should be "allwinner,sun7i-a20-gmac-clk"
+ - clock-names: Should contain the clock names "stmmaceth",
+   and "allwinner_gmac_tx"
+
+Optional properties:
+- phy-supply: phandle to a regulator if the PHY needs one
+
+Examples:
+
+	gmac: ethernet@01c50000 {
+		compatible = "allwinner,sun7i-a20-gmac";
+		reg = <0x01c50000 0x10000>,
+		      <0x01c20164 0x4>;
+		interrupts = <0 85 1>;
+		interrupt-names = "macirq";
+		clocks = <&ahb_gates 49>, <&gmac_tx>;
+		clock-names = "stmmaceth", "allwinner_gmac_tx";
+		phy-mode = "mii";
+	};

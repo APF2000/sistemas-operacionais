@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a475c061cf09645451cf28dfc20b71c80e000bb3a2704b1e34005e04270c72a5
-size 148
+00-INDEX
+	- This file
+bfin-gpio-notes.txt
+	- Notes in developing/using bfin-gpio driver.
+bfin-spi-notes.txt
+	- Notes for using bfin spi bus driver.

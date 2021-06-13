@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5ee5c056be3f4bf4683b2920eb2aa9e65684bb4b458b97ef02db71b0d31d1833
-size 195
+#ifndef __ASM_ARM_IRQ_WORK_H
+#define __ASM_ARM_IRQ_WORK_H
+
+#include <asm/smp_plat.h>
+
+static inline bool arch_irq_work_has_interrupt(void)
+{
+	return is_smp();
+}
+
+#endif /* _ASM_ARM_IRQ_WORK_H */

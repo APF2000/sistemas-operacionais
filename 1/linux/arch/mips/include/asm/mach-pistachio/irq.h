@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:743e599b6c9f617334c16250c2f314209d438c716f21029ae6fd8a7388748e55
-size 431
+/*
+ * Pistachio IRQ setup
+ *
+ * Copyright (C) 2014 Google, Inc.
+ *
+ * This program is free software; you can redistribute it and/or modify it
+ * under the terms and conditions of the GNU General Public License,
+ * version 2, as published by the Free Software Foundation.
+ */
+
+#ifndef __ASM_MACH_PISTACHIO_IRQ_H
+#define __ASM_MACH_PISTACHIO_IRQ_H
+
+#define NR_IRQS 256
+
+#include_next <irq.h>
+
+#endif /* __ASM_MACH_PISTACHIO_IRQ_H */

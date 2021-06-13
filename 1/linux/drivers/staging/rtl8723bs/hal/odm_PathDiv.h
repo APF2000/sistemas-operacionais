@@ -1,3 +1,29 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:52d6ffc683a9adc48e09ba71c8073bdb90ad06deae31efecbe66f77b7d9236d4
-size 868
+/******************************************************************************
+ *
+ * Copyright(c) 2007 - 2011 Realtek Corporation. All rights reserved.
+ *
+ * This program is free software; you can redistribute it and/or modify it
+ * under the terms of version 2 of the GNU General Public License as
+ * published by the Free Software Foundation.
+ *
+ * This program is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+ * FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for
+ * more details.
+ *
+ ******************************************************************************/
+
+#ifndef	__ODMPATHDIV_H__
+#define    __ODMPATHDIV_H__
+
+void
+odm_PathDiversityInit(
+	void *pDM_VOID
+	);
+
+void
+odm_PathDiversity(
+	void *pDM_VOID
+	);
+
+ #endif		 /* ifndef  __ODMPATHDIV_H__ */

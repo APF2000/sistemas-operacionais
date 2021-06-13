@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d3865e851b6120cc1201bce44d292f6016224c7e6d5ac9c068e4843f253263e1
-size 221
+#
+# Makefile for USB Class drivers
+# (one step up from the misc category)
+#
+
+obj-$(CONFIG_USB_ACM)		+= cdc-acm.o
+obj-$(CONFIG_USB_PRINTER)	+= usblp.o
+obj-$(CONFIG_USB_WDM)		+= cdc-wdm.o
+obj-$(CONFIG_USB_TMC)		+= usbtmc.o

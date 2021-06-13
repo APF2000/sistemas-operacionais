@@ -1,3 +1,26 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2e4353523f95fec66483ef1ceaedb34ab78bf56fd610296c2e7372f3496fc768
-size 435
+/*
+ * Procfs support for lockd
+ *
+ * Copyright (c) 2014 Jeff Layton <jlayton@primarydata.com>
+ */
+#ifndef _LOCKD_PROCFS_H
+#define _LOCKD_PROCFS_H
+
+#if IS_ENABLED(CONFIG_PROC_FS)
+int lockd_create_procfs(void);
+void lockd_remove_procfs(void);
+#else
+static inline int
+lockd_create_procfs(void)
+{
+	return 0;
+}
+
+static inline void
+lockd_remove_procfs(void)
+{
+	return;
+}
+#endif /* IS_ENABLED(CONFIG_PROC_FS) */
+
+#endif /* _LOCKD_PROCFS_H */

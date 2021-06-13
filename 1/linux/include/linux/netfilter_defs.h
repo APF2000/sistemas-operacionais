@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:72ce0ee3ff94a326da0b345fe28590c19138216622ddd75505109d49237975b8
-size 200
+#ifndef __LINUX_NETFILTER_CORE_H_
+#define __LINUX_NETFILTER_CORE_H_
+
+#include <uapi/linux/netfilter.h>
+
+/* Largest hook number + 1, see uapi/linux/netfilter_decnet.h */
+#define NF_MAX_HOOKS 8
+
+#endif

@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c53fbb28780f0145d17865a3326e6ecb4804a6a10c6fa10bf69a3a9cf864959a
-size 215
+#ifndef _LINUX_VIRTIO_BYTEORDER_STUB_H
+#define _LINUX_VIRTIO_BYTEORDER_STUB_H
+
+#include <asm/byteorder.h>
+#include "../../include/linux/byteorder/generic.h"
+#include "../../include/linux/virtio_byteorder.h"
+
+#endif

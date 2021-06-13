@@ -1,3 +1,20 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:04f3fc1edddf0a76af534b63da9ef48f51584c1ea421e820102119cc79b8d144
-size 450
+Device-Tree bindings for LIRC TX driver for Nokia N900(RX51)
+
+Required properties:
+	- compatible: should be "nokia,n900-ir".
+	- pwms: specifies PWM used for IR signal transmission.
+
+Example node:
+
+	pwm9: dmtimer-pwm@9 {
+		compatible = "ti,omap-dmtimer-pwm";
+		ti,timers = <&timer9>;
+		ti,clock-source = <0x00>; /* timer_sys_ck */
+		#pwm-cells = <3>;
+	};
+
+	ir: n900-ir {
+		compatible = "nokia,n900-ir";
+
+		pwms = <&pwm9 0 26316 0>; /* 38000 Hz */
+	};

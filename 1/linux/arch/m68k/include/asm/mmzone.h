@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d6dc099e14440175927328cff5e000a6ef90fb90bcea25697704723bf35b3ef1
-size 225
+#ifndef _ASM_M68K_MMZONE_H_
+#define _ASM_M68K_MMZONE_H_
+
+extern pg_data_t pg_data_map[];
+
+#define NODE_DATA(nid)		(&pg_data_map[nid])
+#define NODE_MEM_MAP(nid)	(NODE_DATA(nid)->node_mem_map)
+
+#endif /* _ASM_M68K_MMZONE_H_ */

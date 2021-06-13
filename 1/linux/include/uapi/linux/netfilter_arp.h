@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5e74e339c5f5256f8c7a30b24716a8048d93547c10461612af2eccd5a794591b
-size 380
+#ifndef __LINUX_ARP_NETFILTER_H
+#define __LINUX_ARP_NETFILTER_H
+
+/* ARP-specific defines for netfilter.
+ * (C)2002 Rusty Russell IBM -- This code is GPL.
+ */
+
+#include <linux/netfilter.h>
+
+/* There is no PF_ARP. */
+#define NF_ARP		0
+
+/* ARP Hooks */
+#define NF_ARP_IN	0
+#define NF_ARP_OUT	1
+#define NF_ARP_FORWARD	2
+#define NF_ARP_NUMHOOKS	3
+
+#endif /* __LINUX_ARP_NETFILTER_H */

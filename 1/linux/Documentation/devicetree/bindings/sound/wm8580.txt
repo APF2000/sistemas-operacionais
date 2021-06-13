@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:188c05685671631d1f1df73bf6a9c8b6d65515b524a3b767dd9760b077af2611
-size 247
+WM8580 and WM8581 audio CODEC
+
+This device supports I2C only.
+
+Required properties:
+
+  - compatible : "wlf,wm8580", "wlf,wm8581"
+
+  - reg : the I2C address of the device.
+
+Example:
+
+codec: wm8580@1a {
+	compatible = "wlf,wm8580";
+	reg = <0x1a>;
+};

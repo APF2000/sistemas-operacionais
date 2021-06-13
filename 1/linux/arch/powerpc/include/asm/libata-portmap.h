@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d3f384fff16117939d396e6eefd1163b33a270d3c80438882fd6d079b9748f8f
-size 210
+#ifndef __ASM_POWERPC_LIBATA_PORTMAP_H
+#define __ASM_POWERPC_LIBATA_PORTMAP_H
+
+#define ATA_PRIMARY_IRQ(dev)	pci_get_legacy_ide_irq(dev, 0)
+
+#define ATA_SECONDARY_IRQ(dev)	pci_get_legacy_ide_irq(dev, 1)
+
+#endif

@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:8ef17db41fdfe5b262c03307be6fb87c7bb2e8bb78a699fc62df34e40eb2ef86
-size 303
+obj-$(CONFIG_SCSI_BFA_FC) := bfa.o
+
+bfa-y := bfad.o bfad_im.o bfad_attr.o bfad_debugfs.o bfad_bsg.o
+bfa-y += bfa_ioc.o bfa_ioc_cb.o bfa_ioc_ct.o bfa_hw_cb.o bfa_hw_ct.o
+bfa-y += bfa_fcs.o bfa_fcs_lport.o bfa_fcs_rport.o bfa_fcs_fcpim.o bfa_fcbuild.o
+bfa-y += bfa_port.o bfa_fcpim.o bfa_core.o bfa_svc.o

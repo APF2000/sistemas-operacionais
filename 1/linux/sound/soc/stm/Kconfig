@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a473f71f0c3d327097177b2a0817c5557deba63c1db0ff5d858dd6bffdff35bb
-size 257
+menuconfig SND_SOC_STM32
+	tristate "STMicroelectronics STM32 SOC audio support"
+	depends on ARCH_STM32 || COMPILE_TEST
+	depends on SND_SOC
+	select SND_SOC_GENERIC_DMAENGINE_PCM
+	select REGMAP_MMIO
+	help
+	  Say Y if you want to enable ASoC-support for STM32

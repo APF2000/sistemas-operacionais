@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2a1b14e2af6ecd83dc74260c5ca041c4fdc1b6802926cc9e28475e54b4a8d789
-size 453
+/*
+ * This header provides Tegra124-specific constants for binding
+ * nvidia,tegra124-car.
+ */
+
+#include <dt-bindings/clock/tegra124-car-common.h>
+
+#ifndef _DT_BINDINGS_CLOCK_TEGRA124_CAR_H
+#define _DT_BINDINGS_CLOCK_TEGRA124_CAR_H
+
+#define TEGRA124_CLK_PLL_X		227
+#define TEGRA124_CLK_PLL_X_OUT0		228
+
+#define TEGRA124_CLK_CCLK_G		262
+#define TEGRA124_CLK_CCLK_LP		263
+
+#define TEGRA124_CLK_CLK_MAX		315
+
+#endif	/* _DT_BINDINGS_CLOCK_TEGRA124_CAR_H */

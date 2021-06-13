@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e9bd66d86765530aea421264f03f3045103372999572ecf4b9786d67d91338c3
-size 276
+# Makefile - Intel Omni-Path Virtual Network Controller driver
+# Copyright(c) 2017, Intel Corporation.
+#
+obj-$(CONFIG_INFINIBAND_OPA_VNIC) += opa_vnic.o
+
+opa_vnic-y := opa_vnic_netdev.o opa_vnic_encap.o opa_vnic_ethtool.o \
+              opa_vnic_vema.o opa_vnic_vema_iface.o

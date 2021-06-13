@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:6652b2384498f7a5e1b158e261cf5e81d4f5ebdf896f2770f00e59cd6563b94c
-size 441
+/*
+ * arch/arm/include/asm/hardware/cache-tauros2.h
+ *
+ * Copyright (C) 2008 Marvell Semiconductor
+ *
+ * This file is licensed under the terms of the GNU General Public
+ * License version 2. This program is licensed "as is" without any
+ * warranty of any kind, whether express or implied.
+ */
+
+#define CACHE_TAUROS2_PREFETCH_ON	(1 << 0)
+#define CACHE_TAUROS2_LINEFILL_BURST8	(1 << 1)
+
+extern void __init tauros2_init(unsigned int features);

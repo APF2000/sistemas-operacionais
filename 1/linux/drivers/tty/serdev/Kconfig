@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:966c803066c6721b9942ee0c463870fee23de3009295d9a9155ae539a0d3248e
-size 312
+#
+# Serial bus device driver configuration
+#
+menuconfig SERIAL_DEV_BUS
+	tristate "Serial device bus"
+	help
+	  Core support for devices connected via a serial port.
+
+if SERIAL_DEV_BUS
+
+config SERIAL_DEV_CTRL_TTYPORT
+	bool "Serial device TTY port controller"
+	depends on TTY
+	depends on SERIAL_DEV_BUS != m
+
+endif

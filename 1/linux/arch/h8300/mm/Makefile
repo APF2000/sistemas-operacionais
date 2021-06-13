@@ -1,3 +1,5 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:91f6397df872c828bb4ee34749ac7d022b55505f4a29073fcf4be8b5e8af7be8
-size 108
+#
+# Makefile for the linux h8300-specific parts of the memory manager.
+#
+
+obj-y	 := init.o fault.o memory.o

@@ -1,3 +1,21 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:0543879924a83d9ad5ddafb7995838df7a7b46ab4ace348c3855b534ddb7aecd
-size 349
+/* 
+ * Copyright (C) 2001 - 2007 Jeff Dike (jdike@{addtoit,linux.intel}.com)
+ * Licensed under the GPL
+ */
+
+#ifndef __DRIVERS_ETAP_H
+#define __DRIVERS_ETAP_H
+
+#include <net_user.h>
+
+struct ethertap_data {
+	char *dev_name;
+	char *gate_addr;
+	int data_fd;
+	int control_fd;
+	void *dev;
+};
+
+extern const struct net_user_info ethertap_user_info;
+
+#endif

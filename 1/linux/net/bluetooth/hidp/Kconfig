@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:85cd96064b8b6dda373c07a869739f15f1b3f7b2fd807d26e7d562ced97e720e
-size 351
+config BT_HIDP
+	tristate "HIDP protocol support"
+	depends on BT_BREDR && INPUT
+	select HID
+	help
+	  HIDP (Human Interface Device Protocol) is a transport layer
+	  for HID reports.  HIDP is required for the Bluetooth Human
+	  Interface Device Profile.
+
+	  Say Y here to compile HIDP support into the kernel or say M to
+	  compile it as module (hidp).
+

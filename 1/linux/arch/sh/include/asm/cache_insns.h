@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d13c07129b92451e96bb7c3b534e4483bcb3677e487e9668903cb87be1382866
-size 203
+#ifndef __ASM_SH_CACHE_INSNS_H
+#define __ASM_SH_CACHE_INSNS_H
+
+
+#ifdef CONFIG_SUPERH32
+# include <asm/cache_insns_32.h>
+#else
+# include <asm/cache_insns_64.h>
+#endif
+
+#endif /* __ASM_SH_CACHE_INSNS_H */

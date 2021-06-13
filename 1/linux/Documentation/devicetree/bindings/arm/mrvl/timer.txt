@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:edaa484991635fdeb795db72ad091700a9f2aafb22ea7da5058824cb514883ac
-size 333
+* Marvell MMP Timer controller
+
+Required properties:
+- compatible : Should be "mrvl,mmp-timer".
+- reg : Address and length of the register set of timer controller.
+- interrupts : Should be the interrupt number.
+
+Example:
+	timer0: timer@d4014000 {
+		compatible = "mrvl,mmp-timer";
+		reg = <0xd4014000 0x100>;
+		interrupts = <13>;
+	};

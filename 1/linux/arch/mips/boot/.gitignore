@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:28ee5f2d5beff48428e46f70a001fde92561d891a0efd65886b93376a8a7dd86
-size 81
+mkboot
+elf2ecoff
+vmlinux.*
+zImage
+zImage.tmp
+calc_vmlinuz_load_addr
+uImage
+*.dtb

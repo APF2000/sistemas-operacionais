@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:37eedfdd33261eb0e65e47734ca7b1f2798e4dab7a39a9b739204cacca55121c
-size 305
+#ifndef ASM_IA64__SWIOTLB_H
+#define ASM_IA64__SWIOTLB_H
+
+#include <linux/dma-mapping.h>
+#include <linux/swiotlb.h>
+
+#ifdef CONFIG_SWIOTLB
+extern int swiotlb;
+extern void pci_swiotlb_init(void);
+#else
+#define swiotlb 0
+static inline void pci_swiotlb_init(void)
+{
+}
+#endif
+
+#endif /* ASM_IA64__SWIOTLB_H */

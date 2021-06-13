@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:381636911f19d479318662bd6d1fe41cf130bee7cffb5a1b439b73af3911af10
-size 206
+#ifndef _LINUX_ST1232_PDATA_H
+#define _LINUX_ST1232_PDATA_H
+
+/*
+ * Optional platform data
+ *
+ * Use this if you want the driver to drive the reset pin.
+ */
+struct st1232_pdata {
+	int reset_gpio;
+};
+
+#endif

@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c363558e36459552c683c46bf7496b93ccefab5300a805f92f4d75bfa9cbbf5a
-size 307
+#
+# Makefile for the linux kernel.
+#
+# Note! Dependencies are done automagically by 'make dep', which also
+# removes any old dependencies. DON'T put your own dependencies here
+# unless it's something special (ie not a .c file).
+
+# Object file lists.
+
+# Cpu revision
+obj-$(CONFIG_NOMADIK_8815) += cpu-8815.o

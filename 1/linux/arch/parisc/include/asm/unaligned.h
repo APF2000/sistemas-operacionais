@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:82f667e0aae55bf2d5f05f415fe0fac135218bca5bb55ff1f115701290029a6d
-size 433
+#ifndef _ASM_PARISC_UNALIGNED_H
+#define _ASM_PARISC_UNALIGNED_H
+
+#include <linux/unaligned/be_struct.h>
+#include <linux/unaligned/le_byteshift.h>
+#include <linux/unaligned/generic.h>
+#define get_unaligned	__get_unaligned_be
+#define put_unaligned	__put_unaligned_be
+
+#ifdef __KERNEL__
+struct pt_regs;
+void handle_unaligned(struct pt_regs *regs);
+int check_unaligned(struct pt_regs *regs);
+#endif
+
+#endif /* _ASM_PARISC_UNALIGNED_H */

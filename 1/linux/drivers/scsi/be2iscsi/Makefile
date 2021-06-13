@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:0cafff3d34fc628207b2bc9e193184806abfb4b2458b87bb39b2629770f3c4ce
-size 160
+#
+# Makefile to build the iSCSI driver for Emulex OneConnect.
+#
+#
+
+obj-$(CONFIG_BE2ISCSI) += be2iscsi.o
+
+be2iscsi-y := be_iscsi.o be_main.o be_mgmt.o be_cmds.o

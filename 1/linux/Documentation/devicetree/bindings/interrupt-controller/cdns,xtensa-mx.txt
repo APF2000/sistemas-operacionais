@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:269e05af637d224b2185ac8ac717a1ed5fd26004444c7211f100884a8ddf7d81
-size 488
+* Xtensa Interrupt Distributor and Programmable Interrupt Controller (MX)
+
+Required properties:
+- compatible: Should be "cdns,xtensa-mx".
+
+Remaining properties have exact same meaning as in Xtensa PIC
+(see cdns,xtensa-pic.txt).
+
+Examples:
+	pic: pic {
+		compatible = "cdns,xtensa-mx";
+		/* one cell: internal irq number,
+		 * two cells: second cell == 0: internal irq number
+		 *            second cell == 1: external irq number
+		 */
+		#interrupt-cells = <2>;
+		interrupt-controller;
+	};

@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:93316c83276bd48e6457119bced4ee53eb7b37d9de68136d79d111b9552b5dee
-size 155
+rtl8192se-objs :=		\
+		dm.o		\
+		fw.o		\
+		hw.o		\
+		led.o		\
+		phy.o		\
+		rf.o		\
+		sw.o		\
+		table.o		\
+		trx.o
+
+obj-$(CONFIG_RTL8192SE) += rtl8192se.o
+

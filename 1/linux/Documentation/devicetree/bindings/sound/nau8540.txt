@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b99270eb3736f6fe353ac9fd62cf91f4a79138bcd12374aa3ffad7db7cad87da
-size 247
+NAU85L40 audio CODEC
+
+This device supports I2C only.
+
+Required properties:
+
+  - compatible : "nuvoton,nau8540"
+
+  - reg : the I2C address of the device.
+
+Example:
+
+codec: nau8540@1c {
+       compatible = "nuvoton,nau8540";
+       reg = <0x1c>;
+};

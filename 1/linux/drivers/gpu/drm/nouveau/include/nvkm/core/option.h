@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:9ca2ff4ff11aa3814f6e048372a9feee8fda803f1cf3b89baacc4b605352e22d
-size 576
+#ifndef __NVKM_OPTION_H__
+#define __NVKM_OPTION_H__
+#include <core/os.h>
+
+const char *nvkm_stropt(const char *optstr, const char *opt, int *len);
+bool nvkm_boolopt(const char *optstr, const char *opt, bool value);
+long nvkm_longopt(const char *optstr, const char *opt, long value);
+int  nvkm_dbgopt(const char *optstr, const char *sub);
+
+/* compares unterminated string 'str' with zero-terminated string 'cmp' */
+static inline int
+strncasecmpz(const char *str, const char *cmp, size_t len)
+{
+	if (strlen(cmp) != len)
+		return len;
+	return strncasecmp(str, cmp, len);
+}
+#endif

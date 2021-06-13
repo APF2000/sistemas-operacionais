@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:217833346e2cc071ac641c37d170054fcb663c7ac91deab57f953225ef80cff1
-size 202
+/*
+ * Copyright 2016 Luxul Inc.
+ *
+ * Licensed under the ISC license.
+ */
+
+#include "bcm5301x-nand-cs0.dtsi"
+
+&nandcs {
+	nand-ecc-algo = "bch";
+	nand-ecc-strength = <4>;
+	nand-ecc-step-size = <512>;
+};

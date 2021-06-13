@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:230691eb6cffb52fd6ccdc7856a7976ff6488bfe5a6a7275bc38058732622c46
-size 169
+#ifndef _ASM_X86_DELAY_H
+#define _ASM_X86_DELAY_H
+
+#include <asm-generic/delay.h>
+
+void use_tsc_delay(void);
+void use_mwaitx_delay(void);
+
+#endif /* _ASM_X86_DELAY_H */

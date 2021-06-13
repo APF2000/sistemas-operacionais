@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:adfe43424f43adc0a775d4f08ab3c76007f621d189ca5453d31d21484e874c93
-size 344
+#ifndef _NET_STP_H
+#define _NET_STP_H
+
+struct stp_proto {
+	unsigned char	group_address[ETH_ALEN];
+	void		(*rcv)(const struct stp_proto *, struct sk_buff *,
+			       struct net_device *);
+	void		*data;
+};
+
+int stp_proto_register(const struct stp_proto *proto);
+void stp_proto_unregister(const struct stp_proto *proto);
+
+#endif /* _NET_STP_H */

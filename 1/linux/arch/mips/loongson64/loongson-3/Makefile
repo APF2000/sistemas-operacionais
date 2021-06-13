@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c3f631621f3c9d23f76d4fcdcd6144a7b0f7590cac04789ca54793d0e231a79b
-size 190
+#
+# Makefile for Loongson-3 family machines
+#
+obj-y			+= irq.o cop2-ex.o platform.o acpi_init.o
+
+obj-$(CONFIG_SMP)	+= smp.o
+
+obj-$(CONFIG_NUMA)	+= numa.o
+
+obj-$(CONFIG_RS780_HPET) += hpet.o

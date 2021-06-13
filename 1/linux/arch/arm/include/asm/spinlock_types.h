@@ -1,3 +1,33 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:65e10cdb8c1dad68b8d64bc1bad4fba8e890b0ac8f45fc50f18c0c86d5a6aa0f
-size 502
+#ifndef __ASM_SPINLOCK_TYPES_H
+#define __ASM_SPINLOCK_TYPES_H
+
+#ifndef __LINUX_SPINLOCK_TYPES_H
+# error "please don't include this file directly"
+#endif
+
+#define TICKET_SHIFT	16
+
+typedef struct {
+	union {
+		u32 slock;
+		struct __raw_tickets {
+#ifdef __ARMEB__
+			u16 next;
+			u16 owner;
+#else
+			u16 owner;
+			u16 next;
+#endif
+		} tickets;
+	};
+} arch_spinlock_t;
+
+#define __ARCH_SPIN_LOCK_UNLOCKED	{ { 0 } }
+
+typedef struct {
+	u32 lock;
+} arch_rwlock_t;
+
+#define __ARCH_RW_LOCK_UNLOCKED		{ 0 }
+
+#endif

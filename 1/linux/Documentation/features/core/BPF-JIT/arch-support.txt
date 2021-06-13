@@ -1,3 +1,39 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f4d737fa70eca1ac6fc0b5209eaa1b10c2463e70347d2418dcf47fca89ad3cd7
-size 1088
+#
+# Feature name:          BPF-JIT
+#         Kconfig:       HAVE_BPF_JIT
+#         description:   arch supports BPF JIT optimizations
+#
+    -----------------------
+    |         arch |status|
+    -----------------------
+    |       alpha: | TODO |
+    |         arc: | TODO |
+    |         arm: |  ok  |
+    |       arm64: |  ok  |
+    |    blackfin: | TODO |
+    |         c6x: | TODO |
+    |        cris: | TODO |
+    |         frv: | TODO |
+    |       h8300: | TODO |
+    |     hexagon: | TODO |
+    |        ia64: | TODO |
+    |        m32r: | TODO |
+    |        m68k: | TODO |
+    |       metag: | TODO |
+    |  microblaze: | TODO |
+    |        mips: |  ok  |
+    |     mn10300: | TODO |
+    |       nios2: | TODO |
+    |    openrisc: | TODO |
+    |      parisc: | TODO |
+    |     powerpc: |  ok  |
+    |        s390: |  ok  |
+    |       score: | TODO |
+    |          sh: | TODO |
+    |       sparc: |  ok  |
+    |        tile: | TODO |
+    |          um: | TODO |
+    |   unicore32: | TODO |
+    |         x86: |  ok  |
+    |      xtensa: | TODO |
+    -----------------------

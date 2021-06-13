@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e08ccad7818895d6732c2101dddf3e062e20b73d5ed2712b446092e21b48943b
-size 324
+#ifndef ___ASM_SPARC_UACCESS_H
+#define ___ASM_SPARC_UACCESS_H
+#if defined(__sparc__) && defined(__arch64__)
+#include <asm/uaccess_64.h>
+#else
+#include <asm/uaccess_32.h>
+#endif
+
+#define user_addr_max() \
+	(uaccess_kernel() ? ~0UL : TASK_SIZE)
+
+long strncpy_from_user(char *dest, const char __user *src, long count);
+
+#endif

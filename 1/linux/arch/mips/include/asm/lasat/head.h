@@ -1,3 +1,22 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:96bce2a9be014abb01f5afcb2643cd82b3f2d3c1bbdb0b6f229c26d0a4173d45
-size 352
+/*
+ * Image header stuff
+ */
+#ifndef _HEAD_H
+#define _HEAD_H
+
+#define LASAT_K_MAGIC0_VAL	0xfedeabba
+#define LASAT_K_MAGIC1_VAL	0x00bedead
+
+#ifndef _LANGUAGE_ASSEMBLY
+#include <linux/types.h>
+struct bootloader_header {
+	u32 magic[2];
+	u32 version;
+	u32 image_start;
+	u32 image_size;
+	u32 kernel_start;
+	u32 kernel_entry;
+};
+#endif
+
+#endif /* _HEAD_H */

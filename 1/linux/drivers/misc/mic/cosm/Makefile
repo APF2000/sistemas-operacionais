@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:032001adb7ec56e32056e2f0f746cf359d3beac319aad68d412a3b09a86cc7c2
-size 275
+#
+# Makefile - Intel MIC Coprocessor State Management (COSM) Driver
+# Copyright(c) 2015, Intel Corporation.
+#
+obj-$(CONFIG_MIC_COSM) += mic_cosm.o
+
+mic_cosm-objs := cosm_main.o
+mic_cosm-objs += cosm_debugfs.o
+mic_cosm-objs += cosm_sysfs.o
+mic_cosm-objs += cosm_scif_server.o

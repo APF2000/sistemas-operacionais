@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d62ee8155199985a35a5a9524e8ae632015def7c01bb69a9520f19d192da8291
-size 194
+#ifndef __IEEE802154_SYSFS_H
+#define __IEEE802154_SYSFS_H
+
+int wpan_phy_sysfs_init(void);
+void wpan_phy_sysfs_exit(void);
+
+extern struct class wpan_phy_class;
+
+#endif /* __IEEE802154_SYSFS_H */

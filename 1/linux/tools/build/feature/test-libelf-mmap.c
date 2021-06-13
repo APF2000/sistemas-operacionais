@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f972f5f83bcbdf1a7de1b2aa81f5558b21f5318a3b7d14a2fc4156ec4c7ee36e
-size 106
+#include <libelf.h>
+
+int main(void)
+{
+	Elf *elf = elf_begin(0, ELF_C_READ_MMAP, 0);
+
+	return (long)elf;
+}

@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f6e87235e4c37b73556d677b61e7d7d153e6f37b9d1f7d1a3b7b5b25d5ca4b5a
-size 421
+/*
+ *  QLogic FCoE Offload Driver
+ *  Copyright (c) 2016 Cavium Inc.
+ *
+ *  This software is available under the terms of the GNU General Public License
+ *  (GPL) Version 2, available from the file COPYING in the main directory of
+ *  this source tree.
+ */
+
+#define QEDF_VERSION		"8.10.7.0"
+#define QEDF_DRIVER_MAJOR_VER		8
+#define QEDF_DRIVER_MINOR_VER		10
+#define QEDF_DRIVER_REV_VER		7
+#define QEDF_DRIVER_ENG_VER		0
+

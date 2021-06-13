@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:685893ba452389c0e91a30c5acbc198609fa4219101fef93f691c7edd387a349
-size 288
+#ifndef _ASM_SCORE_STRING_H
+#define _ASM_SCORE_STRING_H
+
+extern void *memset(void *__s, int __c, size_t __count);
+extern void *memcpy(void *__to, __const__ void *__from, size_t __n);
+extern void *memmove(void *__dest, __const__ void *__src, size_t __n);
+
+#endif /* _ASM_SCORE_STRING_H */

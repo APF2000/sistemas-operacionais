@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:57339a5e0c776e9e1ddfeee06624f9ae5a059fc5c0b595f49d29fcf8cab22b46
-size 179
+cx25840-objs    := cx25840-core.o cx25840-audio.o cx25840-firmware.o \
+		   cx25840-vbi.o cx25840-ir.o
+
+obj-$(CONFIG_VIDEO_CX25840) += cx25840.o
+
+ccflags-y += -Idrivers/media/i2c

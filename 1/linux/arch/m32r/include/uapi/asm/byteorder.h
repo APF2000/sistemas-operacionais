@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b6fae549b7946be7adba3c925bd259a9fee79c83809040406d385be2515fd551
-size 228
+#ifndef _ASM_M32R_BYTEORDER_H
+#define _ASM_M32R_BYTEORDER_H
+
+#if defined(__LITTLE_ENDIAN__)
+#  include <linux/byteorder/little_endian.h>
+#else
+#  include <linux/byteorder/big_endian.h>
+#endif
+
+#endif /* _ASM_M32R_BYTEORDER_H */

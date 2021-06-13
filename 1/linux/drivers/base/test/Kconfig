@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:cecff5fe507c60d7a72d12e83b299fe11f1d94819e7f81e1d99184993bae6c6e
-size 314
+config TEST_ASYNC_DRIVER_PROBE
+	tristate "Build kernel module to test asynchronous driver probing"
+	depends on m
+	help
+	  Enabling this option produces a kernel module that allows
+	  testing asynchronous driver probing by the device core.
+	  The module name will be test_async_driver_probe.ko
+
+	  If unsure say N.

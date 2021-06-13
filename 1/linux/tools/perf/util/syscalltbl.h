@@ -1,3 +1,20 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:cfb8dab7b3a725f19c5e57a44131f0e9e4785933c3272e036b47c8dee91554d1
-size 433
+#ifndef __PERF_SYSCALLTBL_H
+#define __PERF_SYSCALLTBL_H
+
+struct syscalltbl {
+	union {
+		int audit_machine;
+		struct {
+			int nr_entries;
+			void *entries;
+		} syscalls;
+	};
+};
+
+struct syscalltbl *syscalltbl__new(void);
+void syscalltbl__delete(struct syscalltbl *tbl);
+
+const char *syscalltbl__name(const struct syscalltbl *tbl, int id);
+int syscalltbl__id(struct syscalltbl *tbl, const char *name);
+
+#endif /* __PERF_SYSCALLTBL_H */

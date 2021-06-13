@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ba5f0e4a040a7037f11f11fd2f10fc94beedac1c8f26e9fbbf740e950827ba0f
-size 511
+int omap_sram_init(void);
+
+void omap_map_sram(unsigned long start, unsigned long size,
+			unsigned long skip, int cached);
+void omap_sram_reset(void);
+
+extern void *omap_sram_push_address(unsigned long size);
+
+/* Macro to push a function to the internal SRAM, using the fncpy API */
+#define omap_sram_push(funcp, size) ({				\
+	typeof(&(funcp)) _res = NULL;				\
+	void *_sram_address = omap_sram_push_address(size);	\
+	if (_sram_address)					\
+		_res = fncpy(_sram_address, &(funcp), size);	\
+	_res;							\
+})

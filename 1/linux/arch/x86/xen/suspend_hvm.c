@@ -1,3 +1,22 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:79fd398b75778d652c160801949542737117c6221b712d6ab487cc05de1d2a56
-size 422
+#include <linux/types.h>
+
+#include <xen/xen.h>
+#include <xen/features.h>
+#include <xen/interface/features.h>
+
+#include "xen-ops.h"
+
+void xen_hvm_post_suspend(int suspend_cancelled)
+{
+	int cpu;
+
+	if (!suspend_cancelled)
+		xen_hvm_init_shared_info();
+	xen_callback_vector();
+	xen_unplug_emulated_devices();
+	if (xen_feature(XENFEAT_hvm_safe_pvclock)) {
+		for_each_online_cpu(cpu) {
+			xen_setup_runstate_info(cpu);
+		}
+	}
+}

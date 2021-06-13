@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c2c93000161ab5883603be512637dfb7074235ebb440401c22bb222c5ceb80e4
-size 296
+obj-$(CONFIG_IEEE802154) += ieee802154.o
+obj-$(CONFIG_IEEE802154_SOCKET) += ieee802154_socket.o
+obj-y += 6lowpan/
+
+ieee802154-y := netlink.o nl-mac.o nl-phy.o nl_policy.o core.o \
+                header_ops.o sysfs.o nl802154.o trace.o
+ieee802154_socket-y := socket.o
+
+CFLAGS_trace.o := -I$(src)

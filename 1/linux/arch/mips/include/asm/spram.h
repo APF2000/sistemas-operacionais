@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b4994ae098116388b111fa6c48652a406d63be141924eb211cd06b56dba734a6
-size 223
+#ifndef _MIPS_SPRAM_H
+#define _MIPS_SPRAM_H
+
+#if defined(CONFIG_MIPS_SPRAM)
+extern __init void spram_config(void);
+#else
+static inline void spram_config(void) { };
+#endif /* CONFIG_MIPS_SPRAM */
+
+#endif /* _MIPS_SPRAM_H */

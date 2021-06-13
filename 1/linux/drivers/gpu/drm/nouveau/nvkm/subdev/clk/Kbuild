@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2c88fa4ef0d3e0f7c9e0135595c61efd2a33d8f07068844eba533c6aae71a501
-size 442
+nvkm-y += nvkm/subdev/clk/base.o
+nvkm-y += nvkm/subdev/clk/nv04.o
+nvkm-y += nvkm/subdev/clk/nv40.o
+nvkm-y += nvkm/subdev/clk/nv50.o
+nvkm-y += nvkm/subdev/clk/g84.o
+nvkm-y += nvkm/subdev/clk/gt215.o
+nvkm-y += nvkm/subdev/clk/mcp77.o
+nvkm-y += nvkm/subdev/clk/gf100.o
+nvkm-y += nvkm/subdev/clk/gk104.o
+nvkm-y += nvkm/subdev/clk/gk20a.o
+nvkm-y += nvkm/subdev/clk/gm20b.o
+
+nvkm-y += nvkm/subdev/clk/pllnv04.o
+nvkm-y += nvkm/subdev/clk/pllgt215.o

@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c268afc4eac37c71b68655f132bd3410babcc40bc0a3c1b0c8a6af9816dcef0b
-size 386
+# define SND_XXX_SEQ to min(SND_SEQUENCER,SND_XXX)
+
+config SND_RAWMIDI_SEQ
+	def_tristate SND_SEQUENCER && SND_RAWMIDI
+
+config SND_OPL3_LIB_SEQ
+	def_tristate SND_SEQUENCER && SND_OPL3_LIB
+
+config SND_OPL4_LIB_SEQ
+	def_tristate SND_SEQUENCER && SND_OPL4_LIB
+
+config SND_SBAWE_SEQ
+	def_tristate SND_SEQUENCER && SND_SBAWE
+
+config SND_EMU10K1_SEQ
+	def_tristate SND_SEQUENCER && SND_EMU10K1

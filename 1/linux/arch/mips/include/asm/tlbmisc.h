@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c1fb25f242d2e204b79c50306306d751c3cefbb0015511d7c371347879953773
-size 281
+#ifndef __ASM_TLBMISC_H
+#define __ASM_TLBMISC_H
+
+/*
+ * - add_wired_entry() add a fixed TLB entry, and move wired register
+ */
+extern void add_wired_entry(unsigned long entrylo0, unsigned long entrylo1,
+	unsigned long entryhi, unsigned long pagemask);
+
+#endif /* __ASM_TLBMISC_H */

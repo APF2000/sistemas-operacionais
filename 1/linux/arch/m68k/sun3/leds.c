@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:3cdfff900a73c46d2b18096183da97be340d342707aa737246f1b894c500c5dd
-size 218
+#include <asm/contregs.h>
+#include <asm/sun3mmu.h>
+#include <asm/io.h>
+
+void sun3_leds(unsigned char byte)
+{
+	unsigned char dfc;
+
+	GET_DFC(dfc);
+	SET_DFC(FC_CONTROL);
+	SET_CONTROL_BYTE(AC_LEDS, byte);
+	SET_DFC(dfc);
+}

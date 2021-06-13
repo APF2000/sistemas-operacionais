@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:0faeedfcee0a6c5ee139c5dad8cd9a9ac977404820aebea34311ff3b72a6b548
-size 108
+	.globl	kernel_start
+kernel_start:
+	.incbin	"arch/arm/boot/zImage"
+	.globl	kernel_end
+kernel_end:
+	.align	2

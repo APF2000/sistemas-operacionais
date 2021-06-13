@@ -1,3 +1,5 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f2b5ad88212725f5689011093b0fd5c8db3febfa88b8ba5d67cb500aa01ad718
-size 156
+#
+# Makefile for the PEAK-System CAN-FD IP module drivers
+#
+obj-$(CONFIG_CAN_PEAK_PCIEFD) += peak_pciefd.o
+peak_pciefd-y := peak_pciefd_main.o peak_canfd.o

@@ -1,3 +1,30 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:0e7ec16059d14147bc58f110dc04cb5c99538c6c38f8fa7e220b85abe304d63e
-size 695
+/**
+ * 	mpc5xxx_get_bus_frequency - Find the bus frequency for a device
+ * 	@node:	device node
+ *
+ * 	Returns bus frequency (IPS on MPC512x, IPB on MPC52xx),
+ * 	or 0 if the bus frequency cannot be found.
+ */
+
+#include <linux/kernel.h>
+#include <linux/of_platform.h>
+#include <linux/export.h>
+#include <asm/mpc5xxx.h>
+
+unsigned long mpc5xxx_get_bus_frequency(struct device_node *node)
+{
+	const unsigned int *p_bus_freq = NULL;
+
+	of_node_get(node);
+	while (node) {
+		p_bus_freq = of_get_property(node, "bus-frequency", NULL);
+		if (p_bus_freq)
+			break;
+
+		node = of_get_next_parent(node);
+	}
+	of_node_put(node);
+
+	return p_bus_freq ? *p_bus_freq : 0;
+}
+EXPORT_SYMBOL(mpc5xxx_get_bus_frequency);

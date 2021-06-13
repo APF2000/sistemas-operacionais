@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f75d20468cc0eac99aafefda5ceb9bab16a33f0157cfb266704faf407c87fe9f
-size 408
+#ifndef _NET_P8022_H
+#define _NET_P8022_H
+struct datalink_proto *
+register_8022_client(unsigned char type,
+		     int (*func)(struct sk_buff *skb,
+				 struct net_device *dev,
+				 struct packet_type *pt,
+				 struct net_device *orig_dev));
+void unregister_8022_client(struct datalink_proto *proto);
+
+struct datalink_proto *make_8023_client(void);
+void destroy_8023_client(struct datalink_proto *dl);
+#endif

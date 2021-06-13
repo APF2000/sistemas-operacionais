@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5733639c5ac54bde4c2c36c2485c905ca263e16b44ebd9959fc204cb1a8afb2a
-size 438
+#
+# SGI-IP32 (O2)
+#
+# Set the load address to >= 80069000 if you want to leave space for symmon,
+# 0xffffffff80004000 for production kernels.  Note that the value must be aligned to
+# a multiple of the kernel stack size or the handling of the current variable
+# will break.
+#
+platform-$(CONFIG_SGI_IP32)	+= sgi-ip32/
+cflags-$(CONFIG_SGI_IP32)	+= -I$(srctree)/arch/mips/include/asm/mach-ip32
+load-$(CONFIG_SGI_IP32)		+= 0xffffffff80004000

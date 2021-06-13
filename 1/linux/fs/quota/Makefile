@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:acdea424748ea90a38a5e10c49cb6a61e759bb3de758db70aa7ecd4bdcd21872
-size 282
+obj-$(CONFIG_QUOTA)		+= dquot.o
+obj-$(CONFIG_QFMT_V1)		+= quota_v1.o
+obj-$(CONFIG_QFMT_V2)		+= quota_v2.o
+obj-$(CONFIG_QUOTA_TREE)	+= quota_tree.o
+obj-$(CONFIG_QUOTACTL)		+= quota.o kqid.o
+obj-$(CONFIG_QUOTACTL_COMPAT)	+= compat.o
+obj-$(CONFIG_QUOTA_NETLINK_INTERFACE)	+= netlink.o

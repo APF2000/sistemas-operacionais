@@ -1,3 +1,29 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b2e054d1aeb870dc5a048be35e4436eeff14495e3163bac29cf7bb8a4a272481
-size 587
+#ifndef _ASM_ARM_XEN_EVENTS_H
+#define _ASM_ARM_XEN_EVENTS_H
+
+#include <asm/ptrace.h>
+#include <asm/atomic.h>
+
+enum ipi_vector {
+	XEN_PLACEHOLDER_VECTOR,
+
+	/* Xen IPIs go here */
+	XEN_NR_IPIS,
+};
+
+static inline int xen_irqs_disabled(struct pt_regs *regs)
+{
+	return raw_irqs_disabled_flags(regs->ARM_cpsr);
+}
+
+#define xchg_xen_ulong(ptr, val) atomic64_xchg(container_of((ptr),	\
+							    atomic64_t,	\
+							    counter), (val))
+
+/* Rebind event channel is supported by default */
+static inline bool xen_support_evtchn_rebind(void)
+{
+	return true;
+}
+
+#endif /* _ASM_ARM_XEN_EVENTS_H */

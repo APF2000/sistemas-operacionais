@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4d484b1f227868448bb7350dcdab8bbc7473bd4433fa86e10a21a43cb6287794
-size 261
+#include <linux/bcd.h>
+#include <linux/export.h>
+
+unsigned _bcd2bin(unsigned char val)
+{
+	return (val & 0x0f) + (val >> 4) * 10;
+}
+EXPORT_SYMBOL(_bcd2bin);
+
+unsigned char _bin2bcd(unsigned val)
+{
+	return ((val / 10) << 4) + val % 10;
+}
+EXPORT_SYMBOL(_bin2bcd);

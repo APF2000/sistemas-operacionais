@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:fd4921d396addfee4c095016c9c96ae59a367f365ee394999d51a126a0874382
-size 313
+
+#include <linux/syscalls.h>
+#include <linux/signal.h>
+#include <linux/unistd.h>
+
+#include <asm/syscalls.h>
+
+#define sys_clone	sys_clone_wrapper
+
+#undef __SYSCALL
+#define __SYSCALL(nr, call) [nr] = (call),
+
+void *sys_call_table[NR_syscalls] = {
+	[0 ... NR_syscalls-1] = sys_ni_syscall,
+#include <asm/unistd.h>
+};

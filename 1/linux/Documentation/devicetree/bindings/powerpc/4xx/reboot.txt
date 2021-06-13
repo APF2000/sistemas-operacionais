@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:6f0d9748ef0e3002384669deec05791439f61968610641399a37b8c3c4f96e89
-size 440
+Reboot property to control system reboot on PPC4xx systems:
+
+By setting "reset_type" to one of the following values, the default
+software reset mechanism may be overridden. Here the possible values of
+"reset_type":
+
+      1 - PPC4xx core reset
+      2 - PPC4xx chip reset
+      3 - PPC4xx system reset (default)
+
+Example:
+
+		cpu@0 {
+			device_type = "cpu";
+			model = "PowerPC,440SPe";
+			...
+			reset-type = <2>;	/* Use chip-reset */
+		};

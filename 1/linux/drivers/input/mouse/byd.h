@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f540093b47cb09182487c00fda7a26c91d9137a0f0dced4dc507520d9e5da5b2
-size 390
+#ifndef _BYD_H
+#define _BYD_H
+
+#ifdef CONFIG_MOUSE_PS2_BYD
+int byd_detect(struct psmouse *psmouse, bool set_properties);
+int byd_init(struct psmouse *psmouse);
+#else
+static inline int byd_detect(struct psmouse *psmouse, bool set_properties)
+{
+	return -ENOSYS;
+}
+static inline int byd_init(struct psmouse *psmouse)
+{
+	return -ENOSYS;
+}
+#endif /* CONFIG_MOUSE_PS2_BYD */
+
+#endif /* _BYD_H */

@@ -1,3 +1,5 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5fd32c7042115ca690d3dfcea2fe45ce1b8b319ff24b6135a5a105767b6d36dd
-size 186
+#ccflags-y := -Iinclude/drm
+
+obj-$(CONFIG_DRM_DW_HDMI) += dw-hdmi.o
+obj-$(CONFIG_DRM_DW_HDMI_AHB_AUDIO) += dw-hdmi-ahb-audio.o
+obj-$(CONFIG_DRM_DW_HDMI_I2S_AUDIO) += dw-hdmi-i2s-audio.o

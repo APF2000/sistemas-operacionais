@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:0aa82c5722789f7f2a18dc9c1a4cb9634adfddd6090bf96ed59ceea1c2ff2409
-size 838
+/*---------------------------------------------------------------------------+
+ |  version.h                                                                |
+ |                                                                           |
+ |                                                                           |
+ | Copyright (C) 1992,1993,1994,1996,1997,1999                               |
+ |                  W. Metzenthen, 22 Parker St, Ormond, Vic 3163, Australia |
+ |                  E-mail   billm@melbpc.org.au                             |
+ |                                                                           |
+ |                                                                           |
+ +---------------------------------------------------------------------------*/
+
+#define FPU_VERSION "wm-FPU-emu version 2.01"

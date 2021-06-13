@@ -1,3 +1,47 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2bcbed7f7727330f5a544ee412e3b8a3ba03fb36c08c61d874fc0511e07cac6a
-size 716
+.. -*- coding: utf-8; mode: rst -*-
+
+.. _cec-func-close:
+
+***********
+cec close()
+***********
+
+Name
+====
+
+cec-close - Close a cec device
+
+
+Synopsis
+========
+
+.. code-block:: c
+
+    #include <unistd.h>
+
+
+.. c:function:: int close( int fd )
+    :name: cec-close
+
+Arguments
+=========
+
+``fd``
+    File descriptor returned by :c:func:`open() <cec-open>`.
+
+
+Description
+===========
+
+Closes the cec device. Resources associated with the file descriptor are
+freed. The device configuration remain unchanged.
+
+
+Return Value
+============
+
+:c:func:`close()` returns 0 on success. On error, -1 is returned, and
+``errno`` is set appropriately. Possible error codes are:
+
+``EBADF``
+    ``fd`` is not a valid open file descriptor.

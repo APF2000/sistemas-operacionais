@@ -1,3 +1,20 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d038777ec058a649608cfcb8fb5ecebe1cddabe4c92e6fa2d72d481babaecef2
-size 507
+/*
+ * include/asm-xtensa/user.h
+ *
+ * Xtensa Processor version.
+ *
+ * This file is subject to the terms and conditions of the GNU General Public
+ * License.  See the file "COPYING" in the main directory of this archive
+ * for more details.
+ *
+ * Copyright (C) 2001 - 2005 Tensilica Inc.
+ */
+
+#ifndef _XTENSA_USER_H
+#define _XTENSA_USER_H
+
+/* This file usually defines a 'struct user' structure. However, it it only
+ * used for a.out file, which are not supported on Xtensa.
+ */
+
+#endif	/* _XTENSA_USER_H */

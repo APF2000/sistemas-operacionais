@@ -1,3 +1,24 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e72fc76b4982f17202918456f050bce3a5db343a262537b3d0b93114814e10d6
-size 655
+/*
+ * arch/arm/mach-mvebu/include/mach/coherency.h
+ *
+ *
+ * Coherency fabric (Aurora) support for Armada 370 and XP platforms.
+ *
+ * Copyright (C) 2012 Marvell
+ *
+ * This file is licensed under the terms of the GNU General Public
+ * License version 2.  This program is licensed "as is" without any
+ * warranty of any kind, whether express or implied.
+ */
+
+#ifndef __MACH_370_XP_COHERENCY_H
+#define __MACH_370_XP_COHERENCY_H
+
+extern void __iomem *coherency_base;	/* for coherency_ll.S */
+extern unsigned long coherency_phys_base;
+int set_cpu_coherent(void);
+
+int coherency_init(void);
+int coherency_available(void);
+
+#endif	/* __MACH_370_XP_COHERENCY_H */

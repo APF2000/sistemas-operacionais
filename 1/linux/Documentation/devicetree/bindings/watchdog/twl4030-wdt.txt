@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:887d7c4bb97388219caaf0bce8ba950775122b01d02ecd0324e70b8c8176354d
-size 174
+Device tree bindings for twl4030-wdt driver (TWL4030 watchdog)
+
+Required properties:
+	compatible = "ti,twl4030-wdt";
+
+Example:
+
+watchdog {
+	compatible = "ti,twl4030-wdt";
+};

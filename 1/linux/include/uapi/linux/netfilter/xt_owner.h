@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e79cb092518b8397a151f7440b2a0f39158f289cbe2c204b0d79199fc1009529
-size 306
+#ifndef _XT_OWNER_MATCH_H
+#define _XT_OWNER_MATCH_H
+
+#include <linux/types.h>
+
+enum {
+	XT_OWNER_UID    = 1 << 0,
+	XT_OWNER_GID    = 1 << 1,
+	XT_OWNER_SOCKET = 1 << 2,
+};
+
+struct xt_owner_match_info {
+	__u32 uid_min, uid_max;
+	__u32 gid_min, gid_max;
+	__u8 match, invert;
+};
+
+#endif /* _XT_OWNER_MATCH_H */

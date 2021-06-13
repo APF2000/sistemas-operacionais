@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:48fb0d6fb69be89176160407c46cac9fd12d3a5dad71972662abe35abf45c055
-size 588
+What:		/sys/devices/*/<our-device>/fuse
+Date:		February 2014
+Contact:	Peter De Schrijver <pdeschrijver@nvidia.com>
+Description:	read-only access to the efuses on Tegra20, Tegra30, Tegra114
+		and Tegra124 SoC's from NVIDIA. The efuses contain write once
+		data programmed at the factory. The data is layed out in 32bit
+		words in LSB first format. Each bit represents a single value
+		as decoded from the fuse registers. Bits order/assignment
+		exactly matches the HW registers, including any unused bits.
+Users:		any user space application which wants to read the efuses on
+		Tegra SoC's

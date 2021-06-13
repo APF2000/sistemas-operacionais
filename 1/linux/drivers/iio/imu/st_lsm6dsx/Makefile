@@ -1,3 +1,5 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:851c44dca16740133cd175b1f5da5dfe008a05fac833fcb63d6a5008ed3d6d53
-size 206
+st_lsm6dsx-y := st_lsm6dsx_core.o st_lsm6dsx_buffer.o
+
+obj-$(CONFIG_IIO_ST_LSM6DSX) += st_lsm6dsx.o
+obj-$(CONFIG_IIO_ST_LSM6DSX_I2C) += st_lsm6dsx_i2c.o
+obj-$(CONFIG_IIO_ST_LSM6DSX_SPI) += st_lsm6dsx_spi.o

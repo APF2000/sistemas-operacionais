@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d7c1a817bfc294ad947f4c73146ab5a08e2a36b41001a2e346b6e80eb26c2b95
-size 556
+#
+# Unisys visorinput configuration
+#
+
+config UNISYS_VISORINPUT
+	tristate "Unisys visorinput driver"
+	depends on UNISYSSPAR && UNISYS_VISORBUS && FB && INPUT
+	---help---
+	The Unisys s-Par visorinput driver provides a virtualized system
+	console (keyboard and mouse) that is accessible through the
+	s-Par firmware's user interface. s-Par provides video using the EFI
+	GOP protocol, so If this driver is not present, the Linux guest should
+	still boot with visible output in the partition desktop, but keyboard
+	and mouse interaction will not be available.
+

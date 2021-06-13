@@ -1,3 +1,21 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:7caea96106deff45e8374aa3ac503b7192cf8b3c6c890a45c9be165b85e48512
-size 619
+/*
+ * Copyright(c) 2014 Intel Corporation.
+ *
+ * This program is free software; you can redistribute it and/or modify it
+ * under the terms and conditions of the GNU General Public License,
+ * version 2, as published by the Free Software Foundation.
+ *
+ * This program is distributed in the hope it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+ * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for
+ * more details.
+ */
+
+#ifndef I2C_DESIGNWARE_H
+#define I2C_DESIGNWARE_H
+
+struct dw_i2c_platform_data {
+	unsigned int i2c_scl_freq;
+};
+
+#endif

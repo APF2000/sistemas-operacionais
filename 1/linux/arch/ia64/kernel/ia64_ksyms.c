@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:dc43f0e231e5462f7e277f240e0ec44fd12594027e38b291c45bcae0183f6250
-size 344
+/*
+ * Architecture-specific kernel symbols
+ */
+
+#ifdef CONFIG_VIRTUAL_MEM_MAP
+#include <linux/compiler.h>
+#include <linux/export.h>
+#include <linux/bootmem.h>
+EXPORT_SYMBOL(min_low_pfn);	/* defined by bootmem.c, but not exported by generic code */
+EXPORT_SYMBOL(max_low_pfn);	/* defined by bootmem.c, but not exported by generic code */
+#endif

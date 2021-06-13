@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:3ebcb28308c3cced859debd71e99f767311320230485e6d3bc2efdafc48c62c0
-size 525
+/*
+ * This file is subject to the terms and conditions of the GNU General Public
+ * License.  See the file "COPYING" in the main directory of this archive
+ * for more details.
+ *
+ * Copyright (C) 2013 Cavium, Inc.
+ */
+#ifndef __ASM_MACH_PARAVIRT_IRQ_H__
+#define  __ASM_MACH_PARAVIRT_IRQ_H__
+
+#define NR_IRQS 64
+#define MIPS_CPU_IRQ_BASE 1
+
+#define MIPS_IRQ_PCIA (MIPS_CPU_IRQ_BASE + 8)
+
+#define MIPS_IRQ_MBOX0 (MIPS_CPU_IRQ_BASE + 32)
+#define MIPS_IRQ_MBOX1 (MIPS_CPU_IRQ_BASE + 33)
+
+#endif /* __ASM_MACH_PARAVIRT_IRQ_H__ */

@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:8c8a2779a00622f4082581d9b4bde1d5b9c2463694de350e21c8b58cc247e613
-size 482
+#ifndef __NVKM_MPEG_PRIV_H__
+#define __NVKM_MPEG_PRIV_H__
+#include <engine/mpeg.h>
+struct nvkm_fifo_chan;
+
+int nv31_mpeg_init(struct nvkm_engine *);
+void nv31_mpeg_tile(struct nvkm_engine *, int, struct nvkm_fb_tile *);
+extern const struct nvkm_object_func nv31_mpeg_object;
+
+bool nv40_mpeg_mthd_dma(struct nvkm_device *, u32, u32);
+
+int nv50_mpeg_init(struct nvkm_engine *);
+void nv50_mpeg_intr(struct nvkm_engine *);
+
+extern const struct nvkm_object_func nv50_mpeg_cclass;
+#endif

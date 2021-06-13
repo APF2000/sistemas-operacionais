@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c21b2ecc3e1e45c443d3372818600cb11602ab47587c7682536e7e83ae3291cd
-size 418
+config NFC_ST95HF
+	tristate "ST95HF NFC Transceiver driver"
+	depends on SPI && NFC_DIGITAL
+	help
+	This enables the ST NFC driver for ST95HF NFC transceiver.
+	This makes use of SPI framework to communicate with transceiver
+	and registered with NFC digital core to support Linux NFC framework.
+
+	Say Y here to compile support for ST NFC transceiver ST95HF
+	linux driver into the kernel or say M to compile it as module.

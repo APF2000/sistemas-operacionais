@@ -1,3 +1,25 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c8ef3bb7dae2f4b715893fcff4f0a2d54e354fa9a1fd03e5c5b343ab455ae246
-size 736
+/*
+ * Bond several ethernet interfaces into a Cisco, running 'Etherchannel'.
+ *
+ * Portions are (c) Copyright 1995 Simon "Guru Aleph-Null" Janes
+ * NCM: Network and Communications Management, Inc.
+ *
+ * BUT, I'm the one who modified it for ethernet, so:
+ * (c) Copyright 1999, Thomas Davis, tadavis@lbl.gov
+ *
+ *	This software may be used and distributed according to the terms
+ *	of the GNU Public License, incorporated herein by reference.
+ *
+ */
+
+#ifndef _BONDING_PRIV_H
+#define _BONDING_PRIV_H
+
+#define DRV_VERSION	"3.7.1"
+#define DRV_RELDATE	"April 27, 2011"
+#define DRV_NAME	"bonding"
+#define DRV_DESCRIPTION	"Ethernet Channel Bonding Driver"
+
+#define bond_version DRV_DESCRIPTION ": v" DRV_VERSION " (" DRV_RELDATE ")\n"
+
+#endif

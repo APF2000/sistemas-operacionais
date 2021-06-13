@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:061957977fd87d8195515bae24807cad9d5e6c64b52a1ac25fa98fa10cc701fb
-size 189
+config STAGING_BOARD
+	bool "Staging Board Support"
+	depends on OF_ADDRESS && OF_IRQ && CLKDEV_LOOKUP
+	help
+	  Select to enable per-board staging support code.
+
+	  If in doubt, say N here.
+

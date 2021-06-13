@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:99131b5785b4e0f5c807b34d71e3f53e79ea7bf33efd9ed266b08eaacc83d534
-size 299
+config QEDI
+	tristate "QLogic QEDI 25/40/100Gb iSCSI Initiator Driver Support"
+	depends on PCI && SCSI && UIO
+	depends on QED
+	select SCSI_ISCSI_ATTRS
+	select QED_LL2
+	select QED_ISCSI
+	---help---
+	This driver supports iSCSI offload for the QLogic FastLinQ
+	41000 Series Converged Network Adapters.

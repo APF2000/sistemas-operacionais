@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:88de98cc794dd8eb49b85e6fb050ba70f6a384ccacd660789076138dd2f5c20c
-size 434
+* MAXI MAX11801 Resistive touch screen controller with i2c interface
+
+Required properties:
+- compatible: must be "maxim,max11801"
+- reg: i2c slave address
+- interrupt-parent: the phandle for the interrupt controller
+- interrupts: touch controller interrupt
+
+Example:
+
+&i2c1 {
+	max11801: touchscreen@48 {
+		compatible = "maxim,max11801";
+		reg = <0x48>;
+		interrupt-parent = <&gpio3>;
+		interrupts = <31 IRQ_TYPE_EDGE_FALLING>;
+	};
+};

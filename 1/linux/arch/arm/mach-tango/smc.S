@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:77a8f7d3975f57266c6a026b3e4a768c1dc20886ea51f937579df25b3ee208c2
-size 153
+#include <linux/linkage.h>
+
+ENTRY(tango_smc)
+	push	{lr}
+	mov	ip, r1
+	dsb	/* This barrier is probably unnecessary */
+	smc	#0
+	pop	{pc}
+ENDPROC(tango_smc)

@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f66e0b70fd97e2074f1239ee8070dcaf7d26d2c5118562c513a7e6f1766b2bfe
-size 371
+* Texas Instruments - drv2667 Haptics driver
+
+Required properties:
+	- compatible - "ti,drv2667" - DRV2667
+	- reg -  I2C slave address
+	- vbat-supply - Required supply regulator
+
+Example:
+
+haptics: haptics@59 {
+	compatible = "ti,drv2667";
+	reg = <0x59>;
+	vbat-supply = <&vbat>;
+};
+
+For more product information please see the link below:
+http://www.ti.com/product/drv2667

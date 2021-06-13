@@ -1,3 +1,20 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4a070c57eccb862bede216d8269c4c45cbfead677f3c10125ef5382e3060a5e6
-size 312
+===================================
+Linux Sound Subsystem Documentation
+===================================
+
+.. toctree::
+   :maxdepth: 2
+
+   kernel-api/index
+   designs/index
+   soc/index
+   alsa-configuration
+   hd-audio/index
+   cards/index
+
+.. only::  subproject
+
+   Indices
+   =======
+
+   * :ref:`genindex`

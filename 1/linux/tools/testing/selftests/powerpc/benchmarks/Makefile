@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4413aacfe64bca076ff120f15f3a497d90ae8c6e5e030d0ebb95de6659630b77
-size 302
+TEST_GEN_PROGS := gettimeofday context_switch mmap_bench futex_bench null_syscall
+
+CFLAGS += -O2
+
+include ../../lib.mk
+
+$(TEST_GEN_PROGS): ../harness.c
+
+$(OUTPUT)/context_switch: ../utils.c
+$(OUTPUT)/context_switch: CFLAGS += -maltivec -mvsx -mabi=altivec
+$(OUTPUT)/context_switch: LDLIBS += -lpthread

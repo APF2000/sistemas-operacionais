@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f6f20577e9866bef4a6331a0fd09e0cfe38d22266886cdde0550a9008bc5cce8
-size 284
+#ifndef __SOUND_PSC724_H
+#define __SOUND_PSC724_H
+
+/* ID */
+#define PSC724_DEVICE_DESC	\
+		"{Philips,PSC724 Ultimate Edge},"
+
+#define VT1724_SUBDEVICE_PSC724		0xab170619
+
+/* entry struct */
+extern struct snd_ice1712_card_info snd_vt1724_psc724_cards[];
+
+#endif /* __SOUND_PSC724_H */

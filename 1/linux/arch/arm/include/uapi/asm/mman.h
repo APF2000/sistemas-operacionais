@@ -1,3 +1,4 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:6762ffb7cc594c1d65342dd6119750d801a5c183c25763792abff4b24828e4eb
-size 145
+#include <asm-generic/mman.h>
+
+#define arch_mmap_check(addr, len, flags) \
+	(((flags) & MAP_FIXED && (addr) < FIRST_USER_ADDRESS) ? -EINVAL : 0)

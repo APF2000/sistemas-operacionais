@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:9f95a69e39549c432fa0608febbe1fd55005b571b9f5e997b293cbe646bfb02b
-size 249
+# -*- coding: utf-8; mode: python -*-
+
+project = 'Linux Kernel User Documentation'
+
+tags.add("subproject")
+
+latex_documents = [
+    ('index', 'linux-user.tex', 'Linux Kernel User Documentation',
+     'The kernel development community', 'manual'),
+]

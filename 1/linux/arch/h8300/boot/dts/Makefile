@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:46be535dc04d77b8c5f9513851de8567bf4cda157db50f98516468702f774a42
-size 443
+ifneq '$(CONFIG_H8300_BUILTIN_DTB)' '""'
+BUILTIN_DTB := $(patsubst "%",%,$(CONFIG_H8300_BUILTIN_DTB)).dtb.o
+endif
+
+obj-y += $(BUILTIN_DTB)
+
+dtb-$(CONFIG_H8300H_SIM) := h8300h_sim.dtb
+dtb-$(CONFIG_H8S_SIM) := h8s_sim.dtb
+dtb-$(CONFIG_H8S_EDOSK2674) := edosk2674.dtb
+
+dtstree		:= $(srctree)/$(src)
+dtb-$(CONFIG_OF_ALL_DTBS) := $(patsubst $(dtstree)/%.dts,%.dtb, $(wildcard $(dtstree)/*.dts))
+
+always	    := $(dtb-y)
+clean-files := *.dtb.S *.dtb

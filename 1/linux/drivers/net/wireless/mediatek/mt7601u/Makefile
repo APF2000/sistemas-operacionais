@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:700a7154b049dca98983538975c52f40496bafb066b9dd857680ee77d39602ee
-size 175
+obj-$(CONFIG_MT7601U)	+= mt7601u.o
+
+mt7601u-objs	= \
+	usb.o init.o main.o mcu.o trace.o dma.o core.o eeprom.o phy.o \
+	mac.o util.o debugfs.o tx.o
+
+CFLAGS_trace.o := -I$(src)

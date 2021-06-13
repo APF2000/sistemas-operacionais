@@ -1,3 +1,23 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f3ae442692da9af3b5ebfc1a6c69a4fc7593d8b804aae9f1f05a540622b560d0
-size 447
+#ifndef __LINUX_BRIDGE_EBT_NFLOG_H
+#define __LINUX_BRIDGE_EBT_NFLOG_H
+
+#include <linux/types.h>
+
+#define EBT_NFLOG_MASK 0x0
+
+#define EBT_NFLOG_PREFIX_SIZE 64
+#define EBT_NFLOG_WATCHER "nflog"
+
+#define EBT_NFLOG_DEFAULT_GROUP		0x1
+#define EBT_NFLOG_DEFAULT_THRESHOLD	1
+
+struct ebt_nflog_info {
+	__u32 len;
+	__u16 group;
+	__u16 threshold;
+	__u16 flags;
+	__u16 pad;
+	char prefix[EBT_NFLOG_PREFIX_SIZE];
+};
+
+#endif				/* __LINUX_BRIDGE_EBT_NFLOG_H */

@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:24b59f78270293163c8d17772c1484926deadab0c5499030940e798d4b382c62
-size 201
+#ifndef _LINUX_SCHED_INIT_H
+#define _LINUX_SCHED_INIT_H
+
+/*
+ * Scheduler init related prototypes:
+ */
+
+extern void sched_init(void);
+extern void sched_init_smp(void);
+
+#endif /* _LINUX_SCHED_INIT_H */

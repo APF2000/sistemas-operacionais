@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e853ff11c6005ebde0f7e884f30a765fe7986d02cdfc3c2c638e44391ea297e7
-size 403
+#
+# Makefile for building Trusted Computing Group's(TCG) runtime Integrity
+# Measurement Architecture(IMA).
+#
+
+obj-$(CONFIG_IMA) += ima.o
+
+ima-y := ima_fs.o ima_queue.o ima_init.o ima_main.o ima_crypto.o ima_api.o \
+	 ima_policy.o ima_template.o ima_template_lib.o
+ima-$(CONFIG_IMA_APPRAISE) += ima_appraise.o
+ima-$(CONFIG_HAVE_IMA_KEXEC) += ima_kexec.o
+obj-$(CONFIG_IMA_BLACKLIST_KEYRING) += ima_mok.o

@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c8d808e61730fe183afea41ade3b4bc19918ae597124f70af54e4740910b821b
-size 219
+
+obj-$(CONFIG_BCACHE)	+= bcache.o
+
+bcache-y		:= alloc.o bset.o btree.o closure.o debug.o extents.o\
+	io.o journal.o movinggc.o request.o stats.o super.o sysfs.o trace.o\
+	util.o writeback.o
+
+CFLAGS_request.o	+= -Iblock

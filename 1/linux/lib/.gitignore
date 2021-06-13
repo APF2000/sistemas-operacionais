@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:56c6b0134699fb63dba7a8affde8d19081f7761109a111c38b170d39155ed4c4
-size 70
+#
+# Generated files
+#
+gen_crc32table
+crc32table.h
+oid_registry_data.c

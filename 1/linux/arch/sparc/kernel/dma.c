@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2e642990bf84c9da5355b39272d6e8123e01f62c0313f17d548e5825c81ae93a
-size 255
+#include <linux/kernel.h>
+#include <linux/dma-mapping.h>
+#include <linux/dma-debug.h>
+
+#define PREALLOC_DMA_DEBUG_ENTRIES       (1 << 15)
+
+static int __init dma_init(void)
+{
+	dma_debug_init(PREALLOC_DMA_DEBUG_ENTRIES);
+	return 0;
+}
+fs_initcall(dma_init);

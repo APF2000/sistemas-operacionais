@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:443ed1a17d8ac5a5ea840a531dcce095e27abaa091776f73b89b1b37b84e37b3
-size 311
+#ifndef _XT_CLUSTER_MATCH_H
+#define _XT_CLUSTER_MATCH_H
+
+#include <linux/types.h>
+
+enum xt_cluster_flags {
+	XT_CLUSTER_F_INV	= (1 << 0)
+};
+
+struct xt_cluster_match_info {
+	__u32 total_nodes;
+	__u32 node_mask;
+	__u32 hash_seed;
+	__u32 flags;
+};
+
+#define XT_CLUSTER_NODES_MAX	32
+
+#endif /* _XT_CLUSTER_MATCH_H */

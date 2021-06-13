@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ef0d15c47553ffda2d6397ab10aad057e35a61b405043cc150c4006b1e10867f
-size 435
+Lantiq SoC ASC serial controller
+
+Required properties:
+- compatible : Should be "lantiq,asc"
+- reg : Address and length of the register set for the device
+- interrupts: the 3 (tx rx err) interrupt numbers. The interrupt specifier
+  depends on the interrupt-parent interrupt controller.
+
+Example:
+
+asc1: serial@E100C00 {
+	compatible = "lantiq,asc";
+	reg = <0xE100C00 0x400>;
+	interrupt-parent = <&icu0>;
+	interrupts = <112 113 114>;
+};

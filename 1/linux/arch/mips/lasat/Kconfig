@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:27d666157afec92f3cd518c0dc592bb6358b61fe72792497a86a663ac9f3c547
-size 303
+config PICVUE
+	tristate "PICVUE LCD display driver"
+	depends on LASAT
+
+config PICVUE_PROC
+	tristate "PICVUE LCD display driver /proc interface"
+	depends on PICVUE && PROC_FS
+
+config DS1603
+	bool "DS1603 RTC driver"
+	depends on LASAT
+
+config LASAT_SYSCTL
+	bool "LASAT sysctl interface"
+	depends on LASAT

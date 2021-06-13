@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:200fd3297c4c3591dc16dba703c9426de66e7230cd5408ac43699c3c3e185dbe
-size 377
+/*
+ * This program is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License
+ * as published by the Free Software Foundation; either version
+ * 2 of the License, or (at your option) any later version.
+ */
+#ifndef _ASM_POWERPC_SWAB_H
+#define _ASM_POWERPC_SWAB_H
+
+#include <uapi/asm/swab.h>
+
+#endif /* _ASM_POWERPC_SWAB_H */

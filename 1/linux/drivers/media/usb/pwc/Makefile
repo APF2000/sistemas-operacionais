@@ -1,3 +1,4 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1efa67685aa54046d8f4fbe3892b8debc06e70f52a9ea32bd31f7c0cec68e9c6
-size 161
+pwc-objs	+= pwc-if.o pwc-misc.o pwc-ctrl.o pwc-v4l.o pwc-uncompress.o
+pwc-objs	+= pwc-dec1.o pwc-dec23.o pwc-kiara.o pwc-timon.o
+
+obj-$(CONFIG_USB_PWC) += pwc.o

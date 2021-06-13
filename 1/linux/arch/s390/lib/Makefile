@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:66fafd9cd9548d6113df615c99a49c67eb27510feecfdc905f7932a28645de7b
-size 214
+#
+# Makefile for s390-specific library files..
+#
+
+lib-y += delay.o string.o uaccess.o find.o
+obj-y += mem.o xor.o
+lib-$(CONFIG_SMP) += spinlock.o
+lib-$(CONFIG_KPROBES) += probes.o
+lib-$(CONFIG_UPROBES) += probes.o

@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:dbfde02ed653eff559a62ad59b9f0a386d2d8dbb8ce205b0f0611ab3002a89dd
-size 306
+Broadcom BCM21664 device tree bindings
+--------------------------------------
+
+This document describes the device tree bindings for boards with the BCM21664
+SoC.
+
+Required root node property:
+  - compatible: brcm,bcm21664
+
+Example:
+	/ {
+		model = "BCM21664 SoC";
+		compatible = "brcm,bcm21664";
+		[...]
+	}

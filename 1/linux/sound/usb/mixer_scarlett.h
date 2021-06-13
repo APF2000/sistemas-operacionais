@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ecfd3e8dc3e5e2f917c6ef40e2e96288cae74904d76f28541a55956b59bcb72b
-size 169
+#ifndef __USB_MIXER_SCARLETT_H
+#define __USB_MIXER_SCARLETT_H
+
+int snd_scarlett_controls_create(struct usb_mixer_interface *mixer);
+
+#endif /* __USB_MIXER_SCARLETT_H */

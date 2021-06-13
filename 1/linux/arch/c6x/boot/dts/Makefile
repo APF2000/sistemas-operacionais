@@ -1,3 +1,20 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:73f6e7faf22a9d4841117c8878715e64e87fbf9b2949e5075c150d521888705a
-size 346
+#
+# Makefile for device trees
+#
+
+DTC_FLAGS ?= -p 1024
+
+ifneq ($(DTB),)
+obj-y += linked_dtb.o
+endif
+
+quiet_cmd_cp = CP      $< $@$2
+	cmd_cp = cat $< >$@$2 || (rm -f $@ && echo false)
+
+# Generate builtin.dtb from $(DTB).dtb
+$(obj)/builtin.dtb: $(obj)/$(DTB).dtb
+	$(call if_changed,cp)
+
+$(obj)/linked_dtb.o: $(obj)/builtin.dtb
+
+clean-files := *.dtb

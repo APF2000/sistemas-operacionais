@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ba671a45cfb1d21eb5401b79ad9bada0cf355ba519a3655643399900f0e5fcb3
-size 289
+#
+# Makefile for the Motorola 8xx FEC ethernet controller
+#
+
+obj-$(CONFIG_SERIAL_CPM) += cpm_uart.o
+
+# Select the correct platform objects.
+cpm_uart-objs-$(CONFIG_CPM2)	+= cpm_uart_cpm2.o
+cpm_uart-objs-$(CONFIG_CPM1)	+= cpm_uart_cpm1.o
+
+cpm_uart-objs	:= cpm_uart_core.o $(cpm_uart-objs-y)

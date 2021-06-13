@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ad98a795825b9b0ff52bc4c0193a578b5ada7a283036a627f69598d910d54bb8
-size 259
+#
+# Makefile for the Linux fat filesystem support.
+#
+
+obj-$(CONFIG_FAT_FS) += fat.o
+obj-$(CONFIG_VFAT_FS) += vfat.o
+obj-$(CONFIG_MSDOS_FS) += msdos.o
+
+fat-y := cache.o dir.o fatent.o file.o inode.o misc.o nfs.o
+vfat-y := namei_vfat.o
+msdos-y := namei_msdos.o

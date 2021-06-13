@@ -1,3 +1,22 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:de94b660f671592e7cf7623580d89a952e28d45a9da4525d6f98844814d56d29
-size 600
+
+menuconfig CONNECTOR
+	tristate "Connector - unified userspace <-> kernelspace linker"
+	depends on NET
+	---help---
+	  This is unified userspace <-> kernelspace connector working on top
+	  of the netlink socket protocol.
+
+	  Connector support can also be built as a module.  If so, the module
+	  will be called cn.
+
+if CONNECTOR
+
+config PROC_EVENTS
+	bool "Report process events to userspace"
+	depends on CONNECTOR=y
+	default y
+	---help---
+	  Provide a connector that reports process events to userspace. Send
+	  events such as fork, exec, id change (uid, gid, suid, etc), and exit.
+
+endif # CONNECTOR

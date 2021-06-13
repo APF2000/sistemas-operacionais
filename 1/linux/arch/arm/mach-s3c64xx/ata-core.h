@@ -1,3 +1,27 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e0d7f6c24b47107538688beddcab8f83cce4f0fb6ff417a505d7b7e5cb7f1b91
-size 716
+/*
+ * Copyright (c) 2010 Samsung Electronics Co., Ltd.
+ *		http://www.samsung.com
+ *
+ * Samsung CF-ATA Controller core functions
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 2 as
+ * published by the Free Software Foundation.
+*/
+
+#ifndef __ASM_PLAT_ATA_CORE_H
+#define __ASM_PLAT_ATA_CORE_H __FILE__
+
+/* These functions are only for use with the core support code, such as
+ * the cpu specific initialisation code
+*/
+
+/* re-define device name depending on support. */
+static inline void s3c_cfcon_setname(char *name)
+{
+#ifdef CONFIG_SAMSUNG_DEV_IDE
+	s3c_device_cfcon.name = name;
+#endif
+}
+
+#endif /* __ASM_PLAT_ATA_CORE_H */

@@ -1,3 +1,2 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d1b3fa66250be71758f5895eac93fbf7471e499dbd29bc7c267983861c01b1e6
-size 112
+obj-$(CONFIG_CRYPTO_DEV_SUN4I_SS) += sun4i-ss.o
+sun4i-ss-y += sun4i-ss-core.o sun4i-ss-hash.o sun4i-ss-cipher.o

@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:99f6b35db93d49de32bcf673bfc41217971ad729c968b6bace5d420eb784fc2d
-size 325
+# SPEAR Platform Support
+snd-soc-spear-pcm-objs := spear_pcm.o
+snd-soc-spear-spdif-in-objs := spdif_in.o
+snd-soc-spear-spdif-out-objs := spdif_out.o
+
+obj-$(CONFIG_SND_SPEAR_SOC) += snd-soc-spear-pcm.o
+obj-$(CONFIG_SND_SPEAR_SPDIF_IN) += snd-soc-spear-spdif-in.o
+obj-$(CONFIG_SND_SPEAR_SPDIF_OUT) += snd-soc-spear-spdif-out.o

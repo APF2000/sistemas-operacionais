@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:079ffabddf29abaa67720c60801430f99cc76dfb218efd201dad4b4450d3ca59
-size 414
+* Marvell Feroceon Cache
+
+Required properties:
+- compatible : Should be either "marvell,feroceon-cache" or
+  	       "marvell,kirkwood-cache".
+
+Optional properties:
+- reg        : Address of the L2 cache control register. Mandatory for
+  	       "marvell,kirkwood-cache", not used by "marvell,feroceon-cache"
+
+
+Example:
+		l2: l2-cache@20128 {
+			compatible = "marvell,kirkwood-cache";
+			reg = <0x20128 0x4>;
+		};

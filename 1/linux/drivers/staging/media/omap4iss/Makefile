@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d3a9551c10ba5d4fdf7aee184097a09c63f4dd62370c7393ac7bd722b85418c1
-size 178
+# Makefile for OMAP4 ISS driver
+
+omap4-iss-objs += \
+	iss.o iss_csi2.o iss_csiphy.o iss_ipipeif.o iss_ipipe.o iss_resizer.o iss_video.o
+
+obj-$(CONFIG_VIDEO_OMAP4) += omap4-iss.o

@@ -1,3 +1,25 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ccbde20267a5433b47260558545e8c9d45f1600cbe782b764bae696f2a548931
-size 467
+/*
+ * Port G Masks
+ */
+
+#ifndef __BFIN_PERIPHERAL_PORT_G__
+#define __BFIN_PERIPHERAL_PORT_G__
+
+#define PG0		(1 << 0)
+#define PG1		(1 << 1)
+#define PG2		(1 << 2)
+#define PG3		(1 << 3)
+#define PG4		(1 << 4)
+#define PG5		(1 << 5)
+#define PG6		(1 << 6)
+#define PG7		(1 << 7)
+#define PG8		(1 << 8)
+#define PG9		(1 << 9)
+#define PG10		(1 << 10)
+#define PG11		(1 << 11)
+#define PG12		(1 << 12)
+#define PG13		(1 << 13)
+#define PG14		(1 << 14)
+#define PG15		(1 << 15)
+
+#endif

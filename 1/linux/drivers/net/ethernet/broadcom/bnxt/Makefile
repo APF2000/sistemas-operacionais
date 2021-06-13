@@ -1,3 +1,3 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:99194a341b4bb2545011513498f33f7f0de1cca5ea00fb1a11fec81f0a290a60
-size 114
+obj-$(CONFIG_BNXT) += bnxt_en.o
+
+bnxt_en-y := bnxt.o bnxt_sriov.o bnxt_ethtool.o bnxt_dcb.o bnxt_ulp.o bnxt_xdp.o

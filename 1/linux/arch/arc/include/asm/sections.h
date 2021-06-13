@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:84b7716798959fb41631f86189e0096dd1bf87adfe0e1f6da1718ad0a34b4a89
-size 407
+/*
+ * Copyright (C) 2004, 2007-2010, 2011-2012 Synopsys, Inc. (www.synopsys.com)
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 2 as
+ * published by the Free Software Foundation.
+ */
+
+#ifndef _ASM_ARC_SECTIONS_H
+#define _ASM_ARC_SECTIONS_H
+
+#include <asm-generic/sections.h>
+
+extern char __arc_dccm_base[];
+
+#endif

@@ -1,3 +1,22 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e6fcc5424e908030f931b4ca44c1d4cb6989cf8e8a818cade7ec9590f9714d15
-size 700
+#
+# Chrome OS Embedded Controller managed sensors library
+#
+config IIO_CROS_EC_SENSORS_CORE
+	tristate "ChromeOS EC Sensors Core"
+	depends on SYSFS && MFD_CROS_EC
+	select IIO_BUFFER
+	select IIO_TRIGGERED_BUFFER
+	help
+	  Base module for the ChromeOS EC Sensors module.
+	  Contains core functions used by other IIO CrosEC sensor
+	  drivers.
+	  Define common attributes and sysfs interrupt handler.
+
+config IIO_CROS_EC_SENSORS
+	tristate "ChromeOS EC Contiguous Sensors"
+	depends on IIO_CROS_EC_SENSORS_CORE
+	help
+	  Module to handle 3d contiguous sensors like
+	  Accelerometers, Gyroscope and Magnetometer that are
+	  presented by the ChromeOS EC Sensor hub.
+	  Creates an IIO device for each functions.

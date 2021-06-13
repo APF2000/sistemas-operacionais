@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:264bbd619a00e884c0fb7c9a5bfe8fb2f64003e8aacc57783a19031c8b79a3a1
-size 264
+config USB_S2255
+	tristate "USB Sensoray 2255 video capture device"
+	depends on VIDEO_V4L2
+	select VIDEOBUF2_VMALLOC
+	default n
+	help
+	  Say Y here if you want support for the Sensoray 2255 USB device.
+	  This driver can be compiled as a module, called s2255drv.
+

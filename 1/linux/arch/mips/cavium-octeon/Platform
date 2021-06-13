@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:13468107b19068abb0977e8f7696aa099b7c24fe99d6204fc9cf4ca949f8c9fa
-size 229
+#
+# Cavium Octeon
+#
+platform-$(CONFIG_CAVIUM_OCTEON_SOC)	+= cavium-octeon/
+cflags-$(CONFIG_CAVIUM_OCTEON_SOC)	+=				\
+		-I$(srctree)/arch/mips/include/asm/mach-cavium-octeon
+load-$(CONFIG_CAVIUM_OCTEON_SOC)	+= 0xffffffff81100000

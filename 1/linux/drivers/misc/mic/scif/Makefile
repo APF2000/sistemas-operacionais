@@ -1,3 +1,20 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2032fafba12daf27b63082d78fd7cf315577a21ce963db12325e4658cf5b752c
-size 479
+#
+# Makefile - SCIF driver.
+# Copyright(c) 2014, Intel Corporation.
+#
+obj-$(CONFIG_SCIF) += scif.o
+scif-objs := scif_main.o
+scif-objs += scif_peer_bus.o
+scif-objs += scif_ports.o
+scif-objs += scif_debugfs.o
+scif-objs += scif_fd.o
+scif-objs += scif_api.o
+scif-objs += scif_epd.o
+scif-objs += scif_rb.o
+scif-objs += scif_nodeqp.o
+scif-objs += scif_nm.o
+scif-objs += scif_dma.o
+scif-objs += scif_fence.o
+scif-objs += scif_mmap.o
+scif-objs += scif_rma.o
+scif-objs += scif_rma_list.o

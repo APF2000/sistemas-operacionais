@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2f9594a026da36feb6ed4a9745c46ff624bda5794abf65fd2649783ba57c36e2
-size 254
+#ifndef __QCOM_RPM_H__
+#define __QCOM_RPM_H__
+
+#include <linux/types.h>
+
+struct qcom_rpm;
+
+#define QCOM_RPM_ACTIVE_STATE	0
+#define QCOM_RPM_SLEEP_STATE	1
+
+int qcom_rpm_write(struct qcom_rpm *rpm, int state, int resource, u32 *buf, size_t count);
+
+#endif

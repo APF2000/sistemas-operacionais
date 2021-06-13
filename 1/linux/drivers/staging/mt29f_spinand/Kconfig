@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b2fe03ed2a481894292782eafc83eb6011b101e0a9cd76b01cee931b0e9efa9c
-size 418
+config MTD_SPINAND_MT29F
+	tristate "SPINAND Device Support for Micron"
+	depends on MTD_NAND && SPI
+	help
+	  This enables support for accessing Micron SPI NAND flash
+	  devices.
+	  If you have Micron SPI NAND chip say yes.
+
+	  If unsure, say no here.
+
+config MTD_SPINAND_ONDIEECC
+	bool "Use SPINAND internal ECC"
+	depends on MTD_SPINAND_MT29F
+	help
+	  Internal ECC.
+	  Enables Hardware ECC support for Micron SPI NAND.

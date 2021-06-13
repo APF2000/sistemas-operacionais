@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:01fd50e3a450d092b6bb9d04e88518e6577c619bf7d4174d4b7df3ee11804cfc
-size 426
+Altera's SoCFPGA platform device tree bindings
+---------------------------------------------
+
+Boards with Cyclone 5 SoC:
+Required root node properties:
+compatible = "altr,socfpga-cyclone5", "altr,socfpga";
+
+Boards with Arria 5 SoC:
+Required root node properties:
+compatible = "altr,socfpga-arria5", "altr,socfpga";
+
+Boards with Arria 10 SoC:
+Required root node properties:
+compatible = "altr,socfpga-arria10", "altr,socfpga";

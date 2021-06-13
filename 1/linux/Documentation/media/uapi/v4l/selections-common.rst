@@ -1,3 +1,23 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:eeb7c2e35ce0be2382fb1bcd6931bd52fff0d2a97057308548f89f894d098807
-size 680
+.. -*- coding: utf-8; mode: rst -*-
+
+.. _v4l2-selections-common:
+
+Common selection definitions
+============================
+
+While the :ref:`V4L2 selection API <selection-api>` and
+:ref:`V4L2 subdev selection APIs <v4l2-subdev-selections>` are very
+similar, there's one fundamental difference between the two. On
+sub-device API, the selection rectangle refers to the media bus format,
+and is bound to a sub-device's pad. On the V4L2 interface the selection
+rectangles refer to the in-memory pixel format.
+
+This section defines the common definitions of the selection interfaces
+on the two APIs.
+
+
+.. toctree::
+    :maxdepth: 1
+
+    v4l2-selection-targets
+    v4l2-selection-flags

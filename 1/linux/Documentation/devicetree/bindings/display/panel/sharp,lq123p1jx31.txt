@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:143e38b61c9a0bb8b5070357e57c76a037676b9bca84fc993935c13cf19d2ef3
-size 228
+Sharp 12.3" (2400x1600 pixels) TFT LCD panel
+
+Required properties:
+- compatible: should be "sharp,lq123p1jx31"
+
+This binding is compatible with the simple-panel binding, which is specified
+in simple-panel.txt in this directory.

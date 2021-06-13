@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:dc45a41a1efe45872b1e34aa209461433b1427249247920f30a78e8cb5f52b1f
-size 222
+config DRM_RADEON_USERPTR
+	bool "Always enable userptr support"
+	depends on DRM_RADEON
+	select MMU_NOTIFIER
+	help
+	  This option selects CONFIG_MMU_NOTIFIER if it isn't already
+	  selected to enabled full userptr support.

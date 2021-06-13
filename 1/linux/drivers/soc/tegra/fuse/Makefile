@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:10602da585d5d14f1a825df840a22634f4af89d0ea1385daa20dfd26f5f4d070
-size 456
+obj-y					+= fuse-tegra.o
+obj-y					+= fuse-tegra30.o
+obj-y					+= tegra-apbmisc.o
+obj-$(CONFIG_ARCH_TEGRA_2x_SOC)		+= fuse-tegra20.o
+obj-$(CONFIG_ARCH_TEGRA_2x_SOC)		+= speedo-tegra20.o
+obj-$(CONFIG_ARCH_TEGRA_3x_SOC)		+= speedo-tegra30.o
+obj-$(CONFIG_ARCH_TEGRA_114_SOC)	+= speedo-tegra114.o
+obj-$(CONFIG_ARCH_TEGRA_124_SOC)	+= speedo-tegra124.o
+obj-$(CONFIG_ARCH_TEGRA_132_SOC)	+= speedo-tegra124.o
+obj-$(CONFIG_ARCH_TEGRA_210_SOC)	+= speedo-tegra210.o

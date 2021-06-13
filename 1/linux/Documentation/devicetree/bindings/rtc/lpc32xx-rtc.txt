@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:307ac1d150b1c5877a775469a3119421de241e7df1d1fe464d50f7a372ffd692
-size 341
+* NXP LPC32xx SoC Real Time Clock controller
+
+Required properties:
+- compatible: must be "nxp,lpc3220-rtc"
+- reg: physical base address of the controller and length of memory mapped
+  region.
+- interrupts: The RTC interrupt
+
+Example:
+
+	rtc@40024000 {
+		compatible = "nxp,lpc3220-rtc";
+		reg = <0x40024000 0x1000>;
+		interrupts = <52 0>;
+	};

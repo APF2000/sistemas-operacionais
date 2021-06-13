@@ -1,3 +1,38 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:893f48e349a24c216893b6673b24334f1ed27c8a6796e728c48d046170b76052
-size 826
+#ifndef __UM_IRQFLAGS_H
+#define __UM_IRQFLAGS_H
+
+extern int get_signals(void);
+extern int set_signals(int enable);
+extern void block_signals(void);
+extern void unblock_signals(void);
+
+#define arch_local_save_flags arch_local_save_flags
+static inline unsigned long arch_local_save_flags(void)
+{
+	return get_signals();
+}
+
+#define arch_local_irq_restore arch_local_irq_restore
+static inline void arch_local_irq_restore(unsigned long flags)
+{
+	set_signals(flags);
+}
+
+#define arch_local_irq_enable arch_local_irq_enable
+static inline void arch_local_irq_enable(void)
+{
+	unblock_signals();
+}
+
+#define arch_local_irq_disable arch_local_irq_disable
+static inline void arch_local_irq_disable(void)
+{
+	block_signals();
+}
+
+#define ARCH_IRQ_DISABLED	0
+#define ARCh_IRQ_ENABLED	(SIGIO|SIGVTALRM)
+
+#include <asm-generic/irqflags.h>
+
+#endif

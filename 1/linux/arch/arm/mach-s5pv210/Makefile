@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b1d456aa7725b8a74522fd633a99d222efbe7f2a7d8d0da94d636e48e6c1604b
-size 314
+# arch/arm/mach-s5pv210/Makefile
+#
+# Copyright (c) 2010 Samsung Electronics Co., Ltd.
+# 		http://www.samsung.com/
+#
+# Licensed under GPLv2
+
+ccflags-$(CONFIG_ARCH_MULTIPLATFORM) += -I$(srctree)/arch/arm/plat-samsung/include
+
+# Core
+
+obj-$(CONFIG_PM_SLEEP)		+= pm.o sleep.o
+
+# machine support
+
+obj-y				+= s5pv210.o

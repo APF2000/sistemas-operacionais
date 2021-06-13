@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b46af72f19666b6787628a19099cd2f92ad25bc55f95a2eba34b5f8e6e50a692
-size 419
+
+/*	From uart401.c */
+int probe_uart401 (struct address_info *hw_config, struct module *owner);
+void unload_uart401 (struct address_info *hw_config);
+
+irqreturn_t uart401intr (int irq, void *dev_id);
+
+/*	From mpu401.c */
+int probe_mpu401(struct address_info *hw_config, struct resource *ports);
+int attach_mpu401(struct address_info * hw_config, struct module *owner);
+void unload_mpu401(struct address_info *hw_info);

@@ -1,3 +1,26 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:431af8c1bb79f16b7133b7eea250d415c659f407d50bf4955efd3d869ea6976c
-size 462
+/*
+ *  S390 version
+ *
+ *  Derived from "include/asm-i386/types.h"
+ */
+
+#ifndef _UAPI_S390_TYPES_H
+#define _UAPI_S390_TYPES_H
+
+#include <asm-generic/int-ll64.h>
+
+#ifndef __ASSEMBLY__
+
+/* A address type so that arithmetic can be done on it & it can be upgraded to
+   64 bit when necessary 
+*/
+typedef unsigned long addr_t; 
+typedef __signed__ long saddr_t;
+
+typedef struct {
+	__u32 u[4];
+} __vector128;
+
+#endif /* __ASSEMBLY__ */
+
+#endif /* _UAPI_S390_TYPES_H */

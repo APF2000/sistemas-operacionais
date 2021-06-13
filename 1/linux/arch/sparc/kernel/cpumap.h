@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:66ac01ecc29e3712f701b69551c16df2ad48eb2bc8dac59642c30651aa1e35b2
-size 305
+#ifndef _CPUMAP_H
+#define _CPUMAP_H
+
+#ifdef CONFIG_SMP
+void cpu_map_rebuild(void);
+int map_to_cpu(unsigned int index);
+#define cpu_map_init() cpu_map_rebuild()
+#else
+#define cpu_map_init() do {} while (0)
+static inline int map_to_cpu(unsigned int index)
+{
+	return raw_smp_processor_id();
+}
+#endif
+
+#endif

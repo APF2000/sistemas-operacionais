@@ -1,3 +1,47 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b15b1831e84a6455994506597b9563fad2b4e9fbec1163fe90fb986a81ea9683
-size 1689
+/*
+ * Support for Intel Camera Imaging ISP subsystem.
+ * Copyright (c) 2015, Intel Corporation.
+ *
+ * This program is free software; you can redistribute it and/or modify it
+ * under the terms and conditions of the GNU General Public License,
+ * version 2, as published by the Free Software Foundation.
+ *
+ * This program is distributed in the hope it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+ * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for
+ * more details.
+ */
+
+#include "system_global.h"
+#include "ia_css_types.h"
+#include "ia_css_macc_table.host.h"
+
+/* Multi-Axes Color Correction table for ISP1.
+ * 	64values = 2x2matrix for 16area, [s2.13]
+ * 	ineffective: 16 of "identity 2x2 matix" {8192,0,0,8192}
+ */
+const struct ia_css_macc_table default_macc_table = {
+		{ 8192, 0, 0, 8192, 8192, 0, 0, 8192,
+		8192, 0, 0, 8192, 8192, 0, 0, 8192,
+		8192, 0, 0, 8192, 8192, 0, 0, 8192,
+		8192, 0, 0, 8192, 8192, 0, 0, 8192,
+		8192, 0, 0, 8192, 8192, 0, 0, 8192,
+		8192, 0, 0, 8192, 8192, 0, 0, 8192,
+		8192, 0, 0, 8192, 8192, 0, 0, 8192,
+		8192, 0, 0, 8192, 8192, 0, 0, 8192 }
+};
+
+/* Multi-Axes Color Correction table for ISP2.
+ * 	64values = 2x2matrix for 16area, [s1.12]
+ * 	ineffective: 16 of "identity 2x2 matix" {4096,0,0,4096}
+ */
+const struct ia_css_macc_table default_macc2_table = {
+	      { 4096, 0, 0, 4096, 4096, 0, 0, 4096,
+		4096, 0, 0, 4096, 4096, 0, 0, 4096,
+		4096, 0, 0, 4096, 4096, 0, 0, 4096,
+		4096, 0, 0, 4096, 4096, 0, 0, 4096,
+		4096, 0, 0, 4096, 4096, 0, 0, 4096,
+		4096, 0, 0, 4096, 4096, 0, 0, 4096,
+		4096, 0, 0, 4096, 4096, 0, 0, 4096,
+		4096, 0, 0, 4096, 4096, 0, 0, 4096 }
+};

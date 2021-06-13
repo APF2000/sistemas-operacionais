@@ -1,3 +1,5 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1088afb66300f17ef34dfe32cc847281efe48a171ccadaa77c15b68194438673
-size 169
+snd-atmel-abdac-objs		:= abdac.o
+snd-atmel-ac97c-objs		:= ac97c.o
+
+obj-$(CONFIG_SND_ATMEL_ABDAC)	+= snd-atmel-abdac.o
+obj-$(CONFIG_SND_ATMEL_AC97C)	+= snd-atmel-ac97c.o

@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:bc0e9648ce2b19f3e6043ab7c5d5121f03364a5de1ae5219cfd35b4b71d79199
-size 288
+Olimex Device Tree Bindings
+---------------------------
+
+SAM9-L9260 Board
+Required root node properties:
+    - compatible = "olimex,sam9-l9260", "atmel,at91sam9260";
+
+i.MX23 Olinuxino Low Cost Board
+Required root node properties:
+    - compatible = "olimex,imx23-olinuxino", "fsl,imx23";

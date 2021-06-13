@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:170ee9c19debb5826f1d0d890264b91192f4d06be1e942f823f4c7c8b1f0560a
-size 243
+#
+# Makefile for ux500 clocks
+#
+
+# Clock types
+obj-y += clk-prcc.o
+obj-y += clk-prcmu.o
+obj-y += clk-sysctrl.o
+
+# Clock definitions
+obj-y += u8500_of_clk.o
+obj-y += u9540_clk.o
+obj-y += u8540_clk.o
+
+# ABX500 clock driver
+obj-y += abx500-clk.o

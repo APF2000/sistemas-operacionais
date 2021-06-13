@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:dde6c92bb3e393cc7caa3d60db6fb6d75c2517aaecd122dcb62c087097d69bc9
-size 316
+config QEDF
+	tristate "QLogic QEDF 25/40/100Gb FCoE Initiator Driver Support"
+	depends on PCI && SCSI
+	depends on QED
+        depends on LIBFC
+        depends on LIBFCOE
+	select QED_LL2
+	select QED_FCOE
+	---help---
+	This driver supports FCoE offload for the QLogic FastLinQ
+	41000 Series Converged Network Adapters.

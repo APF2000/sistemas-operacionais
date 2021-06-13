@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:46149237140c0f15c90de7a834f328909aee866b58a7b4773c450f91ed8669a7
-size 297
+if SH_SDK7780
+
+choice
+	prompt "SDK7780 options"
+	default SH_SDK7780_BASE
+
+config SH_SDK7780_BASE
+	bool "SDK7780 with base-board support"
+	depends on CPU_SUBTYPE_SH7780
+	help
+	  Selecting this option will enable support for the expansion
+	  baseboard devices. If in doubt, say Y.
+
+endchoice
+
+endif

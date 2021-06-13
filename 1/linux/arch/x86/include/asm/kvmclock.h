@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b93fcc48ea4d08787193fdd3fc958d4ecf3125aeeab804e89c48ba801b953b6e
-size 131
+#ifndef _ASM_X86_KVM_CLOCK_H
+#define _ASM_X86_KVM_CLOCK_H
+
+extern struct clocksource kvm_clock;
+
+#endif /* _ASM_X86_KVM_CLOCK_H */

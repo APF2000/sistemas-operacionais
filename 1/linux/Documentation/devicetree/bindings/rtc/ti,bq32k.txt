@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:7ac9453618da62f2e0d22543b3c79c6922c1d530813b3679dec43ca003fa2266
-size 640
+* TI BQ32000                I2C Serial Real-Time Clock
+
+Required properties:
+- compatible: Should contain "ti,bq32000".
+- reg: I2C address for chip
+
+Optional properties:
+- trickle-resistor-ohms : Selected resistor for trickle charger
+       Values usable are 1120 and 20180
+       Should be given if trickle charger should be enabled
+- trickle-diode-disable : Do not use internal trickle charger diode
+       Should be given if internal trickle charger diode should be disabled
+Example:
+       bq32000: rtc@68 {
+               compatible = "ti,bq32000";
+               trickle-resistor-ohms = <1120>;
+               reg = <0x68>;
+       };

@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:dca74ad39b2456de16ecd432a507618410226e803c498dba2b6d514417c1bdff
-size 229
+DESTDIR ?=
+
+x86_energy_perf_policy : x86_energy_perf_policy.c
+
+clean :
+	rm -f x86_energy_perf_policy
+
+install :
+	install x86_energy_perf_policy ${DESTDIR}/usr/bin/
+	install x86_energy_perf_policy.8 ${DESTDIR}/usr/share/man/man8/

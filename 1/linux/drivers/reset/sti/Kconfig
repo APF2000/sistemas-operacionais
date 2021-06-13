@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e6a35b817dc5c073c6aefc9067a06f22971d54248af5ce9c36066a24df476577
-size 103
+if ARCH_STI
+
+config STI_RESET_SYSCFG
+	bool
+
+config STIH407_RESET
+	bool
+	select STI_RESET_SYSCFG
+
+endif

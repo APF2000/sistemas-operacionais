@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:926ce15fcab75b920800b5355197778d159b52d1d6a6644aa7761a9f7d78f798
-size 426
+Atmel AT91RM9200 Real Time Clock
+
+Required properties:
+- compatible: should be: "atmel,at91rm9200-rtc" or "atmel,at91sam9x5-rtc"
+- reg: physical base address of the controller and length of memory mapped
+  region.
+- interrupts: rtc alarm/event interrupt
+- clocks: phandle to input clock.
+
+Example:
+
+rtc@fffffe00 {
+	compatible = "atmel,at91rm9200-rtc";
+	reg = <0xfffffe00 0x100>;
+	interrupts = <1 4 7>;
+	clocks = <&clk32k>;
+};

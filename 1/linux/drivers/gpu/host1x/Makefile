@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:0ec761e30ff4da3442d8b07593e49a5cc720bdff55c22fa38aab05b6f07c3c53
-size 212
+host1x-y = \
+	bus.o \
+	syncpt.o \
+	dev.o \
+	intr.o \
+	cdma.o \
+	channel.o \
+	job.o \
+	debug.o \
+	mipi.o \
+	hw/host1x01.o \
+	hw/host1x02.o \
+	hw/host1x04.o \
+	hw/host1x05.o
+
+obj-$(CONFIG_TEGRA_HOST1X) += host1x.o

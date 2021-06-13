@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b41c73031ce2b6a84087d0426c640415a4f1e9ec725e0ea8d5e943e013fed57b
-size 292
+# __restore_processor_state() restores %gs after S3 resume and so should not
+# itself be stack-protected
+nostackp := $(call cc-option, -fno-stack-protector)
+CFLAGS_cpu.o	:= $(nostackp)
+
+obj-$(CONFIG_PM_SLEEP)		+= cpu.o
+obj-$(CONFIG_HIBERNATION)	+= hibernate_$(BITS).o hibernate_asm_$(BITS).o

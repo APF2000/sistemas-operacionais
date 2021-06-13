@@ -1,3 +1,22 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:6817c016eb2dbaf07af9364c2919a4541252d120414b3df146864669f535b39b
-size 381
+obj-$(CONFIG_NET_9P) := 9pnet.o
+obj-$(CONFIG_NET_9P_XEN) += 9pnet_xen.o
+obj-$(CONFIG_NET_9P_VIRTIO) += 9pnet_virtio.o
+obj-$(CONFIG_NET_9P_RDMA) += 9pnet_rdma.o
+
+9pnet-objs := \
+	mod.o \
+	client.o \
+	error.o \
+	util.o \
+	protocol.o \
+	trans_fd.o \
+	trans_common.o \
+
+9pnet_virtio-objs := \
+	trans_virtio.o \
+
+9pnet_xen-objs := \
+	trans_xen.o \
+
+9pnet_rdma-objs := \
+	trans_rdma.o \

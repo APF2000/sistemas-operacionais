@@ -1,3 +1,4 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:564c1af0046b6ae18bc120b2f4ae20922229b85f86821100c6c8d0e0fcd2fbb0
-size 158
+obj-y				:= setup.o
+obj-$(CONFIG_SH_RSK7203)	+= devices-rsk7203.o
+obj-$(CONFIG_SH_RSK7264)	+= devices-rsk7264.o
+obj-$(CONFIG_SH_RSK7269)	+= devices-rsk7269.o

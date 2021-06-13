@@ -1,3 +1,20 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c385e41df50b5b4844cd1950e384dcfe8c05e7ae4a42e00974fa7d97c440fb1c
-size 419
+#ifndef _ASM_ARM64_PARAVIRT_H
+#define _ASM_ARM64_PARAVIRT_H
+
+#ifdef CONFIG_PARAVIRT
+struct static_key;
+extern struct static_key paravirt_steal_enabled;
+extern struct static_key paravirt_steal_rq_enabled;
+
+struct pv_time_ops {
+	unsigned long long (*steal_clock)(int cpu);
+};
+extern struct pv_time_ops pv_time_ops;
+
+static inline u64 paravirt_steal_clock(int cpu)
+{
+	return pv_time_ops.steal_clock(cpu);
+}
+#endif
+
+#endif

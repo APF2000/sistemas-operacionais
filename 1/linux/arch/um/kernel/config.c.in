@@ -1,3 +1,26 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5745182eac52602abd8fee6584adf6b5be6c2050a4631a7b0db01185f6d2a3b8
-size 496
+/* 
+ * Copyright (C) 2002 Jeff Dike (jdike@karaya.com)
+ * Licensed under the GPL
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <init.h>
+
+static __initdata const char *config[] = {
+"CONFIG"
+};
+
+static int __init print_config(char *line, int *add)
+{
+	int i;
+	for (i = 0; i < sizeof(config)/sizeof(config[0]); i++)
+		printf("%s", config[i]);
+	exit(0);
+}
+
+__uml_setup("--showconfig", print_config,
+"--showconfig\n"
+"    Prints the config file that this UML binary was generated from.\n\n"
+);
+

@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ffd95ff7e87051b9d3a787023d88d203f580d734a5cf595f2d638c9b8d903b54
-size 288
+config DRM_UDL
+	tristate "DisplayLink"
+	depends on DRM
+	depends on USB_SUPPORT
+	depends on USB_ARCH_HAS_HCD
+	select USB
+	select DRM_KMS_HELPER
+	help
+	  This is a KMS driver for the USB displaylink video adapters.
+          Say M/Y to add support for these devices via drm/kms interfaces.

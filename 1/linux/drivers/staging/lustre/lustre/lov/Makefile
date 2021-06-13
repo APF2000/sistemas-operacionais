@@ -1,3 +1,5 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e223e63e24bdd570c8ab0e0a246455f171a728a3b5fda8a29c4a4961663ffff3
-size 275
+obj-$(CONFIG_LUSTRE_FS) += lov.o
+lov-y := lov_obd.o lov_pack.o lov_offset.o lov_merge.o \
+	 lov_request.o lov_ea.o lov_dev.o lov_object.o lov_page.o  \
+	 lov_lock.o lov_io.o lovsub_dev.o lovsub_object.o lovsub_page.o      \
+	 lovsub_lock.o lovsub_io.o lov_pool.o lproc_lov.o

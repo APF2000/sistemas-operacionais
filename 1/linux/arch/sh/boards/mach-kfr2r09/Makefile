@@ -1,3 +1,4 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b91b78ed5b893cd4ffc08fb5001bcb114d30a61842270c7afaa9602903e8ae9a
-size 90
+obj-y	:= setup.o sdram.o
+ifneq ($(CONFIG_FB_SH_MOBILE_LCDC),)
+obj-y	+=  lcd_wqvga.o
+endif

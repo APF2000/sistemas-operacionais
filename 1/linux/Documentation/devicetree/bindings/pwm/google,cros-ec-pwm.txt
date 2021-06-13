@@ -1,3 +1,23 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:df7beb41a50ab0d3a7d248e0f3ca0a0e41507b66e6e9fb39e9581ec024ad37c1
-size 574
+* PWM controlled by ChromeOS EC
+
+Google's ChromeOS EC PWM is a simple PWM attached to the Embedded Controller
+(EC) and controlled via a host-command interface.
+
+An EC PWM node should be only found as a sub-node of the EC node (see
+Documentation/devicetree/bindings/mfd/cros-ec.txt).
+
+Required properties:
+- compatible: Must contain "google,cros-ec-pwm"
+- #pwm-cells: Should be 1. The cell specifies the PWM index.
+
+Example:
+	cros-ec@0 {
+		compatible = "google,cros-ec-spi";
+
+		...
+
+		cros_ec_pwm: ec-pwm {
+			compatible = "google,cros-ec-pwm";
+			#pwm-cells = <1>;
+		};
+	};

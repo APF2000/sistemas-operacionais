@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:791482768a4b473780bbf6fbfd620a430627a9e24fef224e95e5ccb1db7e1d83
-size 272
+#ifndef _ASM_SOCKET_H
+#define _ASM_SOCKET_H
+
+#include <uapi/asm/socket.h>
+
+/* O_NONBLOCK clashes with the bits used for socket types.  Therefore we
+ * have to define SOCK_NONBLOCK to a different value here.
+ */
+#define SOCK_NONBLOCK	0x40000000
+
+#endif /* _ASM_SOCKET_H */

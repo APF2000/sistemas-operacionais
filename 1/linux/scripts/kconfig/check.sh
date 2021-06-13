@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:da08d4f98d68d69b3307ff1fe3666c6104db8f19266d5f710baca8864859c2ac
-size 214
+#!/bin/sh
+# Needed for systems without gettext
+$* -x c -o /dev/null - > /dev/null 2>&1 << EOF
+#include <libintl.h>
+int main()
+{
+	gettext("");
+	return 0;
+}
+EOF
+if [ ! "$?" -eq "0"  ]; then
+	echo -DKBUILD_NO_NLS;
+fi

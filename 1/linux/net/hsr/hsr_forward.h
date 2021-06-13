@@ -1,3 +1,20 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:7baeca7b77449c4dd2782f29f35de55ede2c6473bd204ef7343767f4b63ce9a6
-size 577
+/* Copyright 2011-2014 Autronica Fire and Security AS
+ *
+ * This program is free software; you can redistribute it and/or modify it
+ * under the terms of the GNU General Public License as published by the Free
+ * Software Foundation; either version 2 of the License, or (at your option)
+ * any later version.
+ *
+ * Author(s):
+ *	2011-2014 Arvid Brodin, arvid.brodin@alten.se
+ */
+
+#ifndef __HSR_FORWARD_H
+#define __HSR_FORWARD_H
+
+#include <linux/netdevice.h>
+#include "hsr_main.h"
+
+void hsr_forward_skb(struct sk_buff *skb, struct hsr_port *port);
+
+#endif /* __HSR_FORWARD_H */

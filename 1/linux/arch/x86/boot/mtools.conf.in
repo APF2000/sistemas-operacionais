@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e2bc0c5aada45a1c0de559c10d2f133dbc027195c62987191ded0fc6727d2542
-size 330
+#
+# mtools configuration file for "make (b)zdisk"
+#
+
+# Actual floppy drive
+drive a:
+  file="/dev/fd0"
+
+# 1.44 MB floppy disk image
+drive v:
+  file="@OBJ@/fdimage" cylinders=80 heads=2 sectors=18 filter
+
+# 2.88 MB floppy disk image (mostly for virtual uses)
+drive w:
+  file="@OBJ@/fdimage" cylinders=80 heads=2 sectors=36 filter
+
+

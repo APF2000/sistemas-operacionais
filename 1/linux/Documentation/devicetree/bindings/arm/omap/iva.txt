@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d4de7b068e958c965d81d19633ab8ef66adc87784027a5537fb5cecb75b3e3dd
-size 400
+* TI - IVA (Imaging and Video Accelerator) subsystem
+
+The IVA contain various audio, video or imaging HW accelerator
+depending of the version.
+
+Required properties:
+- compatible : Should be:
+  - "ti,ivahd" for OMAP4
+  - "ti,iva2.2" for OMAP3
+  - "ti,iva2.1" for OMAP2430
+  - "ti,iva1" for OMAP2420
+- ti,hwmods: "iva"
+
+Examples:
+
+iva {
+    compatible = "ti,ivahd", "ti,iva";
+    ti,hwmods = "iva";
+};

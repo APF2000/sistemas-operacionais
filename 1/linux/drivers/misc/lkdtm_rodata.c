@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5245ecb136c1825da76155f81b9771f891bd29e0cea6bb2af50bef8880b6d573
-size 284
+/*
+ * This includes functions that are meant to live entirely in .rodata
+ * (via objcopy tricks), to validate the non-executability of .rodata.
+ */
+#include "lkdtm.h"
+
+void notrace lkdtm_rodata_do_nothing(void)
+{
+	/* Does nothing. We just want an architecture agnostic "return". */
+}

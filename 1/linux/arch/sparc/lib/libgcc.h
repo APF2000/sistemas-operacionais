@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:9a75b2db9922d8654b0947049da470d162cc3ddcdea2037c6cc004ee4d3b4dc4
-size 262
+#ifndef __ASM_LIBGCC_H
+#define __ASM_LIBGCC_H
+
+#include <asm/byteorder.h>
+
+typedef int word_type __attribute__ ((mode (__word__)));
+
+struct DWstruct {
+	int high, low;
+};
+
+typedef union
+{
+	struct DWstruct s;
+	long long ll;
+} DWunion;
+
+#endif /* __ASM_LIBGCC_H */

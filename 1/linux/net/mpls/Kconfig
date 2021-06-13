@@ -1,3 +1,36 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:dbe93b93aabe6bd5ce700af402184e1bc12145bc0d12ca099f79296f3774a90c
-size 916
+#
+# MPLS configuration
+#
+
+menuconfig MPLS
+	bool "MultiProtocol Label Switching"
+	default n
+	---help---
+	  MultiProtocol Label Switching routes packets through logical
+	  circuits.  Originally conceived as a way of routing packets at
+	  hardware speeds (before hardware was capable of routing ipv4 packets),
+	  MPLS remains a simple way of making tunnels.
+
+	  If you have not heard of MPLS you probably want to say N here.
+
+if MPLS
+
+config NET_MPLS_GSO
+	tristate "MPLS: GSO support"
+	help
+	 This is helper module to allow segmentation of non-MPLS GSO packets
+	 that have had MPLS stack entries pushed onto them and thus
+	 become MPLS GSO packets.
+
+config MPLS_ROUTING
+	tristate "MPLS: routing support"
+	---help---
+	 Add support for forwarding of mpls packets.
+
+config MPLS_IPTUNNEL
+	tristate "MPLS: IP over MPLS tunnel support"
+	depends on LWTUNNEL && MPLS_ROUTING
+	---help---
+	 mpls ip tunnel support.
+
+endif # MPLS

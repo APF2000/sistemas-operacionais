@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ac4fc541fd58c97595cbf6118e3c5bd6da26925ad7367efd96520ff7081ea1b4
-size 353
+#ifndef _ASM_X86_MSI_H
+#define _ASM_X86_MSI_H
+#include <asm/hw_irq.h>
+#include <asm/irqdomain.h>
+
+typedef struct irq_alloc_info msi_alloc_info_t;
+
+int pci_msi_prepare(struct irq_domain *domain, struct device *dev, int nvec,
+		    msi_alloc_info_t *arg);
+
+void pci_msi_set_desc(msi_alloc_info_t *arg, struct msi_desc *desc);
+
+#endif /* _ASM_X86_MSI_H */

@@ -1,3 +1,39 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:9cff67d53f8f6f714aa83b2ee853b414c0bd8f7b9a72540d60fc46a04c91ab15
-size 1201
+What:		/sys/fs/xfs/<disk>/log/log_head_lsn
+Date:		July 2014
+KernelVersion:	3.17
+Contact:	xfs@oss.sgi.com
+Description:
+		The log sequence number (LSN) of the current head of the
+		log. The LSN is exported in "cycle:basic block" format.
+Users:		xfstests
+
+What:		/sys/fs/xfs/<disk>/log/log_tail_lsn
+Date:		July 2014
+KernelVersion:	3.17
+Contact:	xfs@oss.sgi.com
+Description:
+		The log sequence number (LSN) of the current tail of the
+		log. The LSN is exported in "cycle:basic block" format.
+
+What:		/sys/fs/xfs/<disk>/log/reserve_grant_head
+Date:		July 2014
+KernelVersion:	3.17
+Contact:	xfs@oss.sgi.com
+Description:
+		The current state of the log reserve grant head. It
+		represents the total log reservation of all currently
+		outstanding transactions. The grant head is exported in
+		"cycle:bytes" format.
+Users:		xfstests
+
+What:		/sys/fs/xfs/<disk>/log/write_grant_head
+Date:		July 2014
+KernelVersion:	3.17
+Contact:	xfs@oss.sgi.com
+Description:
+		The current state of the log write grant head. It
+		represents the total log reservation of all currently
+		oustanding transactions, including regrants due to
+		rolling transactions. The grant head is exported in
+		"cycle:bytes" format.
+Users:		xfstests

@@ -1,3 +1,5 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2d6ebc1cb995958ddaa1415561ae62fee54d3ccc8cb44c0281bb061a60224dcf
-size 108
+dtb-$(CONFIG_ARCH_ZX) += zx296718-evb.dtb
+
+always		:= $(dtb-y)
+subdir-y	:= $(dts-dirs)
+clean-files	:= *.dtb

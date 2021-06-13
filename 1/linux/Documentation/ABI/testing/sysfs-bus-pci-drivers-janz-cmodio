@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:702cc1fda445e414255430b8c93f72a4a397a260d165d3dd700f2d02b81be1ee
-size 298
+What:		/sys/bus/pci/drivers/janz-cmodio/.../modulbus_number
+Date:		May 2010
+KernelVersion:	2.6.35
+Contact:	Ira W. Snyder <ira.snyder@gmail.com>
+Description:
+		Value representing the HEX switch S2 of the janz carrier board CMOD-IO or CAN-PCI2
+
+		Read-only: value of the configuration switch (0..15)

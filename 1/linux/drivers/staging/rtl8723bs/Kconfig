@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1ef6c32fdc74cea2cdf546756ac4f3780c2c7ba4eead42c4fa80612c42cf8acd
-size 403
+config RTL8723BS
+	tristate "Realtek RTL8723BS SDIO Wireless LAN NIC driver"
+	depends on WLAN && MMC && CFG80211
+	depends on m
+	select WIRELESS_EXT
+	select WEXT_PRIV
+	---help---
+	This option enables support for RTL8723BS SDIO drivers, such as
+	the wifi found on the 1st gen Intel Compute Stick, the CHIP
+	and many other Intel Atom and ARM based devices.
+	If built as a module, it will be called r8723bs.

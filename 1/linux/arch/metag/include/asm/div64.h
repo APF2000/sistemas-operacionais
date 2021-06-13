@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4cf6e143db734b4a865297251bbd14f53abf17e8c31db94e9b61d40ddcd9e1a2
-size 232
+#ifndef __ASM_DIV64_H__
+#define __ASM_DIV64_H__
+
+#include <asm-generic/div64.h>
+
+extern u64 div_u64(u64 dividend, u64 divisor);
+extern s64 div_s64(s64 dividend, s64 divisor);
+
+#define div_u64 div_u64
+#define div_s64 div_s64
+
+#endif

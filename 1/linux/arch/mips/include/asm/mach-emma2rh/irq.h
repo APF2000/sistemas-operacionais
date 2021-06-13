@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:20074fb14e8583d929b2b9c3c85256449fc16b87cfc948d67882597d3f85b0fb
-size 370
+/*
+ * This file is subject to the terms and conditions of the GNU General Public
+ * License.  See the file "COPYING" in the main directory of this archive
+ * for more details.
+ *
+ * Copyright (C) 2003 by Ralf Baechle
+ */
+#ifndef __ASM_MACH_EMMA2RH_IRQ_H
+#define __ASM_MACH_EMMA2RH_IRQ_H
+
+#define NR_IRQS 256
+
+#include_next <irq.h>
+
+#endif /* __ASM_MACH_EMMA2RH_IRQ_H */

@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:939e493c717e42ab3fbc5753f5358b6db98d11cf0132b26e2c8706ca66fe1ae7
-size 235
+#ifndef RTL8187_RFKILL_H
+#define RTL8187_RFKILL_H
+
+void rtl8187_rfkill_init(struct ieee80211_hw *hw);
+void rtl8187_rfkill_poll(struct ieee80211_hw *hw);
+void rtl8187_rfkill_exit(struct ieee80211_hw *hw);
+
+#endif /* RTL8187_RFKILL_H */

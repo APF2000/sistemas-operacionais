@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b19ad10af2d77727c77412e7970f05b6c130dfb8e9b39710ead0afb91e60cbf8
-size 268
+#ifndef _ASM_FB_H_
+#define _ASM_FB_H_
+#include <linux/device.h>
+
+/* Caching is off in the I/O space quadrant by design.  */
+#define fb_pgprotect(...) do {} while (0)
+
+static inline int fb_is_primary_device(struct fb_info *info)
+{
+	return 0;
+}
+
+#endif /* _ASM_FB_H_ */

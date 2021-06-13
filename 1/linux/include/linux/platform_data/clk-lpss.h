@@ -1,3 +1,23 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:31d41f8c7fbdff725dc6f70d1f1c3346396c9dddf62bfa80738e7b6bc11fc2d3
-size 565
+/*
+ * Intel Low Power Subsystem clocks.
+ *
+ * Copyright (C) 2013, Intel Corporation
+ * Authors: Mika Westerberg <mika.westerberg@linux.intel.com>
+ *          Rafael J. Wysocki <rafael.j.wysocki@intel.com>
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 2 as
+ * published by the Free Software Foundation.
+ */
+
+#ifndef __CLK_LPSS_H
+#define __CLK_LPSS_H
+
+struct lpss_clk_data {
+	const char *name;
+	struct clk *clk;
+};
+
+extern int lpt_clk_init(void);
+
+#endif /* __CLK_LPSS_H */

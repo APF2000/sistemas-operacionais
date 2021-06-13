@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:bbd7aa64fddf583ffa345e4f6aee98c822e717954a77ee085ba84bab240ab672
-size 329
+#include "llvm/Support/ManagedStatic.h"
+#include "llvm/Support/raw_ostream.h"
+#define NUM_VERSION (((LLVM_VERSION_MAJOR) << 16) + (LLVM_VERSION_MINOR << 8) + LLVM_VERSION_PATCH)
+
+#if NUM_VERSION < 0x030900
+# error "LLVM version too low"
+#endif
+int main()
+{
+	llvm::errs() << "Hello World!\n";
+	llvm::llvm_shutdown();
+	return 0;
+}

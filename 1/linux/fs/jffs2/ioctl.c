@@ -1,3 +1,22 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:0e65d6b892fd402a43dc3928ba5c3e7cb9099f924d919d692c0470d3357d01ba
-size 557
+/*
+ * JFFS2 -- Journalling Flash File System, Version 2.
+ *
+ * Copyright © 2001-2007 Red Hat, Inc.
+ * Copyright © 2004-2010 David Woodhouse <dwmw2@infradead.org>
+ *
+ * Created by David Woodhouse <dwmw2@infradead.org>
+ *
+ * For licensing information, see the file 'LICENCE' in this directory.
+ *
+ */
+
+#include <linux/fs.h>
+#include "nodelist.h"
+
+long jffs2_ioctl(struct file *filp, unsigned int cmd, unsigned long arg)
+{
+	/* Later, this will provide for lsattr.jffs2 and chattr.jffs2, which
+	   will include compression support etc. */
+	return -ENOTTY;
+}
+

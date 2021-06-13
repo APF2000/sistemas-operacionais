@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:31af6b7df6e7dc3f71ae771536626f5be06f3a9107c2a869a9e0fbebb5128c30
-size 446
+ToDos sorted by priority:
+
+- Use bitmask functions to parse CPU topology more robust
+  (current implementation has issues on AMD)
+- Try to read out boost states and frequencies on Intel
+- Somewhere saw the ability to read power consumption of
+  RAM from HW on Intel SandyBridge -> another monitor?
+- Add another c1e debug idle monitor
+  -> Is by design racy with BIOS, but could be added
+     with a --force option and some "be careful" messages

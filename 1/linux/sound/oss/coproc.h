@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f0b679e9370754e8bbe2f9569df28d360f4646542268a92b87c8fe7f25c1e9c5
-size 361
+/*
+ * Definitions for various on board processors on the sound cards. For
+ * example DSP processors.
+ */
+
+/*
+ * Coprocessor access types
+ */
+#define COPR_CUSTOM		0x0001	/* Custom applications */
+#define COPR_MIDI		0x0002	/* MIDI (MPU-401) emulation */
+#define COPR_PCM		0x0004	/* Digitized voice applications */
+#define COPR_SYNTH		0x0008	/* Music synthesis */

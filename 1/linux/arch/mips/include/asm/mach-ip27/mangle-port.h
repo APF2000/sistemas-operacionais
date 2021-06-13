@@ -1,3 +1,25 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:3cdf76519419af32a94d3f745ef76301d18c5e559e1597d453c8003d93d96fae
-size 781
+/*
+ * This file is subject to the terms and conditions of the GNU General Public
+ * License.  See the file "COPYING" in the main directory of this archive
+ * for more details.
+ *
+ * Copyright (C) 2003, 2004 Ralf Baechle
+ */
+#ifndef __ASM_MACH_IP27_MANGLE_PORT_H
+#define __ASM_MACH_IP27_MANGLE_PORT_H
+
+#define __swizzle_addr_b(port)	(port)
+#define __swizzle_addr_w(port)	((port) ^ 2)
+#define __swizzle_addr_l(port)	(port)
+#define __swizzle_addr_q(port)	(port)
+
+# define ioswabb(a, x)		(x)
+# define __mem_ioswabb(a, x)	(x)
+# define ioswabw(a, x)		(x)
+# define __mem_ioswabw(a, x)	cpu_to_le16(x)
+# define ioswabl(a, x)		(x)
+# define __mem_ioswabl(a, x)	cpu_to_le32(x)
+# define ioswabq(a, x)		(x)
+# define __mem_ioswabq(a, x)	cpu_to_le32(x)
+
+#endif /* __ASM_MACH_IP27_MANGLE_PORT_H */

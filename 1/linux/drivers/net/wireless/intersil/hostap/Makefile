@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b9a5b63aae02728595293646871038ced3d8aa72512f16933d6a76a4f4658166
-size 287
+hostap-y := hostap_80211_rx.o hostap_80211_tx.o hostap_ap.o hostap_info.o \
+            hostap_ioctl.o hostap_main.o hostap_proc.o 
+obj-$(CONFIG_HOSTAP) += hostap.o
+
+obj-$(CONFIG_HOSTAP_CS) += hostap_cs.o
+obj-$(CONFIG_HOSTAP_PLX) += hostap_plx.o
+obj-$(CONFIG_HOSTAP_PCI) += hostap_pci.o

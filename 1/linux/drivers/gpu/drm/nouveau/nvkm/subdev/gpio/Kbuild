@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:865cccba8ce9d9ceed37008c01137ed3cd3578e78b0380f82dab2a537ff53853
-size 205
+nvkm-y += nvkm/subdev/gpio/base.o
+nvkm-y += nvkm/subdev/gpio/nv10.o
+nvkm-y += nvkm/subdev/gpio/nv50.o
+nvkm-y += nvkm/subdev/gpio/g94.o
+nvkm-y += nvkm/subdev/gpio/gf119.o
+nvkm-y += nvkm/subdev/gpio/gk104.o

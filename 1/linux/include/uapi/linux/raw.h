@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:82edadea9e235624b2669360dddcabfc196cd17486e5cc547b42179d3bfe271f
-size 302
+#ifndef __LINUX_RAW_H
+#define __LINUX_RAW_H
+
+#include <linux/types.h>
+
+#define RAW_SETBIND	_IO( 0xac, 0 )
+#define RAW_GETBIND	_IO( 0xac, 1 )
+
+struct raw_config_request 
+{
+	int	raw_minor;
+	__u64	block_major;
+	__u64	block_minor;
+};
+
+#define MAX_RAW_MINORS CONFIG_MAX_RAW_DEVS
+
+#endif /* __LINUX_RAW_H */

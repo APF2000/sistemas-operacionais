@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:989903f29aa8772aa4840c36f708831ceae19af8d1eb0c0d0c57b242ee7b79f1
-size 240
+HannStar Display Corp. HSD100PXN1 10.1" XGA LVDS panel
+
+Required properties:
+- compatible: should be "hannstar,hsd100pxn1"
+
+This binding is compatible with the simple-panel binding, which is specified
+in simple-panel.txt in this directory.

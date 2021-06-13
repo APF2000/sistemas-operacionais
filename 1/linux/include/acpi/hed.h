@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f3270d96a98b815feb5115758cc9d75fafd200b4b0de6b8a5e06bacab72584e6
-size 371
+/*
+ * hed.h - ACPI Hardware Error Device
+ *
+ * Copyright (C) 2009, Intel Corp.
+ *	Author: Huang Ying <ying.huang@intel.com>
+ *
+ * This file is released under the GPLv2.
+ */
+
+#ifndef ACPI_HED_H
+#define ACPI_HED_H
+
+#include <linux/notifier.h>
+
+int register_acpi_hed_notifier(struct notifier_block *nb);
+void unregister_acpi_hed_notifier(struct notifier_block *nb);
+
+#endif

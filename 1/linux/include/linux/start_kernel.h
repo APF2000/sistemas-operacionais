@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:fabd05a51e2a51f9760542cb8e03018178f400470ce4c34ccdd402ffe54e125d
-size 295
+#ifndef _LINUX_START_KERNEL_H
+#define _LINUX_START_KERNEL_H
+
+#include <linux/linkage.h>
+#include <linux/init.h>
+
+/* Define the prototype for start_kernel here, rather than cluttering
+   up something else. */
+
+extern asmlinkage void __init start_kernel(void);
+
+#endif /* _LINUX_START_KERNEL_H */

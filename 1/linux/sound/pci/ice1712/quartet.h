@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e976e17aafe6510be3f7e3a677aff785847b94bbad8cc90cd3ab7fbfb8c640c2
-size 257
+#ifndef __SOUND_QTET_H
+#define __SOUND_QTET_H
+
+#define QTET_DEVICE_DESC		"{Infrasonic,Quartet},"
+
+#define VT1724_SUBDEVICE_QTET		0x30305349	/* Infrasonic Quartet */
+
+extern struct snd_ice1712_card_info  snd_vt1724_qtet_cards[];
+
+#endif	/* __SOUND_QTET_H */

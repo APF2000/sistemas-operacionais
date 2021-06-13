@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c1eff949c843128860283e4e048a3f3f54dea4bf9eb308b8b92845342aaa4f50
-size 231
+#
+# PIC32MZDA
+#
+platform-$(CONFIG_PIC32MZDA)	+= pic32/
+cflags-$(CONFIG_PIC32MZDA)	+= -I$(srctree)/arch/mips/include/asm/mach-pic32
+load-$(CONFIG_PIC32MZDA)	+= 0xffffffff88000000
+all-$(CONFIG_PIC32MZDA)		:= $(COMPRESSION_FNAME).bin

@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c2b68d6ee74e9713a560f6bb1767d319b47bb7b2869cdda348b1536d85322ea2
-size 463
+What:		/sys/bus/coresight/devices/<memory_map>.funnel/funnel_ctrl
+Date:		November 2014
+KernelVersion:	3.19
+Contact:	Mathieu Poirier <mathieu.poirier@linaro.org>
+Description:	(RW) Enables the slave ports and defines the hold time of the
+		slave ports.
+
+What:		/sys/bus/coresight/devices/<memory_map>.funnel/priority
+Date:		November 2014
+KernelVersion:	3.19
+Contact:	Mathieu Poirier <mathieu.poirier@linaro.org>
+Description:	(RW) Defines input port priority order.

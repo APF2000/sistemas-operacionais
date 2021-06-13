@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5241dc0756fcc1f0841e93f17d26b6caf0cc07176c371783ee01b07d376b2e54
-size 554
+# DAVINCI Platform Support
+snd-soc-edma-objs := edma-pcm.o
+snd-soc-davinci-i2s-objs := davinci-i2s.o
+snd-soc-davinci-mcasp-objs:= davinci-mcasp.o
+snd-soc-davinci-vcif-objs:= davinci-vcif.o
+
+obj-$(CONFIG_SND_EDMA_SOC) += snd-soc-edma.o
+obj-$(CONFIG_SND_DAVINCI_SOC_I2S) += snd-soc-davinci-i2s.o
+obj-$(CONFIG_SND_DAVINCI_SOC_MCASP) += snd-soc-davinci-mcasp.o
+obj-$(CONFIG_SND_DAVINCI_SOC_VCIF) += snd-soc-davinci-vcif.o
+
+# Generic DAVINCI/AM33xx Machine Support
+snd-soc-evm-objs := davinci-evm.o
+
+obj-$(CONFIG_SND_DAVINCI_SOC_GENERIC_EVM) += snd-soc-evm.o

@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:3a32f35b2593fd6cd661cf57a6ead5d72ec54626190dd9b202b948633cc75347
-size 232
+#ifndef _NF_CONNTRACK_SNMP_H
+#define _NF_CONNTRACK_SNMP_H
+
+extern int (*nf_nat_snmp_hook)(struct sk_buff *skb,
+				unsigned int protoff,
+				struct nf_conn *ct,
+				enum ip_conntrack_info ctinfo);
+
+#endif /* _NF_CONNTRACK_SNMP_H */

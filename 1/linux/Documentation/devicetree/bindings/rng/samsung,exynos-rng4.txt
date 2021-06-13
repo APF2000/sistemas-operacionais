@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e659d758b4e0ff9143f7bf52a07059044faa42552e1c35d7ffd883cf21fed710
-size 452
+Exynos Pseudo Random Number Generator
+
+Required properties:
+
+- compatible  : Should be "samsung,exynos4-rng".
+- reg         : Specifies base physical address and size of the registers map.
+- clocks      : Phandle to clock-controller plus clock-specifier pair.
+- clock-names : "secss" as a clock name.
+
+Example:
+
+	rng@10830400 {
+		compatible = "samsung,exynos4-rng";
+		reg = <0x10830400 0x200>;
+		clocks = <&clock CLK_SSS>;
+		clock-names = "secss";
+	};

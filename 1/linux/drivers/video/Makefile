@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:96dd376cbca634bb02c6eaac8ad5feb1c2f6698036478499abdbb5d056d4ebbd
-size 402
+obj-$(CONFIG_VGASTATE)            += vgastate.o
+obj-$(CONFIG_HDMI)                += hdmi.o
+
+obj-$(CONFIG_VT)		  += console/
+obj-$(CONFIG_FB_STI)		  += console/
+obj-$(CONFIG_LOGO)		  += logo/
+obj-y				  += backlight/
+
+obj-y				  += fbdev/
+
+obj-$(CONFIG_VIDEOMODE_HELPERS) += display_timing.o videomode.o
+ifeq ($(CONFIG_OF),y)
+obj-$(CONFIG_VIDEOMODE_HELPERS) += of_display_timing.o of_videomode.o
+endif

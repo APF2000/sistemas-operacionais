@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:62dc2aa690b61fb6cd355f2e4a9d682f93e5423723cb1d36c662417e4734276f
-size 436
+/*
+ * Copyright 1997 Transmeta Corporation - All Rights Reserved
+ *
+ * This file is part of the Linux kernel and is made available under
+ * the terms of the GNU General Public License, version 2, or at your
+ * option, any later version, incorporated herein by reference.
+ */
+
+#ifndef _LINUX_AUTO_FS_H
+#define _LINUX_AUTO_FS_H
+
+#include <linux/fs.h>
+#include <linux/ioctl.h>
+#include <uapi/linux/auto_fs.h>
+#endif /* _LINUX_AUTO_FS_H */

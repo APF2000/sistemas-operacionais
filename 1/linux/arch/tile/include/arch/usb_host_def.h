@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:80a828001ea4c5e101154bc7e04c0c0e51572932b6b603595e3fbacbb542265e
-size 713
+/*
+ * Copyright 2012 Tilera Corporation. All Rights Reserved.
+ *
+ *   This program is free software; you can redistribute it and/or
+ *   modify it under the terms of the GNU General Public License
+ *   as published by the Free Software Foundation, version 2.
+ *
+ *   This program is distributed in the hope that it will be useful, but
+ *   WITHOUT ANY WARRANTY; without even the implied warranty of
+ *   MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE, GOOD TITLE or
+ *   NON INFRINGEMENT.  See the GNU General Public License for
+ *   more details.
+ */
+
+/* Machine-generated file; do not edit. */
+
+#ifndef __ARCH_USB_HOST_DEF_H__
+#define __ARCH_USB_HOST_DEF_H__
+#endif /* !defined(__ARCH_USB_HOST_DEF_H__) */

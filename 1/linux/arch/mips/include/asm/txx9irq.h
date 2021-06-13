@@ -1,3 +1,34 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d31ad25ac9cda07fad5bff7c227e7b36d4571a97f9e891ca34f476cbe397a24b
-size 743
+/*
+ * include/asm-mips/txx9irq.h
+ * TX39/TX49 interrupt controller definitions.
+ *
+ * This file is subject to the terms and conditions of the GNU General Public
+ * License.  See the file "COPYING" in the main directory of this archive
+ * for more details.
+ */
+#ifndef __ASM_TXX9IRQ_H
+#define __ASM_TXX9IRQ_H
+
+#include <irq.h>
+
+#ifdef CONFIG_IRQ_MIPS_CPU
+#define TXX9_IRQ_BASE	(MIPS_CPU_IRQ_BASE + 8)
+#else
+#ifdef CONFIG_I8259
+#define TXX9_IRQ_BASE	(I8259A_IRQ_BASE + 16)
+#else
+#define TXX9_IRQ_BASE	0
+#endif
+#endif
+
+#ifdef CONFIG_CPU_TX39XX
+#define TXx9_MAX_IR 16
+#else
+#define TXx9_MAX_IR 32
+#endif
+
+void txx9_irq_init(unsigned long baseaddr);
+int txx9_irq(void);
+int txx9_irq_set_pri(int irc_irq, int new_pri);
+
+#endif /* __ASM_TXX9IRQ_H */

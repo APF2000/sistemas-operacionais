@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:40fed0a5946caee033c7aad2da90a55b78104247ae17ffff3c03871bdd6dab68
-size 545
+/*
+ * arch/arm/include/asm/mach/time.h
+ *
+ * Copyright (C) 2004 MontaVista Software, Inc.
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 2 as
+ * published by the Free Software Foundation.
+ */
+#ifndef __ASM_ARM_MACH_TIME_H
+#define __ASM_ARM_MACH_TIME_H
+
+extern void timer_tick(void);
+
+typedef void (*clock_access_fn)(struct timespec64 *);
+extern int register_persistent_clock(clock_access_fn read_boot,
+				     clock_access_fn read_persistent);
+
+#endif

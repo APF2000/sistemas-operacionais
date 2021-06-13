@@ -1,3 +1,25 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e507980757294f46af61a92cdc07cb3b5d36255524aa3b65387982cfc6a30733
-size 583
+/*
+ * arch/arm/mach-ks8695/include/mach/regs-wan.h
+ *
+ * Copyright (C) 2006 Andrew Victor
+ *
+ * KS8695 - HPNA Registers and bit definitions.
+ *
+ * This file is licensed under  the terms of the GNU General Public
+ * License version 2. This program is licensed "as is" without any
+ * warranty of any kind, whether express or implied.
+ */
+
+#ifndef KS8695_HPNA_H
+#define KS8695_HPNA_H
+
+#define KS8695_HPNA_OFFSET	(0xF0000 + 0xA000)
+#define KS8695_HPNA_VA		(KS8695_IO_VA + KS8695_HPNA_OFFSET)
+#define KS8695_HPNA_PA		(KS8695_IO_PA + KS8695_HPNA_OFFSET)
+
+
+/*
+ * HPNA registers
+ */
+
+#endif

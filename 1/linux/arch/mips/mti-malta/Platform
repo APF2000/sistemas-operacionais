@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:edcf7c512819ffc6e8d4a6612c831fb066e736b2147807fdd55a5c3a84f5d7bd
-size 335
+#
+# MIPS Malta board
+#
+platform-$(CONFIG_MIPS_MALTA)	+= mti-malta/
+cflags-$(CONFIG_MIPS_MALTA)	+= -I$(srctree)/arch/mips/include/asm/mach-malta
+ifdef CONFIG_KVM_GUEST
+    load-$(CONFIG_MIPS_MALTA)	+= 0x0000000040100000
+else
+    load-$(CONFIG_MIPS_MALTA)	+= 0xffffffff80100000
+endif
+all-$(CONFIG_MIPS_MALTA)	:= $(COMPRESSION_FNAME).bin

@@ -1,3 +1,20 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:93b4eada6fc2c90682209f619a0480af8dca16e5967c83085c2f69000e41c16a
-size 401
+ULPI bus binding
+----------------
+
+Phys that are behind a ULPI connection can be described with the following
+binding. The host controller shall have a "ulpi" named node as a child, and
+that node shall have one enabled node underneath it representing the ulpi
+device on the bus.
+
+EXAMPLE
+-------
+
+usb {
+	compatible = "vendor,usb-controller";
+
+	ulpi {
+		phy {
+			compatible = "vendor,phy";
+		};
+	};
+};

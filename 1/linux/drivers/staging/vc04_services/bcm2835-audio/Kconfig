@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:44aa816c6852621f13ba8dcd23cee6ce9a44a8fd7c05be74a3cc5980ab799d13
-size 224
+config SND_BCM2835
+        tristate "BCM2835 Audio"
+        depends on ARCH_BCM2835 && SND
+        select SND_PCM
+        select BCM2835_VCHIQ
+        help
+          Say Y or M if you want to support BCM2835 built in audio
+

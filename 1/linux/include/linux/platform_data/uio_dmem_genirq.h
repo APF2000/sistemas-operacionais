@@ -1,3 +1,26 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4efff2169d5345a6e2a0d0424c5d3b87a648822510ab1289b872f4ba9ff54055
-size 800
+/*
+ * include/linux/platform_data/uio_dmem_genirq.h
+ *
+ * Copyright (C) 2012 Damian Hobson-Garcia
+ *
+ * This program is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License as
+ * published by the Free Software Foundation version 2.
+ *
+ * This program is distributed "as is" WITHOUT ANY WARRANTY of any
+ * kind, whether express or implied; without even the implied warranty
+ * of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ */
+
+#ifndef _UIO_DMEM_GENIRQ_H
+#define _UIO_DMEM_GENIRQ_H
+
+#include <linux/uio_driver.h>
+
+struct uio_dmem_genirq_pdata {
+	struct uio_info	uioinfo;
+	unsigned int *dynamic_region_sizes;
+	unsigned int num_dynamic_regions;
+};
+#endif /* _UIO_DMEM_GENIRQ_H */

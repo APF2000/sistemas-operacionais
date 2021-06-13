@@ -1,3 +1,22 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5f1e32896dc0e698d5c204daef32402e67d0bb7aa68a2e98f50a272ca131fdb0
-size 475
+perf-archive(1)
+===============
+
+NAME
+----
+perf-archive - Create archive with object files with build-ids found in perf.data file
+
+SYNOPSIS
+--------
+[verse]
+'perf archive' [file]
+
+DESCRIPTION
+-----------
+This command runs perf-buildid-list --with-hits, and collects the files with the
+buildids found so that analysis of perf.data contents can be possible on another
+machine.
+
+
+SEE ALSO
+--------
+linkperf:perf-record[1], linkperf:perf-buildid-list[1], linkperf:perf-report[1]

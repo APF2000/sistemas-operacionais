@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:34901976d81204b1db3c0e106ae272049661974c1352d12965fd598a0b2784db
-size 261
+/*
+ * MAX517 DAC driver
+ *
+ * Copyright 2011 Roland Stigge <stigge@antcom.de>
+ *
+ * Licensed under the GPL-2 or later.
+ */
+#ifndef IIO_DAC_MAX517_H_
+#define IIO_DAC_MAX517_H_
+
+struct max517_platform_data {
+	u16				vref_mv[8];
+};
+
+#endif /* IIO_DAC_MAX517_H_ */

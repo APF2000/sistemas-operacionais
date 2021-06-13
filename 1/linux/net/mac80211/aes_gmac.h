@@ -1,3 +1,24 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:fab6e47985e18a7009b5cfa022ef595dc3f1a671574f6da0f08dbda8a7b9c263
-size 680
+/*
+ * Copyright 2015, Qualcomm Atheros, Inc.
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 2 as
+ * published by the Free Software Foundation.
+ */
+
+#ifndef AES_GMAC_H
+#define AES_GMAC_H
+
+#include <linux/crypto.h>
+
+#define GMAC_AAD_LEN	20
+#define GMAC_MIC_LEN	16
+#define GMAC_NONCE_LEN	12
+
+struct crypto_aead *ieee80211_aes_gmac_key_setup(const u8 key[],
+						 size_t key_len);
+int ieee80211_aes_gmac(struct crypto_aead *tfm, const u8 *aad, u8 *nonce,
+		       const u8 *data, size_t data_len, u8 *mic);
+void ieee80211_aes_gmac_key_free(struct crypto_aead *tfm);
+
+#endif /* AES_GMAC_H */

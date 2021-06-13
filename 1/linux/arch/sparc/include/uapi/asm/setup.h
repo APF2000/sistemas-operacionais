@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f6a685f05c32dff1f568893fad4b6669b43bc5b4c6d82848eecd837ca64a85ac
-size 247
+/*
+ *	Just a place holder. 
+ */
+
+#ifndef _UAPI_SPARC_SETUP_H
+#define _UAPI_SPARC_SETUP_H
+
+#if defined(__sparc__) && defined(__arch64__)
+# define COMMAND_LINE_SIZE 2048
+#else
+# define COMMAND_LINE_SIZE 256
+#endif
+
+
+#endif /* _UAPI_SPARC_SETUP_H */

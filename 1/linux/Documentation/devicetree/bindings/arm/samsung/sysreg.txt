@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b00f7f11beb0feea3863a87d00e40018ee2f61a05fe803e82a4aa6da09e6808b
-size 571
+SAMSUNG S5P/Exynos SoC series System Registers (SYSREG)
+
+Properties:
+ - compatible : should contain two values. First value must be one from following list:
+		- "samsung,exynos4-sysreg" - for Exynos4 based SoCs,
+		- "samsung,exynos5-sysreg" - for Exynos5 based SoCs.
+		second value must be always "syscon".
+ - reg : offset and length of the register set.
+
+Example:
+	syscon@10010000 {
+		compatible = "samsung,exynos4-sysreg", "syscon";
+		reg = <0x10010000 0x400>;
+	};
+
+	syscon@10050000 {
+		compatible = "samsung,exynos5-sysreg", "syscon";
+		reg = <0x10050000 0x5000>;
+	};

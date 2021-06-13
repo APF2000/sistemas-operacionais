@@ -1,3 +1,5 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:81e3720a3402c8eef148adeda87e4498c529f6972bb9a0a28833125414dafa0a
-size 138
+config VHOST_RING
+	tristate
+	---help---
+	  This option is selected by any driver which needs to access
+	  the host side of a virtio ring.

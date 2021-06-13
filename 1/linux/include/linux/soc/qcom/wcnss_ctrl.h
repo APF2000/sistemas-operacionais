@@ -1,3 +1,24 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f68c152165292a34ed7b02f407abc6a9f8f4f0733ebdc056a933c6d825ddd0ff
-size 455
+#ifndef __WCNSS_CTRL_H__
+#define __WCNSS_CTRL_H__
+
+#include <linux/rpmsg.h>
+
+#if IS_ENABLED(CONFIG_QCOM_WCNSS_CTRL)
+
+struct rpmsg_endpoint *qcom_wcnss_open_channel(void *wcnss, const char *name,
+					       rpmsg_rx_cb_t cb, void *priv);
+
+#else
+
+static struct rpmsg_endpoint *qcom_wcnss_open_channel(void *wcnss,
+						      const char *name,
+						      rpmsg_rx_cb_t cb,
+						      void *priv)
+{
+	WARN_ON(1);
+	return ERR_PTR(-ENXIO);
+}
+
+#endif
+
+#endif

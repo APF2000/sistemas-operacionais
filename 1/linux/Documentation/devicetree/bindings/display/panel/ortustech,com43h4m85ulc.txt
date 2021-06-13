@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:76e8ba63a4eec56fb3dab0397499313391440d3351db03d553622a14e36910dc
-size 241
+OrtusTech COM43H4M85ULC Blanview 3.7" TFT-LCD panel
+
+Required properties:
+- compatible: should be "ortustech,com43h4m85ulc"
+
+This binding is compatible with the simple-panel binding, which is specified
+in simple-panel.txt in this directory.

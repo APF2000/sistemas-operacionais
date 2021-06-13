@@ -1,3 +1,4 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:999f16a531e3f76fe2333f353a6f5dc37a75a09f746c3636f46418bed291e633
-size 174
+obj-y += berlin2-avpll.o berlin2-pll.o berlin2-div.o
+obj-$(CONFIG_MACH_BERLIN_BG2)	+= bg2.o
+obj-$(CONFIG_MACH_BERLIN_BG2CD)	+= bg2.o
+obj-$(CONFIG_MACH_BERLIN_BG2Q)	+= bg2q.o

@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:dff39609bb1906753c3ac2211c5f14558a6ca780f0f8da6e86a398eece779649
-size 361
+/*
+ * Licensed under the GPL
+ */
+
+#ifndef __UM_SYSDEP_CHECKSUM_H
+#define __UM_SYSDEP_CHECKSUM_H
+
+static inline unsigned add32_with_carry(unsigned a, unsigned b)
+{
+        asm("addl %2,%0\n\t"
+            "adcl $0,%0"
+            : "=r" (a)
+            : "0" (a), "r" (b));
+        return a;
+}
+
+extern __sum16 ip_compute_csum(const void *buff, int len);
+
+#endif

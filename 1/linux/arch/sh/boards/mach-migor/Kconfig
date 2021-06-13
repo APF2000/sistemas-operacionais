@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:bd8a19ce8e528ab7a1f1eb7e7b43bf6b33a1906b653f66f1d39d5416e4e5c176
-size 202
+if SH_MIGOR
+
+choice
+	prompt "Migo-R LCD Panel Board Selection"
+	default SH_MIGOR_QVGA
+
+config SH_MIGOR_QVGA
+	bool "QVGA (320x240)"
+
+config SH_MIGOR_RTA_WVGA
+	bool "RTA WVGA (800x480)"
+
+endchoice
+
+endif

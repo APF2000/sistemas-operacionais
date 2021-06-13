@@ -1,3 +1,33 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b0877c7f1a56124b7b841426b5791996a9b3696a6e78e40b316e8c695d1d381c
-size 548
+RT5514 audio CODEC
+
+This device supports I2C only.
+
+Required properties:
+
+- compatible : "realtek,rt5514".
+
+- reg : The I2C address of the device.
+
+Optional properties:
+
+- clocks: The phandle of the master clock to the CODEC
+- clock-names: Should be "mclk"
+
+- realtek,dmic-init-delay-ms
+  Set the DMIC initial delay (ms) to wait it ready.
+
+Pins on the device (for linking into audio routes) for RT5514:
+
+  * DMIC1L
+  * DMIC1R
+  * DMIC2L
+  * DMIC2R
+  * AMICL
+  * AMICR
+
+Example:
+
+codec: rt5514@57 {
+	compatible = "realtek,rt5514";
+	reg = <0x57>;
+};

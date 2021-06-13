@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:efcc71443f3f27eaf12bd4abfed18e6587da6dcde4651df6f19d391fff945bba
-size 214
+#ifndef _ASM_ARCH_MEMMAP_H
+#define _ASM_ARCH_MEMMAP_H
+
+#define MEM_INTMEM_START (0x38000000)
+#define MEM_INTMEM_SIZE (0x00018000)
+#define MEM_DRAM_START (0x40000000)
+
+#define MEM_NON_CACHEABLE (0x80000000)
+
+#endif

@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4782c2d0cbc677e0976dcbb149e6bfb8874f01322e17d3250526819f3d0a8096
-size 355
+#
+# arch/blackfin/mach-bf533/boards/Makefile
+#
+
+obj-$(CONFIG_BFIN533_STAMP)            += stamp.o
+obj-$(CONFIG_BFIN532_IP0X)             += ip0x.o
+obj-$(CONFIG_BFIN533_EZKIT)            += ezkit.o
+obj-$(CONFIG_BFIN533_BLUETECHNIX_CM)   += cm_bf533.o
+obj-$(CONFIG_BLACKSTAMP)               += blackstamp.o
+obj-$(CONFIG_H8606_HVSISTEMAS)         += H8606.o

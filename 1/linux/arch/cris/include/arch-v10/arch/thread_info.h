@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d85503c3a9568c46cb41ebf3449c29821f7606124000411a92277ac678ce12e5
-size 296
+#ifndef _ASM_ARCH_THREAD_INFO_H
+#define _ASM_ARCH_THREAD_INFO_H
+
+/* how to get the thread information struct from C */
+static inline struct thread_info *current_thread_info(void)
+{
+	struct thread_info *ti;
+        __asm__("and.d $sp,%0; ":"=r" (ti) : "0" (~8191UL));
+        return ti;
+}
+
+#endif

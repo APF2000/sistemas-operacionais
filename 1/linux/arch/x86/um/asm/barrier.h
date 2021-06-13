@@ -1,3 +1,41 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:6c615f149f8bf6816c1a14c5b86f7ba47fe2a69054a7685550bea46edcda02a9
-size 1035
+#ifndef _ASM_UM_BARRIER_H_
+#define _ASM_UM_BARRIER_H_
+
+#include <asm/asm.h>
+#include <asm/segment.h>
+#include <asm/cpufeatures.h>
+#include <asm/cmpxchg.h>
+#include <asm/nops.h>
+
+#include <linux/kernel.h>
+#include <linux/irqflags.h>
+
+/*
+ * Force strict CPU ordering.
+ * And yes, this is required on UP too when we're talking
+ * to devices.
+ */
+#ifdef CONFIG_X86_32
+
+#define mb()	alternative("lock; addl $0,0(%%esp)", "mfence", X86_FEATURE_XMM2)
+#define rmb()	alternative("lock; addl $0,0(%%esp)", "lfence", X86_FEATURE_XMM2)
+#define wmb()	alternative("lock; addl $0,0(%%esp)", "sfence", X86_FEATURE_XMM)
+
+#else /* CONFIG_X86_32 */
+
+#define mb()	asm volatile("mfence" : : : "memory")
+#define rmb()	asm volatile("lfence" : : : "memory")
+#define wmb()	asm volatile("sfence" : : : "memory")
+
+#endif /* CONFIG_X86_32 */
+
+#ifdef CONFIG_X86_PPRO_FENCE
+#define dma_rmb()	rmb()
+#else /* CONFIG_X86_PPRO_FENCE */
+#define dma_rmb()	barrier()
+#endif /* CONFIG_X86_PPRO_FENCE */
+#define dma_wmb()	barrier()
+
+#include <asm-generic/barrier.h>
+
+#endif

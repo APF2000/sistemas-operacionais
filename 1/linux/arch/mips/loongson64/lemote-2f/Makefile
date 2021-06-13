@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:79588b6cdc7177e1c393866e747ce3a38a8ff89fc8fd4f66ed14de4a3cc0ecdd
-size 163
+#
+# Makefile for lemote loongson2f family machines
+#
+
+obj-y += clock.o machtype.o irq.o reset.o ec_kb3310b.o
+
+#
+# Suspend Support
+#
+
+obj-$(CONFIG_SUSPEND) += pm.o

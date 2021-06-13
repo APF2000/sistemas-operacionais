@@ -1,3 +1,21 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:92914fad89587b02967c41a933e7bb8683eeda23f8faa8bb9f99b2095df701b7
-size 632
+/*
+ * Copyright (C) 2016 NVIDIA CORPORATION. All rights reserved.
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 2 as
+ * published by the Free Software Foundation.
+ *
+ * Device Tree binding constants clocks for the Maxim 77620 PMIC.
+ */
+
+#ifndef _DT_BINDINGS_CLOCK_MAXIM_MAX77620_CLOCK_H
+#define _DT_BINDINGS_CLOCK_MAXIM_MAX77620_CLOCK_H
+
+/* Fixed rate clocks. */
+
+#define MAX77620_CLK_32K_OUT0		0
+
+/* Total number of clocks. */
+#define MAX77620_CLKS_NUM		(MAX77620_CLK_32K_OUT0 + 1)
+
+#endif /* _DT_BINDINGS_CLOCK_MAXIM_MAX77620_CLOCK_H */

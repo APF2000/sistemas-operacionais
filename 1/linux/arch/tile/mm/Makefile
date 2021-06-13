@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1c93144673a19dbc1b72cbcd3d53360ffe016b032219cce3f01eb2e91a22e226
-size 246
+#
+# Makefile for the linux tile-specific parts of the memory manager.
+#
+
+obj-y	:= init.o pgtable.o fault.o extable.o elf.o \
+	   mmap.o homecache.o migrate_$(BITS).o
+
+obj-$(CONFIG_HUGETLB_PAGE) += hugetlbpage.o
+obj-$(CONFIG_HIGHMEM) += highmem.o

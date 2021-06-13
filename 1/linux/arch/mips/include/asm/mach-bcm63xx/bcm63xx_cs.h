@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:20bce92c3e40c897df53358ffb61c6f010b1a626740ae07b73b4f1ed9bdc94d1
-size 360
+#ifndef BCM63XX_CS_H
+#define BCM63XX_CS_H
+
+int bcm63xx_set_cs_base(unsigned int cs, u32 base, unsigned int size);
+int bcm63xx_set_cs_timing(unsigned int cs, unsigned int wait,
+			   unsigned int setup, unsigned int hold);
+int bcm63xx_set_cs_param(unsigned int cs, u32 flags);
+int bcm63xx_set_cs_status(unsigned int cs, int enable);
+
+#endif /* !BCM63XX_CS_H */

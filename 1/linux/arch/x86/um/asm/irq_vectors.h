@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:789303e9168b209be83a97fca08a18597b0f05ea5b21ff42f529e2382e697a2b
-size 149
+/* 
+ * Copyright (C) 2002 Jeff Dike (jdike@karaya.com)
+ * Licensed under the GPL
+ */
+
+#ifndef __UM_IRQ_VECTORS_H
+#define __UM_IRQ_VECTORS_H
+
+#endif
+

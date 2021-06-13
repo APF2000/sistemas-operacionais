@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c19fd9f6eaa78c9aabeed3de7239169f3a8a7b039f1eafc33315d1083aa02081
-size 207
+#ifndef _ADDI_WATCHDOG_H
+#define _ADDI_WATCHDOG_H
+
+struct comedi_subdevice;
+
+void addi_watchdog_reset(unsigned long iobase);
+int addi_watchdog_init(struct comedi_subdevice *s, unsigned long iobase);
+
+#endif

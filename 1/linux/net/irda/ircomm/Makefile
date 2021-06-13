@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1474c5d7088a7e83664fe777d982c653707e301663a9cd32440f2cef68a2a5cf
-size 255
+#
+# Makefile for the Linux IrDA IrCOMM protocol layer.
+#
+
+obj-$(CONFIG_IRCOMM) += ircomm.o ircomm-tty.o
+
+ircomm-y := ircomm_core.o ircomm_event.o ircomm_lmp.o ircomm_ttp.o
+ircomm-tty-y := ircomm_tty.o ircomm_tty_attach.o ircomm_tty_ioctl.o ircomm_param.o

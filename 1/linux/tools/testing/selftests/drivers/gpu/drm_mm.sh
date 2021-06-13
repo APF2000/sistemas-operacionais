@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:8f6b1a40a679cefd85cc921e8c715affb559980fa36a60b1fa015cefd1961317
-size 349
+#!/bin/sh
+# Runs API tests for struct drm_mm (DRM range manager)
+
+if ! /sbin/modprobe -n -q test-drm_mm; then
+       echo "drivers/gpu/drm_mm: [skip]"
+       exit 77
+fi
+
+if /sbin/modprobe -q test-drm_mm; then
+       /sbin/modprobe -q -r test-drm_mm
+       echo "drivers/gpu/drm_mm: ok"
+else
+       echo "drivers/gpu/drm_mm: [FAIL]"
+       exit 1
+fi

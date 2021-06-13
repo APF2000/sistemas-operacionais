@@ -1,3 +1,21 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4f76ad248514c0d9f26b6311de0ddb511b58bc51258b3903bc75ecc57964bfe5
-size 556
+/*
+ *    DIAGNOSE X'2C4' instruction based SE/HMC FTP Services, useable on z/VM
+ *
+ *    Notice that all functions exported here are not reentrant.
+ *    So usage should be exclusive, ensured by the caller (e.g. using a
+ *    mutex).
+ *
+ *    Copyright IBM Corp. 2013
+ *    Author(s): Ralf Hoppe (rhoppe@de.ibm.com)
+ */
+
+#ifndef __DIAG_FTP_H__
+#define __DIAG_FTP_H__
+
+#include "hmcdrv_ftp.h"
+
+int diag_ftp_startup(void);
+void diag_ftp_shutdown(void);
+ssize_t diag_ftp_cmd(const struct hmcdrv_ftp_cmdspec *ftp, size_t *fsize);
+
+#endif	 /* __DIAG_FTP_H__ */

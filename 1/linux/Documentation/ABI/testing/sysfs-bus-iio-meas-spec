@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:8bc80e8742230e908c5039a19ed71a1d16d75833383598f4ddf087dfd742a177
-size 380
+What:           /sys/bus/iio/devices/iio:deviceX/battery_low
+KernelVersion:  4.1.0
+Contact:        linux-iio@vger.kernel.org
+Description:
+                Reading returns either '1' or '0'. '1' means that the
+                battery level supplied to sensor is below 2.25V.
+                This ABI is available for tsys02d, htu21, ms8607
+		This ABI is available for htu21, ms8607

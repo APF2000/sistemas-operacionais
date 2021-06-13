@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:616cb654286f8303747247e53daff9ee0dc387d62af8d5c11bfabdafde0a0bc3
-size 174
+#ifndef _IOP13XX_MSI_H_
+#define _IOP13XX_MSI_H_
+#ifdef CONFIG_PCI_MSI
+void iop13xx_msi_init(void);
+#else
+static inline void iop13xx_msi_init(void)
+{
+	return;
+}
+#endif
+#endif

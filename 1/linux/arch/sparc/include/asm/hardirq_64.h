@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:967f21a174ce64518c63a49fe04311ea62cdd03b3f8e7e8a514c9daa85e7cced
-size 378
+/* hardirq.h: 64-bit Sparc hard IRQ support.
+ *
+ * Copyright (C) 1997, 1998, 2005 David S. Miller (davem@davemloft.net)
+ */
+
+#ifndef __SPARC64_HARDIRQ_H
+#define __SPARC64_HARDIRQ_H
+
+#include <asm/cpudata.h>
+
+#define __ARCH_IRQ_STAT
+#define local_softirq_pending() \
+	(local_cpu_data().__softirq_pending)
+
+void ack_bad_irq(unsigned int irq);
+
+#endif /* !(__SPARC64_HARDIRQ_H) */

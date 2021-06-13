@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:224c059b5a0a3cd5eab246a701ef49e9fe7083721b4364b7909549b4f2074c6f
-size 221
+#ifndef _LIBLOCKDEP_DEBUG_LOCKS_H_
+#define _LIBLOCKDEP_DEBUG_LOCKS_H_
+
+#include <stddef.h>
+#include <linux/compiler.h>
+
+#define DEBUG_LOCKS_WARN_ON(x) (x)
+
+extern bool debug_locks;
+extern bool debug_locks_silent;
+
+#endif

@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e13bc5fc7f9e7dd4a574a632db6d9e0c0246577b0e232d8d882ac053531003fe
-size 382
+#
+# Makefile for ALSA
+# Copyright (c) 2001 by Jaroslav Kysela <perex@perex.cz>
+#
+
+snd-opl3-lib-objs := opl3_lib.o opl3_synth.o
+snd-opl3-synth-y := opl3_seq.o opl3_midi.o opl3_drums.o
+snd-opl3-synth-$(CONFIG_SND_SEQUENCER_OSS) += opl3_oss.o
+
+obj-$(CONFIG_SND_OPL3_LIB) += snd-opl3-lib.o
+obj-$(CONFIG_SND_OPL4_LIB) += snd-opl3-lib.o
+obj-$(CONFIG_SND_OPL3_LIB_SEQ) += snd-opl3-synth.o

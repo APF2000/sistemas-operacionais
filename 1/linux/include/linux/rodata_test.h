@@ -1,3 +1,22 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:02a3d2a5b068f5f5dae2495dd9b44353288445b102de65cb31a77ed8e6758a82
-size 559
+/*
+ * rodata_test.h: functional test for mark_rodata_ro function
+ *
+ * (C) Copyright 2008 Intel Corporation
+ * Author: Arjan van de Ven <arjan@linux.intel.com>
+ *
+ * This program is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License
+ * as published by the Free Software Foundation; version 2
+ * of the License.
+ */
+
+#ifndef _RODATA_TEST_H
+#define _RODATA_TEST_H
+
+#ifdef CONFIG_DEBUG_RODATA_TEST
+void rodata_test(void);
+#else
+static inline void rodata_test(void) {}
+#endif
+
+#endif /* _RODATA_TEST_H */

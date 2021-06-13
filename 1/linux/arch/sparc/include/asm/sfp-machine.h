@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:87396cc9c93635314f94fd5d2ae0b5696fa6906ef7116db1d725877e1bfb2fcb
-size 200
+#ifndef ___ASM_SPARC_SFP_MACHINE_H
+#define ___ASM_SPARC_SFP_MACHINE_H
+#if defined(__sparc__) && defined(__arch64__)
+#include <asm/sfp-machine_64.h>
+#else
+#include <asm/sfp-machine_32.h>
+#endif
+#endif

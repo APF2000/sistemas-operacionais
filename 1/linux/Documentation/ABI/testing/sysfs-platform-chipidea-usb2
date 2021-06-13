@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:0b089ef1e1d90c5c7550dc6f920cc9cecb1d2f20a4d4a65d19be56a5f9416d7d
-size 337
+What:		/sys/bus/platform/devices/ci_hdrc.0/role
+Date:		Mar 2017
+Contact:	Peter Chen <peter.chen@nxp.com>
+Description:
+		It returns string "gadget" or "host" when read it, it indicates
+		current controller role.
+
+		It will do role switch when write "gadget" or "host" to it.
+		Only controller at dual-role configuration supports writing.

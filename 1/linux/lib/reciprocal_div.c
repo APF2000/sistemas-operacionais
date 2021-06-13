@@ -1,3 +1,27 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:9a7765103a9ae7d220f874f61fb474ee470692fd11349dfd66c25955c28a34b2
-size 492
+#include <linux/kernel.h>
+#include <asm/div64.h>
+#include <linux/reciprocal_div.h>
+#include <linux/export.h>
+
+/*
+ * For a description of the algorithm please have a look at
+ * include/linux/reciprocal_div.h
+ */
+
+struct reciprocal_value reciprocal_value(u32 d)
+{
+	struct reciprocal_value R;
+	u64 m;
+	int l;
+
+	l = fls(d - 1);
+	m = ((1ULL << 32) * ((1ULL << l) - d));
+	do_div(m, d);
+	++m;
+	R.m = (u32)m;
+	R.sh1 = min(l, 1);
+	R.sh2 = max(l - 1, 0);
+
+	return R;
+}
+EXPORT_SYMBOL(reciprocal_value);

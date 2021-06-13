@@ -1,3 +1,22 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d6ed50747f3f31e3333cb3c019dff18dcc94137068dce067c6162153e2159659
-size 428
+#
+# Rockchip Clock specific Makefile
+#
+
+obj-y	+= clk-rockchip.o
+obj-y	+= clk.o
+obj-y	+= clk-pll.o
+obj-y	+= clk-cpu.o
+obj-y	+= clk-inverter.o
+obj-y	+= clk-mmc-phase.o
+obj-y	+= clk-muxgrf.o
+obj-y	+= clk-ddr.o
+obj-$(CONFIG_RESET_CONTROLLER)	+= softrst.o
+
+obj-y	+= clk-rv1108.o
+obj-y	+= clk-rk3036.o
+obj-y	+= clk-rk3188.o
+obj-y	+= clk-rk3228.o
+obj-y	+= clk-rk3288.o
+obj-y	+= clk-rk3328.o
+obj-y	+= clk-rk3368.o
+obj-y	+= clk-rk3399.o

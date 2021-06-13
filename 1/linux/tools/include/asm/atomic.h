@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f7c84b890503df3fe1a3b17f0d6fb946facc6dd19df9c672f5b235af3be2eb8a
-size 253
+#ifndef __TOOLS_LINUX_ASM_ATOMIC_H
+#define __TOOLS_LINUX_ASM_ATOMIC_H
+
+#if defined(__i386__) || defined(__x86_64__)
+#include "../../arch/x86/include/asm/atomic.h"
+#else
+#include <asm-generic/atomic-gcc.h>
+#endif
+
+#endif /* __TOOLS_LINUX_ASM_ATOMIC_H */

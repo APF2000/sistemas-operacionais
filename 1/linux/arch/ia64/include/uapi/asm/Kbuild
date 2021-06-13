@@ -1,3 +1,4 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:8ba084b0b1e9fff833db8ad7082eb7741dbbdeea9982c37cd6251a9ca4982f06
-size 95
+# UAPI Header export list
+include include/uapi/asm-generic/Kbuild.asm
+
+generic-y += kvm_para.h

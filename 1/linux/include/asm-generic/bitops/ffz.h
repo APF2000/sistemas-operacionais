@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:137275d8f549be25bf6864a65f4b09fddc7951dbb078d5e37319edefcb50f73c
-size 286
+#ifndef _ASM_GENERIC_BITOPS_FFZ_H_
+#define _ASM_GENERIC_BITOPS_FFZ_H_
+
+/*
+ * ffz - find first zero in word.
+ * @word: The word to search
+ *
+ * Undefined if no zero exists, so code should check against ~0UL first.
+ */
+#define ffz(x)  __ffs(~(x))
+
+#endif /* _ASM_GENERIC_BITOPS_FFZ_H_ */

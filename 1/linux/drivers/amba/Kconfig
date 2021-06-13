@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:045c9aff386a166330fc05daf66143fdda4bff9259afbc47db217617d0303d2c
-size 267
+config ARM_AMBA
+	bool
+
+if ARM_AMBA
+
+config TEGRA_AHB
+	bool
+	default y if ARCH_TEGRA
+	help
+	  Adds AHB configuration functionality for NVIDIA Tegra SoCs,
+	  which controls AHB bus master arbitration and some performance
+	  parameters (priority, prefetch size).
+
+endif

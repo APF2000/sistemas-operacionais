@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:51e690d0284211eaa35b00884a790b8e86e7cfdfa9e9e91fb0330690b1b1382d
-size 310
+#ifndef _SPARC64_SPARSEMEM_H
+#define _SPARC64_SPARSEMEM_H
+
+#ifdef __KERNEL__
+
+#include <asm/page.h>
+
+#define SECTION_SIZE_BITS       30
+#define MAX_PHYSADDR_BITS       MAX_PHYS_ADDRESS_BITS
+#define MAX_PHYSMEM_BITS        MAX_PHYS_ADDRESS_BITS
+
+#endif /* !(__KERNEL__) */
+
+#endif /* !(_SPARC64_SPARSEMEM_H) */

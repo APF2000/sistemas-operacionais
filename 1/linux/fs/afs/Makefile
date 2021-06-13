@@ -1,3 +1,32 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1b47bac691affb67740d12cd05da5887d0632770bc619aa1249421f0bdef5f23
-size 416
+#
+# Makefile for Red Hat Linux AFS client.
+#
+
+afs-cache-$(CONFIG_AFS_FSCACHE) := cache.o
+
+kafs-objs := \
+	$(afs-cache-y) \
+	callback.o \
+	cell.o \
+	cmservice.o \
+	dir.o \
+	file.o \
+	flock.o \
+	fsclient.o \
+	inode.o \
+	main.o \
+	misc.o \
+	mntpt.o \
+	proc.o \
+	rxrpc.o \
+	security.o \
+	server.o \
+	super.o \
+	netdevices.o \
+	vlclient.o \
+	vlocation.o \
+	vnode.o \
+	volume.o \
+	write.o
+
+obj-$(CONFIG_AFS_FS)  := kafs.o

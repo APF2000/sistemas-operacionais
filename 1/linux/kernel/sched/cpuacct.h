@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:6a93626fb561a0213f4084f0faa51d1b9b6f6a107ceff00adcf2b9069d8a64b6
-size 359
+#ifdef CONFIG_CGROUP_CPUACCT
+
+extern void cpuacct_charge(struct task_struct *tsk, u64 cputime);
+extern void cpuacct_account_field(struct task_struct *tsk, int index, u64 val);
+
+#else
+
+static inline void cpuacct_charge(struct task_struct *tsk, u64 cputime)
+{
+}
+
+static inline void
+cpuacct_account_field(struct task_struct *tsk, int index, u64 val)
+{
+}
+
+#endif

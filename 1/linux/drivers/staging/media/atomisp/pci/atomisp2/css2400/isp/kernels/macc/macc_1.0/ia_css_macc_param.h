@@ -1,3 +1,25 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:969c934ab1b2639f002ef1d1d23be6409e5d352941bec154d1f0adfe80cb6b6e
-size 736
+/*
+ * Support for Intel Camera Imaging ISP subsystem.
+ * Copyright (c) 2015, Intel Corporation.
+ *
+ * This program is free software; you can redistribute it and/or modify it
+ * under the terms and conditions of the GNU General Public License,
+ * version 2, as published by the Free Software Foundation.
+ *
+ * This program is distributed in the hope it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+ * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for
+ * more details.
+ */
+
+#ifndef __IA_CSS_MACC_PARAM_H
+#define __IA_CSS_MACC_PARAM_H
+
+#include "type_support.h"
+
+/* MACC */
+struct sh_css_isp_macc_params {
+	int32_t exp;
+};
+
+#endif /* __IA_CSS_MACC_PARAM_H */

@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:833294d1c68b765a261f0aa95805819499d3d45bd066881df72ba70d11ff76a8
-size 508
+What:		/sys/class/iommu/<iommu>/devices/
+Date:		June 2014
+KernelVersion:	3.17
+Contact:	Alex Williamson <alex.williamson@redhat.com>
+Description:
+		IOMMU drivers are able to link devices managed by a
+		given IOMMU here to allow association of IOMMU to
+		device.
+
+What:		/sys/devices/.../iommu
+Date:		June 2014
+KernelVersion:	3.17
+Contact:	Alex Williamson <alex.williamson@redhat.com>
+Description:
+		IOMMU drivers are able to link the IOMMU for a
+		given device here to allow association of device to
+		IOMMU.

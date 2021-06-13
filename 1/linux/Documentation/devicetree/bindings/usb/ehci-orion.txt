@@ -1,3 +1,22 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:43f6b75751e0d660102d799464f188568e0b2846659074884ef12c878367ada7
-size 526
+* EHCI controller, Orion Marvell variants
+
+Required properties:
+- compatible: must be one of the following
+	"marvell,orion-ehci"
+	"marvell,armada-3700-ehci"
+- reg: physical base address of the controller and length of memory mapped
+  region.
+- interrupts: The EHCI interrupt
+
+Optional properties:
+- clocks: reference to the clock
+- phys: reference to the USB PHY
+- phy-names: name of the USB PHY, should be "usb"
+
+Example:
+
+	ehci@50000 {
+		compatible = "marvell,orion-ehci";
+		reg = <0x50000 0x1000>;
+		interrupts = <19>;
+	};

@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:77930af1bc987d1bd4107845c40d562d5e8969981afa971b56a78745f5391bb1
-size 207
+#
+# Makefile for Apple Motion Sensor driver
+#
+
+ams-y					:= ams-core.o ams-input.o
+ams-$(CONFIG_SENSORS_AMS_PMU)		+= ams-pmu.o
+ams-$(CONFIG_SENSORS_AMS_I2C)		+= ams-i2c.o
+obj-$(CONFIG_SENSORS_AMS)		+= ams.o

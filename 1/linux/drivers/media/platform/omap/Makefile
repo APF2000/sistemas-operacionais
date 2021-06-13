@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:072061df93573f9a24ed1282de21c81cf0baeab10387be4239527b5c16f2c3d9
-size 226
+#
+# Makefile for the omap video device drivers.
+#
+
+# OMAP2/3 Display driver
+omap-vout-y += omap_vout.o omap_voutlib.o
+omap-vout-$(CONFIG_VIDEO_OMAP2_VOUT_VRFB) += omap_vout_vrfb.o
+obj-$(CONFIG_VIDEO_OMAP2_VOUT) += omap-vout.o

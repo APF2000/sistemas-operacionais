@@ -1,3 +1,22 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:949fd6c8dea8b398f96daa0512b943cb6ba2b69fb40970b2791ec2e379f133a8
-size 615
+#ifndef _ASM_IA64_SEMBUF_H
+#define _ASM_IA64_SEMBUF_H
+
+/*
+ * The semid64_ds structure for IA-64 architecture.
+ * Note extra padding because this structure is passed back and forth
+ * between kernel and user space.
+ *
+ * Pad space is left for:
+ * - 2 miscellaneous 64-bit values
+ */
+
+struct semid64_ds {
+	struct ipc64_perm sem_perm;		/* permissions .. see ipc.h */
+	__kernel_time_t	sem_otime;		/* last semop time */
+	__kernel_time_t	sem_ctime;		/* last change time */
+	unsigned long	sem_nsems;		/* no. of semaphores in array */
+	unsigned long	__unused1;
+	unsigned long	__unused2;
+};
+
+#endif /* _ASM_IA64_SEMBUF_H */

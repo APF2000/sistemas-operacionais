@@ -1,3 +1,20 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:45f39949050aacfbddf1005213d95d5179608931a2f553ab74e3624223ebf6aa
-size 490
+/*
+ * restart.c
+ *
+ * Copyright (C) 2001 MontaVista Software, Inc.
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 2 as
+ * published by the Free Software Foundation.
+ */
+#include <asm/hardware/iop3xx.h>
+#include <asm/system_misc.h>
+#include <mach/hardware.h>
+
+void iop3xx_restart(enum reboot_mode mode, const char *cmd)
+{
+	*IOP3XX_PCSR = 0x30;
+
+	/* Jump into ROM at address 0 */
+	soft_restart(0);
+}

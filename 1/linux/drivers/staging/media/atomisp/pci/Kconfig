@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:356feccd0a7c1d4553bf23a8744e6969ae345b1de1eb999140f3dbd3f91429c7
-size 417
+#
+# Kconfig for ISP driver
+#
+
+config VIDEO_ATOMISP
+       tristate "Intel Atom Image Signal Processor Driver"
+       depends on VIDEO_V4L2 && VIDEO_V4L2_SUBDEV_API
+       select VIDEOBUF_VMALLOC
+        ---help---
+          Say Y here if your platform supports Intel Atom SoC
+          camera imaging subsystem.
+          To compile this driver as a module, choose M here: the
+          module will be called atomisp

@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:18789ab3e72d0cafd3c25d723ff10e02941153c8eb037a7dfe7a83af9b32c734
-size 284
+#ifndef _ASM_SCORE_SWITCH_TO_H
+#define _ASM_SCORE_SWITCH_TO_H
+
+extern void *resume(void *last, void *next, void *next_ti);
+
+#define switch_to(prev, next, last)				\
+do {								\
+	(last) = resume(prev, next, task_thread_info(next));	\
+} while (0)
+
+#endif /* _ASM_SCORE_SWITCH_TO_H */

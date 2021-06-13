@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:fea02093cee84ff86fbc14f30518b299087d1f364f92c658f813f83bbdffef11
-size 379
+/* net/atm/protocols.h - ATM protocol handler entry points */
+
+/* Written 1995-1997 by Werner Almesberger, EPFL LRC */
+
+
+#ifndef NET_ATM_PROTOCOLS_H
+#define NET_ATM_PROTOCOLS_H
+
+int atm_init_aal0(struct atm_vcc *vcc);	/* "raw" AAL0 */
+int atm_init_aal34(struct atm_vcc *vcc);/* "raw" AAL3/4 transport */
+int atm_init_aal5(struct atm_vcc *vcc);	/* "raw" AAL5 transport */
+
+#endif

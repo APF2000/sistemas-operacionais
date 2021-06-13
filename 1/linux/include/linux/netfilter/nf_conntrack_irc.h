@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ec2fa518daf6e9f8d1e1191dd4fae970f12b5dbb1db2250d10ac64600a821842
-size 405
+#ifndef _NF_CONNTRACK_IRC_H
+#define _NF_CONNTRACK_IRC_H
+
+#ifdef __KERNEL__
+
+#define IRC_PORT	6667
+
+extern unsigned int (*nf_nat_irc_hook)(struct sk_buff *skb,
+				       enum ip_conntrack_info ctinfo,
+				       unsigned int protoff,
+				       unsigned int matchoff,
+				       unsigned int matchlen,
+				       struct nf_conntrack_expect *exp);
+
+#endif /* __KERNEL__ */
+#endif /* _NF_CONNTRACK_IRC_H */

@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:91157ba9934f5e44722fa16bd34a68039577c3d3a07d27d6bae38bcc0b2804f9
-size 210
+What:		/config/usb-gadget/gadget/functions/tcm.name
+Date:		Dec 2015
+KernelVersion:	4.5
+Description:
+		There are no attributes because all the configuration
+		is performed in the "target" subsystem of configfs.

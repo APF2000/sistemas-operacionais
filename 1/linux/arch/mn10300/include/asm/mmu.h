@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ee7c609181f406927bad5eb314909e64d8ab3562f8c644af796e6140a949df3b
-size 395
+/* MN10300 Memory management context
+ *
+ * Copyright (C) 2007 Red Hat, Inc. All Rights Reserved.
+ * Written by David Howells (dhowells@redhat.com)
+ * - Derived from include/asm-frv/mmu.h
+ */
+
+#ifndef _ASM_MMU_H
+#define _ASM_MMU_H
+
+/*
+ * MMU context
+ */
+typedef struct {
+	unsigned long	tlbpid[NR_CPUS];	/* TLB PID for this process on
+						 * each CPU */
+} mm_context_t;
+
+#endif /* _ASM_MMU_H */

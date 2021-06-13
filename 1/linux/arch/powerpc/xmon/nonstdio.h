@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b3e44f5a96a2244f3184a7475ab1ec5e69524b623e3760866f07cc6adddb316c
-size 361
+#define EOF	(-1)
+
+#define printf	xmon_printf
+#define putchar	xmon_putchar
+
+extern void xmon_set_pagination_lpp(unsigned long lpp);
+extern void xmon_start_pagination(void);
+extern void xmon_end_pagination(void);
+extern int xmon_putchar(int c);
+extern void xmon_puts(const char *);
+extern char *xmon_gets(char *, int);
+extern void xmon_printf(const char *, ...);

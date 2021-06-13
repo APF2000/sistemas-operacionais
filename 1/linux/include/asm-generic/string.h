@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ce3dbe054de985a48665953b223e0625b9ec7dcb742502754a1dadcc2d55fbf0
-size 281
+#ifndef __ASM_GENERIC_STRING_H
+#define __ASM_GENERIC_STRING_H
+/*
+ * The kernel provides all required functions in lib/string.c
+ *
+ * Architectures probably want to provide at least their own optimized
+ * memcpy and memset functions though.
+ */
+
+#endif /* __ASM_GENERIC_STRING_H */

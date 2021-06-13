@@ -1,3 +1,24 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f41e7f49cf8e22a205586d222c5a98e06ab9b92a9d7d9cf3bbab543c6fae3017
-size 501
+OUTPUT_FORMAT("elf64-alpha")
+ENTRY(__start)
+printk = srm_printk;
+SECTIONS
+{
+  . = 0x20000000;
+  .text : { *(.text) }
+  _etext = .;
+  PROVIDE (etext = .);
+  .rodata : { *(.rodata) *(.rodata.*) }
+  .data : { *(.data) CONSTRUCTORS }
+  .got : { *(.got) }
+  .sdata : { *(.sdata) }
+  _edata = .;
+  PROVIDE (edata = .);
+  .sbss : { *(.sbss) *(.scommon) }
+  .bss : { *(.bss) *(COMMON) }
+  _end = . ;
+  PROVIDE (end = .);
+
+  .mdebug 0 : { *(.mdebug) }
+  .note 0 : { *(.note) }
+  .comment 0 : { *(.comment) }
+}

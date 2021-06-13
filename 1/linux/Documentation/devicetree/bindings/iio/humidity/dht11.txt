@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a1a877bc07491dd3cae701fd6b31c5eb663d2379cf6fb3f0d4b669c9e4f30601
-size 351
+* DHT11 humidity/temperature sensor (and compatibles like DHT22)
+
+Required properties:
+  - compatible: Should be "dht11"
+  - gpios: Should specify the GPIO connected to the sensor's data
+    line, see "gpios property" in
+    Documentation/devicetree/bindings/gpio/gpio.txt.
+
+Example:
+
+humidity_sensor {
+	compatible = "dht11";
+	gpios = <&gpio0 6 0>;
+}

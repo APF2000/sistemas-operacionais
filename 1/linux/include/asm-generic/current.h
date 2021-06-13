@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:fa244378dbd54ea8b88c872c7e6c72abdc7e386178b24851912b49b304ece57e
-size 217
+#ifndef __ASM_GENERIC_CURRENT_H
+#define __ASM_GENERIC_CURRENT_H
+
+#include <linux/thread_info.h>
+
+#define get_current() (current_thread_info()->task)
+#define current get_current()
+
+#endif /* __ASM_GENERIC_CURRENT_H */

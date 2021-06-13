@@ -1,3 +1,27 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4d5074292dcde2cdf2179a2f945ae6c67d0c31b34509f99e6740af729df5c4b3
-size 616
+#ifndef _XEN_MMU_H
+
+#include <linux/linkage.h>
+#include <asm/page.h>
+
+enum pt_level {
+	PT_PGD,
+	PT_P4D,
+	PT_PUD,
+	PT_PMD,
+	PT_PTE
+};
+
+
+bool __set_phys_to_machine(unsigned long pfn, unsigned long mfn);
+
+void set_pte_mfn(unsigned long vaddr, unsigned long pfn, pgprot_t flags);
+
+pte_t xen_ptep_modify_prot_start(struct mm_struct *mm, unsigned long addr, pte_t *ptep);
+void  xen_ptep_modify_prot_commit(struct mm_struct *mm, unsigned long addr,
+				  pte_t *ptep, pte_t pte);
+
+unsigned long xen_read_cr2_direct(void);
+
+extern void xen_init_mmu_ops(void);
+extern void xen_hvm_init_mmu_ops(void);
+#endif	/* _XEN_MMU_H */

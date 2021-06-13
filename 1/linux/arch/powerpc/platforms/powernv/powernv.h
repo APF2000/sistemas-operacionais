@@ -1,3 +1,29 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c84687054af7ae7c434fbb4a3e23cfabb11dae0e73b55df192aeaa1b4a05e59a
-size 585
+#ifndef _POWERNV_H
+#define _POWERNV_H
+
+#ifdef CONFIG_SMP
+extern void pnv_smp_init(void);
+#else
+static inline void pnv_smp_init(void) { }
+#endif
+
+struct pci_dev;
+
+#ifdef CONFIG_PCI
+extern void pnv_pci_init(void);
+extern void pnv_pci_shutdown(void);
+#else
+static inline void pnv_pci_init(void) { }
+static inline void pnv_pci_shutdown(void) { }
+#endif
+
+extern u32 pnv_get_supported_cpuidle_states(void);
+
+extern void pnv_lpc_init(void);
+
+extern void opal_handle_events(uint64_t events);
+extern void opal_event_shutdown(void);
+
+bool cpu_core_split_required(void);
+
+#endif /* _POWERNV_H */

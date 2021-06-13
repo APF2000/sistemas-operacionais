@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c798ef71fbb2965686c026e3f763c132b09f92639c50ef71e675a205bc6389e7
-size 493
+Analog Devices ADAU7002 Stereo PDM-to-I2S/TDM Converter
+
+Required properties:
+
+ - compatible: Must be "adi,adau7002"
+
+Optional properties:
+
+ - IOVDD-supply: Phandle and specifier for the power supply providing the IOVDD
+	supply as covered in Documentation/devicetree/bindings/regulator/regulator.txt
+
+	If this property is not present it is assumed that the supply pin is
+	hardwired to always on.
+
+Example:
+	adau7002: pdm-to-i2s {
+		compatible = "adi,adau7002";
+		IOVDD-supply = <&supply>;
+	};

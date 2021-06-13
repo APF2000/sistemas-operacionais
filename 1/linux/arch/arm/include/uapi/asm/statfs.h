@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:64982fb60c839680a25e60ef2cd6ef3f0c6f1c61a1addcdad2a2a971faac6d6e
-size 360
+#ifndef _ASMARM_STATFS_H
+#define _ASMARM_STATFS_H
+
+/*
+ * With EABI there is 4 bytes of padding added to this structure.
+ * Let's pack it so the padding goes away to simplify dual ABI support.
+ * Note that user space does NOT have to pack this structure.
+ */
+#define ARCH_PACK_STATFS64 __attribute__((packed,aligned(4)))
+
+#include <asm-generic/statfs.h>
+#endif

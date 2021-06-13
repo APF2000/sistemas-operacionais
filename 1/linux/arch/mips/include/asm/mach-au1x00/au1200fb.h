@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4b0104fad3cb4f5db6931f00f66443eed784aa78dad0a97dd30a1d19f3f4b224
-size 220
+/*
+ * platform data for au1200fb driver.
+ */
+
+#ifndef _AU1200FB_PLAT_H_
+#define _AU1200FB_PLAT_H_
+
+struct au1200fb_platdata {
+	int (*panel_index)(void);
+	int (*panel_init)(void);
+	int (*panel_shutdown)(void);
+};
+
+#endif

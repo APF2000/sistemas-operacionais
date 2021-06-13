@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d9bff31d846381887062da810b6c117b0cebd4f70cbab3b9df5c18049b6862ce
-size 322
+#include <linux/types.h>
+#include <linux/errno.h>
+#include <linux/uaccess.h>
+
+#include <asm/sfp-machine.h>
+#include <math-emu/soft-fp.h>
+
+int
+mtfsb1(int crbD)
+{
+	if ((crbD != 1) && (crbD != 2))
+		__FPU_FPSCR |= (1 << (31 - crbD));
+
+#ifdef DEBUG
+	printk("%s: %d %08lx\n", __func__, crbD, __FPU_FPSCR);
+#endif
+
+	return 0;
+}

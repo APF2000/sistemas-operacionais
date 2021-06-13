@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:95eb91ba734af2eb536dc83d069e5aba9d2963a067451b4686c1fbc61347fe9a
-size 415
+#ifndef _ASM_X86_KBDLEDS_H
+#define _ASM_X86_KBDLEDS_H
+
+/*
+ * Some laptops take the 789uiojklm,. keys as number pad when NumLock is on.
+ * This seems a good reason to start with NumLock off. That's why on X86 we
+ * ask the bios for the correct state.
+ */
+
+#include <asm/setup.h>
+
+static inline int kbd_defleds(void)
+{
+	return boot_params.kbd_status & 0x20 ? (1 << VC_NUMLOCK) : 0;
+}
+
+#endif /* _ASM_X86_KBDLEDS_H */

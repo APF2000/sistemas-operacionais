@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f89365a8d622d94cc19bc499450a3f07d271c9095d8962eede0c7d694aa0de11
-size 391
+NVIDIA Tegra 20 GART
+
+Required properties:
+- compatible: "nvidia,tegra20-gart"
+- reg: Two pairs of cells specifying the physical address and size of
+  the memory controller registers and the GART aperture respectively.
+
+Example:
+
+	gart {
+		compatible = "nvidia,tegra20-gart";
+		reg = <0x7000f024 0x00000018	/* controller registers */
+		       0x58000000 0x02000000>;	/* GART aperture */
+	};

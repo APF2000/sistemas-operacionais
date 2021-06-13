@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:94e631085eaada4f35a56288f26471249eb02c778c8ee1174ac56c1b831f415e
-size 266
+#ifndef _ASM_X86_TIMEX_H
+#define _ASM_X86_TIMEX_H
+
+#include <asm/processor.h>
+#include <asm/tsc.h>
+
+/* Assume we use the PIT time source for the clock tick */
+#define CLOCK_TICK_RATE		PIT_TICK_RATE
+
+#define ARCH_HAS_READ_CURRENT_TIMER
+
+#endif /* _ASM_X86_TIMEX_H */

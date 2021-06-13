@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f07d65542db1769bebcec3686ed9385c94974568d22a45419e77281748c0319f
-size 325
+CS4349 audio CODEC
+
+Required properties:
+
+  - compatible : "cirrus,cs4349"
+
+  - reg : the I2C address of the device for I2C
+
+Optional properties:
+
+  - reset-gpios : a GPIO spec for the reset pin.
+
+Example:
+
+codec: cs4349@48 {
+        compatible = "cirrus,cs4349";
+        reg = <0x48>;
+        reset-gpios = <&gpio 54 0>;
+};

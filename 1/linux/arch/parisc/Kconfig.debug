@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:675b9aef9cfa1418c2d4e5665d0e3fa6bc4816162b5f07cbe1419a04e7da9daa
-size 102
+menu "Kernel hacking"
+
+source "lib/Kconfig.debug"
+
+config TRACE_IRQFLAGS_SUPPORT
+	def_bool y
+
+endmenu

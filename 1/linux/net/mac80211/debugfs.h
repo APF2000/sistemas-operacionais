@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:069c1e231be41a2db31dc99f6c1eec086b704ad5adc2798cde741b01282cceee
-size 401
+#ifndef __MAC80211_DEBUGFS_H
+#define __MAC80211_DEBUGFS_H
+
+#include "ieee80211_i.h"
+
+#ifdef CONFIG_MAC80211_DEBUGFS
+void debugfs_hw_add(struct ieee80211_local *local);
+int __printf(4, 5) mac80211_format_buffer(char __user *userbuf, size_t count,
+					  loff_t *ppos, char *fmt, ...);
+#else
+static inline void debugfs_hw_add(struct ieee80211_local *local)
+{
+}
+#endif
+
+#endif /* __MAC80211_DEBUGFS_H */

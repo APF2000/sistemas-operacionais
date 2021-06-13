@@ -1,3 +1,26 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5874d94fa034211d95d16ff04ff935538b94968e8d2d29a39c425d5c51510b4a
-size 611
+Timer64
+-------
+
+The timer64 node describes C6X event timers.
+
+Required properties:
+
+- compatible: must be "ti,c64x+timer64"
+- reg: base address and size of register region
+- interrupt-parent: interrupt controller
+- interrupts: interrupt id
+
+Optional properties:
+
+- ti,dscr-dev-enable: Device ID used to enable timer IP through DSCR interface.
+
+- ti,core-mask: on multi-core SoCs, bitmask of cores allowed to use this timer.
+
+Example:
+	timer0: timer@25e0000 {
+		compatible = "ti,c64x+timer64";
+		ti,core-mask = < 0x01 >;
+		reg = <0x25e0000 0x40>;
+		interrupt-parent = <&megamod_pic>;
+		interrupts = < 16 >;
+	};

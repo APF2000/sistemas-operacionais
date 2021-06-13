@@ -1,3 +1,22 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2d10c3bd9f18d373f8c07b24ccbe4afc585a0d2ddb34304614213836bec0d904
-size 455
+/* 
+ * Copyright (C) 2002 - 2007 Jeff Dike (jdike@{addtoit,linux.intel}.com)
+ * Licensed under the GPL
+ */
+
+#ifndef __MEM_H__
+#define __MEM_H__
+
+extern int phys_mapping(unsigned long phys, unsigned long long *offset_out);
+
+extern unsigned long uml_physmem;
+static inline unsigned long to_phys(void *virt)
+{
+	return(((unsigned long) virt) - uml_physmem);
+}
+
+static inline void *to_virt(unsigned long phys)
+{
+	return((void *) uml_physmem + phys);
+}
+
+#endif

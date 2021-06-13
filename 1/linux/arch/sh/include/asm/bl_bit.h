@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:af222075f1fe3ec21d74eefe6a381b7df49a94cff21f0dd3c689f90cfebbf0f9
-size 177
+#ifndef __ASM_SH_BL_BIT_H
+#define __ASM_SH_BL_BIT_H
+
+#ifdef CONFIG_SUPERH32
+# include <asm/bl_bit_32.h>
+#else
+# include <asm/bl_bit_64.h>
+#endif
+
+#endif /* __ASM_SH_BL_BIT_H */

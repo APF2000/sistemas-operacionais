@@ -1,3 +1,27 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:67e89dec166c8e45d7f82b31d7e8fea419702ce13487d4918b69f87d1ff41ef5
-size 497
+/*
+ * Copyright (C) 2001 - 2007 Jeff Dike (jdike@{addtoit,linux.intel}.com)
+ * Licensed under the GPL
+ */
+
+#ifndef __DRIVERS_UMCAST_H
+#define __DRIVERS_UMCAST_H
+
+#include <net_user.h>
+
+struct umcast_data {
+	char *addr;
+	unsigned short lport;
+	unsigned short rport;
+	void *listen_addr;
+	void *remote_addr;
+	int ttl;
+	int unicast;
+	void *dev;
+};
+
+extern const struct net_user_info umcast_user_info;
+
+extern int umcast_user_write(int fd, void *buf, int len,
+			     struct umcast_data *pri);
+
+#endif

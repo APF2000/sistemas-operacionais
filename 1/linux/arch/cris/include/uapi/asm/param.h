@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:338f5ca6c5fa690d17168b1e2679cf9f3324d01e211db3546c46c5acea89645b
-size 198
+#ifndef _ASMCRIS_PARAM_H
+#define _ASMCRIS_PARAM_H
+
+/* Currently we assume that HZ=100 is good for CRIS. */
+
+#define EXEC_PAGESIZE	8192
+
+#include <asm-generic/param.h>
+
+#endif /* _ASMCRIS_PARAM_H */

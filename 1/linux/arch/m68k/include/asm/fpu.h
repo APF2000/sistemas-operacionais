@@ -1,3 +1,23 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:89a89267e6c198b0ba4a2c303aa2c80e3d1a00e1a58773177d30bd6c7a80425d
-size 496
+#ifndef __M68K_FPU_H
+#define __M68K_FPU_H
+
+
+/*
+ * MAX floating point unit state size (FSAVE/FRESTORE)
+ */
+
+#if defined(CONFIG_M68020) || defined(CONFIG_M68030)
+#define FPSTATESIZE (216)
+#elif defined(CONFIG_M68040)
+#define FPSTATESIZE (96)
+#elif defined(CONFIG_M68KFPU_EMU)
+#define FPSTATESIZE (28)
+#elif defined(CONFIG_COLDFIRE) && defined(CONFIG_MMU)
+#define FPSTATESIZE (16)
+#elif defined(CONFIG_M68060)
+#define FPSTATESIZE (12)
+#else
+#define FPSTATESIZE (0)
+#endif
+
+#endif /* __M68K_FPU_H */

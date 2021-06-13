@@ -1,3 +1,3 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f4ecb98baf1a546d9e6ef04b44f3e2df487af825156b5553bfabf352880924fe
-size 142
+ccflags-y := -I$(src)/../qat_common
+obj-$(CONFIG_CRYPTO_DEV_QAT_C3XXXVF) += qat_c3xxxvf.o
+qat_c3xxxvf-objs := adf_drv.o adf_c3xxxvf_hw_data.o

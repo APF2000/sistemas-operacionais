@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:7518c28798aa2d7fa9c43a181aabe9172173cc7de776bbf6349f070dbdf4653a
-size 312
+What:		/sys/bus/iio/devices/iio:deviceX/out_voltageY_raw_available
+Date:		October 2016
+KernelVersion:	4.9
+Contact:	Peter Rosin <peda@axentia.se>
+Description:
+		The range of available values represented as the minimum value,
+		the step and the maximum value, all enclosed in square brackets.
+		Example: [0 1 256]

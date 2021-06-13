@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b879d5f99ac52737fe00448280a76b216f2e3a21ab35ac59543d1826bd4110b8
-size 364
+/*
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License, version 2, as
+ * published by the Free Software Foundation.
+ *
+ * Copyright (C) 2015 Naveen N. Rao, IBM Corporation
+ */
+
+#include <asm/trace_clock.h>
+#include <asm/time.h>
+
+u64 notrace trace_clock_ppc_tb(void)
+{
+	return get_tb();
+}

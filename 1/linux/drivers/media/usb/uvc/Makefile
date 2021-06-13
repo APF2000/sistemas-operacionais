@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:acd0c87f3e11494723b7d9c645a1a8ce01f02d96b2ac7e242fc03d5ba3e94098
-size 240
+uvcvideo-objs  := uvc_driver.o uvc_queue.o uvc_v4l2.o uvc_video.o uvc_ctrl.o \
+		  uvc_status.o uvc_isight.o uvc_debugfs.o
+ifeq ($(CONFIG_MEDIA_CONTROLLER),y)
+uvcvideo-objs  += uvc_entity.o
+endif
+obj-$(CONFIG_USB_VIDEO_CLASS) += uvcvideo.o

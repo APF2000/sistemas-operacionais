@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:aecc0d0f3ed8a5b5af68bf02af5ca24ec1cf6e0d5f71cfe3df2d6234a9d7040f
-size 535
+#ifndef __ALPHA_A_OUT_H__
+#define __ALPHA_A_OUT_H__
+
+#include <uapi/asm/a.out.h>
+
+
+/* Assume that start addresses below 4G belong to a TASO application.
+   Unfortunately, there is no proper bit in the exec header to check.
+   Worse, we have to notice the start address before swapping to use
+   /sbin/loader, which of course is _not_ a TASO application.  */
+#define SET_AOUT_PERSONALITY(BFPM, EX) \
+	set_personality (((BFPM->taso || EX.ah.entry < 0x100000000L \
+			   ? ADDR_LIMIT_32BIT : 0) | PER_OSF4))
+
+#endif /* __A_OUT_GNU_H__ */

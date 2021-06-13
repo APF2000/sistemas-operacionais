@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d4db889d122c7e3740dc8fc6507a05db1ec7c96228b149acff7a62f665cfa13a
-size 301
+#ifndef __NVKM_NVDEC_H__
+#define __NVKM_NVDEC_H__
+#define nvkm_nvdec(p) container_of((p), struct nvkm_nvdec, engine)
+#include <core/engine.h>
+
+struct nvkm_nvdec {
+	struct nvkm_engine engine;
+	struct nvkm_falcon *falcon;
+};
+
+int gp102_nvdec_new(struct nvkm_device *, int, struct nvkm_nvdec **);
+#endif

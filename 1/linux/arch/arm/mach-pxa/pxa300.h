@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:56511549ff7299d13752a14af3451e15ea7114c150756221183dda8918503fa3
-size 123
+#ifndef __MACH_PXA300_H
+#define __MACH_PXA300_H
+
+#include "pxa3xx.h"
+#include "mfp-pxa300.h"
+
+#endif /* __MACH_PXA300_H */

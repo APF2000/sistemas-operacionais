@@ -1,3 +1,23 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:7f0059620cfd68444f2d82548e58cea9f35f2f793083853d535de830f5c38e9b
-size 368
+/* IP tables module for matching the value of the TTL
+ * (C) 2000 by Harald Welte <laforge@gnumonks.org> */
+
+#ifndef _IPT_TTL_H
+#define _IPT_TTL_H
+
+#include <linux/types.h>
+
+enum {
+	IPT_TTL_EQ = 0,		/* equals */
+	IPT_TTL_NE,		/* not equals */
+	IPT_TTL_LT,		/* less than */
+	IPT_TTL_GT,		/* greater than */
+};
+
+
+struct ipt_ttl_info {
+	__u8	mode;
+	__u8	ttl;
+};
+
+
+#endif

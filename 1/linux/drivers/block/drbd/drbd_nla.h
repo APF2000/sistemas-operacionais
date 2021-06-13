@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:0cbb86520ef9764b544dcd31da1890f4f4cde8b176b86cbfdc902e0374b2c175
-size 288
+#ifndef __DRBD_NLA_H
+#define __DRBD_NLA_H
+
+extern int drbd_nla_parse_nested(struct nlattr *tb[], int maxtype, struct nlattr *nla,
+				 const struct nla_policy *policy);
+extern struct nlattr *drbd_nla_find_nested(int maxtype, struct nlattr *nla, int attrtype);
+
+#endif  /* __DRBD_NLA_H */

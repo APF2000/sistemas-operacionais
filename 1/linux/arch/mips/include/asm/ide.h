@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:8f8c86eb053995ba92735bc2540fda15ef4acdb309f16a0e7b138ef8878461ec
-size 330
+/*
+ * This file is subject to the terms and conditions of the GNU General Public
+ * License.  See the file "COPYING" in the main directory of this archive
+ * for more details.
+ *
+ * This file contains the MIPS architecture specific IDE code.
+ */
+#ifndef __ASM_IDE_H
+#define __ASM_IDE_H
+
+#include <ide.h>
+
+#endif /* __ASM_IDE_H */

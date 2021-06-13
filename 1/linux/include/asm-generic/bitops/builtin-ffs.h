@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d52249f9da933a00d624d4bd20477da41fccf50e14f96ad0adcb9d6d8de70875
-size 371
+#ifndef _ASM_GENERIC_BITOPS_BUILTIN_FFS_H_
+#define _ASM_GENERIC_BITOPS_BUILTIN_FFS_H_
+
+/**
+ * ffs - find first bit set
+ * @x: the word to search
+ *
+ * This is defined the same way as
+ * the libc and compiler builtin ffs routines, therefore
+ * differs in spirit from the above ffz (man ffs).
+ */
+static __always_inline int ffs(int x)
+{
+	return __builtin_ffs(x);
+}
+
+#endif

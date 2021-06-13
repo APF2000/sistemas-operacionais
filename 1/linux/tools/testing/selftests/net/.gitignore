@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:83e87e6fcaecbe6042223a014929ec5d70444d25f75f2da56d5705a71eb67257
-size 105
+socket
+psock_fanout
+psock_tpacket
+reuseport_bpf
+reuseport_bpf_cpu
+reuseport_bpf_numa
+reuseport_dualstack

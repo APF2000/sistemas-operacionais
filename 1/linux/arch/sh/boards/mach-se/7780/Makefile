@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5858335c864dda533db9a707f2f376278463b6a42cd8c69ea4a53af0bd13e04a
-size 282
+#
+# Makefile for the HITACHI UL SolutionEngine 7780 specific parts of the kernel
+#
+# This file is subject to the terms and conditions of the GNU General Public
+# License.  See the file "COPYING" in the main directory of this archive
+# for more details.
+#
+#
+
+obj-y	 := setup.o irq.o

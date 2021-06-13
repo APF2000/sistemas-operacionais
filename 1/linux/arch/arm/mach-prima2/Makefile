@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5df4c2f1206253b1ead8dcd351d4b9759b43583c4cdc7e048e8ef00764047bde
-size 209
+obj-y += rstc.o
+obj-y += common.o
+obj-y += rtciobrg.o
+obj-$(CONFIG_SUSPEND) += pm.o sleep.o
+obj-$(CONFIG_SMP) += platsmp.o headsmp.o
+obj-$(CONFIG_HOTPLUG_CPU)  += hotplug.o
+
+CFLAGS_hotplug.o += -march=armv7-a

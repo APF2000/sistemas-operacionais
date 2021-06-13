@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:8f0850581f816833029e9b44aa2f73320972592df2cabf94035c387134d2dac8
-size 168
+#ifndef ___ASM_SPARC_SMP_H
+#define ___ASM_SPARC_SMP_H
+#if defined(__sparc__) && defined(__arch64__)
+#include <asm/smp_64.h>
+#else
+#include <asm/smp_32.h>
+#endif
+#endif

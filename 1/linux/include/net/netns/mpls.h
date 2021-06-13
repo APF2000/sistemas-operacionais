@@ -1,3 +1,20 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:13262224816fdb75e8362f6d3edf36080c4512ecbb58de472c3a7b4069c63851
-size 332
+/*
+ * mpls in net namespaces
+ */
+
+#ifndef __NETNS_MPLS_H__
+#define __NETNS_MPLS_H__
+
+struct mpls_route;
+struct ctl_table_header;
+
+struct netns_mpls {
+	int ip_ttl_propagate;
+	int default_ttl;
+	size_t platform_labels;
+	struct mpls_route __rcu * __rcu *platform_label;
+
+	struct ctl_table_header *ctl;
+};
+
+#endif /* __NETNS_MPLS_H__ */

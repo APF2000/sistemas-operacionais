@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:9bc1e2aea6870a4ed6cb90025ca54f988985618717d1f5a4940f3ca29aca173c
-size 496
+
+obj-y := irqdesc.o handle.o manage.o spurious.o resend.o chip.o dummychip.o devres.o
+obj-$(CONFIG_GENERIC_IRQ_CHIP) += generic-chip.o
+obj-$(CONFIG_GENERIC_IRQ_PROBE) += autoprobe.o
+obj-$(CONFIG_IRQ_DOMAIN) += irqdomain.o
+obj-$(CONFIG_PROC_FS) += proc.o
+obj-$(CONFIG_GENERIC_PENDING_IRQ) += migration.o
+obj-$(CONFIG_GENERIC_IRQ_MIGRATION) += cpuhotplug.o
+obj-$(CONFIG_PM_SLEEP) += pm.o
+obj-$(CONFIG_GENERIC_MSI_IRQ) += msi.o
+obj-$(CONFIG_GENERIC_IRQ_IPI) += ipi.o
+obj-$(CONFIG_SMP) += affinity.o

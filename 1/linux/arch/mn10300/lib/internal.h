@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a4b01db6a3f1c4c6cecb3732b5b473897d2379ba66b1b97f2529be7f3154e6ef
-size 514
+/* Internal definitions for the arch part of the kernel library
+ *
+ * Copyright (C) 2007 Red Hat, Inc. All Rights Reserved.
+ * Written by David Howells (dhowells@redhat.com)
+ *
+ * This program is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU General Public Licence
+ * as published by the Free Software Foundation; either version
+ * 2 of the Licence, or (at your option) any later version.
+ */
+
+/*
+ * do_csum.S
+ */
+extern unsigned int do_csum(const unsigned char *, size_t);

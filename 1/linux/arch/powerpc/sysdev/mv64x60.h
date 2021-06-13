@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1f70f1a87348f24e5a41fc775aa5ae6e9ff02daba261e9a0f1eecd573cdc8f40
-size 273
+#ifndef __MV64X60_H__
+#define __MV64X60_H__
+
+#include <linux/init.h>
+
+extern void __init mv64x60_init_irq(void);
+extern unsigned int mv64x60_get_irq(void);
+
+extern void __init mv64x60_pci_init(void);
+extern void __init mv64x60_init_early(void);
+
+#endif /* __MV64X60_H__ */

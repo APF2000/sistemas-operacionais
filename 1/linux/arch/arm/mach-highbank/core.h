@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:3d50c4e659d7b2617526e92a090731a8f4d1d7a6f20a709d0b4349f53015bbcb
-size 349
+#ifndef __HIGHBANK_CORE_H
+#define __HIGHBANK_CORE_H
+
+#include <linux/reboot.h>
+
+extern void highbank_restart(enum reboot_mode, const char *);
+extern void __iomem *scu_base_addr;
+
+#ifdef CONFIG_PM_SLEEP
+extern void highbank_pm_init(void);
+#else
+static inline void highbank_pm_init(void) {}
+#endif
+
+extern void highbank_smc1(int fn, int arg);
+
+#endif

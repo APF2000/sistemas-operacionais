@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d4d44d4ddaa38879e211c8b260434c7279cfb97030da5a38e31f93f37845de49
-size 435
+snd-oxygen-lib-objs := oxygen_io.o oxygen_lib.o oxygen_mixer.o oxygen_pcm.o
+snd-oxygen-objs := oxygen.o xonar_dg_mixer.o xonar_dg.o
+snd-se6x-objs := se6x.o
+snd-virtuoso-objs := virtuoso.o xonar_lib.o \
+	xonar_pcm179x.o xonar_cs43xx.o xonar_wm87x6.o xonar_hdmi.o
+
+obj-$(CONFIG_SND_OXYGEN_LIB) += snd-oxygen-lib.o
+obj-$(CONFIG_SND_OXYGEN) += snd-oxygen.o
+obj-$(CONFIG_SND_SE6X) += snd-se6x.o
+obj-$(CONFIG_SND_VIRTUOSO) += snd-virtuoso.o

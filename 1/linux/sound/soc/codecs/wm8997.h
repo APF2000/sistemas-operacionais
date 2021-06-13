@@ -1,3 +1,23 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:58fe14c930a3adb3a4360707e559b0544647c0e78114cbcb61ca16aabe0e33c2
-size 540
+/*
+ * wm8997.h  --  WM8997 ALSA SoC Audio driver
+ *
+ * Copyright 2012 Wolfson Microelectronics plc
+ *
+ * Author: Mark Brown <broonie@opensource.wolfsonmicro.com>
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 2 as
+ * published by the Free Software Foundation.
+ */
+
+#ifndef _WM8997_H
+#define _WM8997_H
+
+#include "arizona.h"
+
+#define WM8997_FLL1        1
+#define WM8997_FLL2        2
+#define WM8997_FLL1_REFCLK 3
+#define WM8997_FLL2_REFCLK 4
+
+#endif

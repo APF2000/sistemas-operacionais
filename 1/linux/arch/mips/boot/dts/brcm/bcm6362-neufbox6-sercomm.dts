@@ -1,3 +1,22 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b37cdf3d108715b95cdbbaf78d0bcc42797d865b0a01a8d24207f7b7afc71631
-size 308
+/dts-v1/;
+
+/include/ "bcm6362.dtsi"
+
+/ {
+	compatible = "sfr,nb6-ser", "brcm,bcm6362";
+	model = "SFR NeufBox 6 (Sercomm)";
+
+	memory@0 {
+		device_type = "memory";
+		reg = <0x00000000 0x08000000>;
+	};
+
+	chosen {
+		bootargs = "console=ttyS0,115200";
+		stdout-path = &uart0;
+	};
+};
+
+&uart0 {
+	status = "okay";
+};

@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4dd201dcb04c45f65297c13bfb7499dbef1e18fe2d05b9e034fc1a0d8803d2a7
-size 264
+#ifndef __AU1X00_PROM_H
+#define __AU1X00_PROM_H
+
+extern int prom_argc;
+extern char **prom_argv;
+extern char **prom_envp;
+
+extern void prom_init_cmdline(void);
+extern char *prom_getenv(char *envname);
+extern int prom_get_ethernet_addr(char *ethernet_addr);
+
+#endif

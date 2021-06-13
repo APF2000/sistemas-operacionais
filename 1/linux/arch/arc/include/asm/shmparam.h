@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:86bc45da71d71ad0c3d93eb89476c22e4171c7df56687645f52b52c033d66525
-size 442
+/*
+ * Copyright (C) 2013 Synopsys, Inc. (www.synopsys.com)
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 2 as
+ * published by the Free Software Foundation.
+ */
+
+#ifndef __ARC_ASM_SHMPARAM_H
+#define __ARC_ASM_SHMPARAM_H
+
+/* Handle upto 2 cache bins */
+#define	SHMLBA	(2 * PAGE_SIZE)
+
+/* Enforce SHMLBA in shmat */
+#define __ARCH_FORCE_SHMLBA
+
+#endif

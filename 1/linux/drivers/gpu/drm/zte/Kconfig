@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:7ecca6cfb8d272bd319842cbb591dfcb514d8a419b271b530f5851948d061ebd
-size 277
+config DRM_ZTE
+	tristate "DRM Support for ZTE SoCs"
+	depends on DRM && ARCH_ZX
+	select DRM_KMS_CMA_HELPER
+	select DRM_KMS_FB_HELPER
+	select DRM_KMS_HELPER
+	select SND_SOC_HDMI_CODEC if SND_SOC
+	select VIDEOMODE_HELPERS
+	help
+	  Choose this option to enable DRM on ZTE ZX SoCs.

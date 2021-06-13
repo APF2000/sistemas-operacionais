@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:8e839bf7e37da5182e9e57f589f299fedfa0bd5da0846efb66e501a84844ddf5
-size 376
+EPSON TOYOCOM RTC-7301SF/DG
+
+Required properties:
+
+- compatible: Should be "epson,rtc7301sf" or "epson,rtc7301dg"
+- reg: Specifies base physical address and size of the registers.
+- interrupts: A single interrupt specifier.
+
+Example:
+
+rtc: rtc@44a00000 {
+	compatible = "epson,rtc7301dg";
+	reg = <0x44a00000 0x10000>;
+	interrupt-parent = <&axi_intc_0>;
+	interrupts = <3 2>;
+};

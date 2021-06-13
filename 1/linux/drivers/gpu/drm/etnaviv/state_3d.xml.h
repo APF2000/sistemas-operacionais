@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:00b03bf861970c4efb72004b6665ee14b264dd57d2e2be778a47026d6609ec59
-size 222
+#ifndef STATE_3D_XML
+#define STATE_3D_XML
+
+/* This is a cut-down version of the state_3d.xml.h file */
+
+#define VIVS_TS_FLUSH_CACHE					0x00001650
+#define VIVS_TS_FLUSH_CACHE_FLUSH				0x00000001
+
+#endif /* STATE_3D_XML */

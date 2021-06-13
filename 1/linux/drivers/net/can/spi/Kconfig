@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4c5752b46061c9c8f3a670d0f4af64b4f96718eae65c3bf056d8e65f8cf78779
-size 374
+menu "CAN SPI interfaces"
+	depends on SPI
+
+config CAN_HI311X
+	tristate "Holt HI311x SPI CAN controllers"
+	depends on CAN_DEV && SPI && HAS_DMA
+	---help---
+	  Driver for the Holt HI311x SPI CAN controllers.
+
+config CAN_MCP251X
+	tristate "Microchip MCP251x SPI CAN controllers"
+	depends on HAS_DMA
+	---help---
+	  Driver for the Microchip MCP251x SPI CAN controllers.
+
+endmenu

@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1e4e51a8c970bce05a29464e52d82a0db83c4d09420ce5004618b136c83df0ef
-size 208
+#ifndef _LINUX_SORT_H
+#define _LINUX_SORT_H
+
+#include <linux/types.h>
+
+void sort(void *base, size_t num, size_t size,
+	  int (*cmp)(const void *, const void *),
+	  void (*swap)(void *, void *, int));
+
+#endif

@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:87f9ce95d67647cf89c08e83a8e940fc9f25ba30f197618170b5c7c5358cb627
-size 263
+#
+# Makefile for the linux kernel.
+#
+
+extra-y	:= head.o vmlinux.lds
+
+obj-y	:= setup.o or32_ksyms.o process.o dma.o \
+	   traps.o time.o irq.o entry.o ptrace.o signal.o \
+	   sys_call_table.o
+
+obj-$(CONFIG_MODULES)		+= module.o
+obj-$(CONFIG_OF)		+= prom.o
+
+clean:

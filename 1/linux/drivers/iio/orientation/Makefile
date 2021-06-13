@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f7425b3ff6a31df24fe168561538959d1e7e8a33ea0cf42aa6d713b0d1c7b3f4
-size 256
+#
+# Makefile for industrial I/O Inclinometer sensor drivers
+#
+
+# When adding new entries keep the list in alphabetical order
+obj-$(CONFIG_HID_SENSOR_INCLINOMETER_3D) += hid-sensor-incl-3d.o
+obj-$(CONFIG_HID_SENSOR_DEVICE_ROTATION) += hid-sensor-rotation.o

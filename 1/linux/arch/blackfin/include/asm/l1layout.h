@@ -1,3 +1,37 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:61c8ede2d9a3a3abe584fec434806dd70030b7c0845f39f7369f6ca2d77ad441
-size 879
+/*
+ * Defines a layout of L1 scratchpad memory that userspace can rely on.
+ *
+ * Copyright 2006-2008 Analog Devices Inc.
+ *
+ * Licensed under the GPL-2 or later.
+ */
+
+#ifndef _L1LAYOUT_H_
+#define _L1LAYOUT_H_
+
+#include <asm/blackfin.h>
+
+#ifndef CONFIG_SMP
+#ifndef __ASSEMBLY__
+
+/* Data that is "mapped" into the process VM at the start of the L1 scratch
+   memory, so that each process can access it at a fixed address.  Used for
+   stack checking.  */
+struct l1_scratch_task_info
+{
+	/* Points to the start of the stack.  */
+	void *stack_start;
+	/* Not updated by the kernel; a user process can modify this to
+	   keep track of the lowest address of the stack pointer during its
+	   runtime.  */
+	void *lowest_sp;
+};
+
+/* A pointer to the structure in memory.  */
+#define L1_SCRATCH_TASK_INFO ((struct l1_scratch_task_info *)\
+						get_l1_scratch_start())
+
+#endif
+#endif
+
+#endif

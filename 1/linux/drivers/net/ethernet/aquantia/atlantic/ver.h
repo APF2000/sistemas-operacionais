@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5252cdd633f8ab2988be79402c080cabdc280da946c6d2acfa0b6dd782b6fc9f
-size 554
+/*
+ * aQuantia Corporation Network Driver
+ * Copyright (C) 2014-2017 aQuantia Corporation. All rights reserved
+ *
+ * This program is free software; you can redistribute it and/or modify it
+ * under the terms and conditions of the GNU General Public License,
+ * version 2, as published by the Free Software Foundation.
+ */
+
+#ifndef VER_H
+#define VER_H
+
+#define NIC_MAJOR_DRIVER_VERSION           1
+#define NIC_MINOR_DRIVER_VERSION           5
+#define NIC_BUILD_DRIVER_VERSION           345
+#define NIC_REVISION_DRIVER_VERSION        0
+
+#endif /* VER_H */

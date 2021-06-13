@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:794d256fdc1be63e55090b0ad56425bea6a61668342ec4b105f7e983efa1c588
-size 292
+* STTS751 thermometer.
+
+Required node properties:
+- compatible: "stts751"
+- reg: I2C bus address of the device
+
+Optional properties:
+- smbus-timeout-disable: when set, the smbus timeout function will be disabled
+
+Example stts751 node:
+
+temp-sensor {
+	compatible = "stts751";
+	reg = <0x48>;
+}

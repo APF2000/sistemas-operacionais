@@ -1,3 +1,5 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:8a0e9943d0ede376b3965bda5fbee9849251342066e88b227b038b32e40c41ff
-size 203
+snd-soc-adi-axi-i2s-objs := axi-i2s.o
+snd-soc-adi-axi-spdif-objs := axi-spdif.o
+
+obj-$(CONFIG_SND_SOC_ADI_AXI_I2S) += snd-soc-adi-axi-i2s.o
+obj-$(CONFIG_SND_SOC_ADI_AXI_SPDIF) += snd-soc-adi-axi-spdif.o

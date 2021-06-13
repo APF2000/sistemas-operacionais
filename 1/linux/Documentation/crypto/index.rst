@@ -1,3 +1,24 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:6704e3b23644be33b9ffa3e760b82c9b65bb4f44256d132d08a655e92af7c652
-size 482
+=======================
+Linux Kernel Crypto API
+=======================
+
+:Author: Stephan Mueller
+:Author: Marek Vasut
+
+This documentation outlines the Linux kernel crypto API with its
+concepts, details about developing cipher implementations, employment of the API
+for cryptographic use cases, as well as programming examples.
+
+.. class:: toc-title
+
+	   Table of contents
+
+.. toctree::
+   :maxdepth: 2
+
+   intro
+   architecture
+   devel-algos
+   userspace-if
+   api
+   api-samples

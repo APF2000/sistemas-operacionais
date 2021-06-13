@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4263c614350251740b032e8a6f56da8b88a7aca19b63cf3b6d7c1ad0743c7c18
-size 293
+
+The Cyclades-Z must have firmware loaded onto the card before it will
+operate.  This operation should be performed during system startup,
+
+The firmware, loader program and the latest device driver code are
+available from Cyclades at
+    ftp://ftp.cyclades.com/pub/cyclades/cyclades-z/linux/
+

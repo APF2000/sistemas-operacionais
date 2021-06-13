@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:7c862ad940107d9ed12d3eaee875ef8f78d1e802993a09e1d126cf63939e9857
-size 248
+
+#include <asm/fpu/api.h>
+
+/*
+ * may_use_simd - whether it is allowable at this time to issue SIMD
+ *                instructions or access the SIMD register file
+ */
+static __must_check inline bool may_use_simd(void)
+{
+	return irq_fpu_usable();
+}

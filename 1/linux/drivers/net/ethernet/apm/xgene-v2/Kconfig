@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a6449ca3f1cc187648247cbcaefb2480c06b0fff35fe2648a9821220b65fbfaa
-size 385
+config NET_XGENE_V2
+	tristate "APM X-Gene SoC Ethernet-v2 Driver"
+	depends on HAS_DMA
+	depends on ARCH_XGENE || COMPILE_TEST
+	help
+	  This is the Ethernet driver for the on-chip ethernet interface
+	  which uses a linked list of DMA descriptor architecture (v2) for
+	  APM X-Gene SoCs.
+
+	  To compile this driver as a module, choose M here. This module will
+	  be called xgene-enet-v2.

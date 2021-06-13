@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:18bb3c7837d6936ef36547a0f637a8763fd869069968dcdcfd9cc367dce6362a
-size 382
+# Makefile for the CAPI subsystem.
+
+# Ordering constraints: kernelcapi.o first
+
+# Each configuration option enables a list of files.
+
+obj-$(CONFIG_ISDN_CAPI)			+= kernelcapi.o
+obj-$(CONFIG_ISDN_CAPI_CAPI20)		+= capi.o 
+obj-$(CONFIG_ISDN_CAPI_CAPIDRV)		+= capidrv.o
+
+# Multipart objects.
+
+kernelcapi-y				:= kcapi.o capiutil.o capilib.o
+kernelcapi-$(CONFIG_PROC_FS)		+= kcapi_proc.o

@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5b7557a2f01d0d81b15162600032f048571ec45c2bc3a766d2ecaa914a1ff7bf
-size 218
+What: /sys/bus/platform/devices/*twl4030-usb/vbus
+Description:
+	Read-only status reporting if VBUS (approx 5V)
+	is being supplied by the USB bus.
+
+	Possible values: "on", "off".
+
+	Changes are notified via select/poll.

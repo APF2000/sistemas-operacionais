@@ -1,3 +1,23 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:98b9843cc475bd5cc3bbc0d729d2dc5dcf70964fda066a567e3f2e1c5a1ce415
-size 754
+Atmel AT91SAM9260 Real Time Timer
+
+Required properties:
+- compatible: should be: "atmel,at91sam9260-rtt"
+- reg: should encode the memory region of the RTT controller
+- interrupts: rtt alarm/event interrupt
+- clocks: should contain the 32 KHz slow clk that will drive the RTT block.
+- atmel,rtt-rtc-time-reg: should encode the GPBR register used to store
+	the time base when the RTT is used as an RTC.
+	The first cell should point to the GPBR node and the second one
+	encode the offset within the GPBR block (or in other words, the
+	GPBR register used to store the time base).
+
+
+Example:
+
+rtt@fffffd20 {
+	compatible = "atmel,at91sam9260-rtt";
+	reg = <0xfffffd20 0x10>;
+	interrupts = <1 4 7>;
+	clocks = <&clk32k>;
+	atmel,rtt-rtc-time-reg = <&gpbr 0x0>;
+};

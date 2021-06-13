@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:6ce54a0ae02776fbdf2ae29be9863b8eaa0031397563814f710c69c56b5f696a
-size 260
+#
+# ISA Plug and Play configuration
+#
+config ISAPNP
+	bool "ISA Plug and Play support"
+	depends on ISA
+	help
+	  Say Y here if you would like support for ISA Plug and Play devices.
+	  Some information is in <file:Documentation/isapnp.txt>.
+
+	  If unsure, say Y.

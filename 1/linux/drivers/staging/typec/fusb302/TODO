@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ab0b14d95019dfc26ed02dab40f54a4440de328b785a8591c748a9b330be03a0
-size 342
+fusb302:
+- Find a better logging scheme, at least not having the same debugging/logging
+  code replicated here and in tcpm
+- Find a non-hacky way to coordinate between PM and I2C access
+- Documentation? The FUSB302 datasheet provides information on the chip to help
+  understand the code. But it may still be helpful to have a documentation.

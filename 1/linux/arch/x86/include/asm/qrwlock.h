@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:86411acb028ae05aafa53a4087ad6a94700607ec3311dabac4240b6825ca264f
-size 160
+#ifndef _ASM_X86_QRWLOCK_H
+#define _ASM_X86_QRWLOCK_H
+
+#include <asm-generic/qrwlock_types.h>
+#include <asm-generic/qrwlock.h>
+
+#endif /* _ASM_X86_QRWLOCK_H */

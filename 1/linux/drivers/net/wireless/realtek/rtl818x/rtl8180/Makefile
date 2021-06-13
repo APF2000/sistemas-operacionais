@@ -1,3 +1,5 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a69f47cb22fc46c684c161d3d36ea0c6942dbc93faf0a64086dc54340005242e
-size 170
+rtl818x_pci-objs	:= dev.o rtl8225.o sa2400.o max2820.o grf5101.o rtl8225se.o
+
+obj-$(CONFIG_RTL8180)	+= rtl818x_pci.o
+
+ccflags-y += -Idrivers/net/wireless/realtek/rtl818x

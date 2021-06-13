@@ -1,3 +1,24 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:fea5ec48150c9eb4e6a6c20e7f304d352ff102dc2b7a217aa82cbdfdbaf520a9
-size 566
+#ifndef _NFT_REJECT_H_
+#define _NFT_REJECT_H_
+
+struct nft_reject {
+	enum nft_reject_types	type:8;
+	u8			icmp_code;
+};
+
+extern const struct nla_policy nft_reject_policy[];
+
+int nft_reject_validate(const struct nft_ctx *ctx,
+			const struct nft_expr *expr,
+			const struct nft_data **data);
+
+int nft_reject_init(const struct nft_ctx *ctx,
+		    const struct nft_expr *expr,
+		    const struct nlattr * const tb[]);
+
+int nft_reject_dump(struct sk_buff *skb, const struct nft_expr *expr);
+
+int nft_reject_icmp_code(u8 code);
+int nft_reject_icmpv6_code(u8 code);
+
+#endif

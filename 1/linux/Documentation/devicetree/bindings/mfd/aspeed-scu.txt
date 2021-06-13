@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:fc9d963c917bbe7cb6561745d06ae4a5e0b49f9a64fcd56005abff5da82c850f
-size 542
+The Aspeed System Control Unit manages the global behaviour of the SoC,
+configuring elements such as clocks, pinmux, and reset.
+
+Required properties:
+- compatible:	One of:
+		"aspeed,ast2400-scu", "syscon", "simple-mfd"
+		"aspeed,g4-scu", "syscon", "simple-mfd"
+		"aspeed,ast2500-scu", "syscon", "simple-mfd"
+		"aspeed,g5-scu", "syscon", "simple-mfd"
+
+- reg:		contains the offset and length of the SCU memory region
+
+Example:
+
+syscon: syscon@1e6e2000 {
+	compatible = "aspeed,ast2400-scu", "syscon", "simple-mfd";
+	reg = <0x1e6e2000 0x1a8>;
+};

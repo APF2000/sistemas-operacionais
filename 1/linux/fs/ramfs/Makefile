@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d154148a1e9741993835b04ceb8cda5e2b3a9c548499464d76b2892501d398f3
-size 164
+#
+# Makefile for the linux ramfs routines.
+#
+
+obj-y += ramfs.o
+
+file-mmu-y := file-nommu.o
+file-mmu-$(CONFIG_MMU) := file-mmu.o
+ramfs-objs += inode.o $(file-mmu-y)

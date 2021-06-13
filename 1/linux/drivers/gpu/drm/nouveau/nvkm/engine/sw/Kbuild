@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f1407cb4f14e2158b4f6161f94838395a81d5879dbda3fc0f8285d96e3eea687
-size 227
+nvkm-y += nvkm/engine/sw/base.o
+nvkm-y += nvkm/engine/sw/nv04.o
+nvkm-y += nvkm/engine/sw/nv10.o
+nvkm-y += nvkm/engine/sw/nv50.o
+nvkm-y += nvkm/engine/sw/gf100.o
+
+nvkm-y += nvkm/engine/sw/chan.o
+
+nvkm-y += nvkm/engine/sw/nvsw.o

@@ -1,3 +1,3 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:53738947f6937bdf1ad77e36e0c9cd67786bf1561704062c402fac43dd9305ed
-size 126
+#define MACHVEC_PLATFORM_NAME		dig_vtd
+#define MACHVEC_PLATFORM_HEADER		<asm/machvec_dig_vtd.h>
+#include <asm/machvec_init.h>

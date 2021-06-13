@@ -1,3 +1,31 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:30f98c973526c983e1db06f97325cc3ab12f7f8e3ef28c8a4defa35c8650ef2c
-size 1019
+Murata ZPA2326 pressure sensor
+
+Pressure sensor from Murata with SPI and I2C bus interfaces.
+
+Required properties:
+- compatible: "murata,zpa2326"
+- reg: the I2C address or SPI chip select the device will respond to
+
+Recommended properties for SPI bus usage:
+- spi-max-frequency: maximum SPI bus frequency as documented in
+  Documentation/devicetree/bindings/spi/spi-bus.txt
+
+Optional properties:
+- vref-supply: an optional regulator that needs to be on to provide VREF
+  power to the sensor
+- vdd-supply: an optional regulator that needs to be on to provide VDD
+  power to the sensor
+- interrupt-parent: phandle to the parent interrupt controller as documented in
+  Documentation/devicetree/bindings/interrupt-controller/interrupts.txt
+- interrupts: interrupt mapping for IRQ as documented in
+  Documentation/devicetree/bindings/interrupt-controller/interrupts.txt
+
+Example:
+
+zpa2326@5c {
+	compatible = "murata,zpa2326";
+	reg = <0x5c>;
+	interrupt-parent = <&gpio>;
+	interrupts = <12>;
+	vdd-supply = <&ldo_1v8_gnss>;
+};

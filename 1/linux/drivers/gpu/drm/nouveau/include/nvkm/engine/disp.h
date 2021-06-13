@@ -1,3 +1,37 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b7d7d88eec118252fa8c0c40029ae81d0ac822daf9ba97de20a8280bf2a699a2
-size 1296
+#ifndef __NVKM_DISP_H__
+#define __NVKM_DISP_H__
+#define nvkm_disp(p) container_of((p), struct nvkm_disp, engine)
+#include <core/engine.h>
+#include <core/event.h>
+
+struct nvkm_disp {
+	const struct nvkm_disp_func *func;
+	struct nvkm_engine engine;
+
+	struct nvkm_oproxy *client;
+
+	struct list_head outp;
+	struct list_head conn;
+
+	struct nvkm_event hpd;
+	struct nvkm_event vblank;
+
+	struct {
+		int nr;
+	} head;
+};
+
+int nv04_disp_new(struct nvkm_device *, int, struct nvkm_disp **);
+int nv50_disp_new(struct nvkm_device *, int, struct nvkm_disp **);
+int g84_disp_new(struct nvkm_device *, int, struct nvkm_disp **);
+int gt200_disp_new(struct nvkm_device *, int, struct nvkm_disp **);
+int g94_disp_new(struct nvkm_device *, int, struct nvkm_disp **);
+int gt215_disp_new(struct nvkm_device *, int, struct nvkm_disp **);
+int gf119_disp_new(struct nvkm_device *, int, struct nvkm_disp **);
+int gk104_disp_new(struct nvkm_device *, int, struct nvkm_disp **);
+int gk110_disp_new(struct nvkm_device *, int, struct nvkm_disp **);
+int gm107_disp_new(struct nvkm_device *, int, struct nvkm_disp **);
+int gm200_disp_new(struct nvkm_device *, int, struct nvkm_disp **);
+int gp100_disp_new(struct nvkm_device *, int, struct nvkm_disp **);
+int gp102_disp_new(struct nvkm_device *, int, struct nvkm_disp **);
+#endif

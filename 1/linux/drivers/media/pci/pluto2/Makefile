@@ -1,3 +1,3 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2b492911a32d4f68e8543fc380875e3becd40a2f63cdde5d0bf31b0770ab9d4c
-size 108
+obj-$(CONFIG_DVB_PLUTO2) += pluto2.o
+
+ccflags-y += -Idrivers/media/dvb-core/ -Idrivers/media/dvb-frontends/

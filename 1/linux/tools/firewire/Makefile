@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:7c464ac1caf341c94d4b6578013bfa0cb4cbbcbb4a08f62152388df42e78e125
-size 359
+prefix = /usr
+nosy-dump-version = 0.4
+
+CC = gcc
+
+all : nosy-dump
+
+nosy-dump : CFLAGS = -Wall -O2 -g
+nosy-dump : CPPFLAGS = -DVERSION=\"$(nosy-dump-version)\" -I../../drivers/firewire
+nosy-dump : LDFLAGS = -g
+nosy-dump : LDLIBS = -lpopt
+
+nosy-dump : nosy-dump.o decode-fcp.o
+
+clean :
+	rm -rf *.o nosy-dump
+
+install :
+	install nosy-dump $(prefix)/bin/nosy-dump

@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d1b4fc5e1d2b961c2fdfdb73ea3f10ab254edd895dfeb3ffbc59b41ab4c2b68c
-size 530
+#include <linux/export.h>
+#include <linux/compiler.h>
+
+unsigned long long notrace __bswapdi2(unsigned long long u)
+{
+	return (((u) & 0xff00000000000000ull) >> 56) |
+	       (((u) & 0x00ff000000000000ull) >> 40) |
+	       (((u) & 0x0000ff0000000000ull) >> 24) |
+	       (((u) & 0x000000ff00000000ull) >>  8) |
+	       (((u) & 0x00000000ff000000ull) <<  8) |
+	       (((u) & 0x0000000000ff0000ull) << 24) |
+	       (((u) & 0x000000000000ff00ull) << 40) |
+	       (((u) & 0x00000000000000ffull) << 56);
+}
+
+EXPORT_SYMBOL(__bswapdi2);

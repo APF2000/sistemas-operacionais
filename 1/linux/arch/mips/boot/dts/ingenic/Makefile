@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:84dd6511e98ec107cece9e87a2134abf4bffb04429784a18cad0b8ee19164dc6
-size 259
+dtb-$(CONFIG_JZ4740_QI_LB60)	+= qi_lb60.dtb
+dtb-$(CONFIG_JZ4780_CI20)	+= ci20.dtb
+
+obj-y				+= $(patsubst %.dtb, %.dtb.o, $(dtb-y))
+
+# Force kbuild to make empty built-in.o if necessary
+obj-				+= dummy.o
+
+always				:= $(dtb-y)
+clean-files			:= *.dtb *.dtb.S

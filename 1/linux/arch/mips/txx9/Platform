@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:fe1547a9458747f383fc79da2b5c9983262507c3739610ca33b910e2691c01ed
-size 355
+platform-$(CONFIG_MACH_TX39XX)	+= txx9/
+platform-$(CONFIG_MACH_TX49XX)	+= txx9/
+
+cflags-$(CONFIG_MACH_TX39XX)	+=					\
+		-I$(srctree)/arch/mips/include/asm/mach-tx39xx
+cflags-$(CONFIG_MACH_TX49XX)	+=					\
+		 -I$(srctree)/arch/mips/include/asm/mach-tx49xx
+
+load-$(CONFIG_MACH_TX39XX)	+= 0xffffffff80050000
+load-$(CONFIG_MACH_TX49XX)	+= 0xffffffff80100000

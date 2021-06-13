@@ -1,3 +1,26 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2eb416fc08eb7787ecc2e51b14853e28e9679dca4d7c9bcbdcb36c4bdc7748ff
-size 622
+/*
+ * This file is subject to the terms and conditions of the GNU General Public
+ * License.  See the file "COPYING" in the main directory of this archive
+ * for more details.
+ *
+ * Copyright MontaVista Software Inc
+ * Copyright (C) 2003 Atheros Communications, Inc.,  All Rights Reserved.
+ * Copyright (C) 2006 FON Technology, SL.
+ * Copyright (C) 2006 Imre Kaloz <kaloz@openwrt.org>
+ * Copyright (C) 2006 Felix Fietkau <nbd@openwrt.org>
+ */
+
+/*
+ * Prom setup file for AR5312/AR231x SoCs
+ */
+
+#include <linux/init.h>
+#include <asm/bootinfo.h>
+
+void __init prom_init(void)
+{
+}
+
+void __init prom_free_prom_memory(void)
+{
+}

@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:3ddeb9aa366b3c92edc5241a8a26620627ec5d7eba54bcdf6fc9143d971a00ab
-size 285
+#
+# Makefile for ALSA
+# Copyright (c) 2001 by Jaroslav Kysela <perex@perex.cz>
+#
+
+snd-powermac-objs := powermac.o pmac.o awacs.o burgundy.o daca.o tumbler.o keywest.o beep.o
+
+# Toplevel Module Dependency
+obj-$(CONFIG_SND_POWERMAC)	+= snd-powermac.o
+obj-$(CONFIG_SND_PS3)		+= snd_ps3.o

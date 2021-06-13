@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ea95a5c859d1ee1285c44c1e26538bee508179b4c911cc4f9f6098a41f313955
-size 207
+#ifndef BCM63XX_BOARD_H_
+#define BCM63XX_BOARD_H_
+
+const char *board_get_name(void);
+
+void board_prom_init(void);
+
+void board_setup(void);
+
+int board_register_devices(void);
+
+#endif /* ! BCM63XX_BOARD_H_ */

@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ad732b9aedbe0a088798150d37d6d2966b230af8a7ebe3114d6b91c35c93d19b
-size 270
+#ifndef BMI160_H_
+#define BMI160_H_
+
+extern const struct regmap_config bmi160_regmap_config;
+
+int bmi160_core_probe(struct device *dev, struct regmap *regmap,
+		      const char *name, bool use_spi);
+void bmi160_core_remove(struct device *dev);
+
+#endif  /* BMI160_H_ */

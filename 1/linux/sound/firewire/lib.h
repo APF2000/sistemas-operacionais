@@ -1,3 +1,28 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:8fce3e409c6020185a7a7b0d4341a2886706230a86df4b2ca1088c11857da5c0
-size 736
+#ifndef SOUND_FIREWIRE_LIB_H_INCLUDED
+#define SOUND_FIREWIRE_LIB_H_INCLUDED
+
+#include <linux/firewire-constants.h>
+#include <linux/types.h>
+#include <linux/sched.h>
+#include <sound/rawmidi.h>
+
+struct fw_unit;
+
+#define FW_GENERATION_MASK	0x00ff
+#define FW_FIXED_GENERATION	0x0100
+#define FW_QUIET		0x0200
+
+int snd_fw_transaction(struct fw_unit *unit, int tcode,
+		       u64 offset, void *buffer, size_t length,
+		       unsigned int flags);
+
+/* returns true if retrying the transaction would not make sense */
+static inline bool rcode_is_permanent_error(int rcode)
+{
+	return rcode == RCODE_TYPE_ERROR || rcode == RCODE_ADDRESS_ERROR;
+}
+
+void snd_fw_schedule_registration(struct fw_unit *unit,
+				  struct delayed_work *dwork);
+
+#endif

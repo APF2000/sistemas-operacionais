@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4fe25a933fe5f2cdf44863cba98f55f553001cf87d732b4b470edd4767e319a6
-size 495
+#!/bin/sh
+# description: Kretprobe dynamic event with arguments
+
+[ -f kprobe_events ] || exit_unsupported # this is configurable
+
+echo 0 > events/enable
+echo > kprobe_events
+echo 'r:testprobe2 _do_fork $retval' > kprobe_events
+grep testprobe2 kprobe_events
+test -d events/kprobes/testprobe2
+echo 1 > events/kprobes/testprobe2/enable
+( echo "forked")
+echo 0 > events/kprobes/testprobe2/enable
+echo '-:testprobe2' >> kprobe_events
+clear_trace
+test -d events/kprobes/testprobe2 && exit 1 || exit 0

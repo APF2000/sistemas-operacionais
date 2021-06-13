@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ecebed0a9210fc62bd737ee462c6dbf83a6b57fcb6b9531772601d96cbcf4f85
-size 244
+GiantPlus GPG48273QS5 4.3" (480x272) WQVGA TFT LCD panel
+
+Required properties:
+- compatible: should be "giantplus,gpg48273qs5"
+
+This binding is compatible with the simple-panel binding, which is specified
+in simple-panel.txt in this directory.

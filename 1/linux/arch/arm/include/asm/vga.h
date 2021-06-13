@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b92e7b848572f2c80c718b3a7c705376bce5a21aeb54ba6249849542741fd7a3
-size 266
+#ifndef ASMARM_VGA_H
+#define ASMARM_VGA_H
+
+#include <linux/io.h>
+
+extern unsigned long vga_base;
+
+#define VGA_MAP_MEM(x,s)	(vga_base + (x))
+
+#define vga_readb(x)	(*((volatile unsigned char *)x))
+#define vga_writeb(x,y)	(*((volatile unsigned char *)y) = (x))
+
+#endif

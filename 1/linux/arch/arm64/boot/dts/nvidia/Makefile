@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1114703792a115f36013bc89480c160ce83a94fe2e49020bc869a01b97e5a3de
-size 388
+dtb-$(CONFIG_ARCH_TEGRA_132_SOC) += tegra132-norrin.dtb
+dtb-$(CONFIG_ARCH_TEGRA_210_SOC) += tegra210-p2371-0000.dtb
+dtb-$(CONFIG_ARCH_TEGRA_210_SOC) += tegra210-p2371-2180.dtb
+dtb-$(CONFIG_ARCH_TEGRA_210_SOC) += tegra210-p2571.dtb
+dtb-$(CONFIG_ARCH_TEGRA_210_SOC) += tegra210-smaug.dtb
+dtb-$(CONFIG_ARCH_TEGRA_186_SOC) += tegra186-p2771-0000.dtb
+
+always		:= $(dtb-y)
+clean-files	:= *.dtb

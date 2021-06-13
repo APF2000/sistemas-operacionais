@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:aeb0d41d8353c373434c795f0b3426ff3f546c8239ef3a52b4436f7bc186ca5e
-size 238
+#ifndef _XT_CONNSECMARK_H_target
+#define _XT_CONNSECMARK_H_target
+
+#include <linux/types.h>
+
+enum {
+	CONNSECMARK_SAVE = 1,
+	CONNSECMARK_RESTORE,
+};
+
+struct xt_connsecmark_target_info {
+	__u8 mode;
+};
+
+#endif /*_XT_CONNSECMARK_H_target */

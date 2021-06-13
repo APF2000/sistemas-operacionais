@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1bc5ae16f02c27ec415c586cf554bde71399c8b8dc7f2b8fee1b257b14fe156a
-size 341
+config PRISM2_USB
+	tristate "Prism2.5/3 USB driver"
+	depends on WLAN && USB && CFG80211
+	select WIRELESS_EXT
+	select WEXT_PRIV
+	default n
+	---help---
+	  This is the wlan-ng prism 2.5/3 USB driver for a wide range of
+	  old USB wireless devices.
+
+	  To compile this driver as a module, choose M here: the module
+	  will be called prism2_usb.

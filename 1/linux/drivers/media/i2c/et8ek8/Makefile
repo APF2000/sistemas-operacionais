@@ -1,3 +1,2 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:8adde7a7dfe867e873027d2ba226ff0878d5224f61dac26ae13d93a25adb0bdc
-size 86
+et8ek8-objs			+= et8ek8_mode.o et8ek8_driver.o
+obj-$(CONFIG_VIDEO_ET8EK8)	+= et8ek8.o

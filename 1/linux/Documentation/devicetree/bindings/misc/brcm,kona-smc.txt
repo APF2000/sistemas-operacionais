@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:73fe6244922588f8703bf3a7045c11611ee3bb6dd4b9da79f9c8e4ab41ddbe72
-size 460
+Broadcom Secure Monitor Bounce buffer
+-----------------------------------------------------
+This binding defines the location of the bounce buffer
+used for non-secure to secure communications.
+
+Required properties:
+- compatible : "brcm,kona-smc"
+- DEPRECATED: compatible : "bcm,kona-smc"
+- reg : Location and size of bounce buffer
+
+Example:
+	smc@0x3404c000 {
+		compatible = "brcm,bcm11351-smc", "brcm,kona-smc";
+		reg = <0x3404c000 0x400>; //1 KiB in SRAM
+	};

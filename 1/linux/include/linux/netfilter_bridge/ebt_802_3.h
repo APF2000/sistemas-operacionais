@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f5e9bb41b1126657f3be66db8c6f34ce8696f93acae66ba6cc82f41072d7b079
-size 290
+#ifndef __LINUX_BRIDGE_EBT_802_3_H
+#define __LINUX_BRIDGE_EBT_802_3_H
+
+#include <linux/skbuff.h>
+#include <uapi/linux/netfilter_bridge/ebt_802_3.h>
+
+static inline struct ebt_802_3_hdr *ebt_802_3_hdr(const struct sk_buff *skb)
+{
+	return (struct ebt_802_3_hdr *)skb_mac_header(skb);
+}
+#endif

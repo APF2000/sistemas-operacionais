@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1bc8f55aeaa8af101d38189c6824f5149657ea76fd1c8798c1fa00433cdbbe81
-size 288
+ccflags-$(CONFIG_ARCH_MULTIPLATFORM) := -I$(srctree)/arch/arm/plat-orion/include
+
+obj-y				+= common.o mpp.o irq.o pcie.o
+obj-$(CONFIG_MACH_DB78X00_BP)	+= db78x00-bp-setup.o
+obj-$(CONFIG_MACH_RD78X00_MASA)	+= rd78x00-masa-setup.o
+obj-$(CONFIG_MACH_TERASTATION_WXL) += buffalo-wxl-setup.o

@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:72ed5c8050c908b7f8fc73461b7d286ef38e2f51ea007c10d2e5c061739dd935
-size 288
+#ifndef __IMX_AUDMUX_H
+#define __IMX_AUDMUX_H
+
+#include <dt-bindings/sound/fsl-imx-audmux.h>
+
+int imx_audmux_v1_configure_port(unsigned int port, unsigned int pcr);
+
+int imx_audmux_v2_configure_port(unsigned int port, unsigned int ptcr,
+		unsigned int pdcr);
+
+#endif /* __IMX_AUDMUX_H */

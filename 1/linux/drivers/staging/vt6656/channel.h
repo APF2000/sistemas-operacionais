@@ -1,3 +1,33 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2bbd74cc459fbb81ea68dec99a8b6a403f03c9195f378b01086d0f2d467b08cb
-size 863
+/*
+ * Copyright (c) 1996, 2003 VIA Networking Technologies, Inc.
+ * All rights reserved.
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ *
+ * File: channel.h
+ *
+ * Purpose: Country Regulation Rules header file
+ *
+ * Author: Lucas Lin
+ *
+ * Date: Dec 23, 2004
+ *
+ */
+
+#ifndef _CHANNEL_H_
+#define _CHANNEL_H_
+
+#include "device.h"
+
+void vnt_init_bands(struct vnt_private *priv);
+
+#endif  /* _CHANNEL_H_ */

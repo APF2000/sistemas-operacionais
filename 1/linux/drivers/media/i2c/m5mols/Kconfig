@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:7600fe2669bed8e5ac6a2f0e38c6f1651e6ffcdaa8c5ac492c194df537ef5824
-size 230
+config VIDEO_M5MOLS
+	tristate "Fujitsu M-5MOLS 8MP sensor support"
+	depends on I2C && VIDEO_V4L2 && VIDEO_V4L2_SUBDEV_API
+	depends on MEDIA_CAMERA_SUPPORT
+	---help---
+	  This driver supports Fujitsu M-5MOLS camera sensor with ISP

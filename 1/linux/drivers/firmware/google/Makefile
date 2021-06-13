@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:72e2dac8f48ccfeb22dcc4091db23d262cce17b5720deb249c8941a9d2951278
-size 507
+
+obj-$(CONFIG_GOOGLE_SMI)		+= gsmi.o
+obj-$(CONFIG_GOOGLE_COREBOOT_TABLE)        += coreboot_table.o
+obj-$(CONFIG_GOOGLE_COREBOOT_TABLE_ACPI)   += coreboot_table-acpi.o
+obj-$(CONFIG_GOOGLE_COREBOOT_TABLE_OF)     += coreboot_table-of.o
+obj-$(CONFIG_GOOGLE_MEMCONSOLE)            += memconsole.o
+obj-$(CONFIG_GOOGLE_MEMCONSOLE_COREBOOT)   += memconsole-coreboot.o
+obj-$(CONFIG_GOOGLE_MEMCONSOLE_X86_LEGACY) += memconsole-x86-legacy.o
+
+vpd-sysfs-y := vpd.o vpd_decode.o
+obj-$(CONFIG_GOOGLE_VPD)		+= vpd-sysfs.o

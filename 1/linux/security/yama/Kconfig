@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:0cc6afaadf1885776ade1b6911995d6ee13e0d250e58c3eb83d6f7eb6fc6685f
-size 481
+config SECURITY_YAMA
+	bool "Yama support"
+	depends on SECURITY
+	default n
+	help
+	  This selects Yama, which extends DAC support with additional
+	  system-wide security settings beyond regular Linux discretionary
+	  access controls. Currently available is ptrace scope restriction.
+	  Like capabilities, this security module stacks with other LSMs.
+	  Further information can be found in Documentation/security/Yama.txt.
+
+	  If you are unsure how to answer this question, answer N.

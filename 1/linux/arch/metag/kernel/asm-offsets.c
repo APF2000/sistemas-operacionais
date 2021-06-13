@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f3cefbdbdc7ca488a0777422e58b0241129a3c5aef49e222f530182da5a31986
-size 242
+/*
+ * This program is used to generate definitions needed by
+ * assembly language modules.
+ *
+ */
+
+#include <linux/kbuild.h>
+#include <linux/thread_info.h>
+
+int main(void)
+{
+	DEFINE(THREAD_INFO_SIZE, sizeof(struct thread_info));
+	return 0;
+}

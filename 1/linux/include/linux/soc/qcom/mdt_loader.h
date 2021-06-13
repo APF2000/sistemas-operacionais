@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:90a947bba35c0993b30a826cb0a923abee9502e8949c1997398f2ff8cc7a3c49
-size 458
+#ifndef __QCOM_MDT_LOADER_H__
+#define __QCOM_MDT_LOADER_H__
+
+#include <linux/types.h>
+
+#define QCOM_MDT_TYPE_MASK	(7 << 24)
+#define QCOM_MDT_TYPE_HASH	(2 << 24)
+#define QCOM_MDT_RELOCATABLE	BIT(27)
+
+struct device;
+struct firmware;
+
+ssize_t qcom_mdt_get_size(const struct firmware *fw);
+int qcom_mdt_load(struct device *dev, const struct firmware *fw,
+		  const char *fw_name, int pas_id, void *mem_region,
+		  phys_addr_t mem_phys, size_t mem_size);
+
+#endif

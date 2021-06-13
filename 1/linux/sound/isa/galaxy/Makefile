@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5d5df2c63a118e64950ce64f2401dbe26b1f7ba919e8f5cf15c2755889acc284
-size 228
+#
+# Makefile for ALSA
+# Copyright (c) 2001 by Jaroslav Kysela <perex@suse.cz>
+#
+
+snd-azt1605-objs := azt1605.o
+snd-azt2316-objs := azt2316.o
+
+obj-$(CONFIG_SND_AZT1605) += snd-azt1605.o
+obj-$(CONFIG_SND_AZT2316) += snd-azt2316.o

@@ -1,3 +1,28 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1a78fabd18623931568bfa3dfd6e1c6205be00369f61e3a82c75de59c30c3bae
-size 631
+#
+# Samsung Pin control drivers
+#
+config PINCTRL_SAMSUNG
+	bool
+	select PINMUX
+	select PINCONF
+
+config PINCTRL_EXYNOS
+	bool "Pinctrl driver data for Samsung EXYNOS SoCs other than 5440"
+	depends on OF && GPIOLIB && (ARCH_EXYNOS || ARCH_S5PV210)
+	select PINCTRL_SAMSUNG
+
+config PINCTRL_EXYNOS5440
+	bool "Samsung EXYNOS5440 SoC pinctrl driver"
+	depends on SOC_EXYNOS5440
+	select PINMUX
+	select PINCONF
+
+config PINCTRL_S3C24XX
+	bool "Samsung S3C24XX SoC pinctrl driver"
+	depends on ARCH_S3C24XX
+	select PINCTRL_SAMSUNG
+
+config PINCTRL_S3C64XX
+	bool "Samsung S3C64XX SoC pinctrl driver"
+	depends on ARCH_S3C64XX
+	select PINCTRL_SAMSUNG

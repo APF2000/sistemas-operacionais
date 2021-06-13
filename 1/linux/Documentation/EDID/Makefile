@@ -1,3 +1,26 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c9b3869e27f275c590f72ae705150fab97b31589b2a40a11ec682eedb388da52
-size 435
+
+SOURCES	:= $(wildcard [0-9]*x[0-9]*.S)
+
+BIN	:= $(patsubst %.S, %.bin, $(SOURCES))
+
+IHEX	:= $(patsubst %.S, %.bin.ihex, $(SOURCES))
+
+CODE	:= $(patsubst %.S, %.c, $(SOURCES))
+
+all:	$(BIN) $(IHEX) $(CODE)
+
+clean:
+	@rm -f *.o *.bin.ihex *.bin *.c
+
+%.o:	%.S
+	@cc -c $^
+
+%.bin:	%.o
+	@objcopy -Obinary $^ $@
+
+%.bin.ihex:	%.o
+	@objcopy -Oihex $^ $@
+	@dos2unix $@ 2>/dev/null
+
+%.c:	%.bin
+	@echo "{" >$@; hexdump -f hex $^ >>$@; echo "};" >>$@

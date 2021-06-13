@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4528eff32634da91ea1b00d64f8398ce4e162de344f98cf588bc6408fccc1c37
-size 199
+#
+# Makefile for HSI clients
+#
+
+obj-$(CONFIG_NOKIA_MODEM)	+= nokia-modem.o
+obj-$(CONFIG_SSI_PROTOCOL)	+= ssi_protocol.o
+obj-$(CONFIG_CMT_SPEECH)	+= cmt_speech.o
+obj-$(CONFIG_HSI_CHAR)		+= hsi_char.o

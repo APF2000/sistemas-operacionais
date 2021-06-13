@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:39009a6b8bbf802b60eee088a73fa187aecfc8ae59093a1564f41c63b7c84adb
-size 344
+#ifndef __ASM_SH_HEARTBEAT_H
+#define __ASM_SH_HEARTBEAT_H
+
+#include <linux/timer.h>
+
+#define HEARTBEAT_INVERTED	(1 << 0)
+
+struct heartbeat_data {
+	void __iomem *base;
+	unsigned char *bit_pos;
+	unsigned int nr_bits;
+	struct timer_list timer;
+	unsigned int regsize;
+	unsigned int mask;
+	unsigned long flags;
+};
+
+#endif /* __ASM_SH_HEARTBEAT_H */

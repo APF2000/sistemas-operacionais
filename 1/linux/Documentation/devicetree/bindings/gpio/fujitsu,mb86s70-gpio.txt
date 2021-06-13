@@ -1,3 +1,20 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2d940a556da032df7452734a5dea026b2755dcf24fb2c9554a84a5a474f3fd49
-size 635
+Fujitsu MB86S7x GPIO Controller
+-------------------------------
+
+Required properties:
+- compatible: Should be "fujitsu,mb86s70-gpio"
+- reg: Base address and length of register space
+- clocks: Specify the clock
+- gpio-controller: Marks the device node as a gpio controller.
+- #gpio-cells: Should be <2>. The first cell is the pin number and the
+  second cell is used to specify optional parameters:
+   - bit 0 specifies polarity (0 for normal, 1 for inverted).
+
+Examples:
+	gpio0: gpio@31000000 {
+		compatible = "fujitsu,mb86s70-gpio";
+		reg = <0 0x31000000 0x10000>;
+		gpio-controller;
+		#gpio-cells = <2>;
+		clocks = <&clk 0 2 1>;
+	};

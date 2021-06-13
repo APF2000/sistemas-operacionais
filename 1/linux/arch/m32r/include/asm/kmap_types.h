@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ad3f1c540351e387e1b80aa8ebbd71ceb024e3d528e6a9c5596faa1448547917
-size 212
+#ifndef __M32R_KMAP_TYPES_H
+#define __M32R_KMAP_TYPES_H
+
+#ifdef CONFIG_DEBUG_HIGHMEM
+#define  __WITH_KM_FENCE
+#endif
+
+#include <asm-generic/kmap_types.h>
+
+#undef __WITH_KM_FENCE
+
+#endif /* __M32R_KMAP_TYPES_H */

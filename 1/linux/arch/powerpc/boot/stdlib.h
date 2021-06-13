@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:fcd2a6703bcea48728ac546391798eba429a7498297142b2f3fbe4d368035c7a
-size 137
+#ifndef _PPC_BOOT_STDLIB_H_
+#define _PPC_BOOT_STDLIB_H_
+
+unsigned long long int strtoull(const char *ptr, char **end, int base);
+
+#endif

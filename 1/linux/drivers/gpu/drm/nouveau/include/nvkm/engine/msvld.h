@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:321ee95dd160ed384a2721ee89deb5d1dfe199a6fea3ec0a09dee63c547b78e1
-size 437
+#ifndef __NVKM_MSVLD_H__
+#define __NVKM_MSVLD_H__
+#include <engine/falcon.h>
+int g98_msvld_new(struct nvkm_device *, int, struct nvkm_engine **);
+int gt215_msvld_new(struct nvkm_device *, int, struct nvkm_engine **);
+int mcp89_msvld_new(struct nvkm_device *, int, struct nvkm_engine **);
+int gf100_msvld_new(struct nvkm_device *, int, struct nvkm_engine **);
+int gk104_msvld_new(struct nvkm_device *, int, struct nvkm_engine **);
+#endif

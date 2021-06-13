@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c97e2770fa255f2e26fada134469dd96bbccbeefa36566b25f31d79b15b12bc7
-size 210
+#ifndef __SPARC_POLL_H
+#define __SPARC_POLL_H
+
+#define POLLWRNORM	POLLOUT
+#define POLLWRBAND	256
+#define POLLMSG		512
+#define POLLREMOVE	1024
+#define POLLRDHUP       2048
+
+#include <asm-generic/poll.h>
+
+#endif

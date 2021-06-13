@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:8923cde2c052adbd4ba367cdf54856122f4e8dc1a7fb32c823a72a282ee1c0ea
-size 450
+/*
+ * TI DaVinci cpuidle platform support
+ *
+ * 2009 (C) Texas Instruments, Inc. http://www.ti.com/
+ *
+ * This file is licensed under the terms of the GNU General Public License
+ * version 2. This program is licensed "as is" without any warranty of any
+ * kind, whether express or implied.
+ */
+#ifndef _MACH_DAVINCI_CPUIDLE_H
+#define _MACH_DAVINCI_CPUIDLE_H
+
+struct davinci_cpuidle_config {
+	u32 ddr2_pdown;
+	void __iomem *ddr2_ctlr_base;
+};
+
+#endif

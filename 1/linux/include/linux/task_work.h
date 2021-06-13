@@ -1,3 +1,24 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f09145dfd0c27340357bdcc977a3da6c7608a078ea4a8d31ffbf01ae3c5fedcf
-size 578
+#ifndef _LINUX_TASK_WORK_H
+#define _LINUX_TASK_WORK_H
+
+#include <linux/list.h>
+#include <linux/sched.h>
+
+typedef void (*task_work_func_t)(struct callback_head *);
+
+static inline void
+init_task_work(struct callback_head *twork, task_work_func_t func)
+{
+	twork->func = func;
+}
+
+int task_work_add(struct task_struct *task, struct callback_head *twork, bool);
+struct callback_head *task_work_cancel(struct task_struct *, task_work_func_t);
+void task_work_run(void);
+
+static inline void exit_task_work(struct task_struct *task)
+{
+	task_work_run();
+}
+
+#endif	/* _LINUX_TASK_WORK_H */

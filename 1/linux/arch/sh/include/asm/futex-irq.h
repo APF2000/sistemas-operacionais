@@ -1,3 +1,24 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ab6a0666989eb958c686549bb7758dc8a79a9872dd43a6d2b02fa5140f4938f4
-size 443
+#ifndef __ASM_SH_FUTEX_IRQ_H
+#define __ASM_SH_FUTEX_IRQ_H
+
+static inline int atomic_futex_op_cmpxchg_inatomic(u32 *uval,
+						   u32 __user *uaddr,
+						   u32 oldval, u32 newval)
+{
+	unsigned long flags;
+	int ret;
+	u32 prev = 0;
+
+	local_irq_save(flags);
+
+	ret = get_user(prev, uaddr);
+	if (!ret && oldval == prev)
+		ret = put_user(newval, uaddr);
+
+	local_irq_restore(flags);
+
+	*uval = prev;
+	return ret;
+}
+
+#endif /* __ASM_SH_FUTEX_IRQ_H */

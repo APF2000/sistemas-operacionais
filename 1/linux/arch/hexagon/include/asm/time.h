@@ -1,3 +1,29 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e9d904f2cfff10694f89cc2635e7dc7773340c27a26bcf47a80c7330bc16c4c4
-size 980
+/*
+ * Copyright (c) 2010-2011, The Linux Foundation. All rights reserved.
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 2 and
+ * only version 2 as published by the Free Software Foundation.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
+ * 02110-1301, USA.
+ */
+
+#ifndef ASM_TIME_H
+#define ASM_TIME_H
+
+extern cycles_t        pcycle_freq_mhz;
+extern cycles_t        thread_freq_mhz;
+extern cycles_t        sleep_clk_freq;
+
+void setup_percpu_clockdev(void);
+void ipi_timer(void);
+
+#endif

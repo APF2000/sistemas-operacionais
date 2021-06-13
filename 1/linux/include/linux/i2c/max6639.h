@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5f26d668c892619ab49c5c5a5b7db649ad043246a4f6c10970a65b73399982f1
-size 394
+#ifndef _LINUX_MAX6639_H
+#define _LINUX_MAX6639_H
+
+#include <linux/types.h>
+
+/* platform data for the MAX6639 temperature sensor and fan control */
+
+struct max6639_platform_data {
+	bool pwm_polarity;	/* Polarity low (0) or high (1, default) */
+	int ppr;		/* Pulses per rotation 1..4 (default == 2) */
+	int rpm_range;		/* 2000, 4000 (default), 8000 or 16000 */
+};
+
+#endif /* _LINUX_MAX6639_H */

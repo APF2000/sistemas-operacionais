@@ -1,3 +1,35 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f9cb352fe6c2bdf73693876e6f44ce585e00cf6690fb8b9fe62e62a58ab47656
-size 735
+#ifndef __UAPI_PSAMPLE_H
+#define __UAPI_PSAMPLE_H
+
+enum {
+	/* sampled packet metadata */
+	PSAMPLE_ATTR_IIFINDEX,
+	PSAMPLE_ATTR_OIFINDEX,
+	PSAMPLE_ATTR_ORIGSIZE,
+	PSAMPLE_ATTR_SAMPLE_GROUP,
+	PSAMPLE_ATTR_GROUP_SEQ,
+	PSAMPLE_ATTR_SAMPLE_RATE,
+	PSAMPLE_ATTR_DATA,
+
+	/* commands attributes */
+	PSAMPLE_ATTR_GROUP_REFCOUNT,
+
+	__PSAMPLE_ATTR_MAX
+};
+
+enum psample_command {
+	PSAMPLE_CMD_SAMPLE,
+	PSAMPLE_CMD_GET_GROUP,
+	PSAMPLE_CMD_NEW_GROUP,
+	PSAMPLE_CMD_DEL_GROUP,
+};
+
+/* Can be overridden at runtime by module option */
+#define PSAMPLE_ATTR_MAX (__PSAMPLE_ATTR_MAX - 1)
+
+#define PSAMPLE_NL_MCGRP_CONFIG_NAME "config"
+#define PSAMPLE_NL_MCGRP_SAMPLE_NAME "packets"
+#define PSAMPLE_GENL_NAME "psample"
+#define PSAMPLE_GENL_VERSION 1
+
+#endif

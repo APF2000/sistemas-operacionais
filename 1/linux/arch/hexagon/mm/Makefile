@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a828e20c7ad770c52b6fae702e4826b6d96b1ec5deecb60b6d653190ccfeb188
-size 186
+#
+# Makefile for Hexagon memory management subsystem
+#
+
+obj-y := init.o pgalloc.o ioremap.o uaccess.o vm_fault.o cache.o
+obj-y += copy_to_user.o copy_from_user.o strnlen_user.o vm_tlb.o

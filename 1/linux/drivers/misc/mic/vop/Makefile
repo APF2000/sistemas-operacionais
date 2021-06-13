@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:858bcfdd47aa92822a61cc1a7d12c5448205deeec2b94c73a82f3493c614a4ee
-size 171
+#
+# Makefile - Intel MIC Linux driver.
+# Copyright(c) 2016, Intel Corporation.
+#
+obj-m := vop.o
+
+vop-objs += vop_main.o
+vop-objs += vop_debugfs.o
+vop-objs += vop_vringh.o

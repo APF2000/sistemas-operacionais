@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2f233e7baeba73d2085c01b09b87aa41689a659c928f67b2fd08ff00f239a63b
-size 161
+#ifndef __BCM63XX_SMP_H
+#define __BCM63XX_SMP_H
+
+struct device_node;
+
+extern int bcm63xx_pmb_power_on_cpu(struct device_node *dn);
+
+#endif /* __BCM63XX_SMP_H */

@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c4316800c99ab70158fbdedb0fff6a55a4ccfc8e5b0e5d788c35dbfe9066d2cc
-size 337
+#ifndef _BMC150_MAGN_H_
+#define _BMC150_MAGN_H_
+
+extern const struct regmap_config bmc150_magn_regmap_config;
+extern const struct dev_pm_ops bmc150_magn_pm_ops;
+
+int bmc150_magn_probe(struct device *dev, struct regmap *regmap, int irq,
+		      const char *name);
+int bmc150_magn_remove(struct device *dev);
+
+#endif /* _BMC150_MAGN_H_ */

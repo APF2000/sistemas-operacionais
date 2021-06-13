@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:54d5b7205e5a4c9436eb9993c510229f32a78da256ddc548327cde1759b96b50
-size 262
+#
+# Makefile for the National Semi-conductor Sonic devices.
+#
+
+obj-$(CONFIG_MACSONIC) += macsonic.o
+obj-$(CONFIG_MIPS_JAZZ_SONIC) += jazzsonic.o
+obj-$(CONFIG_NATSEMI) += natsemi.o
+obj-$(CONFIG_NS83820) += ns83820.o
+obj-$(CONFIG_XTENSA_XT2000_SONIC) += xtsonic.o

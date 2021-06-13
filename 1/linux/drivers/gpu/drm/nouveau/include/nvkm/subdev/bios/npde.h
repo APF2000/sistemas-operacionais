@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:fd3e37ca5b69892dcb3eebc63fd54e63c08901291506c33675c096d8e428925f
-size 225
+#ifndef __NVBIOS_NPDE_H__
+#define __NVBIOS_NPDE_H__
+struct nvbios_npdeT {
+	u32 image_size;
+	bool last;
+};
+
+u32 nvbios_npdeTe(struct nvkm_bios *, u32);
+u32 nvbios_npdeTp(struct nvkm_bios *, u32, struct nvbios_npdeT *);
+#endif

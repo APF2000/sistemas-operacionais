@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c9abfbf175d4b463d6012088b4231804112051366d7835c5a4bc319f71e18c2d
-size 436
+/* RS-485 structures */
+
+/* Used with ioctl() TIOCSERSETRS485 for backward compatibility!
+ * XXX: Do not use it for new code!
+ */
+struct rs485_control {
+        unsigned short rts_on_send;
+        unsigned short rts_after_sent;
+        unsigned long delay_rts_before_send;
+        unsigned short enabled;
+};
+
+/* Used with ioctl() TIOCSERWRRS485 */
+struct rs485_write {
+        unsigned short outc_size;
+        unsigned char *outc;
+};
+

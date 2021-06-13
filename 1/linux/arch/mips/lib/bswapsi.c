@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b982d2cc48a6c2031d4525a69818245e761f5598ddfd3f720384fff57cb4a282
-size 282
+#include <linux/export.h>
+#include <linux/compiler.h>
+
+unsigned int notrace __bswapsi2(unsigned int u)
+{
+	return (((u) & 0xff000000) >> 24) |
+	       (((u) & 0x00ff0000) >>  8) |
+	       (((u) & 0x0000ff00) <<  8) |
+	       (((u) & 0x000000ff) << 24);
+}
+
+EXPORT_SYMBOL(__bswapsi2);

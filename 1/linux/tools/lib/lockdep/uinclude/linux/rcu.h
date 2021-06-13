@@ -1,3 +1,21 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:cdd296b99d551c0d507be24b7f064ea0e72c75dd0bda98abbfaa9277f968b482
-size 277
+#ifndef _LIBLOCKDEP_RCU_H_
+#define _LIBLOCKDEP_RCU_H_
+
+int rcu_scheduler_active;
+
+static inline int rcu_lockdep_current_cpu_online(void)
+{
+	return 1;
+}
+
+static inline int rcu_is_cpu_idle(void)
+{
+	return 1;
+}
+
+static inline bool rcu_is_watching(void)
+{
+	return false;
+}
+
+#endif

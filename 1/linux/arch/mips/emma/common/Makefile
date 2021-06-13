@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:7cc06b697eb5c82b2ff6a3e9baecb455d91376dd4e317735784507a83a0a873d
-size 351
+#
+#  Copyright (C) NEC Electronics Corporation 2005-2006
+#
+#  This program is free software; you can redistribute it and/or modify
+#  it under the terms of the GNU General Public License as published by
+#  the Free Software Foundation; either version 2 of the License, or
+#  (at your option) any later version.
+#
+
+obj-$(CONFIG_NEC_MARKEINS)	+= prom.o

@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:50467bf57193a5be443e54de8ccdab19d49cff935bbb243c6bb937ea3c022b76
-size 499
+/*
+ * Wrapper for decompressing XZ-compressed kernel, initramfs, and initrd
+ *
+ * Author: Lasse Collin <lasse.collin@tukaani.org>
+ *
+ * This file has been put into the public domain.
+ * You can do whatever you want with this file.
+ */
+
+#ifndef DECOMPRESS_UNXZ_H
+#define DECOMPRESS_UNXZ_H
+
+int unxz(unsigned char *in, long in_size,
+	 long (*fill)(void *dest, unsigned long size),
+	 long (*flush)(void *src, unsigned long size),
+	 unsigned char *out, long *in_used,
+	 void (*error)(char *x));
+
+#endif

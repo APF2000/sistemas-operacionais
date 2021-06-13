@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2772ec1016cbef144972ef0dbb5cbe8ccff0331d2549edc02d19552479e62742
-size 207
+btcoexist-objs :=	halbtc8192e2ant.o	\
+			halbtc8723b1ant.o	\
+			halbtc8723b2ant.o	\
+			halbtc8821a1ant.o	\
+			halbtc8821a2ant.o	\
+			halbtcoutsrc.o		\
+			rtl_btc.o
+
+obj-$(CONFIG_RTLBTCOEXIST) += btcoexist.o

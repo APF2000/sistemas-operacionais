@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:59f0662924e7a404e5eae534666c13afdb342b9c364b50db092cac6510489a8b
-size 420
+# Makefile for net selftests
+
+CFLAGS =  -Wall -Wl,--no-as-needed -O2 -g
+CFLAGS += -I../../../../usr/include/
+
+reuseport_bpf_numa: LDFLAGS += -lnuma
+
+TEST_PROGS := run_netsocktests run_afpackettests test_bpf.sh netdevice.sh
+TEST_GEN_FILES =  socket
+TEST_GEN_FILES += psock_fanout psock_tpacket
+TEST_GEN_FILES += reuseport_bpf reuseport_bpf_cpu reuseport_bpf_numa
+TEST_GEN_FILES += reuseport_dualstack
+
+include ../lib.mk
+

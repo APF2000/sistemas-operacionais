@@ -1,3 +1,34 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:44c926cb2f6d9ca739aee702e94535d07983ada7d338c5a3b659bd92a2e73836
-size 644
+.. -*- coding: utf-8; mode: rst -*-
+
+.. _audio_function_calls:
+
+********************
+Audio Function Calls
+********************
+
+.. toctree::
+    :maxdepth: 1
+
+    audio-fopen
+    audio-fclose
+    audio-fwrite
+    audio-stop
+    audio-play
+    audio-pause
+    audio-continue
+    audio-select-source
+    audio-set-mute
+    audio-set-av-sync
+    audio-set-bypass-mode
+    audio-channel-select
+    audio-bilingual-channel-select
+    audio-get-pts
+    audio-get-status
+    audio-get-capabilities
+    audio-clear-buffer
+    audio-set-id
+    audio-set-mixer
+    audio-set-streamtype
+    audio-set-ext-id
+    audio-set-attributes
+    audio-set-karaoke

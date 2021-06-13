@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:68fa24768832955d5afa631ccbbf9edc18b2dcef967fcd684cd3fec3fab02053
-size 219
+/* 
+ * Copyright (C) 2002 Jeff Dike (jdike@karaya.com)
+ * Licensed under the GPL
+ */
+
+#ifndef __UM_KMAP_TYPES_H
+#define __UM_KMAP_TYPES_H
+
+/* No more #include "asm/arch/kmap_types.h" ! */
+
+#define KM_TYPE_NR 14
+
+#endif

@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:adbc7c806840f4ceda6c1e16d1c32b8a6607b0a07e7eeb8c9a036634f3937050
-size 249
+max9867 codec
+
+This device supports I2C mode only.
+
+Required properties:
+
+- compatible : "maxim,max9867"
+- reg : The chip select number on the I2C bus
+
+Example:
+
+&i2c {
+	max9867: max9867@0x18 {
+		compatible = "maxim,max9867";
+		reg = <0x18>;
+	};
+};

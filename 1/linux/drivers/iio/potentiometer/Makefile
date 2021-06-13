@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:feecffbc06bbe73d24d33e3d3b627017a0cf5441cf7f9dfbd5fe6c48ec062e84
-size 327
+#
+# Makefile for industrial I/O potentiometer drivers
+#
+
+# When adding new entries keep the list in alphabetical order
+obj-$(CONFIG_DS1803) += ds1803.o
+obj-$(CONFIG_MAX5481) += max5481.o
+obj-$(CONFIG_MAX5487) += max5487.o
+obj-$(CONFIG_MCP4131) += mcp4131.o
+obj-$(CONFIG_MCP4531) += mcp4531.o
+obj-$(CONFIG_TPL0102) += tpl0102.o

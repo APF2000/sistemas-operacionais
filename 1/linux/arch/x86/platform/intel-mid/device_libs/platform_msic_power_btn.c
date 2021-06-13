@@ -1,3 +1,35 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:199cf9a3fca42b10baec5799145fd40cc5cb8e1a2a66975ec5d18cf76fc4fa0c
-size 1011
+/*
+ * platform_msic_power_btn.c: MSIC power btn platform data initialization file
+ *
+ * (C) Copyright 2013 Intel Corporation
+ * Author: Sathyanarayanan Kuppuswamy <sathyanarayanan.kuppuswamy@intel.com>
+ *
+ * This program is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License
+ * as published by the Free Software Foundation; version 2
+ * of the License.
+ */
+#include <linux/kernel.h>
+#include <linux/interrupt.h>
+#include <linux/scatterlist.h>
+#include <linux/sfi.h>
+#include <linux/init.h>
+#include <linux/mfd/intel_msic.h>
+#include <asm/intel-mid.h>
+
+#include "platform_msic.h"
+
+static void __init *msic_power_btn_platform_data(void *info)
+{
+	return msic_generic_platform_data(info, INTEL_MSIC_BLOCK_POWER_BTN);
+}
+
+static const struct devs_id msic_power_btn_dev_id __initconst = {
+	.name = "msic_power_btn",
+	.type = SFI_DEV_TYPE_IPC,
+	.delay = 1,
+	.msic = 1,
+	.get_platform_data = &msic_power_btn_platform_data,
+};
+
+sfi_device(msic_power_btn_dev_id);

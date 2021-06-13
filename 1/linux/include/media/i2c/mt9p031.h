@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:45b644fab850b0aecbe6018dde31426b36084f5808c5ecdf589b8300f42b4a84
-size 271
+#ifndef MT9P031_H
+#define MT9P031_H
+
+struct v4l2_subdev;
+
+/*
+ * struct mt9p031_platform_data - MT9P031 platform data
+ * @ext_freq: Input clock frequency
+ * @target_freq: Pixel clock frequency
+ */
+struct mt9p031_platform_data {
+	int ext_freq;
+	int target_freq;
+};
+
+#endif

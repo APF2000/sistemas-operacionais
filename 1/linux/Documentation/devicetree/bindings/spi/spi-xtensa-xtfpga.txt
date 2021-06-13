@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2d983fe19a47a05e864e4ba668bdea8b2ddd7704d172c8f2b6a6f4b6f694b987
-size 314
+Cadence Xtensa XTFPGA platform SPI controller.
+
+This simple SPI master controller is built into xtfpga bitstreams and is used
+to control daughterboard audio codec.
+
+Required properties:
+- compatible: should be "cdns,xtfpga-spi".
+- reg: physical base address of the controller and length of memory mapped
+  region.

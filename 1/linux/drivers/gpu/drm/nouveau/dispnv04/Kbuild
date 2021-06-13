@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:adcbdbb855dc457464f5b04657a857ebe479b07771e4528ecf1e7b2b34ae8ec1
-size 330
+nouveau-y += dispnv04/arb.o
+nouveau-y += dispnv04/crtc.o
+nouveau-y += dispnv04/cursor.o
+nouveau-y += dispnv04/dac.o
+nouveau-y += dispnv04/dfp.o
+nouveau-y += dispnv04/disp.o
+nouveau-y += dispnv04/hw.o
+nouveau-y += dispnv04/overlay.o
+nouveau-y += dispnv04/tvmodesnv17.o
+nouveau-y += dispnv04/tvnv04.o
+nouveau-y += dispnv04/tvnv17.o

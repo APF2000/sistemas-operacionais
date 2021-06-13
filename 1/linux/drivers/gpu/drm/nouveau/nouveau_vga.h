@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:fea85f0f0b90e947f190e45aed037d6ffc347ae3320cd5d8a932e744c59b6f07
-size 203
+#ifndef __NOUVEAU_VGA_H__
+#define __NOUVEAU_VGA_H__
+
+void nouveau_vga_init(struct nouveau_drm *);
+void nouveau_vga_fini(struct nouveau_drm *);
+void nouveau_vga_lastclose(struct drm_device *dev);
+
+#endif

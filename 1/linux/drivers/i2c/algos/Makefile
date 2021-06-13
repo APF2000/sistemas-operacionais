@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:829d2053279db0a74ba87ac748040df2e82777305f7e42fe148b8daae9ce1bfc
-size 216
+#
+# Makefile for the i2c algorithms
+#
+
+obj-$(CONFIG_I2C_ALGOBIT)	+= i2c-algo-bit.o
+obj-$(CONFIG_I2C_ALGOPCF)	+= i2c-algo-pcf.o
+obj-$(CONFIG_I2C_ALGOPCA)	+= i2c-algo-pca.o
+
+ccflags-$(CONFIG_I2C_DEBUG_ALGO) := -DDEBUG

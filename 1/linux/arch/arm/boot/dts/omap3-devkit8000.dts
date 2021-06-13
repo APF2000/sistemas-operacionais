@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:dcac7b290a473b6cf8dd49dc18d62b64a872aaee58e2ce39d1ea3863e4d27149
-size 458
+/*
+ * Author: Anthoine Bourgeois <anthoine.bourgeois@gmail.com>
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 2 as
+ * published by the Free Software Foundation.
+ */
+/dts-v1/;
+
+#include "omap3-devkit8000-common.dtsi"
+/ {
+	model = "TimLL OMAP3 Devkit8000";
+	compatible = "timll,omap3-devkit8000", "ti,omap3";
+
+	aliases {
+		display1 = &dvi0;
+		display2 = &tv0;
+	};
+};

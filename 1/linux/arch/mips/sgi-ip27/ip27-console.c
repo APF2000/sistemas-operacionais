@@ -1,3 +1,39 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:845970fab989b00ede67b7cf3d04f3c11e3cf507e1d0aae20248d52eed351db5
-size 898
+/*
+ * This file is subject to the terms and conditions of the GNU General Public
+ * License.  See the file "COPYING" in the main directory of this archive
+ * for more details.
+ *
+ * Copyright (C) 2001, 2002 Ralf Baechle
+ */
+
+#include <asm/page.h>
+#include <asm/sn/addrs.h>
+#include <asm/sn/sn0/hub.h>
+#include <asm/sn/klconfig.h>
+#include <asm/sn/ioc3.h>
+#include <asm/sn/sn_private.h>
+
+#include <linux/serial.h>
+#include <linux/serial_core.h>
+
+#define IOC3_CLK	(22000000 / 3)
+#define IOC3_FLAGS	(0)
+
+static inline struct ioc3_uartregs *console_uart(void)
+{
+	struct ioc3 *ioc3;
+	nasid_t nasid;
+
+	nasid = (master_nasid == INVALID_NASID) ? get_nasid() : master_nasid;
+	ioc3 = (struct ioc3 *)KL_CONFIG_CH_CONS_INFO(nasid)->memory_base;
+
+	return &ioc3->sregs.uarta;
+}
+
+void prom_putchar(char c)
+{
+	struct ioc3_uartregs *uart = console_uart();
+
+	while ((uart->iu_lsr & 0x20) == 0);
+	uart->iu_thr = c;
+}

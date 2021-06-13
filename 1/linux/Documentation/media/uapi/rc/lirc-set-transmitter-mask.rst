@@ -1,3 +1,51 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4248e1f7439ebf0ab9de99624649a103f656424f231055283dc8b2a2a7981a7c
-size 1334
+.. -*- coding: utf-8; mode: rst -*-
+
+.. _lirc_set_transmitter_mask:
+
+*******************************
+ioctl LIRC_SET_TRANSMITTER_MASK
+*******************************
+
+Name
+====
+
+LIRC_SET_TRANSMITTER_MASK - Enables send codes on a given set of transmitters
+
+Synopsis
+========
+
+.. c:function:: int ioctl( int fd, LIRC_SET_TRANSMITTER_MASK, __u32 *mask )
+    :name: LIRC_SET_TRANSMITTER_MASK
+
+Arguments
+=========
+
+``fd``
+    File descriptor returned by open().
+
+``mask``
+    Mask with channels to enable tx. Channel 0 is the least significant bit.
+
+
+Description
+===========
+
+Some IR TX devices have multiple output channels, in such case,
+:ref:`LIRC_CAN_SET_TRANSMITTER_MASK <LIRC-CAN-SET-TRANSMITTER-MASK>` is
+returned via :ref:`LIRC_GET_FEATURES` and this ioctl sets what channels will
+send IR codes.
+
+This ioctl enables the given set of transmitters. The first transmitter is
+encoded by the least significant bit and so on.
+
+When an invalid bit mask is given, i.e. a bit is set, even though the device
+does not have so many transitters, then this ioctl returns the number of
+available transitters and does nothing otherwise.
+
+
+Return Value
+============
+
+On success 0 is returned, on error -1 and the ``errno`` variable is set
+appropriately. The generic error codes are described at the
+:ref:`Generic Error Codes <gen-errors>` chapter.

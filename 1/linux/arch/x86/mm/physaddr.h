@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:78e5a4cb6169a462a4136eb94dd985323745d74a20d69177616554f32a62bb3b
-size 192
+#include <asm/processor.h>
+
+static inline int phys_addr_valid(resource_size_t addr)
+{
+#ifdef CONFIG_PHYS_ADDR_T_64BIT
+	return !(addr >> boot_cpu_data.x86_phys_bits);
+#else
+	return 1;
+#endif
+}

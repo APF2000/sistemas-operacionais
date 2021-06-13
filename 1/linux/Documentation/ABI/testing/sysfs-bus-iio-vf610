@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:86e8f466d4d8162e741a7196e5e69cb9e705f74632eebad071c14a5f95110701
-size 573
+What:		/sys/bus/iio/devices/iio:deviceX/conversion_mode
+KernelVersion:	4.2
+Contact:	linux-iio@vger.kernel.org
+Description:
+		Specifies the hardware conversion mode used. The three
+		available modes are "normal", "high-speed" and "low-power",
+		where the last is the default mode.
+
+
+What:		/sys/bus/iio/devices/iio:deviceX/out_conversion_mode
+KernelVersion:	4.6
+Contact:	linux-iio@vger.kernel.org
+Description:
+		Specifies the hardware conversion mode used within DAC.
+		The two available modes are "high-power" and "low-power",
+		where "low-power" mode is the default mode.

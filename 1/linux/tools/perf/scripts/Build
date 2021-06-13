@@ -1,3 +1,2 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c73c26032f223baafb2eb685034c0859dad792e79152e3021f51a83436db9714
-size 108
+libperf-$(CONFIG_LIBPERL)   += perl/Perf-Trace-Util/
+libperf-$(CONFIG_LIBPYTHON) += python/Perf-Trace-Util/

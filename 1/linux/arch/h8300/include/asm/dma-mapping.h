@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b1e5f51b2b0150c88c78127864f3cf2f2cbd1e138d44a2f4e2f4970107fc2c0c
-size 230
+#ifndef _H8300_DMA_MAPPING_H
+#define _H8300_DMA_MAPPING_H
+
+extern const struct dma_map_ops h8300_dma_map_ops;
+
+static inline const struct dma_map_ops *get_arch_dma_ops(struct bus_type *bus)
+{
+	return &h8300_dma_map_ops;
+}
+
+#endif

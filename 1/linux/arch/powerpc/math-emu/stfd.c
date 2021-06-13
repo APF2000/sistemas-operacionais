@@ -1,3 +1,20 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:83e518873f275f62d48af884ba86b6d9e864c11583cc8d80509efabed396e737
-size 303
+#include <linux/types.h>
+#include <linux/errno.h>
+#include <linux/uaccess.h>
+
+int
+stfd(void *frS, void *ea)
+{
+#if 0
+#ifdef DEBUG
+	printk("%s: S %p, ea %p: ", __func__, frS, ea);
+	dump_double(frS);
+	printk("\n");
+#endif
+#endif
+
+	if (copy_to_user(ea, frS, sizeof(double)))
+		return -EFAULT;
+
+	return 0;
+}

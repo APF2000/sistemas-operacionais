@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:0e3ced9b1a532fd00fd9d753b9aa9fddfea9cc4f8ad17f0d0ba5a6e01ebc050d
-size 210
+obj-$(CONFIG_B53)		+= b53_common.o
+
+obj-$(CONFIG_B53_SPI_DRIVER)	+= b53_spi.o
+obj-$(CONFIG_B53_MDIO_DRIVER)	+= b53_mdio.o
+obj-$(CONFIG_B53_MMAP_DRIVER)	+= b53_mmap.o
+obj-$(CONFIG_B53_SRAB_DRIVER)	+= b53_srab.o

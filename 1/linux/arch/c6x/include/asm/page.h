@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:3ee6d7a505961ab0779ef38da29963f4351061873049b9753f6dc961d0d1cd2a
-size 273
+#ifndef _ASM_C6X_PAGE_H
+#define _ASM_C6X_PAGE_H
+
+#define VM_DATA_DEFAULT_FLAGS \
+	(VM_READ | VM_WRITE | \
+	((current->personality & READ_IMPLIES_EXEC) ? VM_EXEC : 0) | \
+		 VM_MAYREAD | VM_MAYWRITE | VM_MAYEXEC)
+
+#include <asm-generic/page.h>
+
+#endif /* _ASM_C6X_PAGE_H */

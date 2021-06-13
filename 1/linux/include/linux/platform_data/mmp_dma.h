@@ -1,3 +1,20 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4cb20006d980277789ba7d055764e8e1e714051831eb30eb242a2aaad3da3ac8
-size 419
+/*
+ *  MMP Platform DMA Management
+ *
+ *  Copyright (c) 2011 Marvell Semiconductors Inc.
+ *
+ *  This program is free software; you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License version 2 as
+ *  published by the Free Software Foundation.
+ *
+ */
+
+#ifndef MMP_DMA_H
+#define MMP_DMA_H
+
+struct mmp_dma_platdata {
+	int dma_channels;
+	int nb_requestors;
+};
+
+#endif /* MMP_DMA_H */

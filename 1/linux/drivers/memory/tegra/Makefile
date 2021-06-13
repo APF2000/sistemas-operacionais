@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:8e3fdbc15224d5e118f24270ee63e9fddb4fed508fc4a86d2356077eef2c468c
-size 363
+tegra-mc-y := mc.o
+
+tegra-mc-$(CONFIG_ARCH_TEGRA_3x_SOC)  += tegra30.o
+tegra-mc-$(CONFIG_ARCH_TEGRA_114_SOC) += tegra114.o
+tegra-mc-$(CONFIG_ARCH_TEGRA_124_SOC) += tegra124.o
+tegra-mc-$(CONFIG_ARCH_TEGRA_132_SOC) += tegra124.o
+tegra-mc-$(CONFIG_ARCH_TEGRA_210_SOC) += tegra210.o
+
+obj-$(CONFIG_TEGRA_MC) += tegra-mc.o
+
+obj-$(CONFIG_TEGRA124_EMC) += tegra124-emc.o

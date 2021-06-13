@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:deeff8ef4b34164697ae1c40d212694716240cbfea5ebbe43fe63254d598a9e6
-size 236
+obj-$(CONFIG_USB_STV06XX) += gspca_stv06xx.o
+
+gspca_stv06xx-objs := stv06xx.o \
+		      stv06xx_vv6410.o \
+		      stv06xx_hdcs.o \
+		      stv06xx_pb0100.o \
+		      stv06xx_st6422.o
+
+ccflags-y += -I$(srctree)/drivers/media/usb/gspca
+

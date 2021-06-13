@@ -1,3 +1,4 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:969f0baa67f3b081cbf8840aeb995aa22b58a108fa51651b0c84607ce24c0ba8
-size 108
+#ifndef __ASM_XTENSA_PERF_EVENT_H
+#define __ASM_XTENSA_PERF_EVENT_H
+
+#endif /* __ASM_XTENSA_PERF_EVENT_H */

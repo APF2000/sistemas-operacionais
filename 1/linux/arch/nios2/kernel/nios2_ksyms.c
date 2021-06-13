@@ -1,3 +1,33 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f4e8110a27b19fee5ad8600894b027c7880a48d75a383e0dd8b0d6f6dba51b27
-size 879
+/*
+ * Copyright (C) 2004 Microtronix Datacom Ltd
+ *
+ * This file is subject to the terms and conditions of the GNU General
+ * Public License. See the file COPYING in the main directory of this
+ * archive for more details.
+ */
+
+#include <linux/export.h>
+#include <linux/string.h>
+
+/* string functions */
+
+EXPORT_SYMBOL(memcpy);
+EXPORT_SYMBOL(memset);
+EXPORT_SYMBOL(memmove);
+
+/*
+ * libgcc functions - functions that are used internally by the
+ * compiler...  (prototypes are not correct though, but that
+ * doesn't really matter since they're not versioned).
+ */
+#define DECLARE_EXPORT(name)	extern void name(void); EXPORT_SYMBOL(name)
+
+DECLARE_EXPORT(__gcc_bcmp);
+DECLARE_EXPORT(__divsi3);
+DECLARE_EXPORT(__moddi3);
+DECLARE_EXPORT(__modsi3);
+DECLARE_EXPORT(__udivmoddi4);
+DECLARE_EXPORT(__udivsi3);
+DECLARE_EXPORT(__umoddi3);
+DECLARE_EXPORT(__umodsi3);
+DECLARE_EXPORT(__muldi3);

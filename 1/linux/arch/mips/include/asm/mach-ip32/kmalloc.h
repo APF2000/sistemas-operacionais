@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:0a30360fe1e2622a459ab33d689f4a899cbd1e7f3052f536a06ce56ca5d9cc38
-size 242
+#ifndef __ASM_MACH_IP32_KMALLOC_H
+#define __ASM_MACH_IP32_KMALLOC_H
+
+
+#if defined(CONFIG_CPU_R5000) || defined(CONFIG_CPU_RM7000)
+#define ARCH_DMA_MINALIGN	32
+#else
+#define ARCH_DMA_MINALIGN	128
+#endif
+
+#endif /* __ASM_MACH_IP32_KMALLOC_H */

@@ -1,3 +1,24 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c09bfc2f4826022d4cd8cd6d2857851ef5900571c4c507ebd1930a4721b7b60d
-size 335
+menu "Kernel hacking"
+
+config TRACE_IRQFLAGS_SUPPORT
+	bool
+	default y
+
+source "lib/Kconfig.debug"
+
+config DEBUG_DCFLUSH
+	bool "D-cache flush debugging"
+	depends on SPARC64 && DEBUG_KERNEL
+
+config MCOUNT
+	bool
+	depends on SPARC64
+	depends on FUNCTION_TRACER
+	default y
+
+config FRAME_POINTER
+	bool
+	depends on MCOUNT
+	default y
+
+endmenu

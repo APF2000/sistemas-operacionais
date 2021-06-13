@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1bb740b82b28e0e67f2a4563998bbc9579de8074cc6df7cdeebeba977c0cfe0b
-size 265
+#
+# Makefile for the linux kernel.
+#
+
+# Object file lists.
+
+obj-y					:= core.o lm.o
+obj-$(CONFIG_ARCH_INTEGRATOR_AP)	+= integrator_ap.o
+obj-$(CONFIG_ARCH_INTEGRATOR_CP)	+= integrator_cp.o
+
+obj-$(CONFIG_PCI)			+= pci_v3.o
+obj-$(CONFIG_INTEGRATOR_IMPD1)		+= impd1.o

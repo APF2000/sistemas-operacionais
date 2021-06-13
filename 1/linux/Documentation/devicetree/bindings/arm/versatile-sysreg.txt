@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:525ec456f79ce178201116ebff275da6940ee06c75ab8c984027fa23e7bb9a8a
-size 414
+ARM Versatile system registers
+--------------------------------------
+
+This is a system control registers block, providing multiple low level
+platform functions like board detection and identification, software
+interrupt generation, MMC and NOR Flash control etc.
+
+Required node properties:
+- compatible value : = "arm,versatile-sysreg", "syscon"
+- reg : physical base address and the size of the registers window

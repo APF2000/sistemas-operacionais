@@ -1,3 +1,3 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c057f41f8fbf524ed5b297296aa4d17cc9b5e42381ba733eb6ec5843e14a5fb5
-size 134
+snd-hda-ext-core-objs := hdac_ext_bus.o hdac_ext_controller.o hdac_ext_stream.o
+
+obj-$(CONFIG_SND_HDA_EXT_CORE) += snd-hda-ext-core.o

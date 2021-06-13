@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:cb08d59b2e572118a4a59f4d402cce23d17ddc5c3fcf870af302bf144dca0de6
-size 259
+sfc-y			+= efx.o nic.o farch.o siena.o ef10.o tx.o rx.o \
+			   selftest.o ethtool.o ptp.o tx_tso.o \
+			   mcdi.o mcdi_port.o mcdi_mon.o
+sfc-$(CONFIG_SFC_MTD)	+= mtd.o
+sfc-$(CONFIG_SFC_SRIOV)	+= sriov.o siena_sriov.o ef10_sriov.o
+
+obj-$(CONFIG_SFC)	+= sfc.o

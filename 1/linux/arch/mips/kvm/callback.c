@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:6abe58e2eca0f84bfb692885f5cf709b2aee048fbdfa4a6d3712705dded0c946
-size 436
+/*
+ * This file is subject to the terms and conditions of the GNU General Public
+ * License.  See the file "COPYING" in the main directory of this archive
+ * for more details.
+ *
+ * Copyright (C) 2012  MIPS Technologies, Inc.  All rights reserved.
+ * Authors: Yann Le Du <ledu@kymasys.com>
+ */
+
+#include <linux/export.h>
+#include <linux/kvm_host.h>
+
+struct kvm_mips_callbacks *kvm_mips_callbacks;
+EXPORT_SYMBOL_GPL(kvm_mips_callbacks);

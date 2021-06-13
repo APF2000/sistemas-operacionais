@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:7fc3ba8c463fb73fc0cc9370f10a06f3caaab26bfd1c2424c139bfcf9dc2621a
-size 177
+#
+# Makefile for the Linux/SuperH CPU-specific IRQ handlers.
+#
+obj-$(CONFIG_SUPERH32)			+= imask.o
+obj-$(CONFIG_CPU_SH5)			+= intc-sh5.o
+obj-$(CONFIG_CPU_HAS_IPR_IRQ)		+= ipr.o

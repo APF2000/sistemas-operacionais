@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:87d0d333756394c19179e6b000b2fd4aefc0821e7378390314f0f6ae381e89b4
-size 388
+/*
+ * Architecture specific mm hooks
+ */
+
+#ifndef _ASM_GENERIC_MM_ARCH_HOOKS_H
+#define _ASM_GENERIC_MM_ARCH_HOOKS_H
+
+/*
+ * This file should be included through arch/../include/asm/Kbuild for
+ * the architecture which doesn't need specific mm hooks.
+ *
+ * In that case, the generic hooks defined in include/linux/mm-arch-hooks.h
+ * are used.
+ */
+
+#endif /* _ASM_GENERIC_MM_ARCH_HOOKS_H */

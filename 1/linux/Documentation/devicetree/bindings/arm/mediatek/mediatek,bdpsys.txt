@@ -1,3 +1,22 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:6254ee1133d85122c4e3a541e4b38b9d971b422740b4fd5ad75c6ed0dbc6b98d
-size 572
+Mediatek bdpsys controller
+============================
+
+The Mediatek bdpsys controller provides various clocks to the system.
+
+Required Properties:
+
+- compatible: Should be:
+	- "mediatek,mt2701-bdpsys", "syscon"
+- #clock-cells: Must be 1
+
+The bdpsys controller uses the common clk binding from
+Documentation/devicetree/bindings/clock/clock-bindings.txt
+The available clocks are defined in dt-bindings/clock/mt*-clk.h.
+
+Example:
+
+bdpsys: clock-controller@1c000000 {
+	compatible = "mediatek,mt2701-bdpsys", "syscon";
+	reg = <0 0x1c000000 0 0x1000>;
+	#clock-cells = <1>;
+};

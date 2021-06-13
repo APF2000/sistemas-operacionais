@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:327b132c5387976460c99535839a288cd3cffcb3e040a166af40770c92c49dd7
-size 640
+TODO:
+	- enhance visornic to use channel_interrupt() hook instead of a
+	  kernel thread
+	- enhance visorhba to use channel_interrupt() hook instead of a
+	  kernel thread
+	- teach visorbus to handle virtual interrupts triggered by s-Par
+	  back-end, and call function driver's channel_interrupt() function
+	  when they occur
+	- enhance debugfs interfaces (e.g., per device, etc.)
+	- upgrade/remove deprecated workqueue operations
+	- move individual drivers into proper driver subsystems
+
+Patches to:
+	Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+	Ken Cox <jkc@redhat.com>
+	Unisys s-Par maintainer mailing list <sparmaintainer@unisys.com>

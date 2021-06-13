@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5ce3b5e5aeb0aa29224e5cccb07cebc19458d929aa67ad5ed90861528ca0568e
-size 157
+#ifndef _XT_REALM_H
+#define _XT_REALM_H
+
+#include <linux/types.h>
+
+struct xt_realm_info {
+	__u32 id;
+	__u32 mask;
+	__u8 invert;
+};
+
+#endif /* _XT_REALM_H */

@@ -1,3 +1,23 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:022fbb2ef7865bbb573bcc8bf977ec8b43ef4a0e3128e58ba9d8b35e7b1329a4
-size 356
+#
+# Common code for all Loongson based systems
+#
+
+obj-$(CONFIG_MACH_LOONGSON64) += common/
+
+#
+# Lemote Fuloong mini-PC (Loongson 2E-based)
+#
+
+obj-$(CONFIG_LEMOTE_FULOONG2E)	+= fuloong-2e/
+
+#
+# Lemote loongson2f family machines
+#
+
+obj-$(CONFIG_LEMOTE_MACH2F)  += lemote-2f/
+
+#
+# All Loongson-3 family machines
+#
+
+obj-$(CONFIG_CPU_LOONGSON3)  += loongson-3/

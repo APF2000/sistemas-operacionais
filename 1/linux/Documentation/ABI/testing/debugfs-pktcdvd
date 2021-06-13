@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b338f56b752ada2fa12bb583052cdc0550f64670cb30816e143f2f24450611e6
-size 448
+What:           /sys/kernel/debug/pktcdvd/pktcdvd[0-7]
+Date:           Oct. 2006
+KernelVersion:  2.6.20
+Contact:        Thomas Maier <balagi@justmail.de>
+Description:
+
+debugfs interface
+-----------------
+
+The pktcdvd module (packet writing driver) creates
+these files in debugfs:
+
+/sys/kernel/debug/pktcdvd/pktcdvd[0-7]/
+    info            (0444) Lots of driver statistics and infos.
+
+Example:
+-------
+
+cat /sys/kernel/debug/pktcdvd/pktcdvd0/info

@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4fbab4ad3d2bff2b3cdca99dd1af31ce78f4db456c2c60b6dcc1f72e6a34fdff
-size 405
+config ARCH_VERSATILE
+	bool "ARM Ltd. Versatile family"
+	depends on ARCH_MULTI_V5
+	select ARM_AMBA
+	select ARM_TIMER_SP804
+	select ARM_VIC
+	select CLKSRC_VERSATILE
+	select COMMON_CLK_VERSATILE
+	select CPU_ARM926T
+	select ICST
+	select MFD_SYSCON
+	select PLAT_VERSATILE
+	select POWER_RESET
+	select POWER_RESET_VERSATILE
+	select VERSATILE_FPGA_IRQ
+	help
+	  This enables support for ARM Ltd Versatile board.
+

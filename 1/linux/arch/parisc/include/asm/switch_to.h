@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:be4082179366b779b65d4e3d40ebf89dcf3e881548ffa3d7984727aef714793c
-size 293
+#ifndef __PARISC_SWITCH_TO_H
+#define __PARISC_SWITCH_TO_H
+
+struct task_struct;
+
+extern struct task_struct *_switch_to(struct task_struct *, struct task_struct *);
+
+#define switch_to(prev, next, last) do {			\
+	(last) = _switch_to(prev, next);			\
+} while(0)
+
+#endif /* __PARISC_SWITCH_TO_H */

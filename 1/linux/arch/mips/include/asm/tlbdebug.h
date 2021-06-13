@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:8ed46da8612972d96b88ade112cde886ea0997787dd4f92c25d79803a9506094
-size 403
+/*
+ * This file is subject to the terms and conditions of the GNU General Public
+ * License.  See the file "COPYING" in the main directory of this archive
+ * for more details.
+ *
+ * Copyright (C) 2002 by Ralf Baechle
+ */
+#ifndef __ASM_TLBDEBUG_H
+#define __ASM_TLBDEBUG_H
+
+/*
+ * TLB debugging functions:
+ */
+extern void dump_tlb_regs(void);
+extern void dump_tlb_all(void);
+
+#endif /* __ASM_TLBDEBUG_H */

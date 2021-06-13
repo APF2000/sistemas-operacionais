@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1aa3d209959ff059d3108a3edf31915b46fe3a338e6d8431cbec2ca1723ed8bc
-size 557
+* Possible remaining coding style fix.
+* Remove deadcode.
+* Separate client/server functionality. Functions only used by server can be
+  removed from client.
+* Clean up libcfs layer. Ideally we can remove include/linux/libcfs entirely.
+* Clean up CLIO layer. Lustre client readahead/writeback control needs to better
+  suit kernel providings.
+* Add documents in Documentation.
+* Other minor misc cleanups...
+
+Please send any patches to Greg Kroah-Hartman <greg@kroah.com>, Andreas Dilger
+<andreas.dilger@intel.com>, and Oleg Drokin <oleg.drokin@intel.com>.

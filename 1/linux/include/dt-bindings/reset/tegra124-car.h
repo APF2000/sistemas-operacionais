@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:10428d8a1025e55d76307e501c9e91def12b2e1ddc5ea0a11ea0f9e4c724722f
-size 321
+/*
+ * This header provides Tegra124-specific constants for binding
+ * nvidia,tegra124-car.
+ */
+
+#ifndef _DT_BINDINGS_RESET_TEGRA124_CAR_H
+#define _DT_BINDINGS_RESET_TEGRA124_CAR_H
+
+#define TEGRA124_RESET(x)		(6 * 32 + (x))
+#define TEGRA124_RST_DFLL_DVCO		TEGRA124_RESET(0)
+
+#endif	/* _DT_BINDINGS_RESET_TEGRA124_CAR_H */

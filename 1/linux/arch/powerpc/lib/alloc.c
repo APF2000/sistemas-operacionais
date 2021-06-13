@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:87a7ebe4cff6f8f3b701a941f652f2d999d8fd55c46bc0ae3bbea9e9b8f137c6
-size 336
+#include <linux/types.h>
+#include <linux/init.h>
+#include <linux/slab.h>
+#include <linux/bootmem.h>
+#include <linux/string.h>
+#include <asm/setup.h>
+
+
+void * __ref zalloc_maybe_bootmem(size_t size, gfp_t mask)
+{
+	void *p;
+
+	if (slab_is_available())
+		p = kzalloc(size, mask);
+	else {
+		p = memblock_virt_alloc(size, 0);
+	}
+	return p;
+}

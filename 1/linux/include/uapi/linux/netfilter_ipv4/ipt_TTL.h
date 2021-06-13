@@ -1,3 +1,23 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:739c2ea7211434fa528dae11d48149fe55fbeba61408360c3e1a858d3bbc1a2c
-size 312
+/* TTL modification module for IP tables
+ * (C) 2000 by Harald Welte <laforge@netfilter.org> */
+
+#ifndef _IPT_TTL_H
+#define _IPT_TTL_H
+
+#include <linux/types.h>
+
+enum {
+	IPT_TTL_SET = 0,
+	IPT_TTL_INC,
+	IPT_TTL_DEC
+};
+
+#define IPT_TTL_MAXMODE	IPT_TTL_DEC
+
+struct ipt_TTL_info {
+	__u8	mode;
+	__u8	ttl;
+};
+
+
+#endif

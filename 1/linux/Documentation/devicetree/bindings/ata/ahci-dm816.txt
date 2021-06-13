@@ -1,3 +1,21 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c1d6589d83b30f9f1f62f8590512800f8bf60ffc8c37073e68c810b7e70e52d8
-size 790
+Device tree binding for the TI DM816 AHCI SATA Controller
+---------------------------------------------------------
+
+Required properties:
+  - compatible: must be "ti,dm816-ahci"
+  - reg: physical base address and size of the register region used by
+         the controller (as defined by the AHCI 1.1 standard)
+  - interrupts: interrupt specifier (refer to the interrupt binding)
+  - clocks: list of phandle and clock specifier pairs (or only
+            phandles for clock providers with '0' defined for
+            #clock-cells); two clocks must be specified: the functional
+            clock and an external reference clock
+
+Example:
+
+	sata: sata@4a140000 {
+		compatible = "ti,dm816-ahci";
+		reg = <0x4a140000 0x10000>;
+		interrupts = <16>;
+		clocks = <&sysclk5_ck>, <&sata_refclk>;
+	};

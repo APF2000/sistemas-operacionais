@@ -1,3 +1,28 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:baa7a79217b805f84df39c17e4d4d958d63e4b2c58f373b0f71312e37aa2fc3a
-size 871
+/*
+ * vimc-sensor.h Virtual Media Controller Driver
+ *
+ * Copyright (C) 2015-2017 Helen Koike <helen.fornazier@gmail.com>
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ */
+
+#ifndef _VIMC_SENSOR_H_
+#define _VIMC_SENSOR_H_
+
+#include "vimc-core.h"
+
+struct vimc_ent_device *vimc_sen_create(struct v4l2_device *v4l2_dev,
+					const char *const name,
+					u16 num_pads,
+					const unsigned long *pads_flag);
+
+#endif

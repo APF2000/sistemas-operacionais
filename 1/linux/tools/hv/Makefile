@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:68217c18a9de5d270d9b2b0efe3d79be0f64af17722761ad4a068f7a619600e9
-size 345
+# Makefile for Hyper-V tools
+
+CC = $(CROSS_COMPILE)gcc
+WARNINGS = -Wall -Wextra
+CFLAGS = $(WARNINGS) -g $(shell getconf LFS_CFLAGS)
+
+CFLAGS += -D__EXPORTED_HEADERS__ -I../../include/uapi -I../../include
+
+all: hv_kvp_daemon hv_vss_daemon hv_fcopy_daemon
+%: %.c
+	$(CC) $(CFLAGS) -o $@ $^
+
+clean:
+	$(RM) hv_kvp_daemon hv_vss_daemon hv_fcopy_daemon

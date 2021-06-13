@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e6de8324723229b7e40bf658461424731af01faead15d8b1e466e43ff7844e2f
-size 261
+#
+# Makefile for PPS clients.
+#
+
+obj-$(CONFIG_PPS_CLIENT_KTIMER)	+= pps-ktimer.o
+obj-$(CONFIG_PPS_CLIENT_LDISC)	+= pps-ldisc.o
+obj-$(CONFIG_PPS_CLIENT_PARPORT) += pps_parport.o
+obj-$(CONFIG_PPS_CLIENT_GPIO)	+= pps-gpio.o
+
+ccflags-$(CONFIG_PPS_DEBUG) := -DDEBUG

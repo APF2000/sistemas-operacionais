@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2cc0ba8f58e1730f719bbef5cc10579be422afc6556df37e9cead40234a72051
-size 358
+#
+
+obj-y += linked_dtb.o
+
+# Ensure system.dtb exists
+$(obj)/linked_dtb.o: $(obj)/system.dtb
+
+# Generate system.dtb from $(DTB).dtb
+ifneq ($(DTB),system)
+$(obj)/system.dtb: $(obj)/$(DTB).dtb
+	$(call if_changed,cp)
+endif
+
+quiet_cmd_cp = CP      $< $@$2
+	cmd_cp = cat $< >$@$2 || (rm -f $@ && echo false)
+
+# Rule to build device tree blobs
+DTC_FLAGS := -p 1024

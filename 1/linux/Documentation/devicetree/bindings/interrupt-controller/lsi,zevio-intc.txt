@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:754b845222696ce6a34a4d198321e154b67c86e451d124b9bf3b730eccb104f6
-size 424
+TI-NSPIRE interrupt controller
+
+Required properties:
+- compatible: Compatible property value should be "lsi,zevio-intc".
+
+- reg: Physical base address of the controller and length of memory mapped
+	region.
+
+- interrupt-controller : Identifies the node as an interrupt controller
+
+Example:
+
+interrupt-controller {
+	compatible = "lsi,zevio-intc";
+	interrupt-controller;
+	reg = <0xDC000000 0x1000>;
+	#interrupt-cells = <1>;
+};

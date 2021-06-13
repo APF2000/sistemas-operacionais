@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:645e6953849705fd0efeb050adc05f65ad75eff1dc146073ee92f36b6e92dba4
-size 168
+config MT7601U
+	tristate "MediaTek MT7601U (USB) support"
+	depends on MAC80211
+	depends on USB
+	---help---
+	  This adds support for MT7601U-based wireless USB dongles.

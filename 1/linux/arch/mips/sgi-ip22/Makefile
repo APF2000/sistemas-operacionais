@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2814b471b0c01b9010be1bad60485644d266cf0ccb2583b8fbbcdaf509c332d1
-size 314
+#
+# Makefile for the SGI specific kernel interface routines
+# under Linux.
+#
+
+obj-y	+= ip22-mc.o ip22-hpc.o ip22-int.o ip22-time.o ip22-nvram.o \
+	   ip22-platform.o ip22-reset.o ip22-setup.o ip22-gio.o
+
+obj-$(CONFIG_SGI_IP22) += ip22-berr.o
+obj-$(CONFIG_SGI_IP28) += ip28-berr.o
+obj-$(CONFIG_EISA)	+= ip22-eisa.o

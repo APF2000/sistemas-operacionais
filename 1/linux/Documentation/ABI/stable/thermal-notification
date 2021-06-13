@@ -1,3 +1,4 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:0bbe5c8b75f090dd7d2cc9fc29c4dc7772993b863a48ad74ce3471fff43371f7
-size 190
+What:		A notification mechanism for thermal related events
+Description:
+	This interface enables notification for thermal related events.
+	The notification is in the form of a netlink event.

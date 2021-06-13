@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:0d86ce0cd9995bea8eb56e7af30328c7e5960dda7a44a2edbf6f4d06c5c88abc
-size 180
+#ifndef _ASM_ARCH_CACHE_H
+#define _ASM_ARCH_CACHE_H
+
+/* Etrax 100LX have 32-byte cache-lines. */
+#define L1_CACHE_BYTES 32
+#define L1_CACHE_SHIFT 5
+
+#endif /* _ASM_ARCH_CACHE_H */

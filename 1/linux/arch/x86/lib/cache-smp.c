@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:deb069044d8cee039e6395319c328f53087970a963dade23c22b66f74ee29c50
-size 322
+#include <linux/smp.h>
+#include <linux/export.h>
+
+static void __wbinvd(void *dummy)
+{
+	wbinvd();
+}
+
+void wbinvd_on_cpu(int cpu)
+{
+	smp_call_function_single(cpu, __wbinvd, NULL, 1);
+}
+EXPORT_SYMBOL(wbinvd_on_cpu);
+
+int wbinvd_on_all_cpus(void)
+{
+	return on_each_cpu(__wbinvd, NULL, 1);
+}
+EXPORT_SYMBOL(wbinvd_on_all_cpus);

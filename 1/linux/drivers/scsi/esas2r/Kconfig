@@ -1,3 +1,5 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b35477cb63bef232b44ae7dfd627ad9cdef27d5a615c01d6116641bc51d8be41
-size 192
+config SCSI_ESAS2R
+	tristate "ATTO Technology's ExpressSAS RAID adapter driver"
+	depends on PCI && SCSI
+	---help---
+	  This driver supports the ATTO ExpressSAS R6xx SAS/SATA RAID controllers.

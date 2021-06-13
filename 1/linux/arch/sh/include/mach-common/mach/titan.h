@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d244373a67908fa8962fde3261b93fac265a00b5e64c700a7b125046d906fa10
-size 490
+/*
+ * Platform definitions for Titan
+ */
+#ifndef _ASM_SH_TITAN_H
+#define _ASM_SH_TITAN_H
+
+#include <linux/sh_intc.h>
+
+#define __IO_PREFIX titan
+#include <asm/io_generic.h>
+
+/* IRQ assignments */
+#define TITAN_IRQ_WAN		evt2irq(0x240)	/* eth0 (WAN) */
+#define TITAN_IRQ_LAN		evt2irq(0x2a0)	/* eth1 (LAN) */
+#define TITAN_IRQ_MPCIA		evt2irq(0x300)	/* mPCI A */
+#define TITAN_IRQ_MPCIB		evt2irq(0x360)	/* mPCI B */
+#define TITAN_IRQ_USB		evt2irq(0x360)	/* USB */
+
+#endif /* __ASM_SH_TITAN_H */

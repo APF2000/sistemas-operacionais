@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f669504096a34328c9c9cea4291731d9f1fce99cd0947e47d766912553f80a23
-size 458
+#
+# QLogic BR-series network device configuration
+#
+
+config BNA
+	tristate "QLogic BR-series 1010/1020/1860 10Gb Ethernet Driver support"
+	depends on PCI
+	---help---
+	  This driver supports QLogic BR-series 1010/1020/1860 10Gb CEE capable
+	  Ethernet cards.
+	  To compile this driver as a module, choose M here: the module
+	  will be called bna.
+
+	  For general information and support, go to the QLogic support
+	  website at:
+
+	  <http://support.qlogic.com>

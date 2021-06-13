@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:42fb51201da3b2556f5c49674e0a146fe1f1d5b80463668241ed4daffa69f7a4
-size 377
+/*
+ * linux/lib/zlib_deflate/deflate_syms.c
+ *
+ * Exported symbols for the deflate functionality.
+ *
+ */
+
+#include <linux/module.h>
+#include <linux/init.h>
+
+#include <linux/zlib.h>
+
+EXPORT_SYMBOL(zlib_deflate_workspacesize);
+EXPORT_SYMBOL(zlib_deflate);
+EXPORT_SYMBOL(zlib_deflateInit2);
+EXPORT_SYMBOL(zlib_deflateEnd);
+EXPORT_SYMBOL(zlib_deflateReset);
+MODULE_LICENSE("GPL");

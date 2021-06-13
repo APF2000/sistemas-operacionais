@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:27f429f95c52aad8e89d82f2855c26547e0097eadb95dc69d203d50445bec42d
-size 94
+#ifndef _ASM_CACHE_H
+#define _ASM_CACHE_H
+
+#include <arch/cache.h>
+
+#endif /* _ASM_CACHE_H */

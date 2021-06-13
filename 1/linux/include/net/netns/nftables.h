@@ -1,3 +1,21 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:62cf93ee2e8920c0fa0fc95dbd8ffe5af5e6e22cf87fb56877e46c7cd4604bb3
-size 401
+#ifndef _NETNS_NFTABLES_H_
+#define _NETNS_NFTABLES_H_
+
+#include <linux/list.h>
+
+struct nft_af_info;
+
+struct netns_nftables {
+	struct list_head	af_info;
+	struct list_head	commit_list;
+	struct nft_af_info	*ipv4;
+	struct nft_af_info	*ipv6;
+	struct nft_af_info	*inet;
+	struct nft_af_info	*arp;
+	struct nft_af_info	*bridge;
+	struct nft_af_info	*netdev;
+	unsigned int		base_seq;
+	u8			gencursor;
+};
+
+#endif

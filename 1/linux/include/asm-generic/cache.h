@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5b29853c03c7513b38942b3221e9581e825f1633165de8624394ad67e5908e15
-size 345
+#ifndef __ASM_GENERIC_CACHE_H
+#define __ASM_GENERIC_CACHE_H
+/*
+ * 32 bytes appears to be the most common cache line size,
+ * so make that the default here. Architectures with larger
+ * cache lines need to provide their own cache.h.
+ */
+
+#define L1_CACHE_SHIFT		5
+#define L1_CACHE_BYTES		(1 << L1_CACHE_SHIFT)
+
+#endif /* __ASM_GENERIC_CACHE_H */

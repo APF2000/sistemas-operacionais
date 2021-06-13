@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:9a98b8fe5993679395bee998b49ba7d019e22c765c79ddd0fe8717c71b3ee8cc
-size 351
+#
+# Siano Mobile Silicon Digital TV device configuration
+#
+
+config SMS_SDIO_DRV
+	tristate "Siano SMS1xxx based MDTV via SDIO interface"
+	depends on DVB_CORE && HAS_DMA
+	depends on MMC
+	depends on !RC_CORE || RC_CORE
+	select MEDIA_COMMON_OPTIONS
+	select SMS_SIANO_MDTV
+	---help---
+	  Choose if you would like to have Siano's support for SDIO interface

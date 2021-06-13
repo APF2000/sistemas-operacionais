@@ -1,3 +1,27 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:03634cf70a7b873813dd51fe351550bc476ad3b1c3433681c6a21afae3100b0c
-size 612
+AK4613 I2C transmitter
+
+This device supports I2C mode only.
+
+Required properties:
+
+- compatible : "asahi-kasei,ak4613"
+- reg : The chip select number on the I2C bus
+
+Optional properties:
+- asahi-kasei,in1-single-end	: Boolean. Indicate input / output pins are single-ended.
+- asahi-kasei,in2-single-end	  rather than differential.
+- asahi-kasei,out1-single-end
+- asahi-kasei,out2-single-end
+- asahi-kasei,out3-single-end
+- asahi-kasei,out4-single-end
+- asahi-kasei,out5-single-end
+- asahi-kasei,out6-single-end
+
+Example:
+
+&i2c {
+	ak4613: ak4613@0x10 {
+		compatible = "asahi-kasei,ak4613";
+		reg = <0x10>;
+	};
+};

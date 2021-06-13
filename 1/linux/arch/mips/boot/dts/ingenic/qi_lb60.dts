@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:9e0da35ff63c88b81fcfbdfc81c452e23085d7db19223f5f11bf65297f920802
-size 207
+/dts-v1/;
+
+#include "jz4740.dtsi"
+
+/ {
+	compatible = "qi,lb60", "ingenic,jz4740";
+
+	chosen {
+		stdout-path = &uart0;
+	};
+};
+
+&ext {
+	clock-frequency = <12000000>;
+};
+
+&rtc_dev {
+	system-power-controller;
+};

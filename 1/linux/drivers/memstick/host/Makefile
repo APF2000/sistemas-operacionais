@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:db6435008e52a31a1f23debae536cc0f52234512e7b45fd6f983df6bb95faa85
-size 294
+#
+# Makefile for MemoryStick host controller drivers
+#
+
+obj-$(CONFIG_MEMSTICK_TIFM_MS)		+= tifm_ms.o
+obj-$(CONFIG_MEMSTICK_JMICRON_38X)	+= jmb38x_ms.o
+obj-$(CONFIG_MEMSTICK_R592)		+= r592.o
+obj-$(CONFIG_MEMSTICK_REALTEK_PCI)	+= rtsx_pci_ms.o
+obj-$(CONFIG_MEMSTICK_REALTEK_USB)	+= rtsx_usb_ms.o

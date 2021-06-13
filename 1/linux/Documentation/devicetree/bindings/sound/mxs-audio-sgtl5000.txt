@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:cf140a1cda800cf554b0a0065e332444958e3354837a76017423c37ad607b2bd
-size 474
+* Freescale MXS audio complex with SGTL5000 codec
+
+Required properties:
+- compatible: "fsl,mxs-audio-sgtl5000"
+- model: The user-visible name of this sound complex
+- saif-controllers: The phandle list of the MXS SAIF controller
+- audio-codec: The phandle of the SGTL5000 audio codec
+
+Example:
+
+sound {
+	compatible = "fsl,imx28-evk-sgtl5000",
+		     "fsl,mxs-audio-sgtl5000";
+	model = "imx28-evk-sgtl5000";
+	saif-controllers = <&saif0 &saif1>;
+	audio-codec = <&sgtl5000>;
+};

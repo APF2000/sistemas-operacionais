@@ -1,3 +1,24 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:622a3482c8c4f662ae998c774ca4f0e9a9762bfde87cde9b1efc7e3324bb3e9d
-size 597
+#ifndef _CRYPTO_CAST6_H
+#define _CRYPTO_CAST6_H
+
+#include <linux/types.h>
+#include <linux/crypto.h>
+#include <crypto/cast_common.h>
+
+#define CAST6_BLOCK_SIZE 16
+#define CAST6_MIN_KEY_SIZE 16
+#define CAST6_MAX_KEY_SIZE 32
+
+struct cast6_ctx {
+	u32 Km[12][4];
+	u8 Kr[12][4];
+};
+
+int __cast6_setkey(struct cast6_ctx *ctx, const u8 *key,
+		   unsigned int keylen, u32 *flags);
+int cast6_setkey(struct crypto_tfm *tfm, const u8 *key, unsigned int keylen);
+
+void __cast6_encrypt(struct cast6_ctx *ctx, u8 *dst, const u8 *src);
+void __cast6_decrypt(struct cast6_ctx *ctx, u8 *dst, const u8 *src);
+
+#endif

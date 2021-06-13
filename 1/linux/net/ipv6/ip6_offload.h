@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:160f07433a008d993b5b0bc1034b098c9ada1841597075079fca6d58225850be
-size 524
+/*
+ *	IPV6 GSO/GRO offload support
+ *	Linux INET6 implementation
+ *
+ *	This program is free software; you can redistribute it and/or
+ *      modify it under the terms of the GNU General Public License
+ *      as published by the Free Software Foundation; either version
+ *      2 of the License, or (at your option) any later version.
+ */
+
+#ifndef __ip6_offload_h
+#define __ip6_offload_h
+
+int ipv6_exthdrs_offload_init(void);
+int udpv6_offload_init(void);
+int udpv6_offload_exit(void);
+int tcpv6_offload_init(void);
+
+#endif

@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b426ee29cca40b501bc3b5dec4719127ef3acb892edb5eb4f130af7eed9e272a
-size 371
+obj-$(CONFIG_PINCTRL_TEGRA)		+= pinctrl-tegra.o
+obj-$(CONFIG_PINCTRL_TEGRA20)		+= pinctrl-tegra20.o
+obj-$(CONFIG_PINCTRL_TEGRA30)		+= pinctrl-tegra30.o
+obj-$(CONFIG_PINCTRL_TEGRA114)		+= pinctrl-tegra114.o
+obj-$(CONFIG_PINCTRL_TEGRA124)		+= pinctrl-tegra124.o
+obj-$(CONFIG_PINCTRL_TEGRA210)		+= pinctrl-tegra210.o
+obj-$(CONFIG_PINCTRL_TEGRA_XUSB)	+= pinctrl-tegra-xusb.o

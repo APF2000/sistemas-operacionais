@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:14041420a8e2aab15905fb2fd6e0de9fc4999e1d8e7d2ff43d6a819c117f1e59
-size 164
+CFLAGS_gtk += -fPIC $(GTK_CFLAGS)
+
+gtk-y += browser.o
+gtk-y += hists.o
+gtk-y += setup.o
+gtk-y += util.o
+gtk-y += helpline.o
+gtk-y += progress.o
+gtk-y += annotate.o

@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:838c224377a2aedfada43ce0ff1ba720f89d82bc28000c3994a56777e7f39a99
-size 254
+#
+# drivers/char/pcmcia/Makefile
+#
+# Makefile for the Linux PCMCIA char device drivers.
+#
+
+obj-$(CONFIG_SYNCLINK_CS) += synclink_cs.o
+obj-$(CONFIG_CARDMAN_4000) += cm4000_cs.o
+obj-$(CONFIG_CARDMAN_4040) += cm4040_cs.o
+obj-$(CONFIG_SCR24X) += scr24x_cs.o

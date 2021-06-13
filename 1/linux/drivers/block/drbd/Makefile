@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:6a3b76f57db4bb554d397b9ae53ea12bd31c874a3dd857994693165616d9e3d4
-size 292
+drbd-y := drbd_bitmap.o drbd_proc.o
+drbd-y += drbd_worker.o drbd_receiver.o drbd_req.o drbd_actlog.o
+drbd-y += drbd_main.o drbd_strings.o drbd_nl.o
+drbd-y += drbd_interval.o drbd_state.o
+drbd-y += drbd_nla.o
+drbd-$(CONFIG_DEBUG_FS) += drbd_debugfs.o
+
+obj-$(CONFIG_BLK_DEV_DRBD)     += drbd.o

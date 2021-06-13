@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:3d77eff8e2e2ebeef30bcdb933f5411f7476fd9fa0fe5d51486d922a1bf0ab3b
-size 331
+obj-$(CONFIG_PM)	+= sysfs.o generic_ops.o common.o qos.o runtime.o wakeirq.o
+obj-$(CONFIG_PM_SLEEP)	+= main.o wakeup.o
+obj-$(CONFIG_PM_TRACE_RTC)	+= trace.o
+obj-$(CONFIG_PM_OPP)	+= opp/
+obj-$(CONFIG_PM_GENERIC_DOMAINS)	+=  domain.o domain_governor.o
+obj-$(CONFIG_HAVE_CLK)	+= clock_ops.o
+
+ccflags-$(CONFIG_DEBUG_DRIVER) := -DDEBUG

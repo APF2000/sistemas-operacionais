@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:83f0d945ad7785785073946f216114a35245f7f024f87a6edf2f6a5c99abfaec
-size 303
+/*
+ * bfin_oprofile.c - Blackfin oprofile code
+ *
+ * Copyright 2004-2008 Analog Devices Inc.
+ * Licensed under the GPL-2 or later.
+ */
+
+#include <linux/oprofile.h>
+#include <linux/init.h>
+
+int __init oprofile_arch_init(struct oprofile_operations *ops)
+{
+	return -1;
+}
+
+void oprofile_arch_exit(void)
+{
+}

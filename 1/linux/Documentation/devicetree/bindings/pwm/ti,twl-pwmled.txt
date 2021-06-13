@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1de78482f8965979831e40397a8d501ddb9e188dbdb7ee67d307a9449a8c299b
-size 490
+Texas Instruments TWL series PWM drivers connected to LED terminals
+
+Supported PWMs:
+On TWL4030 series: PWMA and PWMB (connected to LEDA and LEDB terminals)
+On TWL6030 series: LED PWM (mainly used as charging indicator LED)
+
+Required properties:
+- compatible: "ti,twl4030-pwmled" or "ti,twl6030-pwmled"
+- #pwm-cells: should be 2. See pwm.txt in this directory for a description of
+  the cells format.
+
+Example:
+
+twl_pwmled: pwmled {
+	compatible = "ti,twl6030-pwmled";
+	#pwm-cells = <2>;
+};

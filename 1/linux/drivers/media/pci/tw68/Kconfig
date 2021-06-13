@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:6c4a99693a8ca44331c9483b1981fe7ca3665f8652f5acab1e51014f864f11ad
-size 290
+config VIDEO_TW68
+	tristate "Techwell tw68x Video For Linux"
+	depends on VIDEO_DEV && PCI && VIDEO_V4L2
+	select VIDEOBUF2_DMA_SG
+	---help---
+	  Support for Techwell tw68xx based frame grabber boards.
+
+	  To compile this driver as a module, choose M here: the
+	  module will be called tw68.

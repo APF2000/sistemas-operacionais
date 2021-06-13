@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:468e29e64525fb894a9f888961c5ea302793e763eddaaff5792a7714957efd84
-size 110
+#ifndef _PARISC_SETUP_H
+#define _PARISC_SETUP_H
+
+#define COMMAND_LINE_SIZE	1024
+
+#endif /* _PARISC_SETUP_H */

@@ -1,3 +1,22 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4285d520548f846e910f6db013f54fc605fce10ca0168aa04f3090842ff6a361
-size 571
+/*
+ * Copyright 2013 Christian Hemp, Phytec Messtechnik GmbH
+ *
+ * The code contained herein is licensed under the GNU General Public
+ * License. You may obtain a copy of the GNU General Public License
+ * Version 2 or later at the following locations:
+ *
+ * http://www.opensource.org/licenses/gpl-license.html
+ * http://www.gnu.org/copyleft/gpl.html
+ */
+
+#include "imx6dl.dtsi"
+#include "imx6qdl-phytec-pfla02.dtsi"
+
+/ {
+	model = "Phytec phyFLEX-i.MX6 DualLite/Solo";
+	compatible = "phytec,imx6dl-pfla02", "fsl,imx6dl";
+
+	memory {
+		reg = <0x10000000 0x20000000>;
+	};
+};

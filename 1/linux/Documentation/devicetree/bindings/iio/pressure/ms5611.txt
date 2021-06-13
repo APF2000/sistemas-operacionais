@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1955c0f3c0fb5a48a7424444bda3df40a658395f5b790a750a14885fe54e98b5
-size 462
+MEAS ms5611 family pressure sensors
+
+Pressure sensors from MEAS Switzerland with SPI and I2C bus interfaces.
+
+Required properties:
+- compatible: "meas,ms5611" or "meas,ms5607"
+- reg: the I2C address or SPI chip select the device will respond to
+
+Optional properties:
+- vdd-supply: an optional regulator that needs to be on to provide VDD
+  power to the sensor.
+
+Example:
+
+ms5607@77 {
+	compatible = "meas,ms5607";
+	reg = <0x77>;
+	vdd-supply = <&ldo_3v3_gnss>;
+};

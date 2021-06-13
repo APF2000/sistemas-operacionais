@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5b82fb62e30c06f6be8c4600309709556c31e0328dad4609a37f9ea02831777a
-size 460
+#ifndef __API_FS_TRACING_PATH_H
+#define __API_FS_TRACING_PATH_H
+
+#include <linux/types.h>
+
+extern char tracing_path[];
+extern char tracing_events_path[];
+
+void tracing_path_set(const char *mountpoint);
+const char *tracing_path_mount(void);
+
+char *get_tracing_file(const char *name);
+void put_tracing_file(char *file);
+
+int tracing_path__strerror_open_tp(int err, char *buf, size_t size, const char *sys, const char *name);
+#endif /* __API_FS_TRACING_PATH_H */

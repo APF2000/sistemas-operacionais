@@ -1,3 +1,27 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:bcfc08b668cb9e756dbe07d8a9b75410346d79b77861b6174d0f6c8a32b4b504
-size 770
+/*
+ * Copyright (C) 2014 Broadcom Corporation
+ *
+ * This program is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License as
+ * published by the Free Software Foundation version 2.
+ *
+ * This program is distributed "as is" WITHOUT ANY WARRANTY of any
+ * kind, whether express or implied; without even the implied warranty
+ * of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ */
+
+#include <linux/of_platform.h>
+
+#include <asm/mach/arch.h>
+
+static const char * const bcm63xx_dt_compat[] = {
+	"brcm,bcm63138",
+	NULL
+};
+
+DT_MACHINE_START(BCM63XXX_DT, "BCM63xx DSL SoC")
+	.dt_compat	= bcm63xx_dt_compat,
+	.l2c_aux_val	= 0,
+	.l2c_aux_mask	= ~0,
+MACHINE_END

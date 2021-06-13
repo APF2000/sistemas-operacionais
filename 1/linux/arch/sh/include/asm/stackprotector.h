@@ -1,3 +1,27 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:3acf968a5d93ec4a0f330a6f79fab94b67b51877e5d6524b09847896360a5ce0
-size 648
+#ifndef __ASM_SH_STACKPROTECTOR_H
+#define __ASM_SH_STACKPROTECTOR_H
+
+#include <linux/random.h>
+#include <linux/version.h>
+
+extern unsigned long __stack_chk_guard;
+
+/*
+ * Initialize the stackprotector canary value.
+ *
+ * NOTE: this must only be called from functions that never return,
+ * and it must always be inlined.
+ */
+static __always_inline void boot_init_stack_canary(void)
+{
+	unsigned long canary;
+
+	/* Try to get a semi random initial value. */
+	get_random_bytes(&canary, sizeof(canary));
+	canary ^= LINUX_VERSION_CODE;
+
+	current->stack_canary = canary;
+	__stack_chk_guard = current->stack_canary;
+}
+
+#endif /* __ASM_SH_STACKPROTECTOR_H */

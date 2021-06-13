@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:99cfdf2999f8ada5d5f87a210b3a5caf6f70e7cdf1d1cca4da534a7323e63972
-size 213
+* Maxim MCP795		SPI Serial Real-Time Clock
+
+Required properties:
+- compatible: Should contain "maxim,mcp795".
+- reg: SPI address for chip
+
+Example:
+	mcp795: rtc@0 {
+		compatible = "maxim,mcp795";
+		reg = <0>;
+	};

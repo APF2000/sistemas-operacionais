@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:87ff9da45ff5075b928594495401e4577b6036b679727c7f739b890103814a22
-size 251
+#
+# Allwinner sunXi SoC drivers
+#
+config SUNXI_SRAM
+	bool
+	default ARCH_SUNXI
+	help
+	  Say y here to enable the SRAM controller support. This
+	  device is responsible on mapping the SRAM in the sunXi SoCs
+	  whether to the CPU/DMA, or to the devices.

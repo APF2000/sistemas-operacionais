@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:241891017e086d29677c7ed34d720f2d2d1d9da1bda11ee44881ba37e9349a8d
-size 232
+#
+# Makefile for the Linux IrDA IrLAN protocol layer.
+#
+
+obj-$(CONFIG_IRLAN) += irlan.o
+
+irlan-y := irlan_common.o irlan_eth.o irlan_event.o irlan_client.o irlan_provider.o irlan_filter.o irlan_provider_event.o irlan_client_event.o

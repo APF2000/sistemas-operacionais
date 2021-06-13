@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:26cb5ea9ea7f89a1eb45bd2fbfd60005b95c7073c5d76e78c9a88e83452f709c
-size 340
+What:		/config/usb-gadget/gadget/functions/uac2.name
+Date:		Sep 2014
+KernelVersion:	3.18
+Description:
+		The attributes:
+
+		c_chmask - capture channel mask
+		c_srate - capture sampling rate
+		c_ssize - capture sample size (bytes)
+		p_chmask - playback channel mask
+		p_srate - playback sampling rate
+		p_ssize - playback sample size (bytes)

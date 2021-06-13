@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:3f9ed85b9f3fa9e54bfc1cbb27fcd503c6b0fc9277b2b42d7fecd8d9e0847b23
-size 612
+config WLAN_VENDOR_BROADCOM
+	bool "Broadcom devices"
+	default y
+	---help---
+	  If you have a wireless card belonging to this class, say Y.
+
+	  Note that the answer to this question doesn't directly affect the
+	  kernel: saying N will just cause the configurator to skip all
+	  the questions about  cards. If you say Y, you will be asked for
+	  your specific card in the following questions.
+
+if WLAN_VENDOR_BROADCOM
+
+source "drivers/net/wireless/broadcom/b43/Kconfig"
+source "drivers/net/wireless/broadcom/b43legacy/Kconfig"
+source "drivers/net/wireless/broadcom/brcm80211/Kconfig"
+
+endif # WLAN_VENDOR_BROADCOM

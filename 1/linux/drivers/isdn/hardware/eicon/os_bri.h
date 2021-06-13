@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c59739d019b34194795b05645a25ec0a67731c88a1acda6a15b2dd598b73a06b
-size 186
+/* $Id: os_bri.h,v 1.1.2.2 2001/02/08 12:25:44 armin Exp $ */
+
+#ifndef __DIVA_OS_BRI_REV_1_H__
+#define __DIVA_OS_BRI_REV_1_H__
+
+int diva_bri_init_card(diva_os_xdi_adapter_t *a);
+
+#endif

@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1e91d21fb8c9e41cf9f2cfdc5e18d0be444c0d9924be220c5be676b18dee1c20
-size 162
+cec-objs := cec-core.o cec-adap.o cec-api.o cec-edid.o
+
+ifeq ($(CONFIG_MEDIA_CEC_NOTIFIER),y)
+  cec-objs += cec-notifier.o
+endif
+
+obj-$(CONFIG_CEC_CORE) += cec.o

@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:55893bfd8b6dcf437004c6015feeeb63b42fa8652f42bcbe4a7b394498eff8eb
-size 248
+#ifndef _DRM_SYSFS_H_
+#define _DRM_SYSFS_H_
+
+struct drm_device;
+struct device;
+
+int drm_class_device_register(struct device *dev);
+void drm_class_device_unregister(struct device *dev);
+
+void drm_sysfs_hotplug_event(struct drm_device *dev);
+
+#endif

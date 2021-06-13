@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:263b5c924b0493f91919928eea623a974745e6a34e6bcda4a17dacf3a2cef403
-size 410
+#
+# Makefile for triggers not associated with iio-devices
+#
+
+# When adding new entries keep the list in alphabetical order
+
+obj-$(CONFIG_IIO_HRTIMER_TRIGGER) += iio-trig-hrtimer.o
+obj-$(CONFIG_IIO_INTERRUPT_TRIGGER) += iio-trig-interrupt.o
+obj-$(CONFIG_IIO_STM32_TIMER_TRIGGER) += stm32-timer-trigger.o
+obj-$(CONFIG_IIO_SYSFS_TRIGGER) += iio-trig-sysfs.o
+obj-$(CONFIG_IIO_TIGHTLOOP_TRIGGER) += iio-trig-loop.o

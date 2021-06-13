@@ -1,3 +1,5 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:28d82eeaad8f0e889a7a8123287b111937507457d90615cc404e03f9aa6492a9
-size 98
+#
+# Makefile for the Intel XScale IXP device drivers.
+#
+
+obj-$(CONFIG_IXP4XX_ETH) += ixp4xx_eth.o

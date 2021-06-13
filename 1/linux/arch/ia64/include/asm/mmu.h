@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2186b30d0bbff96d6266b26d50fd9b1f753d9f29802d7b2e7a6144fda6c2d8e2
-size 335
+#ifndef __MMU_H
+#define __MMU_H
+
+/*
+ * Type for a context number.  We declare it volatile to ensure proper
+ * ordering when it's accessed outside of spinlock'd critical sections
+ * (e.g., as done in activate_mm() and init_new_context()).
+ */
+typedef volatile unsigned long mm_context_t;
+
+typedef unsigned long nv_mm_context_t;
+
+#endif

@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:8ed9593ea50bd706a9d4e8975e4986ade3a1b179bf38cbf5ae12bfabb41d8d2a
-size 264
+config DRM_HISI_HIBMC
+	tristate "DRM Support for Hisilicon Hibmc"
+	depends on DRM && PCI && MMU
+	select DRM_KMS_HELPER
+	select DRM_TTM
+
+	help
+	  Choose this option if you have a Hisilicon Hibmc soc chipset.
+	  If M is selected the module will be called hibmc-drm.

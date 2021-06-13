@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c1d115979e614a104bd776a4b5860738f73051f82435818b1bcae3966c50cb94
-size 209
+/*
+ * Copyright (C) 2005 Jeff Dike (jdike@karaya.com)
+ * Licensed under the GPL
+ */
+
+#ifndef __MM_ID_H
+#define __MM_ID_H
+
+struct mm_id {
+	union {
+		int mm_fd;
+		int pid;
+	} u;
+	unsigned long stack;
+};
+
+#endif

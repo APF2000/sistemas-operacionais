@@ -1,3 +1,20 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:cb628a59a420752ff3279a9751c656022221e468e1c0a9754305bda681ec0889
-size 474
+/*
+ * Copyright (C) 2006 Atmark Techno, Inc.
+ *
+ * This file is subject to the terms and conditions of the GNU General Public
+ * License. See the file "COPYING" in the main directory of this archive
+ * for more details.
+ */
+
+#ifndef _ASM_MICROBLAZE_SIGCONTEXT_H
+#define _ASM_MICROBLAZE_SIGCONTEXT_H
+
+/* FIXME should be linux/ptrace.h */
+#include <asm/ptrace.h>
+
+struct sigcontext {
+	struct pt_regs regs;
+	unsigned long oldmask;
+};
+
+#endif /* _ASM_MICROBLAZE_SIGCONTEXT_H */

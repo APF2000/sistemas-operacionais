@@ -1,3 +1,5 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:50c5aa98dfb44f4031748e13359f92b140eb59bd0bca3bd23291b41ac11b436f
-size 204
+obj-$(CONFIG_SERIO_NVEC_PS2)	+= nvec_ps2.o
+obj-$(CONFIG_MFD_NVEC)		+= nvec.o
+obj-$(CONFIG_NVEC_POWER) 	+= nvec_power.o
+obj-$(CONFIG_KEYBOARD_NVEC) 	+= nvec_kbd.o
+obj-$(CONFIG_NVEC_PAZ00) 	+= nvec_paz00.o

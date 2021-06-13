@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:cd67d0847996fd4a93ac56feb83dd82002730c59bd4bf1484e77b265a6870ce9
-size 321
+#
+# Makefile for the Linux Coda filesystem routines.
+#
+
+obj-$(CONFIG_CODA_FS) += coda.o
+
+coda-objs := psdev.o cache.o cnode.o inode.o dir.o file.o upcall.o \
+	     coda_linux.o symlink.o pioctl.o sysctl.o 
+
+# If you want debugging output, please uncomment the following line.
+
+# ccflags-y := -DDEBUG -DDEBUG_SMB_MALLOC=1

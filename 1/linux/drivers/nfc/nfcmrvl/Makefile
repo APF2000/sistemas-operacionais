@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:9a3b8832bb1a365468fd317dcadd78a63e2ff4edb879847a554a4d373e203a2a
-size 391
+#
+# Makefile for NFCMRVL NCI based NFC driver
+#
+
+nfcmrvl-y += main.o fw_dnld.o
+obj-$(CONFIG_NFC_MRVL) += nfcmrvl.o
+
+nfcmrvl_usb-y += usb.o
+obj-$(CONFIG_NFC_MRVL_USB) += nfcmrvl_usb.o
+
+nfcmrvl_uart-y += uart.o
+obj-$(CONFIG_NFC_MRVL_UART) += nfcmrvl_uart.o
+
+nfcmrvl_i2c-y += i2c.o
+obj-$(CONFIG_NFC_MRVL_I2C) += nfcmrvl_i2c.o
+
+nfcmrvl_spi-y += spi.o
+obj-$(CONFIG_NFC_MRVL_SPI) += nfcmrvl_spi.o

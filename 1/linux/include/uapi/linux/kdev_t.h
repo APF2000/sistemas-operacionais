@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2ed514266e8f73d350623a26a52e04788872d5f686cc3e01d7796df8030e7337
-size 378
+#ifndef _UAPI_LINUX_KDEV_T_H
+#define _UAPI_LINUX_KDEV_T_H
+#ifndef __KERNEL__
+
+/*
+Some programs want their definitions of MAJOR and MINOR and MKDEV
+from the kernel sources. These must be the externally visible ones.
+*/
+#define MAJOR(dev)	((dev)>>8)
+#define MINOR(dev)	((dev) & 0xff)
+#define MKDEV(ma,mi)	((ma)<<8 | (mi))
+#endif /* __KERNEL__ */
+#endif /* _UAPI_LINUX_KDEV_T_H */

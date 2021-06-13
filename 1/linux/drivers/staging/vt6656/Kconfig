@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:150eeb4d641a40469f3f7ca131d43a254233aa5d5d256d8ff871f191e4ec55ac
-size 179
+config VT6656
+	tristate "VIA Technologies VT6656 support"
+	depends on MAC80211 && USB && WLAN && m
+	select FW_LOADER
+	---help---
+	This is a vendor-written driver for VIA VT6656.
+

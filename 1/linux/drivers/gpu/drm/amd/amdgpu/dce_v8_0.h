@@ -1,3 +1,35 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:50a35bcfb49d18b3b207b640a3e457a2839cb2759f9a062f691828beed49c69d
-size 1564
+/*
+ * Copyright 2014 Advanced Micro Devices, Inc.
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a
+ * copy of this software and associated documentation files (the "Software"),
+ * to deal in the Software without restriction, including without limitation
+ * the rights to use, copy, modify, merge, publish, distribute, sublicense,
+ * and/or sell copies of the Software, and to permit persons to whom the
+ * Software is furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL
+ * THE COPYRIGHT HOLDER(S) OR AUTHOR(S) BE LIABLE FOR ANY CLAIM, DAMAGES OR
+ * OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
+ * ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+ * OTHER DEALINGS IN THE SOFTWARE.
+ *
+ */
+
+#ifndef __DCE_V8_0_H__
+#define __DCE_V8_0_H__
+
+extern const struct amdgpu_ip_block_version dce_v8_0_ip_block;
+extern const struct amdgpu_ip_block_version dce_v8_1_ip_block;
+extern const struct amdgpu_ip_block_version dce_v8_2_ip_block;
+extern const struct amdgpu_ip_block_version dce_v8_3_ip_block;
+extern const struct amdgpu_ip_block_version dce_v8_5_ip_block;
+
+void dce_v8_0_disable_dce(struct amdgpu_device *adev);
+
+#endif

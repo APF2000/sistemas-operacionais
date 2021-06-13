@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ac6cfc9c8141c7021dd7dde194582d7ed3ebced547b5846f2873fa2cb8ef0ddb
-size 273
+What:		/config/usb-gadget/gadget/functions/obex.name
+Date:		Jun 2013
+KernelVersion:	3.11
+Description:
+
+		This item contains just one readonly attribute: port_num.
+		It contains the port number of the /dev/ttyGS<n> device
+		associated with obex function's instance "name".
+

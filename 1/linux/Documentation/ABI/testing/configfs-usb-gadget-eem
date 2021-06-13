@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:9202c944a142751c6f37ae71254e94689004edcdca7809f4f0eef565dd097bf0
-size 420
+What:		/config/usb-gadget/gadget/functions/eem.name
+Date:		Jun 2013
+KernelVersion:	3.11
+Description:
+		The attributes:
+
+		ifname		- network device interface name associated with
+				this function instance
+		qmult		- queue length multiplier for high and
+				super speed
+		host_addr	- MAC address of host's end of this
+				Ethernet over USB link
+		dev_addr	- MAC address of device's end of this
+				Ethernet over USB link

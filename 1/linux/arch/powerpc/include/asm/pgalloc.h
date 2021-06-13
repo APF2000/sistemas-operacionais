@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5bbd1c2dd8dfb7f72cf98f3806d8c334397461f0cb282911c2bb3d13f2ee9ccf
-size 225
+#ifndef _ASM_POWERPC_PGALLOC_H
+#define _ASM_POWERPC_PGALLOC_H
+
+#include <linux/mm.h>
+
+#ifdef CONFIG_PPC_BOOK3S
+#include <asm/book3s/pgalloc.h>
+#else
+#include <asm/nohash/pgalloc.h>
+#endif
+
+#endif /* _ASM_POWERPC_PGALLOC_H */

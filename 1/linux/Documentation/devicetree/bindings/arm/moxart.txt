@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:28efd95d9936888b28fb57a6c2b955bc14a7fd33f442455fe5c5bcfaba4b238e
-size 253
+MOXA ART device tree bindings
+
+Boards with the MOXA ART SoC shall have the following properties:
+
+Required root node property:
+
+compatible = "moxa,moxart";
+
+Boards:
+
+- UC-7112-LX: embedded computer
+  compatible = "moxa,moxart-uc-7112-lx", "moxa,moxart"

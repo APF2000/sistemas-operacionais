@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d631e147a7e418d62f064d5afda0ba1610c8c269b1c396ea1d6549fba115a3cb
-size 235
+#
+# Makefile - Intel MIC Linux driver.
+# Copyright(c) 2013, Intel Corporation.
+#
+ccflags-y += -DINTEL_MIC_CARD
+
+obj-$(CONFIG_INTEL_MIC_CARD) += mic_card.o
+mic_card-y += mic_x100.o
+mic_card-y += mic_device.o
+mic_card-y += mic_debugfs.o

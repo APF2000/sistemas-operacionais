@@ -1,3 +1,30 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:600f931c62d2bc1f020bff8b810b65449d79e5c37e0e9c0419a58dda9ca9fc94
-size 559
+/*
+ * Blackfin On-Chip MAC Driver
+ *
+ * Copyright 2004-2010 Analog Devices Inc.
+ *
+ * Enter bugs at http://blackfin.uclinux.org/
+ *
+ * Licensed under the GPL-2 or later.
+ */
+
+#ifndef _LINUX_BFIN_MAC_H_
+#define _LINUX_BFIN_MAC_H_
+
+#include <linux/phy.h>
+
+struct bfin_phydev_platform_data {
+	unsigned short addr;
+	int irq;
+};
+
+struct bfin_mii_bus_platform_data {
+	int phydev_number;
+	struct bfin_phydev_platform_data *phydev_data;
+	const unsigned short *mac_peripherals;
+	int phy_mode;
+	unsigned int phy_mask;
+	unsigned short vlan1_mask, vlan2_mask;
+};
+
+#endif

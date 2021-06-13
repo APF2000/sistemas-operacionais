@@ -1,3 +1,28 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4e594444fdaa5e79519d3bcbb6609b0cf46bb3bdbe1b7e097d6ca018198db955
-size 637
+/*
+ * Greybus operations
+ *
+ * Copyright 2015-2016 Google Inc.
+ *
+ * Released under the GPLv2 only.
+ */
+
+#ifndef _GB_AUDIO_MANAGER_PRIVATE_H_
+#define _GB_AUDIO_MANAGER_PRIVATE_H_
+
+#include <linux/kobject.h>
+
+#include "audio_manager.h"
+
+int gb_audio_manager_module_create(
+	struct gb_audio_manager_module **module,
+	struct kset *manager_kset,
+	int id, struct gb_audio_manager_module_descriptor *desc);
+
+/* module destroyed via kobject_put */
+
+void gb_audio_manager_module_dump(struct gb_audio_manager_module *module);
+
+/* sysfs control */
+void gb_audio_manager_sysfs_init(struct kobject *kobj);
+
+#endif /* _GB_AUDIO_MANAGER_PRIVATE_H_ */

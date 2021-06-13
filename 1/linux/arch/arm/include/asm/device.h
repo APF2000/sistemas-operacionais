@@ -1,3 +1,39 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:8c8f97469ec5ac10d76f7ca90b2a7570e15cf8ca9556f6ca31c846bc56ebb018
-size 730
+/*
+ * Arch specific extensions to struct device
+ *
+ * This file is released under the GPLv2
+ */
+#ifndef ASMARM_DEVICE_H
+#define ASMARM_DEVICE_H
+
+struct dev_archdata {
+#ifdef CONFIG_DMABOUNCE
+	struct dmabounce_device_info *dmabounce;
+#endif
+#ifdef CONFIG_IOMMU_API
+	void *iommu; /* private IOMMU data */
+#endif
+#ifdef CONFIG_ARM_DMA_USE_IOMMU
+	struct dma_iommu_mapping	*mapping;
+#endif
+#ifdef CONFIG_XEN
+	const struct dma_map_ops *dev_dma_ops;
+#endif
+	bool dma_coherent;
+};
+
+struct omap_device;
+
+struct pdev_archdata {
+#ifdef CONFIG_ARCH_OMAP
+	struct omap_device *od;
+#endif
+};
+
+#ifdef CONFIG_ARM_DMA_USE_IOMMU
+#define to_dma_iommu_mapping(dev) ((dev)->archdata.mapping)
+#else
+#define to_dma_iommu_mapping(dev) NULL
+#endif
+
+#endif

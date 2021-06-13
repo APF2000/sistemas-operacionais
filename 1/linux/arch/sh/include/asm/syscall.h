@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:9f6175a7e536adf4dc819798417619dd614c2b678df81080255032344ff7a47d
-size 228
+#ifndef __ASM_SH_SYSCALL_H
+#define __ASM_SH_SYSCALL_H
+
+extern const unsigned long sys_call_table[];
+
+#ifdef CONFIG_SUPERH32
+# include <asm/syscall_32.h>
+#else
+# include <asm/syscall_64.h>
+#endif
+
+#endif /* __ASM_SH_SYSCALL_H */

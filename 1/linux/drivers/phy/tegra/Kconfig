@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:93b810555bc7d38629ba941252fb8217086a94e28cf55fcdfdc8351c22ba71bf
-size 258
+config PHY_TEGRA_XUSB
+	tristate "NVIDIA Tegra XUSB pad controller driver"
+	depends on ARCH_TEGRA
+	help
+	  Choose this option if you have an NVIDIA Tegra SoC.
+
+	  To compile this driver as a module, choose M here: the module will
+	  be called phy-tegra-xusb.

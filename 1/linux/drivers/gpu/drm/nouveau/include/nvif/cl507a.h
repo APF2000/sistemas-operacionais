@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:fc824d4df79cbb61be1be9da83cb8a81ab3bae9bcf28ca748764b88b0091323e
-size 219
+#ifndef __NVIF_CL507A_H__
+#define __NVIF_CL507A_H__
+
+struct nv50_disp_cursor_v0 {
+	__u8  version;
+	__u8  head;
+	__u8  pad02[6];
+};
+
+#define NV50_DISP_CURSOR_V0_NTFY_UEVENT                                    0x00
+#endif

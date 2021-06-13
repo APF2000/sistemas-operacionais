@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e6a0dbae151d6ef40d7d52210ba48ca81aba7920686392e97a59516252ae424b
-size 247
+#ifndef _ASM_METAG_BUG_H
+#define _ASM_METAG_BUG_H
+
+#include <asm-generic/bug.h>
+
+struct pt_regs;
+
+extern const char *trap_name(int trapno);
+extern void __noreturn die(const char *str, struct pt_regs *regs, long err,
+		unsigned long addr);
+
+#endif

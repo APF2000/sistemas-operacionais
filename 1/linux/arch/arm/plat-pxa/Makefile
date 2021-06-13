@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:766e03b2e26c8dd072d218a8d0d3081a63c65883546cde70bd14a8cc40d372fb
-size 227
+#
+# Makefile for code common across different PXA processor families
+#
+ccflags-$(CONFIG_ARCH_MMP) := -I$(srctree)/$(src)/include
+
+obj-$(CONFIG_PXA3xx)		+= mfp.o
+obj-$(CONFIG_ARCH_MMP)		+= mfp.o
+
+obj-$(CONFIG_PXA_SSP)		+= ssp.o

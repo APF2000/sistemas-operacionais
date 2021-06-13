@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:06ef19e0c97b802f89edfaecc6c382a77f388fc8610762b98a6c60fc14b05a4b
-size 505
+* VIA Rhine 10/100 Network Controller
+
+Required properties:
+- compatible : Should be "via,vt8500-rhine" for integrated
+	Rhine controllers found in VIA VT8500, WonderMedia WM8950
+	and similar. These are listed as 1106:3106 rev. 0x84 on the
+	virtual PCI bus under vendor-provided kernels
+- reg : Address and length of the io space
+- interrupts : Should contain the controller interrupt line
+
+Examples:
+
+ethernet@d8004000 {
+	compatible = "via,vt8500-rhine";
+	reg = <0xd8004000 0x100>;
+	interrupts = <10>;
+};

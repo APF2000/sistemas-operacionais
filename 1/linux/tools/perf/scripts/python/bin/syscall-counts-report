@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:deb2301b69ab465081f38ffed51caf4f12523ebafd3a3062498786b0c25af1d1
-size 241
+#!/bin/bash
+# description: system-wide syscall counts
+# args: [comm]
+if [ $# -gt 0 ] ; then
+    if ! expr match "$1" "-" > /dev/null ; then
+	comm=$1
+	shift
+    fi
+fi
+perf script $@ -s "$PERF_EXEC_PATH"/scripts/python/syscall-counts.py $comm

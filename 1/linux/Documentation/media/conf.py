@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:273372ce66537c438fc7c8d3937dd0e257c10aa4d3c6fbeb02aebe0727ed3604
-size 252
+# -*- coding: utf-8; mode: python -*-
+
+project = 'Linux Media Subsystem Documentation'
+
+tags.add("subproject")
+
+latex_documents = [
+    ('index', 'media.tex', 'Linux Media Subsystem Documentation',
+     'The kernel development community', 'manual'),
+]

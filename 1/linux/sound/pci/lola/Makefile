@@ -1,3 +1,4 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:8941c8f0c9a70566865e2ba5ebe51bd1da0e6849d207340f7956534d53f06b8a
-size 140
+snd-lola-y := lola.o lola_pcm.o lola_clock.o lola_mixer.o
+snd-lola-$(CONFIG_SND_DEBUG) += lola_proc.o
+
+obj-$(CONFIG_SND_LOLA) += snd-lola.o

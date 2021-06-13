@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:29bc7247c83e8dbb9e98a36d5cf9f6835b8ddfc81b0dfffa1bbd48f23a6f1498
-size 143
+#ifndef _S390_VTIME_H
+#define _S390_VTIME_H
+
+#define __ARCH_HAS_VTIME_ACCOUNT
+#define __ARCH_HAS_VTIME_TASK_SWITCH
+
+#endif /* _S390_VTIME_H */

@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:31c2f645dc8b51f7af20b8c4ef32214e7b0bdedfe4cab85afed21ca4e25b2c62
-size 272
+# kbuild trick to avoid linker error. Can be omitted if a module is built.
+obj- := dummy.o
+
+# List of programs to build
+hostprogs-y := uhid-example
+
+# Tell kbuild to always build the programs
+always := $(hostprogs-y)
+
+HOSTCFLAGS_uhid-example.o += -I$(objtree)/usr/include

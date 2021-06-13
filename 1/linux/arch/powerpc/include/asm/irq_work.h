@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c3f8ec7e6d9edba7dc41f631ad8a1fbeb253d90980262ce101043c5ab2440a99
-size 174
+#ifndef _ASM_POWERPC_IRQ_WORK_H
+#define _ASM_POWERPC_IRQ_WORK_H
+
+static inline bool arch_irq_work_has_interrupt(void)
+{
+	return true;
+}
+
+#endif /* _ASM_POWERPC_IRQ_WORK_H */

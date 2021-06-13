@@ -1,3 +1,5 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:119f285ad4bfdab902ecc9613ed82a680365e98f93f8a8880ff2656dfc98d212
-size 89
+#
+# Makefile for the Silan network device drivers.
+#
+
+obj-$(CONFIG_SC92031) += sc92031.o

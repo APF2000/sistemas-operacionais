@@ -1,3 +1,2 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:62c9515810f032b70b540bf1ea8064b86754d0d25ce00afda691f052943ba2bc
-size 77
+* merge into drivers/net/wireless/rtllib/rtl8192e
+* clean up function naming

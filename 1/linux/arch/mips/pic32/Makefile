@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ad008a0a7200b30b9d5deb2866f39ebd942aaa5b4bda1e1615f032b663395d82
-size 201
+#
+# Joshua Henderson, <joshua.henderson@microchip.com>
+# Copyright (C) 2015 Microchip Technology, Inc.  All rights reserved.
+#
+obj-$(CONFIG_MACH_PIC32) += common/
+obj-$(CONFIG_PIC32MZDA) += pic32mzda/

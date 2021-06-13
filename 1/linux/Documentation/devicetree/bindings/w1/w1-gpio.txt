@@ -1,3 +1,22 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:cfd10632dc0aee8a66c0116509afe4047a095a09e9fd5b4ab2b98977df250302
-size 462
+w1-gpio devicetree bindings
+
+Required properties:
+
+ - compatible: "w1-gpio"
+ - gpios: one or two GPIO specs:
+		- the first one is used as data I/O pin
+		- the second one is optional. If specified, it is used as
+		  enable pin for an external pin pullup.
+
+Optional properties:
+
+ - linux,open-drain: if specified, the data pin is considered in
+		     open-drain mode.
+
+Examples:
+
+	onewire@0 {
+		compatible = "w1-gpio";
+		gpios = <&gpio 126 0>, <&gpio 105 0>;
+	};
+

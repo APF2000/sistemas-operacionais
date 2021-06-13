@@ -1,3 +1,3 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c58281a7a920c6191a37b98fcddc06147a6d8907b2911fe7c37133539e15d150
-size 122
+obj-$(CONFIG_WIZNET_W5100) += w5100.o
+obj-$(CONFIG_WIZNET_W5100_SPI) += w5100-spi.o
+obj-$(CONFIG_WIZNET_W5300) += w5300.o

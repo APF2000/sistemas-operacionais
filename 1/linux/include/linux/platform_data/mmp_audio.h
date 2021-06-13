@@ -1,3 +1,22 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a3ec7ce9468b0d3d122cdff941d235ae45f44ab93940a9c5d4e5bbea2636d955
-size 492
+/*
+ *  MMP Platform AUDIO Management
+ *
+ *  Copyright (c) 2011 Marvell Semiconductors Inc.
+ *
+ *  This program is free software; you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License version 2 as
+ *  published by the Free Software Foundation.
+ *
+ */
+
+#ifndef MMP_AUDIO_H
+#define MMP_AUDIO_H
+
+struct mmp_audio_platdata {
+	u32 period_max_capture;
+	u32 buffer_max_capture;
+	u32 period_max_playback;
+	u32 buffer_max_playback;
+};
+
+#endif /* MMP_AUDIO_H */

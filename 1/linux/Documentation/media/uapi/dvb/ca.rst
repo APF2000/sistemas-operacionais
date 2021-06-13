@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:fccab58e066e6d7ef6eb97111a97a13aa84cc95224603084f94ce7bb6baf40c9
-size 385
+.. -*- coding: utf-8; mode: rst -*-
+
+.. _dvb_ca:
+
+#############
+DVB CA Device
+#############
+The DVB CA device controls the conditional access hardware. It can be
+accessed through ``/dev/dvb/adapter?/ca?``. Data types and and ioctl
+definitions can be accessed by including ``linux/dvb/ca.h`` in your
+application.
+
+
+.. toctree::
+    :maxdepth: 1
+
+    ca_data_types
+    ca_function_calls

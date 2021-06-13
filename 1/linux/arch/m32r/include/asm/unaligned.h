@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e432a2b0844041690199cb5703451bbda20d10b4eb30d6ff1dba791607964cda
-size 553
+#ifndef _ASM_M32R_UNALIGNED_H
+#define _ASM_M32R_UNALIGNED_H
+
+#if defined(__LITTLE_ENDIAN__)
+# include <linux/unaligned/le_memmove.h>
+# include <linux/unaligned/be_byteshift.h>
+# include <linux/unaligned/generic.h>
+# define get_unaligned	__get_unaligned_le
+# define put_unaligned	__put_unaligned_le
+#else
+# include <linux/unaligned/be_memmove.h>
+# include <linux/unaligned/le_byteshift.h>
+# include <linux/unaligned/generic.h>
+# define get_unaligned	__get_unaligned_be
+# define put_unaligned	__put_unaligned_be
+#endif
+
+#endif /* _ASM_M32R_UNALIGNED_H */

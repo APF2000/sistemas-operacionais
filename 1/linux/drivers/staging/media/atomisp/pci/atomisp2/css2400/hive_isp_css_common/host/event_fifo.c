@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:8ade6b8849afc2b3b58be1a4b8b71dc8b2cc335d2465b41c9e6919552926cbda
-size 669
+/*
+ * Support for Intel Camera Imaging ISP subsystem.
+ * Copyright (c) 2010-2015, Intel Corporation.
+ *
+ * This program is free software; you can redistribute it and/or modify it
+ * under the terms and conditions of the GNU General Public License,
+ * version 2, as published by the Free Software Foundation.
+ *
+ * This program is distributed in the hope it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+ * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for
+ * more details.
+ */
+
+#include "event_fifo.h"
+
+#ifndef __INLINE_EVENT__
+#include "event_fifo_private.h"
+#endif /* __INLINE_EVENT__ */

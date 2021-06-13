@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:89ca93b692b8d0de706c83269a5aa2763ec690f6f4b71e6b064dfae00fecd864
-size 226
+#include <liblockdep/rwlock.h>
+
+void main(void)
+{
+	pthread_rwlock_t a, b;
+
+	pthread_rwlock_init(&a, NULL);
+	pthread_rwlock_init(&b, NULL);
+
+	pthread_rwlock_wrlock(&a);
+	pthread_rwlock_rdlock(&b);
+	pthread_rwlock_wrlock(&a);
+}

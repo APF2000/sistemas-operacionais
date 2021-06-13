@@ -1,3 +1,21 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f261c54c2198fc25b969e2e5fa69f43b5f08c599c95baa1f580514e085c11c9f
-size 308
+#
+# Generated include files
+#
+include/generated
+#
+# Generated ld script file
+#
+kernel/vmlinux.lds
+#
+# Generated images in boot
+#
+boot/Image
+boot/zImage
+boot/uImage
+#
+# Generated files in boot/compressed
+#
+boot/compressed/piggy.S
+boot/compressed/piggy.gzip
+boot/compressed/vmlinux
+boot/compressed/vmlinux.lds

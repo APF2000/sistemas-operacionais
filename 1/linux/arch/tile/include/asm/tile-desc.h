@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:be16e34c5e6e6544627c56c9f11fbca3288b4b2ca57cb326a1b5e2d90ccb729f
-size 650
+/*
+ * Copyright 2011 Tilera Corporation. All Rights Reserved.
+ *
+ *   This program is free software; you can redistribute it and/or
+ *   modify it under the terms of the GNU General Public License
+ *   as published by the Free Software Foundation, version 2.
+ *
+ *   This program is distributed in the hope that it will be useful, but
+ *   WITHOUT ANY WARRANTY; without even the implied warranty of
+ *   MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE, GOOD TITLE or
+ *   NON INFRINGEMENT.  See the GNU General Public License for
+ *   more details.
+ */
+
+#ifndef __tilegx__
+#include <asm/tile-desc_32.h>
+#else
+#include <asm/tile-desc_64.h>
+#endif

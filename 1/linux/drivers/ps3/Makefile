@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:0ee565896cdcf0842db46ffb417746cecae3a22180c9978527d8d5b5883f718b
-size 287
+obj-$(CONFIG_PS3_VUART) += ps3-vuart.o
+obj-$(CONFIG_PS3_PS3AV) += ps3av_mod.o
+ps3av_mod-y		:= ps3av.o ps3av_cmd.o
+obj-$(CONFIG_PPC_PS3) += sys-manager-core.o
+obj-$(CONFIG_PS3_SYS_MANAGER) += ps3-sys-manager.o
+obj-$(CONFIG_PS3_STORAGE) += ps3stor_lib.o
+obj-$(CONFIG_PS3_LPM) += ps3-lpm.o

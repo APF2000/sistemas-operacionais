@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4e36941e2ab2271a0cd4563a710437ccfd8d0ff365b3c8ef9ae1e30c7dcb9f4e
-size 162
+#
+# Makefile for APM X-Gene Ethernet v2 driver
+#
+
+xgene-enet-v2-objs := main.o mac.o enet.o ring.o mdio.o ethtool.o
+obj-$(CONFIG_NET_XGENE_V2) += xgene-enet-v2.o

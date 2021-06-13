@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5aa1e597589d544a0e5aaf89a07c465bb0f4aeb5f64c415633640be6fd2be7ce
-size 224
+Foxlink Group 5" WVGA TFT LCD panel
+
+Required properties:
+- compatible: should be "foxlink,fl500wvr00-a0t"
+
+This binding is compatible with the simple-panel binding, which is specified
+in simple-panel.txt in this directory.

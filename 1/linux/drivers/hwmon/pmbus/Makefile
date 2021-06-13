@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d1f0d5d6af3662bc8e65d78d4cd08b46c9c60d6bb96d918030d5ef05e2f67282
-size 638
+#
+# Makefile for PMBus chip drivers.
+#
+
+obj-$(CONFIG_PMBUS)		+= pmbus_core.o
+obj-$(CONFIG_SENSORS_PMBUS)	+= pmbus.o
+obj-$(CONFIG_SENSORS_ADM1275)	+= adm1275.o
+obj-$(CONFIG_SENSORS_LM25066)	+= lm25066.o
+obj-$(CONFIG_SENSORS_LTC2978)	+= ltc2978.o
+obj-$(CONFIG_SENSORS_LTC3815)	+= ltc3815.o
+obj-$(CONFIG_SENSORS_MAX16064)	+= max16064.o
+obj-$(CONFIG_SENSORS_MAX20751)	+= max20751.o
+obj-$(CONFIG_SENSORS_MAX34440)	+= max34440.o
+obj-$(CONFIG_SENSORS_MAX8688)	+= max8688.o
+obj-$(CONFIG_SENSORS_TPS40422)	+= tps40422.o
+obj-$(CONFIG_SENSORS_UCD9000)	+= ucd9000.o
+obj-$(CONFIG_SENSORS_UCD9200)	+= ucd9200.o
+obj-$(CONFIG_SENSORS_ZL6100)	+= zl6100.o

@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:3dbc2ff5c379155d2a7b2c274b8bb47d0353f8f5cbfe616e5f06a0a1a83a6bb6
-size 229
+/*
+ * AD5504 SPI DAC driver
+ *
+ * Copyright 2011 Analog Devices Inc.
+ *
+ * Licensed under the GPL-2.
+ */
+
+#ifndef SPI_AD5504_H_
+#define SPI_AD5504_H_
+
+struct ad5504_platform_data {
+	u16				vref_mv;
+};
+
+#endif /* SPI_AD5504_H_ */

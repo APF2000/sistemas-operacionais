@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f9ef80b4d781ea01e9f15319cc1f9aa8a14076c871694cb81a22e2f9ae764cd0
-size 262
+armada-y	:= armada_crtc.o armada_drv.o armada_fb.o armada_fbdev.o \
+		   armada_gem.o armada_overlay.o armada_trace.o
+armada-y	+= armada_510.o
+armada-$(CONFIG_DEBUG_FS) += armada_debugfs.o
+
+obj-$(CONFIG_DRM_ARMADA) := armada.o
+
+CFLAGS_armada_trace.o := -I$(src)

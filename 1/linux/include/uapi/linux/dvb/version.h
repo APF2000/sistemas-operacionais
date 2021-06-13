@@ -1,3 +1,29 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:75c9353a1ec57bb91df1b68052e8ba7989e2a403c0e8148148e5c035c024ec72
-size 1017
+/*
+ * version.h
+ *
+ * Copyright (C) 2000 Holger Waechtler <holger@convergence.de>
+ *                    for convergence integrated media GmbH
+ *
+ * This program is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public License
+ * as published by the Free Software Foundation; either version 2.1
+ * of the License, or (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
+ *
+ */
+
+#ifndef _DVBVERSION_H_
+#define _DVBVERSION_H_
+
+#define DVB_API_VERSION 5
+#define DVB_API_VERSION_MINOR 10
+
+#endif /*_DVBVERSION_H_*/

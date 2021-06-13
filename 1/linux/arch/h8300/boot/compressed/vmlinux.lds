@@ -1,3 +1,34 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:cdfd6be90f9c638326365698b5900449373d6ff89b93297d010dc403fc260166
-size 508
+SECTIONS
+{
+        .text :
+        {
+        __stext = . ;
+	__text = .;
+	       *(.text..startup)
+	       *(.text)
+        __etext = . ;
+        }
+
+	.rodata :
+	{
+		*(.rodata)
+	}
+        . = ALIGN(0x4) ;
+        .data :
+
+        {
+        . = ALIGN(0x4) ;
+        __sdata = . ;
+        ___data_start = . ;
+                *(.data.*)
+	}
+        . = ALIGN(0x4) ;
+        .bss :
+        {
+        __sbss = . ;
+                *(.bss*)
+        . = ALIGN(0x4) ;
+        __ebss = . ;
+        }
+        _end = . ;
+}

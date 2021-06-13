@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:61805d79754b2895fab1a3756b0bcc9aa4137c2417dd62635a71a759362dbb35
-size 167
+/*
+ * arch/arm/mach-ixp4xx/include/mach/udc.h
+ *
+ */
+#include <linux/platform_data/pxa2xx_udc.h>
+
+extern void ixp4xx_set_udc_info(struct pxa2xx_udc_mach_info *info);
+

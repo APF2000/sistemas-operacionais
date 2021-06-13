@@ -1,3 +1,43 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:15eb4db2bba4e761c5ed39cc0e60704fea14e3462710bfafa1ed2d04da300e0b
-size 830
+.. -*- coding: utf-8; mode: rst -*-
+
+.. _video_function_calls:
+
+********************
+Video Function Calls
+********************
+
+.. toctree::
+    :maxdepth: 1
+
+    video-fopen
+    video-fclose
+    video-fwrite
+    video-stop
+    video-play
+    video-freeze
+    video-continue
+    video-select-source
+    video-set-blank
+    video-get-status
+    video-get-frame-count
+    video-get-pts
+    video-get-frame-rate
+    video-get-event
+    video-command
+    video-try-command
+    video-get-size
+    video-set-display-format
+    video-stillpicture
+    video-fast-forward
+    video-slowmotion
+    video-get-capabilities
+    video-set-id
+    video-clear-buffer
+    video-set-streamtype
+    video-set-format
+    video-set-system
+    video-set-highlight
+    video-set-spu
+    video-set-spu-palette
+    video-get-navi
+    video-set-attributes

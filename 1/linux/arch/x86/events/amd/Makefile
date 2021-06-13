@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:595061abc01c541ba79443d1e36126ac9cc5f57d2788f216cbf4f23195c6bb0f
-size 200
+obj-$(CONFIG_CPU_SUP_AMD)		+= core.o uncore.o
+obj-$(CONFIG_PERF_EVENTS_AMD_POWER)	+= power.o
+obj-$(CONFIG_X86_LOCAL_APIC)		+= ibs.o
+ifdef CONFIG_AMD_IOMMU
+obj-$(CONFIG_CPU_SUP_AMD)		+= iommu.o
+endif
+

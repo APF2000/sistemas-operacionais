@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:6e31668cb26e4cdacaeb5a592b4951c1d75fbe0721bd4c25b5803b7574df52fc
-size 110
+#
+# Makefile for ILA module
+#
+
+obj-$(CONFIG_IPV6_ILA) += ila.o
+
+ila-objs := ila_common.o ila_lwt.o ila_xlat.o

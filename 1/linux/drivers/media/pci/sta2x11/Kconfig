@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:98da16727a665d05d6a686aefd7e53112145254d9645a3fd6407d010160a3a97
-size 450
+config STA2X11_VIP
+	tristate "STA2X11 VIP Video For Linux"
+	depends on STA2X11
+	depends on HAS_DMA
+	select VIDEO_ADV7180 if MEDIA_SUBDRV_AUTOSELECT
+	select VIDEOBUF2_DMA_CONTIG
+	depends on PCI && VIDEO_V4L2 && VIRT_TO_BUS
+	depends on VIDEO_V4L2_SUBDEV_API
+	depends on I2C
+	help
+	  Say Y for support for STA2X11 VIP (Video Input Port) capture
+	  device.
+
+	  To compile this driver as a module, choose M here: the
+	  module will be called sta2x11_vip.

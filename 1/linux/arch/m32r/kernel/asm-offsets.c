@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:fdf84da337b9424cb3a86c23c56e6f80f6bc556d7cc2bc050b3c6a19c5f68cc9
-size 340
+#include <linux/thread_info.h>
+#include <linux/kbuild.h>
+
+int foo(void)
+{
+	OFFSET(TI_TASK, thread_info, task);
+	OFFSET(TI_FLAGS, thread_info, flags);
+	OFFSET(TI_STATUS, thread_info, status);
+	OFFSET(TI_CPU, thread_info, cpu);
+	OFFSET(TI_PRE_COUNT, thread_info, preempt_count);
+	OFFSET(TI_ADDR_LIMIT, thread_info, addr_limit);
+
+	return 0;
+}

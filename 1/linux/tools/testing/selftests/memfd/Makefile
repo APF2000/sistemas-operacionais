@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:13cac1aca6f0cfc900aa168eb3929f2ea9c5d937e65fdf4d65fd11a9295b3f29
-size 351
+CFLAGS += -D_FILE_OFFSET_BITS=64
+CFLAGS += -I../../../../include/uapi/
+CFLAGS += -I../../../../include/
+CFLAGS += -I../../../../usr/include/
+
+TEST_PROGS := run_fuse_test.sh
+TEST_GEN_FILES := memfd_test fuse_mnt fuse_test
+
+fuse_mnt.o: CFLAGS += $(shell pkg-config fuse --cflags)
+fuse_mnt: LDFLAGS += $(shell pkg-config fuse --libs)
+
+include ../lib.mk
+

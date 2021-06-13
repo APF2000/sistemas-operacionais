@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b598daf8259d7e6ae9d7b07e98915f3228736b3febb4b1ed7c94c25af4d10e41
-size 400
+/*
+ * Copyright (C) 2003  Richard Curnow, SuperH UK Limited
+ *
+ * This file is subject to the terms and conditions of the GNU General Public
+ * License.  See the file "COPYING" in the main directory of this archive
+ * for more details.
+ */
+
+void
+panic_handler(unsigned long panicPC, unsigned long panicSSR,
+	      unsigned long panicEXPEVT)
+{
+	/* Never return from the panic handler */
+	for (;;) ;
+}

@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:09cd61937edfb1f4769d5bd6df1bb02a47e13c3cad212d56fd9fdb2c03399eaa
-size 264
+#
+# Configuration for L3 master device support
+#
+
+config NET_L3_MASTER_DEV
+	bool "L3 Master device support"
+	depends on INET || IPV6
+	---help---
+	  This module provides glue between core networking code and device
+	  drivers to support L3 master devices like VRF.

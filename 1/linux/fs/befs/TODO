@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b7bcfb87087980133e56486b3efd9e6eb426ed85425c0b6967999ffa8e468c99
-size 385
+TODO
+==========
+
+* Convert comments to the Kernel-Doc format.
+
+* Befs_fs.h has gotten big and messy. No reason not to break it up into 
+	smaller peices.
+
+* See if Alexander Viro's option parser made it into the kernel tree. 
+	Use that if we can. (include/linux/parser.h)
+
+* See if we really need separate types for on-disk and in-memory 
+	representations of the superblock and inode.
+

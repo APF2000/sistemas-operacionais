@@ -1,3 +1,21 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:11eee9b74c653f26714d1fa7b51a7f2ea824ced0ffa585a3056a6a6bd3891d20
-size 340
+.. _cec-user-func:
+
+******************
+Function Reference
+******************
+
+
+.. toctree::
+    :maxdepth: 1
+    :numbered:
+
+    cec-func-open
+    cec-func-close
+    cec-func-ioctl
+    cec-func-poll
+    cec-ioc-adap-g-caps
+    cec-ioc-adap-g-log-addrs
+    cec-ioc-adap-g-phys-addr
+    cec-ioc-dqevent
+    cec-ioc-g-mode
+    cec-ioc-receive

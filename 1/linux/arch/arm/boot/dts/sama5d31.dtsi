@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d6ca2a03bb0885da5327f64d073feab1912800214d4c1a33934afa8fef575372
-size 384
+/*
+ * sama5d31.dtsi - Device Tree Include file for SAMA5D31 SoC
+ *
+ *  Copyright (C) 2013 Boris BREZILLON <b.brezillon@overkiz.com>
+ *
+ * Licensed under GPLv2 or later.
+ */
+#include "sama5d3.dtsi"
+#include "sama5d3_lcd.dtsi"
+#include "sama5d3_emac.dtsi"
+#include "sama5d3_mci2.dtsi"
+#include "sama5d3_uart.dtsi"
+
+/ {
+	compatible = "atmel,sama5d31", "atmel,sama5d3", "atmel,sama5";
+};

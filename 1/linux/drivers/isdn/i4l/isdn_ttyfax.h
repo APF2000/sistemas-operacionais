@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a2a5e52c4f6797c0734ac9b2d4ba654e42c488e3c6e46f915351d04719dbb1c5
-size 502
+/* $Id: isdn_ttyfax.h,v 1.1.2.2 2004/01/12 22:37:19 keil Exp $
+ *
+ * header for Linux ISDN subsystem, tty_fax related functions (linklevel).
+ *
+ * Copyright 1999   by Armin Schindler (mac@melware.de)
+ * Copyright 1999   by Ralf Spachmann (mel@melware.de)
+ * Copyright 1999   by Cytronics & Melware
+ *
+ * This software may be used and distributed according to the terms
+ * of the GNU General Public License, incorporated herein by reference.
+ *
+ */
+
+
+#define XON	0x11
+#define XOFF	0x13
+#define DC2	0x12

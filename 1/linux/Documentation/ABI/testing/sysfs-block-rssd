@@ -1,3 +1,5 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:3986b5e6d51cca4659733e9213a1437903f0656517d1776000bac9a863ff0681
-size 223
+What:           /sys/block/rssd*/status
+Date:           April 2012
+KernelVersion:  3.4
+Contact:        Asai Thambi S P <asamymuthupa@micron.com>
+Description:    This is a read-only file. Indicates the status of the device.

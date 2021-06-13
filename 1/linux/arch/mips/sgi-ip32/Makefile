@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2b6a66ab89902cb31542e3d517dc1fb9b720e6b3a3b252cb5a29f37388e7cf4c
-size 180
+#
+# Makefile for the SGI specific kernel interface routines
+# under Linux.
+#
+
+obj-y	+= ip32-berr.o ip32-irq.o ip32-platform.o ip32-setup.o ip32-reset.o \
+	   crime.o ip32-memory.o

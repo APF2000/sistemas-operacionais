@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ca66f02748c38dfe386615bc83d6eb5ff1381cd96efe80ff7a3a36af875a2e6c
-size 443
+/* sh_ipmmu.h
+ *
+ * Copyright (C) 2012  Hideki EIRAKU
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; version 2 of the License.
+ */
+
+#ifndef __SH_IPMMU_H__
+#define __SH_IPMMU_H__
+
+struct shmobile_ipmmu_platform_data {
+	const char * const *dev_names;
+	unsigned int num_dev_names;
+};
+
+#endif /* __SH_IPMMU_H__ */

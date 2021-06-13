@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:3cb401276897e6afe41f7372ef142713e9f45e08e75a08a369c8051878cb2ffb
-size 397
+#
+# Makefile for the kernel auxiliary displays device drivers.
+#
+
+obj-$(CONFIG_CHARLCD)		+= charlcd.o
+obj-$(CONFIG_ARM_CHARLCD)	+= arm-charlcd.o
+obj-$(CONFIG_KS0108)		+= ks0108.o
+obj-$(CONFIG_CFAG12864B)	+= cfag12864b.o cfag12864bfb.o
+obj-$(CONFIG_IMG_ASCII_LCD)	+= img-ascii-lcd.o
+obj-$(CONFIG_HD44780)		+= hd44780.o
+obj-$(CONFIG_HT16K33)		+= ht16k33.o
+obj-$(CONFIG_PANEL)             += panel.o

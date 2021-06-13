@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:7f224bbe493f51ebcb4590ffab4f3f0ea3650d3170fbc29259987bdedf239a32
-size 440
+nvkm-y += nvkm/subdev/pmu/base.o
+nvkm-y += nvkm/subdev/pmu/memx.o
+nvkm-y += nvkm/subdev/pmu/gt215.o
+nvkm-y += nvkm/subdev/pmu/gf100.o
+nvkm-y += nvkm/subdev/pmu/gf119.o
+nvkm-y += nvkm/subdev/pmu/gk104.o
+nvkm-y += nvkm/subdev/pmu/gk110.o
+nvkm-y += nvkm/subdev/pmu/gk208.o
+nvkm-y += nvkm/subdev/pmu/gk20a.o
+nvkm-y += nvkm/subdev/pmu/gm107.o
+nvkm-y += nvkm/subdev/pmu/gm20b.o
+nvkm-y += nvkm/subdev/pmu/gp100.o
+nvkm-y += nvkm/subdev/pmu/gp102.o

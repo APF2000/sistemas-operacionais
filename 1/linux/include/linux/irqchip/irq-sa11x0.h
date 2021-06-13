@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:273b0e6fe2438450b88b51d7d8fd844d514bf573319add272ada911707ee1fb1
-size 502
+/*
+ * Generic IRQ handling for the SA11x0.
+ *
+ * Copyright (C) 2015 Dmitry Eremin-Solenikov
+ * Copyright (C) 1999-2001 Nicolas Pitre
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 2 as
+ * published by the Free Software Foundation.
+ */
+
+#ifndef __INCLUDE_LINUX_IRQCHIP_IRQ_SA11x0_H
+#define __INCLUDE_LINUX_IRQCHIP_IRQ_SA11x0_H
+
+void __init sa11x0_init_irq_nodt(int irq_start, resource_size_t io_start);
+
+#endif

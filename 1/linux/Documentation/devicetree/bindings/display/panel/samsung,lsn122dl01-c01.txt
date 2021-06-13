@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c801f1829474af8346e692c0d45aeca165cdeddfa3ae47d24d6ca79da07ecd2e
-size 235
+Samsung 12.2" (2560x1600 pixels) TFT LCD panel
+
+Required properties:
+- compatible: should be "samsung,lsn122dl01-c01"
+
+This binding is compatible with the simple-panel binding, which is specified
+in simple-panel.txt in this directory.

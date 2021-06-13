@@ -1,3 +1,20 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2eea9545940f1633f8d445ba3885f5fe9213a7b777b856ef9485ca075b45b199
-size 216
+;;; abs.S
+
+#include <asm/linkage.h>
+
+#if defined(CONFIG_CPU_H8300H)
+	.h8300h
+#endif
+#if defined(CONFIG_CPU_H8S)
+	.h8300s
+#endif
+	.text
+.global _abs
+
+;;; int abs(int n)
+_abs:
+	mov.l	er0,er0
+	bpl	1f
+	neg.l	er0
+1:
+	rts

@@ -1,3 +1,39 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ab641e38e446276b1a812fd4b06007fed94e315fa11d2a021b6dedc4340ae6d5
-size 833
+/*
+ * linux/arch/unicore32/lib/copy_page.S
+ *
+ * Code specific to PKUnity SoC and UniCore ISA
+ *
+ * Copyright (C) 2001-2010 GUAN Xue-tao
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 2 as
+ * published by the Free Software Foundation.
+ *
+ *  ASM optimised string functions
+ */
+#include <linux/linkage.h>
+#include <asm/assembler.h>
+#include <generated/asm-offsets.h>
+#include <asm/cache.h>
+
+#define COPY_COUNT (PAGE_SZ/256)
+
+		.text
+		.align	5
+/*
+ * UniCore optimised copy_page routine
+ */
+ENTRY(copy_page)
+		stm.w	(r17 - r19, lr), [sp-]
+		mov	r17, r0
+		mov	r18, r1
+		mov	r19, #COPY_COUNT
+1:
+	.rept	4
+		ldm.w	(r0 - r15), [r18]+
+		stm.w	(r0 - r15), [r17]+
+	.endr
+		sub.a	r19, r19, #1
+		bne	1b
+		ldm.w	(r17 - r19, pc), [sp]+
+ENDPROC(copy_page)

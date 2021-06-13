@@ -1,3 +1,34 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5cccbd9b776110e82682c38cabb59dda6297fb620be2dbe2ca236858e3c47794
-size 1052
+/******************************************************************************
+ *
+ * Copyright(c) 2007 - 2011 Realtek Corporation. All rights reserved.
+ *
+ * This program is free software; you can redistribute it and/or modify it
+ * under the terms of version 2 of the GNU General Public License as
+ * published by the Free Software Foundation.
+ *
+ * This program is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+ * FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for
+ * more details.
+ *
+ ******************************************************************************/
+#ifndef _RTW_HT_H_
+#define _RTW_HT_H_
+
+#include <linux/ieee80211.h>
+
+struct ht_priv {
+	u32	ht_option;
+	u32	ampdu_enable;/* for enable Tx A-MPDU */
+	u8	bwmode;/*  */
+	u8	ch_offset;/* PRIME_CHNL_OFFSET */
+	u8	sgi;/* short GI */
+
+	/* for processing Tx A-MPDU */
+	u8	agg_enable_bitmap;
+	u8	candidate_tid_bitmap;
+
+	struct ieee80211_ht_cap ht_cap;
+};
+
+#endif	/* _RTL871X_HT_H_ */

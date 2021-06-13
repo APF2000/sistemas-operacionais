@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:97b15dc420b20728e27723f3b76dc2c277908a7f9a027301b01032b79d544dd3
-size 521
+nvkm-y += nvkm/subdev/devinit/base.o
+nvkm-y += nvkm/subdev/devinit/nv04.o
+nvkm-y += nvkm/subdev/devinit/nv05.o
+nvkm-y += nvkm/subdev/devinit/nv10.o
+nvkm-y += nvkm/subdev/devinit/nv1a.o
+nvkm-y += nvkm/subdev/devinit/nv20.o
+nvkm-y += nvkm/subdev/devinit/nv50.o
+nvkm-y += nvkm/subdev/devinit/g84.o
+nvkm-y += nvkm/subdev/devinit/g98.o
+nvkm-y += nvkm/subdev/devinit/gt215.o
+nvkm-y += nvkm/subdev/devinit/mcp89.o
+nvkm-y += nvkm/subdev/devinit/gf100.o
+nvkm-y += nvkm/subdev/devinit/gm107.o
+nvkm-y += nvkm/subdev/devinit/gm200.o

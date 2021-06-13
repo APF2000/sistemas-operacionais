@@ -1,3 +1,20 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:aa2f45ae8ef46957d10d7904bb7bf890ff53712c0cbac170e1b9d38e00d37768
-size 605
+Raydium I2C touchscreen
+
+Required properties:
+- compatible: must be "raydium,rm32380"
+- reg: The I2C address of the device
+- interrupt-parent: the phandle for the interrupt controller
+- interrupts: interrupt to which the chip is connected
+    See ../interrupt-controller/interrupts.txt
+Optional properties:
+- avdd-supply: analog power supply needed to power device
+- vccio-supply: IO Power source
+- reset-gpios: reset gpio the chip is connected to.
+
+Example:
+	touchscreen@39 {
+		compatible = "raydium,rm32380";
+		reg = <0x39>;
+		interrupt-parent = <&gpio>;
+		interrupts = <0x0 IRQ_TYPE_EDGE_FALLING>;
+	};

@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:aa10138aca749c46a95543eeb11ac9f92cb82eb55f0f8fe8336fc37cfec7b917
-size 466
+# Fusion MPT drivers; recognized debug defines...
+
+# enable verbose logging
+# CONFIG_FUSION_LOGGING needs to be enabled in Kconfig
+#ccflags-y := -DMPT_DEBUG_VERBOSE
+
+
+#=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-} LSI_LOGIC
+
+obj-$(CONFIG_FUSION_SPI)	+= mptbase.o mptscsih.o mptspi.o
+obj-$(CONFIG_FUSION_FC)		+= mptbase.o mptscsih.o mptfc.o
+obj-$(CONFIG_FUSION_SAS)	+= mptbase.o mptscsih.o mptsas.o
+obj-$(CONFIG_FUSION_CTL)	+= mptctl.o
+obj-$(CONFIG_FUSION_LAN)	+= mptlan.o

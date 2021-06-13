@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:205e787ceb088f967dcbc1a06e0ae0bde7c6866bfd57ca919786c323b1afa9f5
-size 207
+#pragma GCC diagnostic ignored "-Wstrict-prototypes"
+#include <gtk/gtk.h>
+#pragma GCC diagnostic error "-Wstrict-prototypes"
+
+int main(int argc, char *argv[])
+{
+	gtk_init(&argc, &argv);
+
+        return 0;
+}

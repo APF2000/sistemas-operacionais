@@ -1,3 +1,22 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a0bf015adac7c236a9528444c04b8a431718bf3d636c7a8bb3d360cc9cdb0d66
-size 709
+/*
+ * Support for Intel Camera Imaging ISP subsystem.
+ * Copyright (c) 2015, Intel Corporation.
+ *
+ * This program is free software; you can redistribute it and/or modify it
+ * under the terms and conditions of the GNU General Public License,
+ * version 2, as published by the Free Software Foundation.
+ *
+ * This program is distributed in the hope it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+ * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for
+ * more details.
+ */
+
+#ifndef __MMU_GLOBAL_H_INCLUDED__
+#define __MMU_GLOBAL_H_INCLUDED__
+
+#define IS_MMU_VERSION_2
+
+#include <mmu_defs.h>
+
+#endif /* __MMU_GLOBAL_H_INCLUDED__ */

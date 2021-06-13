@@ -1,3 +1,4 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:26a8d705ac97e3412e3f82ec11905a4c1220b824d586cb12d93b493f02175304
-size 142
+# Makefile for the Linux/cris parts of the memory manager.
+
+obj-y	 += mmu.o init.o tlb.o intmem.o
+obj-$(CONFIG_ETRAX_L2CACHE)    += l2cache.o

@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:cab318d3f5827ec9e7ddbb1e546557a6a2b6a5b5864da4bda5e787f99bcaada9
-size 432
+/*
+ *    Copyright IBM Corp. 2006
+ *    Author(s): Heiko Carstens <heiko.carstens@de.ibm.com>
+ */
+
+#ifndef _ASM_S390_RESET_H
+#define _ASM_S390_RESET_H
+
+#include <linux/list.h>
+
+struct reset_call {
+	struct list_head list;
+	void (*fn)(void);
+};
+
+extern void register_reset_call(struct reset_call *reset);
+extern void unregister_reset_call(struct reset_call *reset);
+extern void s390_reset_system(void);
+#endif /* _ASM_S390_RESET_H */

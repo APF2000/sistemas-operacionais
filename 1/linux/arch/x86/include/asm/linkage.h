@@ -1,3 +1,27 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4240d7916b8b772c42eb8da06ce9e752f636674704d44a75dcd7f95bb2888de2
-size 542
+#ifndef _ASM_X86_LINKAGE_H
+#define _ASM_X86_LINKAGE_H
+
+#include <linux/stringify.h>
+
+#undef notrace
+#define notrace __attribute__((no_instrument_function))
+
+#ifdef CONFIG_X86_32
+#define asmlinkage CPP_ASMLINKAGE __attribute__((regparm(0)))
+#endif /* CONFIG_X86_32 */
+
+#ifdef __ASSEMBLY__
+
+#define GLOBAL(name)	\
+	.globl name;	\
+	name:
+
+#if defined(CONFIG_X86_64) || defined(CONFIG_X86_ALIGNMENT_16)
+#define __ALIGN		.p2align 4, 0x90
+#define __ALIGN_STR	__stringify(__ALIGN)
+#endif
+
+#endif /* __ASSEMBLY__ */
+
+#endif /* _ASM_X86_LINKAGE_H */
+

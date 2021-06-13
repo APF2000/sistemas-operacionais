@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4ffbd5036198298d922c2377611d52edffb3746dbd625a2683484e8e7c3cdaf8
-size 379
+#ifndef _ASM_IA64_CURRENT_H
+#define _ASM_IA64_CURRENT_H
+
+/*
+ * Modified 1998-2000
+ *	David Mosberger-Tang <davidm@hpl.hp.com>, Hewlett-Packard Co
+ */
+
+#include <asm/intrinsics.h>
+
+/*
+ * In kernel mode, thread pointer (r13) is used to point to the current task
+ * structure.
+ */
+#define current	((struct task_struct *) ia64_getreg(_IA64_REG_TP))
+
+#endif /* _ASM_IA64_CURRENT_H */

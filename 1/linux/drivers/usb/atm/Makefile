@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:159500d24d4408368f682e3ca3a119567651873e4aeb8813a66745a459b30bea
-size 238
+#
+# Makefile for USB ATM/xDSL drivers
+#
+obj-$(CONFIG_USB_CXACRU)	+= cxacru.o
+obj-$(CONFIG_USB_SPEEDTOUCH)	+= speedtch.o
+obj-$(CONFIG_USB_UEAGLEATM)	+= ueagle-atm.o
+obj-$(CONFIG_USB_ATM)		+= usbatm.o
+obj-$(CONFIG_USB_XUSBATM)	+= xusbatm.o

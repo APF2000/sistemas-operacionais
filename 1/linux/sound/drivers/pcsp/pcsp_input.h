@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:7f16739a99d6943fd5f25a6ed18a93e8935fe61da4d946f2bdde65ed9bcfe08d
-size 288
+/*
+ * PC-Speaker driver for Linux
+ *
+ * Copyright (C) 2001-2008  Stas Sergeev
+ */
+
+#ifndef __PCSP_INPUT_H__
+#define __PCSP_INPUT_H__
+
+int pcspkr_input_init(struct input_dev **rdev, struct device *dev);
+int pcspkr_input_remove(struct input_dev *dev);
+void pcspkr_stop_sound(void);
+
+#endif

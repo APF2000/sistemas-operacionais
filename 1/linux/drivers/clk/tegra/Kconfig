@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:7242ecc1c4e0e862eb34999f32981cb63b0b42ff851b3e45c0aeed01018f67e9
-size 116
+config TEGRA_CLK_EMC
+	def_bool y
+	depends on TEGRA124_EMC
+
+config CLK_TEGRA_BPMP
+	def_bool y
+	depends on TEGRA_BPMP

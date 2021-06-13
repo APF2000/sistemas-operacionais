@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:abdae99e32b90a8e264d183a732e32244a4506bfafba491ffb93dd0d45559007
-size 167
+#
+# Makefile for the FUSE filesystem.
+#
+
+obj-$(CONFIG_FUSE_FS) += fuse.o
+obj-$(CONFIG_CUSE) += cuse.o
+
+fuse-objs := dev.o dir.o file.o inode.o control.o xattr.o acl.o

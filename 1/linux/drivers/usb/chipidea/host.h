@@ -1,3 +1,29 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a6ad009b4e352a79aa743cf431d6ec9053390396b7fb19e24f7d78cd82ed0506
-size 488
+#ifndef __DRIVERS_USB_CHIPIDEA_HOST_H
+#define __DRIVERS_USB_CHIPIDEA_HOST_H
+
+#ifdef CONFIG_USB_CHIPIDEA_HOST
+
+int ci_hdrc_host_init(struct ci_hdrc *ci);
+void ci_hdrc_host_destroy(struct ci_hdrc *ci);
+void ci_hdrc_host_driver_init(void);
+
+#else
+
+static inline int ci_hdrc_host_init(struct ci_hdrc *ci)
+{
+	return -ENXIO;
+}
+
+static inline void ci_hdrc_host_destroy(struct ci_hdrc *ci)
+{
+
+}
+
+static void ci_hdrc_host_driver_init(void)
+{
+
+}
+
+#endif
+
+#endif /* __DRIVERS_USB_CHIPIDEA_HOST_H */

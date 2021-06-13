@@ -1,3 +1,33 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:69860c257c26d267008bdfc939d4a1ede36070b28b5908b98f1c23033b5a0297
-size 774
+#
+# RF switch subsystem configuration
+#
+menuconfig RFKILL
+	tristate "RF switch subsystem support"
+	help
+	  Say Y here if you want to have control over RF switches
+	  found on many WiFi and Bluetooth cards.
+
+	  To compile this driver as a module, choose M here: the
+	  module will be called rfkill.
+
+# LED trigger support
+config RFKILL_LEDS
+	bool
+	depends on RFKILL
+	depends on LEDS_TRIGGERS = y || RFKILL = LEDS_TRIGGERS
+	default y
+
+config RFKILL_INPUT
+	bool "RF switch input support" if EXPERT
+	depends on RFKILL
+	depends on INPUT = y || RFKILL = INPUT
+	default y if !EXPERT
+
+config RFKILL_GPIO
+	tristate "GPIO RFKILL driver"
+	depends on RFKILL
+	depends on GPIOLIB || COMPILE_TEST
+	default n
+	help
+	  If you say yes here you get support of a generic gpio RFKILL
+	  driver.

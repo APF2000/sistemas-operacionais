@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:8dc895f33107d5c4d0f796487a5f4536de7451eac0824930a8087a96e5fc93f7
-size 292
+/*
+ * Copyright (c) 2013 Trond Myklebust <Trond.Myklebust@netapp.com>
+ */
+#include <linux/nfs_fs.h>
+#include <linux/namei.h>
+#include "internal.h"
+
+#define CREATE_TRACE_POINTS
+#include "nfstrace.h"
+
+EXPORT_TRACEPOINT_SYMBOL_GPL(nfs_fsync_enter);
+EXPORT_TRACEPOINT_SYMBOL_GPL(nfs_fsync_exit);

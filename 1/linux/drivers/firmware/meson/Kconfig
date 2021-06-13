@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b973d97b2d2b72bf44059f1a5326d3d8864c0c5b2d09a1b748132b9eb4ad98a7
-size 169
+#
+# Amlogic Secure Monitor driver
+#
+config MESON_SM
+	bool
+	default ARCH_MESON
+	depends on ARM64_4K_PAGES
+	help
+	  Say y here to enable the Amlogic secure monitor driver

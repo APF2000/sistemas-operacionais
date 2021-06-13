@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f187248da78fa935a1b4c934416940c859a763e3f8197c723d772f02f3deb403
-size 217
+#ifndef __ASM_LINKAGE_H
+#define __ASM_LINKAGE_H
+
+#define cond_syscall(x)  asm(".weak\t" #x "\n" #x " = sys_ni_syscall")
+#define SYSCALL_ALIAS(alias, name)					\
+	asm ( #alias " = " #name "\n\t.globl " #alias)
+
+#endif

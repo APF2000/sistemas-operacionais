@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:14250ffcfb464bbf23f27854d941a0fcb0a6c8f056aa40507e5ced8b9ae60a43
-size 310
+/*
+ * QLogic Fibre Channel HBA Driver
+ * Copyright (c)  2003-2014 QLogic Corporation
+ *
+ * See LICENSE.qla2xxx for copyright and licensing details.
+ */
+#define MAX_RETRIES_OF_ISP_ABORT	5
+
+/* Max time to wait for the loop to be in LOOP_READY state */
+#define MAX_LOOP_TIMEOUT	(60 * 5)
+
+#include "qla_version.h"

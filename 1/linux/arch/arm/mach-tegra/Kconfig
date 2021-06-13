@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:482e45f614621fc86b25fa866ecd3f8d91b68fc883d55f1fec52ec42b024ccae
-size 404
+menuconfig ARCH_TEGRA
+	bool "NVIDIA Tegra"
+	depends on ARCH_MULTI_V7
+	select ARCH_SUPPORTS_TRUSTED_FOUNDATIONS
+	select ARM_AMBA
+	select ARM_GIC
+	select CLKSRC_MMIO
+	select GPIOLIB
+	select HAVE_ARM_SCU if SMP
+	select HAVE_ARM_TWD if SMP
+	select PINCTRL
+	select PM_OPP
+	select ARCH_HAS_RESET_CONTROLLER
+	select RESET_CONTROLLER
+	select SOC_BUS
+	help
+	  This enables support for NVIDIA Tegra based systems.

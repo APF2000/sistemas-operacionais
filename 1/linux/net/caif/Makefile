@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:874096be34500764e0f2bd96f50893095218f7bd286c5e30dfce530cb0e23adf
-size 374
+ccflags-$(CONFIG_CAIF_DEBUG)     :=      -DDEBUG
+
+caif-y := caif_dev.o \
+	cfcnfg.o cfmuxl.o cfctrl.o  \
+	cffrml.o cfveil.o cfdbgl.o\
+	cfserl.o cfdgml.o  \
+	cfrfml.o cfvidl.o cfutill.o \
+	cfsrvl.o cfpkt_skbuff.o
+
+obj-$(CONFIG_CAIF) += caif.o
+obj-$(CONFIG_CAIF_NETDEV) += chnl_net.o
+obj-$(CONFIG_CAIF) += caif_socket.o
+obj-$(CONFIG_CAIF_USB) += caif_usb.o
+
+export-y := caif.o

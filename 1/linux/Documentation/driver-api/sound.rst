@@ -1,3 +1,54 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ec9970497990c30e64ed03781e4c43918c392e1871734e6f2457670a789276cb
-size 870
+Sound Devices
+=============
+
+.. kernel-doc:: include/sound/core.h
+   :internal:
+
+.. kernel-doc:: sound/sound_core.c
+   :export:
+
+.. kernel-doc:: include/sound/pcm.h
+   :internal:
+
+.. kernel-doc:: sound/core/pcm.c
+   :export:
+
+.. kernel-doc:: sound/core/device.c
+   :export:
+
+.. kernel-doc:: sound/core/info.c
+   :export:
+
+.. kernel-doc:: sound/core/rawmidi.c
+   :export:
+
+.. kernel-doc:: sound/core/sound.c
+   :export:
+
+.. kernel-doc:: sound/core/memory.c
+   :export:
+
+.. kernel-doc:: sound/core/pcm_memory.c
+   :export:
+
+.. kernel-doc:: sound/core/init.c
+   :export:
+
+.. kernel-doc:: sound/core/isadma.c
+   :export:
+
+.. kernel-doc:: sound/core/control.c
+   :export:
+
+.. kernel-doc:: sound/core/pcm_lib.c
+   :export:
+
+.. kernel-doc:: sound/core/hwdep.c
+   :export:
+
+.. kernel-doc:: sound/core/pcm_native.c
+   :export:
+
+.. kernel-doc:: sound/core/memalloc.c
+   :export:
+

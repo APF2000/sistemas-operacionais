@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4151b00de316fb5374549700454c807eda857c7671cf0ccbe89380cc9c4bf4da
-size 223
+Boe Corporation 8.0" WUXGA TFT LCD panel
+
+Required properties:
+- compatible: should be "boe,tv080wum-nl0"
+
+This binding is compatible with the simple-panel binding, which is specified
+in simple-panel.txt in this directory.

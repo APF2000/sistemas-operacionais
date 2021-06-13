@@ -1,3 +1,24 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:16d22f97c96c5a38689a0feddbc1def2c356ab5d9ab192806fadb7a4c95aa35a
-size 530
+Faraday Ethernet Controller
+
+Required properties:
+
+- compatible : Must contain "faraday,ftmac", as well as one of
+		the SoC specific identifiers:
+		"andestech,atmac100"
+		"moxa,moxart-mac"
+- reg : Should contain register location and length
+- interrupts : Should contain the mac interrupt number
+
+Example:
+
+	mac0: mac@90900000 {
+		compatible = "moxa,moxart-mac";
+		reg =	<0x90900000 0x100>;
+		interrupts = <25 0>;
+	};
+
+	mac1: mac@92000000 {
+		compatible = "moxa,moxart-mac";
+		reg =	<0x92000000 0x100>;
+		interrupts = <27 0>;
+	};

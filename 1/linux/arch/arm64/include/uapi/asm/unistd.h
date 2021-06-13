@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:86d6b5e02a32c6662d5c552c1e459a0c30a44c66fad6b242b6181d316f03ccc0
-size 685
+/*
+ * Copyright (C) 2012 ARM Ltd.
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 2 as
+ * published by the Free Software Foundation.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+#define __ARCH_WANT_RENAMEAT
+
+#include <asm-generic/unistd.h>

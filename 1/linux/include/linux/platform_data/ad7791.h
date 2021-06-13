@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e4871427bfd563406ea78559bf893b60a05e3c8afd245e6bad403ce50f95b3bb
-size 491
+#ifndef __LINUX_PLATFORM_DATA_AD7791__
+#define __LINUX_PLATFORM_DATA_AD7791__
+
+/**
+ * struct ad7791_platform_data - AD7791 device platform data
+ * @buffered: If set to true configure the device for buffered input mode.
+ * @burnout_current: If set to true the 100mA burnout current is enabled.
+ * @unipolar: If set to true sample in unipolar mode, if set to false sample in
+ *		bipolar mode.
+ */
+struct ad7791_platform_data {
+	bool buffered;
+	bool burnout_current;
+	bool unipolar;
+};
+
+#endif

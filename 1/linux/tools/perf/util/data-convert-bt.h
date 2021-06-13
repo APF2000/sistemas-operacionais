@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c0b960b838cb1ab5c5063349bd524ebad94d6887bc03965f15d01cb6736847ce
-size 302
+#ifndef __DATA_CONVERT_BT_H
+#define __DATA_CONVERT_BT_H
+#include "data-convert.h"
+#ifdef HAVE_LIBBABELTRACE_SUPPORT
+
+int bt_convert__perf2ctf(const char *input_name, const char *to_ctf,
+			 struct perf_data_convert_opts *opts);
+
+#endif /* HAVE_LIBBABELTRACE_SUPPORT */
+#endif /* __DATA_CONVERT_BT_H */

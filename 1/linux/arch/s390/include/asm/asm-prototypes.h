@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:95c860ac0344abbbb62b756f0d9e546d5de5e75323181aabb8bc59727bafce79
-size 188
+#ifndef _ASM_S390_PROTOTYPES_H
+
+#include <linux/kvm_host.h>
+#include <linux/ftrace.h>
+#include <asm/fpu/api.h>
+#include <asm-generic/asm-prototypes.h>
+
+#endif /* _ASM_S390_PROTOTYPES_H */

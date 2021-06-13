@@ -1,3 +1,29 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c0b36cb3214dc4f339e66392c7dd3ea498e8677a40b95ec0086f3cea7b175b2e
-size 661
+/*
+ * Copyright (C) 2004, 2007-2010, 2011-2012 Synopsys, Inc. (www.synopsys.com)
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 2 as
+ * published by the Free Software Foundation.
+ *
+ * Amit Bhor, Sameer Dhavale: Codito Technologies 2004
+
+ */
+
+#ifndef _ASM_ARC_MODULE_H
+#define _ASM_ARC_MODULE_H
+
+#include <asm-generic/module.h>
+
+struct mod_arch_specific {
+#ifdef CONFIG_ARC_DW2_UNWIND
+	void *unw_info;
+	int unw_sec_idx;
+#endif
+	const char *secstr;
+};
+
+#define MODULE_PROC_FAMILY "ARC700"
+
+#define MODULE_ARCH_VERMAGIC MODULE_PROC_FAMILY
+
+#endif /* _ASM_ARC_MODULE_H */

@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c04f7fc0e66fb2947edd6d6c68aa4f9fd3640468bc6b42ad00d02db6fb0b62ac
-size 539
+/*
+ * Platform data for NXP SC18IS602/603
+ *
+ * Copyright (C) 2012 Guenter Roeck <linux@roeck-us.net>
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 2 as
+ * published by the Free Software Foundation.
+ *
+ * For further information, see the Documentation/spi/sc18is602 file.
+ */
+
+/**
+ * struct sc18is602_platform_data - sc18is602 info
+ * @clock_frequency		SC18IS603 oscillator frequency
+ */
+struct sc18is602_platform_data {
+	u32 clock_frequency;
+};

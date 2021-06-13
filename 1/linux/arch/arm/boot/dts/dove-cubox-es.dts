@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:9c816f570e28c7fabeb282a15c386d766159bd0b707268202f24f7a843d37dc9
-size 294
+#include "dove-cubox.dts"
+
+/ {
+	model = "SolidRun CuBox (Engineering Sample)";
+	compatible = "solidrun,cubox-es", "solidrun,cubox", "marvell,dove";
+};
+
+&sdio0 {
+	/* sdio0 card detect is connected to wrong pin on CuBox ES */
+	cd-gpios = <&gpio0 12 1>;
+	pinctrl-0 = <&pmx_sdio0 &pmx_gpio_12>;
+};

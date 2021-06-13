@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:85745fe6bdf762790944a8efb95b3cb7185916872a868f9c78564304dd8cb4ed
-size 371
+CBMC_FLAGS = -I../.. -I../../src -I../../include -I../../empty_includes -32 -pointer-check -mm pso
+
+all:
+	for i in ./*.pass; do \
+		echo $$i ; \
+		CBMC_FLAGS="$(CBMC_FLAGS)" sh ../test_script.sh --should-pass $$i > $$i.out 2>&1 ; \
+	done
+	for i in ./*.fail; do \
+		echo $$i ; \
+		CBMC_FLAGS="$(CBMC_FLAGS)" sh ../test_script.sh --should-fail $$i > $$i.out 2>&1 ; \
+	done

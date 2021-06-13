@@ -1,3 +1,41 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:9f8eac2740fe62f08cdd09478a469ae3c54dd211cd44c9e1416f87d30e643118
-size 1083
+# ==========================================================================
+# Installing dtb files
+#
+# Installs all dtb files listed in $(dtb-y) either in the
+# INSTALL_DTBS_PATH directory or the default location:
+#
+#   $INSTALL_PATH/dtbs/$KERNELRELEASE
+#
+# Traverse through subdirectories listed in $(dts-dirs).
+# ==========================================================================
+
+src := $(obj)
+
+PHONY := __dtbs_install
+__dtbs_install:
+
+export dtbinst-root ?= $(obj)
+
+include include/config/auto.conf
+include scripts/Kbuild.include
+include $(src)/Makefile
+
+dtbinst-files	:= $(dtb-y)
+dtbinst-dirs	:= $(dts-dirs)
+
+# Helper targets for Installing DTBs into the boot directory
+quiet_cmd_dtb_install =	INSTALL $<
+      cmd_dtb_install =	mkdir -p $(2); cp $< $(2)
+
+install-dir = $(patsubst $(dtbinst-root)%,$(INSTALL_DTBS_PATH)%,$(obj))
+
+$(dtbinst-files): %.dtb: $(obj)/%.dtb
+	$(call cmd,dtb_install,$(install-dir))
+
+$(dtbinst-dirs):
+	$(Q)$(MAKE) $(dtbinst)=$(obj)/$@
+
+PHONY += $(dtbinst-files) $(dtbinst-dirs)
+__dtbs_install: $(dtbinst-files) $(dtbinst-dirs)
+
+.PHONY: $(PHONY)

@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:73afdf3cd404bfc650ea70c0784c60861537dfe6b748614267da06938d907b47
-size 447
+.. -*- coding: utf-8; mode: rst -*-
+
+.. _Remote_controllers_table_change:
+
+*******************************************
+Changing default Remote Controller mappings
+*******************************************
+
+The event interface provides two ioctls to be used against the
+/dev/input/event device, to allow changing the default keymapping.
+
+This program demonstrates how to replace the keymap tables.
+
+
+.. toctree::
+    :maxdepth: 1
+
+    keytable.c

@@ -1,3 +1,34 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e4257711302aed60e31e95ca9283a5a740708894179bbcbd98ac02b6cab7292e
-size 810
+#ifndef _NET_EVENT_H
+#define _NET_EVENT_H
+
+/*
+ *	Generic netevent notifiers
+ *
+ *	Authors:
+ *      Tom Tucker              <tom@opengridcomputing.com>
+ *      Steve Wise              <swise@opengridcomputing.com>
+ *
+ * 	Changes:
+ */
+
+struct dst_entry;
+struct neighbour;
+
+struct netevent_redirect {
+	struct dst_entry *old;
+	struct dst_entry *new;
+	struct neighbour *neigh;
+	const void *daddr;
+};
+
+enum netevent_notif_type {
+	NETEVENT_NEIGH_UPDATE = 1, /* arg is struct neighbour ptr */
+	NETEVENT_REDIRECT,	   /* arg is struct netevent_redirect ptr */
+	NETEVENT_DELAY_PROBE_TIME_UPDATE, /* arg is struct neigh_parms ptr */
+};
+
+int register_netevent_notifier(struct notifier_block *nb);
+int unregister_netevent_notifier(struct notifier_block *nb);
+int call_netevent_notifiers(unsigned long val, void *v);
+
+#endif

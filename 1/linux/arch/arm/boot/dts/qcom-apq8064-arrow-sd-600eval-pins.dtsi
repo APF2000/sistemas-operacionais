@@ -1,3 +1,52 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:40b3a9a0ef8b33f26e9db7336bde3f2b90f534a39fbbbe41357d650ba5e0af4c
-size 742
+&tlmm_pinmux {
+	card_detect: card-detect {
+		mux {
+			pins = "gpio26";
+			function = "gpio";
+			bias-disable;
+		};
+	};
+
+	pcie_pins: pcie-pinmux {
+		mux {
+			pins = "gpio27";
+			function = "gpio";
+		};
+		conf {
+			pins = "gpio27";
+			drive-strength = <12>;
+			bias-disable;
+		};
+	};
+
+	user_leds: user-leds {
+		mux {
+			pins = "gpio3", "gpio7", "gpio10", "gpio11";
+			function = "gpio";
+		};
+
+		conf {
+			pins = "gpio3", "gpio7", "gpio10", "gpio11";
+			function = "gpio";
+			output-low;
+		};
+	};
+
+	magneto_pins: magneto-pins {
+		mux {
+			pins = "gpio31", "gpio48";
+			function = "gpio";
+			bias-disable;
+		};
+	};
+};
+
+&pm8921_mpps {
+	mpp_leds: mpp-leds {
+		pinconf {
+			pins = "mpp7", "mpp8";
+			function = "digital";
+			output-low;
+		};
+	};
+};

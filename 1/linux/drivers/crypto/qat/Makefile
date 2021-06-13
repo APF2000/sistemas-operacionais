@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f0df41673b4e5fc19daf977a290cb4f67e02efea9d550c1fab95491a367c17f0
-size 358
+obj-$(CONFIG_CRYPTO_DEV_QAT) += qat_common/
+obj-$(CONFIG_CRYPTO_DEV_QAT_DH895xCC) += qat_dh895xcc/
+obj-$(CONFIG_CRYPTO_DEV_QAT_C3XXX) += qat_c3xxx/
+obj-$(CONFIG_CRYPTO_DEV_QAT_C62X) += qat_c62x/
+obj-$(CONFIG_CRYPTO_DEV_QAT_DH895xCCVF) += qat_dh895xccvf/
+obj-$(CONFIG_CRYPTO_DEV_QAT_C3XXXVF) += qat_c3xxxvf/
+obj-$(CONFIG_CRYPTO_DEV_QAT_C62XVF) += qat_c62xvf/

@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b757c4388c17744a37277d5bdd9f4cda1241eaf4422f8e1b26ff94631c97d756
-size 286
+* Maxim (Dallas) DS26522 Dual T1/E1/J1 Transceiver
+
+Required properties:
+- compatible: Should contain "maxim,ds26522".
+- reg: SPI CS.
+- spi-max-frequency: SPI clock.
+
+Example:
+	slic@1 {
+		compatible = "maxim,ds26522";
+		reg = <1>;
+		spi-max-frequency = <2000000>; /* input clock */
+	};

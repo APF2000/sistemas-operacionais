@@ -1,3 +1,25 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:7f0343afddb815a4d01aea269990d5cdc772f419703588c3e1fcfd523e73b0e8
-size 320
+/dts-v1/;
+
+/include/ "bcm3384_viper.dtsi"
+
+/ {
+	compatible = "brcm,bcm93384wvg-viper", "brcm,bcm3384-viper";
+	model = "Broadcom BCM93384WVG-viper";
+
+	chosen {
+		bootargs = "console=ttyS0,115200";
+		stdout-path = &uart0;
+	};
+};
+
+&uart0 {
+	status = "okay";
+};
+
+&ehci0 {
+	status = "okay";
+};
+
+&ohci0 {
+	status = "okay";
+};

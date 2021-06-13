@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:0d152c49090147e6f621c439721af8cd94e222f8b3a302d464ea3e184773c720
-size 469
+config VIDEO_VIMC
+	tristate "Virtual Media Controller Driver (VIMC)"
+	depends on VIDEO_DEV && VIDEO_V4L2 && VIDEO_V4L2_SUBDEV_API
+	select VIDEOBUF2_VMALLOC
+	default n
+	---help---
+	  Skeleton driver for Virtual Media Controller
+
+	  This driver can be compared to the vivid driver for emulating
+	  a media node that exposes a complex media topology. The topology
+	  is hard coded for now but is meant to be highly configurable in
+	  the future.
+
+	  When in doubt, say N.

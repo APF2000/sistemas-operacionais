@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:32d7658ce356642971be6984dbc0822a9a10fddb65361e826f50331ec4f2105f
-size 238
+libperf-y += header.o
+libperf-y += sym-handling.o
+libperf-y += kvm-stat.o
+libperf-y += perf_regs.o
+
+libperf-$(CONFIG_DWARF) += dwarf-regs.o
+libperf-$(CONFIG_DWARF) += skip-callchain-idx.o
+libperf-$(CONFIG_LIBUNWIND) += unwind-libunwind.o

@@ -1,3 +1,23 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:9db17d8cb679ecb61fdfe80c264341825dd56828e3aa8fa2ea66e60d377b287d
-size 677
+#
+# Mellanox driver configuration
+#
+
+config NET_VENDOR_MELLANOX
+	bool "Mellanox devices"
+	default y
+	depends on PCI
+	---help---
+	  If you have a network (Ethernet) card belonging to this class, say Y.
+
+	  Note that the answer to this question doesn't directly affect the
+	  kernel: saying N will just cause the configurator to skip all
+	  the questions about Mellanox cards. If you say Y, you will be asked
+	  for your specific card in the following questions.
+
+if NET_VENDOR_MELLANOX
+
+source "drivers/net/ethernet/mellanox/mlx4/Kconfig"
+source "drivers/net/ethernet/mellanox/mlx5/core/Kconfig"
+source "drivers/net/ethernet/mellanox/mlxsw/Kconfig"
+
+endif # NET_VENDOR_MELLANOX

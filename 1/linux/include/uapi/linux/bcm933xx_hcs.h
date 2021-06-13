@@ -1,3 +1,24 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:0ccf1faefe4fc14781df0fdcb1a83e14798130478b4cd25103271a055d7c96f5
-size 356
+/*
+ * Broadcom Cable Modem firmware format
+ */
+
+#ifndef __BCM933XX_HCS_H
+#define __BCM933XX_HCS_H
+
+#include <linux/types.h>
+
+struct bcm_hcs {
+	__u16 magic;
+	__u16 control;
+	__u16 rev_maj;
+	__u16 rev_min;
+	__u32 build_date;
+	__u32 filelen;
+	__u32 ldaddress;
+	char filename[64];
+	__u16 hcs;
+	__u16 her_znaet_chto;
+	__u32 crc;
+};
+
+#endif /* __BCM933XX_HCS */

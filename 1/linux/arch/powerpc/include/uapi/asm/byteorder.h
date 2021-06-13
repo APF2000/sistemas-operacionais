@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:3b7d140c918a0bfb3cffa34dc72a7c58998cf464a4c156861239e2b95fc53ad4
-size 486
+#ifndef _ASM_POWERPC_BYTEORDER_H
+#define _ASM_POWERPC_BYTEORDER_H
+
+/*
+ * This program is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License
+ * as published by the Free Software Foundation; either version
+ * 2 of the License, or (at your option) any later version.
+ */
+#ifdef __LITTLE_ENDIAN__
+#include <linux/byteorder/little_endian.h>
+#else
+#include <linux/byteorder/big_endian.h>
+#endif
+
+#endif /* _ASM_POWERPC_BYTEORDER_H */

@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:8036ce091ccefa6b0a702397edc5f1a5558bcba9ba7f5a49730ff80b2e7d31a2
-size 272
+#ifndef _AIRO_H_
+#define _AIRO_H_
+
+struct net_device *init_airo_card(unsigned short irq, int port, int is_pcmcia,
+				  struct device *dmdev);
+int reset_airo_card(struct net_device *dev);
+void stop_airo_card(struct net_device *dev, int freeres);
+
+#endif  /*  _AIRO_H_  */

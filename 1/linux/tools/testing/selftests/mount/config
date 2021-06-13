@@ -1,3 +1,2 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:755f966380c62599b8dd835dd3c551a5b87387b17a8e5aa146200706e676682a
-size 52
+CONFIG_USER_NS=y
+CONFIG_DEVPTS_MULTIPLE_INSTANCES=y

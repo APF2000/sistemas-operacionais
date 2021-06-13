@@ -1,3 +1,22 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:7cde8e2b1577f27c38e98130f95304304fb3f10152f6f1861439f62d7ffd7772
-size 519
+#ifndef __NVMXM_MXMS_H__
+#define __NVMXM_MXMS_H__
+#include "priv.h"
+
+struct mxms_odev {
+	u8 outp_type;
+	u8 conn_type;
+	u8 ddc_port;
+	u8 dig_conn;
+};
+
+void mxms_output_device(struct nvkm_mxm *, u8 *, struct mxms_odev *);
+
+u16  mxms_version(struct nvkm_mxm *);
+u16  mxms_headerlen(struct nvkm_mxm *);
+u16  mxms_structlen(struct nvkm_mxm *);
+bool mxms_checksum(struct nvkm_mxm *);
+bool mxms_valid(struct nvkm_mxm *);
+
+bool mxms_foreach(struct nvkm_mxm *, u8,
+		  bool (*)(struct nvkm_mxm *, u8 *, void *), void *);
+#endif

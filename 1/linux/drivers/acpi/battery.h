@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:32e9a5e8ec50dec167b6f782c8cd481a899a7e10f78ff3568bf33b054c26ebc9
-size 220
+#ifndef __ACPI_BATTERY_H
+#define __ACPI_BATTERY_H
+
+#define ACPI_BATTERY_CLASS "battery"
+
+#define ACPI_BATTERY_NOTIFY_STATUS	0x80
+#define ACPI_BATTERY_NOTIFY_INFO	0x81
+#define ACPI_BATTERY_NOTIFY_THRESHOLD   0x82
+
+#endif

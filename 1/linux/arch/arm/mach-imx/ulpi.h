@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c8fd30b934ec5b383a2a6e0e02415d5f70d65226d7c944279f84c7a4630972b7
-size 369
+#ifndef __MACH_ULPI_H
+#define __MACH_ULPI_H
+
+#include <linux/usb/ulpi.h>
+
+#ifdef CONFIG_USB_ULPI_VIEWPORT
+static inline struct usb_phy *imx_otg_ulpi_create(unsigned int flags)
+{
+	return otg_ulpi_create(&ulpi_viewport_access_ops, flags);
+}
+#else
+static inline struct usb_phy *imx_otg_ulpi_create(unsigned int flags)
+{
+	return NULL;
+}
+#endif
+
+#endif /* __MACH_ULPI_H */
+

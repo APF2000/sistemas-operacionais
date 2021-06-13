@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:48caa3326cd9499ad00e20f1138776995ef3d4f92f1e2d69cc0d1fe235ff0d58
-size 591
+/*
+ * arch/arm/mach-dove/include/mach/hardware.h
+ *
+ * This file is licensed under the terms of the GNU General Public
+ * License version 2.  This program is licensed "as is" without any
+ * warranty of any kind, whether express or implied.
+ */
+
+#ifndef __ASM_ARCH_HARDWARE_H
+#define __ASM_ARCH_HARDWARE_H
+
+#include "dove.h"
+
+/* Macros below are required for compatibility with PXA AC'97 driver.	*/
+#define __REG(x)	(*((volatile u32 *)((x) - DOVE_SB_REGS_PHYS_BASE + \
+				DOVE_SB_REGS_VIRT_BASE)))
+#define __PREG(x)	(((u32)&(x)) - DOVE_SB_REGS_VIRT_BASE + \
+		DOVE_SB_REGS_PHYS_BASE)
+#endif

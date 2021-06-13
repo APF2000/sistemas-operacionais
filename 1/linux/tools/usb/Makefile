@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2f00865f4ef86df83d14d6dd66f0b488313beb692b2e69c6d7c706ccfd9e3317
-size 263
+# Makefile for USB tools
+
+CC = $(CROSS_COMPILE)gcc
+PTHREAD_LIBS = -lpthread
+WARNINGS = -Wall -Wextra
+CFLAGS = $(WARNINGS) -g -I../include
+LDFLAGS = $(PTHREAD_LIBS)
+
+all: testusb ffs-test
+%: %.c
+	$(CC) $(CFLAGS) -o $@ $^ $(LDFLAGS)
+
+clean:
+	$(RM) testusb ffs-test

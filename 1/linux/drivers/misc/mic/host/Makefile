@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b3dd12f90c7c5f0dec13187407cc3401ebd26bd1b742cbb495de129cd832dd9d
-size 295
+#
+# Makefile - Intel MIC Linux driver.
+# Copyright(c) 2013, Intel Corporation.
+#
+obj-$(CONFIG_INTEL_MIC_HOST) += mic_host.o
+mic_host-objs := mic_main.o
+mic_host-objs += mic_x100.o
+mic_host-objs += mic_smpt.o
+mic_host-objs += mic_intr.o
+mic_host-objs += mic_boot.o
+mic_host-objs += mic_debugfs.o

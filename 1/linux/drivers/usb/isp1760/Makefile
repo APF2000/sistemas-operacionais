@@ -1,3 +1,5 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:7d273ea3e2ab15f136361361f9f9419ec17b7c7158ff0480aad38f47ae89044a
-size 183
+isp1760-y := isp1760-core.o isp1760-if.o
+isp1760-$(CONFIG_USB_ISP1760_HCD) += isp1760-hcd.o
+isp1760-$(CONFIG_USB_ISP1761_UDC) += isp1760-udc.o
+
+obj-$(CONFIG_USB_ISP1760)	+= isp1760.o

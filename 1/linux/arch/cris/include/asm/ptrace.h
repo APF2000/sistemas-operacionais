@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:49e285608c964bbaf53a6ea327e345ece1f06a1bd78b082fc198b3aaf0d22249
-size 354
+#ifndef _CRIS_PTRACE_H
+#define _CRIS_PTRACE_H
+
+#include <uapi/asm/ptrace.h>
+
+
+/* Arbitrarily choose the same ptrace numbers as used by the Sparc code. */
+#define PTRACE_GETREGS            12
+#define PTRACE_SETREGS            13
+
+#define profile_pc(regs) instruction_pointer(regs)
+#define current_user_stack_pointer() rdusp()
+
+#endif /* _CRIS_PTRACE_H */

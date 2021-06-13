@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d5658a0ad053e9ad72cfb6241078e5ab966b3534bf8d08be4caccd662aa842e4
-size 337
+#ifndef _ASM_X86_CACHEFLUSH_H
+#define _ASM_X86_CACHEFLUSH_H
+
+/* Caches aren't brain-dead on the intel. */
+#include <asm-generic/cacheflush.h>
+#include <asm/special_insns.h>
+
+void clflush_cache_range(void *addr, unsigned int size);
+
+#define mmio_flush_range(addr, size) clflush_cache_range(addr, size)
+
+#endif /* _ASM_X86_CACHEFLUSH_H */

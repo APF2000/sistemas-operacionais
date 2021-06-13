@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:807b3e79195d2871a1fe0395ec0198f5cd146b33c84e0bb8ce15b2661e8d8308
-size 280
+#
+# Makefile for the Synopsys network device drivers.
+#
+
+obj-$(CONFIG_DWC_XLGMAC) += dwc-xlgmac.o
+dwc-xlgmac-objs := dwc-xlgmac-net.o dwc-xlgmac-desc.o \
+		   dwc-xlgmac-hw.o dwc-xlgmac-common.o \
+		   dwc-xlgmac-ethtool.o
+
+dwc-xlgmac-$(CONFIG_DWC_XLGMAC_PCI) += dwc-xlgmac-pci.o

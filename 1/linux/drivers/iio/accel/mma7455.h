@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:069ac3458867ef0bf098a3ec0ca03087fd250cf8f621ce0f5ba1f1991d39da44
-size 569
+/*
+ * IIO accel driver for Freescale MMA7455L 3-axis 10-bit accelerometer
+ * Copyright 2015 Joachim Eastwood <manabian@gmail.com>
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 2 as
+ * published by the Free Software Foundation.
+ */
+
+#ifndef __MMA7455_H
+#define __MMA7455_H
+
+extern const struct regmap_config mma7455_core_regmap;
+
+int mma7455_core_probe(struct device *dev, struct regmap *regmap,
+		       const char *name);
+int mma7455_core_remove(struct device *dev);
+
+#endif

@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:8f72b1f253111129983cd4752fec968615428a10d960956b906c4a0ee3fc86e3
-size 501
+#ifndef __NVKM_IBUS_H__
+#define __NVKM_IBUS_H__
+#include <core/subdev.h>
+
+int gf100_ibus_new(struct nvkm_device *, int, struct nvkm_subdev **);
+int gf117_ibus_new(struct nvkm_device *, int, struct nvkm_subdev **);
+int gk104_ibus_new(struct nvkm_device *, int, struct nvkm_subdev **);
+int gk20a_ibus_new(struct nvkm_device *, int, struct nvkm_subdev **);
+int gm200_ibus_new(struct nvkm_device *, int, struct nvkm_subdev **);
+int gp10b_ibus_new(struct nvkm_device *, int, struct nvkm_subdev **);
+#endif

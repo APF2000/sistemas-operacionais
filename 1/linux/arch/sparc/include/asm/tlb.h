@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:936a530fdff48102659ffd7fd5ecb87a958f74bf3630fdd1946f65f93832e229
-size 168
+#ifndef ___ASM_SPARC_TLB_H
+#define ___ASM_SPARC_TLB_H
+#if defined(__sparc__) && defined(__arch64__)
+#include <asm/tlb_64.h>
+#else
+#include <asm/tlb_32.h>
+#endif
+#endif

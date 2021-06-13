@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2ef221640b3c7cc699eceb8d9947435d58a1d18ae4e51171dceb8c7bde163c9a
-size 218
+InnoLux 15.6" WXGA TFT LCD panel
+
+Required properties:
+- compatible: should be "innolux,n156bge-l21"
+
+This binding is compatible with the simple-panel binding, which is specified
+in simple-panel.txt in this directory.

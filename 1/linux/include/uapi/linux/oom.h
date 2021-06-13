@@ -1,3 +1,20 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1e3571dd5d95f7e4b7e39bb6d2fb31f99fa95d1a7797f8437f997d6554c1ede0
-size 463
+#ifndef _UAPI__INCLUDE_LINUX_OOM_H
+#define _UAPI__INCLUDE_LINUX_OOM_H
+
+/*
+ * /proc/<pid>/oom_score_adj set to OOM_SCORE_ADJ_MIN disables oom killing for
+ * pid.
+ */
+#define OOM_SCORE_ADJ_MIN	(-1000)
+#define OOM_SCORE_ADJ_MAX	1000
+
+/*
+ * /proc/<pid>/oom_adj set to -17 protects from the oom killer for legacy
+ * purposes.
+ */
+#define OOM_DISABLE (-17)
+/* inclusive */
+#define OOM_ADJUST_MIN (-16)
+#define OOM_ADJUST_MAX 15
+
+#endif /* _UAPI__INCLUDE_LINUX_OOM_H */

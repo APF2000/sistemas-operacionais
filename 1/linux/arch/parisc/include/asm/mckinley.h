@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:25377ac5205a966fad40bee4d43fa5fad31436696522beeed2752e36fa357859
-size 231
+#ifndef ASM_PARISC_MCKINLEY_H
+#define ASM_PARISC_MCKINLEY_H
+#ifdef __KERNEL__
+
+/* declared in arch/parisc/kernel/setup.c */
+extern struct proc_dir_entry * proc_mckinley_root;
+
+#endif /*__KERNEL__*/
+#endif /*ASM_PARISC_MCKINLEY_H*/

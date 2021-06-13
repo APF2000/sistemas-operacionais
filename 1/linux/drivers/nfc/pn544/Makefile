@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:241446874be145b7e9dee50f015ae5f9acc76eaa34c7887b67e7e83b4f780663
-size 221
+#
+# Makefile for PN544 HCI based NFC driver
+#
+
+pn544_i2c-objs  = i2c.o
+pn544_mei-objs  = mei.o
+
+obj-$(CONFIG_NFC_PN544)     += pn544.o
+obj-$(CONFIG_NFC_PN544_I2C) += pn544_i2c.o
+obj-$(CONFIG_NFC_PN544_MEI) += pn544_mei.o

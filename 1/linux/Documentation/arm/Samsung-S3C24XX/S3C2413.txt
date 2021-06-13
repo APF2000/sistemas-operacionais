@@ -1,3 +1,21 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:631fa53ed2b2c3ccf23f079bfd5952286f123df0591cd935d9fd1432ff6d0de5
-size 416
+		S3C2413 ARM Linux Overview
+		==========================
+
+Introduction
+------------
+
+  The S3C2413 is an extended version of the S3C2412, with an camera
+  interface and mobile DDR memory support. See the S3C2412 support
+  documentation for more information.
+
+
+Camera Interface
+---------------
+
+  This block is currently not supported.
+
+
+Document Author
+---------------
+
+Ben Dooks, Copyright 2006 Simtec Electronics

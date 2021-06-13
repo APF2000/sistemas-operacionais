@@ -1,3 +1,4 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:41c97b866ae088295deea1e28b858199abc32a02fde44f812a64ce841e698492
-size 139
+#ifndef __NVIF_IF0005_H__
+#define __NVIF_IF0005_H__
+#define NV10_NVSW_NTFY_UEVENT                                              0x00
+#endif

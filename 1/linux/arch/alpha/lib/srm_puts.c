@@ -1,3 +1,23 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:3873f62dd4e0a9288da148acafec10e86f0185ef9316068fe411aba45493f4eb
-size 370
+/*
+ *	arch/alpha/lib/srm_puts.c
+ */
+
+#include <linux/string.h>
+#include <asm/console.h>
+
+long
+srm_puts(const char *str, long len)
+{
+	long remaining, written;
+
+	if (!callback_init_done)
+		return len;
+
+	for (remaining = len; remaining > 0; remaining -= written)
+	{
+		written = callback_puts(0, str, remaining);
+		written &= 0xffffffff;
+		str += written;
+	}
+	return len;
+}

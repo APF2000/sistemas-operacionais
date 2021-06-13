@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a054698cd05a5f6be86a0b3a8ca0becceb29ad440c9d6632e4f20036170462e2
-size 453
+#ifndef _ARM_LIBFDT_ENV_H
+#define _ARM_LIBFDT_ENV_H
+
+#include <linux/types.h>
+#include <linux/string.h>
+#include <asm/byteorder.h>
+
+typedef __be16 fdt16_t;
+typedef __be32 fdt32_t;
+typedef __be64 fdt64_t;
+
+#define fdt16_to_cpu(x)		be16_to_cpu(x)
+#define cpu_to_fdt16(x)		cpu_to_be16(x)
+#define fdt32_to_cpu(x)		be32_to_cpu(x)
+#define cpu_to_fdt32(x)		cpu_to_be32(x)
+#define fdt64_to_cpu(x)		be64_to_cpu(x)
+#define cpu_to_fdt64(x)		cpu_to_be64(x)
+
+#endif

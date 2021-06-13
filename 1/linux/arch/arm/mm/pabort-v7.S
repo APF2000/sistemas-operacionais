@@ -1,3 +1,21 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:0aca68de484f58f0bfce743ca77d7d86f28c2951fb6c3e713423d4d2873e2577
-size 444
+#include <linux/linkage.h>
+#include <asm/assembler.h>
+
+/*
+ * Function: v7_pabort
+ *
+ * Params  : r2 = pt_regs
+ *	   : r4 = address of aborted instruction
+ *	   : r5 = psr for parent context
+ *
+ * Returns : r4 - r11, r13 preserved
+ *
+ * Purpose : obtain information about current prefetch abort.
+ */
+
+	.align	5
+ENTRY(v7_pabort)
+	mrc	p15, 0, r0, c6, c0, 2		@ get IFAR
+	mrc	p15, 0, r1, c5, c0, 1		@ get IFSR
+	b	do_PrefetchAbort
+ENDPROC(v7_pabort)

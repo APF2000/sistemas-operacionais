@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c80dfe7ae09dce47f4d57bea15aeb649470ac167aff7cfdbee76257bd3be092f
-size 295
+#ifndef _NF_DEFRAG_IPV6_H
+#define _NF_DEFRAG_IPV6_H
+
+struct net;
+int nf_defrag_ipv6_enable(struct net *);
+
+int nf_ct_frag6_init(void);
+void nf_ct_frag6_cleanup(void);
+int nf_ct_frag6_gather(struct net *net, struct sk_buff *skb, u32 user);
+
+struct inet_frags_ctl;
+
+#endif /* _NF_DEFRAG_IPV6_H */

@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:671d919fb9443d6700a6d4049d3bfa0656f8019791d58305c565c413e028418b
-size 320
+#ifndef _LINUX_EARLYCPIO_H
+#define _LINUX_EARLYCPIO_H
+
+#include <linux/types.h>
+
+#define MAX_CPIO_FILE_NAME 18
+
+struct cpio_data {
+	void *data;
+	size_t size;
+	char name[MAX_CPIO_FILE_NAME];
+};
+
+struct cpio_data find_cpio_data(const char *path, void *data, size_t len,
+				long *offset);
+
+#endif /* _LINUX_EARLYCPIO_H */

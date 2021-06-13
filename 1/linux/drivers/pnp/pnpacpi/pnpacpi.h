@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:9501922172b260c2f280677e64d7ad167d74668d5337684598fc48214f3897c1
-size 355
+#ifndef ACPI_PNP_H
+#define ACPI_PNP_H
+
+#include <linux/acpi.h>
+#include <linux/pnp.h>
+
+int pnpacpi_parse_allocated_resource(struct pnp_dev *);
+int pnpacpi_parse_resource_option_data(struct pnp_dev *);
+int pnpacpi_encode_resources(struct pnp_dev *, struct acpi_buffer *);
+int pnpacpi_build_resource_template(struct pnp_dev *, struct acpi_buffer *);
+#endif

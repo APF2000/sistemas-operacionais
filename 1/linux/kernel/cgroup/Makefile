@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:fc93ddce3b3b38d0984cecf3e542041b8ad9f5340ef9611ac2e5aea475ee262d
-size 191
+obj-y := cgroup.o namespace.o cgroup-v1.o
+
+obj-$(CONFIG_CGROUP_FREEZER) += freezer.o
+obj-$(CONFIG_CGROUP_PIDS) += pids.o
+obj-$(CONFIG_CGROUP_RDMA) += rdma.o
+obj-$(CONFIG_CPUSETS) += cpuset.o

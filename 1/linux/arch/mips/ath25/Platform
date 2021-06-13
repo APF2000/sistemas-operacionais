@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:477ec6476728088aa29605d6d1b5644df10d457f7628fc4ea1f9df4bc4f50a6b
-size 186
+#
+# Atheros AR531X/AR231X WiSoC
+#
+platform-$(CONFIG_ATH25)	+= ath25/
+cflags-$(CONFIG_ATH25)		+= -I$(srctree)/arch/mips/include/asm/mach-ath25
+load-$(CONFIG_ATH25)		+= 0xffffffff80041000

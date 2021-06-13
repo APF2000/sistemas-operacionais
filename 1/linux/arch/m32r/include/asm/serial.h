@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:93a6f5d6e58b31aff1d95f8c607d01a2b38111c6293bbce70b5aac104ec814c6
-size 148
+#ifndef _ASM_M32R_SERIAL_H
+#define _ASM_M32R_SERIAL_H
+
+/* include/asm-m32r/serial.h */
+
+
+#define BASE_BAUD	115200
+
+#endif  /* _ASM_M32R_SERIAL_H */

@@ -1,3 +1,3 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d98bab74fb71d224961e5c3b6c18c03ed5283d775f2522ed0003411e7cc73222
-size 68
+
+checker-help:
+	@echo  '  coccicheck      - Check with Coccinelle.'

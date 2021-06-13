@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:6282b17ffd28186546d459323c94557ad08a5853239d80803d820307c07700fd
-size 300
+What:		/sys/bus/iio/devices/triggerX/name = "bmg160-any-motion-devX"
+KernelVersion:	3.17
+Contact:	linux-iio@vger.kernel.org
+Description:
+		The BMG160 gyro kernel module provides an additional trigger,
+		which sets driver in a mode, where data is pushed to the buffer
+		only when there is any motion.

@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:74d804b1663fe3bd87d4c5fc528c1f23e38d7fe8014781d880d53d73e905b8ac
-size 340
+#
+# Makefile for ALSA
+# Copyright (c) 1999 by Jaroslav Kysela <perex@perex.cz>
+#
+
+snd-mixer-oss-objs := mixer_oss.o
+
+snd-pcm-oss-y := pcm_oss.o
+snd-pcm-oss-$(CONFIG_SND_PCM_OSS_PLUGINS) += pcm_plugin.o \
+	io.o copy.o linear.o mulaw.o route.o rate.o
+
+obj-$(CONFIG_SND_MIXER_OSS) += snd-mixer-oss.o
+obj-$(CONFIG_SND_PCM_OSS) += snd-pcm-oss.o

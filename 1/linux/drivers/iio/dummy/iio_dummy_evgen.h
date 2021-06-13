@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:cffab126a37a34e83bee9618366ae9918a81f9e3e2e872c1c880887fd71b6068
-size 283
+#ifndef _IIO_DUMMY_EVGEN_H_
+#define _IIO_DUMMY_EVGEN_H_
+
+struct iio_dummy_regs {
+	u32 reg_id;
+	u32 reg_data;
+};
+
+struct iio_dummy_regs *iio_dummy_evgen_get_regs(int irq);
+int iio_dummy_evgen_get_irq(void);
+void iio_dummy_evgen_release_irq(int irq);
+
+#endif /* _IIO_DUMMY_EVGEN_H_ */

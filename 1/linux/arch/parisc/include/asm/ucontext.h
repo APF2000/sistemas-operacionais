@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a1c88d568c1438da2369e5dbcbc27bf7f93b7f40bf0dac0ab69a3ef637de601d
-size 288
+#ifndef _ASM_PARISC_UCONTEXT_H
+#define _ASM_PARISC_UCONTEXT_H
+
+struct ucontext {
+	unsigned int	  uc_flags;
+	struct ucontext  *uc_link;
+	stack_t		  uc_stack;
+	struct sigcontext uc_mcontext;
+	sigset_t	  uc_sigmask;	/* mask last for extensibility */
+};
+
+#endif /* !_ASM_PARISC_UCONTEXT_H */

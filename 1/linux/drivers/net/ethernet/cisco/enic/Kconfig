@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:3716ad6e98452708c57eb17b167a117f29779f6133a3985ab5062cd61c7f608d
-size 178
+#
+# Cisco device configuration
+#
+
+config ENIC
+	tristate "Cisco VIC Ethernet NIC Support"
+	depends on PCI
+	---help---
+	  This enables the support for the Cisco VIC Ethernet card.

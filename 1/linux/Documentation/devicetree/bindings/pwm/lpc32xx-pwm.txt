@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a1a6d52b33453df663304c1f641b56379379a8f55a5cb39082966231d574d9d5
-size 322
+LPC32XX PWM controller
+
+Required properties:
+- compatible: should be "nxp,lpc3220-pwm"
+- reg: physical base address and length of the controller's registers
+
+Examples:
+
+pwm@4005c000 {
+	compatible = "nxp,lpc3220-pwm";
+	reg = <0x4005c000 0x4>;
+};
+
+pwm@4005c004 {
+	compatible = "nxp,lpc3220-pwm";
+	reg = <0x4005c004 0x4>;
+};

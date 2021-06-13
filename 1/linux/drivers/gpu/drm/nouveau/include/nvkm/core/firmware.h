@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:9f7d5407dcd44d3c641f3a70a31a0410da268c5bd48543b67463e0f2f3f33d7c
-size 250
+#ifndef __NVKM_FIRMWARE_H__
+#define __NVKM_FIRMWARE_H__
+
+#include <core/device.h>
+
+int nvkm_firmware_get(struct nvkm_device *device, const char *fwname,
+		      const struct firmware **fw);
+
+void nvkm_firmware_put(const struct firmware *fw);
+
+#endif

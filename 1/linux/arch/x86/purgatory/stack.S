@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1e4c96bda2aae72db4c84de67cccece3b757e3b6855a1cc533412db184f19ab5
-size 375
+/*
+ * purgatory:  stack
+ *
+ * Copyright (C) 2014 Red Hat Inc.
+ *
+ * This source code is licensed under the GNU General Public License,
+ * Version 2.  See the file COPYING for more details.
+ */
+
+	/* A stack for the loaded kernel.
+	 * Separate and in the data section so it can be prepopulated.
+	 */
+	.data
+	.balign 4096
+	.globl stack, stack_end
+
+stack:
+	.skip 4096
+stack_end:

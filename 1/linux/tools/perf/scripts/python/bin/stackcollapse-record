@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c495f9827588e853da89d48b7369703ec532aed75a97bc7753017355608f0ffd
-size 190
+#!/bin/sh
+
+#
+# stackcollapse.py can cover all type of perf samples including
+# the tracepoints, so no special record requirements, just record what
+# you want to analyze.
+#
+perf record "$@"

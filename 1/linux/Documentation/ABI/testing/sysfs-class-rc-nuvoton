@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ca1d9221d5d968637779124e6698a8fafd2fe4f87b7d04540b4f52e2180e9582
-size 586
+What:		/sys/class/rc/rcN/wakeup_data
+Date:		Mar 2016
+KernelVersion:	4.6
+Contact:	Mauro Carvalho Chehab <m.chehab@samsung.com>
+Description:
+		Reading this file returns the stored CIR wakeup sequence.
+		It starts with a pulse, followed by a space, pulse etc.
+		All values are in microseconds.
+		The same format can be used to store a wakeup sequence
+		in the Nuvoton chip by writing to this file.
+
+		Note: Some systems reset the stored wakeup sequence to a
+		factory default on each boot. On such systems store the
+		wakeup sequence in a file and set it on boot using e.g.
+		a udev rule.

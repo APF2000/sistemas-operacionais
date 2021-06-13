@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:8e7be69192969cd1d00ba1ddb54ed571074179d9c82ba17b257ce088023a0639
-size 457
+#ifndef _MPX_DEBUG_H
+#define _MPX_DEBUG_H
+
+#ifndef DEBUG_LEVEL
+#define DEBUG_LEVEL 0
+#endif
+#define dprintf_level(level, args...) do { if(level <= DEBUG_LEVEL) printf(args); } while(0)
+#define dprintf1(args...) dprintf_level(1, args)
+#define dprintf2(args...) dprintf_level(2, args)
+#define dprintf3(args...) dprintf_level(3, args)
+#define dprintf4(args...) dprintf_level(4, args)
+#define dprintf5(args...) dprintf_level(5, args)
+
+#endif /* _MPX_DEBUG_H */

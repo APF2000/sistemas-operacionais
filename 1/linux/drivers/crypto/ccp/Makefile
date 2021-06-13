@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5e8474822f003b167451cbc7013f64f8980e05b2ef30f4429d1f26cdf74b8e08
-size 447
+obj-$(CONFIG_CRYPTO_DEV_CCP_DD) += ccp.o
+ccp-objs := ccp-dev.o \
+	    ccp-ops.o \
+	    ccp-dev-v3.o \
+	    ccp-dev-v5.o \
+	    ccp-platform.o \
+	    ccp-dmaengine.o
+ccp-$(CONFIG_PCI) += ccp-pci.o
+
+obj-$(CONFIG_CRYPTO_DEV_CCP_CRYPTO) += ccp-crypto.o
+ccp-crypto-objs := ccp-crypto-main.o \
+		   ccp-crypto-aes.o \
+		   ccp-crypto-aes-cmac.o \
+		   ccp-crypto-aes-xts.o \
+		   ccp-crypto-aes-galois.o \
+		   ccp-crypto-des3.o \
+		   ccp-crypto-sha.o

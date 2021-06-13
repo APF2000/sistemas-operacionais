@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b373925b1ed86c2c86e3eee439f54272a6fa18cf7d08c0aef672e7ce8d569492
-size 222
+WM8523 audio CODEC
+
+This device supports I2C only.
+
+Required properties:
+
+  - compatible : "wlf,wm8523"
+
+  - reg : the I2C address of the device.
+
+Example:
+
+codec: wm8523@1a {
+	compatible = "wlf,wm8523";
+	reg = <0x1a>;
+};

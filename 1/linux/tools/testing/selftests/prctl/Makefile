@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:abee6d7525ed7d898dd55020dff09ba167ed90f848cc6c8081a01dd1f0a04754
-size 343
+ifndef CROSS_COMPILE
+uname_M := $(shell uname -m 2>/dev/null || echo not)
+ARCH ?= $(shell echo $(uname_M) | sed -e s/i.86/x86/ -e s/x86_64/x86/)
+
+ifeq ($(ARCH),x86)
+TEST_PROGS := disable-tsc-ctxt-sw-stress-test disable-tsc-on-off-stress-test \
+		disable-tsc-test
+all: $(TEST_PROGS)
+
+include ../lib.mk
+
+clean:
+	rm -fr $(TEST_PROGS)
+endif
+endif

@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a23f111be0742551483a11a501173db4115b879f0be4a10e1560250a7b582906
-size 225
+On Tat Industrial Company 7" DPI TFT panel.
+
+Required properties:
+- compatible: should be "ontat,yx700wv03"
+
+This binding is compatible with the simple-panel binding, which is specified
+in simple-panel.txt in this directory.

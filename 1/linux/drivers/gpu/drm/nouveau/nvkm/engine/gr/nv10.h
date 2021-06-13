@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1612a6b22bb991d5e8b0425887991414a43dc86a50ce8cc92613cac930bf6af5
-size 434
+#ifndef __NV10_GR_H__
+#define __NV10_GR_H__
+#include "priv.h"
+
+int nv10_gr_new_(const struct nvkm_gr_func *, struct nvkm_device *, int index,
+		 struct nvkm_gr **);
+int nv10_gr_init(struct nvkm_gr *);
+void nv10_gr_intr(struct nvkm_gr *);
+void nv10_gr_tile(struct nvkm_gr *, int, struct nvkm_fb_tile *);
+
+int nv10_gr_chan_new(struct nvkm_gr *, struct nvkm_fifo_chan *,
+		     const struct nvkm_oclass *, struct nvkm_object **);
+#endif

@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:df03ccab60421a9ebd985046442d70791836208729f882101710f1de19f63940
-size 426
+targets += trampoline.o purgatory.ro kexec-purgatory.c
+
+LDFLAGS_purgatory.ro := -e purgatory_start -r --no-undefined
+
+$(obj)/purgatory.ro: $(obj)/trampoline.o FORCE
+		$(call if_changed,ld)
+
+CMD_BIN2C = $(objtree)/scripts/basic/bin2c
+quiet_cmd_bin2c = BIN2C   $@
+      cmd_bin2c = $(CMD_BIN2C) kexec_purgatory < $< > $@
+
+$(obj)/kexec-purgatory.c: $(obj)/purgatory.ro FORCE
+	$(call if_changed,bin2c)
+
+obj-y	+= kexec-purgatory.o

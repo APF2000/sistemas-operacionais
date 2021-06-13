@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:49c586bd1950dff037375b65e69ed337639a0d62a6a45db7a0fda179c0ab317e
-size 170
+config ARCH_PICOXCELL
+	bool "Picochip PicoXcell"
+	depends on ARCH_MULTI_V6
+	select ARM_VIC
+	select DW_APB_TIMER_OF
+	select GPIOLIB
+	select HAVE_TCM
+	select NO_IOPORT_MAP

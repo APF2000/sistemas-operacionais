@@ -1,3 +1,32 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:cd86c8b740cd2c4e0f3bf48366821b39b9c5bd3101f31bbf25d0c5a930a32c5a
-size 1029
+/*
+ * Copied from the kernel sources:
+ *
+ * Copyright (C) 1999, 2000  Niibe Yutaka  &  Kaz Kojima
+ * Copyright (C) 2002 Paul Mundt
+ */
+#ifndef __TOOLS_LINUX_ASM_SH_BARRIER_H
+#define __TOOLS_LINUX_ASM_SH_BARRIER_H
+
+/*
+ * A brief note on ctrl_barrier(), the control register write barrier.
+ *
+ * Legacy SH cores typically require a sequence of 8 nops after
+ * modification of a control register in order for the changes to take
+ * effect. On newer cores (like the sh4a and sh5) this is accomplished
+ * with icbi.
+ *
+ * Also note that on sh4a in the icbi case we can forego a synco for the
+ * write barrier, as it's not necessary for control registers.
+ *
+ * Historically we have only done this type of barrier for the MMUCR, but
+ * it's also necessary for the CCR, so we make it generic here instead.
+ */
+#if defined(__SH4A__) || defined(__SH5__)
+#define mb()		__asm__ __volatile__ ("synco": : :"memory")
+#define rmb()		mb()
+#define wmb()		mb()
+#endif
+
+#include <asm-generic/barrier.h>
+
+#endif /* __TOOLS_LINUX_ASM_SH_BARRIER_H */

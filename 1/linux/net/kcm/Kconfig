@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1cf82b4145266207805af1d143e36d6d5286383a648ffd491f4a78a51bde6b61
-size 294
+
+config AF_KCM
+	tristate "KCM sockets"
+	depends on INET
+	select BPF_SYSCALL
+	select STREAM_PARSER
+	---help---
+	  KCM (Kernel Connection Multiplexor) sockets provide a method
+	  for multiplexing messages of a message based application
+	  protocol over kernel connectons (e.g. TCP connections).
+

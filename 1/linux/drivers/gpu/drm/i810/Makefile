@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4c2c1177d5a398d93841f679a8ca30906da6f3054dafcd6a657c83d7ddbf48ca
-size 241
+#
+# Makefile for the drm device driver.  This driver provides support for the
+# Direct Rendering Infrastructure (DRI) in XFree86 4.1.0 and higher.
+
+ccflags-y := -Iinclude/drm
+i810-y := i810_drv.o i810_dma.o
+
+obj-$(CONFIG_DRM_I810)	+= i810.o

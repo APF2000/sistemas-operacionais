@@ -1,3 +1,28 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:134f2026141e96c0ee389456da271c2a66f44d08bef6bc9da7b4df2703300b45
-size 384
+#ifndef __LINUX_TC_NAT_H
+#define __LINUX_TC_NAT_H
+
+#include <linux/pkt_cls.h>
+#include <linux/types.h>
+
+#define TCA_ACT_NAT 9
+
+enum {
+	TCA_NAT_UNSPEC,
+	TCA_NAT_PARMS,
+	TCA_NAT_TM,
+	TCA_NAT_PAD,
+	__TCA_NAT_MAX
+};
+#define TCA_NAT_MAX (__TCA_NAT_MAX - 1)
+
+#define TCA_NAT_FLAG_EGRESS 1
+
+struct tc_nat {
+	tc_gen;
+	__be32 old_addr;
+	__be32 new_addr;
+	__be32 mask;
+	__u32 flags;
+};
+
+#endif

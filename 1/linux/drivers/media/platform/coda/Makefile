@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:8db9c0cd49e0bc60553296f919142799b3c2b2d2d2ce24891e0f643326b1dc71
-size 175
+ccflags-y += -I$(src)
+
+coda-objs := coda-common.o coda-bit.o coda-gdi.o coda-h264.o coda-jpeg.o
+
+obj-$(CONFIG_VIDEO_CODA) += coda.o
+obj-$(CONFIG_VIDEO_IMX_VDOA) += imx-vdoa.o

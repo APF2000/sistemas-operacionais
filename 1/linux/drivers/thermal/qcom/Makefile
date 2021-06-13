@@ -1,3 +1,2 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:59f5406962e5bc38392be8ec16e861fe41b907c74830f6fac5cb5c827fc6bf36
-size 134
+obj-$(CONFIG_QCOM_TSENS)	+= qcom_tsens.o
+qcom_tsens-y			+= tsens.o tsens-common.o tsens-8916.o tsens-8974.o tsens-8960.o tsens-8996.o

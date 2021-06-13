@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:014774e056a8bc1019d145da8edc0938f6a48f3a7e3b7f671ea23abc0bc3ea47
-size 271
+#define _GNU_SOURCE
+#include <unistd.h>
+#include <sys/syscall.h>
+
+#define __NR_read_number 404
+#define __NR_write_number 405
+
+long read_number()
+{
+	return syscall(__NR_read_number);
+}
+
+void write_number(long number)
+{
+	//pr_info("Teste");
+	syscall(__NR_write_number, 7);
+}

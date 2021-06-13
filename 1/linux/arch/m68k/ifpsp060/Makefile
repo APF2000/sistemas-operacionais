@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:607a77789b59d08084fe79d5b951994ef312dfb27040aceba9e0c10723683844
-size 309
+# Makefile for 680x0 Linux 68060 integer/floating point support package
+#
+# This file is subject to the terms and conditions of the GNU General Public
+# License.  See the file "README.legal" in the main directory of this archive
+# for more details.
+
+obj-y := fskeleton.o iskeleton.o os.o
+
+EXTRA_LDFLAGS := -x

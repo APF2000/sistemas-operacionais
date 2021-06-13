@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:31b937908873b71c2f150263b339627e35734a89296860c95625aec4f59f13c4
-size 190
+#ifndef __CPU_SH4A_SERIAL_H
+#define __CPU_SH4A_SERIAL_H
+
+/* arch/sh/kernel/cpu/sh4a/serial-sh7722.c */
+extern struct plat_sci_port_ops sh7722_sci_port_ops;
+
+#endif /* __CPU_SH4A_SERIAL_H */

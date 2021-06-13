@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:eba728037f662ddc74785032df2c480748d1c46c9c387607fc416a999c4d7668
-size 299
+vfio-platform-calxedaxgmac-y := vfio_platform_calxedaxgmac.o
+vfio-platform-amdxgbe-y := vfio_platform_amdxgbe.o
+
+ccflags-y += -Idrivers/vfio/platform
+
+obj-$(CONFIG_VFIO_PLATFORM_CALXEDAXGMAC_RESET) += vfio-platform-calxedaxgmac.o
+obj-$(CONFIG_VFIO_PLATFORM_AMDXGBE_RESET) += vfio-platform-amdxgbe.o

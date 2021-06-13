@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:15b3d5a6d50f4352ab6f3a6e27cadf9ad47fb62084e883c4213bc1c382962c88
-size 446
+=== AB8500 Charging Algorithm Driver ===
+
+The properties below describes the node for chargalg driver.
+
+Required Properties:
+- compatible = Shall be: "stericsson,ab8500-chargalg"
+- battery = Shall be battery specific information
+
+Example:
+ab8500_chargalg {
+	compatible = "stericsson,ab8500-chargalg";
+	battery	   = <&ab8500_battery>;
+};
+
+For information on battery specific node, Ref:
+Documentation/devicetree/bindings/power_supply/ab8500/fg.txt

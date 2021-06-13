@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4eecb53cbe6f73c346ee8de67bbdd1c3aecfa9012d58b722ecf4d7b0605fb783
-size 337
+#ifndef _UAPI_ASM_X86_UNISTD_H
+#define _UAPI_ASM_X86_UNISTD_H
+
+/* x32 syscall flag bit */
+#define __X32_SYSCALL_BIT	0x40000000
+
+#ifndef __KERNEL__
+# ifdef __i386__
+#  include <asm/unistd_32.h>
+# elif defined(__ILP32__)
+#  include <asm/unistd_x32.h>
+# else
+#  include <asm/unistd_64.h>
+# endif
+#endif
+
+#endif /* _UAPI_ASM_X86_UNISTD_H */

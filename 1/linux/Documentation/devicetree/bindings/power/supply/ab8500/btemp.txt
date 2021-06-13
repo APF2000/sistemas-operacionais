@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f2a5a2ba5f7753dcedfd0d29d1ffb898756a6316f56f3be86b702ee0cc97bf5e
-size 448
+=== AB8500 Battery Temperature Monitor Driver ===
+
+The properties below describes the node for btemp driver.
+
+Required Properties:
+- compatible = Shall be: "stericsson,ab8500-btemp"
+- battery = Shall be battery specific information
+
+	Example:
+	ab8500_btemp {
+		compatible = "stericsson,ab8500-btemp";
+		battery	   = <&ab8500_battery>;
+	};
+
+For information on battery specific node, Ref:
+Documentation/devicetree/bindings/power_supply/ab8500/fg.txt

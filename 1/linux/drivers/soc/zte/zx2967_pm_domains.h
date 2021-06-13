@@ -1,3 +1,44 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:07aa0ec103c5d5d824e6bb68fd3976a2cd8ca83127cd6fa1f56fc0756ed31cce
-size 833
+/*
+ * Header for ZTE's Power Domain Driver support
+ *
+ * Copyright (C) 2017 ZTE Ltd.
+ *
+ * Author: Baoyou Xie <baoyou.xie@linaro.org>
+ * License terms: GNU General Public License (GPL) version 2
+ */
+
+#ifndef __ZTE_ZX2967_PM_DOMAIN_H
+#define __ZTE_ZX2967_PM_DOMAIN_H
+
+#include <linux/platform_device.h>
+#include <linux/pm_domain.h>
+
+enum {
+	REG_CLKEN,
+	REG_ISOEN,
+	REG_RSTEN,
+	REG_PWREN,
+	REG_PWRDN,
+	REG_ACK_SYNC,
+
+	/* The size of the array - must be last */
+	REG_ARRAY_SIZE,
+};
+
+enum zx2967_power_polarity {
+	PWREN,
+	PWRDN,
+};
+
+struct zx2967_pm_domain {
+	struct generic_pm_domain dm;
+	const u16 bit;
+	const enum zx2967_power_polarity polarity;
+	const u16 *reg_offset;
+};
+
+int zx2967_pd_probe(struct platform_device *pdev,
+		    struct generic_pm_domain **zx_pm_domains,
+		    int domain_num);
+
+#endif /* __ZTE_ZX2967_PM_DOMAIN_H */

@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d7a8e59837f1670e5c1a3ba83b68bd67dc99e062f6c0c5fc724046dfc6ef79cf
-size 270
+#ifdef CONFIG_TOSHIBA_JMR3927
+BOARD_VEC(jmr3927_vec)
+#endif
+#ifdef CONFIG_TOSHIBA_RBTX4927
+BOARD_VEC(rbtx4927_vec)
+BOARD_VEC(rbtx4937_vec)
+#endif
+#ifdef CONFIG_TOSHIBA_RBTX4938
+BOARD_VEC(rbtx4938_vec)
+#endif
+#ifdef CONFIG_TOSHIBA_RBTX4939
+BOARD_VEC(rbtx4939_vec)
+#endif

@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:3f8513987b1a9de2e5cf04ce527f91a11a5b2dd8ebfeb93986bd198157e898c3
-size 233
+#include <linux/linkage.h>
+#include <asm/page.h>
+
+	__PAGE_ALIGNED_DATA
+
+	.globl vdso32_start, vdso32_end
+	.balign PAGE_SIZE
+vdso32_start:
+	.incbin "arch/powerpc/kernel/vdso32/vdso32.so.dbg"
+	.balign PAGE_SIZE
+vdso32_end:
+
+	.previous

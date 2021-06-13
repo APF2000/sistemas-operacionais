@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:21d3b682ccfdce025318488adc94175fe0a04f373322712ce3832e7ce267dfe9
-size 125
+#
+# Alchemy Develboards
+#
+
+obj-y += bcsr.o platform.o db1000.o db1200.o db1300.o db1550.o db1xxx.o
+obj-$(CONFIG_PM)		+= pm.o

@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:afce94f7c2d19aaf4768cb932aa030be6f15a7579a1cdaf9e9fde5df65af73a8
-size 155
+obj-$(CONFIG_DRM_TINYDRM)		+= core/
+
+# Controllers
+obj-$(CONFIG_TINYDRM_MIPI_DBI)		+= mipi-dbi.o
+
+# Displays
+obj-$(CONFIG_TINYDRM_MI0283QT)		+= mi0283qt.o

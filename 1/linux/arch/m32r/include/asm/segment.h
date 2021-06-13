@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:311b533eff25f86a3d8534e852cf091c792384f7d0bef43aff7965c8477f2553
-size 189
+#ifndef _ASM_M32R_SEGMENT_H
+#define _ASM_M32R_SEGMENT_H
+
+#define __KERNEL_CS	0x10
+#define __KERNEL_DS	0x18
+
+#define __USER_CS	0x23
+#define __USER_DS	0x2B
+
+#endif  /* _ASM_M32R_SEGMENT_H */

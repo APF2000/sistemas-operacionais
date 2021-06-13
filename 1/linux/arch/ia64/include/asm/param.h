@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:79228e7626ac11fa2889eee62c2763a163097e8c75976c2d4d225ea9e515e098
-size 400
+/*
+ * Fundamental kernel parameters.
+ *
+ * Based on <asm-i386/param.h>.
+ *
+ * Modified 1998, 1999, 2002-2003
+ *	David Mosberger-Tang <davidm@hpl.hp.com>, Hewlett-Packard Co
+ */
+#ifndef _ASM_IA64_PARAM_H
+#define _ASM_IA64_PARAM_H
+
+#include <uapi/asm/param.h>
+
+# define HZ		CONFIG_HZ
+# define USER_HZ	HZ
+# define CLOCKS_PER_SEC	HZ	/* frequency at which times() counts */
+#endif /* _ASM_IA64_PARAM_H */

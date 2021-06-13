@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:0e90632275f076055a892a7df32e9f05b3efb66418f1fb7ea28c1ba977ff1312
-size 384
+/*
+ * Copyright (C) 2005 Paolo 'Blaisorblade' Giarrusso <blaisorblade@yahoo.it>
+ * Licensed under the GPL
+ */
+
+#ifndef __UM_MALLOC_H__
+#define __UM_MALLOC_H__
+
+#include <generated/asm-offsets.h>
+
+extern void *uml_kmalloc(int size, int flags);
+extern void kfree(const void *ptr);
+
+extern void *vmalloc(unsigned long size);
+extern void vfree(void *ptr);
+
+#endif /* __UM_MALLOC_H__ */
+
+

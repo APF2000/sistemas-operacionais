@@ -1,3 +1,23 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2ccd8c5e9a51510ae8b355415766ed7f58fbf000a2810a86740dc6bfac1bac5b
-size 509
+# Makefile for KVM support for MIPS
+#
+
+common-objs-y = $(addprefix ../../../virt/kvm/, kvm_main.o coalesced_mmio.o)
+
+EXTRA_CFLAGS += -Ivirt/kvm -Iarch/mips/kvm
+
+common-objs-$(CONFIG_CPU_HAS_MSA) += msa.o
+
+kvm-objs := $(common-objs-y) mips.o emulate.o entry.o \
+	    interrupt.o stats.o commpage.o \
+	    fpu.o
+kvm-objs += hypcall.o
+kvm-objs += mmu.o
+
+ifdef CONFIG_KVM_MIPS_VZ
+kvm-objs		+= vz.o
+else
+kvm-objs		+= dyntrans.o
+kvm-objs		+= trap_emul.o
+endif
+obj-$(CONFIG_KVM)	+= kvm.o
+obj-y			+= callback.o tlb.o

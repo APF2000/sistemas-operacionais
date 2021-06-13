@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2e073103c89d990861fce61cd3cef7410631b325bf9b0879aedbaf8a6c437692
-size 334
+/*
+ * Support for viafb GPIO ports.
+ *
+ * Copyright 2009 Jonathan Corbet <corbet@lwn.net>
+ * Distributable under version 2 of the GNU General Public License.
+ */
+
+#ifndef __VIA_GPIO_H__
+#define __VIA_GPIO_H__
+
+extern int viafb_gpio_lookup(const char *name);
+extern int viafb_gpio_init(void);
+extern void viafb_gpio_exit(void);
+#endif

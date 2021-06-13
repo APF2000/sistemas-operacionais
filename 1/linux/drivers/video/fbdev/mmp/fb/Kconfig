@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4da85be52a09b39567ff841aa3cfd3cacf51e46c89cf536a9f2e8e7d99d4e194
-size 241
+if MMP_DISP
+
+config MMP_FB
+	tristate "fb driver for Marvell MMP Display Subsystem"
+	depends on FB
+	select FB_CFB_FILLRECT
+	select FB_CFB_COPYAREA
+	select FB_CFB_IMAGEBLIT
+	default y
+	help
+		fb driver for Marvell MMP Display Subsystem
+
+endif

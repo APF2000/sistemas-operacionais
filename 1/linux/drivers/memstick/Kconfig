@@ -1,3 +1,26 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:df927f0af7978a75673ee958bbc4f9c2f7bb9c26e05a8aec90393888e05e898e
-size 609
+#
+# MemoryStick subsystem configuration
+#
+
+menuconfig MEMSTICK
+	tristate "Sony MemoryStick card support"
+	help
+	  Sony MemoryStick is a proprietary storage/extension card protocol.
+
+	  If you want MemoryStick support, you should say Y here and also
+	  to the specific driver for your MemoryStick interface.
+
+if MEMSTICK
+
+config MEMSTICK_DEBUG
+	bool "MemoryStick debugging"
+	help
+	  This is an option for use by developers; most people should
+	  say N here.  This enables MemoryStick core and driver debugging.
+
+
+source "drivers/memstick/core/Kconfig"
+
+source "drivers/memstick/host/Kconfig"
+
+endif # MEMSTICK

@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:33115c8ae83b6d571d45099e1758b571209e2808eed26389ffc50c1d5409cb37
-size 195
+<!DOCTYPE busconfig PUBLIC "-//freedesktop//DTD D-BUS Bus Configuration 1.0//EN"
+ "http://www.freedesktop.org/standards/dbus/1.0/busconfig.dtd">
+<busconfig>
+  <selinux>
+  </selinux>
+</busconfig>

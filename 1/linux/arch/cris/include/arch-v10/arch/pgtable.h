@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:8676b624d62110e6801f203920c1eedf2e126940d432fcca868c5790a4c8a4a6
-size 285
+#ifndef _CRIS_ARCH_PGTABLE_H
+#define _CRIS_ARCH_PGTABLE_H
+
+/*
+ * Kernels own virtual memory area. 
+ */
+
+#ifdef CONFIG_CRIS_LOW_MAP
+#define VMALLOC_START     KSEG_7
+#define VMALLOC_END       KSEG_8
+#else
+#define VMALLOC_START     KSEG_D
+#define VMALLOC_END       KSEG_E
+#endif
+
+#endif
+

@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:47a942c80a157433acb25c476e9a99c8f68b25cb9858d2167a48eb1300a3b494
-size 215
+#ifndef _UAPI_ASM_X86_VSYSCALL_H
+#define _UAPI_ASM_X86_VSYSCALL_H
+
+enum vsyscall_num {
+	__NR_vgettimeofday,
+	__NR_vtime,
+	__NR_vgetcpu,
+};
+
+#define VSYSCALL_ADDR (-10UL << 20)
+
+#endif /* _UAPI_ASM_X86_VSYSCALL_H */

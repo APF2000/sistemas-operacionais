@@ -1,3 +1,25 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b89c25569879e40c5fe4a2175c7f4063d440301d4139794101a29a8dc0839333
-size 661
+Mediatek topckgen controller
+============================
+
+The Mediatek topckgen controller provides various clocks to the system.
+
+Required Properties:
+
+- compatible: Should be one of:
+	- "mediatek,mt2701-topckgen"
+	- "mediatek,mt6797-topckgen"
+	- "mediatek,mt8135-topckgen"
+	- "mediatek,mt8173-topckgen"
+- #clock-cells: Must be 1
+
+The topckgen controller uses the common clk binding from
+Documentation/devicetree/bindings/clock/clock-bindings.txt
+The available clocks are defined in dt-bindings/clock/mt*-clk.h.
+
+Example:
+
+topckgen: power-controller@10000000 {
+	compatible = "mediatek,mt8173-topckgen";
+	reg = <0 0x10000000 0 0x1000>;
+	#clock-cells = <1>;
+};

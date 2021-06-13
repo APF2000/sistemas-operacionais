@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e6e969181a9f5261d626b04c7466034c30caf1582c8b0665f30fc99aa479396f
-size 312
+
+obj-$(CONFIG_FMC) += fmc.o
+
+fmc-y = fmc-core.o
+fmc-y += fmc-match.o
+fmc-y += fmc-sdb.o
+fmc-y += fru-parse.o
+fmc-y += fmc-dump.o
+
+obj-$(CONFIG_FMC_FAKEDEV) += fmc-fakedev.o
+obj-$(CONFIG_FMC_TRIVIAL) += fmc-trivial.o
+obj-$(CONFIG_FMC_WRITE_EEPROM) += fmc-write-eeprom.o
+obj-$(CONFIG_FMC_CHARDEV) += fmc-chardev.o

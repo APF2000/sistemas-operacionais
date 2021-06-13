@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b44b887a699036d90bf35a9ff1d685e358c1657c9b43487458fbed1b55b182bc
-size 213
+#
+# mtip32xx device driver configuration
+#
+
+config BLK_DEV_PCIESSD_MTIP32XX
+	tristate "Block Device Driver for Micron PCIe SSDs"
+	depends on PCI
+	help
+          This enables the block driver for Micron PCIe SSDs.

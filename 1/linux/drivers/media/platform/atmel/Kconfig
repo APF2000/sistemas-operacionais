@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:424b98ccffc9b859b3a5faaf1cb1e266c715b2dbf1e0da47452f3c4282eb9682
-size 616
+config VIDEO_ATMEL_ISC
+	tristate "ATMEL Image Sensor Controller (ISC) support"
+	depends on VIDEO_V4L2 && COMMON_CLK && VIDEO_V4L2_SUBDEV_API && HAS_DMA
+	depends on ARCH_AT91 || COMPILE_TEST
+	select VIDEOBUF2_DMA_CONTIG
+	select REGMAP_MMIO
+	help
+	   This module makes the ATMEL Image Sensor Controller available
+	   as a v4l2 device.
+
+config VIDEO_ATMEL_ISI
+	tristate "ATMEL Image Sensor Interface (ISI) support"
+	depends on VIDEO_V4L2 && OF && HAS_DMA
+	depends on ARCH_AT91 || COMPILE_TEST
+	select VIDEOBUF2_DMA_CONTIG
+	---help---
+	  This module makes the ATMEL Image Sensor Interface available
+	  as a v4l2 device.

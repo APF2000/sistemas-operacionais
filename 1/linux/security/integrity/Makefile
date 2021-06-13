@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:6dd37321aa1c7c2c9f96efe5005c025354266d7e2b8fee31fea80ceae49715f3
-size 413
+#
+# Makefile for caching inode integrity data (iint)
+#
+
+obj-$(CONFIG_INTEGRITY) += integrity.o
+
+integrity-y := iint.o
+integrity-$(CONFIG_INTEGRITY_AUDIT) += integrity_audit.o
+integrity-$(CONFIG_INTEGRITY_SIGNATURE) += digsig.o
+integrity-$(CONFIG_INTEGRITY_ASYMMETRIC_KEYS) += digsig_asymmetric.o
+
+subdir-$(CONFIG_IMA)			+= ima
+obj-$(CONFIG_IMA)			+= ima/
+subdir-$(CONFIG_EVM)			+= evm
+obj-$(CONFIG_EVM)			+= evm/

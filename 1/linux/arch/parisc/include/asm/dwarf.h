@@ -1,3 +1,23 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:50235beeb50bf1d7279a98f0e9bb4140f01311a99b66ea1585ad2214406a8cf6
-size 602
+/*
+ * Copyright (C) 2016 Helge Deller <deller@gmx.de>
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 2 as
+ * published by the Free Software Foundation.
+ */
+
+#ifndef _ASM_PARISC_DWARF_H
+#define _ASM_PARISC_DWARF_H
+
+#ifdef __ASSEMBLY__
+
+#define CFI_STARTPROC	.cfi_startproc
+#define CFI_ENDPROC	.cfi_endproc
+#define CFI_DEF_CFA	.cfi_def_cfa
+#define CFI_REGISTER	.cfi_register
+#define CFI_REL_OFFSET	.cfi_rel_offset
+#define CFI_UNDEFINED	.cfi_undefined
+
+#endif	/* __ASSEMBLY__ */
+
+#endif	/* _ASM_PARISC_DWARF_H */

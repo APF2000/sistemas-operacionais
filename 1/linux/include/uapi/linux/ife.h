@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:9d9c9589f10b2eefb0b8a1d2a2e276a90da46192c6f086b2d0ffb2cfad0e9269
-size 288
+#ifndef __UAPI_IFE_H
+#define __UAPI_IFE_H
+
+#define IFE_METAHDRLEN 2
+
+enum {
+	IFE_META_SKBMARK = 1,
+	IFE_META_HASHID,
+	IFE_META_PRIO,
+	IFE_META_QMAP,
+	IFE_META_TCINDEX,
+	__IFE_META_MAX
+};
+
+/*Can be overridden at runtime by module option*/
+#define IFE_META_MAX (__IFE_META_MAX - 1)
+
+#endif

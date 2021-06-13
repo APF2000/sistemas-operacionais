@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:bf4c7fb4c376f0f8da82f778cc82d18bf1ab8a5d3aff752ff4853b007179aa07
-size 241
+libperf-$(CONFIG_DWARF_UNWIND) += regs_load.o
+libperf-$(CONFIG_DWARF_UNWIND) += dwarf-unwind.o
+
+libperf-y += arch-tests.o
+libperf-y += rdpmc.o
+libperf-y += perf-time-to-tsc.o
+libperf-$(CONFIG_AUXTRACE) += insn-x86.o
+libperf-y += intel-cqm.o

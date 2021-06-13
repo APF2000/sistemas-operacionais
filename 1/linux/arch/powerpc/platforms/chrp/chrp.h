@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a58a62f32e79960b33d00b7e03e20b0ca87e3e7e9138364fa713c6651d5dc746
-size 308
+/*
+ * Declarations of CHRP platform-specific things.
+ */
+
+extern void chrp_nvram_init(void);
+extern void chrp_get_rtc_time(struct rtc_time *);
+extern int chrp_set_rtc_time(struct rtc_time *);
+extern long chrp_time_init(void);
+
+extern void chrp_find_bridges(void);
+extern void chrp_event_scan(unsigned long);

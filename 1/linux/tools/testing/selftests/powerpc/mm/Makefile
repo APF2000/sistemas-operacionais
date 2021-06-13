@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:8af69a9759e14e4048d7c2ee28952671ded83f2c2182e1e4c66d6d87770a266d
-size 258
+noarg:
+	$(MAKE) -C ../
+
+TEST_GEN_PROGS := hugetlb_vs_thp_test subpage_prot prot_sao
+TEST_GEN_FILES := tempfile
+
+include ../../lib.mk
+
+$(TEST_GEN_PROGS): ../harness.c
+
+$(OUTPUT)/prot_sao: ../utils.c
+
+$(OUTPUT)/tempfile:
+	dd if=/dev/zero of=$@ bs=64k count=1
+

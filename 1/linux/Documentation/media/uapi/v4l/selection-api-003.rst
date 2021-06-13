@@ -1,3 +1,20 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:77576d9d1227464acef92d7d30aab7d6ed25442040315a3e0d016f0e8bee3aac
-size 355
+.. -*- coding: utf-8; mode: rst -*-
+
+*****************
+Selection targets
+*****************
+
+
+.. _sel-targets-capture:
+
+.. kernel-figure:: selection.svg
+    :alt:   selection.svg
+    :align: center
+
+    Cropping and composing targets
+
+    Targets used by a cropping, composing and scaling process
+
+
+
+See :ref:`v4l2-selection-targets` for more information.

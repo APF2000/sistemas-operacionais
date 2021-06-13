@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:51ea32f48decb10277da018f8f3dc6688b6547a00cb28be60db9c88ff4b4412c
-size 188
+#ifndef __ASM_SH_EXTABLE_H
+#define __ASM_SH_EXTABLE_H
+
+#include <asm-generic/extable.h>
+
+#if defined(CONFIG_SUPERH64) && defined(CONFIG_MMU)
+#define ARCH_HAS_SEARCH_EXTABLE
+#endif
+
+#endif

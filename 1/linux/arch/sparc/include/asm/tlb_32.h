@@ -1,3 +1,24 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e5f6a20a8356862391dbdfaf624a81baa127890ccfbd5fe93341a9ba4a0e61ae
-size 481
+#ifndef _SPARC_TLB_H
+#define _SPARC_TLB_H
+
+#define tlb_start_vma(tlb, vma) \
+do {								\
+	flush_cache_range(vma, vma->vm_start, vma->vm_end);	\
+} while (0)
+
+#define tlb_end_vma(tlb, vma) \
+do {								\
+	flush_tlb_range(vma, vma->vm_start, vma->vm_end);	\
+} while (0)
+
+#define __tlb_remove_tlb_entry(tlb, pte, address) \
+	do { } while (0)
+
+#define tlb_flush(tlb) \
+do {								\
+	flush_tlb_mm((tlb)->mm);				\
+} while (0)
+
+#include <asm-generic/tlb.h>
+
+#endif /* _SPARC_TLB_H */

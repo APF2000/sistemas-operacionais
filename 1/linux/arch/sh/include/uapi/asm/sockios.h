@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e4ac1ecb0e09474f459fe2a93b2308184924972263df0715b01fd5e4148aa0b6
-size 473
+#ifndef __ASM_SH_SOCKIOS_H
+#define __ASM_SH_SOCKIOS_H
+
+/* Socket-level I/O control calls. */
+#define FIOGETOWN	_IOR('f', 123, int)
+#define FIOSETOWN 	_IOW('f', 124, int)
+
+#define SIOCATMARK	_IOR('s', 7, int)
+#define SIOCSPGRP	_IOW('s', 8, pid_t)
+#define SIOCGPGRP	_IOR('s', 9, pid_t)
+
+#define SIOCGSTAMP	_IOR('s', 100, struct timeval) /* Get stamp (timeval) */
+#define SIOCGSTAMPNS	_IOR('s', 101, struct timespec) /* Get stamp (timespec) */
+#endif /* __ASM_SH_SOCKIOS_H */

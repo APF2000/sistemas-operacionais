@@ -1,3 +1,5 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:fab90a54968d42e0efd870ceca7762b21fea12f8ea5c81695870ab685108c038
-size 85
+#
+# Makefile for the SDK7780 specific parts of the kernel
+#
+obj-y	 := setup.o irq.o
+

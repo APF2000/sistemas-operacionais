@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:894d205037e8dc96f58a44e75bf6a8e5413a68a69eb036856d0d4f386e5a0f62
-size 300
+/*
+ * Broadcom Northstar NAND.
+ *
+ * Copyright (C) 2015 Hauke Mehrtens <hauke@hauke-m.de>
+ *
+ * Licensed under the GNU/GPL. See COPYING for details.
+ */
+
+/ {
+	nand@18028000 {
+		nandcs: nandcs@0 {
+			compatible = "brcm,nandcs";
+			reg = <0>;
+			#address-cells = <1>;
+			#size-cells = <1>;
+		};
+	};
+};

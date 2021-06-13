@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:37569776a7fbe5f0aae72023131c9a4e530d94dd959fdae1107781d6dff4b46d
-size 308
+#ifndef __IP_SET_HASH_H
+#define __IP_SET_HASH_H
+
+#include <uapi/linux/netfilter/ipset/ip_set_hash.h>
+
+
+#define IPSET_DEFAULT_HASHSIZE		1024
+#define IPSET_MIMINAL_HASHSIZE		64
+#define IPSET_DEFAULT_MAXELEM		65536
+#define IPSET_DEFAULT_PROBES		4
+#define IPSET_DEFAULT_RESIZE		100
+
+#endif /* __IP_SET_HASH_H */

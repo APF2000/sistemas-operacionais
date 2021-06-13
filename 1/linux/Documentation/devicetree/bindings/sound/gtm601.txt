@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c90e48f9bb4424e2348253ddc9c43c52c6844c2c3bd115774bee242e0210c236
-size 237
+GTM601 UMTS modem audio interface CODEC
+
+This device has no configuration interface. Sample rate is fixed - 8kHz.
+
+Required properties:
+
+  - compatible : "option,gtm601"
+
+Example:
+
+codec: gtm601_codec {
+	compatible = "option,gtm601";
+};

@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:60c58d9e78d55d692f355be0026bc5e34481c5fcb097f3061f4689a12168993f
-size 369
+IFI CANFD controller
+--------------------
+
+Required properties:
+  - compatible: Should be "ifi,canfd-1.0"
+  - reg: Should contain CAN controller registers location and length
+  - interrupts: Should contain IRQ line for the CAN controller
+
+Example:
+
+	canfd0: canfd@ff220000 {
+		compatible = "ifi,canfd-1.0";
+		reg = <0xff220000 0x00001000>;
+		interrupts = <0 43 0>;
+	};

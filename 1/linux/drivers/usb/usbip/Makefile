@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1dc72a428e23608cb968ce80a50dcec253d066350e849520651d1a0b38917b8f
-size 461
+ccflags-$(CONFIG_USBIP_DEBUG) := -DDEBUG
+
+obj-$(CONFIG_USBIP_CORE) += usbip-core.o
+usbip-core-y := usbip_common.o usbip_event.o
+
+obj-$(CONFIG_USBIP_VHCI_HCD) += vhci-hcd.o
+vhci-hcd-y := vhci_sysfs.o vhci_tx.o vhci_rx.o vhci_hcd.o
+
+obj-$(CONFIG_USBIP_HOST) += usbip-host.o
+usbip-host-y := stub_dev.o stub_main.o stub_rx.o stub_tx.o
+
+obj-$(CONFIG_USBIP_VUDC) += usbip-vudc.o
+usbip-vudc-y := vudc_dev.o vudc_sysfs.o vudc_tx.o vudc_rx.o vudc_transfer.o vudc_main.o

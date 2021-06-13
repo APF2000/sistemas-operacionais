@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ea9f83d33908350c5e7c390feb644ed6fe7485c685ff7bfc0630067af2fc9986
-size 427
+config VIDEO_TW5864
+	tristate "Techwell TW5864 video/audio grabber and encoder"
+	depends on VIDEO_DEV && PCI && VIDEO_V4L2
+	depends on HAS_DMA
+	select VIDEOBUF2_DMA_CONTIG
+	---help---
+	  Support for boards based on Techwell TW5864 chip which provides
+	  multichannel video & audio grabbing and encoding (H.264, MJPEG,
+	  ADPCM G.726).
+
+	  To compile this driver as a module, choose M here: the
+	  module will be called tw5864.

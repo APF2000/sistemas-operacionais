@@ -1,3 +1,4 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:9a363c70f78c68ad7368e1c57e87b1b8b1be7b28d7c114bd4fa8136365eb2b2b
-size 159
+ccflags-y += -Idrivers/net/ethernet/chelsio/libcxgb
+
+obj-$(CONFIG_SCSI_CXGB3_ISCSI)	+= libcxgbi.o cxgb3i/
+obj-$(CONFIG_SCSI_CXGB4_ISCSI)	+= libcxgbi.o cxgb4i/

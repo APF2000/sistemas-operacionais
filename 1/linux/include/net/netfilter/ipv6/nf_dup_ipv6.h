@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:47d2295e0133b95337f5d248b023dfc133e20c4f9c4ea2e3f3ce66030aec0bfd
-size 196
+#ifndef _NF_DUP_IPV6_H_
+#define _NF_DUP_IPV6_H_
+
+void nf_dup_ipv6(struct net *net, struct sk_buff *skb, unsigned int hooknum,
+		 const struct in6_addr *gw, int oif);
+
+#endif /* _NF_DUP_IPV6_H_ */

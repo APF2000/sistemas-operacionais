@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:7daf9ab73339c900b1275ef5cd0a3f3959e4cc0f3be665a610f7c6fb255c6113
-size 489
+/*
+ * Copyright (C) 2004, 2007-2010, 2011-2012 Synopsys, Inc. (www.synopsys.com)
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 2 as
+ * published by the Free Software Foundation.
+ */
+
+#ifndef __ASM_ARC_BYTEORDER_H
+#define __ASM_ARC_BYTEORDER_H
+
+#ifdef __BIG_ENDIAN__
+#include <linux/byteorder/big_endian.h>
+#else
+#include <linux/byteorder/little_endian.h>
+#endif
+
+#endif /* ASM_ARC_BYTEORDER_H */

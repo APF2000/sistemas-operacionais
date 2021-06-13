@@ -1,3 +1,25 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:cf98ee50810ed58f686b18ffa619180062fea5c41e184cd828c2b3ad945d0b9b
-size 488
+#ifndef _ASM_CRIS_DMA_MAPPING_H
+#define _ASM_CRIS_DMA_MAPPING_H
+
+#ifdef CONFIG_PCI
+extern const struct dma_map_ops v32_dma_ops;
+
+static inline const struct dma_map_ops *get_arch_dma_ops(struct bus_type *bus)
+{
+	return &v32_dma_ops;
+}
+#else
+static inline const struct dma_map_ops *get_arch_dma_ops(struct bus_type *bus)
+{
+	BUG();
+	return NULL;
+}
+#endif
+
+static inline void
+dma_cache_sync(struct device *dev, void *vaddr, size_t size,
+	       enum dma_data_direction direction)
+{
+}
+
+#endif

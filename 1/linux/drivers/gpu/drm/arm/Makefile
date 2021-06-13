@@ -1,3 +1,4 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:cdd63fa6f81f0373d220a7589eb6b096530532f87cc7f2762641bd68495ef991
-size 183
+hdlcd-y := hdlcd_drv.o hdlcd_crtc.o
+obj-$(CONFIG_DRM_HDLCD)	+= hdlcd.o
+mali-dp-y := malidp_drv.o malidp_hw.o malidp_planes.o malidp_crtc.o
+obj-$(CONFIG_DRM_MALI_DISPLAY)	+= mali-dp.o

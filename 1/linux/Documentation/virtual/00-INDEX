@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f110b7167a943627d079cb7b7bd2bb1dbad0caca04d2b6473b530b490458a486
-size 293
+Virtualization support in the Linux kernel.
+
+00-INDEX
+	- this file.
+
+paravirt_ops.txt
+	- Describes the Linux kernel pv_ops to support different hypervisors
+kvm/
+	- Kernel Virtual Machine.  See also http://linux-kvm.org
+uml/
+	- User Mode Linux, builds/runs Linux kernel as a userspace program.

@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:bba6daf5d0853d3668ccd93a96a2b92dea9b8ba0ed921163a48abca840a1b6fa
-size 291
+#
+# Makefile for the drm device driver.  This driver provides support for the
+# Direct Rendering Infrastructure (DRI) in XFree86 4.1.0 and higher.
+
+ccflags-y := -Iinclude/drm
+
+ast-y := ast_drv.o ast_main.o ast_mode.o ast_fb.o ast_ttm.o ast_post.o ast_dp501.o
+
+obj-$(CONFIG_DRM_AST) := ast.o

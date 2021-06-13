@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:076d12e94a8b5a27ccecb406bacdaa70536d1d8cf3382b51b0257750abedb167
-size 210
+/*
+ * Copyright © 2009 Intel Corporation
+ *
+ * Authors:
+ *    Chris Wilson <chris@chris-wilson.co.uk>
+ */
+
+#include "i915_drv.h"
+
+#ifndef __CHECKER__
+#define CREATE_TRACE_POINTS
+#include "i915_trace.h"
+#endif

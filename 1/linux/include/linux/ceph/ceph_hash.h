@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e268c496ad0f3b8c8608b73ba274c43cb75745afe111511a42b2ea5d6561722c
-size 433
+#ifndef FS_CEPH_HASH_H
+#define FS_CEPH_HASH_H
+
+#define CEPH_STR_HASH_LINUX      0x1  /* linux dcache hash */
+#define CEPH_STR_HASH_RJENKINS   0x2  /* robert jenkins' */
+
+extern unsigned ceph_str_hash_linux(const char *s, unsigned len);
+extern unsigned ceph_str_hash_rjenkins(const char *s, unsigned len);
+
+extern unsigned ceph_str_hash(int type, const char *s, unsigned len);
+extern const char *ceph_str_hash_name(int type);
+
+#endif

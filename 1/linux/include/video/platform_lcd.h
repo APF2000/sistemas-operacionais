@@ -1,3 +1,22 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:724ac0608b1a2d6fee1e4d5276c3f11efd775c469f1a3273f3c468da6646564f
-size 589
+/* include/video/platform_lcd.h
+ *
+ * Copyright 2008 Simtec Electronics
+ *	Ben Dooks <ben@simtec.co.uk>
+ *
+ * Generic platform-device LCD power control interface.
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 2 as
+ * published by the Free Software Foundation.
+ *
+*/
+
+struct plat_lcd_data;
+struct fb_info;
+
+struct plat_lcd_data {
+	int	(*probe)(struct plat_lcd_data *);
+	void	(*set_power)(struct plat_lcd_data *, unsigned int power);
+	int	(*match_fb)(struct plat_lcd_data *, struct fb_info *);
+};
+

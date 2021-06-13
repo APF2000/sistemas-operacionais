@@ -1,3 +1,23 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:eb62cd5ba91681d9bfa18c77a9f80d4d9a9b33c72c77b37d06315a8c02f05c55
-size 565
+#ifndef __ASM_METAG_CACHE_H
+#define __ASM_METAG_CACHE_H
+
+/* L1 cache line size (64 bytes) */
+#define L1_CACHE_SHIFT		6
+#define L1_CACHE_BYTES		(1 << L1_CACHE_SHIFT)
+
+/* Meta requires large data items to be 8 byte aligned. */
+#define ARCH_SLAB_MINALIGN	8
+
+/*
+ * With an L2 cache, we may invalidate dirty lines, so we need to ensure DMA
+ * buffers have cache line alignment.
+ */
+#ifdef CONFIG_METAG_L2C
+#define ARCH_DMA_MINALIGN	L1_CACHE_BYTES
+#else
+#define ARCH_DMA_MINALIGN	8
+#endif
+
+#define __read_mostly __attribute__((__section__(".data..read_mostly")))
+
+#endif

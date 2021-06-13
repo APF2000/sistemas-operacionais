@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:517c7799e60e856d2baa594e8b5cc610baf119e9d45697f4a6c68cb6ab0753b0
-size 445
+.. -*- coding: utf-8; mode: rst -*-
+
+.. _query-dvb-frontend-info:
+
+*****************************
+Querying frontend information
+*****************************
+
+Usually, the first thing to do when the frontend is opened is to check
+the frontend capabilities. This is done using
+:ref:`FE_GET_INFO`. This ioctl will enumerate the
+DVB API version and other characteristics about the frontend, and can be
+opened either in read only or read/write mode.

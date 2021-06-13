@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2302c4d0c2edf35d348177e4c1bfe3c800d9eac80cc08e203c12faf8a945df68
-size 262
+#
+# Makefile for the 3Com Ethernet device drivers
+#
+
+obj-$(CONFIG_EL3) += 3c509.o
+obj-$(CONFIG_3C515) += 3c515.o
+obj-$(CONFIG_PCMCIA_3C589) += 3c589_cs.o
+obj-$(CONFIG_PCMCIA_3C574) += 3c574_cs.o
+obj-$(CONFIG_VORTEX) += 3c59x.o
+obj-$(CONFIG_TYPHOON) += typhoon.o

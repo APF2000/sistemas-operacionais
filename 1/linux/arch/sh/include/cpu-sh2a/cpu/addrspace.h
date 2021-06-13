@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e0b4b044a0d08c3567638805561981c467bbe33a21af932f8900181ccec5460b
-size 251
+#ifndef __ASM_SH_CPU_SH2A_ADDRSPACE_H
+#define __ASM_SH_CPU_SH2A_ADDRSPACE_H
+
+#define P0SEG		0x00000000
+#define P1SEG		0x00000000
+#define P2SEG		0x20000000
+#define P3SEG		0x40000000
+#define P4SEG		0x60000000
+
+#endif /* __ASM_SH_CPU_SH2A_ADDRSPACE_H */

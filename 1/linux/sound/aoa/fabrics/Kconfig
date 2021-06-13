@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:cd91525a85a7593464c62a70fcd25e23191544f452b0db34dae518693c94147c
-size 357
+config SND_AOA_FABRIC_LAYOUT
+	tristate "layout-id fabric"
+	select SND_AOA_SOUNDBUS
+	select SND_AOA_SOUNDBUS_I2S
+	---help---
+	This enables the layout-id fabric for the Apple Onboard
+	Audio driver, the module holding it all together
+	based on the device-tree's layout-id property.
+	
+	If you are unsure and have a later Apple machine,
+	compile it as a module.

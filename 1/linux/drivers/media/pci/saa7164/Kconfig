@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:52fd67739e744b3af5f83acc849cb5fd4c4194f196e8dd7975d81c2f282c39eb
-size 505
+config VIDEO_SAA7164
+	tristate "NXP SAA7164 support"
+	depends on DVB_CORE && VIDEO_DEV && PCI && I2C
+	select I2C_ALGOBIT
+	select FW_LOADER
+	select VIDEO_TUNER
+	select VIDEO_TVEEPROM
+	select DVB_TDA10048 if MEDIA_SUBDRV_AUTOSELECT
+	select DVB_S5H1411 if MEDIA_SUBDRV_AUTOSELECT
+	select MEDIA_TUNER_TDA18271 if MEDIA_SUBDRV_AUTOSELECT
+	---help---
+	  This is a video4linux driver for NXP SAA7164 based
+	  TV cards.
+
+	  To compile this driver as a module, choose M here: the
+	  module will be called saa7164
+

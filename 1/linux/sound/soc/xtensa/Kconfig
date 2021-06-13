@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:324b8243f2052ad5db802b590168af4a8528897ebf0c39831607d68950b1bbba
-size 277
+config SND_SOC_XTFPGA_I2S
+	tristate "XTFPGA I2S master"
+	select REGMAP_MMIO
+	help
+	  Say Y or M if you want to add support for codecs attached to the
+	  I2S interface on XTFPGA daughter board. You will also need to select
+	  the drivers for the rest of XTFPGA audio subsystem.

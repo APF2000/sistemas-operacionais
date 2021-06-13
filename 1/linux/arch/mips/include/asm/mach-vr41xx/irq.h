@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e6853880f3c88f97db5a1df33b097ecd5d554af78c24e063b014665d933d0e01
-size 182
+#ifndef __ASM_MACH_VR41XX_IRQ_H
+#define __ASM_MACH_VR41XX_IRQ_H
+
+#include <asm/vr41xx/irq.h> /* for MIPS_CPU_IRQ_BASE */
+
+#include_next <irq.h>
+
+#endif /* __ASM_MACH_VR41XX_IRQ_H */

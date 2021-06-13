@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b2f4889e10ef65d9bffdd03df853087ff80fd12958f32a4d8e72975a16144d90
-size 273
+TEST_GEN_PROGS := dscr_default_test dscr_explicit_test dscr_user_test	\
+	      dscr_inherit_test dscr_inherit_exec_test dscr_sysfs_test	\
+	      dscr_sysfs_thread_test
+
+include ../../lib.mk
+
+$(OUTPUT)/dscr_default_test: LDLIBS += -lpthread
+
+$(TEST_GEN_PROGS): ../harness.c

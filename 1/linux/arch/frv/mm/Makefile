@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5dde0d8cf3924ceccfeceb9189819176e7a28363bf353a0e8adbba2875cb9804
-size 230
+#
+# Makefile for the arch-specific parts of the memory manager.
+#
+
+obj-y := init.o kmap.o
+
+obj-$(CONFIG_MMU) += \
+	pgalloc.o highmem.o fault.o extable.o cache-page.o tlb-flush.o tlb-miss.o \
+	mmu-context.o dma-alloc.o elf-fdpic.o

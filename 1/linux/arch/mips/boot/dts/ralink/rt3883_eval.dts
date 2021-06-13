@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:55da52e98340a644bc56159638398713b8fdbe67d2bdb904850fa2b0745f5f9d
-size 268
+/dts-v1/;
+
+/include/ "rt3883.dtsi"
+
+/ {
+	compatible = "ralink,rt3883-eval-board", "ralink,rt3883-soc";
+	model = "Ralink RT3883 evaluation board";
+
+	memory@0 {
+		device_type = "memory";
+		reg = <0x0 0x2000000>;
+	};
+
+	chosen {
+		bootargs = "console=ttyS0,57600";
+	};
+};

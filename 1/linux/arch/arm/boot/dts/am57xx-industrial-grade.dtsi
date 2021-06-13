@@ -1,3 +1,23 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:3778b0f44df74a76b83ad6afc5f3f71b38c4fae2453e3d2589fde0ffba0c9701
-size 364
+&cpu_alert0 {
+	temperature = <90000>; /* milliCelsius */
+};
+
+&cpu_crit {
+	temperature = <105000>; /* milliCelsius */
+};
+
+&gpu_crit {
+	temperature = <105000>; /* milliCelsius */
+};
+
+&core_crit {
+	temperature = <105000>; /* milliCelsius */
+};
+
+&dspeve_crit {
+	temperature = <105000>; /* milliCelsius */
+};
+
+&iva_crit {
+	temperature = <105000>; /* milliCelsius */
+};

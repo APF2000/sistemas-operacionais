@@ -1,3 +1,20 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:71010eab8fc56b4b50dad23dfd01a140d2ed0beb77e29a1eaaa5f98dbfa6934f
-size 454
+#ifndef _ASM_X86_BUGS_H
+#define _ASM_X86_BUGS_H
+
+#include <asm/processor.h>
+
+extern void check_bugs(void);
+
+#if defined(CONFIG_CPU_SUP_INTEL)
+void check_mpx_erratum(struct cpuinfo_x86 *c);
+#else
+static inline void check_mpx_erratum(struct cpuinfo_x86 *c) {}
+#endif
+
+#if defined(CONFIG_CPU_SUP_INTEL) && defined(CONFIG_X86_32)
+int ppro_with_ram_bug(void);
+#else
+static inline int ppro_with_ram_bug(void) { return 0; }
+#endif
+
+#endif /* _ASM_X86_BUGS_H */

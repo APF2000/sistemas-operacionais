@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:52575a0e376990cd9c7ca51cd429fbcd4cd5f4c338225872a168b3cfaf321440
-size 343
+b2c2-flexcop-objs += flexcop.o flexcop-fe-tuner.o flexcop-i2c.o
+b2c2-flexcop-objs += flexcop-sram.o flexcop-eeprom.o flexcop-misc.o
+b2c2-flexcop-objs += flexcop-hw-filter.o
+obj-$(CONFIG_DVB_B2C2_FLEXCOP) += b2c2-flexcop.o
+
+ccflags-y += -Idrivers/media/dvb-core/
+ccflags-y += -Idrivers/media/dvb-frontends/
+ccflags-y += -Idrivers/media/tuners/

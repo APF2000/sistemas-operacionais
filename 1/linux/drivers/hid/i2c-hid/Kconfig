@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:60c042c54cac4af3b84abde13489801e2c75635cc0bbaa5fb0f08eec2ba8c600
-size 424
+menu "I2C HID support"
+	depends on I2C
+
+config I2C_HID
+	tristate "HID over I2C transport layer"
+	default n
+	depends on I2C && INPUT
+	select HID
+	---help---
+	  Say Y here if you use a keyboard, a touchpad, a touchscreen, or any
+	  other HID based devices which is connected to your computer via I2C.
+
+	  If unsure, say N.
+
+	  This support is also available as a module.  If so, the module
+	  will be called i2c-hid.
+
+endmenu

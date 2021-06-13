@@ -1,3 +1,24 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:6f83fd6097452ded9bf26af8a6f7bc2c6b88f7c399731583cfd60150e6e24eae
-size 427
+#include <linux/types.h>
+#include <linux/errno.h>
+#include <linux/uaccess.h>
+
+#include <asm/sfp-machine.h>
+#include <math-emu/soft-fp.h>
+
+int
+mtfsfi(unsigned int crfD, unsigned int IMM)
+{
+	u32 mask = 0xf;
+
+	if (!crfD)
+		mask = 9;
+
+	__FPU_FPSCR &= ~(mask << ((7 - crfD) << 2));
+	__FPU_FPSCR |= (IMM & 0xf) << ((7 - crfD) << 2);
+
+#ifdef DEBUG
+	printk("%s: %d %x: %08lx\n", __func__, crfD, IMM, __FPU_FPSCR);
+#endif
+
+	return 0;
+}

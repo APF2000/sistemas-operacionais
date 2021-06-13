@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:7f51de7e63fc08f2b7e9cf1773011a7715c55d98c91b1c05d4f176618897bcfe
-size 248
+obj-y += setup.o mm.o time.o hvcall.o htab.o repository.o
+obj-y += interrupt.o exports.o os-area.o
+obj-y += system-bus.o
+
+obj-$(CONFIG_PS3GELIC_UDBG) += gelic_udbg.o
+obj-$(CONFIG_SMP) += smp.o
+obj-$(CONFIG_SPU_BASE) += spu.o
+obj-y += device-init.o

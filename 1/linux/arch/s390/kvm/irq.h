@@ -1,3 +1,22 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:6eb473ccc1b272ba64d9d64323f5d7cc52f019ca08d461e72230038d224f5b53
-size 467
+/*
+ * s390 irqchip routines
+ *
+ * Copyright IBM Corp. 2014
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License (version 2 only)
+ * as published by the Free Software Foundation.
+ *
+ *    Author(s): Cornelia Huck <cornelia.huck@de.ibm.com>
+ */
+#ifndef __KVM_IRQ_H
+#define __KVM_IRQ_H
+
+#include <linux/kvm_host.h>
+
+static inline int irqchip_in_kernel(struct kvm *kvm)
+{
+	return 1;
+}
+
+#endif

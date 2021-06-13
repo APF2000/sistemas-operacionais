@@ -1,3 +1,20 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:8ca3908da70c9ef7a2ba3f4270bedc5d17da97e11e3988416fdaa46eb0e49d2e
-size 509
+/*
+ * videobuf2-vmalloc.h - vmalloc memory allocator for videobuf2
+ *
+ * Copyright (C) 2010 Samsung Electronics
+ *
+ * Author: Pawel Osciak <pawel@osciak.com>
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation.
+ */
+
+#ifndef _MEDIA_VIDEOBUF2_VMALLOC_H
+#define _MEDIA_VIDEOBUF2_VMALLOC_H
+
+#include <media/videobuf2-v4l2.h>
+
+extern const struct vb2_mem_ops vb2_vmalloc_memops;
+
+#endif

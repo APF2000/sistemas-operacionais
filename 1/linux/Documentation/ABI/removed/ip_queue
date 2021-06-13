@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:324fb603d4743a5213d3e2314ecd99a7e0426ef5d04496270244e7d70ab1119a
-size 310
+What:		ip_queue
+Date:		finally removed in kernel v3.5.0
+Contact:	Pablo Neira Ayuso <pablo@netfilter.org>
+Description:
+	ip_queue has been replaced by nfnetlink_queue which provides
+	more advanced queueing mechanism to user-space. The ip_queue
+	module was already announced to become obsolete years ago.
+
+Users:

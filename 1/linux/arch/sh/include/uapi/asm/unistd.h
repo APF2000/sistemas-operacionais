@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:735482e0920b15d8003a014d29eeb25b5e2c6e2428e6818c20514674afaa7358
-size 115
+#ifndef __KERNEL__
+# ifdef __SH5__
+#  include <asm/unistd_64.h>
+# else
+#  include <asm/unistd_32.h>
+# endif
+#endif

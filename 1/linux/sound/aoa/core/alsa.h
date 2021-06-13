@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:01c3ea8abe9b3025a8ecb9c47d2911fd12be4133455eb96eec26c2b457d43e98
-size 370
+/*
+ * Apple Onboard Audio Alsa private helpers
+ *
+ * Copyright 2006 Johannes Berg <johannes@sipsolutions.net>
+ *
+ * GPL v2, can be found in COPYING.
+ */
+
+#ifndef __SND_AOA_ALSA_H
+#define __SND_AOA_ALSA_H
+#include "../aoa.h"
+
+extern int aoa_alsa_init(char *name, struct module *mod, struct device *dev);
+extern void aoa_alsa_cleanup(void);
+
+#endif /* __SND_AOA_ALSA_H */

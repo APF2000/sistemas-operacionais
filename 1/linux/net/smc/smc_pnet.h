@@ -1,3 +1,22 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c11c87d727097f0c8124c3dfc46f98d81bbecb610e04c5b2659edae63885ae5e
-size 478
+/*
+ * Shared Memory Communications over RDMA (SMC-R) and RoCE
+ *
+ *  PNET table queries
+ *
+ *  Copyright IBM Corp. 2016
+ *
+ *  Author(s):  Thomas Richter <tmricht@linux.vnet.ibm.com>
+ */
+
+#ifndef _SMC_PNET_H
+#define _SMC_PNET_H
+
+struct smc_ib_device;
+
+int smc_pnet_init(void) __init;
+void smc_pnet_exit(void);
+int smc_pnet_remove_by_ibdev(struct smc_ib_device *ibdev);
+void smc_pnet_find_roce_resource(struct sock *sk,
+				 struct smc_ib_device **smcibdev, u8 *ibport);
+
+#endif

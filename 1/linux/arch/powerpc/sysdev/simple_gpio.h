@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:922ab4d1f2512522deb133b25bcf240a6705f88967c2fa06bd4aace1cf1a619d
-size 315
+#ifndef __SYSDEV_SIMPLE_GPIO_H
+#define __SYSDEV_SIMPLE_GPIO_H
+
+#include <linux/errno.h>
+
+#ifdef CONFIG_SIMPLE_GPIO
+extern void simple_gpiochip_init(const char *compatible);
+#else
+static inline void simple_gpiochip_init(const char *compatible) {}
+#endif /* CONFIG_SIMPLE_GPIO */
+
+#endif /* __SYSDEV_SIMPLE_GPIO_H */

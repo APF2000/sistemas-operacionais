@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2319ae604547acf477a4a62ef5fd8fc9c2fa6826f7d765cc2ff5b899e05c4e67
-size 330
+# arch/ia64/sn/Makefile
+#
+# This file is subject to the terms and conditions of the GNU General Public
+# License.  See the file "COPYING" in the main directory of this archive
+# for more details.
+#
+# Copyright (C) 2004 Silicon Graphics, Inc.  All Rights Reserved.
+#
+# Makefile for the sn ia64 subplatform
+#
+
+obj-y += kernel/ pci/

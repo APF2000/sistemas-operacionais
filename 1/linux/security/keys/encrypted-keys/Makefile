@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:eaed4cceff968530ac3485ced0eaf7b6521f948455c71f9af2167d461d8fa978
-size 324
+#
+# Makefile for encrypted keys
+#
+
+obj-$(CONFIG_ENCRYPTED_KEYS) += encrypted-keys.o
+
+encrypted-keys-y := encrypted.o ecryptfs_format.o
+masterkey-$(CONFIG_TRUSTED_KEYS) := masterkey_trusted.o
+masterkey-$(CONFIG_TRUSTED_KEYS)-$(CONFIG_ENCRYPTED_KEYS) := masterkey_trusted.o
+encrypted-keys-y += $(masterkey-y) $(masterkey-m-m)

@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:3cfb32ee2acd4ceb35c0625ce89d169d92fa29db13e7daec80d71d99bbc27c6f
-size 172
+#ifndef __UM_REQUIRED_FEATURES_H
+#define __UM_REQUIRED_FEATURES_H
+
+/*
+ * Nothing to see, just need something for the i386 and x86_64 asm
+ * headers to include.
+ */
+
+#endif

@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d728b81010aa3889fe540d3a6ef75b01fb008abf4e6b4d32c99a8a93e9e0c36e
-size 352
+#
+#  Makefile for the Linux Controller Area Network USB drivers.
+#
+
+obj-$(CONFIG_CAN_EMS_USB) += ems_usb.o
+obj-$(CONFIG_CAN_ESD_USB2) += esd_usb2.o
+obj-$(CONFIG_CAN_GS_USB) += gs_usb.o
+obj-$(CONFIG_CAN_KVASER_USB) += kvaser_usb.o
+obj-$(CONFIG_CAN_PEAK_USB) += peak_usb/
+obj-$(CONFIG_CAN_8DEV_USB) += usb_8dev.o
+obj-$(CONFIG_CAN_MCBA_USB) += mcba_usb.o

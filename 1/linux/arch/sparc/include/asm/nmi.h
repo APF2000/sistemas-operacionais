@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:37b09527a5254231d6fe9d0d4d050ddc0ac2f9627eed0a23162c5a44ee367156
-size 279
+#ifndef __NMI_H
+#define __NMI_H
+
+int __init nmi_init(void);
+void perfctr_irq(int irq, struct pt_regs *regs);
+void nmi_adjust_hz(unsigned int new_hz);
+
+extern atomic_t nmi_active;
+
+void start_nmi_watchdog(void *unused);
+void stop_nmi_watchdog(void *unused);
+
+#endif /* __NMI_H */

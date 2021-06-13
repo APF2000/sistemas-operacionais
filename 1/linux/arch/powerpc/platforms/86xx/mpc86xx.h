@@ -1,3 +1,23 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4e5f9b015843b065deaa697793b11c7d3d1df59571274ddd4a3de2fda3637359
-size 667
+/*
+ * Copyright 2006 Freescale Semiconductor Inc.
+ *
+ * This program is free software; you can redistribute  it and/or modify it
+ * under  the terms of  the GNU General  Public License as published by the
+ * Free Software Foundation;  either version 2 of the  License, or (at your
+ * option) any later version.
+ */
+
+#ifndef __MPC86XX_H__
+#define __MPC86XX_H__
+
+/*
+ * Declaration for the various functions exported by the
+ * mpc86xx_* files. Mostly for use by mpc86xx_setup().
+ */
+
+extern void mpc86xx_smp_init(void);
+extern void mpc86xx_init_irq(void);
+extern long mpc86xx_time_init(void);
+extern int mpc86xx_common_publish_devices(void);
+
+#endif	/* __MPC86XX_H__ */

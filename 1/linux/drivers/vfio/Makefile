@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2143ac969b60d336a1d17a07adb0d410175c77ed1480b1d12bc3c6abc27f6475
-size 367
+vfio_virqfd-y := virqfd.o
+
+obj-$(CONFIG_VFIO) += vfio.o
+obj-$(CONFIG_VFIO_VIRQFD) += vfio_virqfd.o
+obj-$(CONFIG_VFIO_IOMMU_TYPE1) += vfio_iommu_type1.o
+obj-$(CONFIG_VFIO_IOMMU_SPAPR_TCE) += vfio_iommu_spapr_tce.o
+obj-$(CONFIG_VFIO_SPAPR_EEH) += vfio_spapr_eeh.o
+obj-$(CONFIG_VFIO_PCI) += pci/
+obj-$(CONFIG_VFIO_PLATFORM) += platform/
+obj-$(CONFIG_VFIO_MDEV) += mdev/

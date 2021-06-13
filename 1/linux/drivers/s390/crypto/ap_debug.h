@@ -1,3 +1,28 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:40d493eecc0678e7c9a86fd66d64dc6857e789dcc2445b6842d3725894a1c8ca
-size 649
+/*
+ *  Copyright IBM Corp. 2016
+ *  Author(s): Harald Freudenberger <freude@de.ibm.com>
+ */
+#ifndef AP_DEBUG_H
+#define AP_DEBUG_H
+
+#include <asm/debug.h>
+
+#define DBF_ERR		3	/* error conditions   */
+#define DBF_WARN	4	/* warning conditions */
+#define DBF_INFO	5	/* informational      */
+#define DBF_DEBUG	6	/* for debugging only */
+
+#define RC2ERR(rc) ((rc) ? DBF_ERR : DBF_INFO)
+#define RC2WARN(rc) ((rc) ? DBF_WARN : DBF_INFO)
+
+#define DBF_MAX_SPRINTF_ARGS 5
+
+#define AP_DBF(...)					\
+	debug_sprintf_event(ap_dbf_info, ##__VA_ARGS__)
+
+extern debug_info_t *ap_dbf_info;
+
+int ap_debug_init(void);
+void ap_debug_exit(void);
+
+#endif /* AP_DEBUG_H */

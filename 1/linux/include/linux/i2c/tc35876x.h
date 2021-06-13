@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f3c083a68bae00bc2e2710641e6e01db487021e66767a76b628b5172efcdf40e
-size 172
+
+#ifndef _TC35876X_H
+#define _TC35876X_H
+
+struct tc35876x_platform_data {
+	int gpio_bridge_reset;
+	int gpio_panel_bl_en;
+	int gpio_panel_vadd;
+};
+
+#endif /* _TC35876X_H */

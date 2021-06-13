@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:0063e7e9b4005cf10780c1b0f4ef3dfb5e4539aa5865221cd5a84139142b596f
-size 242
+#ifndef __PERF_LEVENSHTEIN_H
+#define __PERF_LEVENSHTEIN_H
+
+int levenshtein(const char *string1, const char *string2,
+	int swap_penalty, int substition_penalty,
+	int insertion_penalty, int deletion_penalty);
+
+#endif /* __PERF_LEVENSHTEIN_H */

@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:060d38f33b78bde6c2542d57c037f60c8e087e0868cc662f3c07d3cd33e350f7
-size 306
+Broadcom BCM23550 device tree bindings
+--------------------------------------
+
+This document describes the device tree bindings for boards with the BCM23550
+SoC.
+
+Required root node property:
+  - compatible: brcm,bcm23550
+
+Example:
+	/ {
+		model = "BCM23550 SoC";
+		compatible = "brcm,bcm23550";
+		[...]
+	}

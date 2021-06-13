@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ad4beb4ee7b89abec8f677a06ddeaa4e77a381a17c93e28b189424e5485eef2b
-size 465
+* Dove Thermal
+
+This driver is for Dove SoCs which contain a thermal sensor.
+
+Required properties:
+- compatible : "marvell,dove-thermal"
+- reg : Address range of the thermal registers
+
+The reg properties should contain two ranges. The first is for the
+three Thermal Manager registers, while the second range contains the
+Thermal Diode Control Registers.
+
+Example:
+
+	thermal@10078 {
+		compatible = "marvell,dove-thermal";
+		reg = <0xd001c 0x0c>, <0xd005c 0x08>;
+	};

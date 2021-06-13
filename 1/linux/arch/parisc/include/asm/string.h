@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:38c8a2124904bdb008e4359e460db78696f0c3c3e38add2bee45aa39775d7977
-size 208
+#ifndef _PA_STRING_H_
+#define _PA_STRING_H_
+
+#define __HAVE_ARCH_MEMSET
+extern void * memset(void *, int, size_t);
+
+#define __HAVE_ARCH_MEMCPY
+void * memcpy(void * dest,const void *src,size_t count);
+
+#endif

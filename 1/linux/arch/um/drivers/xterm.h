@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:46b5e1f676ef9e1b320761722a5e18b243e4d5a1870581cbbb9e3fea365c4aad
-size 183
+/* 
+ * Copyright (C) 2002 Jeff Dike (jdike@karaya.com)
+ * Licensed under the GPL
+ */
+
+#ifndef __XTERM_H__
+#define __XTERM_H__
+
+extern int xterm_fd(int socket, int *pid_out);
+
+#endif
+

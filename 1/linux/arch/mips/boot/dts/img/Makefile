@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:fc4f18d2224a211753cf90b2547cdf067b03365f7fced2b9106114e525044373
-size 230
+dtb-$(CONFIG_MACH_PISTACHIO)	+= pistachio_marduk.dtb
+
+obj-y				+= $(patsubst %.dtb, %.dtb.o, $(dtb-y))
+
+# Force kbuild to make empty built-in.o if necessary
+obj-				+= dummy.o
+
+always				:= $(dtb-y)
+clean-files			:= *.dtb *.dtb.S

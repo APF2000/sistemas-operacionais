@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:3fd92d8839e81a1ed5f5072b9dc4b1dc25c6dbf8feac16b4056d027474cbf1fa
-size 272
+#
+# Makefile for the Linux isofs filesystem routines.
+#
+
+obj-$(CONFIG_ISO9660_FS) += isofs.o
+
+isofs-objs-y 			:= namei.o inode.o dir.o util.o rock.o export.o
+isofs-objs-$(CONFIG_JOLIET)	+= joliet.o
+isofs-objs-$(CONFIG_ZISOFS)	+= compress.o
+isofs-objs			:= $(isofs-objs-y)

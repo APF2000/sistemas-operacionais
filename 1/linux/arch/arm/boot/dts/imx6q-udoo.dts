@@ -1,3 +1,22 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:6cad9f64324a5900190acdc4bb8ee63463a23af3d0340fafbda8956a575036fd
-size 485
+/*
+ * Copyright 2013 Freescale Semiconductor, Inc.
+ *
+ * Author: Fabio Estevam <fabio.estevam@freescale.com>
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 2 as
+ * published by the Free Software Foundation.
+ *
+ */
+/dts-v1/;
+#include "imx6q.dtsi"
+#include "imx6qdl-udoo.dtsi"
+
+/ {
+	model = "Udoo i.MX6 Quad Board";
+	compatible = "udoo,imx6q-udoo", "fsl,imx6q";
+};
+
+&sata {
+	status = "okay";
+};

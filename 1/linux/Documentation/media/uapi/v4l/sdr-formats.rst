@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5f0780345ea7129517910bdb78c576c9e39f5419b8df14f8e820db5129f5b85b
-size 291
+.. -*- coding: utf-8; mode: rst -*-
+
+.. _sdr-formats:
+
+***********
+SDR Formats
+***********
+
+These formats are used for :ref:`SDR <sdr>` interface only.
+
+
+.. toctree::
+    :maxdepth: 1
+
+    pixfmt-sdr-cu08
+    pixfmt-sdr-cu16le
+    pixfmt-sdr-cs08
+    pixfmt-sdr-cs14le
+    pixfmt-sdr-ru12le

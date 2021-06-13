@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:731ff7f1b284d88d86c146e193f2e10b35b2e02dc1b48f960c7c91deadca9560
-size 235
+/ {
+	aliases {
+		ethernet = &ethernet;
+	};
+};
+
+&usb {
+	usb1@1 {
+		compatible = "usb424,9512";
+		reg = <1>;
+		#address-cells = <1>;
+		#size-cells = <0>;
+
+		ethernet: usbether@1 {
+			compatible = "usb424,ec00";
+			reg = <1>;
+		};
+	};
+};

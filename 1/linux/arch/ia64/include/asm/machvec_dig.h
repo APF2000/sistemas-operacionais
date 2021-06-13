@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:103fcdd1b616ac8346eb13b1df9e4a4e48a2557eb086be360cadcd8482334c67
-size 410
+#ifndef _ASM_IA64_MACHVEC_DIG_h
+#define _ASM_IA64_MACHVEC_DIG_h
+
+extern ia64_mv_setup_t dig_setup;
+
+/*
+ * This stuff has dual use!
+ *
+ * For a generic kernel, the macros are used to initialize the
+ * platform's machvec structure.  When compiling a non-generic kernel,
+ * the macros are used directly.
+ */
+#define ia64_platform_name	"dig"
+#define platform_setup		dig_setup
+
+#endif /* _ASM_IA64_MACHVEC_DIG_h */

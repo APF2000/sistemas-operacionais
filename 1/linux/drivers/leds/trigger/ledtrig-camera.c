@@ -1,3 +1,57 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:08d0ab98b911a397f96e39f9292422ebea32894eedce3f5b6f9742a7cbd27d93
-size 1375
+/*
+ * Camera Flash and Torch On/Off Trigger
+ *
+ * based on ledtrig-ide-disk.c
+ *
+ * Copyright 2013 Texas Instruments
+ *
+ * Author: Milo(Woogyom) Kim <milo.kim@ti.com>
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 2 as
+ * published by the Free Software Foundation.
+ *
+ */
+
+#include <linux/module.h>
+#include <linux/kernel.h>
+#include <linux/init.h>
+#include <linux/leds.h>
+
+DEFINE_LED_TRIGGER(ledtrig_flash);
+DEFINE_LED_TRIGGER(ledtrig_torch);
+
+void ledtrig_flash_ctrl(bool on)
+{
+	enum led_brightness brt = on ? LED_FULL : LED_OFF;
+
+	led_trigger_event(ledtrig_flash, brt);
+}
+EXPORT_SYMBOL_GPL(ledtrig_flash_ctrl);
+
+void ledtrig_torch_ctrl(bool on)
+{
+	enum led_brightness brt = on ? LED_FULL : LED_OFF;
+
+	led_trigger_event(ledtrig_torch, brt);
+}
+EXPORT_SYMBOL_GPL(ledtrig_torch_ctrl);
+
+static int __init ledtrig_camera_init(void)
+{
+	led_trigger_register_simple("flash", &ledtrig_flash);
+	led_trigger_register_simple("torch", &ledtrig_torch);
+	return 0;
+}
+module_init(ledtrig_camera_init);
+
+static void __exit ledtrig_camera_exit(void)
+{
+	led_trigger_unregister_simple(ledtrig_torch);
+	led_trigger_unregister_simple(ledtrig_flash);
+}
+module_exit(ledtrig_camera_exit);
+
+MODULE_DESCRIPTION("LED Trigger for Camera Flash/Torch Control");
+MODULE_AUTHOR("Milo Kim");
+MODULE_LICENSE("GPL");

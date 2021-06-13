@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b77edc82d60b30e9c3c913c057076cf6ebfc14958303ff75d057b4cb5582fd42
-size 369
+The HUW_WEBPANEL is a product of the german company Hoeft & Wessel AG
+
+If you want more information, please visit
+http://www.hoeft-wessel.de
+
+To build the kernel:
+	make huw_webpanel_config
+	make oldconfig
+	[accept all defaults]
+	make zImage
+
+Mostly of the work is done by:
+Roman Jordan         jor@hoeft-wessel.de
+Christoph Schulz    schu@hoeft-wessel.de
+
+2000/12/18/
+

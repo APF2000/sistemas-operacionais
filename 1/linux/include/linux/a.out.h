@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:fceb81c7e0e61a68462b5fe6348a7c337dba650519ab1a023617de414aadf6dd
-size 315
+#ifndef __A_OUT_GNU_H__
+#define __A_OUT_GNU_H__
+
+#include <uapi/linux/a.out.h>
+
+#ifndef __ASSEMBLY__
+#ifdef linux
+#include <asm/page.h>
+#if defined(__i386__) || defined(__mc68000__)
+#else
+#ifndef SEGMENT_SIZE
+#define SEGMENT_SIZE	PAGE_SIZE
+#endif
+#endif
+#endif
+#endif /*__ASSEMBLY__ */
+#endif /* __A_OUT_GNU_H__ */

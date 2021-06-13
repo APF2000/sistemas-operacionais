@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:45e56d47c94af964cf133cee105a4824d3a4e2a141a1ab1dff77f3c50d3fe203
-size 275
+#
+# MOST Networking configuration
+#
+
+config AIM_NETWORK
+	tristate "Networking AIM"
+	depends on NET
+
+	---help---
+	  Say Y here if you want to commumicate via a networking device.
+
+	  To compile this driver as a module, choose M here: the
+	  module will be called aim_network.

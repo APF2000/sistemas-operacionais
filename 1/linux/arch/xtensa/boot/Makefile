@@ -1,3 +1,53 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:14c2cd20a756c923a12c056eade4fa898c81677958cdb13dbe80c3d57773cdd9
-size 1353
+#
+# arch/xtensa/boot/Makefile
+#
+# This file is subject to the terms and conditions of the GNU General Public
+# License.  See the file "COPYING" in the main directory of this archive
+# for more details.
+#
+#
+
+
+# KBUILD_CFLAGS used when building rest of boot (takes effect recursively)
+KBUILD_CFLAGS	+= -fno-builtin -Iarch/$(ARCH)/boot/include
+HOSTFLAGS	+= -Iarch/$(ARCH)/boot/include
+
+BIG_ENDIAN	:= $(shell echo __XTENSA_EB__ | $(CC) -E - | grep -v "\#")
+
+export ccflags-y
+export BIG_ENDIAN
+
+subdir-y	:= lib
+
+# Subdirs for the boot loader(s)
+
+boot-$(CONFIG_XTENSA_PLATFORM_ISS)    += Image
+boot-$(CONFIG_XTENSA_PLATFORM_XT2000) += Image zImage uImage
+boot-$(CONFIG_XTENSA_PLATFORM_XTFPGA) += Image zImage uImage
+
+all: $(boot-y)
+Image: boot-elf
+zImage: boot-redboot
+uImage: $(obj)/uImage
+
+boot-elf boot-redboot: $(addprefix $(obj)/,$(subdir-y)) \
+		       $(addprefix $(obj)/,$(host-progs))
+	$(Q)$(MAKE) $(build)=$(obj)/$@ $(MAKECMDGOALS)
+
+OBJCOPYFLAGS = --strip-all -R .comment -R .note.gnu.build-id -O binary
+
+vmlinux.bin: vmlinux FORCE
+	$(call if_changed,objcopy)
+
+vmlinux.bin.gz: vmlinux.bin FORCE
+	$(call if_changed,gzip)
+
+boot-elf: vmlinux.bin
+boot-redboot: vmlinux.bin.gz
+
+UIMAGE_LOADADDR = $(CONFIG_KERNEL_LOAD_ADDRESS)
+UIMAGE_COMPRESSION = gzip
+
+$(obj)/uImage: vmlinux.bin.gz FORCE
+	$(call if_changed,uimage)
+	$(Q)$(kecho) '  Kernel: $@ is ready'

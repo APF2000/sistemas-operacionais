@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e810f7a5f82a4db9166dedcfff231ce224296ab260a6e1b1a61a826dc23e7bbf
-size 198
+#ifndef __SUBCMD_SIGCHAIN_H
+#define __SUBCMD_SIGCHAIN_H
+
+typedef void (*sigchain_fun)(int);
+
+int sigchain_pop(int sig);
+
+void sigchain_push_common(sigchain_fun f);
+
+#endif /* __SUBCMD_SIGCHAIN_H */

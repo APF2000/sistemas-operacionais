@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:9f12ce983367d3de8a12fb196fb0d7d34969069f13fc739f6a919434df81f125
-size 500
+
+#define REQUEST(r_contents) \
+	REQUEST_(REQUEST_NAME, REQUEST_NUM, REQUEST_IDX_KIND, I(r_contents))
+
+#define __field(f_offset, f_bytes, f_name) \
+	__field_(REQUEST_NAME, REQUEST_NUM, REQUEST_IDX_KIND, \
+		 f_offset, f_bytes, f_name)
+
+#define __array(f_offset, f_bytes, f_name) \
+	__array_(REQUEST_NAME, REQUEST_NUM, REQUEST_IDX_KIND, \
+		 f_offset, f_bytes, f_name)
+
+#define __count(f_offset, f_bytes, f_name) \
+	__count_(REQUEST_NAME, REQUEST_NUM, REQUEST_IDX_KIND, \
+		 f_offset, f_bytes, f_name)

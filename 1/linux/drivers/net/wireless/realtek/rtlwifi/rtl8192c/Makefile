@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c7966fa2daa02baecad26f73861bd2e94adef9f95a976db15fb81ebf839fec6a
-size 138
+rtl8192c-common-objs :=		\
+		main.o		\
+		dm_common.o	\
+		fw_common.o	\
+		phy_common.o
+
+obj-$(CONFIG_RTL8192C_COMMON) += rtl8192c-common.o

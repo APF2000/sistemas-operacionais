@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:611cc6db9726ad65ffdd6ac90a8e13a4d734181478a1e4792b396c0ac6f5816a
-size 679
+/*
+ * Support for Intel Camera Imaging ISP subsystem.
+ * Copyright (c) 2015, Intel Corporation.
+ *
+ * This program is free software; you can redistribute it and/or modify it
+ * under the terms and conditions of the GNU General Public License,
+ * version 2, as published by the Free Software Foundation.
+ *
+ * This program is distributed in the hope it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+ * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for
+ * more details.
+ */
+
+/* This file will contain the code to implement the functions declared in ia_css_morph.h
+   and associated helper functions */

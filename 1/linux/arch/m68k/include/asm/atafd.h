@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:7f35924641a4ae7f84666db6779e44138a2f157f3f55c170518779088d195927
-size 261
+#ifndef _ASM_M68K_FD_H
+#define _ASM_M68K_FD_H
+
+/* Definitions for the Atari Floppy driver */
+
+struct atari_format_descr {
+    int track;			/* to be formatted */
+    int head;			/*   ""     ""     */
+    int sect_offset;		/* offset of first sector */
+};
+
+#endif

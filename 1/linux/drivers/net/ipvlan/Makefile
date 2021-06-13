@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:6f0ab2817ebaec1b98db9d4e50f555d9249942cf53acd1605e5568394b29f519
-size 157
+#
+# Makefile for the Ethernet Ipvlan driver
+#
+
+obj-$(CONFIG_IPVLAN) += ipvlan.o
+obj-$(CONFIG_IPVTAP) += ipvtap.o
+
+ipvlan-objs := ipvlan_core.o ipvlan_main.o

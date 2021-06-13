@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:9aa4eb8e08d745f98539ed5a1d71aded14afd68ea33ab156155d0152c65e996a
-size 256
+# BCM2835 Platform Support
+snd-soc-bcm2835-i2s-objs := bcm2835-i2s.o
+
+obj-$(CONFIG_SND_BCM2835_SOC_I2S) += snd-soc-bcm2835-i2s.o
+
+# CYGNUS Platform Support
+snd-soc-cygnus-objs := cygnus-pcm.o cygnus-ssp.o
+
+obj-$(CONFIG_SND_SOC_CYGNUS) += snd-soc-cygnus.o
+

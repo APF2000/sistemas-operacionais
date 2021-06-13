@@ -1,3 +1,23 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c88f742fee7cbde3740be98cdcbc3e6e9cddd3acd5015668be4e11ea24e770ee
-size 463
+/******************************************************************************
+ * features.h
+ *
+ * Query the features reported by Xen.
+ *
+ * Copyright (c) 2006, Ian Campbell
+ */
+
+#ifndef __XEN_FEATURES_H__
+#define __XEN_FEATURES_H__
+
+#include <xen/interface/features.h>
+
+void xen_setup_features(void);
+
+extern u8 xen_features[XENFEAT_NR_SUBMAPS * 32];
+
+static inline int xen_feature(int flag)
+{
+	return xen_features[flag];
+}
+
+#endif /* __ASM_XEN_FEATURES_H__ */

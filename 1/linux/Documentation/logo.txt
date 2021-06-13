@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:962d8a4eb29f79f36e271587983ca5727ce4888bc8db0c48cf28869867896f8f
-size 563
+This is the full-colour version of the currently unofficial Linux logo
+("currently unofficial" just means that there has been no paperwork and
+that I have not really announced it yet).  It was created by Larry Ewing,
+and is freely usable as long as you acknowledge Larry as the original
+artist. 
+
+Note that there are black-and-white versions of this available that
+scale down to smaller sizes and are better for letterheads or whatever
+you want to use it for: for the full range of logos take a look at
+Larry's web-page:
+
+	http://www.isc.tamu.edu/~lewing/linux/
+

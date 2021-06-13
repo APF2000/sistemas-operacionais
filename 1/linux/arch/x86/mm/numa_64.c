@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:52d71b0cab37a72c40ce75f15637423c4ef57bf08d7de9920bd581deeb568305
-size 215
+/*
+ * Generic VM initialization for x86-64 NUMA setups.
+ * Copyright 2002,2003 Andi Kleen, SuSE Labs.
+ */
+#include <linux/bootmem.h>
+
+#include "numa_internal.h"
+
+void __init initmem_init(void)
+{
+	x86_numa_init();
+}

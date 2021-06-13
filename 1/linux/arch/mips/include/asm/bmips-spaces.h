@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f06778fbea5593b7fe83965a6aa1a7ff75e7f6fc700a91093e970166f11140ff
-size 229
+#ifndef __ASM_BMIPS_SPACES_H
+#define __ASM_BMIPS_SPACES_H
+
+/* Avoid collisions with system base register (SBR) region on BMIPS3300 */
+#define FIXADDR_TOP		((unsigned long)(long)(int)0xff000000)
+
+#endif /* __ASM_BMIPS_SPACES_H */

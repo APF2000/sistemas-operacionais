@@ -1,3 +1,24 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:9e4fd57de63b0b76f93c465a6151f086583ed2a66695cc2961fc6940dfaa3cc7
-size 397
+choice
+	prompt "Machine type"
+	depends on MACH_INGENIC
+	default JZ4740_QI_LB60
+
+config JZ4740_QI_LB60
+	bool "Qi Hardware Ben NanoNote"
+	select MACH_JZ4740
+
+config JZ4780_CI20
+	bool "MIPS Creator CI20"
+	select MACH_JZ4780
+
+endchoice
+
+config MACH_JZ4740
+	bool
+	select SYS_HAS_CPU_MIPS32_R1
+
+config MACH_JZ4780
+	bool
+	select MIPS_CPU_SCACHE
+	select SYS_HAS_CPU_MIPS32_R2
+	select SYS_SUPPORTS_HIGHMEM

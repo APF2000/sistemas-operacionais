@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:7dc404972f4544acc1f25dae9cae1f7163fb06c541c807e1eac46a88e11b8df1
-size 458
+libperf-y += header.o
+libperf-y += tsc.o
+libperf-y += pmu.o
+libperf-y += kvm-stat.o
+libperf-y += perf_regs.o
+libperf-y += group.o
+
+libperf-$(CONFIG_DWARF) += dwarf-regs.o
+libperf-$(CONFIG_BPF_PROLOGUE) += dwarf-regs.o
+
+libperf-$(CONFIG_LOCAL_LIBUNWIND)    += unwind-libunwind.o
+libperf-$(CONFIG_LIBDW_DWARF_UNWIND) += unwind-libdw.o
+
+libperf-$(CONFIG_AUXTRACE) += auxtrace.o
+libperf-$(CONFIG_AUXTRACE) += intel-pt.o
+libperf-$(CONFIG_AUXTRACE) += intel-bts.o

@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:60a82019ed177cc780191fda7236748b69f1f5ff561705ae16df5fda2db31a08
-size 257
+#
+# Makefile for the Linux/M32R kernel.
+#
+
+extra-y	:= head.o vmlinux.lds
+
+obj-y	:= process.o entry.o traps.o align.o irq.o setup.o time.o \
+	m32r_ksyms.o sys_m32r.o signal.o ptrace.o
+
+obj-$(CONFIG_SMP)		+= smp.o smpboot.o
+obj-$(CONFIG_MODULES)		+= module.o

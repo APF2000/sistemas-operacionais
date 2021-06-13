@@ -1,3 +1,28 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:10b46a45f0a1d82978ba3aa503d3822a01ce7b779a11e1a7145c554a1159ee0a
-size 530
+/*
+ * Copyright (C) 2004 Jeff Dike (jdike@karaya.com)
+ * Licensed under the GPL
+ */
+
+#ifndef AIO_H__
+#define AIO_H__
+
+enum aio_type { AIO_READ, AIO_WRITE, AIO_MMAP };
+
+struct aio_thread_reply {
+	void *data;
+	int err;
+};
+
+struct aio_context {
+	int reply_fd;
+	struct aio_context *next;
+};
+
+#define INIT_AIO_CONTEXT { .reply_fd	= -1, \
+			   .next	= NULL }
+
+extern int submit_aio(enum aio_type type, int fd, char *buf, int len,
+		      unsigned long long offset, int reply_fd,
+                      struct aio_context *aio);
+
+#endif

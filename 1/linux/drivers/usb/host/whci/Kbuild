@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:311e56b3d5cd2e92572445974f5f3590af666b71dba10716cb37c13621629c83
-size 141
+obj-$(CONFIG_USB_WHCI_HCD) += whci-hcd.o
+
+whci-hcd-y := \
+	asl.o	\
+	debug.o \
+	hcd.o	\
+	hw.o	\
+	init.o	\
+	int.o	\
+	pzl.o	\
+	qset.o	\
+	wusb.o

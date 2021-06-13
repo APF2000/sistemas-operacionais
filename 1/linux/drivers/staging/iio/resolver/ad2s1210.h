@@ -1,3 +1,20 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a09922142ca5fa8d29e2a82ae890c8a3aab3e3796b21cc91515f218a405a07b9
-size 514
+/*
+ * ad2s1210.h plaform data for the ADI Resolver to Digital Converters:
+ * AD2S1210
+ *
+ * Copyright (c) 2010-2010 Analog Devices Inc.
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 2 as
+ * published by the Free Software Foundation.
+ */
+#ifndef _AD2S1210_H
+#define _AD2S1210_H
+
+struct ad2s1210_platform_data {
+	unsigned int		sample;
+	unsigned int		a[2];
+	unsigned int		res[2];
+	bool			gpioin;
+};
+#endif /* _AD2S1210_H */

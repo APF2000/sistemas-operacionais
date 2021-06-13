@@ -1,3 +1,26 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e4161b4d5989dc5804ba793a7ea53f621c40d8baad0f4a9cb644b1b3fea0c517
-size 457
+* Philips PCF8563/Epson RTC8564 Real Time Clock
+
+Philips PCF8563/Epson RTC8564 Real Time Clock
+
+Required properties:
+- compatible: Should contain "nxp,pcf8563".
+- reg: I2C address for chip.
+
+Optional property:
+- #clock-cells: Should be 0.
+- clock-output-names:
+  overwrite the default clock name "pcf8563-clkout"
+
+Example:
+
+pcf8563: pcf8563@51 {
+	compatible = "nxp,pcf8563";
+	reg = <0x51>;
+	#clock-cells = <0>;
+};
+
+device {
+...
+	clocks = <&pcf8563>;
+...
+};

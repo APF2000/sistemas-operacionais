@@ -1,3 +1,21 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:9344addc7e6e297956059261bcd4d19249997c4cb3e862441e67fd032bb194ec
-size 583
+/*
+ * OMAP DMA Engine support
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 2 as
+ * published by the Free Software Foundation.
+ */
+#ifndef __LINUX_OMAP_DMAENGINE_H
+#define __LINUX_OMAP_DMAENGINE_H
+
+struct dma_chan;
+
+#if defined(CONFIG_DMA_OMAP) || (defined(CONFIG_DMA_OMAP_MODULE) && defined(MODULE))
+bool omap_dma_filter_fn(struct dma_chan *, void *);
+#else
+static inline bool omap_dma_filter_fn(struct dma_chan *c, void *d)
+{
+	return false;
+}
+#endif
+#endif /* __LINUX_OMAP_DMAENGINE_H */

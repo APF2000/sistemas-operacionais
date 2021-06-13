@@ -1,3 +1,46 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2ac87b949fa5a5c199a4996425fdb96b2977e15fcf53bd01fbe77b96d10f2698
-size 1434
+/*
+    Conexant CX22700 DVB OFDM demodulator driver
+
+    Copyright (C) 2001-2002 Convergence Integrated Media GmbH
+	Holger Waechtler <holger@convergence.de>
+
+    This program is free software; you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation; either version 2 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program; if not, write to the Free Software
+    Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+
+*/
+
+#ifndef CX22700_H
+#define CX22700_H
+
+#include <linux/dvb/frontend.h>
+
+struct cx22700_config
+{
+	/* the demodulator's i2c address */
+	u8 demod_address;
+};
+
+#if IS_REACHABLE(CONFIG_DVB_CX22700)
+extern struct dvb_frontend* cx22700_attach(const struct cx22700_config* config,
+					   struct i2c_adapter* i2c);
+#else
+static inline struct dvb_frontend* cx22700_attach(const struct cx22700_config* config,
+					   struct i2c_adapter* i2c)
+{
+	printk(KERN_WARNING "%s: driver disabled by Kconfig\n", __func__);
+	return NULL;
+}
+#endif // CONFIG_DVB_CX22700
+
+#endif // CX22700_H

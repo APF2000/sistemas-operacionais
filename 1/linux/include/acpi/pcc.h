@@ -1,3 +1,29 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b1498da32350e3692cc5b0b2f6bf1fede951ca7f6a4c2fe14a73966597f51fea
-size 786
+/*
+ * PCC (Platform Communications Channel) methods
+ *
+ * This program is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License
+ * as published by the Free Software Foundation; version 2
+ * of the License.
+ */
+
+#ifndef _PCC_H
+#define _PCC_H
+
+#include <linux/mailbox_controller.h>
+#include <linux/mailbox_client.h>
+
+#ifdef CONFIG_PCC
+extern struct mbox_chan *pcc_mbox_request_channel(struct mbox_client *cl,
+						  int subspace_id);
+extern void pcc_mbox_free_channel(struct mbox_chan *chan);
+#else
+static inline struct mbox_chan *pcc_mbox_request_channel(struct mbox_client *cl,
+							 int subspace_id)
+{
+	return ERR_PTR(-ENODEV);
+}
+static inline void pcc_mbox_free_channel(struct mbox_chan *chan) { }
+#endif
+
+#endif /* _PCC_H */

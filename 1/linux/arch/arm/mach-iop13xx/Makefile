@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f743410412cc9ce894600964e233abf6a8d6a44b08a78747720fae34900382ed
-size 301
+obj-$(CONFIG_ARCH_IOP13XX) += setup.o
+obj-$(CONFIG_ARCH_IOP13XX) += irq.o
+obj-$(CONFIG_ARCH_IOP13XX) += pci.o
+obj-$(CONFIG_ARCH_IOP13XX) += io.o
+obj-$(CONFIG_ARCH_IOP13XX) += tpmi.o
+obj-$(CONFIG_MACH_IQ81340SC) += iq81340sc.o
+obj-$(CONFIG_MACH_IQ81340MC) += iq81340mc.o
+obj-$(CONFIG_PCI_MSI) += msi.o

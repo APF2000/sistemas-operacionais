@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:79c017700cf407f454a67b0469d0cd36211520dcdc4cdd0a9e1c8577861f4267
-size 379
+#!/bin/bash
+
+#
+# Build U-Boot image when `mkimage' tool is available.
+#
+
+MKIMAGE=$(type -path "${CROSS_COMPILE}mkimage")
+
+if [ -z "${MKIMAGE}" ]; then
+	MKIMAGE=$(type -path mkimage)
+	if [ -z "${MKIMAGE}" ]; then
+		# Doesn't exist
+		echo '"mkimage" command not found - U-Boot images will not be built' >&2
+		exit 1;
+	fi
+fi
+
+# Call "mkimage" to create U-Boot image
+${MKIMAGE} "$@"

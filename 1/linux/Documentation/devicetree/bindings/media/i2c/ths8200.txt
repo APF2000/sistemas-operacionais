@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c922d1a8b75d8792fee323f0ba14c3d3631479b8a6867295901f3afb95717344
-size 329
+* Texas Instruments THS8200 video encoder
+
+The ths8200 device is a digital to analog converter used in DVD players, video
+recorders, set-top boxes.
+
+Required Properties :
+- compatible : value must be "ti,ths8200"
+
+Example:
+
+	i2c0@1c22000 {
+		...
+		...
+		ths8200@5c {
+			compatible = "ti,ths8200";
+			reg = <0x5c>;
+		};
+		...
+	};

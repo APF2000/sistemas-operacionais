@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:71e14de2bbc0e031289b924fd88c99673030e4a785529bbac96d96fed83946c1
-size 152
+#
+# Makefile for Resolver/Synchro drivers
+#
+
+obj-$(CONFIG_AD2S90) += ad2s90.o
+obj-$(CONFIG_AD2S1200) += ad2s1200.o
+obj-$(CONFIG_AD2S1210) += ad2s1210.o

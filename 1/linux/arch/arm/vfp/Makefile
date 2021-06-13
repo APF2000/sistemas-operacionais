@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:250ff7f411721f118d1d260c771fb5dc1b588b43aab0e55a633bef5dbb9a5a06
-size 324
+#
+# linux/arch/arm/vfp/Makefile
+#
+# Copyright (C) 2001 ARM Limited
+#
+
+# ccflags-y := -DDEBUG
+# asflags-y := -DDEBUG
+
+KBUILD_AFLAGS	:=$(KBUILD_AFLAGS:-msoft-float=-Wa,-mfpu=softvfp+vfp -mfloat-abi=soft)
+LDFLAGS		+=--no-warn-mismatch
+
+obj-y			+= vfp.o
+
+vfp-$(CONFIG_VFP)	+= vfpmodule.o entry.o vfphw.o vfpsingle.o vfpdouble.o

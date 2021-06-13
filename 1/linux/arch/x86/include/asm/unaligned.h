@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:05d8abd9402e5f394f3702a9be4200485de4189d39cc6266598afd8d37da87c2
-size 306
+#ifndef _ASM_X86_UNALIGNED_H
+#define _ASM_X86_UNALIGNED_H
+
+/*
+ * The x86 can do unaligned accesses itself.
+ */
+
+#include <linux/unaligned/access_ok.h>
+#include <linux/unaligned/generic.h>
+
+#define get_unaligned __get_unaligned_le
+#define put_unaligned __put_unaligned_le
+
+#endif /* _ASM_X86_UNALIGNED_H */

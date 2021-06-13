@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1fb84dbc53a94ddbfd0ad524cac9a7682159ea66c576d521feaab7e715355ad5
-size 360
+/*
+ * Copyright (C) 2013 Freescale Semiconductor, Inc.
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 2 as
+ * published by the Free Software Foundation.
+ */
+
+#ifndef __LINUX_CLK_MXS_H
+#define __LINUX_CLK_MXS_H
+
+int mxs_saif_clkmux_select(unsigned int clkmux);
+
+#endif

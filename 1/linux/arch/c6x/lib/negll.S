@@ -1,3 +1,31 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:53eeb88a471b587bc04b7ae77dfb97a0765447b68d053e02d6f7b8ef32f4e288
-size 1066
+;;  Copyright (C) 2010 Texas Instruments Incorporated
+;;  Contributed by Mark Salter <msalter@redhat.com>.
+;;
+;; This program is free software; you can redistribute it and/or modify
+;; it under the terms of the GNU General Public License as published by
+;; the Free Software Foundation; either version 2 of the License, or
+;; (at your option) any later version.
+;;
+;; This program is distributed in the hope that it will be useful,
+;; but WITHOUT ANY WARRANTY; without even the implied warranty of
+;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+;; GNU General Public License for more details.
+;;
+;; You should have received a copy of the GNU General Public License
+;; along with this program; if not, write to the Free Software
+;; Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+
+;;  int64_t __c6xabi_negll(int64_t val)
+
+#include <linux/linkage.h>
+
+	.text
+ENTRY(__c6xabi_negll)
+	b	.s2	B3
+	mvk	.l1	0,A0
+	subu	.l1	A0,A4,A3:A2
+	sub	.l1	A0,A5,A0
+||	ext	.s1	A3,24,24,A5
+	add	.l1	A5,A0,A5
+	mv	.s1	A2,A4
+ENDPROC(__c6xabi_negll)

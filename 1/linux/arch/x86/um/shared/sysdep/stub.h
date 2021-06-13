@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:6582d9e0f63614e6f2131244fbf35103e5c3c02261372338dc54135c3d744ec5
-size 280
+#include <asm/unistd.h>
+#include <sys/mman.h>
+#include <signal.h>
+#include <as-layout.h>
+#include <stub-data.h>
+
+#ifdef __i386__
+#include "stub_32.h"
+#else
+#include "stub_64.h"
+#endif
+
+extern void stub_segv_handler(int, siginfo_t *, void *);
+extern void stub_clone_handler(void);

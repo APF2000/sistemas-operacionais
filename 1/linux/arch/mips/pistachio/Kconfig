@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:69979cd7f109f0a3112ffee856a8429d13fbf3beb282ab980faa0bdfbb9f7dc8
-size 421
+config PISTACHIO_GPTIMER_CLKSRC
+	bool "Enable General Purpose Timer based clocksource"
+	depends on MACH_PISTACHIO
+	select CLKSRC_PISTACHIO
+	select MIPS_EXTERNAL_TIMER
+	help
+	  This option enables a clocksource driver based on a Pistachio
+	  SoC General Purpose external timer.
+
+	  If you want to enable the CPUFreq, you need to enable
+	  this option.
+
+	  If you don't want to enable CPUFreq, you can leave this disabled.

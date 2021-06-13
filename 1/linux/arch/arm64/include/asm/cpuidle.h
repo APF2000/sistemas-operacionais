@@ -1,3 +1,20 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b206f60afb5f25a0c2eb739739cfcb794c462f11d48b44e829eb505cf28f6376
-size 362
+#ifndef __ASM_CPUIDLE_H
+#define __ASM_CPUIDLE_H
+
+#include <asm/proc-fns.h>
+
+#ifdef CONFIG_CPU_IDLE
+extern int arm_cpuidle_init(unsigned int cpu);
+extern int arm_cpuidle_suspend(int index);
+#else
+static inline int arm_cpuidle_init(unsigned int cpu)
+{
+	return -EOPNOTSUPP;
+}
+
+static inline int arm_cpuidle_suspend(int index)
+{
+	return -EOPNOTSUPP;
+}
+#endif
+#endif

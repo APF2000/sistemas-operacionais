@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:16926dce55c3788e666785914d31750d2b11fb860851f5f1109388b04bea74ec
-size 355
+SECTIONS {
+	/* Group unwind sections into a single section: */
+	.IA_64.unwind_info : { *(.IA_64.unwind_info*) }
+	.IA_64.unwind : { *(.IA_64.unwind*) }
+	/*
+	 * Create place-holder sections to hold the PLTs, GOT, and
+	 * official procedure-descriptors (.opd).
+	 */
+	.core.plt : { BYTE(0) }
+	.init.plt : { BYTE(0) }
+	.got : { BYTE(0) }
+	.opd : { BYTE(0) }
+}

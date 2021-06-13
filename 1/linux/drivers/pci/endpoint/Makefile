@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e340b9a08a899b2677ad3b721e9af243fea3b98f36f632dc29f42212ace97991
-size 188
+#
+# Makefile for PCI Endpoint Support
+#
+
+obj-$(CONFIG_PCI_ENDPOINT_CONFIGFS)	+= pci-ep-cfs.o
+obj-$(CONFIG_PCI_ENDPOINT)		+= pci-epc-core.o pci-epf-core.o\
+					   pci-epc-mem.o functions/

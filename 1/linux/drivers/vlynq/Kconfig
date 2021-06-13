@@ -1,3 +1,20 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:7b1d6bd2f1d282955ae2d7a117b470bb646357a7d18153cbce5ba460b3865b71
-size 429
+menu "TI VLYNQ"
+	depends on AR7
+
+config VLYNQ
+	bool "TI VLYNQ bus support"
+	help
+	  Support for Texas Instruments(R) VLYNQ bus.
+	  The VLYNQ bus is a high-speed, serial and packetized
+	  data bus which allows external peripherals of a SoC
+	  to appear into the system's main memory.
+
+	  If unsure, say N
+
+config VLYNQ_DEBUG
+	bool "VLYNQ bus debug"
+	depends on VLYNQ && DEBUG_KERNEL
+	help
+	  Turn on VLYNQ bus debugging.
+
+endmenu

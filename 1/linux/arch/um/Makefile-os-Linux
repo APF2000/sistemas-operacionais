@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:106a892f0f8a1f7348c9bcfb99280f14d7913d238a3f5bacbd07d443e69e4d8d
-size 235
+# 
+# Copyright (C) 2000 Jeff Dike (jdike@karaya.com)
+# Licensed under the GPL
+#
+
+# To get a definition of F_SETSIG
+USER_CFLAGS += -D_GNU_SOURCE -D_LARGEFILE64_SOURCE
+KBUILD_CFLAGS += -D_LARGEFILE64_SOURCE
+DEV_NULL_PATH = \"/dev/null\"

@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ddda074264183cac68361b9d32a87e79509d19f8b0e9a740dbcbe837faff0b75
-size 310
+config SCSI_CXGB3_ISCSI
+	tristate "Chelsio T3 iSCSI support"
+	depends on PCI && INET && (IPV6 || IPV6=n)
+	select NETDEVICES
+	select ETHERNET
+	select NET_VENDOR_CHELSIO
+	select CHELSIO_T3
+	select CHELSIO_LIB
+	select SCSI_ISCSI_ATTRS
+	---help---
+	  This driver supports iSCSI offload for the Chelsio T3 devices.

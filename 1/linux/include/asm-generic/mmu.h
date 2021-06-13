@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:679d439e7c5274406566c4e25f70c26ee137befef6b77cdf690080f34ba53976
-size 410
+#ifndef __ASM_GENERIC_MMU_H
+#define __ASM_GENERIC_MMU_H
+
+/*
+ * This is the mmu.h header for nommu implementations.
+ * Architectures with an MMU need something more complex.
+ */
+#ifndef __ASSEMBLY__
+typedef struct {
+	unsigned long		end_brk;
+
+#ifdef CONFIG_BINFMT_ELF_FDPIC
+	unsigned long		exec_fdpic_loadmap;
+	unsigned long		interp_fdpic_loadmap;
+#endif
+} mm_context_t;
+#endif
+
+#endif /* __ASM_GENERIC_MMU_H */

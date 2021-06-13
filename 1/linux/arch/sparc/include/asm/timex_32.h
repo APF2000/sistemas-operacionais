@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:18e9776d8b7c98f7e0ac79607903aa3fa686df7167862a89ca2b9383618e7fe0
-size 313
+/*
+ * linux/include/asm/timex.h
+ *
+ * sparc architecture timex specifications
+ */
+#ifndef _ASMsparc_TIMEX_H
+#define _ASMsparc_TIMEX_H
+
+#define CLOCK_TICK_RATE	1193180 /* Underlying HZ */
+
+/* XXX Maybe do something better at some point... -DaveM */
+typedef unsigned long cycles_t;
+#define get_cycles()	(0)
+
+#endif

@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:85fe01cc9933c4973f17be6b86607f54b5b98c6757628b8ddf5faba506fe00b9
-size 354
+#ifndef _LINUX_PERSONALITY_H
+#define _LINUX_PERSONALITY_H
+
+#include <uapi/linux/personality.h>
+
+/*
+ * Return the base personality without flags.
+ */
+#define personality(pers)	(pers & PER_MASK)
+
+/*
+ * Change personality of the currently running process.
+ */
+#define set_personality(pers)	(current->personality = (pers))
+
+#endif /* _LINUX_PERSONALITY_H */

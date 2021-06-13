@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2a1a5a6e3cb0eb9d9e7180cedd67740a081523367930d48b902a062439532847
-size 122
+#
+# Makefile for the kernel ISAPNP driver.
+#
+obj-y			+= pnp.o
+pnp-y			:= core.o compat.o
+
+pnp-$(CONFIG_PROC_FS)	+= proc.o

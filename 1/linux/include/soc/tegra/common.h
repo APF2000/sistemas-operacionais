@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5f905312330a62f922f3f312baf86ea479fdc0f6780a51bceddc4d5ef6dfec0b
-size 364
+/*
+ * Copyright (C) 2014 NVIDIA Corporation
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 2 as
+ * published by the Free Software Foundation.
+ */
+
+#ifndef __SOC_TEGRA_COMMON_H__
+#define __SOC_TEGRA_COMMON_H__
+
+bool soc_is_tegra(void);
+
+#endif /* __SOC_TEGRA_COMMON_H__ */

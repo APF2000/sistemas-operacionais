@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c3ebdb1e75301e552cf1861d98bf206a5d83155583651befbe68105e8cc1d602
-size 191
+
+ccflags-y := -Idrivers/net/ethernet/broadcom/bnxt
+obj-$(CONFIG_INFINIBAND_BNXT_RE) += bnxt_re.o
+bnxt_re-y := main.o ib_verbs.o \
+	     qplib_res.o qplib_rcfw.o	\
+	     qplib_sp.o qplib_fp.o

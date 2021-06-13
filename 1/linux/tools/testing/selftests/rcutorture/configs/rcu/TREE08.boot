@@ -1,3 +1,4 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2978e590e9fc4d46a589184ed53aaccad3b9e22b5f20cfbb175891c35ebe2fc0
-size 113
+rcutorture.torture_type=sched
+rcupdate.rcu_self_test=1
+rcupdate.rcu_self_test_sched=1
+rcutree.rcu_fanout_exact=1

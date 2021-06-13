@@ -1,3 +1,20 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1f241e9940e19a183a2a0bb930f388307156a781303749c055840a15085cabcf
-size 691
+/*
+ * Support for Intel Camera Imaging ISP subsystem.
+ * Copyright (c) 2010-2015, Intel Corporation.
+ *
+ * This program is free software; you can redistribute it and/or modify it
+ * under the terms and conditions of the GNU General Public License,
+ * version 2, as published by the Free Software Foundation.
+ *
+ * This program is distributed in the hope it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+ * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for
+ * more details.
+ */
+
+#ifndef __HMEM_LOCAL_H_INCLUDED__
+#define __HMEM_LOCAL_H_INCLUDED__
+
+#include "hmem_global.h"
+
+#endif /* __HMEM_LOCAL_H_INCLUDED__ */

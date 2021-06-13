@@ -1,3 +1,23 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5f924e38383c3001a52957b7c81de8fe5b3e6d0df5df89a0b9246c816d6c981d
-size 681
+What:		/sys/class/lcd/<lcd>/lcd_power
+Date:		April 2005
+KernelVersion:	2.6.12
+Contact:	Richard Purdie <rpurdie@rpsys.net>
+Description:
+		Control LCD power, values are FB_BLANK_* from fb.h
+		 - FB_BLANK_UNBLANK (0)   : power on.
+		 - FB_BLANK_POWERDOWN (4) : power off
+
+What:		/sys/class/lcd/<lcd>/contrast
+Date:		April 2005
+KernelVersion:	2.6.12
+Contact:	Richard Purdie <rpurdie@rpsys.net>
+Description:
+		Current contrast of this LCD device. Value is between 0 and
+		/sys/class/lcd/<lcd>/max_contrast.
+
+What:		/sys/class/lcd/<lcd>/max_contrast
+Date:		April 2005
+KernelVersion:	2.6.12
+Contact:	Richard Purdie <rpurdie@rpsys.net>
+Description:
+		Maximum contrast for this LCD device.

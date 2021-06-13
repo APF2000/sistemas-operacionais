@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ddb64ca9aff151b541a754094fefe44b0afcc0203b86eb5e7f004c16f2c0b457
-size 298
+#ifndef _UAPI_ASM_X86_MSR_H
+#define _UAPI_ASM_X86_MSR_H
+
+#ifndef __ASSEMBLY__
+
+#include <linux/types.h>
+#include <linux/ioctl.h>
+
+#define X86_IOC_RDMSR_REGS	_IOWR('c', 0xA0, __u32[8])
+#define X86_IOC_WRMSR_REGS	_IOWR('c', 0xA1, __u32[8])
+
+#endif /* __ASSEMBLY__ */
+#endif /* _UAPI_ASM_X86_MSR_H */

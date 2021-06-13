@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:6748c1a8dec1945feb5b7ae855cf72884bebac30cfe2b0c1139b39936879cfa1
-size 341
+config BT_CMTP
+	tristate "CMTP protocol support"
+	depends on BT_BREDR && ISDN_CAPI
+	help
+	  CMTP (CAPI Message Transport Protocol) is a transport layer
+	  for CAPI messages.  CMTP is required for the Bluetooth Common
+	  ISDN Access Profile.
+
+	  Say Y here to compile CMTP support into the kernel or say M to
+	  compile it as module (cmtp).
+

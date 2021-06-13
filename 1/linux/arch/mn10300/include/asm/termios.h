@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:8c871672a1597a9eab7cb952d9910d8af4c9810e1e1ddb519de79760865607b5
-size 348
+#ifndef _ASM_TERMIOS_H
+#define _ASM_TERMIOS_H
+
+#include <uapi/asm/termios.h>
+
+/*	intr=^C		quit=^|		erase=del	kill=^U
+	eof=^D		vtime=\0	vmin=\1		sxtc=\0
+	start=^Q	stop=^S		susp=^Z		eol=\0
+	reprint=^R	discard=^U	werase=^W	lnext=^V
+	eol2=\0
+*/
+#define INIT_C_CC "\003\034\177\025\004\0\1\0\021\023\032\0\022\017\027\026\0"
+#endif	/* _ASM_TERMIOS_H */

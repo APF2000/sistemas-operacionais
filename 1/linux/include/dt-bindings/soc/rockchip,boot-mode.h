@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:04cf087f66123830c887a41f6c7b0619d8590b031aa9abe2e139d7d26dd39d80
-size 413
+#ifndef __ROCKCHIP_BOOT_MODE_H
+#define __ROCKCHIP_BOOT_MODE_H
+
+/*high 24 bits is tag, low 8 bits is type*/
+#define REBOOT_FLAG		0x5242C300
+/* normal boot */
+#define BOOT_NORMAL		(REBOOT_FLAG + 0)
+/* enter bootloader rockusb mode */
+#define BOOT_BL_DOWNLOAD	(REBOOT_FLAG + 1)
+/* enter recovery */
+#define BOOT_RECOVERY		(REBOOT_FLAG + 3)
+ /* enter fastboot mode */
+#define BOOT_FASTBOOT		(REBOOT_FLAG + 9)
+
+#endif

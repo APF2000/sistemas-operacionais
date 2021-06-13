@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:7dbedd3ca93551b4977e8e5ab8085fe6a0d42fa1304a71dbf56e609888889ff7
-size 399
+#ifndef __IIO_MAGNETOMETER_AK8975_H__
+#define __IIO_MAGNETOMETER_AK8975_H__
+
+#include <linux/iio/iio.h>
+
+/**
+ * struct ak8975_platform_data - AK8975 magnetometer driver platform data
+ * @eoc_gpio:    data ready event gpio
+ * @orientation: mounting matrix relative to main hardware
+ */
+struct ak8975_platform_data {
+	int                     eoc_gpio;
+	struct iio_mount_matrix orientation;
+};
+
+#endif

@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:02c2ae8ddbfcaa1bf51c7edae320da79f6d9a60fa7ec579ab5dc7249c433e5ba
-size 303
+ST-Ericsson COH 901 571/3 GPIO controller
+
+Required properties:
+- compatible: Compatible property value should be "stericsson,gpio-coh901"
+- reg: Physical base address of the controller and length of memory mapped
+  region.
+- interrupts: the 0...n interrupts assigned to the different GPIO ports/banks.

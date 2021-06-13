@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a2fdfab8272c280523fcd49fc150655f203544d9f0fad2c27f627d51eb5715d6
-size 183
+#ifndef __MACH_PXA25x_H
+#define __MACH_PXA25x_H
+
+#include <mach/hardware.h>
+#include <mach/pxa2xx-regs.h>
+#include "mfp-pxa25x.h"
+#include <mach/irqs.h>
+
+#endif /* __MACH_PXA25x_H */

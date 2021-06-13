@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:30e9d9347197c21c56f5cf04eae2af0ed151db2a752cd3587459fa43f6f0f2fe
-size 323
+/dts-v1/;
+
+#include "kirkwood-lsxl.dtsi"
+
+/ {
+	model = "Buffalo Linkstation LS-CHLv2";
+	compatible = "buffalo,lschlv2", "buffalo,lsxl", "marvell,kirkwood-88f6281", "marvell,kirkwood";
+
+	memory {
+		device_type = "memory";
+		reg = <0x00000000 0x4000000>;
+	};
+
+	ocp@f1000000 {
+		serial@12000 {
+			status = "okay";
+		};
+	};
+};

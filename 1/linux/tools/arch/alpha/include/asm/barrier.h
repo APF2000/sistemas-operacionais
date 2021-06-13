@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:0861759e8f4ba50e2bd2f05d13d44c43eab1fb1d0ccc60dd86bd1427345d010b
-size 296
+#ifndef __TOOLS_LINUX_ASM_ALPHA_BARRIER_H
+#define __TOOLS_LINUX_ASM_ALPHA_BARRIER_H
+
+#define mb()	__asm__ __volatile__("mb": : :"memory")
+#define rmb()	__asm__ __volatile__("mb": : :"memory")
+#define wmb()	__asm__ __volatile__("wmb": : :"memory")
+
+#endif		/* __TOOLS_LINUX_ASM_ALPHA_BARRIER_H */

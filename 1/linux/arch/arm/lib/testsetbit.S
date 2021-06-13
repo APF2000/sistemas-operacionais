@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b4568b67bbab69ad7c16f753d0ca18cf80fe5fdbfa9a4bd744f61083ba98a42d
-size 413
+/*
+ *  linux/arch/arm/lib/testsetbit.S
+ *
+ *  Copyright (C) 1995-1996 Russell King
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 2 as
+ * published by the Free Software Foundation.
+ */
+#include <linux/linkage.h>
+#include <asm/assembler.h>
+#include "bitops.h"
+                .text
+
+testop	_test_and_set_bit, orreq, streq

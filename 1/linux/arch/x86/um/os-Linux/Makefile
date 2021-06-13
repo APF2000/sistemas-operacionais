@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:502a8fd2fb869366b9d7ef8f45f1064d076c9589ea909019de686265ea92369b
-size 270
+#
+# Copyright (C) 2000 - 2007 Jeff Dike (jdike@{addtoit,linux.intel}.com)
+# Licensed under the GPL
+#
+
+obj-y = registers.o task_size.o mcontext.o
+
+obj-$(CONFIG_X86_32) += tls.o
+obj-$(CONFIG_64BIT) += prctl.o
+
+USER_OBJS := $(obj-y)
+
+include arch/um/scripts/Makefile.rules

@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:52f60bf19ba3ba5a160a0ca52ea389f878a15bc3e455d8ce35a74030f8f2386e
-size 54
+mktables
+altivec*.c
+int*.c
+tables.c
+neon?.c
+s390vx?.c

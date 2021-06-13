@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:520be1cfbbae056c03681ad7f3f5db8abbaf684ceea06d91b7e1a54ec82589e1
-size 528
+/*
+ * Copyright 2013 Gateworks Corporation
+ *
+ * The code contained herein is licensed under the GNU General Public
+ * License. You may obtain a copy of the GNU General Public License
+ * Version 2 or later at the following locations:
+ *
+ * http://www.opensource.org/licenses/gpl-license.html
+ * http://www.gnu.org/copyleft/gpl.html
+ */
+
+/dts-v1/;
+#include "imx6dl.dtsi"
+#include "imx6qdl-gw53xx.dtsi"
+
+/ {
+	model = "Gateworks Ventana i.MX6 DualLite/Solo GW53XX";
+	compatible = "gw,imx6dl-gw53xx", "gw,ventana", "fsl,imx6dl";
+};

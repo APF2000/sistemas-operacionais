@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ca6004f5dd9484918b751ff1ac06c06468aa7fd2c8e28f9411b67403a7098977
-size 455
+* Marvell SD8787 power sequence provider
+
+Required properties:
+- compatible: must be "mmc-pwrseq-sd8787".
+- powerdown-gpios: contains a power down GPIO specifier with the
+		   default active state
+- reset-gpios: contains a reset GPIO specifier with the default
+		   active state
+
+Example:
+
+	wifi_pwrseq: wifi_pwrseq {
+		compatible = "mmc-pwrseq-sd8787";
+		powerdown-gpios = <&twl_gpio 0 GPIO_ACTIVE_LOW>;
+		reset-gpios = <&twl_gpio 1 GPIO_ACTIVE_LOW>;
+	}

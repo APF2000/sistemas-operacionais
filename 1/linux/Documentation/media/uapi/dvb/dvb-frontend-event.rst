@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b952f38c74d4f0e9d058390dfc8bda75a6a846989f135b5ee80870f8e1de4e71
-size 246
+.. -*- coding: utf-8; mode: rst -*-
+
+.. c:type:: dvb_frontend_event
+
+***************
+frontend events
+***************
+
+
+.. code-block:: c
+
+     struct dvb_frontend_event {
+	 fe_status_t status;
+	 struct dvb_frontend_parameters parameters;
+     };

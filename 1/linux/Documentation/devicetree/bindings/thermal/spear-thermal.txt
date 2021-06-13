@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5b22930b8a31f5e0dad25262e8e76bca1286c6f5676cb21371d2b12a4f66b473
-size 313
+* SPEAr Thermal
+
+Required properties:
+- compatible : "st,thermal-spear1340"
+- reg : Address range of the thermal registers
+- st,thermal-flags: flags used to enable thermal sensor
+
+Example:
+
+	thermal@fc000000 {
+		compatible = "st,thermal-spear1340";
+		reg = <0xfc000000 0x1000>;
+		st,thermal-flags = <0x7000>;
+	};

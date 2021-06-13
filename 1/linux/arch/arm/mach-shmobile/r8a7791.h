@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1386510ac8bac225e1b2a7687596d31ffa8122fe278377efdbbcea7cbd248845
-size 137
+#ifndef __ASM_R8A7791_H__
+#define __ASM_R8A7791_H__
+
+extern const struct smp_operations r8a7791_smp_ops;
+
+#endif /* __ASM_R8A7791_H__ */

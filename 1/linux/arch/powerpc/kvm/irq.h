@@ -1,3 +1,21 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:19692a0e952faf2da8627d6fea564eea5cbef7022744e607940e6b5563b280dc
-size 347
+#ifndef __IRQ_H
+#define __IRQ_H
+
+#include <linux/kvm_host.h>
+
+static inline int irqchip_in_kernel(struct kvm *kvm)
+{
+	int ret = 0;
+
+#ifdef CONFIG_KVM_MPIC
+	ret = ret || (kvm->arch.mpic != NULL);
+#endif
+#ifdef CONFIG_KVM_XICS
+	ret = ret || (kvm->arch.xics != NULL);
+	ret = ret || (kvm->arch.xive != NULL);
+#endif
+	smp_rmb();
+	return ret;
+}
+
+#endif

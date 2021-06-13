@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:fef4ce3b14ea300e7e82427609e204d36fcb47a02aa337c23ace36ade9fd9480
-size 484
+#include <linux/mmc/host.h>
+#include <linux/platform_data/mmc-omap.h>
+
+#define OMAP15XX_NR_MMC		1
+#define OMAP16XX_NR_MMC		2
+#define OMAP1_MMC_SIZE		0x080
+#define OMAP1_MMC1_BASE		0xfffb7800
+#define OMAP1_MMC2_BASE		0xfffb7c00	/* omap16xx only */
+
+#if IS_ENABLED(CONFIG_MMC_OMAP)
+void omap1_init_mmc(struct omap_mmc_platform_data **mmc_data,
+				int nr_controllers);
+#else
+static inline void omap1_init_mmc(struct omap_mmc_platform_data **mmc_data,
+				int nr_controllers)
+{
+}
+#endif

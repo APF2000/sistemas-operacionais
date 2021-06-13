@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:6734b026b8c48811b1408c75e657dcab5391e091b40a8817af0e4b834c9ddf09
-size 442
+#
+# arch/m32r/boot/Makefile
+#
+# This file is subject to the terms and conditions of the GNU General Public
+# License.  See the file "COPYING" in the main directory of this archive
+# for more details.
+
+targets := zImage
+subdir- := compressed
+
+obj-y	:= setup.o
+
+$(obj)/zImage: $(obj)/compressed/vmlinux FORCE
+	$(call if_changed,objcopy)
+	@echo 'Kernel: $@ is ready'
+
+$(obj)/compressed/vmlinux: FORCE
+	$(Q)$(MAKE) $(build)=$(obj)/compressed $@
+

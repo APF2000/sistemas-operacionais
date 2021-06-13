@@ -1,3 +1,21 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:6f6009f76b7598236b8408278465539c1d82d95b1bc53fb372f0b868f1846414
-size 431
+/* csum_copy_to_user.S: Checksum+copy to userspace.
+ *
+ * Copyright (C) 2005 David S. Miller (davem@davemloft.net)
+ */
+
+#define EX_ST(x)		\
+98:	x;			\
+	.section .fixup,"ax";	\
+	.align 4;		\
+99:	retl;			\
+	 mov	-1, %o0;	\
+	.section __ex_table,"a";\
+	.align 4;		\
+	.word 98b, 99b;		\
+	.text;			\
+	.align 4;
+
+#define FUNC_NAME		__csum_partial_copy_to_user
+#define STORE(type,src,addr)	type##a src, [addr] %asi
+
+#include "csum_copy.S"

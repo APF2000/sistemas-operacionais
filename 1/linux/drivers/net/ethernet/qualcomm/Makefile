@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d825c839e133aaf10b09c5bf82eb10a4702d878d6f6514f119d0b7ffb8a7a5ef
-size 167
+#
+# Makefile for the Qualcomm network device drivers.
+#
+
+obj-$(CONFIG_QCA7000) += qcaspi.o
+qcaspi-objs := qca_spi.o qca_framing.o qca_7k.o qca_debug.o
+
+obj-y += emac/

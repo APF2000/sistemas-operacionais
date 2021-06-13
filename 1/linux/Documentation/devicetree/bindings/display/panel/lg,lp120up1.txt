@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f97c5a96f7919197d4996ec5922309187ad441d6fbdb65b870beaf6aa09516c2
-size 219
+LG 12.0" (1920x1280 pixels) TFT LCD panel
+
+Required properties:
+- compatible: should be "lg,lp120up1"
+
+This binding is compatible with the simple-panel binding, which is specified
+in simple-panel.txt in this directory.

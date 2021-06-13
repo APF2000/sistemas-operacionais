@@ -1,3 +1,24 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:74ad993cfe0bd56c0854b02452fdf5c7c4389ad99240773859afd4fa23e75c49
-size 402
+/*
+ * IOCTL interface for SCLP
+ *
+ * Copyright IBM Corp. 2012
+ *
+ * Author: Michael Holzheu <holzheu@linux.vnet.ibm.com>
+ */
+
+#ifndef _ASM_SCLP_CTL_H
+#define _ASM_SCLP_CTL_H
+
+#include <linux/types.h>
+
+struct sclp_ctl_sccb {
+	__u32	cmdw;
+	__u64	sccb;
+} __attribute__((packed));
+
+#define SCLP_CTL_IOCTL_MAGIC 0x10
+
+#define SCLP_CTL_SCCB \
+	_IOWR(SCLP_CTL_IOCTL_MAGIC, 0x10, struct sclp_ctl_sccb)
+
+#endif

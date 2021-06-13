@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d5feedee9f811814ebb5334835388663e8d9b95bdde78ed75a531c267fa0ac7d
-size 376
+/*
+ * include/asm-xtensa/segment.h
+ *
+ * This file is subject to the terms and conditions of the GNU General Public
+ * License.  See the file "COPYING" in the main directory of this archive
+ * for more details.
+ *
+ * Copyright (C) 2001 - 2005 Tensilica Inc.
+ */
+
+#ifndef _XTENSA_SEGMENT_H
+#define _XTENSA_SEGMENT_H
+
+#include <linux/uaccess.h>
+
+#endif	/* _XTENSA_SEGEMENT_H */

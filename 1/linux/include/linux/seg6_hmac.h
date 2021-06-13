@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:bd898c7728854e50e4a7e896ffa3e704e97697e1f530c0ca24ada5cd88077c41
-size 97
+#ifndef _LINUX_SEG6_HMAC_H
+#define _LINUX_SEG6_HMAC_H
+
+#include <uapi/linux/seg6_hmac.h>
+
+#endif

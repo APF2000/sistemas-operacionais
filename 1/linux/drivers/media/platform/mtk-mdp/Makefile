@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1f515466cc23a80bb5ad6e82e53447f630f67400a983625636d68a681baf74f8
-size 243
+mtk-mdp-y += mtk_mdp_core.o
+mtk-mdp-y += mtk_mdp_comp.o
+mtk-mdp-y += mtk_mdp_m2m.o
+mtk-mdp-y += mtk_mdp_regs.o
+mtk-mdp-y += mtk_mdp_vpu.o
+
+obj-$(CONFIG_VIDEO_MEDIATEK_MDP) += mtk-mdp.o
+
+ccflags-y += -I$(srctree)/drivers/media/platform/mtk-vpu

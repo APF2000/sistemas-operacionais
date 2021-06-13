@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:cc186abe49a1842d0fa40b159292e0dbcc08286a2eed9d7221e1e5e58d304d34
-size 327
+subdir-ccflags-y +=  -I$(srctree)/drivers/net/ethernet/freescale/fman
+
+obj-$(CONFIG_FSL_FMAN) += fsl_fman.o
+obj-$(CONFIG_FSL_FMAN) += fsl_fman_port.o
+obj-$(CONFIG_FSL_FMAN) += fsl_mac.o
+
+fsl_fman-objs	:= fman_muram.o fman.o fman_sp.o
+fsl_fman_port-objs := fman_port.o
+fsl_mac-objs:= mac.o fman_dtsec.o fman_memac.o fman_tgec.o

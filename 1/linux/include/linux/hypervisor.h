@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:dd3b2f9083043a953ba446415043ccfc6ff009d53ec16b02184f1e5b462cd35d
-size 289
+#ifndef __LINUX_HYPEVISOR_H
+#define __LINUX_HYPEVISOR_H
+
+/*
+ *	Generic Hypervisor support
+ *		Juergen Gross <jgross@suse.com>
+ */
+
+#ifdef CONFIG_HYPERVISOR_GUEST
+#include <asm/hypervisor.h>
+#else
+static inline void hypervisor_pin_vcpu(int cpu)
+{
+}
+#endif
+
+#endif /* __LINUX_HYPEVISOR_H */

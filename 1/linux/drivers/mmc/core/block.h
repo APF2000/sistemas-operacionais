@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:799c4cc2f98e33c6c018dc60e7a5fed6a19b945485d7b41d151612d9b6c99774
-size 162
+#ifndef _MMC_CORE_BLOCK_H
+#define _MMC_CORE_BLOCK_H
+
+struct mmc_queue;
+struct request;
+
+void mmc_blk_issue_rq(struct mmc_queue *mq, struct request *req);
+
+#endif

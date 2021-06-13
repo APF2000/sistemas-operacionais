@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4fa76cb615652462243f4d7af0464c265d97f5becdc3b37265b7ed8fe2cf124f
-size 405
+AM_CPPFLAGS = -I$(top_srcdir)/libsrc -DUSBIDS_FILE='"@USBIDS_DIR@/usb.ids"'
+AM_CFLAGS   = @EXTRA_CFLAGS@
+LDADD       = $(top_builddir)/libsrc/libusbip.la
+
+sbin_PROGRAMS := usbip usbipd
+
+usbip_SOURCES := usbip.h utils.h usbip.c utils.c usbip_network.c \
+		 usbip_attach.c usbip_detach.c usbip_list.c \
+		 usbip_bind.c usbip_unbind.c usbip_port.c
+
+usbipd_SOURCES := usbip_network.h usbipd.c usbip_network.c

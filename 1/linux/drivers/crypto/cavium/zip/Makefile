@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:33c1bae61a7e8adbadd3dbd2f65c31678f7b134ff483bd75948fc345a6172a55
-size 297
+#
+# Makefile for Cavium's ZIP Driver.
+#
+
+obj-$(CONFIG_CRYPTO_DEV_CAVIUM_ZIP) += thunderx_zip.o
+thunderx_zip-y := zip_main.o    \
+                  zip_device.o  \
+                  zip_crypto.o  \
+                  zip_mem.o     \
+                  zip_deflate.o \
+                  zip_inflate.o

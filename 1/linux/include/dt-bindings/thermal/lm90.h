@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a654f00771cdbd0dba17255d4078176c56b207921f50bc125021522b12ef2fa2
-size 258
+/*
+ * This header provides constants for the LM90 thermal bindings.
+ */
+
+#ifndef _DT_BINDINGS_THERMAL_LM90_H_
+#define _DT_BINDINGS_THERMAL_LM90_H_
+
+#define LM90_LOCAL_TEMPERATURE 0
+#define LM90_REMOTE_TEMPERATURE 1
+#define LM90_REMOTE2_TEMPERATURE 2
+
+#endif

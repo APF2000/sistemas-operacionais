@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:36ccbaf34a6aeac6af9f150a5adef37e768b22275b4c65b34aca3cf9e15f5cbb
-size 226
+Other Firmware Interfaces
+=========================
+
+DMI Interfaces
+--------------
+
+.. kernel-doc:: drivers/firmware/dmi_scan.c
+   :export:
+
+EDD Interfaces
+--------------
+
+.. kernel-doc:: drivers/firmware/edd.c
+   :internal:
+

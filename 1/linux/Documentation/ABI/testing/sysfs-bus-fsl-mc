@@ -1,3 +1,21 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:938d0daa891959b2e87908f8307b09ad1f51ff40ae2b2b3108e01efd69af8326
-size 839
+What:		/sys/bus/fsl-mc/drivers/.../bind
+Date:		December 2016
+Contact:	stuart.yoder@nxp.com
+Description:
+		Writing a device location to this file will cause
+		the driver to attempt to bind to the device found at
+		this location. The format for the location is Object.Id
+		and is the same as found in /sys/bus/fsl-mc/devices/.
+                For example:
+		# echo dpni.2 > /sys/bus/fsl-mc/drivers/fsl_dpaa2_eth/bind
+
+What:		/sys/bus/fsl-mc/drivers/.../unbind
+Date:		December 2016
+Contact:	stuart.yoder@nxp.com
+Description:
+		Writing a device location to this file will cause the
+		driver to attempt to unbind from the device found at
+		this location. The format for the location is Object.Id
+		and is the same as found in /sys/bus/fsl-mc/devices/.
+                For example:
+		# echo dpni.2 > /sys/bus/fsl-mc/drivers/fsl_dpaa2_eth/unbind

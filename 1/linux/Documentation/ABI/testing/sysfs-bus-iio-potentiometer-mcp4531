@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1aad0bfd87961672d35ec04416db7e48b01f7cb61531b937a3d3be347b7c9b6d
-size 314
+What:		/sys/bus/iio/devices/iio:deviceX/out_resistance_raw_available
+Date:		October 2016
+KernelVersion:	4.9
+Contact:	Peter Rosin <peda@axentia.se>
+Description:
+		The range of available values represented as the minimum value,
+		the step and the maximum value, all enclosed in square brackets.
+		Example: [0 1 256]

@@ -1,3 +1,20 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d581d0e9243b8513bf4b91e78e6fabe6432d99f73eccfe4ad1899cea21f4c3b3
-size 392
+Kernel driver tc74
+====================
+
+Supported chips:
+   * Microchip TC74
+     Prefix: 'tc74'
+     Datasheet: Publicly available at Microchip website.
+
+Description
+-----------
+
+Driver supports the above part.
+
+The tc74 has an 8-bit sensor, with 1 degree centigrade resolution
+and +- 2 degrees centigrade accuracy.
+
+Notes
+-----
+
+Currently entering low power standby mode is not supported.

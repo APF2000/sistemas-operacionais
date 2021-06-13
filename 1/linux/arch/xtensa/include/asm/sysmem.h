@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:525e0585c1f142f9f9cb85cd0c162bbaf3706947d08b2a45e0d2420f8f8075bb
-size 426
+/*
+ * sysmem-related prototypes.
+ *
+ * This file is subject to the terms and conditions of the GNU General Public
+ * License.  See the file "COPYING" in the main directory of this archive
+ * for more details.
+ *
+ * Copyright (C) 2014 Cadence Design Systems Inc.
+ */
+
+#ifndef _XTENSA_SYSMEM_H
+#define _XTENSA_SYSMEM_H
+
+#include <linux/memblock.h>
+
+void bootmem_init(void);
+void zones_init(void);
+
+#endif /* _XTENSA_SYSMEM_H */

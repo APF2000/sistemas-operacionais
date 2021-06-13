@@ -1,3 +1,28 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5d584927569dc19f1b04de13f38bebb8e38afb3d74c48696bc27695c195190eb
-size 716
+/*
+ * Copyright (C) 2012 Texas Instruments Incorporated - http://www.ti.com/
+ * Copyright (C) 2014 Stefan Roese <sr@denx.de>
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 2 as
+ * published by the Free Software Foundation.
+ */
+
+#include "omap3-ha-common.dtsi"
+
+/ {
+	model = "TI OMAP3 HEAD acoustics baseboard with TAO3530 SOM";
+	compatible = "headacoustics,omap3-ha", "technexion,omap3-tao3530", "ti,omap34xx", "ti,omap3";
+};
+
+&omap3_pmx_core {
+	pinctrl-names = "default";
+	pinctrl-0 = <
+		&hsusbb2_pins
+		&powerdown_input_pins
+		&fpga_boot0_pins
+		&fpga_boot1_pins
+		&led_blue_pins
+		&led_green_pins
+		&led_red_pins
+	>;
+};

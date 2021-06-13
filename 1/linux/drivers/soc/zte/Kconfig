@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4bdcd6b5373dba309be1db60451343c0c63845852383869686599e26bbf2b46c
-size 174
+#
+# ZTE SoC drivers
+#
+menuconfig SOC_ZTE
+	bool "ZTE SoC driver support"
+
+if SOC_ZTE
+
+config ZX2967_PM_DOMAINS
+	bool "ZX2967 PM domains"
+	depends on PM_GENERIC_DOMAINS
+
+endif

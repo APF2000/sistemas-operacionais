@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:96585ae1b704bee243966ac866a9c52d2361964195baeb16d8b8ccd139801426
-size 245
+#ifndef __LINUX_KVM_PARA_H
+#define __LINUX_KVM_PARA_H
+
+#include <uapi/linux/kvm_para.h>
+
+
+static inline bool kvm_para_has_feature(unsigned int feature)
+{
+	return !!(kvm_arch_para_features() & (1UL << feature));
+}
+#endif /* __LINUX_KVM_PARA_H */

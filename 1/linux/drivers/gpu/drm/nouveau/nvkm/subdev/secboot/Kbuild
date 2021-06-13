@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:901814a743d79b3da7d6e68be4f0e1ee4f1952b8466f2ca742f04c1217166695
-size 565
+nvkm-y += nvkm/subdev/secboot/base.o
+nvkm-y += nvkm/subdev/secboot/hs_ucode.o
+nvkm-y += nvkm/subdev/secboot/ls_ucode_gr.o
+nvkm-y += nvkm/subdev/secboot/ls_ucode_msgqueue.o
+nvkm-y += nvkm/subdev/secboot/acr.o
+nvkm-y += nvkm/subdev/secboot/acr_r352.o
+nvkm-y += nvkm/subdev/secboot/acr_r361.o
+nvkm-y += nvkm/subdev/secboot/acr_r364.o
+nvkm-y += nvkm/subdev/secboot/acr_r367.o
+nvkm-y += nvkm/subdev/secboot/acr_r375.o
+nvkm-y += nvkm/subdev/secboot/gm200.o
+nvkm-y += nvkm/subdev/secboot/gm20b.o
+nvkm-y += nvkm/subdev/secboot/gp102.o
+nvkm-y += nvkm/subdev/secboot/gp10b.o

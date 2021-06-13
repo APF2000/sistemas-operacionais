@@ -1,3 +1,88 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:77163ae2e0bb9d42b8a82fe99a446a313b38f1dae3b25e556bd458f319d3f9cf
-size 1583
+/*
+ * Common header file for Blackfin family of processors.
+ *
+ * Copyright 2004-2009 Analog Devices Inc.
+ *
+ * Licensed under the GPL-2 or later.
+ */
+
+#ifndef _BLACKFIN_H_
+#define _BLACKFIN_H_
+
+#include <mach/anomaly.h>
+
+#ifndef __ASSEMBLY__
+
+/* SSYNC implementation for C file */
+static inline void SSYNC(void)
+{
+	int _tmp;
+	if (ANOMALY_05000312 || ANOMALY_05000244)
+		__asm__ __volatile__(
+			"cli %0;"
+			"nop;"
+			"nop;"
+			"nop;"
+			"ssync;"
+			"sti %0;"
+			: "=d" (_tmp)
+		);
+	else
+		__asm__ __volatile__("ssync;");
+}
+
+/* CSYNC implementation for C file */
+static inline void CSYNC(void)
+{
+	int _tmp;
+	if (ANOMALY_05000312 || ANOMALY_05000244)
+		__asm__ __volatile__(
+			"cli %0;"
+			"nop;"
+			"nop;"
+			"nop;"
+			"csync;"
+			"sti %0;"
+			: "=d" (_tmp)
+		);
+	else
+		__asm__ __volatile__("csync;");
+}
+
+#else  /* __ASSEMBLY__ */
+
+#define LO(con32) ((con32) & 0xFFFF)
+#define lo(con32) ((con32) & 0xFFFF)
+#define HI(con32) (((con32) >> 16) & 0xFFFF)
+#define hi(con32) (((con32) >> 16) & 0xFFFF)
+
+/* SSYNC & CSYNC implementations for assembly files */
+
+#define ssync(x) SSYNC(x)
+#define csync(x) CSYNC(x)
+
+#if ANOMALY_05000312 || ANOMALY_05000244
+#define SSYNC(scratch)	\
+	cli scratch;	\
+	nop; nop; nop;	\
+	SSYNC;		\
+	sti scratch;
+
+#define CSYNC(scratch)	\
+	cli scratch;	\
+	nop; nop; nop;	\
+	CSYNC;		\
+	sti scratch;
+
+#else
+#define SSYNC(scratch) SSYNC;
+#define CSYNC(scratch) CSYNC;
+#endif /* ANOMALY_05000312 & ANOMALY_05000244 handling */
+
+#endif /* __ASSEMBLY__ */
+
+#include <asm/mem_map.h>
+#include <mach/blackfin.h>
+#include <asm/bfin-global.h>
+
+#endif				/* _BLACKFIN_H_ */

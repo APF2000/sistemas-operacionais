@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e65aa3f2908c60265cc0aad9908f3636bac812d238d07a5033acffce51439cf9
-size 280
+#ifndef _ASM_TILE_DIV64_H
+#define _ASM_TILE_DIV64_H
+
+#include <linux/types.h>
+
+#ifdef __tilegx__
+static inline u64 mul_u32_u32(u32 a, u32 b)
+{
+	return __insn_mul_lu_lu(a, b);
+}
+#define mul_u32_u32 mul_u32_u32
+#endif
+
+#include <asm-generic/div64.h>
+
+#endif /* _ASM_TILE_DIV64_H */

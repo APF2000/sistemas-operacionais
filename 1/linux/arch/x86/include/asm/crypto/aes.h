@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:9025c82bdb080bb37624633365177c83d517a5a57620a81c815342577dd27a9c
-size 279
+#ifndef ASM_X86_AES_H
+#define ASM_X86_AES_H
+
+#include <linux/crypto.h>
+#include <crypto/aes.h>
+
+void crypto_aes_encrypt_x86(struct crypto_aes_ctx *ctx, u8 *dst,
+			    const u8 *src);
+void crypto_aes_decrypt_x86(struct crypto_aes_ctx *ctx, u8 *dst,
+			    const u8 *src);
+#endif

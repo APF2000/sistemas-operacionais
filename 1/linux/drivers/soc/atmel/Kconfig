@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:126931d534e8ec8662b24035cd5c3a47deba380e25e05c1b5c2bbe1826a976e2
-size 175
+config AT91_SOC_ID
+	bool "SoC bus for Atmel ARM SoCs"
+	depends on ARCH_AT91 || COMPILE_TEST
+	default ARCH_AT91
+	help
+	  Include support for the SoC bus on the Atmel ARM SoCs.

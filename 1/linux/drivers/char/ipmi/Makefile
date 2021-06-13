@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:53bf52dcc8a9de580fe87afb27e0299c7b2c389f48c02b658a3c580c7f5d4779
-size 469
+#
+# Makefile for the ipmi drivers.
+#
+
+ipmi_si-y := ipmi_si_intf.o ipmi_kcs_sm.o ipmi_smic_sm.o ipmi_bt_sm.o
+
+obj-$(CONFIG_IPMI_HANDLER) += ipmi_msghandler.o
+obj-$(CONFIG_IPMI_DEVICE_INTERFACE) += ipmi_devintf.o
+obj-$(CONFIG_IPMI_SI) += ipmi_si.o
+obj-$(CONFIG_IPMI_SSIF) += ipmi_ssif.o
+obj-$(CONFIG_IPMI_POWERNV) += ipmi_powernv.o
+obj-$(CONFIG_IPMI_WATCHDOG) += ipmi_watchdog.o
+obj-$(CONFIG_IPMI_POWEROFF) += ipmi_poweroff.o
+obj-$(CONFIG_ASPEED_BT_IPMI_BMC) += bt-bmc.o

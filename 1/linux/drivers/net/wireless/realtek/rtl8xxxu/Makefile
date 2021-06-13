@@ -1,3 +1,4 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:3b006021a71456e8dbb65d7d8de2e2a8334b1de2a3eb7498ae8f351d02648946
-size 143
+obj-$(CONFIG_RTL8XXXU)	+= rtl8xxxu.o
+
+rtl8xxxu-y	:= rtl8xxxu_core.o rtl8xxxu_8192e.o rtl8xxxu_8723b.o \
+		   rtl8xxxu_8723a.o rtl8xxxu_8192c.o

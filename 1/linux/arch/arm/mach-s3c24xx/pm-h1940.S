@@ -1,3 +1,33 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:0c54159051035bca0795e0dc58deea0c2c6c1d32edd8e2c8e24110d446bdd4c1
-size 1063
+/* linux/arch/arm/mach-s3c2410/pm-h1940.S
+ *
+ * Copyright (c) 2006 Ben Dooks <ben-linux@fluff.org>
+ *
+ * H1940 Suspend to RAM
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+*/
+
+#include <linux/linkage.h>
+#include <asm/assembler.h>
+#include <mach/hardware.h>
+#include <mach/map.h>
+
+#include <mach/regs-gpio.h>
+
+	.text
+	.global	h1940_pm_return
+
+h1940_pm_return:
+	mov	r0, #S3C2410_PA_GPIO
+	ldr	pc, [r0, #S3C2410_GSTATUS3 - S3C24XX_VA_GPIO]

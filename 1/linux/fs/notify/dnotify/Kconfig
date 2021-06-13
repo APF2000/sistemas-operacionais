@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:462ba8f9e3cd864af7d6892a213555c5a73b6cb0023d3b7d59d859bf9528e708
-size 315
+config DNOTIFY
+	bool "Dnotify support"
+	select FSNOTIFY
+	default y
+	help
+	  Dnotify is a directory-based per-fd file change notification system
+	  that uses signals to communicate events to user-space.  There exist
+	  superior alternatives, but some applications may still rely on
+	  dnotify.
+
+	  If unsure, say Y.

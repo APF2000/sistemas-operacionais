@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:eb489082b8be7fa2102bd65d1cc6f8d5dc4dd3fa02432a60dbe32be6a8261a39
-size 194
+#
+# Makefile for the Altera device drivers.
+#
+
+obj-$(CONFIG_ALTERA_TSE) += altera_tse.o
+altera_tse-objs := altera_tse_main.o altera_tse_ethtool.o \
+altera_msgdma.o altera_sgdma.o altera_utils.o

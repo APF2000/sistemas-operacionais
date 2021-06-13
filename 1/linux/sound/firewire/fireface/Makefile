@@ -1,3 +1,3 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a0cd288673a6d632ecde2ea2817fdd41f9389ce55d72d9a1c9bdfb243e3528f7
-size 180
+snd-fireface-objs := ff.o ff-transaction.o ff-midi.o ff-proc.o amdtp-ff.o \
+		     ff-stream.o ff-pcm.o ff-hwdep.o ff-protocol-ff400.o
+obj-$(CONFIG_SND_FIREFACE) += snd-fireface.o

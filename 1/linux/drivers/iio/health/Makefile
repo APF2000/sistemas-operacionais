@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:85bbb95af00593386ea94f8b8c98351708eea0d52bd83e197a1e6c5ac15699b3
-size 250
+#
+# Makefile for IIO Health sensors
+#
+
+# When adding new entries keep the list in alphabetical order
+
+obj-$(CONFIG_AFE4403)		+= afe4403.o
+obj-$(CONFIG_AFE4404)		+= afe4404.o
+obj-$(CONFIG_MAX30100)		+= max30100.o
+obj-$(CONFIG_MAX30102)		+= max30102.o

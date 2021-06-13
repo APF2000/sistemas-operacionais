@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2f05fd14ef0fb15418b103eaa05ebf91f6381677b97f43210239af427c55e770
-size 209
+#ifndef _ASM_ARM_MEMBLOCK_H
+#define _ASM_ARM_MEMBLOCK_H
+
+struct machine_desc;
+
+void arm_memblock_init(const struct machine_desc *);
+phys_addr_t arm_memblock_steal(phys_addr_t size, phys_addr_t align);
+
+#endif

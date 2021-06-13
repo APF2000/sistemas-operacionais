@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c5d53481e4411a28efa91d35a7ef6ac984f17b84dcdb149ef27a86fae0492893
-size 263
+config NET_CALXEDA_XGMAC
+	tristate "Calxeda 1G/10G XGMAC Ethernet driver"
+	depends on HAS_IOMEM && HAS_DMA
+	depends on ARCH_HIGHBANK || COMPILE_TEST
+	select CRC32
+	help
+	  This is the driver for the XGMAC Ethernet IP block found on Calxeda
+	  Highbank platforms.

@@ -1,3 +1,26 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:fd2c2bf7a00404e0e023830f9b33867498db4769fcfcf9165a270edcae4654f2
-size 441
+#ifndef _ASM_GENERIC_KVM_PARA_H
+#define _ASM_GENERIC_KVM_PARA_H
+
+#include <uapi/asm-generic/kvm_para.h>
+
+
+/*
+ * This function is used by architectures that support kvm to avoid issuing
+ * false soft lockup messages.
+ */
+static inline bool kvm_check_and_clear_guest_paused(void)
+{
+	return false;
+}
+
+static inline unsigned int kvm_arch_para_features(void)
+{
+	return 0;
+}
+
+static inline bool kvm_para_available(void)
+{
+	return false;
+}
+
+#endif

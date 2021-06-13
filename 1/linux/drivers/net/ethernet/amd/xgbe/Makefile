@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:7b59cc1bc4d154776dbed9f6670cffe0ce13dcbb88200296c59162ced41b47a8
-size 344
+obj-$(CONFIG_AMD_XGBE) += amd-xgbe.o
+
+amd-xgbe-objs := xgbe-main.o xgbe-drv.o xgbe-dev.o \
+		 xgbe-desc.o xgbe-ethtool.o xgbe-mdio.o \
+		 xgbe-ptp.o \
+		 xgbe-i2c.o xgbe-phy-v1.o xgbe-phy-v2.o \
+		 xgbe-platform.o
+
+amd-xgbe-$(CONFIG_PCI) += xgbe-pci.o
+amd-xgbe-$(CONFIG_AMD_XGBE_DCB) += xgbe-dcb.o
+amd-xgbe-$(CONFIG_DEBUG_FS) += xgbe-debugfs.o

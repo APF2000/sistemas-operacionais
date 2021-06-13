@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:379fdf5af91b2a4d20988d110e722ddfd94029035f429b70548aa7a630f85345
-size 250
+#include "subcmd-config.h"
+
+#define UNDEFINED "SUBCMD_HAS_NOT_BEEN_INITIALIZED"
+
+struct subcmd_config subcmd_config = {
+	.exec_name	= UNDEFINED,
+	.prefix		= UNDEFINED,
+	.exec_path	= UNDEFINED,
+	.exec_path_env	= UNDEFINED,
+	.pager_env	= UNDEFINED,
+};

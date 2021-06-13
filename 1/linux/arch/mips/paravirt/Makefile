@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e328a238fb499f716ec150f8ee06daee231cd474c97bb51d3469fcfeeebce121
-size 379
+#
+# Makefile for MIPS para-virtualized specific kernel interface routines
+# under Linux.
+#
+# This file is subject to the terms and conditions of the GNU General Public
+# License.  See the file "COPYING" in the main directory of this archive
+# for more details.
+#
+# Copyright (C) 2013 Cavium, Inc.
+#
+
+obj-y := setup.o serial.o paravirt-irq.o
+
+obj-$(CONFIG_SMP)		+= paravirt-smp.o

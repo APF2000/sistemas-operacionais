@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b2b3707482dcc7cd3fe0da78f910fb617ea7a31d9394c2fdd27e579f245752e6
-size 397
+/*
+ * This is included by init/main.c to check for architecture-dependent bugs.
+ *
+ * Needs:
+ *	void check_bugs(void);
+ *
+ * Based on <asm-alpha/bugs.h>.
+ *
+ * Modified 1998, 1999, 2003
+ *	David Mosberger-Tang <davidm@hpl.hp.com>,  Hewlett-Packard Co.
+ */
+#ifndef _ASM_IA64_BUGS_H
+#define _ASM_IA64_BUGS_H
+
+#include <asm/processor.h>
+
+extern void check_bugs (void);
+
+#endif /* _ASM_IA64_BUGS_H */

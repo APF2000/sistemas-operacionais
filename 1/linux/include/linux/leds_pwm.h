@@ -1,3 +1,21 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:7df4f90bd96de0d7980e7c0c5710ad826bb69e68d97a5e9111a13cdb92558227
-size 368
+/*
+ * PWM LED driver data - see drivers/leds/leds-pwm.c
+ */
+#ifndef __LINUX_LEDS_PWM_H
+#define __LINUX_LEDS_PWM_H
+
+struct led_pwm {
+	const char	*name;
+	const char	*default_trigger;
+	unsigned	pwm_id __deprecated;
+	u8 		active_low;
+	unsigned 	max_brightness;
+	unsigned	pwm_period_ns;
+};
+
+struct led_pwm_platform_data {
+	int			num_leds;
+	struct led_pwm	*leds;
+};
+
+#endif

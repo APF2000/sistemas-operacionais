@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:6b35d93fe756c7f1505a880ab187fb651984aa9bf2e4e0e0cf6db64e0bc75ba3
-size 279
+#ifndef _LINUX_Z2_BATTERY_H
+#define _LINUX_Z2_BATTERY_H
+
+struct z2_battery_info {
+	int	 batt_I2C_bus;
+	int	 batt_I2C_addr;
+	int	 batt_I2C_reg;
+	int	 charge_gpio;
+	int	 min_voltage;
+	int	 max_voltage;
+	int	 batt_div;
+	int	 batt_mult;
+	int	 batt_tech;
+	char	*batt_name;
+};
+
+#endif

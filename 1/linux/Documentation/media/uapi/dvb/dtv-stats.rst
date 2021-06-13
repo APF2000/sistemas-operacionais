@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:aefa28e55e423bb36d57292c23d925558b044c8cdb5b67e368853c76c4d9695e
-size 342
+.. -*- coding: utf-8; mode: rst -*-
+
+.. c:type:: dtv_stats
+
+****************
+struct dtv_stats
+****************
+
+
+.. code-block:: c
+
+    struct dtv_stats {
+	__u8 scale; /* enum fecap_scale_params type */
+	union {
+	    __u64 uvalue;   /* for counters and relative scales */
+	    __s64 svalue;   /* for 1/1000 dB measures */
+	};
+    } __packed;

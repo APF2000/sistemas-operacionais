@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:8b973a49e225fdb3025226da5ee9d72fccf80f4a486a71badb217a3806b1c69b
-size 176
+#ifndef ___ASM_SPARC_IOMMU_H
+#define ___ASM_SPARC_IOMMU_H
+#if defined(__sparc__) && defined(__arch64__)
+#include <asm/iommu_64.h>
+#else
+#include <asm/iommu_32.h>
+#endif
+#endif

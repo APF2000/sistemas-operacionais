@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:9befc048dd26dc49ceea4945d5ccc39403a66afad8dd047bdd1eda97dc3fb7d4
-size 193
+obj-$(CONFIG_ENIC) := enic.o
+
+enic-y := enic_main.o vnic_cq.o vnic_intr.o vnic_wq.o \
+	enic_res.o enic_dev.o enic_pp.o vnic_dev.o vnic_rq.o vnic_vic.o \
+	enic_ethtool.o enic_api.o enic_clsf.o
+

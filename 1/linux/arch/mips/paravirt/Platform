@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d481ef004479428444475471236bba4ebbc03ddd703781f58f244c2b8ebe394b
-size 226
+#
+# Generic para-virtualized guest.
+#
+platform-$(CONFIG_MIPS_PARAVIRT)	+= paravirt/
+cflags-$(CONFIG_MIPS_PARAVIRT)		+=				\
+		-I$(srctree)/arch/mips/include/asm/mach-paravirt
+
+load-$(CONFIG_MIPS_PARAVIRT)	= 0xffffffff80010000

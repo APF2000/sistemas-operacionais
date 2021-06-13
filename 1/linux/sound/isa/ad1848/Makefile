@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:3e8f1590c39bd5f09dfeee64958f524e78c4e134bff377ffa9e30967c803a201
-size 182
+#
+# Makefile for ALSA
+# Copyright (c) 2001 by Jaroslav Kysela <perex@perex.cz>
+#
+
+snd-ad1848-objs := ad1848.o
+
+# Toplevel Module Dependency
+obj-$(CONFIG_SND_AD1848) += snd-ad1848.o
+

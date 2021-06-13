@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d92ce57672a4ae952017e1c74cd95bd66d9b6f0ffb050cbc8454cef0251dbf47
-size 236
+#ifndef __NVKM_CE_PRIV_H__
+#define __NVKM_CE_PRIV_H__
+#include <engine/ce.h>
+
+void gt215_ce_intr(struct nvkm_falcon *, struct nvkm_fifo_chan *);
+void gk104_ce_intr(struct nvkm_engine *);
+void gp100_ce_intr(struct nvkm_engine *);
+#endif

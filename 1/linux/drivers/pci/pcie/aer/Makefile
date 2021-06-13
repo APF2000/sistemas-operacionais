@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d52276e4e597f190dd6aaab79d635395c662852d042f7e898e1e562862f2b703
-size 294
+#
+# Makefile for PCI-Express Root Port Advanced Error Reporting Driver
+#
+
+obj-$(CONFIG_PCIEAER) += aerdriver.o
+
+obj-$(CONFIG_PCIE_ECRC)	+= ecrc.o
+
+aerdriver-objs := aerdrv_errprint.o aerdrv_core.o aerdrv.o
+aerdriver-$(CONFIG_ACPI) += aerdrv_acpi.o
+
+obj-$(CONFIG_PCIEAER_INJECT) += aer_inject.o

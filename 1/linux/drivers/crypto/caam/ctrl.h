@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e3be4bac825a7b31b347a65a92a4e62c9c3e9c3e98632e3dc4d8d27211cc7899
-size 265
+/*
+ * CAAM control-plane driver backend public-level include definitions
+ *
+ * Copyright 2012 Freescale Semiconductor, Inc.
+ */
+
+#ifndef CTRL_H
+#define CTRL_H
+
+/* Prototypes for backend-level services exposed to APIs */
+int caam_get_era(void);
+
+#endif /* CTRL_H */

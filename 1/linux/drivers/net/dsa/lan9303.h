@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:bc4978c304d8a86b71c337f426746d502fb9f711013e4dc9af4b3c803c632921
-size 534
+#include <linux/regmap.h>
+#include <linux/device.h>
+#include <net/dsa.h>
+
+struct lan9303 {
+	struct device *dev;
+	struct regmap *regmap;
+	struct regmap_irq_chip_data *irq_data;
+	struct gpio_desc *reset_gpio;
+	u32 reset_duration; /* in [ms] */
+	bool phy_addr_sel_strap;
+	struct dsa_switch *ds;
+	struct mutex indirect_mutex; /* protect indexed register access */
+};
+
+extern const struct regmap_access_table lan9303_register_set;
+
+int lan9303_probe(struct lan9303 *chip, struct device_node *np);
+int lan9303_remove(struct lan9303 *chip);

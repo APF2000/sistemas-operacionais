@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:61af9d0ef1281011796cd1e8b36917ca4e051bdde0509b874eab1db0179b35bd
-size 315
+#ifndef _ASM_POWERPC_BOOK3S_PGALLOC_H
+#define _ASM_POWERPC_BOOK3S_PGALLOC_H
+
+#include <linux/mm.h>
+
+extern void tlb_remove_table(struct mmu_gather *tlb, void *table);
+
+#ifdef CONFIG_PPC64
+#include <asm/book3s/64/pgalloc.h>
+#else
+#include <asm/book3s/32/pgalloc.h>
+#endif
+
+#endif /* _ASM_POWERPC_BOOK3S_PGALLOC_H */

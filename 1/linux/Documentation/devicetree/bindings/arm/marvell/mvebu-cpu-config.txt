@@ -1,3 +1,20 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ac4f3484dd52bf3c7d7304e8acda4fdf81f4d46f41c8a42694d70fe76d847a86
-size 402
+MVEBU CPU Config registers
+--------------------------
+
+MVEBU (Marvell SOCs: Armada 370/XP)
+
+Required properties:
+
+- compatible: one of:
+	- "marvell,armada-370-cpu-config"
+	- "marvell,armada-xp-cpu-config"
+
+- reg: Should contain CPU config registers location and length, in
+  their per-CPU variant
+
+Example:
+
+	cpu-config@21000 {
+		compatible = "marvell,armada-xp-cpu-config";
+		reg = <0x21000 0x8>;
+	};

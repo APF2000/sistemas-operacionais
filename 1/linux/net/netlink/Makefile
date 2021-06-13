@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b403c34dda7a905a21e322305ab65a238c92cc765a00ff87f9c0e52ecae2c013
-size 152
+#
+# Makefile for the netlink driver.
+#
+
+obj-y  				:= af_netlink.o genetlink.o
+
+obj-$(CONFIG_NETLINK_DIAG)	+= netlink_diag.o
+netlink_diag-y			:= diag.o

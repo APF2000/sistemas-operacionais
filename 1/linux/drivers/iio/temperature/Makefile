@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a263ec9d14714b39f83b0a00ad1146d96022bd093fb0f0a4eae7ca260c9396d3
-size 341
+#
+# Makefile for industrial I/O temperature drivers
+#
+
+obj-$(CONFIG_HID_SENSOR_TEMP) += hid-sensor-temperature.o
+obj-$(CONFIG_MAXIM_THERMOCOUPLE) += maxim_thermocouple.o
+obj-$(CONFIG_MLX90614) += mlx90614.o
+obj-$(CONFIG_TMP006) += tmp006.o
+obj-$(CONFIG_TMP007) += tmp007.o
+obj-$(CONFIG_TSYS01) += tsys01.o
+obj-$(CONFIG_TSYS02D) += tsys02d.o

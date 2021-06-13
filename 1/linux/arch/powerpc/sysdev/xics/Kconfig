@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:921406e04d16af16c84a6739a8e2ab419b6ca83c1622d5bb21cdc84216490cf2
-size 217
+config PPC_XICS
+       def_bool n
+       select PPC_SMP_MUXED_IPI
+       select HARDIRQS_SW_RESEND
+
+config PPC_ICP_NATIVE
+       def_bool n
+
+config PPC_ICP_HV
+       def_bool n
+
+config PPC_ICS_RTAS
+       def_bool n
+

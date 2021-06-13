@@ -1,3 +1,47 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:935c1a2e28e81424d421dd946dfd03c7e86d83cc298c2fa284f185421c78c4c1
-size 835
+========================================
+The Linux driver implementer's API guide
+========================================
+
+The kernel offers a wide variety of interfaces to support the development
+of device drivers.  This document is an only somewhat organized collection
+of some of those interfaces — it will hopefully get better over time!  The
+available subsections can be seen below.
+
+.. class:: toc-title
+
+	   Table of contents
+
+.. toctree::
+   :maxdepth: 2
+
+   basics
+   infrastructure
+   pm/index
+   device-io
+   dma-buf
+   device_link
+   message-based
+   sound
+   frame-buffer
+   regulator
+   iio/index
+   input
+   usb/index
+   pci
+   spi
+   i2c
+   hsi
+   edac
+   miscellaneous
+   vme
+   80211/index
+   uio-howto
+   firmware/index
+   misc_devices
+
+.. only::  subproject and html
+
+   Indices
+   =======
+
+   * :ref:`genindex`

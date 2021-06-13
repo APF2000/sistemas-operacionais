@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:85fe011eb7f5fd0db174c7d920ee1a44220de27937534f6b6f7021d9d3aa4351
-size 213
+#
+# Makefile for the linux hypfs filesystem routines.
+#
+
+obj-$(CONFIG_S390_HYPFS_FS) += s390_hypfs.o
+
+s390_hypfs-objs := inode.o hypfs_diag.o hypfs_vm.o hypfs_dbfs.o hypfs_sprp.o
+s390_hypfs-objs += hypfs_diag0c.o

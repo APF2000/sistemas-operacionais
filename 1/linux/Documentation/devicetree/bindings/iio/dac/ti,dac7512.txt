@@ -1,3 +1,20 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:83136b1b75b439ef00d193e5c92ac1583a418494d678b7d32fee1b5fed14223e
-size 403
+TI DAC7512 DEVICETREE BINDINGS
+
+Required properties:
+
+	- "compatible"		Must be set to "ti,dac7512"
+
+Property rules described in Documentation/devicetree/bindings/spi/spi-bus.txt
+apply. In particular, "reg" and "spi-max-frequency" properties must be given.
+
+
+Example:
+
+	spi_master {
+		dac7512: dac7512@0 {
+			compatible = "ti,dac7512";
+			reg = <0>; /* CS0 */
+			spi-max-frequency = <1000000>;
+		};
+	};
+

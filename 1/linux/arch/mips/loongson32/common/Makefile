@@ -1,3 +1,5 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:0036f324330e86bffd157257fbc3e89c4836555d52ea9c6fd667631702eb57ac
-size 117
+#
+# Makefile for common code of loongson1 based machines.
+#
+
+obj-y	+= time.o irq.o platform.o prom.o reset.o setup.o

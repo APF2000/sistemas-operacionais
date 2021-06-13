@@ -1,3 +1,21 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:91f9cdec7f85ddb898235d0aa18d7f52b93e98b4d694b5cb0db55d90cddaebee
-size 360
+/*
+ * ieee802154 6lowpan in net namespaces
+ */
+
+#include <net/inet_frag.h>
+
+#ifndef __NETNS_IEEE802154_6LOWPAN_H__
+#define __NETNS_IEEE802154_6LOWPAN_H__
+
+struct netns_sysctl_lowpan {
+#ifdef CONFIG_SYSCTL
+	struct ctl_table_header *frags_hdr;
+#endif
+};
+
+struct netns_ieee802154_lowpan {
+	struct netns_sysctl_lowpan sysctl;
+	struct netns_frags	frags;
+};
+
+#endif

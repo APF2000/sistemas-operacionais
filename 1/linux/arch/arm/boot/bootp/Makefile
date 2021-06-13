@@ -1,3 +1,28 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2c9f599f882b4f97298bf2aba874e4500d1b019addaa9fabf48f9572c31a7851
-size 766
+#
+# linux/arch/arm/boot/bootp/Makefile
+#
+# This file is included by the global makefile so that you can add your own
+# architecture-specific flags and dependencies.
+#
+
+GCOV_PROFILE	:= n
+
+LDFLAGS_bootp	:=-p --no-undefined -X \
+		 --defsym initrd_phys=$(INITRD_PHYS) \
+		 --defsym params_phys=$(PARAMS_PHYS) -T
+AFLAGS_initrd.o :=-DINITRD=\"$(INITRD)\"
+
+targets	:= bootp init.o kernel.o initrd.o
+
+# Note that bootp.lds picks up kernel.o and initrd.o
+$(obj)/bootp:	$(src)/bootp.lds $(addprefix $(obj)/,init.o kernel.o initrd.o) FORCE
+	$(call if_changed,ld)
+
+# kernel.o and initrd.o includes a binary image using
+# .incbin, a dependency which is not tracked automatically
+
+$(obj)/kernel.o: arch/arm/boot/zImage FORCE
+
+$(obj)/initrd.o: $(INITRD) FORCE
+
+PHONY += $(INITRD)

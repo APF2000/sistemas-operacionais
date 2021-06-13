@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2fe7f6dfea62dd1cda409cde3a922fa29dc3f266d28127eaaaac226bc11b8fd2
-size 227
+#
+# Makefile for IIO chemical sensors
+#
+
+# When adding new entries keep the list in alphabetical order
+obj-$(CONFIG_ATLAS_PH_SENSOR)	+= atlas-ph-sensor.o
+obj-$(CONFIG_IAQCORE)		+= ams-iaq-core.o
+obj-$(CONFIG_VZ89X)		+= vz89x.o

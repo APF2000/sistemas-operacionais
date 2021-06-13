@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:8c635c901db33d59ca514dd9f6f911b9231037e7073f4e84d84550d6a0c28894
-size 189
+Steps for sending 'break' on sunhv console:
+===========================================
+
+On Baremetal:
+   1. press   Esc + 'B'
+
+On LDOM:
+   1. press    Ctrl + ']'
+   2. telnet> send  break

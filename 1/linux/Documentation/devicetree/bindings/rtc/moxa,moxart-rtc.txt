@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:bad36374e8f27c0d70cc8b139d286cb6a058d679347eb511137fa7322bddbb9e
-size 395
+MOXA ART real-time clock
+
+Required properties:
+
+- compatible : Should be "moxa,moxart-rtc"
+- gpio-rtc-sclk : RTC sclk gpio, with zero flags
+- gpio-rtc-data : RTC data gpio, with zero flags
+- gpio-rtc-reset : RTC reset gpio, with zero flags
+
+Example:
+
+	rtc: rtc {
+		compatible = "moxa,moxart-rtc";
+		gpio-rtc-sclk = <&gpio 5 0>;
+		gpio-rtc-data = <&gpio 6 0>;
+		gpio-rtc-reset = <&gpio 7 0>;
+	};

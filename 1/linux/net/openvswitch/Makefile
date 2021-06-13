@@ -1,3 +1,24 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5f4792bfe6639c372bc939a51079f3546cf4dbc021f09a985cd1e4dee01b2006
-size 446
+#
+# Makefile for Open vSwitch.
+#
+
+obj-$(CONFIG_OPENVSWITCH) += openvswitch.o
+
+openvswitch-y := \
+	actions.o \
+	datapath.o \
+	dp_notify.o \
+	flow.o \
+	flow_netlink.o \
+	flow_table.o \
+	vport.o \
+	vport-internal_dev.o \
+	vport-netdev.o
+
+ifneq ($(CONFIG_NF_CONNTRACK),)
+openvswitch-y += conntrack.o
+endif
+
+obj-$(CONFIG_OPENVSWITCH_VXLAN)+= vport-vxlan.o
+obj-$(CONFIG_OPENVSWITCH_GENEVE)+= vport-geneve.o
+obj-$(CONFIG_OPENVSWITCH_GRE)	+= vport-gre.o

@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:bb4ff5158292e217d3aa05fc5c12da15691737d6532868dc7aebe7cdb74eaa1e
-size 241
+#!/bin/bash
+# description: system-wide failed syscalls
+# args: [comm]
+if [ $# -gt 0 ] ; then
+    if ! expr match "$1" "-" > /dev/null ; then
+	comm=$1
+	shift
+    fi
+fi
+perf script $@ -s "$PERF_EXEC_PATH"/scripts/perl/failed-syscalls.pl $comm

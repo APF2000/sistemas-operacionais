@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:65e4983d71ebc9f1866537b5f0287ec4ac1e801ac72c583f5871af60ddeffb68
-size 415
+# Intel pin control drivers
+
+obj-$(CONFIG_PINCTRL_BAYTRAIL)		+= pinctrl-baytrail.o
+obj-$(CONFIG_PINCTRL_CHERRYVIEW)	+= pinctrl-cherryview.o
+obj-$(CONFIG_PINCTRL_MERRIFIELD)	+= pinctrl-merrifield.o
+obj-$(CONFIG_PINCTRL_INTEL)		+= pinctrl-intel.o
+obj-$(CONFIG_PINCTRL_BROXTON)		+= pinctrl-broxton.o
+obj-$(CONFIG_PINCTRL_GEMINILAKE)	+= pinctrl-geminilake.o
+obj-$(CONFIG_PINCTRL_SUNRISEPOINT)	+= pinctrl-sunrisepoint.o

@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:973e97b7bbd79c8608da3ce6481a4b649c2ea366a217d6e8a0f3b9eba338dddb
-size 96
+aic79xx_reg.h
+aic79xx_reg_print.c
+aic79xx_seq.h
+aic7xxx_reg.h
+aic7xxx_reg_print.c
+aic7xxx_seq.h

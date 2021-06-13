@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:eca2fc265d6542f7184848916b01c5ab6440648ca98a0dc7a48a5fd08ad182aa
-size 264
+#ifndef _ASM_MIPS_KDEBUG_H
+#define _ASM_MIPS_KDEBUG_H
+
+#include <linux/notifier.h>
+
+enum die_val {
+	DIE_OOPS = 1,
+	DIE_FP,
+	DIE_TRAP,
+	DIE_RI,
+	DIE_PAGE_FAULT,
+	DIE_BREAK,
+	DIE_SSTEPBP,
+	DIE_MSAFP,
+	DIE_UPROBE,
+	DIE_UPROBE_XOL,
+};
+
+#endif /* _ASM_MIPS_KDEBUG_H */

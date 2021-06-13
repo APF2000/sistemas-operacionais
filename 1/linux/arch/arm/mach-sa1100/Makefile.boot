@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:cc83fa92d2a6e124c991a76817468cda0502c3b55192c16e52361981f88d88ef
-size 150
+ifeq ($(CONFIG_SA1111),y)
+   zreladdr-y	+= 0xc0208000
+else
+   zreladdr-y	+= 0xc0008000
+endif
+params_phys-y	:= 0xc0000100
+initrd_phys-y	:= 0xc0800000
+

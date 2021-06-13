@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5f061573e3a893f5b4e2db70d2d2ab47cee0a9b534989f9c419cf8768a13a3c0
-size 699
+/*
+ * Copyright(c) 2016 - 2017 Intel Corporation. All rights reserved.
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of version 2 of the GNU General Public License as
+ * published by the Free Software Foundation.
+ *
+ * This program is distributed in the hope that it will be useful, but
+ * WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * General Public License for more details.
+ */
+#ifndef __DAX_H__
+#define __DAX_H__
+struct dax_device;
+struct dax_device *inode_dax(struct inode *inode);
+struct inode *dax_inode(struct dax_device *dax_dev);
+#endif /* __DAX_H__ */

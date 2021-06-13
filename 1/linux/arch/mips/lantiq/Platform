@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c08d8a748265df04304f25be829f2bbebd7babfc1f0d43b4a918c2e0777d73fd
-size 341
+#
+# Lantiq
+#
+
+platform-$(CONFIG_LANTIQ)	+= lantiq/
+cflags-$(CONFIG_LANTIQ)		+= -I$(srctree)/arch/mips/include/asm/mach-lantiq
+load-$(CONFIG_LANTIQ)		= 0xffffffff80002000
+cflags-$(CONFIG_SOC_TYPE_XWAY)	+= -I$(srctree)/arch/mips/include/asm/mach-lantiq/xway
+cflags-$(CONFIG_SOC_FALCON)	+= -I$(srctree)/arch/mips/include/asm/mach-lantiq/falcon

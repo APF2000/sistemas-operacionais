@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:54f40ae3c36813cca87b8789c1d307297eb20fe64693d74f310e0b5c85b5c445
-size 190
+#
+# Cobalt Server
+#
+platform-$(CONFIG_MIPS_COBALT)	+= cobalt/
+cflags-$(CONFIG_MIPS_COBALT)	+= -I$(srctree)/arch/mips/include/asm/mach-cobalt
+load-$(CONFIG_MIPS_COBALT)	+= 0xffffffff80080000

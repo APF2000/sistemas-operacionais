@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e9b2aaaeeb1217f3685a866b680b494d5aef44c18ab022b2bd8f270e54e411d9
-size 116
+#ifndef	__IRQCHIP_MMP_H
+#define	__IRQCHIP_MMP_H
+
+extern struct irq_chip icu_irq_chip;
+
+#endif	/* __IRQCHIP_MMP_H */

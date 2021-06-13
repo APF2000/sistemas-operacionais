@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:9e278cf8096664792ecdb6fb656b933f9c0ab4f3bd6fddfc1438ad055d8f7a48
-size 293
+if VIDEO_V4L2
+
+menu "SPI helper chips"
+	visible if !MEDIA_SUBDRV_AUTOSELECT || COMPILE_TEST
+
+config VIDEO_GS1662
+	tristate "Gennum Serializers video"
+	depends on SPI && VIDEO_V4L2 && VIDEO_V4L2_SUBDEV_API
+	---help---
+	  Enable the GS1662 driver which serializes video streams.
+
+endmenu
+
+endif

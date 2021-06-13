@@ -1,3 +1,21 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:6cdef4667dff681b3517590e8295d8b6a427a7766bdd2d1d7715d23b7034acd0
-size 719
+LEGO MINDSTORMS EV3 Battery
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+LEGO MINDSTORMS EV3 has some built-in capability for monitoring the battery.
+It uses 6 AA batteries or a special Li-ion rechargeable battery pack that is
+detected by a key switch in the battery compartment.
+
+Required properties:
+ - compatible: Must be "lego,ev3-battery"
+ - io-channels: phandles to analog inputs for reading voltage and current
+ - io-channel-names: Must be "voltage", "current"
+ - rechargeable-gpios: phandle to the rechargeable battery indication gpio
+
+Example:
+
+	battery {
+		compatible = "lego,ev3-battery";
+		io-channels = <&adc 4>, <&adc 3>;
+		io-channel-names = "voltage", "current";
+		rechargeable-gpios = <&gpio 136 GPIO_ACTIVE_LOW>;
+	};

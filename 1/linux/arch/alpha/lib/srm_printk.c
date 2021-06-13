@@ -1,3 +1,41 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:767d92735db085d4c01c6beef0fac47ead36e9e7658dad8875502373eddaddc5
-size 656
+/*
+ *	arch/alpha/lib/srm_printk.c
+ */
+
+#include <linux/kernel.h>
+#include <asm/console.h>
+
+long
+srm_printk(const char *fmt, ...)
+{
+	static char buf[1024];
+	va_list args;
+	long len, num_lf;
+	char *src, *dst;
+
+	va_start(args, fmt);
+	len = vsprintf(buf, fmt, args);
+	va_end(args);
+
+	/* count number of linefeeds in string: */
+
+	num_lf = 0;
+	for (src = buf; *src; ++src) {
+		if (*src == '\n') {
+			++num_lf;
+		}
+	}
+
+	if (num_lf) {
+		/* expand each linefeed into carriage-return/linefeed: */
+		for (dst = src + num_lf; src >= buf; ) {
+			if (*src == '\n') {
+				*dst-- = '\r';
+			}
+			*dst-- = *src--;
+		}
+	}
+
+	srm_puts(buf, num_lf+len);	
+        return len;
+}

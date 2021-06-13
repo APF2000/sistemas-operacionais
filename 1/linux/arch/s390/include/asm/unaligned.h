@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e0067f1eda6f5b62c8cf0ac4a5778a33750c0a3d199bd1153a336f23d3c64d39
-size 310
+#ifndef _ASM_S390_UNALIGNED_H
+#define _ASM_S390_UNALIGNED_H
+
+/*
+ * The S390 can do unaligned accesses itself. 
+ */
+#include <linux/unaligned/access_ok.h>
+#include <linux/unaligned/generic.h>
+
+#define get_unaligned	__get_unaligned_be
+#define put_unaligned	__put_unaligned_be
+
+#endif /* _ASM_S390_UNALIGNED_H */

@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:40a18790fa69a2831f620186e39ad9c8efb4a68baaf45378d63d32d1a9723586
-size 266
+#
+# Makefile for Etrax-specific drivers
+#
+
+obj-$(CONFIG_ETRAX_AXISFLASHMAP)	+= axisflashmap.o
+obj-$(CONFIG_ETRAX_I2C)			+= i2c.o
+obj-$(CONFIG_ETRAX_I2C_EEPROM)		+= eeprom.o
+obj-$(CONFIG_ETRAX_GPIO)		+= gpio.o
+obj-$(CONFIG_ETRAX_SYNCHRONOUS_SERIAL)	+= sync_serial.o
+

@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:350a3b5bacd31b0136795c4a4aecd53a78d35f0b28e380986ae5e4b5a0241475
-size 341
+obj-$(CONFIG_VIDEO_TI_VPE) += ti-vpe.o
+obj-$(CONFIG_VIDEO_TI_VPDMA) += ti-vpdma.o
+obj-$(CONFIG_VIDEO_TI_SC) += ti-sc.o
+obj-$(CONFIG_VIDEO_TI_CSC) += ti-csc.o
+
+ti-vpe-y := vpe.o
+ti-vpdma-y := vpdma.o
+ti-sc-y := sc.o
+ti-csc-y := csc.o
+
+ccflags-$(CONFIG_VIDEO_TI_VPE_DEBUG) += -DDEBUG
+
+obj-$(CONFIG_VIDEO_TI_CAL) += ti-cal.o
+
+ti-cal-y := cal.o

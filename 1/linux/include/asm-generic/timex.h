@@ -1,3 +1,22 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:6a3979725131836ef172a9196fdf6b70acbddd6572aabaf4cf0eb644b989e3b8
-size 469
+#ifndef __ASM_GENERIC_TIMEX_H
+#define __ASM_GENERIC_TIMEX_H
+
+/*
+ * If you have a cycle counter, return the value here.
+ */
+typedef unsigned long cycles_t;
+#ifndef get_cycles
+static inline cycles_t get_cycles(void)
+{
+	return 0;
+}
+#endif
+
+/*
+ * Architectures are encouraged to implement read_current_timer
+ * and define this in order to avoid the expensive delay loop
+ * calibration during boot.
+ */
+#undef ARCH_HAS_READ_CURRENT_TIMER
+
+#endif /* __ASM_GENERIC_TIMEX_H */

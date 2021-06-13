@@ -1,3 +1,24 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:053c2e658f5dd88ee3a89749a152c658581080f1c62722ea43afe73aa1e2afae
-size 754
+/*
+ * Copyright (c) 2013 Steffen Trumtrar <s.trumtrar@pengutronix.de>
+ * Copyright (c) 2012-2013 Xilinx
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 2 as
+ * published by the Free Software Foundation.
+ */
+#include <linux/linkage.h>
+#include <linux/init.h>
+#include <asm/assembler.h>
+
+ENTRY(zynq_secondary_trampoline)
+ARM_BE8(setend	be)				@ ensure we are in BE8 mode
+	ldr	r0, zynq_secondary_trampoline_jump
+ARM_BE8(rev	r0, r0)
+	bx	r0
+.globl zynq_secondary_trampoline_jump
+zynq_secondary_trampoline_jump:
+	/* Space for jumping address */
+	.word	0	/* cpu 1 */
+.globl zynq_secondary_trampoline_end
+zynq_secondary_trampoline_end:
+ENDPROC(zynq_secondary_trampoline)

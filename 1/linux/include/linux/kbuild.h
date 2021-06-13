@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:46615763b5a39981b46518934a773d680f7f0c2a7ee6db6590592faf16a2db92
-size 341
+#ifndef __LINUX_KBUILD_H
+#define __LINUX_KBUILD_H
+
+#define DEFINE(sym, val) \
+	asm volatile("\n.ascii \"->" #sym " %0 " #val "\"" : : "i" (val))
+
+#define BLANK() asm volatile("\n.ascii \"->\"" : : )
+
+#define OFFSET(sym, str, mem) \
+	DEFINE(sym, offsetof(struct str, mem))
+
+#define COMMENT(x) \
+	asm volatile("\n.ascii \"->#" x "\"")
+
+#endif

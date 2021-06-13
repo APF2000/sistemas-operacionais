@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b2b8e977f53ac33aa630f4d80d024b3b4d803a92d290f19cd68ae9c05e7f9dc6
-size 288
+Ingenic Watchdog Timer (WDT) Controller for JZ4740
+
+Required properties:
+compatible: "ingenic,jz4740-watchdog"
+reg: Register address and length for watchdog registers
+
+Example:
+
+watchdog: jz4740-watchdog@0x10002000 {
+	compatible = "ingenic,jz4740-watchdog";
+	reg = <0x10002000 0x100>;
+};

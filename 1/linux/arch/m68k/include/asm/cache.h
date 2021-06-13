@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:3fdaaf1c5a7acf432dd49de12782f0ab1efce87f4ad0e734cd1c4dc3aac14c2b
-size 257
+/*
+ * include/asm-m68k/cache.h
+ */
+#ifndef __ARCH_M68K_CACHE_H
+#define __ARCH_M68K_CACHE_H
+
+/* bytes per L1 cache line */
+#define        L1_CACHE_SHIFT  4
+#define        L1_CACHE_BYTES  (1<< L1_CACHE_SHIFT)
+
+#define ARCH_DMA_MINALIGN	L1_CACHE_BYTES
+
+#endif

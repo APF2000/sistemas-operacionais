@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b56300016ad202743d866f236279d94cf302c60758e1982d6d1fc3db0241741a
-size 257
+#ifndef __IIO_AD7291_H__
+#define __IIO_AD7291_H__
+
+/**
+ * struct ad7291_platform_data - AD7291 platform data
+ * @use_external_ref: Whether to use an external or internal reference voltage
+ */
+struct ad7291_platform_data {
+	bool use_external_ref;
+};
+
+#endif

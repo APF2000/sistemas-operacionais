@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4f25aed1af488ffccfe8784e361404fe54f5d9a9404f7940e530f004e563b97a
-size 322
+snd-soc-skl-objs := skl.o skl-pcm.o skl-nhlt.o skl-messages.o \
+skl-topology.o
+
+obj-$(CONFIG_SND_SOC_INTEL_SKYLAKE) += snd-soc-skl.o
+
+# Skylake IPC Support
+snd-soc-skl-ipc-objs := skl-sst-ipc.o skl-sst-dsp.o skl-sst-cldma.o \
+		skl-sst.o bxt-sst.o skl-sst-utils.o
+
+obj-$(CONFIG_SND_SOC_INTEL_SKYLAKE) += snd-soc-skl-ipc.o

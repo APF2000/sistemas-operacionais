@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:6240b33cf796a7d1b2e417f4b10a52fb91921601b249a789f2b90986ce0f35ab
-size 305
+#
+# Makefile for the gameport drivers.
+#
+
+# Each configuration option enables a list of files.
+
+obj-$(CONFIG_GAMEPORT)		+= gameport.o
+obj-$(CONFIG_GAMEPORT_EMU10K1)	+= emu10k1-gp.o
+obj-$(CONFIG_GAMEPORT_FM801)	+= fm801-gp.o
+obj-$(CONFIG_GAMEPORT_L4)	+= lightning.o
+obj-$(CONFIG_GAMEPORT_NS558)	+= ns558.o

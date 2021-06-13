@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:eaf3ff78813fad8a7f760972812890aceb7a959c24cd84437805b1f80ee9ce99
-size 147
+#ifndef __NVKM_MXM_H__
+#define __NVKM_MXM_H__
+#include <core/subdev.h>
+
+int nv50_mxm_new(struct nvkm_device *, int, struct nvkm_subdev **);
+#endif

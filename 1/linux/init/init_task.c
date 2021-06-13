@@ -1,3 +1,30 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a7364ae70a2b453d8d444c91aed8219ef993750a416da1ded9fb3ec614e9b54d
-size 802
+#include <linux/init_task.h>
+#include <linux/export.h>
+#include <linux/mqueue.h>
+#include <linux/sched.h>
+#include <linux/sched/sysctl.h>
+#include <linux/sched/rt.h>
+#include <linux/sched/task.h>
+#include <linux/init.h>
+#include <linux/fs.h>
+#include <linux/mm.h>
+
+#include <asm/pgtable.h>
+#include <linux/uaccess.h>
+
+static struct signal_struct init_signals = INIT_SIGNALS(init_signals);
+static struct sighand_struct init_sighand = INIT_SIGHAND(init_sighand);
+
+/* Initial task structure */
+struct task_struct init_task = INIT_TASK(init_task);
+EXPORT_SYMBOL(init_task);
+
+/*
+ * Initial thread structure. Alignment of this is handled by a special
+ * linker map entry.
+ */
+union thread_union init_thread_union __init_task_data = {
+#ifndef CONFIG_THREAD_INFO_IN_TASK
+	INIT_THREAD_INFO(init_task)
+#endif
+};

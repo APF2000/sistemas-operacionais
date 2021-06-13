@@ -1,3 +1,24 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ca7157212f21d3fc07acd8693801da30519b8e5d7a23dc03b0ebc32a70e1e99b
-size 860
+00-INDEX
+	- this file
+MSI-HOWTO.txt
+	- the Message Signaled Interrupts (MSI) Driver Guide HOWTO and FAQ.
+PCIEBUS-HOWTO.txt
+	- a guide describing the PCI Express Port Bus driver
+pci-error-recovery.txt
+	- info on PCI error recovery
+pci-iov-howto.txt
+	- the PCI Express I/O Virtualization HOWTO
+pci.txt
+	- info on the PCI subsystem for device driver authors
+pcieaer-howto.txt
+	- the PCI Express Advanced Error Reporting Driver Guide HOWTO
+endpoint/pci-endpoint.txt
+	- guide to add endpoint controller driver and endpoint function driver.
+endpoint/pci-endpoint-cfs.txt
+	- guide to use configfs to configure the PCI endpoint function.
+endpoint/pci-test-function.txt
+	- specification of *PCI test* function device.
+endpoint/pci-test-howto.txt
+	- userguide for PCI endpoint test function.
+endpoint/function/binding/
+	- binding documentation for PCI endpoint function

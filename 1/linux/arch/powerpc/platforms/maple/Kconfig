@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a8492d9854111019b2d8328985aa8e45e2bcb70fd4336c2164f81272c43ff91c
-size 473
+config PPC_MAPLE
+	depends on PPC64 && PPC_BOOK3S && CPU_BIG_ENDIAN
+	bool "Maple 970FX Evaluation Board"
+	select PCI
+	select MPIC
+	select U3_DART
+	select MPIC_U3_HT_IRQS
+	select GENERIC_TBSYNC
+	select PPC_UDBG_16550
+	select PPC_970_NAP
+	select PPC_NATIVE
+	select PPC_RTAS
+	select MMIO_NVRAM
+	select ATA_NONSTANDARD if ATA
+	default n
+	help
+          This option enables support for the Maple 970FX Evaluation Board.
+	  For more information, refer to <http://www.970eval.com>

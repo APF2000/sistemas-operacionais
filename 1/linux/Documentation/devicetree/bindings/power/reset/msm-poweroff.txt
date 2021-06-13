@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:6f256fba4a3ad8eb36b29d8ca8bb855fdbe9f9396c2681a138ec01434d61fab6
-size 433
+MSM Restart Driver
+
+A power supply hold (ps-hold) bit is set to power the msm chipsets.
+Clearing that bit allows us to restart/poweroff. The difference
+between poweroff and restart is determined by unique power manager IC
+settings.
+
+Required Properties:
+-compatible: "qcom,pshold"
+-reg: Specifies the physical address of the ps-hold register
+
+Example:
+
+	restart@fc4ab000 {
+		compatible = "qcom,pshold";
+		reg = <0xfc4ab000 0x4>;
+	};

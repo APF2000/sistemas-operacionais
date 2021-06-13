@@ -1,3 +1,46 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:03a0b8f4d0fab76be5272b06649e89e1922423f2a73fb3bf54a2e7d3c2d99a25
-size 894
+#ifndef __PERF_REGS_H
+#define __PERF_REGS_H
+
+#include <linux/types.h>
+#include <linux/compiler.h>
+
+struct regs_dump;
+
+struct sample_reg {
+	const char *name;
+	uint64_t mask;
+};
+#define SMPL_REG(n, b) { .name = #n, .mask = 1ULL << (b) }
+#define SMPL_REG_END { .name = NULL }
+
+extern const struct sample_reg sample_reg_masks[];
+
+enum {
+	SDT_ARG_VALID = 0,
+	SDT_ARG_SKIP,
+};
+
+int arch_sdt_arg_parse_op(char *old_op, char **new_op);
+
+#ifdef HAVE_PERF_REGS_SUPPORT
+#include <perf_regs.h>
+
+int perf_reg_value(u64 *valp, struct regs_dump *regs, int id);
+
+#else
+#define PERF_REGS_MASK	0
+#define PERF_REGS_MAX	0
+
+static inline const char *perf_reg_name(int id __maybe_unused)
+{
+	return NULL;
+}
+
+static inline int perf_reg_value(u64 *valp __maybe_unused,
+				 struct regs_dump *regs __maybe_unused,
+				 int id __maybe_unused)
+{
+	return 0;
+}
+#endif /* HAVE_PERF_REGS_SUPPORT */
+#endif /* __PERF_REGS_H */

@@ -1,3 +1,62 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e3bd39ca3ec83e9c8e809fa3f36bdc918d381da098a996b14cf3696f977b360c
-size 1255
+/dts-v1/;
+
+#include "kirkwood-dnskw.dtsi"
+
+/ {
+	model = "D-Link DNS-325 NAS (Rev A1)";
+	compatible = "dlink,dns-325-a1", "dlink,dns-325", "dlink,dns-kirkwood", "marvell,kirkwood-88f6281", "marvell,kirkwood";
+
+	memory {
+		device_type = "memory";
+		reg = <0x00000000 0x10000000>;
+	};
+
+	chosen {
+		bootargs = "console=ttyS0,115200n8 earlyprintk";
+		stdout-path = &uart0;
+	};
+
+	gpio-leds {
+		compatible = "gpio-leds";
+		pinctrl-0 = <&pmx_led_power &pmx_led_red_usb_325
+			     &pmx_led_red_left_hdd &pmx_led_red_right_hdd
+			     &pmx_led_white_usb>;
+		pinctrl-names = "default";
+
+		white-power {
+			label = "dns325:white:power";
+			gpios = <&gpio0 26 GPIO_ACTIVE_LOW>;
+			default-state = "keep";
+		};
+		white-usb {
+			label = "dns325:white:usb";
+			gpios = <&gpio1 11 GPIO_ACTIVE_LOW>; /* GPIO 43 */
+		};
+		red-l_hdd {
+			label = "dns325:red:l_hdd";
+			gpios = <&gpio0 28 GPIO_ACTIVE_LOW>;
+		};
+		red-r_hdd {
+			label = "dns325:red:r_hdd";
+			gpios = <&gpio0 27 GPIO_ACTIVE_LOW>;
+		};
+		red-usb {
+			label = "dns325:red:usb";
+			gpios = <&gpio0 29 GPIO_ACTIVE_LOW>;
+		};
+	};
+
+	ocp@f1000000 {
+		i2c@11000 {
+			status = "okay";
+
+			lm75: lm75@48 {
+				compatible = "national,lm75";
+				reg = <0x48>;
+			};
+		};
+		serial@12000 {
+			status = "okay";
+		};
+	};
+};

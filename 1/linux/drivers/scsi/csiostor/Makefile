@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2ba880669e9dc345a3af6546a9f349f2fef24520c3a90038cb9d36174c0af097
-size 281
+#
+## Chelsio FCoE driver
+#
+##
+
+ccflags-y += -I$(srctree)/drivers/net/ethernet/chelsio/cxgb4
+
+obj-$(CONFIG_SCSI_CHELSIO_FCOE) += csiostor.o
+
+csiostor-objs := csio_attr.o csio_init.o csio_lnode.o csio_scsi.o \
+		csio_hw.o csio_hw_t5.o csio_isr.o \
+		csio_mb.o csio_rnode.o csio_wr.o

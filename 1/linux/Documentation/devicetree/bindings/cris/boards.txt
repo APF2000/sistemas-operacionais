@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:324d36ee420ff0ac5b9bc45c0a0be714358908be08ce2453ac2390b3356d03ec
-size 187
+Boards based on the CRIS SoCs:
+
+Required root node properties:
+    - compatible = should be one or more of the following:
+	- "axis,dev88"	- for Axis devboard 88 with ETRAX FS
+
+Optional:
+

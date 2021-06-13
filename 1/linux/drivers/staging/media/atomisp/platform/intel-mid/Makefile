@@ -1,3 +1,5 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:0a31116699027ce9ec11b7e904d6b07781bc364234eccf0eabb39321135ca992
-size 147
+#
+# Makefile for intel-mid devices.
+#
+obj-$(CONFIG_INTEL_ATOMISP) += intel_mid_pcihelpers.o
+obj-$(CONFIG_INTEL_ATOMISP) += atomisp_gmin_platform.o

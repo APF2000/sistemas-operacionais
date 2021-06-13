@@ -1,3 +1,47 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:87a248621ef41ef91fee1728bd8b81efcc14251950e05c3a63f1dcadff4b3716
-size 637
+.. -*- coding: utf-8; mode: rst -*-
+
+.. _dmx_fclose:
+
+=================
+DVB demux close()
+=================
+
+Name
+----
+
+DVB demux close()
+
+
+Synopsis
+--------
+
+.. c:function:: int close(int fd)
+    :name: dvb-dmx-close
+
+
+Arguments
+---------
+
+``fd``
+  File descriptor returned by a previous call to :c:func:`open() <dvb-ca-open>`.
+
+Description
+-----------
+
+This system call deactivates and deallocates a filter that was
+previously allocated via the open() call.
+
+
+Return Value
+------------
+
+.. flat-table::
+    :header-rows:  0
+    :stub-columns: 0
+
+
+    -  .. row 1
+
+       -  ``EBADF``
+
+       -  fd is not a valid open file descriptor.

@@ -1,3 +1,25 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:cbfcab93d57525219c61b688312cc7966939522adcb1d0d851f9d021456e5633
-size 795
+/*
+ * Copyright (c) 2013, NVIDIA CORPORATION.  All rights reserved.
+ *
+ * This program is free software; you can redistribute it and/or modify it
+ * under the terms and conditions of the GNU General Public License,
+ * version 2, as published by the Free Software Foundation.
+ *
+ * This program is distributed in the hope it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+ * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for
+ * more details.
+ */
+
+#ifndef __SOC_TEGRA_CPUIDLE_H__
+#define __SOC_TEGRA_CPUIDLE_H__
+
+#if defined(CONFIG_ARM) && defined(CONFIG_CPU_IDLE)
+void tegra_cpuidle_pcie_irqs_in_use(void);
+#else
+static inline void tegra_cpuidle_pcie_irqs_in_use(void)
+{
+}
+#endif
+
+#endif /* __SOC_TEGRA_CPUIDLE_H__ */

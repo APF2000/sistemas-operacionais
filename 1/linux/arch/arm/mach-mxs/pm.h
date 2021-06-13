@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ec51ed29e0a3f83ed5d137d0dfcdcb56e17ee3b1949441b2467b2fcc738636fe
-size 386
+/*
+ * Copyright (C) 2013 Freescale Semiconductor, Inc.
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 2 as
+ * published by the Free Software Foundation.
+ */
+
+#ifndef __ARCH_MXS_PM_H
+#define __ARCH_MXS_PM_H
+
+#ifdef CONFIG_PM
+void mxs_pm_init(void);
+#else
+#define mxs_pm_init NULL
+#endif
+
+#endif

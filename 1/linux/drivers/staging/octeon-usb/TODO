@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:36c10d9777b433c4a517a744b2998a40b6c5e37b97abc9fa89096b8f4ad4a031
-size 235
+This driver is functional and has been tested on EdgeRouter Lite,
+D-Link DSR-1000N and EBH5600 evaluation board with USB mass storage.
+
+TODO:
+	- kernel coding style
+	- checkpatch warnings
+
+Contact: Aaro Koskinen <aaro.koskinen@iki.fi>

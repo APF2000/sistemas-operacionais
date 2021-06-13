@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:de17deae7225af8c703fed36a641ace3aa79b655e139cd166c0e6fdf31c9940d
-size 198
+
+#ifndef PERF_CPUFEATURE_H
+#define PERF_CPUFEATURE_H
+
+/* cpufeature.h ... dummy header file for including arch/x86/lib/memcpy_64.S */
+
+#define X86_FEATURE_REP_GOOD 0
+
+#endif	/* PERF_CPUFEATURE_H */

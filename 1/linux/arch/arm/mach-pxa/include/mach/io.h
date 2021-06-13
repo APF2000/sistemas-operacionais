@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:60d4dd149c0ca3a2d1fa5591812df8ba1d735c08b70f5960de216fca0e7704b3
-size 358
+/*
+ * arch/arm/mach-pxa/include/mach/io.h
+ *
+ * Copied from asm/arch/sa1100/io.h
+ */
+#ifndef __ASM_ARM_ARCH_IO_H
+#define __ASM_ARM_ARCH_IO_H
+
+#define IO_SPACE_LIMIT 0xffffffff
+
+/*
+ * We don't actually have real ISA nor PCI buses, but there is so many
+ * drivers out there that might just work if we fake them...
+ */
+#define __io(a)		__typesafe_io(a)
+
+#endif

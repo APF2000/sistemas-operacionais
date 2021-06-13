@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:9f55e338b246fa19bee2b30346c4aa143d59922f8c51b7ddd7270d01ae339dd3
-size 373
+obj-$(CONFIG_INT340X_THERMAL)	+= int3400_thermal.o
+obj-$(CONFIG_INT340X_THERMAL)	+= int340x_thermal_zone.o
+obj-$(CONFIG_INT340X_THERMAL)	+= int3402_thermal.o
+obj-$(CONFIG_INT340X_THERMAL)	+= int3403_thermal.o
+obj-$(CONFIG_INT340X_THERMAL)	+= processor_thermal_device.o
+obj-$(CONFIG_INT3406_THERMAL)	+= int3406_thermal.o
+obj-$(CONFIG_ACPI_THERMAL_REL)	+= acpi_thermal_rel.o

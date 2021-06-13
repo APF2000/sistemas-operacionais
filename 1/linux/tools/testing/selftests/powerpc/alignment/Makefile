@@ -1,3 +1,5 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:88d31f5165134ab5e31c1c1650bce0a3b2e89e3e4da298735bdd1526cd0cb7b1
-size 187
+TEST_GEN_PROGS := copy_unaligned copy_first_unaligned paste_unaligned paste_last_unaligned
+
+include ../../lib.mk
+
+$(TEST_GEN_PROGS): ../harness.c ../utils.c copy_paste_unaligned_common.c

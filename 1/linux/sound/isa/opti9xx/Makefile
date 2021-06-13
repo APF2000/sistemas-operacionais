@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:89e8282f065095d171d9b4f17e01adbcbbd5f6ab22de2c97e11599a365b4dc47
-size 448
+#
+# Makefile for ALSA
+# Copyright (c) 2001 by Jaroslav Kysela <perex@perex.cz>
+#
+
+snd-opti92x-ad1848-objs := opti92x-ad1848.o
+snd-opti92x-cs4231-objs := opti92x-cs4231.o
+snd-opti93x-objs := opti93x.o
+snd-miro-objs := miro.o
+
+# Toplevel Module Dependency
+obj-$(CONFIG_SND_OPTI92X_AD1848) += snd-opti92x-ad1848.o
+obj-$(CONFIG_SND_OPTI92X_CS4231) += snd-opti92x-cs4231.o
+obj-$(CONFIG_SND_OPTI93X) += snd-opti93x.o
+obj-$(CONFIG_SND_MIRO) += snd-miro.o

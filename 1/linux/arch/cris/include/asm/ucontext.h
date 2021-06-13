@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:07c3d91cef3ac59c14cf37efbcbd80bba17e839bc3602ba9be8fc0eb73f4e13c
-size 283
+#ifndef _ASM_CRIS_UCONTEXT_H
+#define _ASM_CRIS_UCONTEXT_H
+
+struct ucontext {
+	unsigned long	  uc_flags;
+	struct ucontext  *uc_link;
+	stack_t		  uc_stack;
+	struct sigcontext uc_mcontext;
+	sigset_t	  uc_sigmask;	/* mask last for extensibility */
+};
+
+#endif /* !_ASM_CRIS_UCONTEXT_H */

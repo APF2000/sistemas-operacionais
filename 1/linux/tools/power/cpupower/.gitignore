@@ -1,3 +1,29 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f5fd0903100dbdc2a19c0b1dbebbf51a576fed00a737ec4985c95d7e62f62e1f
-size 506
+.libs
+libcpupower.so
+libcpupower.so.0
+libcpupower.so.0.0.0
+build/ccdv
+cpufreq-info
+cpufreq-set
+cpufreq-aperf
+lib/.libs
+lib/cpufreq.lo
+lib/cpufreq.o
+lib/proc.lo
+lib/proc.o
+lib/sysfs.lo
+lib/sysfs.o
+po/cpupowerutils.pot
+po/*.gmo
+utils/cpufreq-info.o
+utils/cpufreq-set.o
+utils/cpufreq-aperf.o
+cpupower
+bench/cpufreq-bench
+debug/kernel/Module.symvers
+debug/i386/centrino-decode
+debug/i386/dump_psb
+debug/i386/intel_gsic
+debug/i386/powernow-k8-decode
+debug/x86_64/centrino-decode
+debug/x86_64/powernow-k8-decode

@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:eedb4d6c447feb79665a6ba654a1b9d14b2e00d8fbc422c4d6fc61767f0729b1
-size 265
+/*
+ * Broadcom specific AMBA
+ * GBIT MAC COMMON Core
+ *
+ * Licensed under the GNU/GPL. See COPYING for details.
+ */
+
+#include "bcma_private.h"
+#include <linux/bcma/bcma.h>
+
+void bcma_core_gmac_cmn_init(struct bcma_drv_gmac_cmn *gc)
+{
+	mutex_init(&gc->phy_mutex);
+}

@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:9222980bc923ee03de6c9c5d4ae8ddc5d3ba04f41fae63e7bf56f8ae28947c40
-size 183
+#ifdef CONFIG_DEBUG_UNCOMPRESS
+extern void putc(int c);
+#else
+static inline void putc(int c) {}
+#endif
+static inline void flush(void) {}
+static inline void arch_decomp_setup(void) {}

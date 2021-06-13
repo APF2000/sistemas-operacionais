@@ -1,3 +1,5 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2615a2a668bf787d3993267e4174e80f9ebc0e5985584292a251ee44a1fce749
-size 184
+obj-$(CONFIG_VIDEO_DM365_VPFE) += davinci-vfpe.o
+
+davinci-vfpe-objs := \
+	dm365_isif.o dm365_ipipe_hw.o dm365_ipipe.o \
+	dm365_resizer.o dm365_ipipeif.o vpfe_mc_capture.o vpfe_video.o

@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:8041ab8b44b498dd2043593556f3bae0951f372f64be1dd6919088567e378258
-size 191
+#ifndef _M68K_PARAM_H
+#define _M68K_PARAM_H
+
+#ifdef __uClinux__
+#define EXEC_PAGESIZE	4096
+#else
+#define EXEC_PAGESIZE	8192
+#endif
+
+#include <asm-generic/param.h>
+
+#endif /* _M68K_PARAM_H */

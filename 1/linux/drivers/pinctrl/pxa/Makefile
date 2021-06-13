@@ -1,3 +1,3 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5df8e3e11ac557243997d9713fe060ac4ab4f1c91e10698c514d1b3a56e8e7c6
-size 166
+# Marvell PXA pin control drivers
+obj-$(CONFIG_PINCTRL_PXA25X)	+= pinctrl-pxa2xx.o pinctrl-pxa25x.o
+obj-$(CONFIG_PINCTRL_PXA27X)	+= pinctrl-pxa2xx.o pinctrl-pxa27x.o

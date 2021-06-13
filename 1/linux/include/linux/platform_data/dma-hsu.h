@@ -1,3 +1,21 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d3feaba2169b8d7ab29a78710f7764190373669423c10c5197ac01efbc69dea7
-size 478
+/*
+ * Driver for the High Speed UART DMA
+ *
+ * Copyright (C) 2015 Intel Corporation
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 2 as
+ * published by the Free Software Foundation.
+ */
+
+#ifndef _PLATFORM_DATA_DMA_HSU_H
+#define _PLATFORM_DATA_DMA_HSU_H
+
+#include <linux/device.h>
+
+struct hsu_dma_slave {
+	struct device	*dma_dev;
+	int		chan_id;
+};
+
+#endif /* _PLATFORM_DATA_DMA_HSU_H */

@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:fa1d57b65a3bbf7782d87009db984f47ce56d21a367c8465091fc45dcafb9675
-size 239
+/*
+ *  S390 version
+ *
+ *  Derived from "include/asm-i386/siginfo.h"
+ */
+
+#ifndef _S390_SIGINFO_H
+#define _S390_SIGINFO_H
+
+#ifdef __s390x__
+#define __ARCH_SI_PREAMBLE_SIZE (4 * sizeof(int))
+#endif
+
+#include <asm-generic/siginfo.h>
+
+#endif

@@ -1,3 +1,4 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c39598ca310cd0e4c2282b2131782e91be346c2b1cf3aa511f015a63ebeef210
-size 126
+
+softing-y := softing_main.o softing_fw.o
+obj-$(CONFIG_CAN_SOFTING) += softing.o
+obj-$(CONFIG_CAN_SOFTING_CS) += softing_cs.o

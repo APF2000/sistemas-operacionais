@@ -1,3 +1,5 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f08fe2b254eeade4cfe56b989d92c3b6994d0de6ec6f5b975d0f53279a0f5389
-size 42
+*.hash.c
+*.lex.c
+*.tab.c
+*.tab.h
+genksyms

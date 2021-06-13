@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1e36f3721264ee8aebed4b4cdc3462eb84e792187769837e0b120debc4491c69
-size 285
+#ifndef _PERF_PATH_H
+#define _PERF_PATH_H
+
+int path__join(char *bf, size_t size, const char *path1, const char *path2);
+int path__join3(char *bf, size_t size, const char *path1, const char *path2, const char *path3);
+
+bool is_regular_file(const char *file);
+
+#endif /* _PERF_PATH_H */

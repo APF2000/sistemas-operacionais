@@ -1,3 +1,31 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:12c787b9381bc638414c5d6ee95c0e5b2f49623ff89a077422ab96edcd9febc2
-size 433
+/dts-v1/;
+
+/include/ "bcm6368.dtsi"
+
+/ {
+	compatible = "brcm,bcm96368mvwg", "brcm,bcm6368";
+	model = "Broadcom BCM96368MVWG";
+
+	memory@0 {
+		device_type = "memory";
+		reg = <0x00000000 0x04000000>;
+	};
+
+	chosen {
+		bootargs = "console=ttyS0,115200";
+		stdout-path = &uart0;
+	};
+};
+
+&uart0 {
+	status = "okay";
+};
+
+/* FIXME: need to set up USB_CTRL registers first */
+&ehci {
+	status = "disabled";
+};
+
+&ohci {
+	status = "disabled";
+};

@@ -1,3 +1,38 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:86cffe0265e7afaadfe5baf7132efdb7a806c8c22739f4aea2956f91f5266976
-size 585
+[colors]
+
+	# These were the old defaults
+	top = red, lightgray
+	medium = green, lightgray
+	normal = black, lightgray
+	selected = lightgray, magenta
+	jump_arrows = blue, lightgray
+	addr = magenta, lightgray
+
+[tui]
+
+	# Defaults if linked with libslang
+	report = on
+	annotate = on
+	top = on
+
+[buildid]
+
+	# Default, disable using /dev/null
+	dir = /root/.debug
+
+[annotate]
+
+	# Defaults
+	hide_src_code = false
+	use_offset = true
+	jump_arrows = true
+	show_nr_jumps = false
+
+[report]
+
+	# Defaults
+	sort-order = comm,dso,symbol
+	percent-limit = 0
+	queue-size = 0
+	children = true
+	group = true

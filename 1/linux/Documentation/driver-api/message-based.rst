@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e67c625e854b7dfd0c83b3acf2cebed7fa670d2a443729b66dda4f04165fa8fa
-size 217
+Message-based devices
+=====================
+
+Fusion message devices
+----------------------
+
+.. kernel-doc:: drivers/message/fusion/mptbase.c
+   :export:
+
+.. kernel-doc:: drivers/message/fusion/mptscsih.c
+   :export:
+

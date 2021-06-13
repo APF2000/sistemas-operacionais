@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:06b37ea29424893e2f4efab8690571d83fd117c494724c1e7606771ec87d8fc2
-size 136
+# UAPI Header export list
+include include/uapi/asm-generic/Kbuild.asm
+
+generic-y += mman.h
+generic-y += resource.h
+generic-y += setup.h

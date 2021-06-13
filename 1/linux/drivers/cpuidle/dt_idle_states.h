@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:361aa4959c172c23e770d10ea4015188cb418ef0e97557350aaa487fad0dcbb4
-size 177
+#ifndef __DT_IDLE_STATES
+#define __DT_IDLE_STATES
+
+int dt_init_idle_driver(struct cpuidle_driver *drv,
+			const struct of_device_id *matches,
+			unsigned int start_idx);
+#endif

@@ -1,3 +1,25 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b13dbef06851b969d9692502c51343031bf8fcbdda54dda984e12e2c1a4b928c
-size 829
+/*
+ * Support for Intel Camera Imaging ISP subsystem.
+ * Copyright (c) 2015, Intel Corporation.
+ *
+ * This program is free software; you can redistribute it and/or modify it
+ * under the terms and conditions of the GNU General Public License,
+ * version 2, as published by the Free Software Foundation.
+ *
+ * This program is distributed in the hope it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+ * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for
+ * more details.
+ */
+
+#ifndef __BITOP_SUPPORT_H_INCLUDED__
+#define __BITOP_SUPPORT_H_INCLUDED__
+
+#define bitop_setbit(a, b) ((a) |= (1UL << (b)))
+
+#define bitop_getbit(a, b) (((a) & (1UL << (b))) != 0)
+
+#define bitop_clearbit(a, b) ((a) &= ~(1UL << (b)))
+
+#endif /* __BITOP_SUPPORT_H_INCLUDED__ */
+

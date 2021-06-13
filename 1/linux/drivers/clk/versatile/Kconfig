@@ -1,3 +1,32 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4a2b34074197a24eb5db0a702e9bf565a8c4cf8a6c0f90bb72f3847a5a85f619
-size 1007
+config ICST
+	bool
+
+config COMMON_CLK_VERSATILE
+	bool "Clock driver for ARM Reference designs"
+	depends on ARCH_INTEGRATOR || ARCH_REALVIEW || \
+		ARCH_VERSATILE || ARCH_VEXPRESS || ARM64 || \
+		COMPILE_TEST
+	select REGMAP_MMIO
+	---help---
+          Supports clocking on ARM Reference designs:
+	  - Integrator/AP and Integrator/CP
+	  - RealView PB1176, EB, PB11MP and PBX
+	  - Versatile Express
+
+config CLK_SP810
+	bool "Clock driver for ARM SP810 System Controller"
+	depends on COMMON_CLK_VERSATILE
+	default y if ARCH_VEXPRESS
+	---help---
+	  Supports clock muxing (REFCLK/TIMCLK to TIMERCLKEN0-3) capabilities
+	  of the ARM SP810 System Controller cell.
+
+config CLK_VEXPRESS_OSC
+	bool "Clock driver for Versatile Express OSC clock generators"
+	depends on COMMON_CLK_VERSATILE
+	depends on VEXPRESS_CONFIG
+	default y if ARCH_VEXPRESS
+	---help---
+	  Simple regmap-based driver driving clock generators on Versatile
+	  Express platforms hidden behind its configuration infrastructure,
+	  commonly known as OSCs.

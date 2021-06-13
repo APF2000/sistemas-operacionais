@@ -1,3 +1,24 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:295c99c911e7bfcfcd9066089e28f7143c6303ae8aad1fb57b8888c2a914a863
-size 878
+/******************************************************************************
+ *
+ * Copyright(c) 2007 - 2011 Realtek Corporation. All rights reserved.
+ *
+ * This program is free software; you can redistribute it and/or modify it
+ * under the terms of version 2 of the GNU General Public License as
+ * published by the Free Software Foundation.
+ *
+ * This program is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+ * FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for
+ * more details.
+ *
+ ******************************************************************************/
+#ifndef __SDIO_OSINTF_H__
+#define __SDIO_OSINTF_H__
+
+
+
+u8 sd_hal_bus_init(struct adapter *padapter);
+u8 sd_hal_bus_deinit(struct adapter *padapter);
+void sd_c2h_hdl(struct adapter *padapter);
+
+#endif

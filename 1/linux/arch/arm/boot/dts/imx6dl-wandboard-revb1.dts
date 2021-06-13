@@ -1,3 +1,22 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ffbec66622207a3aa720284bb7134457e41980a35a59e94a5f3a45d81e32d06c
-size 539
+/*
+ * Copyright 2013 Freescale Semiconductor, Inc.
+ *
+ * Author: Fabio Estevam <fabio.estevam@freescale.com>
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 2 as
+ * published by the Free Software Foundation.
+ *
+ */
+/dts-v1/;
+#include "imx6dl.dtsi"
+#include "imx6qdl-wandboard-revb1.dtsi"
+
+/ {
+	model = "Wandboard i.MX6 Dual Lite Board rev B1";
+	compatible = "wand,imx6dl-wandboard", "fsl,imx6dl";
+
+	memory {
+		reg = <0x10000000 0x40000000>;
+	};
+};

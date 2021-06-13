@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:816cbd7e979babffff7e8aa2700b43167a08ef46c25f8f2e1bf30d9424e1bbd9
-size 393
+#
+# Makefile for CEPH filesystem.
+#
+obj-$(CONFIG_CEPH_LIB) += libceph.o
+
+libceph-y := ceph_common.o messenger.o msgpool.o buffer.o pagelist.o \
+	mon_client.o \
+	cls_lock_client.o \
+	osd_client.o osdmap.o crush/crush.o crush/mapper.o crush/hash.o \
+	debugfs.o \
+	auth.o auth_none.o \
+	crypto.o armor.o \
+	auth_x.o \
+	ceph_fs.o ceph_strings.o ceph_hash.o \
+	pagevec.o snapshot.o string_table.o
+

@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:100db894ae94ca9fec33a9c543c0929cef0f91bb346d5418701ad235e524ce98
-size 240
+AU Optronics Corporation 18.5" FHD (1920x1080) TFT LCD panel
+
+Required properties:
+- compatible: should be "auo,g185han01"
+
+This binding is compatible with the simple-panel binding, which is specified
+in simple-panel.txt in this directory.

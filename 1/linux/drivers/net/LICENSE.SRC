@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:926bbcf0ff4b061b3ee987a486877fc09fb1ecb506e3375652bd97d925c9cd12
-size 891
+Code in this directory written at the IDA Supercomputing Research Center
+carries the following copyright and license.
+
+    Copyright 1993 United States Government as represented by the
+    Director, National Security Agency.  This software may be used
+    and distributed according to the terms of the GNU General Public License,
+    incorporated herein by reference.
+
+    In addition to the disclaimers in the GPL, SRC expressly disclaims any
+    and all warranties, expressed or implied, concerning the enclosed software.
+    This software was developed at SRC for use in internal research, and the
+    intent in sharing this software is to promote the productive interchange
+    of ideas throughout the research community.   All software is furnished
+    on an "as-is" basis.  No further updates to this software should be
+    expected.  Although updates may occur, no commitment exists.

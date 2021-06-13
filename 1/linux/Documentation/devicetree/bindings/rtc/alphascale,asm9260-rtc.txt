@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c41faf09b0d5aa9d3700cb22d91b8c52b20a5582a7b34cb7f887e2fd5a045590
-size 515
+* Alphascale asm9260 SoC Real Time Clock
+
+Required properties:
+- compatible: Should be "alphascale,asm9260-rtc"
+- reg: Physical base address of the controller and length
+       of memory mapped region.
+- interrupts: IRQ line for the RTC.
+- clocks: Reference to the clock entry.
+- clock-names: should contain:
+  * "ahb" for the SoC RTC clock
+
+Example:
+rtc0: rtc@800a0000 {
+	compatible = "alphascale,asm9260-rtc";
+	reg = <0x800a0000 0x100>;
+	clocks = <&acc CLKID_AHB_RTC>;
+	clock-names = "ahb";
+	interrupts = <2>;
+};

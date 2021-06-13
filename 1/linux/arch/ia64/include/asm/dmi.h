@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f004aaddbf5b0000fb43a91a8d52d633d95331ef3fa447d91821e1815de12f13
-size 304
+#ifndef _ASM_DMI_H
+#define _ASM_DMI_H 1
+
+#include <linux/slab.h>
+#include <asm/io.h>
+
+/* Use normal IO mappings for DMI */
+#define dmi_early_remap		ioremap
+#define dmi_early_unmap(x, l)	iounmap(x)
+#define dmi_remap		ioremap
+#define dmi_unmap		iounmap
+#define dmi_alloc(l)		kzalloc(l, GFP_ATOMIC)
+
+#endif

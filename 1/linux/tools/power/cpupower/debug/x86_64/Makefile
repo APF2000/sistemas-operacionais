@@ -1,3 +1,30 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a5b31f568854c2f7cb10cc7174e9a3c21dff58d739bd02cab8f2e52e5ee06e9d
-size 632
+OUTPUT=./
+ifeq ("$(origin O)", "command line")
+	OUTPUT := $(O)/
+endif
+
+DESTDIR =
+bindir  = /usr/bin
+
+INSTALL = /usr/bin/install
+
+
+default: all
+
+$(OUTPUT)centrino-decode: ../i386/centrino-decode.c
+	$(CC) $(CFLAGS) -o $@ $<
+
+$(OUTPUT)powernow-k8-decode: ../i386/powernow-k8-decode.c
+	$(CC) $(CFLAGS) -o $@ $<
+
+all: $(OUTPUT)centrino-decode $(OUTPUT)powernow-k8-decode
+
+clean:
+	rm -rf $(OUTPUT)centrino-decode $(OUTPUT)powernow-k8-decode
+
+install:
+	$(INSTALL) -d $(DESTDIR)${bindir}
+	$(INSTALL) $(OUTPUT)centrino-decode $(DESTDIR)${bindir}
+	$(INSTALL) $(OUTPUT)powernow-k8-decode $(DESTDIR)${bindir}
+
+.PHONY: all default clean install

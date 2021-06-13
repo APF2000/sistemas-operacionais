@@ -1,3 +1,5 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:0b9d60905bf5ce382ad6fc3731ac513e3681be4181c9e5f02deb14cec0a59a62
-size 203
+obj-y 	:= access.o chip.o core.o handle.o irqdomain.o virq.o
+
+obj-$(CONFIG_INTC_BALANCING)		+= balancing.o
+obj-$(CONFIG_INTC_USERIMASK)		+= userimask.o
+obj-$(CONFIG_INTC_MAPPING_DEBUG)	+= virq-debugfs.o

@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:65e28e63d389ba7111f489e9a5666dbcb2612af80dd3cd4d43cfb832862be085
-size 179
+#ifndef _CHSC_SCH_H
+#define _CHSC_SCH_H
+
+struct chsc_request {
+	struct completion completion;
+	struct irb irb;
+};
+
+struct chsc_private {
+	struct chsc_request *request;
+};
+
+#endif

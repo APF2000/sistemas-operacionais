@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:df492f89009e8e93b2c01bfa042d2eae1ddce4ebf85cfcd6f53a1b0a09d8b4f0
-size 302
+The PLEB project was started as a student initiative at the School of
+Computer Science and Engineering, University of New South Wales to make a
+pocket computer capable of running the Linux Kernel.
+
+PLEB support has yet to be fully integrated.
+
+For more information, see:
+
+	http://www.cse.unsw.edu.au
+
+

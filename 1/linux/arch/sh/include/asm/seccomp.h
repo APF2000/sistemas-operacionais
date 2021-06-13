@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:54e35e77ac359e2765bbdb23706343a94b90b193cbb0d1bf184ed72cdd92b755
-size 241
+#ifndef __ASM_SECCOMP_H
+
+#include <linux/unistd.h>
+
+#define __NR_seccomp_read __NR_read
+#define __NR_seccomp_write __NR_write
+#define __NR_seccomp_exit __NR_exit
+#define __NR_seccomp_sigreturn __NR_rt_sigreturn
+
+#endif /* __ASM_SECCOMP_H */

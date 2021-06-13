@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d816e8fb5ade8848416859715b80fd1b9512eeb9fca267818929ebfad7d59206
-size 403
+* Common properties of all MTD devices
+
+Optional properties:
+- label: user-defined MTD device name. Can be used to assign user
+  friendly names to MTD devices (instead of the flash model or flash
+  controller based name) in order to ease flash device identification
+  and/or describe what they are used for.
+
+Example:
+
+	flash@0 {
+		label = "System-firmware";
+
+		/* flash type specific properties */
+	};

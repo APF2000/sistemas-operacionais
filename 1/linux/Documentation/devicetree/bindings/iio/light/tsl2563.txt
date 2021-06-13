@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a9e76669b4598e91e59edd815fc98a4f0fa2ba04b6bfb7e43d8003ba1e79925c
-size 402
+* AMS TAOS TSL2563 ambient light sensor
+
+Required properties:
+
+  - compatible : should be "amstaos,tsl2563"
+  - reg : the I2C address of the sensor
+
+Optional properties:
+
+  - amstaos,cover-comp-gain : integer used as multiplier for gain
+                              compensation (default = 1)
+
+Example:
+
+tsl2563@29 {
+	compatible = "amstaos,tsl2563";
+	reg = <0x29>;
+	amstaos,cover-comp-gain = <16>;
+};

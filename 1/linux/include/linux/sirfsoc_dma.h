@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e81b67a3a9b805fe89cdfaf2e651fe7a732b9637657411c64e8a3e0928ffdf7d
-size 123
+#ifndef _SIRFSOC_DMA_H_
+#define _SIRFSOC_DMA_H_
+
+bool sirfsoc_dma_filter_id(struct dma_chan *chan, void *chan_id);
+
+#endif

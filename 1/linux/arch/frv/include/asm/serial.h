@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:986330979d4d69f49144efc03ebd87a1153ec0118964f283be074fddb75fa5e8
-size 308
+/*
+ * serial.h
+ *
+ * Copyright (C) 2003 Develer S.r.l. (http://www.develer.com/)
+ * Author: Bernardo Innocenti <bernie@codewiz.org>
+ *
+ * Based on linux/include/asm-i386/serial.h
+ */
+#include <asm/serial-regs.h>
+
+/*
+ * the base baud is derived from the clock speed and so is variable
+ */
+#define BASE_BAUD 0

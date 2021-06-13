@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:45839be99032cc03ddf8955d941d1ba76053730fce1b3c443b57fd7783229dbe
-size 468
+#include <linux/bitops.h>
+#undef __memset
+extern void *__memset(void *, int, __kernel_size_t);
+#undef __memcpy
+extern void *__memcpy(void *, const void *, __kernel_size_t);
+#undef __memmove
+extern void *__memmove(void *, const void *, __kernel_size_t);
+#undef memset
+extern void *memset(void *, int, __kernel_size_t);
+#undef memcpy
+extern void *memcpy(void *, const void *, __kernel_size_t);
+#undef memmove
+extern void *memmove(void *, const void *, __kernel_size_t);

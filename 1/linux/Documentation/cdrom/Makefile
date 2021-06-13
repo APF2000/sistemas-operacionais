@@ -1,3 +1,21 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b04c7c8d453187b20716b81bf4d21f7913230342924d0438ec097ed87fc98071
-size 441
+LATEXFILE = cdrom-standard
+
+all:
+	make clean
+	latex $(LATEXFILE)
+	latex $(LATEXFILE)
+	@if [ -x `which gv` ]; then \
+		`dvips -q -t letter -o $(LATEXFILE).ps $(LATEXFILE).dvi` ;\
+		`gv -antialias -media letter -nocenter $(LATEXFILE).ps` ;\
+	else \
+		`xdvi $(LATEXFILE).dvi &` ;\
+	fi
+	make sortofclean
+
+clean:
+	rm -f $(LATEXFILE).ps $(LATEXFILE).dvi $(LATEXFILE).aux $(LATEXFILE).log 
+
+sortofclean:
+	rm -f $(LATEXFILE).aux $(LATEXFILE).log 
+
+

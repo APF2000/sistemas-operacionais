@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b45a762d771e5208bf10f0c0ac506bda4ccccba51679d7ad535120dd23219d4c
-size 205
+#!/bin/bash
+
+#
+# export perf data to a postgresql database. Can cover
+# perf ip samples (excluding the tracepoints). No special
+# record requirements, just record what you want to export.
+#
+perf record $@

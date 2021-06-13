@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e558944a28eda0793c1b67301a04b66ca093f07003fc310c393419815e355e76
-size 145
+#ifndef _SCSI_TRANSPORT_API_H
+#define _SCSI_TRANSPORT_API_H
+
+void scsi_schedule_eh(struct Scsi_Host *shost);
+
+#endif /* _SCSI_TRANSPORT_API_H */

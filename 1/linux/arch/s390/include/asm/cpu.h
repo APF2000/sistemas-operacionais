@@ -1,3 +1,24 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4ff570cc6e1999e494cd1f5571bd13f9ec69687d38283dec3f4dafadefcbb188
-size 510
+/*
+ *    Copyright IBM Corp. 2000, 2009
+ *    Author(s): Hartmut Penner <hp@de.ibm.com>,
+ *		 Martin Schwidefsky <schwidefsky@de.ibm.com>,
+ *		 Christian Ehrhardt <ehrhardt@de.ibm.com>,
+ */
+
+#ifndef _ASM_S390_CPU_H
+#define _ASM_S390_CPU_H
+
+#ifndef __ASSEMBLY__
+
+#include <linux/types.h>
+
+struct cpuid
+{
+	unsigned int version :	8;
+	unsigned int ident   : 24;
+	unsigned int machine : 16;
+	unsigned int unused  : 16;
+} __attribute__ ((packed, aligned(8)));
+
+#endif /* __ASSEMBLY__ */
+#endif /* _ASM_S390_CPU_H */

@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:381410048399e87c56addcf13a7b7c0ae49145ba361c015c9ef260eacceb041e
-size 272
+#
+# Makefile for the linux pstorefs routines.
+#
+
+obj-$(CONFIG_PSTORE) += pstore.o
+
+pstore-objs += inode.o platform.o
+pstore-$(CONFIG_PSTORE_FTRACE)	+= ftrace.o
+
+pstore-$(CONFIG_PSTORE_PMSG)	+= pmsg.o
+
+ramoops-objs += ram.o ram_core.o
+obj-$(CONFIG_PSTORE_RAM)	+= ramoops.o

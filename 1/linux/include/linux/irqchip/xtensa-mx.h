@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d87635c852b5fbb9cca87102a5cbdb41bc6762d746ea891b75502e3929287b5f
-size 467
+/*
+ * Xtensa MX interrupt distributor
+ *
+ * Copyright (C) 2002 - 2013 Tensilica, Inc.
+ *
+ * This file is subject to the terms and conditions of the GNU General Public
+ * License.  See the file "COPYING" in the main directory of this archive
+ * for more details.
+ */
+
+#ifndef __LINUX_IRQCHIP_XTENSA_MX_H
+#define __LINUX_IRQCHIP_XTENSA_MX_H
+
+struct device_node;
+int xtensa_mx_init_legacy(struct device_node *interrupt_parent);
+
+#endif /* __LINUX_IRQCHIP_XTENSA_MX_H */

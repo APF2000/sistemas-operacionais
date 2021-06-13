@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:20a3f55a085e98b4ff00b5283a0459cd4ed37a0d04c7041a641a25bca7e9ea3f
-size 182
+
+ccflags-y := -Iinclude/drm
+
+udl-y := udl_drv.o udl_modeset.o udl_connector.o udl_encoder.o udl_main.o udl_fb.o udl_transfer.o udl_gem.o udl_dmabuf.o
+
+obj-$(CONFIG_DRM_UDL) := udl.o

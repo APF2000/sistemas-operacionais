@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:fcf4f2dd85e069068764cc57e03bbcda8746d4379b1b06a5577a546d4bfe5205
-size 434
+/*
+ * include/asm-xtensa/vga.h
+ *
+ * This file is subject to the terms and conditions of the GNU General Public
+ * License.  See the file "COPYING" in the main directory of this archive
+ * for more details.
+ *
+ * Copyright (C) 2001 - 2005 Tensilica Inc.
+ */
+
+#ifndef _XTENSA_VGA_H
+#define _XTENSA_VGA_H
+
+#define VGA_MAP_MEM(x,s) (unsigned long)phys_to_virt(x)
+
+#define vga_readb(x)	(*(x))
+#define vga_writeb(x,y)	(*(y) = (x))
+
+#endif

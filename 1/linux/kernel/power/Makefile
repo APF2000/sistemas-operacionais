@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f2006b505bdbaddf8688e7d367bc32a435fe0ed7492053cf91a9bb797a2f0b37
-size 472
+
+ccflags-$(CONFIG_PM_DEBUG)	:= -DDEBUG
+
+KASAN_SANITIZE_snapshot.o	:= n
+
+obj-y				+= qos.o
+obj-$(CONFIG_PM)		+= main.o
+obj-$(CONFIG_VT_CONSOLE_SLEEP)	+= console.o
+obj-$(CONFIG_FREEZER)		+= process.o
+obj-$(CONFIG_SUSPEND)		+= suspend.o
+obj-$(CONFIG_PM_TEST_SUSPEND)	+= suspend_test.o
+obj-$(CONFIG_HIBERNATION)	+= hibernate.o snapshot.o swap.o user.o
+obj-$(CONFIG_PM_AUTOSLEEP)	+= autosleep.o
+obj-$(CONFIG_PM_WAKELOCKS)	+= wakelock.o
+
+obj-$(CONFIG_MAGIC_SYSRQ)	+= poweroff.o

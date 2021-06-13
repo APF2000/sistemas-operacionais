@@ -1,3 +1,29 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d98befcf79953dd2207b33b80c3c827d6991cf1aa3f7bfd7c5ecf61628e40380
-size 802
+/* linux/arch/arm/plat-s3c64xx/setup-i2c1.c
+ *
+ * Copyright 2008 Openmoko, Inc.
+ * Copyright 2008 Simtec Electronics
+ *	Ben Dooks <ben@simtec.co.uk>
+ *	http://armlinux.simtec.co.uk/
+ *
+ * Base S3C64XX I2C bus 1 gpio configuration
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 2 as
+ * published by the Free Software Foundation.
+*/
+
+#include <linux/kernel.h>
+#include <linux/types.h>
+#include <linux/gpio.h>
+
+struct platform_device; /* don't need the contents */
+
+#include <linux/platform_data/i2c-s3c2410.h>
+#include <plat/gpio-cfg.h>
+#include <mach/gpio-samsung.h>
+
+void s3c_i2c1_cfg_gpio(struct platform_device *dev)
+{
+	s3c_gpio_cfgall_range(S3C64XX_GPB(2), 2,
+			      S3C_GPIO_SFN(6), S3C_GPIO_PULL_UP);
+}

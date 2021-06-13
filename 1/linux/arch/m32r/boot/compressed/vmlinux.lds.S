@@ -1,3 +1,30 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:7698fc4735bdfff777e88844eb89d87051bce9536b6214191928c8e7b3f85543
-size 497
+
+OUTPUT_ARCH(m32r)
+ENTRY(startup)
+SECTIONS
+{
+  . = CONFIG_MEMORY_START + 0x00400000;
+
+  _text = .;
+  .text : { *(.text) } = 0
+  .rodata : { *(.rodata) *(.rodata.*) }
+  _etext = .;
+
+  . = ALIGN(32 / 8);
+  .data : { *(.data) }
+  . = ALIGN(32 / 8);
+  _got = .;
+  .got  : { *(.got) _egot = .; *(.got.*) }
+  _edata  =  .;
+
+  . = ALIGN(32 / 8);
+  __bss_start = .;
+  .bss : { *(.bss) *(.sbss) }
+  . = ALIGN(32 / 8);
+  _ebss = .;
+  . = ALIGN(4096);
+  . += 4096;
+  end = . ;
+
+  got_len = (_egot - _got);
+}

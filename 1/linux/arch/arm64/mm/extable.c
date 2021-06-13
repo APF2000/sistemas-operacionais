@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:6782f5ab2b9644fb02f9342bb5451f3fe84e25768c639a89de97982ef2d71236
-size 343
+/*
+ * Based on arch/arm/mm/extable.c
+ */
+
+#include <linux/extable.h>
+#include <linux/uaccess.h>
+
+int fixup_exception(struct pt_regs *regs)
+{
+	const struct exception_table_entry *fixup;
+
+	fixup = search_exception_tables(instruction_pointer(regs));
+	if (fixup)
+		regs->pc = (unsigned long)&fixup->fixup + fixup->fixup;
+
+	return fixup != NULL;
+}

@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:84acd0aa0e7218d956d86a58816b95a65e6f5715c3acde0584fc499f12780624
-size 468
+#
+# NetLabel configuration
+#
+
+config NETLABEL
+	bool "NetLabel subsystem support"
+	depends on SECURITY
+	select CRC_CCITT if IPV6
+	default n
+	---help---
+	  NetLabel provides support for explicit network packet labeling
+	  protocols such as CIPSO and RIPSO.  For more information see
+	  Documentation/netlabel as well as the NetLabel SourceForge project
+	  for configuration tools and additional documentation.
+
+	   * http://netlabel.sf.net
+
+	  If you are unsure, say N.

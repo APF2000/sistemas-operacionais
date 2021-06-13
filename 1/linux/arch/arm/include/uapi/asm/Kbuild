@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a9494be1abfe31b5ec238031cdb8d63296a53363ab65ed8200111d1f0515221c
-size 151
+# UAPI Header export list
+include include/uapi/asm-generic/Kbuild.asm
+
+genhdr-y += unistd-common.h
+genhdr-y += unistd-oabi.h
+genhdr-y += unistd-eabi.h

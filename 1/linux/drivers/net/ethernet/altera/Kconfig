@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:8cb88c0a7b17ff35ca90345c632bc7f6412a5d4c5788e3aa55b0e9041a370b8b
-size 281
+config ALTERA_TSE
+	tristate "Altera Triple-Speed Ethernet MAC support"
+	depends on HAS_DMA
+	select PHYLIB
+	---help---
+	  This driver supports the Altera Triple-Speed (TSE) Ethernet MAC.
+
+	  To compile this driver as a module, choose M here. The module
+	  will be called alteratse.

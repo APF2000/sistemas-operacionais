@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:93b7f6bbd7f25a0bd1bf0c019ceee33891cce293c9b7d80385d087094bc0531d
-size 409
+#ifndef _ASM_H8300_SIGCONTEXT_H
+#define _ASM_H8300_SIGCONTEXT_H
+
+struct sigcontext {
+	unsigned long  sc_mask;		/* old sigmask */
+	unsigned long  sc_usp;		/* old user stack pointer */
+	unsigned long  sc_er0;
+	unsigned long  sc_er1;
+	unsigned long  sc_er2;
+	unsigned long  sc_er3;
+	unsigned long  sc_er4;
+	unsigned long  sc_er5;
+	unsigned long  sc_er6;
+	unsigned short sc_ccr;
+	unsigned long  sc_pc;
+};
+
+#endif

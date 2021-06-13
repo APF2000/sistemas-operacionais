@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c61de07a0d0f412e0419623fc0301a46ba713bd4291784ef3cbf1881f2a0412a
-size 303
+#
+# SNI RM
+#
+platform-$(CONFIG_SNI_RM)		+= sni/
+cflags-$(CONFIG_SNI_RM)		+= -I$(srctree)/arch/mips/include/asm/mach-rm
+ifdef CONFIG_CPU_LITTLE_ENDIAN
+load-$(CONFIG_SNI_RM)		+= 0xffffffff80600000
+else
+load-$(CONFIG_SNI_RM)		+= 0xffffffff80030000
+endif
+all-$(CONFIG_SNI_RM)		:= $(COMPRESSION_FNAME).ecoff

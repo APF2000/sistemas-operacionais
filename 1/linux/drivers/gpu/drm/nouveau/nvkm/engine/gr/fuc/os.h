@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:3d0a0f3c79adb987efdabf66a49a0ec805f4f1344e64479855ec19b92709b13f
-size 167
+#ifndef __NVKM_GRAPH_OS_H__
+#define __NVKM_GRAPH_OS_H__
+
+#define E_BAD_COMMAND  0x00000001
+#define E_CMD_OVERFLOW 0x00000002
+#define E_BAD_FWMTHD   0x00000003
+
+#endif

@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:8aa8fd35438679324285273fdbe4e528055a5bd6037abdd680e8ede22c59f604
-size 231
+/*
+ * clock.h:  Definitions for clock operations on the Sparc.
+ *
+ * Copyright (C) 1995 David S. Miller (davem@caip.rutgers.edu)
+ */
+#ifndef _SPARC_CLOCK_H
+#define _SPARC_CLOCK_H
+
+/* Foo for now. */
+
+#endif /* !(_SPARC_CLOCK_H) */

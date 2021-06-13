@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2b090d56c2a34fc56242d80c8fb2da513e2ef0d4a7dbcba1e0998f9098dcdafd
-size 298
+#
+# Copyright (C) 1998, 1999, 2001 Philip Blundell
+#
+
+obj-$(CONFIG_FPE_NWFPE)		+= nwfpe.o
+
+nwfpe-y				+= fpa11.o fpa11_cpdo.o fpa11_cpdt.o \
+				   fpa11_cprt.o fpmodule.o fpopcode.o \
+				   softfloat.o single_cpdo.o double_cpdo.o \
+				   entry.o
+
+nwfpe-$(CONFIG_FPE_NWFPE_XP)	+= extended_cpdo.o

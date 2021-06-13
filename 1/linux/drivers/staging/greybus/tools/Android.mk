@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:0313b18347f23871b3e352be88f7d1d4d9571a36b315d2a4508062b083732dbe
-size 179
+LOCAL_PATH:= $(call my-dir)
+
+include $(CLEAR_VARS)
+
+LOCAL_SRC_FILES:= loopback_test.c
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE := gb_loopback_test
+
+include $(BUILD_EXECUTABLE)
+

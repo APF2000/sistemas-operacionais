@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a1f310042d4854262ec62cb2e468ff0987290366cb3eecc22c005e7f33703a9b
-size 248
+#ifndef _ASM_C6X_SECTIONS_H
+#define _ASM_C6X_SECTIONS_H
+
+#include <asm-generic/sections.h>
+
+extern char _vectors_start[];
+extern char _vectors_end[];
+
+extern char _data_lma[];
+extern char _fdt_start[], _fdt_end[];
+
+#endif /* _ASM_C6X_SECTIONS_H */

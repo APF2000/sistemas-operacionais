@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:949e4e89796ce0c6c9407e03e9c6f388ed53c96d1cbec9a77321dfec39195348
-size 117
+#
+# core part of the sparc kernel
+#
+
+obj-y += kernel/
+obj-y += mm/
+obj-y += math-emu/
+obj-y += net/
+obj-y += crypto/

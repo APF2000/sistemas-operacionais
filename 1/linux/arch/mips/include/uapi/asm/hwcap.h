@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:7304e3f7e54eb59545d645cd3cbf75b3ca18d57da30d29c579e2eeee94148da5
-size 168
+#ifndef _UAPI_ASM_HWCAP_H
+#define _UAPI_ASM_HWCAP_H
+
+/* HWCAP flags */
+#define HWCAP_MIPS_R6		(1 << 0)
+#define HWCAP_MIPS_MSA		(1 << 1)
+
+#endif /* _UAPI_ASM_HWCAP_H */

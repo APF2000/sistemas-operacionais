@@ -1,3 +1,41 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:cef9d7a77bd8094e6e13e03d8dc38e77a0776c0e13aec5ccea802a6a57b6b2c3
-size 1016
+/*
+ * Samsung's S3C6400 SoC device tree source
+ *
+ * Copyright (c) 2013 Tomasz Figa <tomasz.figa@gmail.com>
+ *
+ * Samsung's S3C6400 SoC device nodes are listed in this file. S3C6400
+ * based board files can include this file and provide values for board specfic
+ * bindings.
+ *
+ * Note: This file does not include device nodes for all the controllers in
+ * S3C6400 SoC. As device tree coverage for S3C6400 increases, additional
+ * nodes can be added to this file.
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 2 as
+ * published by the Free Software Foundation.
+*/
+
+#include "s3c64xx.dtsi"
+
+/ {
+	compatible = "samsung,s3c6400";
+};
+
+&vic0 {
+	valid-mask = <0xfffffe1f>;
+	valid-wakeup-mask = <0x00200004>;
+};
+
+&vic1 {
+	valid-mask = <0xffffffff>;
+	valid-wakeup-mask = <0x53020000>;
+};
+
+&soc {
+	clocks: clock-controller@7e00f000 {
+		compatible = "samsung,s3c6400-clock";
+		reg = <0x7e00f000 0x1000>;
+		#clock-cells = <1>;
+	};
+};

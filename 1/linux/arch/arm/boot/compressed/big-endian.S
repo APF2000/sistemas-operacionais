@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b8ac6b350fd5c9ce6d60baf54c730e23f0b25572338a5b3193b4828e07018df2
-size 304
+/*
+ *  linux/arch/arm/boot/compressed/big-endian.S
+ *
+ *  Switch CPU into big endian mode.
+ *  Author: Nicolas Pitre
+ */
+
+	.section ".start", #alloc, #execinstr
+
+	mrc	p15, 0, r0, c1, c0, 0	@ read control reg
+	orr	r0, r0, #(1 << 7)	@ enable big endian mode
+	mcr	p15, 0, r0, c1, c0, 0	@ write control reg
+

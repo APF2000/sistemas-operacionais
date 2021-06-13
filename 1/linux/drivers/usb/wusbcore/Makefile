@@ -1,3 +1,25 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:22d3414cd9083bd5be63966d1c23047b6ff7861b62277f34df96c4db52bf6a8c
-size 391
+ccflags-$(CONFIG_USB_WUSB_CBAF_DEBUG) := -DDEBUG
+
+obj-$(CONFIG_USB_WUSB)		+= wusbcore.o
+obj-$(CONFIG_USB_HWA_HCD)	+= wusb-wa.o
+obj-$(CONFIG_USB_WUSB_CBAF)	+= wusb-cbaf.o
+
+
+wusbcore-y :=		\
+	crypto.o	\
+	devconnect.o	\
+	dev-sysfs.o	\
+	mmc.o		\
+	pal.o		\
+	rh.o		\
+	reservation.o	\
+	security.o	\
+	wusbhc.o
+
+wusb-cbaf-y := cbaf.o
+
+wusb-wa-y :=		\
+	wa-hc.o		\
+	wa-nep.o	\
+	wa-rpipe.o	\
+	wa-xfer.o

@@ -1,3 +1,24 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:8dbd235c79368ffb210c9eaf315e15faa9c6f34f6b322addb0e1024ba2be2592
-size 640
+Marvell Armada 370 and Armada XP Platforms Device Tree Bindings
+---------------------------------------------------------------
+
+Boards with a SoC of the Marvell Armada 370 and Armada XP families
+shall have the following property:
+
+Required root node property:
+
+compatible: must contain "marvell,armada-370-xp"
+
+In addition, boards using the Marvell Armada 370 SoC shall have the
+following property:
+
+Required root node property:
+
+compatible: must contain "marvell,armada370"
+
+In addition, boards using the Marvell Armada XP SoC shall have the
+following property:
+
+Required root node property:
+
+compatible: must contain "marvell,armadaxp"
+

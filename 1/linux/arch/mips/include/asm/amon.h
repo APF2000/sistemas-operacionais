@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:57c5b5364c285873dc064d8a996930e8487d7d4cbd2e7836f7e1fa9ef6782906
-size 409
+/*
+ * This file is subject to the terms and conditions of the GNU General Public
+ * License.  See the file "COPYING" in the main directory of this archive
+ * for more details.
+ *
+ * Copyright (C) 2013 Imagination Technologies Ltd.
+ *
+ * Arbitrary Monitor Support (AMON)
+ */
+int amon_cpu_avail(int cpu);
+int amon_cpu_start(int cpu, unsigned long pc, unsigned long sp,
+		   unsigned long gp, unsigned long a0);

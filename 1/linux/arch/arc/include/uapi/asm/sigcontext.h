@@ -1,3 +1,22 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:857f3b2e65e2bbb67a13a2135d9f3b62ccbdc617e35e293ceb8b89e00702a57e
-size 570
+/*
+ * Copyright (C) 2004, 2007-2010, 2011-2012 Synopsys, Inc. (www.synopsys.com)
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 2 as
+ * published by the Free Software Foundation.
+ */
+
+#ifndef _ASM_ARC_SIGCONTEXT_H
+#define _ASM_ARC_SIGCONTEXT_H
+
+#include <asm/ptrace.h>
+
+/*
+ * Signal context structure - contains all info to do with the state
+ * before the signal handler was invoked.
+ */
+struct sigcontext {
+	struct user_regs_struct regs;
+};
+
+#endif /* _ASM_ARC_SIGCONTEXT_H */

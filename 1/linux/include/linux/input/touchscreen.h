@@ -1,3 +1,35 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c1f37eae11845841a51e5f9339f0a67dbbbc95c3527c1eec5661f8d2b5aedd1f
-size 909
+/*
+ * Copyright (c) 2014 Sebastian Reichel <sre@kernel.org>
+ *
+ * This program is free software; you can redistribute it and/or modify it
+ * under the terms of the GNU General Public License version 2 as published by
+ * the Free Software Foundation.
+ */
+
+#ifndef _TOUCHSCREEN_H
+#define _TOUCHSCREEN_H
+
+struct input_dev;
+struct input_mt_pos;
+
+struct touchscreen_properties {
+	unsigned int max_x;
+	unsigned int max_y;
+	bool invert_x;
+	bool invert_y;
+	bool swap_x_y;
+};
+
+void touchscreen_parse_properties(struct input_dev *input, bool multitouch,
+				  struct touchscreen_properties *prop);
+
+void touchscreen_set_mt_pos(struct input_mt_pos *pos,
+			    const struct touchscreen_properties *prop,
+			    unsigned int x, unsigned int y);
+
+void touchscreen_report_pos(struct input_dev *input,
+			    const struct touchscreen_properties *prop,
+			    unsigned int x, unsigned int y,
+			    bool multitouch);
+
+#endif

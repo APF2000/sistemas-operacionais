@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d25cbb86f2f74c1f9a4f40e7b97031579e490b9d325eb1d25f5e4bd6d5bf6bb6
-size 363
+#ifndef __CGROUP_H__
+#define __CGROUP_H__
+
+#include <linux/refcount.h>
+
+struct option;
+
+struct cgroup_sel {
+	char *name;
+	int fd;
+	refcount_t refcnt;
+};
+
+
+extern int nr_cgroups; /* number of explicit cgroups defined */
+void close_cgroup(struct cgroup_sel *cgrp);
+int parse_cgroups(const struct option *opt, const char *str, int unset);
+
+#endif /* __CGROUP_H__ */

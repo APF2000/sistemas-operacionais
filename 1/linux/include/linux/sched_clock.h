@@ -1,3 +1,26 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d5505cd73d0994f931a00c0d372bbf6900b24c1b4f7b0aa9be308069fe340602
-size 661
+/*
+ * sched_clock.h: support for extending counters to full 64-bit ns counter
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 2 as
+ * published by the Free Software Foundation.
+ */
+#ifndef LINUX_SCHED_CLOCK
+#define LINUX_SCHED_CLOCK
+
+#ifdef CONFIG_GENERIC_SCHED_CLOCK
+extern void sched_clock_postinit(void);
+
+extern void sched_clock_register(u64 (*read)(void), int bits,
+				 unsigned long rate);
+#else
+static inline void sched_clock_postinit(void) { }
+
+static inline void sched_clock_register(u64 (*read)(void), int bits,
+					unsigned long rate)
+{
+	;
+}
+#endif
+
+#endif

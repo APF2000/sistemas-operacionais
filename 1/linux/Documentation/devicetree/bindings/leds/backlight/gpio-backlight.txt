@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:372d0b68b3317b3de6083c7d4c2ae8e7d48f1955eb7cadd26e07056ed8daaa4a
-size 395
+gpio-backlight bindings
+
+Required properties:
+  - compatible: "gpio-backlight"
+  - gpios: describes the gpio that is used for enabling/disabling the backlight.
+    refer to bindings/gpio/gpio.txt for more details.
+
+Optional properties:
+  - default-on: enable the backlight at boot.
+
+Example:
+	backlight {
+		compatible = "gpio-backlight";
+		gpios = <&gpio3 4 GPIO_ACTIVE_HIGH>;
+		default-on;
+	};

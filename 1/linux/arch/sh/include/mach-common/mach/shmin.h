@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4f386cd73f02e84a0d7a50e74de145bc3de226187ddcefca59065885d3a8f97a
-size 153
+#ifndef __ASM_SH_SHMIN_H
+#define __ASM_SH_SHMIN_H
+
+#define SHMIN_IO_BASE 0xb0000000UL
+
+#define SHMIN_NE_IRQ IRQ2_IRQ
+#define SHMIN_NE_BASE 0x300
+
+#endif

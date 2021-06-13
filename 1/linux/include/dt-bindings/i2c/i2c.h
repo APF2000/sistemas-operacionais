@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:18998def4aaa83dd61547e0d4e89c44f5a1e1b9490157224204a5745096c1947
-size 373
+/*
+ * This header provides constants for I2C bindings
+ *
+ * Copyright (C) 2015 by Sang Engineering
+ * Copyright (C) 2015 by Renesas Electronics Corporation
+ *
+ * Wolfram Sang <wsa@sang-engineering.com>
+ *
+ * GPLv2 only
+ */
+
+#ifndef _DT_BINDINGS_I2C_I2C_H
+#define _DT_BINDINGS_I2C_I2C_H
+
+#define I2C_TEN_BIT_ADDRESS	(1 << 31)
+#define I2C_OWN_SLAVE_ADDRESS	(1 << 30)
+
+#endif

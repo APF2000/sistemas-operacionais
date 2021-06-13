@@ -1,3 +1,40 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:cea0022aa02b5dc945c0f861a1ef6c448fc88ac5df365ae237cf2e22590f7e47
-size 1227
+/*
+ * Support for Intel Camera Imaging ISP subsystem.
+ * Copyright (c) 2015, Intel Corporation.
+ *
+ * This program is free software; you can redistribute it and/or modify it
+ * under the terms and conditions of the GNU General Public License,
+ * version 2, as published by the Free Software Foundation.
+ *
+ * This program is distributed in the hope it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+ * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for
+ * more details.
+ */
+
+#ifndef __IA_CSS_ISYS_IRQ_H__
+#define __IA_CSS_ISYS_IRQ_H__
+
+#include <type_support.h>
+#include <storage_class.h>
+#include <system_local.h>
+
+#if defined(USE_INPUT_SYSTEM_VERSION_2401)
+
+#ifndef __INLINE_ISYS2401_IRQ__
+
+#define STORAGE_CLASS_ISYS2401_IRQ_H STORAGE_CLASS_EXTERN
+#define STORAGE_CLASS_ISYS2401_IRQ_C STORAGE_CLASS_EXTERN
+#include "isys_irq_public.h"
+
+#else  /* __INLINE_ISYS2401_IRQ__ */
+
+#define STORAGE_CLASS_ISYS2401_IRQ_H STORAGE_CLASS_INLINE
+#define STORAGE_CLASS_ISYS2401_IRQ_C STORAGE_CLASS_INLINE
+#include "isys_irq_private.h"
+
+#endif /* __INLINE_ISYS2401_IRQ__ */
+
+#endif /* defined(USE_INPUT_SYSTEM_VERSION_2401) */
+
+#endif	/* __IA_CSS_ISYS_IRQ_H__ */

@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:df7261f5aa32e04868ea8916758f407066fbcdcbebf072fb02447df06c80899f
-size 548
+# Makefile for the Linux video drivers.
+# 5 Aug 1999, James Simmons, <mailto:jsimmons@edgeglobal.com>
+# Rewritten to use lists instead of if-statements.
+
+# Each configuration option enables a list of files.
+
+my-obj-$(CONFIG_FB_MATROX_G)      += g450_pll.o matroxfb_g450.o matroxfb_crtc2.o
+
+obj-$(CONFIG_FB_MATROX)           += matroxfb_base.o matroxfb_accel.o matroxfb_DAC1064.o matroxfb_Ti3026.o matroxfb_misc.o $(my-obj-y)
+obj-$(CONFIG_FB_MATROX_I2C)       += i2c-matroxfb.o
+obj-$(CONFIG_FB_MATROX_MAVEN)     += matroxfb_maven.o matroxfb_crtc2.o

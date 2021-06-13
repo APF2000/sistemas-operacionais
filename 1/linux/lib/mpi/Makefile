@@ -1,3 +1,22 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:817a9e0c4ce00f76fd1ec533b7a7a1e0ac81fd5e39c9af4fdc4b215a0e998434
-size 383
+#
+# MPI multiprecision maths library (from gpg)
+#
+
+obj-$(CONFIG_MPILIB) = mpi.o
+
+mpi-y = \
+	generic_mpih-lshift.o		\
+	generic_mpih-mul1.o		\
+	generic_mpih-mul2.o		\
+	generic_mpih-mul3.o		\
+	generic_mpih-rshift.o		\
+	generic_mpih-sub1.o		\
+	generic_mpih-add1.o		\
+	mpicoder.o			\
+	mpi-bit.o			\
+	mpi-cmp.o			\
+	mpih-cmp.o			\
+	mpih-div.o			\
+	mpih-mul.o			\
+	mpi-pow.o			\
+	mpiutil.o

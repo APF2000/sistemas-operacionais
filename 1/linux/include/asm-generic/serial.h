@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:7d425ef6b24d74d4eadd6236e181d32d19a6f5392a7ba7e53a2f8d052a785acc
-size 306
+#ifndef __ASM_GENERIC_SERIAL_H
+#define __ASM_GENERIC_SERIAL_H
+
+/*
+ * This should not be an architecture specific #define, oh well.
+ *
+ * Traditionally, it just describes i8250 and related serial ports
+ * that have this clock rate.
+ */
+
+#define BASE_BAUD (1843200 / 16)
+
+#endif /* __ASM_GENERIC_SERIAL_H */

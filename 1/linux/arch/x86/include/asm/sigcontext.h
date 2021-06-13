@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d48c12b6af7f694f99dcc1bddfaee93ffa45ec5f2093b04368b39e675fa641af
-size 222
+#ifndef _ASM_X86_SIGCONTEXT_H
+#define _ASM_X86_SIGCONTEXT_H
+
+/* This is a legacy header - all kernel code includes <uapi/asm/sigcontext.h> directly. */
+
+#include <uapi/asm/sigcontext.h>
+
+#endif /* _ASM_X86_SIGCONTEXT_H */

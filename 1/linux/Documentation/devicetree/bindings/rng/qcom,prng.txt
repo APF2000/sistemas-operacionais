@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e51ff33d44e95f9cf53781f6319ed0d0efca059d34250dee958d70657df9d14c
-size 483
+Qualcomm MSM pseudo random number generator.
+
+Required properties:
+
+- compatible  : should be "qcom,prng"
+- reg         : specifies base physical address and size of the registers map
+- clocks      : phandle to clock-controller plus clock-specifier pair
+- clock-names : "core" clocks all registers, FIFO and circuits in PRNG IP block
+
+Example:
+
+	rng@f9bff000 {
+		compatible = "qcom,prng";
+		reg = <0xf9bff000 0x200>;
+		clocks = <&clock GCC_PRNG_AHB_CLK>;
+		clock-names = "core";
+	};

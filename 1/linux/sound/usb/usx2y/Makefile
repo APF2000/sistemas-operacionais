@@ -1,3 +1,5 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:0f0b438b37e50e544a722d422afb78abad1904640149bf47777d67205a40ecc8
-size 191
+snd-usb-usx2y-objs := usbusx2y.o usX2Yhwdep.o usx2yhwdeppcm.o
+snd-usb-us122l-objs := us122l.o
+
+obj-$(CONFIG_SND_USB_USX2Y) += snd-usb-usx2y.o
+obj-$(CONFIG_SND_USB_US122L) += snd-usb-us122l.o

@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2116d3689e9743418f8d617c065716834e9268317864db2767a9a129a10316b3
-size 169
+#!/bin/sh
+nm="$1"
+file="$2"
+$nm "$file" | grep '^ *U' > /dev/null 2>&1
+if [ $? -eq 1 ]; then
+    exit 0
+else
+    echo "$file: undefined symbols found" >&2
+    exit 1
+fi

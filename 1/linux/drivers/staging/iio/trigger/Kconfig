@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:22345d941b0c20b161c76b21bb7f576d87b51f43d5d91a41d00416562e31a478
-size 442
+  #
+# Industrial I/O standalone triggers
+#
+comment "Triggers - standalone"
+
+if IIO_TRIGGER
+
+config IIO_BFIN_TMR_TRIGGER
+	tristate "Blackfin TIMER trigger"
+	depends on BLACKFIN
+	select BFIN_GPTIMERS
+	help
+	  Provides support for using a Blackfin timer as IIO triggers.
+	  If unsure, say N (but it's safe to say "Y").
+
+	  To compile this driver as a module, choose M here: the
+	  module will be called iio-trig-bfin-timer.
+
+endif # IIO_TRIGGER

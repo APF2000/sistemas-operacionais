@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:76a0015c04a709eab4ee83e1f2d5b9797ffae807a116d3c9a115d34f44da7259
-size 212
+libperf-$(CONFIG_DWARF) += dwarf-regs.o
+
+libperf-$(CONFIG_LOCAL_LIBUNWIND)    += unwind-libunwind.o
+libperf-$(CONFIG_LIBDW_DWARF_UNWIND) += unwind-libdw.o
+
+libperf-$(CONFIG_AUXTRACE) += pmu.o auxtrace.o cs-etm.o

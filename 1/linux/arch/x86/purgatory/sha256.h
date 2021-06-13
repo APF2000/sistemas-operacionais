@@ -1,3 +1,21 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:8a10ecab14f7acb290586ab4447c949d463b1464e7ca472acba7e6cd641a53a0
-size 534
+/*
+ *  Copyright (C) 2014 Red Hat Inc.
+ *
+ *  Author: Vivek Goyal <vgoyal@redhat.com>
+ *
+ * This source code is licensed under the GNU General Public License,
+ * Version 2.  See the file COPYING for more details.
+ */
+
+#ifndef SHA256_H
+#define SHA256_H
+
+#include <linux/types.h>
+#include <crypto/sha.h>
+
+extern int sha256_init(struct sha256_state *sctx);
+extern int sha256_update(struct sha256_state *sctx, const u8 *input,
+				unsigned int length);
+extern int sha256_final(struct sha256_state *sctx, u8 *hash);
+
+#endif /* SHA256_H */

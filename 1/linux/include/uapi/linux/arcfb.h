@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b79b8877d7e5b7bfc231868a59d78677929056f3294037ab8b95493090c886bf
-size 150
+#ifndef __LINUX_ARCFB_H__
+#define __LINUX_ARCFB_H__
+
+#define FBIO_WAITEVENT		_IO('F', 0x88)
+#define FBIO_GETCONTROL2	_IOR('F', 0x89, size_t)
+
+#endif
+

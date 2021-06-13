@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ebed86aec37addd7a0449e8bbaf4afd0c4c802c108da9e8622276c4cb124b798
-size 199
+#ifndef LCDC_H
+#define LCDC_H
+
+int omap_lcdc_set_dma_callback(void (*callback)(void *data), void *data);
+void omap_lcdc_free_dma_callback(void);
+
+extern const struct lcd_ctrl omap1_int_ctrl;
+
+#endif

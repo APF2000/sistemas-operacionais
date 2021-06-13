@@ -1,3 +1,20 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a82ca51b64f80b2a28904f2bbacdef4221e0b8006c40464b8c8a291fc1dfbb04
-size 401
+/*
+ *  Shared Memory Communications over RDMA (SMC-R) and RoCE
+ *
+ *  Definitions for the SMC module (socket related)
+ *
+ *  Copyright IBM Corp. 2016
+ *
+ *  Author(s):  Ursula Braun <ubraun@linux.vnet.ibm.com>
+ */
+#ifndef _SMC_H
+#define _SMC_H
+
+struct smc_hashinfo {
+	rwlock_t lock;
+	struct hlist_head ht;
+};
+
+int smc_hash_sk(struct sock *sk);
+void smc_unhash_sk(struct sock *sk);
+#endif	/* _SMC_H */

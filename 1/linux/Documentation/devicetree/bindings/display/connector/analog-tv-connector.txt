@@ -1,3 +1,25 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:263d170f17f4a73fa9b9907815a53ff681cafa88c53be102a2e5946511846166
-size 411
+Analog TV Connector
+===================
+
+Required properties:
+- compatible: "composite-video-connector" or "svideo-connector"
+
+Optional properties:
+- label: a symbolic name for the connector
+
+Required nodes:
+- Video port for TV input
+
+Example
+-------
+
+tv: connector {
+	compatible = "composite-video-connector";
+	label = "tv";
+
+	port {
+		tv_connector_in: endpoint {
+			remote-endpoint = <&venc_out>;
+		};
+	};
+};

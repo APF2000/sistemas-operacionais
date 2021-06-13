@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:bba18da3a9f20cdde148a8fef358848bde19b383c8ca6ebf1e4061186a483330
-size 266
+obj-$(CONFIG_PHY_TEGRA_XUSB) += phy-tegra-xusb.o
+
+phy-tegra-xusb-y += xusb.o
+phy-tegra-xusb-$(CONFIG_ARCH_TEGRA_124_SOC) += xusb-tegra124.o
+phy-tegra-xusb-$(CONFIG_ARCH_TEGRA_132_SOC) += xusb-tegra124.o
+phy-tegra-xusb-$(CONFIG_ARCH_TEGRA_210_SOC) += xusb-tegra210.o

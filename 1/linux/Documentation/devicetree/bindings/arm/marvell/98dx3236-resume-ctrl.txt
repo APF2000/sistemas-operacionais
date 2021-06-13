@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c7f08b306fcf155d08bb24f41b9da810f1839dcb13e891fc86a2f1741bb6060f
-size 321
+Resume Control
+--------------
+Available on Marvell SOCs: 98DX3336 and 98DX4251
+
+Required properties:
+
+- compatible: must be "marvell,98dx3336-resume-ctrl"
+
+- reg: Should contain resume control registers location and length
+
+Example:
+
+resume@20980 {
+	compatible = "marvell,98dx3336-resume-ctrl";
+	reg = <0x20980 0x10>;
+};

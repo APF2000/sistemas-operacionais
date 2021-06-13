@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d35642d75bd4dff58ed31ea300223d6d67b3ec05217af5f49258176081650991
-size 450
+/* MN10300 Basic type definitions
+ *
+ * Copyright (C) 2007 Matsushita Electric Industrial Co., Ltd.
+ * Copyright (C) 2007 Red Hat, Inc. All Rights Reserved.
+ *
+ * This program is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU General Public Licence
+ * as published by the Free Software Foundation; either version
+ * 2 of the Licence, or (at your option) any later version.
+ */
+#include <asm-generic/int-ll64.h>

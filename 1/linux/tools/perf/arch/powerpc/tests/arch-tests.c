@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:acd890eca556a70bb7e146efe62a3d0cfe9fa05c2c50f84814aff4620d28c914
-size 233
+#include <string.h>
+#include "tests/tests.h"
+#include "arch-tests.h"
+
+struct test arch_tests[] = {
+#ifdef HAVE_DWARF_UNWIND_SUPPORT
+	{
+		.desc = "Test dwarf unwind",
+		.func = test__dwarf_unwind,
+	},
+#endif
+	{
+		.func = NULL,
+	},
+};

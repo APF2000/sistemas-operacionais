@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:747271057766c2d4064224f3efc051cd1735b2d473aac5992abd7dc9b45b1b5c
-size 152
+#ifndef BUG_H
+#define BUG_H
+
+#define BUG_ON(__BUG_ON_cond) assert(!(__BUG_ON_cond))
+
+#define BUILD_BUG_ON(x)
+
+#define BUG() abort()
+
+#endif /* BUG_H */

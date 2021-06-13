@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1e1edbbc81f46d8594c0508fb755121b078cc7c14f1e623b8c8b60e69cf66260
-size 389
+#include <linux/sched.h>
+#include <asm/ptrace-abi.h>
+
+void clear_flushed_tls(struct task_struct *task)
+{
+}
+
+int arch_copy_tls(struct task_struct *t)
+{
+	/*
+	 * If CLONE_SETTLS is set, we need to save the thread id
+	 * (which is argument 5, child_tid, of clone) so it can be set
+	 * during context switches.
+	 */
+	t->thread.arch.fs = t->thread.regs.regs.gp[R8 / sizeof(long)];
+
+	return 0;
+}

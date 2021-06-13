@@ -1,3 +1,22 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4ca0b0dd3e9f906e4083976eac00155b51ff05c6e342f3c741c964ff62c56bf1
-size 515
+#ifndef __NVKM_XTENSA_H__
+#define __NVKM_XTENSA_H__
+#define nvkm_xtensa(p) container_of((p), struct nvkm_xtensa, engine)
+#include <core/engine.h>
+
+struct nvkm_xtensa {
+	const struct nvkm_xtensa_func *func;
+	u32 addr;
+	struct nvkm_engine engine;
+
+	struct nvkm_memory *gpu_fw;
+};
+
+int nvkm_xtensa_new_(const struct nvkm_xtensa_func *, struct nvkm_device *,
+		     int index, bool enable, u32 addr, struct nvkm_engine **);
+
+struct nvkm_xtensa_func {
+	u32 fifo_val;
+	u32 unkd28;
+	struct nvkm_sclass sclass[];
+};
+#endif

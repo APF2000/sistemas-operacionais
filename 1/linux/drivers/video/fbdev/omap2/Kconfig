@@ -1,3 +1,5 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:94afc161264f43cfa6f46f324c2ee3d828d26e0b29b08579ec46605f81c9e3c4
-size 76
+if ARCH_OMAP2PLUS
+
+source "drivers/video/fbdev/omap2/omapfb/Kconfig"
+
+endif

@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f86658cfecede9794220086f3d4965bb2a4bcafa85c710ab5bf9c9c06c66c5d9
-size 376
+#ifndef _IP6T_MH_H
+#define _IP6T_MH_H
+
+#include <linux/types.h>
+
+/* MH matching stuff */
+struct ip6t_mh {
+	__u8 types[2];	/* MH type range */
+	__u8 invflags;	/* Inverse flags */
+};
+
+/* Values for "invflags" field in struct ip6t_mh. */
+#define IP6T_MH_INV_TYPE	0x01	/* Invert the sense of type. */
+#define IP6T_MH_INV_MASK	0x01	/* All possible flags. */
+
+#endif /*_IP6T_MH_H*/

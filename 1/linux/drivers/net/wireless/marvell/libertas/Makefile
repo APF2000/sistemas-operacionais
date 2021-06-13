@@ -1,3 +1,21 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d69095244606685e64248dfeec9abc4a334060432d61c10af440b79479d2eea6
-size 573
+libertas-y += cfg.o
+libertas-y += cmd.o
+libertas-y += cmdresp.o
+libertas-y += debugfs.o
+libertas-y += ethtool.o
+libertas-y += main.o
+libertas-y += rx.o
+libertas-y += tx.o
+libertas-y += firmware.o
+libertas-$(CONFIG_LIBERTAS_MESH) += mesh.o
+
+usb8xxx-objs += if_usb.o
+libertas_cs-objs += if_cs.o
+libertas_sdio-objs += if_sdio.o
+libertas_spi-objs += if_spi.o
+
+obj-$(CONFIG_LIBERTAS)     += libertas.o
+obj-$(CONFIG_LIBERTAS_USB) += usb8xxx.o
+obj-$(CONFIG_LIBERTAS_CS)  += libertas_cs.o
+obj-$(CONFIG_LIBERTAS_SDIO) += libertas_sdio.o
+obj-$(CONFIG_LIBERTAS_SPI) += libertas_spi.o

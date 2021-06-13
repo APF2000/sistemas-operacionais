@@ -1,3 +1,21 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:cbfed9b60c1c2b36daf244fbf9d5bf7100a8a6dc5f4477468825fb799c6a4a99
-size 718
+/*
+ * Support for Intel Camera Imaging ISP subsystem.
+ * Copyright (c) 2015, Intel Corporation.
+ *
+ * This program is free software; you can redistribute it and/or modify it
+ * under the terms and conditions of the GNU General Public License,
+ * version 2, as published by the Free Software Foundation.
+ *
+ * This program is distributed in the hope it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+ * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for
+ * more details.
+ */
+
+#ifndef __IA_CSS_S3A_STAT_STORE_PARAM_H
+#define __IA_CSS_S3A_STAT_STORE_PARAM_H
+
+#include "ia_css_s3a_stat_ls_param.h"
+
+
+#endif /* __IA_CSS_S3A_STAT_STORE_PARAM_H */

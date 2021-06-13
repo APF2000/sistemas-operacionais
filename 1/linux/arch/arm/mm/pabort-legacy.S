@@ -1,3 +1,21 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4be054b71461547c776714992596bb68e5d0221751b50fa0686ff6624f82d687
-size 402
+#include <linux/linkage.h>
+#include <asm/assembler.h>
+
+/*
+ * Function: legacy_pabort
+ *
+ * Params  : r2 = pt_regs
+ *	   : r4 = address of aborted instruction
+ *	   : r5 = psr for parent context
+ *
+ * Returns : r4 - r11, r13 preserved
+ *
+ * Purpose : obtain information about current prefetch abort.
+ */
+
+	.align	5
+ENTRY(legacy_pabort)
+	mov	r0, r4
+	mov	r1, #5
+	b	do_PrefetchAbort
+ENDPROC(legacy_pabort)

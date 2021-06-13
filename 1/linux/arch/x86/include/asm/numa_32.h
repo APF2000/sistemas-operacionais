@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:7f9a85ede6e538f3c0aa966ac158f38a20326f3fe868638c195d2cadd07c4f12
-size 217
+#ifndef _ASM_X86_NUMA_32_H
+#define _ASM_X86_NUMA_32_H
+
+#ifdef CONFIG_HIGHMEM
+extern void set_highmem_pages_init(void);
+#else
+static inline void set_highmem_pages_init(void)
+{
+}
+#endif
+
+#endif /* _ASM_X86_NUMA_32_H */

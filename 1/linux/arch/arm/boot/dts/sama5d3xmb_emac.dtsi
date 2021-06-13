@@ -1,3 +1,26 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b2f20f02d83ca69e6bc88ba730e81eccd60fb89b87ff17fd59180a5a4f3cb25d
-size 435
+/*
+ * sama5d3xmb_emac.dts - Device Tree Include file for SAMA5D3x mother board
+ * Ethernet
+ *
+ *  Copyright (C) 2016 Atmel,
+ *
+ * Licensed under GPLv2 or later.
+ */
+
+/ {
+	ahb {
+		apb {
+			macb1: ethernet@f802c000 {
+				phy-mode = "rmii";
+
+				#address-cells = <1>;
+				#size-cells = <0>;
+				phy0: ethernet-phy@1 {
+					interrupt-parent = <&pioE>;
+					interrupts = <30 IRQ_TYPE_EDGE_FALLING>;
+					reg = <1>;
+				};
+			};
+		};
+	};
+};

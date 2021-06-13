@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:183945d9c686e5c73c65aae337c601ad2635af7b1798669efcaeb29e5c56ca32
-size 260
+#ifndef _ASM_X86_PROCESSOR_FLAGS_H
+#define _ASM_X86_PROCESSOR_FLAGS_H
+
+#include <uapi/asm/processor-flags.h>
+
+#ifdef CONFIG_VM86
+#define X86_VM_MASK	X86_EFLAGS_VM
+#else
+#define X86_VM_MASK	0 /* No VM86 support */
+#endif
+#endif /* _ASM_X86_PROCESSOR_FLAGS_H */

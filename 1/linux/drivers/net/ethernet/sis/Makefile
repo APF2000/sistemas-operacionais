@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:153fa9f1622fcbc82a834b9a9aff1db79fe47b73b90eb0a450f752c1e1823bed
-size 143
+#
+# Makefile for Silicon Integrated Systems (SiS) network device drivers.
+#
+
+obj-$(CONFIG_SIS190) += sis190.o
+obj-$(CONFIG_SIS900) += sis900.o

@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1999c5136cea83aa2d6b66a80838307fdf008a8c1df2066d1c249c37a8f07891
-size 233
+/*
+ * Lockdep states,
+ *
+ * please update XXX_LOCK_USAGE_STATES in include/linux/lockdep.h whenever
+ * you add one, or come up with a nice dynamic solution.
+ */
+LOCKDEP_STATE(HARDIRQ)
+LOCKDEP_STATE(SOFTIRQ)
+LOCKDEP_STATE(RECLAIM_FS)

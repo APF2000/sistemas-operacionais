@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4810d705b63cc1b475513ecfe38d62534dddf97e4637b031b336ffcbb12aff02
-size 321
+#ifndef __ARCH_CRIS_IOCTLS_H__
+#define __ARCH_CRIS_IOCTLS_H__
+
+#define TIOCSERGSTRUCT	0x5458 /* For debugging only */
+#define TIOCSERSETRS485	0x5461  /* enable rs-485 (deprecated) */
+#define TIOCSERWRRS485	0x5462  /* write rs-485 */
+#define TIOCSRS485	0x5463  /* enable rs-485 */
+
+#include <asm-generic/ioctls.h>
+
+#endif

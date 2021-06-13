@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f83c3a9c99eb780bd620f13ea27b8df2ca4642eca8e154cb18c1515bb0fd4658
-size 332
+config SAMSUNG_MC
+	bool "Samsung Exynos Memory Controller support" if COMPILE_TEST
+	help
+	  Support for the Memory Controller (MC) devices found on
+	  Samsung Exynos SoCs.
+
+if SAMSUNG_MC
+
+config EXYNOS_SROM
+	bool "Exynos SROM controller driver" if COMPILE_TEST
+	depends on (ARM && ARCH_EXYNOS) || (COMPILE_TEST && HAS_IOMEM)
+
+endif

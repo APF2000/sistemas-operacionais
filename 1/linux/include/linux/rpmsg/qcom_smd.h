@@ -1,3 +1,31 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:42d0a6cd4c7a01a7aa595f244463f25612c26b6450304a1a0d6a9fd778635760
-size 565
+
+#ifndef _LINUX_RPMSG_QCOM_SMD_H
+#define _LINUX_RPMSG_QCOM_SMD_H
+
+#include <linux/device.h>
+
+struct qcom_smd_edge;
+
+#if IS_ENABLED(CONFIG_RPMSG_QCOM_SMD)
+
+struct qcom_smd_edge *qcom_smd_register_edge(struct device *parent,
+					     struct device_node *node);
+int qcom_smd_unregister_edge(struct qcom_smd_edge *edge);
+
+#else
+
+static inline struct qcom_smd_edge *
+qcom_smd_register_edge(struct device *parent,
+		       struct device_node *node)
+{
+	return NULL;
+}
+
+static inline int qcom_smd_unregister_edge(struct qcom_smd_edge *edge)
+{
+	return 0;
+}
+
+#endif
+
+#endif

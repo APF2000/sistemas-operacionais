@@ -1,3 +1,20 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:fe74c9ddb530c35631e661628339277a75bb2d69bd23c697299e25eb702a6587
-size 520
+/*
+ * Copyright (C) 2012 Marvell
+ *
+ * Thomas Petazzoni <thomas.petazzoni@free-electrons.com>
+ *
+ * This file is licensed under the terms of the GNU General Public
+ * License version 2.  This program is licensed "as is" without any
+ * warranty of any kind, whether express or implied.
+ */
+
+#ifndef __MVEBU_PMSU_H__
+#define __MVEBU_PMSU_H__
+
+#ifdef CONFIG_MACH_MVEBU_V7
+int mvebu_pmsu_dfs_request(int cpu);
+#else
+static inline int mvebu_pmsu_dfs_request(int cpu) { return -ENODEV; }
+#endif
+
+#endif /* __MVEBU_PMSU_H__ */

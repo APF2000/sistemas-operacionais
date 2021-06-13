@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d0d205875560e067b1135440c672f4625dbf1e1893c1c0849e407e3664299d75
-size 246
+/*
+ *  S390 version
+ *
+ *  Derived from "include/asm-i386/shmparam.h"
+ */
+#ifndef _ASM_S390_SHMPARAM_H
+#define _ASM_S390_SHMPARAM_H
+
+#define SHMLBA PAGE_SIZE                 /* attach addr a multiple of this */
+
+#endif /* _ASM_S390_SHMPARAM_H */

@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:0b28b4ac8e02a65a4a9e36dd86cd59b0d912e551951f8cdf592ae564bc7fcdd5
-size 396
+/*
+ *  linux/arch/arm/lib/changebit.S
+ *
+ *  Copyright (C) 1995-1996 Russell King
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 2 as
+ * published by the Free Software Foundation.
+ */
+#include <linux/linkage.h>
+#include <asm/assembler.h>
+#include "bitops.h"
+                .text
+
+bitop	_change_bit, eor

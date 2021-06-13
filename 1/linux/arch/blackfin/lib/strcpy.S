@@ -1,3 +1,35 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5b785360b12bfcc96753893752559d4c5b4dd87fc3c1a4fa5f29eeee2f3015e8
-size 531
+/*
+ * Copyright 2005-2010 Analog Devices Inc.
+ *
+ * Licensed under the Clear BSD license or the GPL-2 (or later)
+ */
+
+#include <linux/linkage.h>
+
+/* void *strcpy(char *dest, const char *src);
+ * R0 = address (dest)
+ * R1 = address (src)
+ *
+ * Returns a pointer to the destination string dest
+ */
+
+#ifdef CONFIG_STRCPY_L1
+.section .l1.text
+#else
+.text
+#endif
+
+.align 2
+
+ENTRY(_strcpy)
+	P0 = R0 ;       /* dst*/
+	P1 = R1 ;       /* src*/
+
+1:
+	R1 = B [P1++] (Z);
+	B [P0++] = R1;
+	CC = R1;
+	if cc jump 1b (bp);
+	RTS;
+
+ENDPROC(_strcpy)

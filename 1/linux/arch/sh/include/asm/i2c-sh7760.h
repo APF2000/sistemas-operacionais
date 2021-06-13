@@ -1,3 +1,20 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:669016b671998cf4cccfea5aa51b598c2e2018e7595ac173687183e80c4e4801
-size 367
+/*
+ * MMIO/IRQ and platform data for SH7760 I2C channels
+ */
+
+#ifndef _I2C_SH7760_H_
+#define _I2C_SH7760_H_
+
+#define SH7760_I2C_DEVNAME	"sh7760-i2c"
+
+#define SH7760_I2C0_MMIO	0xFE140000
+#define SH7760_I2C0_MMIOEND	0xFE14003B
+
+#define SH7760_I2C1_MMIO	0xFE150000
+#define SH7760_I2C1_MMIOEND	0xFE15003B
+
+struct sh7760_i2c_platdata {
+	unsigned int speed_khz;
+};
+
+#endif

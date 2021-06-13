@@ -1,3 +1,4 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:633d0c861bfae9aabaabd2959f13578db03d5dda423f808b1025ff00b4f80ee2
-size 163
+snd-soc-sst-haswell-pcm-objs := \
+	        sst-haswell-ipc.o sst-haswell-pcm.o sst-haswell-dsp.o
+
+obj-$(CONFIG_SND_SOC_INTEL_HASWELL) += snd-soc-sst-haswell-pcm.o

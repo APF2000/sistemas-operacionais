@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:64d3d850036cc3cb0145bcd51202239b466904d673c01bb40c1f9b08e206d4d9
-size 536
+#ifndef _LIBATA_TRANSPORT_H
+#define _LIBATA_TRANSPORT_H
+
+
+extern struct scsi_transport_template *ata_scsi_transport_template;
+
+int ata_tlink_add(struct ata_link *link);
+void ata_tlink_delete(struct ata_link *link);
+
+int ata_tport_add(struct device *parent, struct ata_port *ap);
+void ata_tport_delete(struct ata_port *ap);
+
+struct scsi_transport_template *ata_attach_transport(void);
+void ata_release_transport(struct scsi_transport_template *t);
+
+__init int libata_transport_init(void);
+void __exit libata_transport_exit(void);
+#endif

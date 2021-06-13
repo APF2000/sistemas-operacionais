@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:62a9fd2a8b3b571c6da953e93092dcd0c65045aee232f3dda9ffad5f611b0e9e
-size 124
+SECTIONS
+{
+  .data : {
+	zimage_data = .;
+	*(.data)
+	zimage_data_end = .;
+	}
+  zimage_len = zimage_data_end - zimage_data;
+}

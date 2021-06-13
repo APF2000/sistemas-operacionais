@@ -1,3 +1,22 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ba4aa6644d1237c8e9b83fa15fa156b8134d43d01d518eaf1b0e00737f91ab61
-size 544
+#ifndef _ELF_RANDOMIZE_H
+#define _ELF_RANDOMIZE_H
+
+struct mm_struct;
+
+#ifndef CONFIG_ARCH_HAS_ELF_RANDOMIZE
+static inline unsigned long arch_mmap_rnd(void) { return 0; }
+# if defined(arch_randomize_brk) && defined(CONFIG_COMPAT_BRK)
+#  define compat_brk_randomized
+# endif
+# ifndef arch_randomize_brk
+#  define arch_randomize_brk(mm)	(mm->brk)
+# endif
+#else
+extern unsigned long arch_mmap_rnd(void);
+extern unsigned long arch_randomize_brk(struct mm_struct *mm);
+# ifdef CONFIG_COMPAT_BRK
+#  define compat_brk_randomized
+# endif
+#endif
+
+#endif

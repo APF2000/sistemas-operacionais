@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c55c85dfe03e20f29e848de9f4cada271bd0d067857847db4635e2a0f72bff8b
-size 293
+obj-$(CONFIG_DM_PERSISTENT_DATA) += dm-persistent-data.o
+dm-persistent-data-objs := \
+	dm-array.o \
+	dm-bitset.o \
+	dm-block-manager.o \
+	dm-space-map-common.o \
+	dm-space-map-disk.o \
+	dm-space-map-metadata.o \
+	dm-transaction-manager.o \
+	dm-btree.o \
+	dm-btree-remove.o \
+	dm-btree-spine.o

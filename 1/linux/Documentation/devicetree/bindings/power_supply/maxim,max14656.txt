@@ -1,3 +1,25 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:bf807630d353283e0233f236d92c0945de46d2218ab02aa1fef36de656822dfd
-size 551
+Maxim MAX14656 / AL32 USB Charger Detector
+
+Required properties :
+- compatible : "maxim,max14656";
+- reg: i2c slave address
+- interrupt-parent: the phandle for the interrupt controller
+- interrupts: interrupt line
+
+Example:
+
+&i2c2 {
+	clock-frequency = <50000>;
+	pinctrl-names = "default";
+	pinctrl-0 = <&pinctrl_i2c2>;
+	status = "okay";
+
+	max14656@35 {
+		compatible = "maxim,max14656";
+		reg = <0x35>;
+		pinctrl-names = "default";
+		pinctrl-0 = <&pinctrl_charger_detect>;
+		interrupt-parent = <&gpio6>;
+		interrupts = <26 IRQ_TYPE_LEVEL_HIGH>;
+	};
+};

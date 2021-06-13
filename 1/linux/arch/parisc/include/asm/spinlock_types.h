@@ -1,3 +1,21 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4ec4866cfe1eea2016e65ff3e3808bbd44f7b9aeb8bafcb157e8cff87cf5e60c
-size 444
+#ifndef __ASM_SPINLOCK_TYPES_H
+#define __ASM_SPINLOCK_TYPES_H
+
+typedef struct {
+#ifdef CONFIG_PA20
+	volatile unsigned int slock;
+# define __ARCH_SPIN_LOCK_UNLOCKED { 1 }
+#else
+	volatile unsigned int lock[4];
+# define __ARCH_SPIN_LOCK_UNLOCKED	{ { 1, 1, 1, 1 } }
+#endif
+} arch_spinlock_t;
+
+typedef struct {
+	arch_spinlock_t lock;
+	volatile int counter;
+} arch_rwlock_t;
+
+#define __ARCH_RW_LOCK_UNLOCKED		{ __ARCH_SPIN_LOCK_UNLOCKED, 0 }
+
+#endif

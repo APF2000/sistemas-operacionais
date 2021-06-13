@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:40c136bf977f7ac437cf64a83e05e0b9de7cdbd8990be21e387b89948d72e746
-size 221
+#ifndef __BCM63XX_FLASH_H
+#define __BCM63XX_FLASH_H
+
+enum {
+	BCM63XX_FLASH_TYPE_PARALLEL,
+	BCM63XX_FLASH_TYPE_SERIAL,
+	BCM63XX_FLASH_TYPE_NAND,
+};
+
+int __init bcm63xx_flash_register(void);
+
+#endif /* __BCM63XX_FLASH_H */

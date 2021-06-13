@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:eaf5e43591566963864e6d126ecd0f224bcfd8ce3ee4b9c50f44b78f8cfc194d
-size 159
+#ifndef _SPARC_TERMBITS_H
+#define _SPARC_TERMBITS_H
+
+#include <uapi/asm/termbits.h>
+
+#define VMIN     16
+#define VTIME    17
+#endif /* !(_SPARC_TERMBITS_H) */

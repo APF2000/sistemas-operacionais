@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2b8dcd59de256b43392696c88ab3eed88b82d8d687fe99446c1612b09f77264b
-size 325
+* Linear Technology / Analog Devices LTC2497 ADC
+
+Required properties:
+ - compatible: Must be "lltc,ltc2497"
+ - reg: Must contain the ADC I2C address
+ - vref-supply: The regulator supply for ADC reference voltage
+
+Example:
+	ltc2497: adc@76 {
+		compatible = "lltc,ltc2497";
+		reg = <0x76>;
+		vref-supply = <&ltc2497_reg>;
+	};

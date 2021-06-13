@@ -1,3 +1,20 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d89bf5f51b93b0a87d8b5724b94759858f733efa84709ed237d38127a62ce735
-size 405
+#ifndef __NVKM_SW_NV50_H__
+#define __NVKM_SW_NV50_H__
+#define nv50_sw_chan(p) container_of((p), struct nv50_sw_chan, base)
+#include "priv.h"
+#include "chan.h"
+#include "nvsw.h"
+#include <core/notify.h>
+
+struct nv50_sw_chan {
+	struct nvkm_sw_chan base;
+	struct {
+		struct nvkm_notify notify[4];
+		u32 ctxdma;
+		u64 offset;
+		u32 value;
+	} vblank;
+};
+
+void *nv50_sw_chan_dtor(struct nvkm_sw_chan *);
+#endif

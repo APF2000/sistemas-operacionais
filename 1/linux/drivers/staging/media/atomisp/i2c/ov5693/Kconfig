@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1c121079c2fa68c9a4711dd1bcf674d35ab070aaa45288f4aaf501266788c422
-size 326
+config VIDEO_OV5693
+       tristate "Omnivision ov5693 sensor support"
+       depends on I2C && VIDEO_V4L2
+       ---help---
+         This is a Video4Linux2 sensor-level driver for the Micron
+         ov5693 5 Mpixel camera.
+
+         ov5693 is video camera sensor.
+
+         It currently only works with the atomisp driver.
+

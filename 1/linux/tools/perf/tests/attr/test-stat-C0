@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:895dca83a5c32e7b7c88eecc5d3283dceb446011dbfbaee804100e34cd6b2eb4
-size 182
+[config]
+command = stat
+args    = -e cycles -C 0 kill >/dev/null 2>&1
+ret     = 1
+
+[event:base-stat]
+# events are enabled by default when attached to cpu
+disabled=0
+enable_on_exec=0

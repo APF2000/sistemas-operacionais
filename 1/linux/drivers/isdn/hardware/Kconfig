@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:9bf189f99aa58ba0816927b2b6d7beb22c38dba9e5ef8238f7d0339fd3b8783c
-size 151
+#
+# ISDN hardware drivers
+#
+comment "CAPI hardware drivers"
+
+source "drivers/isdn/hardware/avm/Kconfig"
+
+source "drivers/isdn/hardware/eicon/Kconfig"
+

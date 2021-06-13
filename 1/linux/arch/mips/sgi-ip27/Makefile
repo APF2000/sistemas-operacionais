@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2c235e8db00c0422608c8d35359b081c83c7f28b67ed25360e34ec9fb6c12d46
-size 369
+#
+# Makefile for the IP27 specific kernel interface routines under Linux.
+#
+
+obj-y	:= ip27-berr.o ip27-irq.o ip27-irqno.o ip27-init.o ip27-klconfig.o \
+	   ip27-klnuma.o ip27-memory.o ip27-nmi.o ip27-reset.o ip27-timer.o \
+	   ip27-hubio.o ip27-xtalk.o
+
+obj-$(CONFIG_EARLY_PRINTK)	+= ip27-console.o
+obj-$(CONFIG_PCI)		+= ip27-irq-pci.o
+obj-$(CONFIG_SMP)		+= ip27-smp.o

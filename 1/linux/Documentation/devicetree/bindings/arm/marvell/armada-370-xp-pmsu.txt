@@ -1,3 +1,21 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:dbfe11bb8674b9fdb0891ab35c17c759ef9c24de16869fe01830dfc6be46e189
-size 567
+Power Management Service Unit(PMSU)
+-----------------------------------
+Available on Marvell SOCs: Armada 370, Armada 38x and Armada XP
+
+Required properties:
+
+- compatible: should be one of:
+  - "marvell,armada-370-pmsu" for Armada 370 or Armada XP
+  - "marvell,armada-380-pmsu" for Armada 38x
+  - "marvell,armada-370-xp-pmsu" was used for Armada 370/XP but is now
+    deprecated and will be removed
+
+- reg: Should contain PMSU registers location and length.
+
+Example:
+
+armada-370-xp-pmsu@22000 {
+	compatible = "marvell,armada-370-pmsu";
+	reg = <0x22000 0x1000>;
+};
+

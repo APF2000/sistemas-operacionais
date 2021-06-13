@@ -1,3 +1,20 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:3da73cba01778125951dea2fdf2073751cb351b5196b9f5c8b3f1cf4c90b4279
-size 294
+/*
+ *  include/asm-alpha/bugs.h
+ *
+ *  Copyright (C) 1994  Linus Torvalds
+ */
+
+/*
+ * This is included by init/main.c to check for architecture-dependent bugs.
+ *
+ * Needs:
+ *	void check_bugs(void);
+ */
+
+/*
+ * I don't know of any alpha bugs yet.. Nice chip
+ */
+
+static void check_bugs(void)
+{
+}

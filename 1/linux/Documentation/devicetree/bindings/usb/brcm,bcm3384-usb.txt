@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2ded4052363a91be50979f55dbf12602263a668dcf9835677b9a6d8a5733ddbc
-size 419
+* Broadcom USB controllers
+
+Required properties:
+- compatible: "brcm,bcm3384-ohci", "brcm,bcm3384-ehci"
+
+  These currently use the generic-ohci and generic-ehci drivers.  On some
+  systems, special handling may be needed in the following cases:
+
+  - Restoring state after systemwide power save modes
+  - Sharing PHYs with the USBD (UDC) hardware
+  - Figuring out which controllers are disabled on ASIC bondout variants

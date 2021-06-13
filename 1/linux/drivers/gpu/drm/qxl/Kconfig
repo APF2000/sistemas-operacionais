@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:916afeea63fcbe393dd4d8176227707d8a33f498f5a15d504fbc5e3947707e61
-size 323
+config DRM_QXL
+	tristate "QXL virtual GPU"
+	depends on DRM && PCI && MMU
+	select DRM_KMS_HELPER
+	select DRM_TTM
+	select CRC32
+	help
+	  QXL virtual GPU for Spice virtualization desktop integration.
+	  Do not enable this driver unless your distro ships a corresponding
+	  X.org QXL driver that can handle kernel modesetting.

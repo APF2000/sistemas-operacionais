@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:301951e6090577f676180773050bb301aed2f3099f08bfc8c6c542d53e172152
-size 187
+#ifndef __ASM_SH_IRQFLAGS_H
+#define __ASM_SH_IRQFLAGS_H
+
+#define ARCH_IRQ_DISABLED	0xf0
+#define ARCH_IRQ_ENABLED	0x00
+
+#include <asm-generic/irqflags.h>
+
+#endif /* __ASM_SH_IRQFLAGS_H */

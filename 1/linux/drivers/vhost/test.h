@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:fa7023832c28c8a1d604b857e3df0153f0093769c819f82a3ad7ff4aff4c9407
-size 187
+#ifndef LINUX_VHOST_TEST_H
+#define LINUX_VHOST_TEST_H
+
+/* Start a given test on the virtio null device. 0 stops all tests. */
+#define VHOST_TEST_RUN _IOW(VHOST_VIRTIO, 0x31, int)
+
+#endif

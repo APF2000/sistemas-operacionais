@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1d5a25965cfa6c07c14f539375f727f353d847575a5f5a93d2e592adf41f650b
-size 313
+#
+# Makefile for industrial I/O ADC drivers
+#
+
+obj-$(CONFIG_AD7606_IFACE_PARALLEL) += ad7606_par.o
+obj-$(CONFIG_AD7606_IFACE_SPI) += ad7606_spi.o
+obj-$(CONFIG_AD7606) += ad7606.o
+
+obj-$(CONFIG_AD7780) += ad7780.o
+obj-$(CONFIG_AD7816) += ad7816.o
+obj-$(CONFIG_AD7192) += ad7192.o
+obj-$(CONFIG_AD7280) += ad7280a.o

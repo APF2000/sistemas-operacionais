@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4e7f8e934d7abd7fe8fcd82c956fe33fa797cbc4815717ef5fd13c05fe2e4980
-size 308
+comment "VME Board Drivers"
+
+config VMIVME_7805
+	tristate "VMIVME-7805"
+	help
+	  If you say Y here you get support for the VMIVME-7805 board.
+	  This board has an additional control interface to the Universe II
+	  chip. This driver has to be included if you want to access VME bus
+	  with VMIVME-7805 board.

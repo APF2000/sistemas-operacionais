@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d73c5b3d4daed3db0c1fe6a18153c22814b4cc20a93a2cb8ffb3e4ce00d0a0f7
-size 298
+#
+# Makefile for radios with Silicon Labs Si470x FM Radio Receivers
+#
+
+radio-usb-si470x-objs	:= radio-si470x-usb.o radio-si470x-common.o
+radio-i2c-si470x-objs	:= radio-si470x-i2c.o radio-si470x-common.o
+
+obj-$(CONFIG_USB_SI470X) += radio-usb-si470x.o
+obj-$(CONFIG_I2C_SI470X) += radio-i2c-si470x.o

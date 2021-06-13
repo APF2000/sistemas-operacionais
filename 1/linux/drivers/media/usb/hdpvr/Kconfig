@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e7d8e1ce2196f41387413cd829f65b5fd3c094408c6266097fbfe28aea785208
-size 263
+
+config VIDEO_HDPVR
+	tristate "Hauppauge HD PVR support"
+	depends on VIDEO_DEV && VIDEO_V4L2
+	---help---
+	  This is a video4linux driver for Hauppauge's HD PVR USB device.
+
+	  To compile this driver as a module, choose M here: the
+	  module will be called hdpvr
+

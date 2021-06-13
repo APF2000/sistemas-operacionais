@@ -1,3 +1,34 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4742faa316c5c8cdb541d6e00a85379c3c0948d0b385767e2688b296438677ea
-size 483
+/*
+ * dts file for Hisilicon HiKey960 Development Board
+ *
+ * Copyright (C) 2016, Hisilicon Ltd.
+ *
+ */
+
+/dts-v1/;
+
+#include "hi3660.dtsi"
+#include "hikey960-pinctrl.dtsi"
+
+/ {
+	model = "HiKey960";
+	compatible = "hisilicon,hi3660";
+
+	aliases {
+		serial5 = &uart5;       /* console UART */
+	};
+
+	chosen {
+		stdout-path = "serial5:115200n8";
+	};
+
+	memory@0 {
+		device_type = "memory";
+		/* rewrite this at bootloader */
+		reg = <0x0 0x0 0x0 0x0>;
+	};
+};
+
+&uart5 {
+	status = "okay";
+};

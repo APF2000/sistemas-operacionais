@@ -1,3 +1,20 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:dc27c8470e4347972264695b0515ac9a261bd1c9366115bb906e7b20d4bf0a5d
-size 522
+#
+# Kbuild for the EXOFS module
+#
+# Copyright (C) 2008 Panasas Inc.  All rights reserved.
+#
+# Authors:
+#   Boaz Harrosh <ooo@electrozaur.com>
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License version 2
+#
+# Kbuild - Gets included from the Kernels Makefile and build system
+#
+
+# ore module library
+libore-y := ore.o ore_raid.o
+obj-$(CONFIG_ORE) += libore.o
+
+exofs-y := inode.o file.o namei.o dir.o super.o sys.o
+obj-$(CONFIG_EXOFS_FS) += exofs.o

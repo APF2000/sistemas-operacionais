@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:0dcfedd4c7c24237b52604dcd6ea36b8d65bd31d1ec888930dee2fac57c3ac46
-size 227
+#ifndef _ASM_SCORE_BITOPS_H
+#define _ASM_SCORE_BITOPS_H
+
+#include <asm/byteorder.h> /* swab32 */
+#include <asm/barrier.h>
+
+#include <asm-generic/bitops.h>
+#include <asm-generic/bitops/__fls.h>
+
+#endif /* _ASM_SCORE_BITOPS_H */

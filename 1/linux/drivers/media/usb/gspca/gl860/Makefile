@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1e0f9a56ac94e3b85ce38786d2a1e09711aa5c10a5586d766ae2a6ef8fc3e3ad
-size 214
+obj-$(CONFIG_USB_GL860) += gspca_gl860.o
+
+gspca_gl860-objs := gl860.o \
+		    gl860-mi1320.o \
+		    gl860-ov2640.o \
+		    gl860-ov9655.o \
+		    gl860-mi2020.o
+
+ccflags-y += -I$(srctree)/drivers/media/usb/gspca
+

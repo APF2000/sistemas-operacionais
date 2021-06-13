@@ -1,3 +1,23 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:263b72334cdfac3f8738803f0a425b2232f826204cb487964e990090212e905a
-size 785
+/*
+ * Support for Intel Camera Imaging ISP subsystem.
+ * Copyright (c) 2015, Intel Corporation.
+ *
+ * This program is free software; you can redistribute it and/or modify it
+ * under the terms and conditions of the GNU General Public License,
+ * version 2, as published by the Free Software Foundation.
+ *
+ * This program is distributed in the hope it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+ * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for
+ * more details.
+ */
+
+#ifndef __SH_CSS_STREAM_FORMAT_H
+#define __SH_CSS_STREAM_FORMAT_H
+
+#include <ia_css_stream_format.h>
+
+unsigned int sh_css_stream_format_2_bits_per_subpixel(
+		enum ia_css_stream_format format);
+
+#endif /* __SH_CSS_STREAM_FORMAT_H */

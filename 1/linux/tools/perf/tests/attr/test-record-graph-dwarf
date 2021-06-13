@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:0718d047f47df678d1e31a175fe7e65dd1966b330c1afee1676e0a229cb26c58
-size 241
+[config]
+command = record
+args    = --call-graph dwarf -- kill >/dev/null 2>&1
+
+[event:base-record]
+sample_type=12583
+exclude_callchain_user=1
+sample_stack_user=8192
+# TODO different for each arch, no support for that now
+sample_regs_user=*

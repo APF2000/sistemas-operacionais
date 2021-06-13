@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:457e1355888911163f2326d248ae4da0edfc341deea41db85ac795a37b074c0b
-size 417
+/*
+ * Special local versatile callbacks
+ */
+#include <linux/of.h>
+#include <linux/amba/bus.h>
+#include <linux/platform_data/video-clcd-versatile.h>
+
+#if defined(CONFIG_PLAT_VERSATILE_CLCD) && defined(CONFIG_OF)
+int versatile_clcd_init_panel(struct clcd_fb *fb, struct device_node *panel);
+#else
+static inline int versatile_clcd_init_panel(struct clcd_fb *fb,
+					    struct device_node *panel)
+{
+	return 0;
+}
+#endif

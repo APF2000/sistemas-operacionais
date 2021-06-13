@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1dc4b5ac7ef1d50ac54fa9961f1445f85be92dada9bcd239c1e4bc4d7a201711
-size 416
+#
+# Copyright (C) 2002 - 2007 Jeff Dike (jdike@{addtoit,linux.intel}.com)
+# Licensed under the GPL
+#
+
+obj-y := clone.o mmu.o process.o syscall.o uaccess.o
+
+# clone.o is in the stub, so it can't be built with profiling
+# GCC hardened also auto-enables -fpic, but we need %ebx so it can't work ->
+# disable it
+
+CFLAGS_clone.o := $(CFLAGS_NO_HARDENING)
+UNPROFILE_OBJS := clone.o
+
+include arch/um/scripts/Makefile.rules

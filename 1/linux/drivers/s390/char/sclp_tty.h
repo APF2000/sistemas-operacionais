@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:76b01a936baab389329e8a1bfe10d7aef85a19ede98bbb562ae218dfef06aaab
-size 358
+/*
+ *    interface to the SCLP-read/write driver
+ *
+ *  S390 version
+ *    Copyright IBM Corp. 1999
+ *    Author(s): Martin Peschke <mpeschke@de.ibm.com>
+ *		 Martin Schwidefsky <schwidefsky@de.ibm.com>
+ */
+
+#ifndef __SCLP_TTY_H__
+#define __SCLP_TTY_H__
+
+#include <linux/tty_driver.h>
+
+extern struct tty_driver *sclp_tty_driver;
+
+#endif	/* __SCLP_TTY_H__ */

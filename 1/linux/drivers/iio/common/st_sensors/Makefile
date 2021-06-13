@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:888ecd24f731cfb5b1282b18297fa31d8bad7440c60bf22bfc431e0d1d2a7767
-size 368
+#
+# Makefile for the STMicroelectronics sensor common modules.
+#
+
+obj-$(CONFIG_IIO_ST_SENSORS_I2C) += st_sensors_i2c.o
+obj-$(CONFIG_IIO_ST_SENSORS_SPI) += st_sensors_spi.o
+obj-$(CONFIG_IIO_ST_SENSORS_CORE) += st_sensors.o
+st_sensors-y := st_sensors_core.o
+st_sensors-$(CONFIG_IIO_BUFFER) += st_sensors_buffer.o
+st_sensors-$(CONFIG_IIO_TRIGGER) += st_sensors_trigger.o

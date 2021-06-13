@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:3b2afe04bed4996d9415f499faa5e93f87f92689debd8e5868fc845746ad0d0d
-size 125
+#ifndef _M68K_BYTEORDER_H
+#define _M68K_BYTEORDER_H
+
+#include <linux/byteorder/big_endian.h>
+
+#endif /* _M68K_BYTEORDER_H */

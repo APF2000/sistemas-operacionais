@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:9c113bbda9b8751452a284be2b36dcef6ae14a005904065cd4677b15c65c1a66
-size 160
+#
+# Makefile for ALSA
+# Copyright (c) 2001 by Jaroslav Kysela <perex@perex.cz>
+#
+
+snd-vx222-objs := vx222.o vx222_ops.o
+
+obj-$(CONFIG_SND_VX222) += snd-vx222.o

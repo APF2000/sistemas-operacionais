@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:bf1c8f081c60bf561588fc407485da9523c6949f66f84501b5a2e58440122a40
-size 193
+#
+# Makefile for the VME device drivers.
+#
+
+obj-$(CONFIG_VME_USER)		+= vme_user.o
+
+vme_pio2-objs	:= vme_pio2_cntr.o vme_pio2_gpio.o vme_pio2_core.o
+obj-$(CONFIG_VME_PIO2)         += vme_pio2.o

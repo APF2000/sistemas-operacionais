@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:aae2402833b18db57e956b9955cafaa4753ac7230f0dc787c9563a286f7b9623
-size 157
+#
+# Makefile for the s390 PCI subsystem.
+#
+
+obj-$(CONFIG_PCI)	+= pci.o pci_dma.o pci_clp.o pci_sysfs.o \
+			   pci_event.o pci_debug.o pci_insn.o pci_mmio.o

@@ -1,3 +1,28 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c76f7b17dce2a2d21ba77e35cf30e62beeed5c56fb8d1adfe1e1e8bccb0524dc
-size 972
+NVIDIA Tegra30 timer
+
+The Tegra30 timer provides ten 29-bit timer channels, a single 32-bit free
+running counter, and 5 watchdog modules. The first two channels may also
+trigger a legacy watchdog reset.
+
+Required properties:
+
+- compatible : For Tegra30, must contain "nvidia,tegra30-timer".  Otherwise,
+  must contain '"nvidia,<chip>-timer", "nvidia,tegra30-timer"' where
+  <chip> is tegra124 or tegra132.
+- reg : Specifies base physical address and size of the registers.
+- interrupts : A list of 6 interrupts; one per each of timer channels 1
+    through 5, and one for the shared interrupt for the remaining channels.
+- clocks : Must contain one entry, for the module clock.
+  See ../clocks/clock-bindings.txt for details.
+
+timer {
+	compatible = "nvidia,tegra30-timer", "nvidia,tegra20-timer";
+	reg = <0x60005000 0x400>;
+	interrupts = <0 0 0x04
+		      0 1 0x04
+		      0 41 0x04
+		      0 42 0x04
+		      0 121 0x04
+		      0 122 0x04>;
+	clocks = <&tegra_car 214>;
+};

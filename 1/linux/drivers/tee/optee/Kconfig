@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5c4d2127c8366f4d0985a728db5833311f186c0dcf857a941d0b2929b75a3d3d
-size 195
+# OP-TEE Trusted Execution Environment Configuration
+config OPTEE
+	tristate "OP-TEE"
+	depends on HAVE_ARM_SMCCC
+	help
+	  This implements the OP-TEE Trusted Execution Environment (TEE)
+	  driver.

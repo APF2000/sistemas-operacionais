@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e090e32bb35bdcda3b8ac406171b3211468ac008567a90bf4d5cc7673b087185
-size 216
+bcm2835-v4l2-$(CONFIG_VIDEO_BCM2835) := \
+	bcm2835-camera.o \
+	controls.o \
+	mmal-vchiq.o
+
+obj-$(CONFIG_VIDEO_BCM2835) += bcm2835-v4l2.o
+
+ccflags-y += \
+	-Idrivers/staging/vc04_services \
+	-D__VCCOREVER__=0x04000000

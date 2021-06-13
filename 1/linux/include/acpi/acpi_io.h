@@ -1,3 +1,26 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b8925336dd83c304d473f4fd4341df5711457247897ee9b496b84a4af983f093
-size 674
+#ifndef _ACPI_IO_H_
+#define _ACPI_IO_H_
+
+#include <linux/io.h>
+
+#include <asm/acpi.h>
+
+#ifndef acpi_os_ioremap
+static inline void __iomem *acpi_os_ioremap(acpi_physical_address phys,
+					    acpi_size size)
+{
+       return ioremap_cache(phys, size);
+}
+#endif
+
+extern bool acpi_permanent_mmap;
+
+void __iomem *__ref
+acpi_os_map_iomem(acpi_physical_address phys, acpi_size size);
+void __ref acpi_os_unmap_iomem(void __iomem *virt, acpi_size size);
+void __iomem *acpi_os_get_iomem(acpi_physical_address phys, unsigned int size);
+
+int acpi_os_map_generic_address(struct acpi_generic_address *addr);
+void acpi_os_unmap_generic_address(struct acpi_generic_address *addr);
+
+#endif

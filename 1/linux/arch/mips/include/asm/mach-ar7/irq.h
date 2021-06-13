@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:16574dcb1ee69b73043807be36c39e2f9e183f158ee5e0845b2a27bae4ee3025
-size 393
+/*
+ * This file is subject to the terms and conditions of the GNU General Public
+ * License.  See the file "COPYING" in the main directory of this archive
+ * for more details.
+ *
+ * Shamelessly copied from asm-mips/mach-emma2rh/
+ * Copyright (C) 2003 by Ralf Baechle
+ */
+#ifndef __ASM_AR7_IRQ_H
+#define __ASM_AR7_IRQ_H
+
+#define NR_IRQS 256
+
+#include_next <irq.h>
+
+#endif /* __ASM_AR7_IRQ_H */

@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d0ff774c82f74ddc13ada6482706e5358a9b4494d9f5690a0489bcc2f9fe3dd7
-size 224
+#ifndef _ASMPARISC_SHMPARAM_H
+#define _ASMPARISC_SHMPARAM_H
+
+#define SHMLBA	   PAGE_SIZE	/* attach addr a multiple of this */
+#define SHM_COLOUR 0x00400000	/* shared mappings colouring */
+
+#endif /* _ASMPARISC_SHMPARAM_H */

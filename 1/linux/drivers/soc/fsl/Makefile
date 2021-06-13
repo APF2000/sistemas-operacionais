@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f67d00e4a55dd513eea1f52205f2564b22b226af77cd5b2a8f14bf3e9c7215c1
-size 215
+#
+# Makefile for the Linux Kernel SOC fsl specific device drivers
+#
+
+obj-$(CONFIG_FSL_DPAA)                 += qbman/
+obj-$(CONFIG_QUICC_ENGINE)		+= qe/
+obj-$(CONFIG_CPM)			+= qe/
+obj-$(CONFIG_FSL_GUTS)			+= guts.o

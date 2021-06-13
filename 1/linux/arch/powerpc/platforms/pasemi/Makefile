@@ -1,3 +1,3 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:52ec7bef3e3fb6b7a0449aaafe051122037389d29881f61ff47595a506cdebe6
-size 151
+obj-y	+= setup.o pci.o time.o idle.o powersave.o iommu.o dma_lib.o misc.o
+obj-$(CONFIG_PPC_PASEMI_MDIO)	+= gpio_mdio.o
+obj-$(CONFIG_PCI_MSI)		+= msi.o

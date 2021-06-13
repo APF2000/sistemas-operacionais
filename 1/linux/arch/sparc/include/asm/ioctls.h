@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a6d5fc23b0520900e4254e6558eeff3b98c62fdb023c2b7d649781fc36b836d7
-size 319
+#ifndef _ASM_SPARC_IOCTLS_H
+#define _ASM_SPARC_IOCTLS_H
+
+#include <uapi/asm/ioctls.h>
+
+#define TIOCGETC __TIOCGETC
+#define TIOCGETP __TIOCGETP
+#define TIOCGLTC __TIOCGLTC
+#define TIOCSLTC __TIOCSLTC
+#define TIOCSETP __TIOCSETP
+#define TIOCSETN __TIOCSETN
+#define TIOCSETC __TIOCSETC
+#endif /* !(_ASM_SPARC_IOCTLS_H) */

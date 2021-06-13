@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2e37ba9e99526056394a2d2ffeb2f06eee8b97a29761d819e2ac29fb831f9499
-size 517
+/*
+ * This file is subject to the terms and conditions of the GNU General Public
+ * License.  See the file "COPYING" in the main directory of this archive
+ * for more details.
+ *
+ * Copyright (C) 1996, 99, 2003 by Ralf Baechle
+ */
+#ifndef _ASM_BYTEORDER_H
+#define _ASM_BYTEORDER_H
+
+#if defined(__MIPSEB__)
+#include <linux/byteorder/big_endian.h>
+#elif defined(__MIPSEL__)
+#include <linux/byteorder/little_endian.h>
+#else
+# error "MIPS, but neither __MIPSEB__, nor __MIPSEL__???"
+#endif
+
+#endif /* _ASM_BYTEORDER_H */

@@ -1,3 +1,52 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:87c5dc950f41cb7f0964f1b36579deee2d9aaca40bcf8396aac14ffa3d9e66b6
-size 925
+/*
+ * Copyright 2013, Michael Ellerman, IBM Corp.
+ * Licensed under GPLv2.
+ */
+
+#ifndef _SELFTESTS_POWERPC_SUBUNIT_H
+#define _SELFTESTS_POWERPC_SUBUNIT_H
+
+static inline void test_start(char *name)
+{
+	printf("test: %s\n", name);
+}
+
+static inline void test_failure_detail(char *name, char *detail)
+{
+	printf("failure: %s [%s]\n", name, detail);
+}
+
+static inline void test_failure(char *name)
+{
+	printf("failure: %s\n", name);
+}
+
+static inline void test_error(char *name)
+{
+	printf("error: %s\n", name);
+}
+
+static inline void test_skip(char *name)
+{
+	printf("skip: %s\n", name);
+}
+
+static inline void test_success(char *name)
+{
+	printf("success: %s\n", name);
+}
+
+static inline void test_finish(char *name, int status)
+{
+	if (status)
+		test_failure(name);
+	else
+		test_success(name);
+}
+
+static inline void test_set_git_version(char *value)
+{
+	printf("tags: git_version:%s\n", value);
+}
+
+#endif /* _SELFTESTS_POWERPC_SUBUNIT_H */

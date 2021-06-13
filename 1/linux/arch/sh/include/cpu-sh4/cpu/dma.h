@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:007c31c8ccd2a9641034fa4ac4a3bce3661b9cda0b77ccc0d157e0e8ffee5dac
-size 349
+#ifndef __ASM_CPU_SH4_DMA_H
+#define __ASM_CPU_SH4_DMA_H
+
+#include <linux/sh_intc.h>
+
+/*
+ * SH7750/SH7751/SH7760
+ */
+#define DMTE0_IRQ	evt2irq(0x640)
+#define DMTE4_IRQ	evt2irq(0x780)
+#define DMTE6_IRQ	evt2irq(0x7c0)
+#define DMAE0_IRQ	evt2irq(0x6c0)
+
+#define SH_DMAC_BASE0	0xffa00000
+#define SH_DMAC_BASE1	0xffa00070
+
+#endif /* __ASM_CPU_SH4_DMA_H */

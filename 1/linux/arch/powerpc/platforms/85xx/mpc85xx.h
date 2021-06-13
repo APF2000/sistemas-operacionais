@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2752feedc720997ba081456a58f9a648b540a96e21c3d3fad2c4ea5610ade0f4
-size 469
+#ifndef MPC85xx_H
+#define MPC85xx_H
+extern int mpc85xx_common_publish_devices(void);
+
+#ifdef CONFIG_CPM2
+extern void mpc85xx_cpm2_pic_init(void);
+#else
+static inline void __init mpc85xx_cpm2_pic_init(void) {}
+#endif /* CONFIG_CPM2 */
+
+#ifdef CONFIG_QUICC_ENGINE
+extern void mpc85xx_qe_init(void);
+extern void mpc85xx_qe_par_io_init(void);
+#else
+static inline void __init mpc85xx_qe_init(void) {}
+static inline void __init mpc85xx_qe_par_io_init(void) {}
+#endif
+
+#endif

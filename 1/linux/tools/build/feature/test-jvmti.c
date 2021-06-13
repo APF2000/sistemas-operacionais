@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:28b1c1f18213e48f0c8ba0593cc6416f87b5746f5b30a27052a20db9e756085a
-size 307
+#include <jvmti.h>
+#include <jvmticmlr.h>
+
+int main(void)
+{
+	JavaVM			jvm	__attribute__((unused));
+	jvmtiEventCallbacks	cb	__attribute__((unused));
+	jvmtiCapabilities	caps	__attribute__((unused));
+	jvmtiJlocationFormat	format	__attribute__((unused));
+	jvmtiEnv		jvmti	__attribute__((unused));
+
+	return 0;
+}

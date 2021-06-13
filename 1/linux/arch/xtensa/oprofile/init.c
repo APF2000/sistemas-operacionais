@@ -1,3 +1,26 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:6db5fd12eb10f76a17d35a85616e1805865871367dd518388cb52c1e9ff7639a
-size 445
+/**
+ * @file init.c
+ *
+ * @remark Copyright 2008 Tensilica Inc.
+ * @remark Read the file COPYING
+ *
+ */
+
+#include <linux/kernel.h>
+#include <linux/oprofile.h>
+#include <linux/errno.h>
+#include <linux/init.h>
+
+
+extern void xtensa_backtrace(struct pt_regs *const regs, unsigned int depth);
+
+int __init oprofile_arch_init(struct oprofile_operations *ops)
+{
+	ops->backtrace = xtensa_backtrace;
+	return -ENODEV;
+}
+
+
+void oprofile_arch_exit(void)
+{
+}

@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:15b33e42aa8b317d9b4e125952e2b159885e65e61c045da0dc9db3e90d677ace
-size 185
+#
+# Makefile for ALSA
+# Copyright (c) 2001 by Jaroslav Kysela <perex@perex.cz>
+#
+
+snd-ali5451-objs := ali5451.o
+
+# Toplevel Module Dependency
+obj-$(CONFIG_SND_ALI5451) += snd-ali5451.o

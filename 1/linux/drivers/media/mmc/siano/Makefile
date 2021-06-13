@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:df8a7f4cef4dfea358625c3605dbbb4bdbeb8d858a0ff1e88b8432731fa52455
-size 171
+obj-$(CONFIG_SMS_SDIO_DRV) += smssdio.o
+
+ccflags-y += -Idrivers/media/dvb-core
+ccflags-y += -Idrivers/media/common/siano
+ccflags-y += $(extra-cflags-y) $(extra-cflags-m)
+

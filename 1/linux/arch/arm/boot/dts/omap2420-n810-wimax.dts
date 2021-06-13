@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:382d181ad70ecf63f01a74541d4cfbd92fd268fecee9cf56404ccd819649db8c
-size 160
+/dts-v1/;
+
+#include "omap2420-n8x0-common.dtsi"
+
+/ {
+	model = "Nokia N810 WiMax";
+	compatible = "nokia,n810-wimax", "nokia,n8x0", "ti,omap2420", "ti,omap2";
+};

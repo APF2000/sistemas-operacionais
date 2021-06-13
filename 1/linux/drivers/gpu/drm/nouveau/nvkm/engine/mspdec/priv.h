@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a2586b8449dcfb167e259d63551e346f9693f031007a3b2a39f7556a1751f739
-size 307
+#ifndef __NVKM_MSPDEC_PRIV_H__
+#define __NVKM_MSPDEC_PRIV_H__
+#include <engine/mspdec.h>
+
+int nvkm_mspdec_new_(const struct nvkm_falcon_func *, struct nvkm_device *,
+		     int index, struct nvkm_engine **);
+
+void g98_mspdec_init(struct nvkm_falcon *);
+
+void gf100_mspdec_init(struct nvkm_falcon *);
+#endif

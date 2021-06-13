@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:bad55a324c0e55b4c9a4a62d6a079342fc6590c54d2b1a02e1e46ddd129ba92d
-size 200
+#ifndef BCM63XX_DEV_SPI_H
+#define BCM63XX_DEV_SPI_H
+
+#include <linux/types.h>
+#include <bcm63xx_io.h>
+#include <bcm63xx_regs.h>
+
+int __init bcm63xx_spi_register(void);
+
+#endif /* BCM63XX_DEV_SPI_H */

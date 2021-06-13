@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:0583a3045404d0dda8285e455fc52efd16b2c1a9ca0dd60a5c46e51dde6e798e
-size 46
+Image
+zImage
+xipImage
+bootpImage
+uImage
+*.dtb

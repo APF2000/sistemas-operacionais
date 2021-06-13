@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:7d5dec2752e56a2af4e44a90ad5ab386626fedd7b251256f2cbf22e4a3ba7ca7
-size 479
+/* internal.h: ramfs internal definitions
+ *
+ * Copyright (C) 2005 Red Hat, Inc. All Rights Reserved.
+ * Written by David Howells (dhowells@redhat.com)
+ *
+ * This program is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License
+ * as published by the Free Software Foundation; either version
+ * 2 of the License, or (at your option) any later version.
+ */
+
+
+extern const struct inode_operations ramfs_file_inode_operations;

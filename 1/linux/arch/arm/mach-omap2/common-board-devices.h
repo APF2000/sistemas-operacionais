@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:6a2362f8806c45f95f0b03ba2b5af509d887c5960252984fb18a8ffc40685ede
-size 325
+#ifndef __OMAP_COMMON_BOARD_DEVICES__
+#define __OMAP_COMMON_BOARD_DEVICES__
+
+#include <sound/tlv320aic3x.h>
+#include <linux/mfd/menelaus.h>
+
+void *n8x0_legacy_init(void);
+
+extern struct menelaus_platform_data n8x0_menelaus_platform_data;
+extern struct aic3x_pdata n810_aic33_data;
+
+#endif /* __OMAP_COMMON_BOARD_DEVICES__ */

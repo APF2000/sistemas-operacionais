@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:36d4f6bafaa6d27827213e8516616595643677fbbc68d853a6c5ec520e05a7ef
-size 371
+config EFIVAR_FS
+	tristate "EFI Variable filesystem"
+	depends on EFI
+	default m
+	help
+	  efivarfs is a replacement filesystem for the old EFI
+	  variable support via sysfs, as it doesn't suffer from the
+	  same 1024-byte variable size limit.
+
+	  To compile this file system support as a module, choose M
+	  here. The module will be called efivarfs.
+
+	  If unsure, say N.

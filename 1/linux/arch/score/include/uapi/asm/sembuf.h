@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e27ad4f9bcd73993fc1544ec91eb839847777461f9b3bcd9dac83e9dfabd826c
-size 123
+#ifndef _ASM_SCORE_SEMBUF_H
+#define _ASM_SCORE_SEMBUF_H
+
+#include <asm-generic/sembuf.h>
+
+#endif /* _ASM_SCORE_SEMBUF_H */

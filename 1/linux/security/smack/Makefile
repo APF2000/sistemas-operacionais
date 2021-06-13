@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d0621f0278f1b6dc78087cb6e43351894955d77cba575ed15b3aaf96ef00a4e6
-size 185
+#
+# Makefile for the SMACK LSM
+#
+
+obj-$(CONFIG_SECURITY_SMACK) := smack.o
+
+smack-y := smack_lsm.o smack_access.o smackfs.o
+smack-$(CONFIG_SECURITY_SMACK_NETFILTER) += smack_netfilter.o

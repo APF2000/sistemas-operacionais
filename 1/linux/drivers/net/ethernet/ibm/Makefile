@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c56a41d497d70aade25ffd1230700df485db2ebcaf9148e6f597a6797c2d80e7
-size 181
+#
+# Makefile for th IBM network device drivers.
+#
+
+obj-$(CONFIG_IBMVETH) += ibmveth.o
+obj-$(CONFIG_IBMVNIC) += ibmvnic.o
+obj-$(CONFIG_IBM_EMAC) += emac/
+obj-$(CONFIG_EHEA) += ehea/

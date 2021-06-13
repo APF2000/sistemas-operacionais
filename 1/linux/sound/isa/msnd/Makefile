@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:76e07675698c372c1fb29eebce20b80a932172a1f00d38c45aa78d54ca2a33b5
-size 314
+
+snd-msnd-lib-objs := msnd.o msnd_midi.o msnd_pinnacle_mixer.o
+snd-msnd-pinnacle-objs := msnd_pinnacle.o
+snd-msnd-classic-objs := msnd_classic.o
+
+# Toplevel Module Dependency
+obj-$(CONFIG_SND_MSND_PINNACLE) += snd-msnd-pinnacle.o snd-msnd-lib.o
+obj-$(CONFIG_SND_MSND_CLASSIC) += snd-msnd-classic.o snd-msnd-lib.o
+

@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:8b9ec48ff41d5fccc52f3f6412895f9292b791a7a0cde9b899ba9c07b57d646b
-size 360
+SiRF internal audio CODEC
+
+Required properties:
+
+  - compatible : "sirf,atlas6-audio-codec" or "sirf,prima2-audio-codec"
+
+  - reg : the register address of the device.
+
+  - clocks: the clock of SiRF internal audio codec
+
+Example:
+
+audiocodec: audiocodec@b0040000 {
+	compatible = "sirf,atlas6-audio-codec";
+	reg = <0xb0040000 0x10000>;
+	clocks = <&clks 27>;
+};

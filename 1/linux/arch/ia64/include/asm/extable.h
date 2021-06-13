@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:9b46ceb9d2acd569b8619915643f1c13efd117354a5fd43efe919a487ebf97c7
-size 291
+#ifndef _ASM_IA64_EXTABLE_H
+#define _ASM_IA64_EXTABLE_H
+
+#define ARCH_HAS_RELATIVE_EXTABLE
+
+struct exception_table_entry {
+	int insn;	/* location-relative address of insn this fixup is for */
+	int fixup;	/* location-relative continuation addr.; if bit 2 is set, r9 is set to 0 */
+};
+
+#endif

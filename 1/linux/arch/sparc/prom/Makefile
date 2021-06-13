@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:37a6975bd89d235d88ab693379e7241a14d253797de5958f3e35d85b8601396d
-size 507
+# Makefile for the Sun Boot PROM interface library under
+# Linux.
+#
+asflags := -ansi
+ccflags := -Werror
+
+lib-y                 := bootstr_$(BITS).o
+lib-y                 += init_$(BITS).o
+lib-$(CONFIG_SPARC32) += memory.o
+lib-y                 += misc_$(BITS).o
+lib-$(CONFIG_SPARC32) += mp.o
+lib-$(CONFIG_SPARC32) += ranges.o
+lib-y                 += console_$(BITS).o
+lib-y                 += printf.o
+lib-y                 += tree_$(BITS).o
+lib-$(CONFIG_SPARC64) += p1275.o
+lib-$(CONFIG_SPARC64) += cif.o

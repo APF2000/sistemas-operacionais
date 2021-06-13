@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2c98fc5f1457b9ccff790dd4a3e97c4cdb6390d7d05b5354fde9f931cf5ea0e8
-size 375
+/*
+ * Copyright (C) 2012 Imagination Technologies Ltd.
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ */
+
+#include <uapi/asm/unistd.h>
+
+#define __ARCH_WANT_SYS_CLONE

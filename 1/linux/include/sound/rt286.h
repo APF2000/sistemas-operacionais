@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:647f88a92011585f59ccbfac40d60fb9a1f63593796d66f84ca4c6c880b6b3cd
-size 460
+/*
+ * linux/sound/rt286.h -- Platform data for RT286
+ *
+ * Copyright 2013 Realtek Microelectronics
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 2 as
+ * published by the Free Software Foundation.
+ */
+
+#ifndef __LINUX_SND_RT286_H
+#define __LINUX_SND_RT286_H
+
+struct rt286_platform_data {
+	bool cbj_en; /*combo jack enable*/
+	bool gpio2_en; /*GPIO2 enable*/
+};
+
+#endif

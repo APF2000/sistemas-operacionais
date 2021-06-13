@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:7dfecca5a3586984f29cd7fa448ca8ca8b6b956925d4d6bcade7fb683e6be3f9
-size 245
+/*
+ * Trivial program to check that we have a valid 32-bit build environment.
+ * Copyright (c) 2015 Andy Lutomirski
+ * GPL v2
+ */
+
+#ifndef __i386__
+# error wrong architecture
+#endif
+
+#include <stdio.h>
+
+int main()
+{
+	printf("\n");
+
+	return 0;
+}

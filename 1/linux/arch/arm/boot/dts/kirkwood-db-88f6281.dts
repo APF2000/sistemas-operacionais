@@ -1,3 +1,28 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c473d1a89b47a5911d3b82204845c70485e3af483f099f4ee26abc40a5c342d2
-size 631
+/*
+ * Marvell DB-88F6281-BP Development Board Setup
+ *
+ * Saeed Bishara <saeed@marvell.com>
+ * Thomas Petazzoni <thomas.petazzoni@free-electrons.com>
+ *
+ * This file is licensed under the terms of the GNU General Public
+ * License version 2.  This program is licensed "as is" without any
+ * warranty of any kind, whether express or implied.
+ */
+
+/dts-v1/;
+
+#include "kirkwood-db.dtsi"
+#include "kirkwood-6281.dtsi"
+
+/ {
+	model = "Marvell DB-88F6281-BP Development Board";
+	compatible = "marvell,db-88f6281-bp", "marvell,kirkwood-88f6281", "marvell,kirkwood";
+};
+
+&pciec {
+        status = "okay";
+};
+
+&pcie0 {
+	status = "okay";
+};

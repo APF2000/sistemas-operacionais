@@ -1,3 +1,28 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c0595716898b616d02fcd4715a1a20c0dfaebe30d944a8e305f0d4286152a14c
-size 374
+C6X System-on-Chip
+------------------
+
+Required properties:
+
+- compatible: "simple-bus"
+- #address-cells: must be 1
+- #size-cells: must be 1
+- ranges
+
+Optional properties:
+
+- model: specific SoC model
+
+- nodes for IP blocks within SoC
+
+
+Example:
+
+	soc {
+		compatible = "simple-bus";
+		model = "tms320c6455";
+		#address-cells = <1>;
+		#size-cells = <1>;
+		ranges;
+
+		...
+	};

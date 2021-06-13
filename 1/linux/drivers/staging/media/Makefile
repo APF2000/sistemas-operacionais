@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c2cdc1bf2ead0f3e4246b60ee3af5a5b50cf33dfe88ccf0320ee26d13889d7b9
-size 243
+obj-$(CONFIG_I2C_BCM2048)	+= bcm2048/
+obj-$(CONFIG_DVB_CXD2099)	+= cxd2099/
+obj-$(CONFIG_LIRC_STAGING)	+= lirc/
+obj-$(CONFIG_VIDEO_DM365_VPFE)	+= davinci_vpfe/
+obj-$(CONFIG_VIDEO_OMAP4)	+= omap4iss/
+obj-$(CONFIG_INTEL_ATOMISP)     += atomisp/

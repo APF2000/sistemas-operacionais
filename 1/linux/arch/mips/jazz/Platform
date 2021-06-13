@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:dfe3db686ac837e1f9e218d488822bfe5bf9740d37c2a75eb79dc62379151688
-size 216
+#
+# Acer PICA 61, Mips Magnum 4000 and Olivetti M700.
+#
+platform-$(CONFIG_MACH_JAZZ)	+= jazz/
+cflags-$(CONFIG_MACH_JAZZ)	+= -I$(srctree)/arch/mips/include/asm/mach-jazz
+load-$(CONFIG_MACH_JAZZ)	+= 0xffffffff80080000

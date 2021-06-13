@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5adfcabc100bcdb4450708bade23f5ed0f07b84ff31b6e41ebde249391a2955d
-size 182
+#
+# VxFS Makefile
+#
+
+obj-$(CONFIG_VXFS_FS) += freevxfs.o
+
+freevxfs-objs := vxfs_bmap.o vxfs_fshead.o vxfs_immed.o vxfs_inode.o \
+		 vxfs_lookup.o vxfs_olt.o vxfs_subr.o vxfs_super.o

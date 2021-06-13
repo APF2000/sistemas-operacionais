@@ -1,3 +1,2 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c08fe1399cb13003e727c02401d358c6439a6315b31ca53a4972967cc1955a85
-size 37
+libbpf_version.h
+FEATURE-DUMP.libbpf

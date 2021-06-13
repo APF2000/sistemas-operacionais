@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:10db5e5f7bc6ba12086bc1e3cf630b109bba1e93035533a99409855c4db3f950
-size 199
+#!/bin/bash
+
+#
+# event_analyzing_sample.py can cover all type of perf samples including
+# the tracepoints, so no special record requirements, just record what
+# you want to analyze.
+#
+perf record $@

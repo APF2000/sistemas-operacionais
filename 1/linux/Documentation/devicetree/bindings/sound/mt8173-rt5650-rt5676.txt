@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:6f65cfbf82daf9e57e8d5d3c2ec515737f1f30d4fec0ccd8f170dc47d5940452
-size 427
+MT8173 with RT5650 RT5676 CODECS and HDMI via I2S
+
+Required properties:
+- compatible : "mediatek,mt8173-rt5650-rt5676"
+- mediatek,audio-codec: the phandles of rt5650 and rt5676 codecs
+			and of the hdmi encoder node
+- mediatek,platform: the phandle of MT8173 ASoC platform
+
+Example:
+
+	sound {
+		compatible = "mediatek,mt8173-rt5650-rt5676";
+		mediatek,audio-codec = <&rt5650 &rt5676 &hdmi0>;
+		mediatek,platform = <&afe>;
+	};
+

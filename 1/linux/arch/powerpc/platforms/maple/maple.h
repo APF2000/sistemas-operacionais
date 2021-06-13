@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:39c7860e6ff8ea5826c6334948eb765cdcc9a5fc38e676f6364c9f5d903d1d15
-size 518
+/*
+ * Declarations for maple-specific code.
+ *
+ * Maple is the name of a PPC970 evaluation board.
+ */
+extern int maple_set_rtc_time(struct rtc_time *tm);
+extern void maple_get_rtc_time(struct rtc_time *tm);
+extern unsigned long maple_get_boot_time(void);
+extern void maple_calibrate_decr(void);
+extern void maple_pci_init(void);
+extern void maple_pci_irq_fixup(struct pci_dev *dev);
+extern int maple_pci_get_legacy_ide_irq(struct pci_dev *dev, int channel);
+
+extern struct pci_controller_ops maple_pci_controller_ops;

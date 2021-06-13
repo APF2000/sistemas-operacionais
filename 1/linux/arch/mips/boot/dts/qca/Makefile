@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d3ece32783189a0ebbd8090d407c54844be05c8c8711226f905c49842f2d67b0
-size 373
+# All DTBs
+dtb-$(CONFIG_ATH79)			+= ar9132_tl_wr1043nd_v1.dtb
+dtb-$(CONFIG_ATH79)			+= ar9331_dpt_module.dtb
+dtb-$(CONFIG_ATH79)			+= ar9331_dragino_ms14.dtb
+dtb-$(CONFIG_ATH79)			+= ar9331_omega.dtb
+dtb-$(CONFIG_ATH79)			+= ar9331_tl_mr3020.dtb
+
+# Force kbuild to make empty built-in.o if necessary
+obj-				+= dummy.o
+
+always				:= $(dtb-y)
+clean-files			:= *.dtb *.dtb.S

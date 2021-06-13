@@ -1,3 +1,21 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1e07f914839bf79d630a5e1cdd6e29667afa4076664c9733c5a5bf1ddb70284b
-size 431
+#ifndef __ASM_GENERIC_QRWLOCK_TYPES_H
+#define __ASM_GENERIC_QRWLOCK_TYPES_H
+
+#include <linux/types.h>
+#include <asm/spinlock_types.h>
+
+/*
+ * The queue read/write lock data structure
+ */
+
+typedef struct qrwlock {
+	atomic_t		cnts;
+	arch_spinlock_t		wait_lock;
+} arch_rwlock_t;
+
+#define	__ARCH_RW_LOCK_UNLOCKED {		\
+	.cnts = ATOMIC_INIT(0),			\
+	.wait_lock = __ARCH_SPIN_LOCK_UNLOCKED,	\
+}
+
+#endif /* __ASM_GENERIC_QRWLOCK_TYPES_H */

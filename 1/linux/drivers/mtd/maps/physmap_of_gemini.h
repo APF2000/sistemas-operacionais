@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:bc110a6d10fe10c41fa11684b1263a4fb0e4079c9e407ca351fb22bb7712d2dc
-size 353
+#include <linux/of.h>
+#include <linux/mtd/map.h>
+
+#ifdef CONFIG_MTD_PHYSMAP_OF_GEMINI
+int of_flash_probe_gemini(struct platform_device *pdev,
+			  struct device_node *np,
+			  struct map_info *map);
+#else
+static inline
+int of_flash_probe_gemini(struct platform_device *pdev,
+			  struct device_node *np,
+			  struct map_info *map)
+{
+	return 0;
+}
+#endif

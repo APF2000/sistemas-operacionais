@@ -1,3 +1,26 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:95ccd6f55a2350e68687146602bf19d87d650a151a8c37937b457d098e4e0764
-size 722
+/*
+ * MCP4725 DAC driver
+ *
+ * Copyright (C) 2012 Peter Meerwald <pmeerw@pmeerw.net>
+ *
+ * Licensed under the GPL-2 or later.
+ */
+
+#ifndef IIO_DAC_MCP4725_H_
+#define IIO_DAC_MCP4725_H_
+
+/**
+ * struct mcp4725_platform_data - MCP4725/6 DAC specific data.
+ * @use_vref: Whether an external reference voltage on Vref pin should be used.
+ *            Additional vref-supply must be specified when used.
+ * @vref_buffered: Controls buffering of the external reference voltage.
+ *
+ * Vref related settings are available only on MCP4756. See
+ * Documentation/devicetree/bindings/iio/dac/mcp4725.txt for more information.
+ */
+struct mcp4725_platform_data {
+	bool use_vref;
+	bool vref_buffered;
+};
+
+#endif /* IIO_DAC_MCP4725_H_ */

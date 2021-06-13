@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:38e78ea433d76211fffdd2cb9a7d5983680df1d5adfd5767ccdff51af348eacd
-size 152
+Texas Intstruments ADS117x ADC
+
+Required properties:
+
+  - compatible : "ti,ads1174" or "ti,ads1178"
+
+Example:
+
+ads1178 {
+	compatible = "ti,ads1178";
+};

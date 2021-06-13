@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:84fd55cafa14b1c775288426bbbf665ea43783fdd1211c04ff33de223938b08d
-size 343
+#!/bin/sh
+# set aoe to autoload by installing the
+# aliases in /etc/modprobe.d/
+
+f=/etc/modprobe.d/aoe.conf
+
+if test ! -r $f || test ! -w $f; then
+	echo "cannot configure $f for module autoloading" 1>&2
+	exit 1
+fi
+
+grep major-152 $f >/dev/null
+if [ $? = 1 ]; then
+	echo alias block-major-152 aoe >> $f
+	echo alias char-major-152 aoe >> $f
+fi
+

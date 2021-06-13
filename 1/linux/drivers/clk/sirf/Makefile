@@ -1,3 +1,5 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:af0b5cc90222a82139ed20804b612b15e94da968f9dbbac5c3d1db9d09afa539
-size 104
+#
+# Makefile for sirf specific clk
+#
+
+obj-$(CONFIG_ARCH_SIRF) += clk-prima2.o clk-atlas6.o clk-atlas7.o

@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:bb8c57d523f3164188a78aa78ff038414d91e7b69b8107910915733290c99b6f
-size 433
+config OCTEON_ETHERNET
+	tristate "Cavium Networks Octeon Ethernet support"
+	depends on CAVIUM_OCTEON_SOC && NETDEVICES
+	select PHYLIB
+	select MDIO_OCTEON
+	help
+	  This driver supports the builtin ethernet ports on Cavium
+	  Networks' products in the Octeon family. This driver supports the
+	  CN3XXX and CN5XXX Octeon processors.
+
+	  To compile this driver as a module, choose M here.  The module
+	  will be called octeon-ethernet.
+

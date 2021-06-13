@@ -1,3 +1,4 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c62fca68669d5d0bd60231842ad360135faa3953e68a4815db443f2d6d788780
-size 160
+obj-$(CONFIG_LNET_SELFTEST) := lnet_selftest.o
+
+lnet_selftest-y := console.o conrpc.o conctl.o framework.o timer.o rpc.o \
+		   module.o ping_test.o brw_test.o

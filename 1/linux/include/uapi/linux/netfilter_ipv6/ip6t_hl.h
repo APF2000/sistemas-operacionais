@@ -1,3 +1,24 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:90a5831769d8ccab20b7f448d07901fb6647d360836029c9bbebd3110ccd67e8
-size 395
+/* ip6tables module for matching the Hop Limit value
+ * Maciej Soltysiak <solt@dns.toxicfilms.tv>
+ * Based on HW's ttl module */
+
+#ifndef _IP6T_HL_H
+#define _IP6T_HL_H
+
+#include <linux/types.h>
+
+enum {
+	IP6T_HL_EQ = 0,		/* equals */
+	IP6T_HL_NE,		/* not equals */
+	IP6T_HL_LT,		/* less than */
+	IP6T_HL_GT,		/* greater than */
+};
+
+
+struct ip6t_hl_info {
+	__u8	mode;
+	__u8	hop_limit;
+};
+
+
+#endif

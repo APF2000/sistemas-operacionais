@@ -1,3 +1,20 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b6f8ddb7df3aea52655e2f3bcbda37a21eed075028e59c1ad5f19de013dae51c
-size 694
+/*
+ * Support for Intel Camera Imaging ISP subsystem.
+ * Copyright (c) 2015, Intel Corporation.
+ *
+ * This program is free software; you can redistribute it and/or modify it
+ * under the terms and conditions of the GNU General Public License,
+ * version 2, as published by the Free Software Foundation.
+ *
+ * This program is distributed in the hope it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+ * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for
+ * more details.
+ */
+
+#ifndef __IA_CSS_YUV_LOAD_PARAM_H
+#define __IA_CSS_YUV_LOAD_PARAM_H
+
+#include "ia_css_yuv_ls_param.h"
+
+#endif /* __IA_CSS_YUV_LOAD_PARAM_H */

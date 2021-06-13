@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b9acd7372394744022a6049df90b7b79a06ddbf601d1c3e54f7b1cd61f4b776e
-size 165
+# DMA engine configuration for hsu
+config HSU_DMA
+	tristate
+	select DMA_ENGINE
+	select DMA_VIRTUAL_CHANNELS
+
+config HSU_DMA_PCI
+	tristate
+	depends on HSU_DMA && PCI

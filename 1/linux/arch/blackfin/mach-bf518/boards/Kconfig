@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:91927c9c82ac0a58bdb943167b4da05aa66ae5b4bd6694bb0526910adbf704d8
-size 287
+choice
+	prompt "System type"
+	default BFIN518F_EZBRD
+	help
+	  Select your board!
+
+config BFIN518F_EZBRD
+	bool "BF518F-EZBRD"
+	help
+	  BF518-EZBRD board support.
+
+config BFIN518F_TCM
+       bool "Bluetechnix TCM-BF518"
+       help
+         Bluetechnix TCM-BF518 board support.
+
+endchoice

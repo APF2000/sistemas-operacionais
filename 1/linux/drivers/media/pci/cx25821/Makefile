@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5aa4c3855f45864b3d54ecc8ea8ff3e0e174ce57197ed01c5efd26af220c3087
-size 263
+cx25821-y   := cx25821-core.o cx25821-cards.o cx25821-i2c.o \
+		       cx25821-gpio.o cx25821-medusa-video.o \
+		       cx25821-video.o
+
+obj-$(CONFIG_VIDEO_CX25821) += cx25821.o
+obj-$(CONFIG_VIDEO_CX25821_ALSA) += cx25821-alsa.o
+
+ccflags-y += -Idrivers/media/i2c

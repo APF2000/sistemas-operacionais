@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:97bd01276ca0e7e5efdad4d10f23141409841cdc9d9ff14644c12c5632f58e69
-size 325
+#ifndef _ASM_IA64_FCNTL_H
+#define _ASM_IA64_FCNTL_H
+/*
+ * Modified 1998-2000
+ *	David Mosberger-Tang <davidm@hpl.hp.com>, Hewlett-Packard Co.
+ */
+
+#define force_o_largefile()	\
+		(personality(current->personality) != PER_LINUX32)
+
+#include <linux/personality.h>
+#include <asm-generic/fcntl.h>
+
+#endif /* _ASM_IA64_FCNTL_H */

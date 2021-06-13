@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:8ad8e33b5755c7c82bb9cba6e2130d383c7e4f605754e6e23b4990053c7d3f6d
-size 178
+config INFINIBAND_RDMAVT
+	tristate "RDMA verbs transport library"
+	depends on 64BIT
+	select DMA_VIRT_OPS
+	---help---
+	This is a common software verbs provider for RDMA networks.

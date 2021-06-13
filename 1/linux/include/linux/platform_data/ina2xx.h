@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:49d74bb0e3480902bcce373c06b7e225cdb5352329543b01b1f7a04b30df7fc8
-size 546
+/*
+ * Driver for Texas Instruments INA219, INA226 power monitor chips
+ *
+ * Copyright (C) 2012 Lothar Felten <l-felten@ti.com>
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 2 as
+ * published by the Free Software Foundation.
+ *
+ * For further information, see the Documentation/hwmon/ina2xx file.
+ */
+
+/**
+ * struct ina2xx_platform_data - ina2xx info
+ * @shunt_uohms		shunt resistance in microohms
+ */
+struct ina2xx_platform_data {
+	long shunt_uohms;
+};

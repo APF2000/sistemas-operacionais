@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:089d4171b0850d9b7b3a637531752ce45f156fab99c30ae4de8f50bed1e54d18
-size 217
+/* This handles the memory map.. */
+
+#if defined(CONFIG_RAMBASE)
+#define PAGE_OFFSET_RAW		CONFIG_RAMBASE
+#elif defined(CONFIG_SUN3)
+#define PAGE_OFFSET_RAW		0x0E000000
+#else
+#define PAGE_OFFSET_RAW		0x00000000
+#endif

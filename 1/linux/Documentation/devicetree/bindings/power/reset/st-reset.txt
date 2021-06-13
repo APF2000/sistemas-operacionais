@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:eab7567ea9307bddc6a3fc1f19c614e6ca984f3550aea188c6b0e6cd7e3ce1ba
-size 289
+*Device-Tree bindings for ST SW reset functionality
+
+Required properties:
+- compatible: should be "stih407-restart".
+- st,syscfg: should be a phandle of the syscfg node.
+
+Example node:
+	restart {
+		compatible = "st,stih407-restart";
+		st,syscfg = <&syscfg_sbc_reg>;
+		status = "okay";
+	};

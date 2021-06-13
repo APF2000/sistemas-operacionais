@@ -1,3 +1,24 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:049bc452aa329abf52c853b5b844213d1deb74f7d206997c659c659b73cefccf
-size 539
+#ifndef _LINUX_SCHED_HOTPLUG_H
+#define _LINUX_SCHED_HOTPLUG_H
+
+/*
+ * Scheduler interfaces for hotplug CPU support:
+ */
+
+extern int sched_cpu_starting(unsigned int cpu);
+extern int sched_cpu_activate(unsigned int cpu);
+extern int sched_cpu_deactivate(unsigned int cpu);
+
+#ifdef CONFIG_HOTPLUG_CPU
+extern int sched_cpu_dying(unsigned int cpu);
+#else
+# define sched_cpu_dying	NULL
+#endif
+
+#ifdef CONFIG_HOTPLUG_CPU
+extern void idle_task_exit(void);
+#else
+static inline void idle_task_exit(void) {}
+#endif
+
+#endif /* _LINUX_SCHED_HOTPLUG_H */

@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:29ca9cc564470ec1e24950ea7247073c1ba57934e734d96b141cba0f382a6f37
-size 383
+#include <libunwind-arm.h>
+#include <stdlib.h>
+
+extern int
+UNW_OBJ(dwarf_find_debug_frame) (int found, unw_dyn_info_t *di_debug,
+				 unw_word_t ip, unw_word_t segbase,
+				 const char *obj_name, unw_word_t start,
+				 unw_word_t end);
+
+#define dwarf_find_debug_frame UNW_OBJ(dwarf_find_debug_frame)
+
+int main(void)
+{
+	dwarf_find_debug_frame(0, NULL, 0, 0, NULL, 0, 0);
+	return 0;
+}

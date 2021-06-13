@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:6ae0fec719c09c5c4ca87836eb3fc1d9edab94ca3021d36da349f52288c52b92
-size 142
+#ifndef _ASM_SCORE_EXEC_H
+#define _ASM_SCORE_EXEC_H
+
+extern unsigned long arch_align_stack(unsigned long sp);
+
+#endif /* _ASM_SCORE_EXEC_H */

@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:cf53ad35fdd132328f442878d36d4da876122324a1d0e1689a291a465754b241
-size 280
+CC = gcc
+LIBUSB_CFLAGS = $(shell pkg-config --cflags libusb-1.0)
+LIBUSB_LIBS = $(shell pkg-config --libs libusb-1.0)
+WARNINGS = -Wall -Wextra
+CFLAGS = $(LIBUSB_CFLAGS) $(WARNINGS)
+LDFLAGS = $(LIBUSB_LIBS)
+
+all: test
+%: %.c
+	$(CC) $(CFLAGS) -o $@ $^ $(LDFLAGS)
+
+clean:
+	$(RM) test

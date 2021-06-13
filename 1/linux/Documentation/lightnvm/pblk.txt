@@ -1,3 +1,21 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5d953eb72e9d5f94527e376723ac68ccd29950372f498283fdae5f4562a4fc08
-size 788
+pblk: Physical Block Device Target
+==================================
+
+pblk implements a fully associative, host-based FTL that exposes a traditional
+block I/O interface. Its primary responsibilities are:
+
+  - Map logical addresses onto physical addresses (4KB granularity) in a
+    logical-to-physical (L2P) table.
+  - Maintain the integrity and consistency of the L2P table as well as its
+    recovery from normal tear down and power outage.
+  - Deal with controller- and media-specific constrains.
+  - Handle I/O errors.
+  - Implement garbage collection.
+  - Maintain consistency across the I/O stack during synchronization points.
+
+For more information please refer to:
+
+  http://lightnvm.io
+
+which maintains updated FAQs, manual pages, technical documentation, tools,
+contacts, etc.

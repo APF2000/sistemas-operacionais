@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:7cd432448a1f877e1e001d558ac1bbcf1ad1504f0da8c8701e7b703ff99cdd8a
-size 342
+/*
+ * This header provides constants for most thermal bindings.
+ *
+ * Copyright (C) 2013 Texas Instruments
+ *	Eduardo Valentin <eduardo.valentin@ti.com>
+ *
+ * GPLv2 only
+ */
+
+#ifndef _DT_BINDINGS_THERMAL_THERMAL_H
+#define _DT_BINDINGS_THERMAL_THERMAL_H
+
+/* On cooling devices upper and lower limits */
+#define THERMAL_NO_LIMIT		(~0)
+
+#endif
+

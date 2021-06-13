@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:cd0fd805971402634754ec4ad3d4b4aa1dfdfc2bc1f9c13cc961ee7fb95dc711
-size 150
+#ifndef _PERF_UI_MAP_BROWSER_H_
+#define _PERF_UI_MAP_BROWSER_H_ 1
+struct map;
+
+int map__browse(struct map *map);
+#endif /* _PERF_UI_MAP_BROWSER_H_ */

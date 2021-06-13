@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:eb9eaf166cfd2c38eb63c2b377d36bce6d1a65e5e3cc359c1fcb6519a3ce9ec5
-size 392
+/*  sound/soc/samsung/pcm.h
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 2 as
+ * published by the Free Software Foundation.
+ *
+ */
+
+#ifndef __S3C_PCM_H
+#define __S3C_PCM_H __FILE__
+
+#define S3C_PCM_CLKSRC_PCLK	0
+#define S3C_PCM_CLKSRC_MUX	1
+
+#define S3C_PCM_SCLK_PER_FS	0
+
+#endif /* __S3C_PCM_H */

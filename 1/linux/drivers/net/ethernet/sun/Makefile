@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:386931abc476cac9aab899750a21f3785635b73c86c0360b010f49a651df834b
-size 366
+#
+# Makefile for the Sun network device drivers.
+#
+
+obj-$(CONFIG_HAPPYMEAL) += sunhme.o
+obj-$(CONFIG_SUNQE) += sunqe.o
+obj-$(CONFIG_SUNBMAC) += sunbmac.o
+obj-$(CONFIG_SUNGEM) += sungem.o
+obj-$(CONFIG_CASSINI) += cassini.o
+obj-$(CONFIG_SUNVNET_COMMON) += sunvnet_common.o
+obj-$(CONFIG_SUNVNET) += sunvnet.o
+obj-$(CONFIG_LDMVSW) += ldmvsw.o
+obj-$(CONFIG_NIU) += niu.o

@@ -1,3 +1,21 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ddeebb311111053d2f23187d09e044f27a5b23e33d93457e167c39fc5505a8c4
-size 336
+/* 
+ * Copyright (C) 2001 - 2007 Jeff Dike (jdike@{addtoit,linux.intel}.com)
+ * Licensed under the GPL
+ */
+
+#ifndef __UM_TUNTAP_H
+#define __UM_TUNTAP_H
+
+#include <net_user.h>
+
+struct tuntap_data {
+	char *dev_name;
+	int fixed_config;
+	char *gate_addr;
+	int fd;
+	void *dev;
+};
+
+extern const struct net_user_info tuntap_user_info;
+
+#endif

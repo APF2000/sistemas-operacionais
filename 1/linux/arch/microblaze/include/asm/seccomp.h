@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:6f0c1d3431ab6621fea71272cfb0ecb49c93d6774331c52690eb98352e42cb90
-size 217
+#ifndef _ASM_MICROBLAZE_SECCOMP_H
+#define _ASM_MICROBLAZE_SECCOMP_H
+
+#include <linux/unistd.h>
+
+#define __NR_seccomp_sigreturn		__NR_sigreturn
+
+#include <asm-generic/seccomp.h>
+
+#endif	/* _ASM_MICROBLAZE_SECCOMP_H */

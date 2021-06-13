@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:8abcc4657216b1db89fddc5a559ad07ed360cb334651978db78e09e92a9cb118
-size 176
+
+#include <babeltrace/ctf-writer/writer.h>
+#include <babeltrace/ctf-ir/stream-class.h>
+
+int main(void)
+{
+	bt_ctf_stream_class_get_packet_context_type((void *) 0);
+	return 0;
+}

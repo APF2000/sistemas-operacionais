@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:72547ab2725a41322f2c95ed42cbfcb0816429f474c87b4d71080360269d7d18
-size 165
+#
+# Makefile for Linux arch/m68k/sun3 source directory
+#
+
+obj-y	:= sun3ints.o sun3dvma.o idprom.o
+
+obj-$(CONFIG_SUN3) += config.o mmu_emu.o leds.o dvma.o intersil.o

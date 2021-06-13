@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:815379620ffa3e8c106616c0bbbe1a601202daf2b88ae5cebb1050d8379a7a3e
-size 295
+/*
+** asm/bootinfo-q40.h -- Q40-specific boot information definitions
+*/
+
+#ifndef _UAPI_ASM_M68K_BOOTINFO_Q40_H
+#define _UAPI_ASM_M68K_BOOTINFO_Q40_H
+
+
+    /*
+     *  Latest Q40 bootinfo version
+     */
+
+#define Q40_BOOTI_VERSION	MK_BI_VERSION(2, 0)
+
+
+#endif /* _UAPI_ASM_M68K_BOOTINFO_Q40_H */

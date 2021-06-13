@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4e7664dc3ea66d5fbcdcf2203c47290b974158c7eb6c63e65a4caf5da02ee676
-size 226
+#ifndef __LINUX_BRIDGE_EBT_ARPREPLY_H
+#define __LINUX_BRIDGE_EBT_ARPREPLY_H
+
+#include <linux/if_ether.h>
+
+struct ebt_arpreply_info {
+	unsigned char mac[ETH_ALEN];
+	int target;
+};
+#define EBT_ARPREPLY_TARGET "arpreply"
+
+#endif

@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:39b46c3893ae22f485b09337c967c447fcccb27a72c41bf0834eb3c6a015a4ea
-size 263
+config VIDEO_CX25840
+	tristate "Conexant CX2584x audio/video decoders"
+	depends on VIDEO_V4L2 && I2C
+	---help---
+	  Support for the Conexant CX2584x audio/video decoders.
+
+	  To compile this driver as a module, choose M here: the
+	  module will be called cx25840

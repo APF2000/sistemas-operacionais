@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4d7ee2477fbd0fe2983d576f2626e9d8d91b21e3d7acd82a22a7caecd399b6f7
-size 325
+#ifdef __uClinux__
+#include <asm/uaccess_no.h>
+#else
+#include <asm/uaccess_mm.h>
+#endif
+
+#include <asm/extable.h>
+#ifdef CONFIG_CPU_HAS_NO_UNALIGNED
+#include <asm-generic/uaccess-unaligned.h>
+#else
+#define __get_user_unaligned(x, ptr)	__get_user((x), (ptr))
+#define __put_user_unaligned(x, ptr)	__put_user((x), (ptr))
+#endif

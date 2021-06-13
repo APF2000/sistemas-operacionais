@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4f526097e7f9f46f2e15117d51a3b6b5faf436416092f86e7ee1d9a04e0b3dda
-size 371
+* Texas Instruments - drv2665 Haptics driver
+
+Required properties:
+	- compatible - "ti,drv2665" - DRV2665
+	- reg -  I2C slave address
+	- vbat-supply - Required supply regulator
+
+Example:
+
+haptics: haptics@59 {
+	compatible = "ti,drv2665";
+	reg = <0x59>;
+	vbat-supply = <&vbat>;
+};
+
+For more product information please see the link below:
+http://www.ti.com/product/drv2665

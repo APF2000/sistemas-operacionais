@@ -1,3 +1,25 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:3af9334becc6e5ffb5846af8ad883c4c9031d5deef05d38ae9245f3b132395cb
-size 505
+#ifndef _LINUX_IPC_H
+#define _LINUX_IPC_H
+
+#include <linux/spinlock.h>
+#include <linux/uidgid.h>
+#include <uapi/linux/ipc.h>
+
+#define IPCMNI 32768  /* <= MAX_INT limit for ipc arrays (including sysctl changes) */
+
+/* used by in-kernel data structures */
+struct kern_ipc_perm {
+	spinlock_t	lock;
+	bool		deleted;
+	int		id;
+	key_t		key;
+	kuid_t		uid;
+	kgid_t		gid;
+	kuid_t		cuid;
+	kgid_t		cgid;
+	umode_t		mode;
+	unsigned long	seq;
+	void		*security;
+} ____cacheline_aligned_in_smp;
+
+#endif /* _LINUX_IPC_H */

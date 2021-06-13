@@ -1,3 +1,5 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:81262daefc7a4385c24c65cd4250c9f05779e87b42da3ffa446d8d5ad3f392bc
-size 136
+Altera JTAG UART
+
+Required properties:
+- compatible : should be "ALTR,juart-1.0" <DEPRECATED>
+- compatible : should be "altr,juart-1.0"

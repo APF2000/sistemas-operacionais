@@ -1,3 +1,21 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d546499fde6465941079df4f60eadb364ee18fbcb6d2b81290cf30d75ba2223c
-size 422
+/*
+ * debugfs.c - ACPI debugfs interface to userspace.
+ */
+
+#include <linux/export.h>
+#include <linux/init.h>
+#include <linux/debugfs.h>
+#include <linux/acpi.h>
+
+#include "internal.h"
+
+#define _COMPONENT		ACPI_SYSTEM_COMPONENT
+ACPI_MODULE_NAME("debugfs");
+
+struct dentry *acpi_debugfs_dir;
+EXPORT_SYMBOL_GPL(acpi_debugfs_dir);
+
+void __init acpi_debugfs_init(void)
+{
+	acpi_debugfs_dir = debugfs_create_dir("acpi", NULL);
+}

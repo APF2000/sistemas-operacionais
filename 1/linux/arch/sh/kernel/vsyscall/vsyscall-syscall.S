@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:6a06126f69844a7193862b85d4b01b45d5bf71d332e3f0d9c892e157897e759b
-size 190
+#include <linux/init.h>
+
+__INITDATA
+
+	.globl vsyscall_trapa_start, vsyscall_trapa_end
+vsyscall_trapa_start:
+	.incbin "arch/sh/kernel/vsyscall/vsyscall-trapa.so"
+vsyscall_trapa_end:
+
+__FINIT

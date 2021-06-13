@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:baff8d84cf6a51b8734b6f93ebf54b4df6d06b7ff43ce0dcc4cfcc136b6126a1
-size 389
+* Marvell Berlin USB PHY
+
+Required properties:
+- compatible: "marvell,berlin2-usb-phy" or "marvell,berlin2cd-usb-phy"
+- reg: base address and length of the registers
+- #phys-cells: should be 0
+- resets: reference to the reset controller
+
+Example:
+
+	usb-phy@f774000 {
+		compatible = "marvell,berlin2-usb-phy";
+		reg = <0xf774000 0x128>;
+		#phy-cells = <0>;
+		resets = <&chip 0x104 14>;
+	};

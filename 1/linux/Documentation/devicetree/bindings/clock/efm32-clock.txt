@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:63f08c792188001f1a41788375c79ba02ebbdb682a38e0a275a545b44d4dd901
-size 420
+* Clock bindings for Energy Micro efm32 Giant Gecko's Clock Management Unit
+
+Required properties:
+- compatible: Should be "efm32gg,cmu"
+- reg: Base address and length of the register set
+- interrupts: Interrupt used by the CMU
+- #clock-cells: Should be <1>
+
+The clock consumer should specify the desired clock by having the clock ID in
+its "clocks" phandle cell. The header efm32-clk.h contains a list of available
+IDs.

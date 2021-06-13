@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:38d3433b3336938bd1a20abb9f69092d86bf13aa67fd1fb6bc3dc845514bd52d
-size 343
+#include <linux/linkage.h>
+#include <asm/assembler.h>
+#include <mach/hardware.h>
+#include <mach/entry-macro.S>
+
+	.text
+
+	.global	rpc_default_fiq_end
+ENTRY(rpc_default_fiq_start)
+	mov	r12, #ioc_base_high
+	.if	ioc_base_low
+	orr	r12, r12, #ioc_base_low
+	.endif
+	strb	r12, [r12, #0x38]	@ Disable FIQ register
+	subs	pc, lr, #4
+rpc_default_fiq_end:

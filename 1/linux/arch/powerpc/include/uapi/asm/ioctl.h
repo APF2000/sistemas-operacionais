@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ae8da481a12993a417e799c33915bee45b0fe23850153c9fe6690f6f37ffbf01
-size 239
+#ifndef _ASM_POWERPC_IOCTL_H
+#define _ASM_POWERPC_IOCTL_H
+
+#define _IOC_SIZEBITS	13
+#define _IOC_DIRBITS	3
+
+#define _IOC_NONE	1U
+#define _IOC_READ	2U
+#define _IOC_WRITE	4U
+
+#include <asm-generic/ioctl.h>
+
+#endif	/* _ASM_POWERPC_IOCTL_H */

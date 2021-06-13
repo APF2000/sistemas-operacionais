@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c0e220f962ea1dc37cb306e8ec7f332c63f77d5faba05a91331c896d97d64624
-size 372
+What:		/sys/bus/usb/devices/<busnum>-<devnum>:<config num>.<interface num>/control
+Date:		October 2012
+Contact:	Stefan Achatz <erazor_de@users.sourceforge.net>
+Description:	When written, cpi, button and light settings can be configured.
+		When read, actual cpi setting and sensor data are returned.
+		The data has to be 8 bytes long.
+Users:		http://roccat.sourceforge.net

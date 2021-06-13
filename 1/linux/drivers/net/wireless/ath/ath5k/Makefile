@@ -1,3 +1,22 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d3b67616a7f571bba14db8055bc596f40fbe2fd1075641401820ab666e063d12
-size 540
+ath5k-y				+= caps.o
+ath5k-y				+= initvals.o
+ath5k-y				+= eeprom.o
+ath5k-y				+= gpio.o
+ath5k-y				+= desc.o
+ath5k-y				+= dma.o
+ath5k-y				+= qcu.o
+ath5k-y				+= pcu.o
+ath5k-y				+= phy.o
+ath5k-y				+= reset.o
+ath5k-y				+= attach.o
+ath5k-y				+= base.o
+CFLAGS_base.o			+= -I$(src)
+ath5k-y				+= led.o
+ath5k-y				+= rfkill.o
+ath5k-y				+= ani.o
+ath5k-y				+= sysfs.o
+ath5k-y				+= mac80211-ops.o
+ath5k-$(CONFIG_ATH5K_DEBUG)	+= debug.o
+ath5k-$(CONFIG_ATH5K_AHB)	+= ahb.o
+ath5k-$(CONFIG_ATH5K_PCI)	+= pci.o
+obj-$(CONFIG_ATH5K)		+= ath5k.o

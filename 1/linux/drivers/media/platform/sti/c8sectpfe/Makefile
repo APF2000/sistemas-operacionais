@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4fcbbec406150c04d7c74596390dc6beeb03bb8e709a3e511765d11c3e92ea05
-size 303
+c8sectpfe-y += c8sectpfe-core.o c8sectpfe-common.o c8sectpfe-dvb.o \
+		c8sectpfe-debugfs.o
+
+obj-$(CONFIG_DVB_C8SECTPFE) += c8sectpfe.o
+
+ccflags-y += -Idrivers/media/i2c
+ccflags-y += -Idrivers/media/common
+ccflags-y += -Idrivers/media/dvb-core/ -Idrivers/media/dvb-frontends/ \
+		-Idrivers/media/tuners/

@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:6d572f588bf31370b123d0290080a3351c8433a9935caa02d1e77df14196a161
-size 239
+#
+# Makefile for the QLogic network device drivers.
+#
+
+obj-$(CONFIG_QLA3XXX) += qla3xxx.o
+obj-$(CONFIG_QLCNIC) += qlcnic/
+obj-$(CONFIG_QLGE) += qlge/
+obj-$(CONFIG_NETXEN_NIC) += netxen/
+obj-$(CONFIG_QED) += qed/
+obj-$(CONFIG_QEDE)+= qede/

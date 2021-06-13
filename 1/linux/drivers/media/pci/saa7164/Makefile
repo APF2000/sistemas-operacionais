@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2e3f8a61ce76cb6e67f191968a4262b8609f4ab9c20f474fa50f62f106f27ead
-size 476
+saa7164-objs	:= saa7164-cards.o saa7164-core.o saa7164-i2c.o saa7164-dvb.o \
+			saa7164-fw.o saa7164-bus.o saa7164-cmd.o saa7164-api.o \
+			saa7164-buffer.o saa7164-encoder.o saa7164-vbi.o
+
+obj-$(CONFIG_VIDEO_SAA7164) += saa7164.o
+
+ccflags-y += -I$(srctree)/drivers/media/i2c
+ccflags-y += -I$(srctree)/drivers/media/tuners
+ccflags-y += -I$(srctree)/drivers/media/dvb-core
+ccflags-y += -I$(srctree)/drivers/media/dvb-frontends
+
+ccflags-y += $(extra-cflags-y) $(extra-cflags-m)

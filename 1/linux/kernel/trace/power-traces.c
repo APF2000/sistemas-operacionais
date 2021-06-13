@@ -1,3 +1,20 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:13fd228fb2503d1e7323c1ead7bd8a9e723ecaa5eaee4ad9fdf9683aa7175524
-size 469
+/*
+ * Power trace points
+ *
+ * Copyright (C) 2009 Arjan van de Ven <arjan@linux.intel.com>
+ */
+
+#include <linux/string.h>
+#include <linux/types.h>
+#include <linux/workqueue.h>
+#include <linux/sched.h>
+#include <linux/module.h>
+
+#define CREATE_TRACE_POINTS
+#include <trace/events/power.h>
+
+EXPORT_TRACEPOINT_SYMBOL_GPL(suspend_resume);
+EXPORT_TRACEPOINT_SYMBOL_GPL(cpu_idle);
+EXPORT_TRACEPOINT_SYMBOL_GPL(cpu_frequency);
+EXPORT_TRACEPOINT_SYMBOL_GPL(powernv_throttle);
+

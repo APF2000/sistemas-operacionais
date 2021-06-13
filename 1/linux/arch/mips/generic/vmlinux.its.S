@@ -1,3 +1,31 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2640381b96ed2f1146d3e4bdc163008d4816711f6056e6571f9b414ab20c582e
-size 550
+/dts-v1/;
+
+/ {
+	description = KERNEL_NAME;
+	#address-cells = <ADDR_CELLS>;
+
+	images {
+		kernel@0 {
+			description = KERNEL_NAME;
+			data = /incbin/(VMLINUX_BINARY);
+			type = "kernel";
+			arch = "mips";
+			os = "linux";
+			compression = VMLINUX_COMPRESSION;
+			load = /bits/ ADDR_BITS <VMLINUX_LOAD_ADDRESS>;
+			entry = /bits/ ADDR_BITS <VMLINUX_ENTRY_ADDRESS>;
+			hash@0 {
+				algo = "sha1";
+			};
+		};
+	};
+
+	configurations {
+		default = "conf@default";
+
+		conf@default {
+			description = "Generic Linux kernel";
+			kernel = "kernel@0";
+		};
+	};
+};

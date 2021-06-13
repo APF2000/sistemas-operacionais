@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c1a9be1a2cdc557e8bdb347bca51bdaa6b00dd0d6799877719f277a1e448b33c
-size 298
+config AR5523
+       tristate "Atheros AR5523 wireless driver support"
+       depends on MAC80211 && USB
+       select ATH_COMMON
+       select FW_LOADER
+       ---help---
+         This module add support for AR5523 based USB dongles such as D-Link
+         DWL-G132, Netgear WPN111 and many more.

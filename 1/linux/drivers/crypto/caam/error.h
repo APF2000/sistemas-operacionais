@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4a3612170701ea50a75d4955a4586f3d8996dbf6858855bf6167ccf7397e410c
-size 257
+/*
+ * CAAM Error Reporting code header
+ *
+ * Copyright 2009-2011 Freescale Semiconductor, Inc.
+ */
+
+#ifndef CAAM_ERROR_H
+#define CAAM_ERROR_H
+#define CAAM_ERROR_STR_MAX 302
+void caam_jr_strstatus(struct device *jrdev, u32 status);
+#endif /* CAAM_ERROR_H */

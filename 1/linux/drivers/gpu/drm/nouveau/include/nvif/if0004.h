@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a95d6088d2fe60baa0ce2b22508b5e36f99076d5874a8ddb9f7126e4cf47c6fc
-size 300
+#ifndef __NVIF_IF0004_H__
+#define __NVIF_IF0004_H__
+
+#define NV04_NVSW_NTFY_UEVENT                                              0x00
+
+#define NV04_NVSW_GET_REF                                                  0x00
+
+struct nv04_nvsw_get_ref_v0 {
+	__u8  version;
+	__u8  pad01[3];
+	__u32 ref;
+};
+#endif

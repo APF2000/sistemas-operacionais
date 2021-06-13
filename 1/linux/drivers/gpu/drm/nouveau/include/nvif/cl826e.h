@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b50c8524120f0bb52ad72da9204a66e0cd5b7d34708e8fa891d13023233ab001
-size 260
+#ifndef __NVIF_CL826E_H__
+#define __NVIF_CL826E_H__
+
+struct g82_channel_dma_v0 {
+	__u8  version;
+	__u8  chid;
+	__u8  pad02[6];
+	__u64 vm;
+	__u64 pushbuf;
+	__u64 offset;
+};
+
+#define NV826E_V0_NTFY_NON_STALL_INTERRUPT                                 0x00
+#endif

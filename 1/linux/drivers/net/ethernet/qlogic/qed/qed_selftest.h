@@ -1,3 +1,50 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:102cb90632885d4d36f6ccc6bec7173b5418f34e7a6080e392826f0cac6eadae
-size 818
+#ifndef _QED_SELFTEST_API_H
+#define _QED_SELFTEST_API_H
+#include <linux/types.h>
+
+/**
+ * @brief qed_selftest_memory - Perform memory test
+ *
+ * @param cdev
+ *
+ * @return int
+ */
+int qed_selftest_memory(struct qed_dev *cdev);
+
+/**
+ * @brief qed_selftest_interrupt - Perform interrupt test
+ *
+ * @param cdev
+ *
+ * @return int
+ */
+int qed_selftest_interrupt(struct qed_dev *cdev);
+
+/**
+ * @brief qed_selftest_register - Perform register test
+ *
+ * @param cdev
+ *
+ * @return int
+ */
+int qed_selftest_register(struct qed_dev *cdev);
+
+/**
+ * @brief qed_selftest_clock - Perform clock test
+ *
+ * @param cdev
+ *
+ * @return int
+ */
+int qed_selftest_clock(struct qed_dev *cdev);
+
+/**
+ * @brief qed_selftest_nvram - Perform nvram test
+ *
+ * @param cdev
+ *
+ * @return int
+ */
+int qed_selftest_nvram(struct qed_dev *cdev);
+
+#endif

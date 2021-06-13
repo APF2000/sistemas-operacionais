@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:7c0ddf7f8ef244b62d5a96ad3707b5c27b078a5f90334cb69319bcdfc8010c39
-size 459
+/*
+ * Copyright (C) 2004, 2007-2010, 2011-2012 Synopsys, Inc. (www.synopsys.com)
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 2 as
+ * published by the Free Software Foundation.
+ */
+
+#ifndef ASM_ARC_DMA_H
+#define ASM_ARC_DMA_H
+
+#define MAX_DMA_ADDRESS 0xC0000000
+#ifdef CONFIG_PCI
+extern int isa_dma_bridge_buggy;
+#else
+#define isa_dma_bridge_buggy	0
+#endif
+
+#endif

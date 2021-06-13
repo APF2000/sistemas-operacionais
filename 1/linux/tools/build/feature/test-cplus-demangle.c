@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:766fe59e0cc493a1053ca9b9b459f152698a6f1644001f0149fe64151c905f2a
-size 262
+extern int printf(const char *format, ...);
+extern char *cplus_demangle(const char *, int);
+
+int main(void)
+{
+	char symbol[4096] = "FieldName__9ClassNameFd";
+	char *tmp;
+
+	tmp = cplus_demangle(symbol, 0);
+
+	printf("demangled symbol: {%s}\n", tmp);
+
+	return 0;
+}

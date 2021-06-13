@@ -1,3 +1,34 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:82db6efa7b85db814e19cca2b2fdbdf487e56cb1d9aa361978d8d0dad32a1896
-size 737
+J-Core SPI master
+
+Required properties:
+
+- compatible: Must be "jcore,spi2".
+
+- reg: Memory region for registers.
+
+- #address-cells: Must be 1.
+
+- #size-cells: Must be 0.
+
+Optional properties:
+
+- clocks: If a phandle named "ref_clk" is present, SPI clock speed
+  programming is relative to the frequency of the indicated clock.
+  Necessary only if the input clock rate is something other than a
+  fixed 50 MHz.
+
+- clock-names: Clock names, one for each phandle in clocks.
+
+See spi-bus.txt for additional properties not specific to this device.
+
+Example:
+
+spi@40 {
+	compatible = "jcore,spi2";
+	#address-cells = <1>;
+	#size-cells = <0>;
+	reg = <0x40 0x8>;
+	spi-max-frequency = <25000000>;
+	clocks = <&bus_clk>;
+	clock-names = "ref_clk";
+}

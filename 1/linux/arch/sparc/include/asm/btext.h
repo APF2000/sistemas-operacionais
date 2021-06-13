@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:dbff4ab0cb78cce206ee8dbbfd159e6ac8035cc53fd22019f57ec41ad469268b
-size 106
+#ifndef _SPARC_BTEXT_H
+#define _SPARC_BTEXT_H
+
+int btext_find_display(void);
+
+#endif /* _SPARC_BTEXT_H */

@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b1ed76beb9b70af23bb95aae885c4de529645a1fb4ea7aeab3a3639f664e2a8a
-size 568
+config IUCV
+	depends on S390
+	def_tristate y if S390
+	prompt "IUCV support (S390 - z/VM only)"
+	help
+	  Select this option if you want to use inter-user communication
+	  under VM or VIF. If you run on z/VM, say "Y" to enable a fast
+	  communication link between VM guests.
+
+config AFIUCV
+	depends on S390
+	def_tristate m if QETH_L3 || IUCV
+	prompt "AF_IUCV Socket support (S390 - z/VM and HiperSockets transport)"
+	help
+	  Select this option if you want to use AF_IUCV socket applications
+	  based on z/VM inter-user communication vehicle or based on
+	  HiperSockets.

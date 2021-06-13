@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5f12d0e88e9e1c6ede42bf6d2028f07c2012f139af4e021294708667b3a1588d
-size 443
+#!/bin/sh
+
+# Simple hotplug script sample:
+# 
+# Both $DEVPATH and $FIRMWARE are already provided in the environment.
+
+HOTPLUG_FW_DIR=/usr/lib/hotplug/firmware/
+
+if [ "$SUBSYSTEM" == "firmware" -a "$ACTION" == "add" ]; then
+  if [ -f $HOTPLUG_FW_DIR/$FIRMWARE ]; then
+    echo 1 > /sys/$DEVPATH/loading
+    cat $HOTPLUG_FW_DIR/$FIRMWARE > /sys/$DEVPATH/data
+    echo 0 > /sys/$DEVPATH/loading
+  else
+    echo -1 > /sys/$DEVPATH/loading
+  fi
+fi

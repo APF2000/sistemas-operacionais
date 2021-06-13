@@ -1,3 +1,27 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:197611fb4f58c6d24156602096687c2629ad2e319266f1914702f4e850e2e22f
-size 743
+OMAP HS USB Host TLL (Transceiver-Less Interface)
+
+Required properties:
+
+- compatible : should be "ti,usbhs-tll"
+- reg : should contain one register range i.e. start and length
+- interrupts : should contain the TLL module's interrupt
+- ti,hwmod : must contain "usb_tll_hs"
+
+Optional properties:
+
+- clocks: a list of phandles and clock-specifier pairs, one for each entry in
+  clock-names.
+
+- clock-names: should include:
+  * "usb_tll_hs_usb_ch0_clk" - USB TLL channel 0 clock
+  * "usb_tll_hs_usb_ch1_clk" - USB TLL channel 1 clock
+  * "usb_tll_hs_usb_ch2_clk" - USB TLL channel 2 clock
+
+Example:
+
+	usbhstll: usbhstll@4a062000 {
+		compatible = "ti,usbhs-tll";
+		reg = <0x4a062000 0x1000>;
+		interrupts = <78>;
+		ti,hwmods = "usb_tll_hs";
+	  };

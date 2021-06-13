@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:fd2c961371b437a8e351c8e864447eb49d16f3ba5ecb10f80a341c5308ae2c6d
-size 240
+config INFINIBAND_QEDR
+	tristate "QLogic RoCE driver"
+	depends on 64BIT && QEDE
+	select QED_LL2
+	select QED_RDMA
+	---help---
+	  This driver provides low-level InfiniBand over Ethernet
+	  support for QLogic QED host channel adapters (HCAs).

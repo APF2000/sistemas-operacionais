@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:82301fc80c2239855f1db58826387b244ba33b18f05a85ce14df3b4cbb9ab66e
-size 381
+config SND_AOA_SOUNDBUS
+	tristate "Apple Soundbus support"
+	select SND_PCM
+	---help---
+	This option enables the generic driver for the soundbus
+	support on Apple machines.
+	
+	It is required for the sound bus implementations.
+
+config SND_AOA_SOUNDBUS_I2S
+	tristate "I2S bus support"
+	depends on SND_AOA_SOUNDBUS && PCI
+	---help---
+	This option enables support for Apple I2S busses.

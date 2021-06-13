@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:6c078663899f648e05b870b450a04994cf108b898ba4fe43b904944e9378a6c3
-size 683
+The properties specific for SD host controllers. For properties shared by MMC
+host controllers refer to the mmc[1] bindings.
+
+  [1] Documentation/devicetree/bindings/mmc/mmc.txt
+
+Optional properties:
+- sdhci-caps-mask: The sdhci capabilities register is incorrect. This 64bit
+  property corresponds to the bits in the sdhci capability register. If the bit
+  is on in the mask then the bit is incorrect in the register and should be
+  turned off, before applying sdhci-caps.
+- sdhci-caps: The sdhci capabilities register is incorrect. This 64bit
+  property corresponds to the bits in the sdhci capability register. If the
+  bit is on in the property then the bit should be turned on.

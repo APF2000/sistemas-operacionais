@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d0dc9ebfcb74b2ec3b885c5ac98e5ab018eb8c3acd4df9e48fb197f4762d96df
-size 314
+Cavium ThunderX2 CN99XX platform tree bindings
+----------------------------------------------
+
+Boards with Cavium ThunderX2 CN99XX SoC shall have the root property:
+  compatible = "cavium,thunderx2-cn9900", "brcm,vulcan-soc";
+
+These SoC uses the "cavium,thunder2" core which will be compatible
+with "brcm,vulcan".

@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:8c150bf8a37f39e4dce844cd6b30fbd926f99e3d0472216adfbbe09e94a94e34
-size 168
+#ifndef ___ASM_SPARC_XOR_H
+#define ___ASM_SPARC_XOR_H
+#if defined(__sparc__) && defined(__arch64__)
+#include <asm/xor_64.h>
+#else
+#include <asm/xor_32.h>
+#endif
+#endif

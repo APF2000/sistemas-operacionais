@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d4a3d48c2910060a27db6610e295163cb4c72dcba382947ddabbaa916607ac2d
-size 466
+/*
+ * string.h: External definitions for optimized assembly string
+ *           routines for the Linux Kernel.
+ *
+ * Copyright (C) 1995,1996 David S. Miller (davem@caip.rutgers.edu)
+ * Copyright (C) 1996,1997,1999 Jakub Jelinek (jakub@redhat.com)
+ */
+
+#ifndef __SPARC64_STRING_H__
+#define __SPARC64_STRING_H__
+
+#include <asm/asi.h>
+
+/* Now the str*() stuff... */
+#define __HAVE_ARCH_STRLEN
+__kernel_size_t strlen(const char *);
+
+#endif /* !(__SPARC64_STRING_H__) */

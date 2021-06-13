@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:71f11a26e6850e72f0eeb5e39300adc0a2cbab9291f2079896986be83bb5280a
-size 331
+#
+# Makefile for the NetLabel subsystem.
+#
+
+# base objects
+obj-y	:= netlabel_user.o netlabel_kapi.o
+obj-y	+= netlabel_domainhash.o netlabel_addrlist.o
+
+# management objects
+obj-y	+= netlabel_mgmt.o
+
+# protocol modules
+obj-y	+= netlabel_unlabeled.o
+obj-y	+= netlabel_cipso_v4.o
+obj-$(subst m,y,$(CONFIG_IPV6)) += netlabel_calipso.o

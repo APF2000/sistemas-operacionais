@@ -1,3 +1,5 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:766498d544c5411b7e369feb510c05716b1f9832e6a24f6e4f3bd7d6501af057
-size 186
+nvkm-y += nvkm/subdev/instmem/base.o
+nvkm-y += nvkm/subdev/instmem/nv04.o
+nvkm-y += nvkm/subdev/instmem/nv40.o
+nvkm-y += nvkm/subdev/instmem/nv50.o
+nvkm-y += nvkm/subdev/instmem/gk20a.o

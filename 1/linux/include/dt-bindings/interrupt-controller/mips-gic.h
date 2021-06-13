@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:6a20e8301236588bb45a1feec1eeaccfc662592e3e79e0ded3b2c39752e3677d
-size 207
+#ifndef _DT_BINDINGS_INTERRUPT_CONTROLLER_MIPS_GIC_H
+#define _DT_BINDINGS_INTERRUPT_CONTROLLER_MIPS_GIC_H
+
+#include <dt-bindings/interrupt-controller/irq.h>
+
+#define GIC_SHARED 0
+#define GIC_LOCAL 1
+
+#endif

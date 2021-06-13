@@ -1,3 +1,21 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c097e030819638d57778f59953a11c8a698c088a52f841358b82d19e0e5c159f
-size 743
+NVIDIA compliant embedded controller
+
+Required properties:
+- compatible : should be "nvidia,nvec".
+- reg : the iomem of the i2c slave controller
+- interrupts : the interrupt line of the i2c slave controller
+- clock-frequency : the frequency of the i2c bus
+- gpios : the gpio used for ec request
+- slave-addr: the i2c address of the slave controller
+- clocks : Must contain an entry for each entry in clock-names.
+  See ../clocks/clock-bindings.txt for details.
+- clock-names : Must include the following entries:
+  Tegra20/Tegra30:
+  - div-clk
+  - fast-clk
+  Tegra114:
+  - div-clk
+- resets : Must contain an entry for each entry in reset-names.
+  See ../reset/reset.txt for details.
+- reset-names : Must include the following entries:
+  - i2c

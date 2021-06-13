@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f53065c20b9cab1428d8e3eae5588048f015b34ba4ec99587254e3990260cafa
-size 308
+#
+# Makefile for the drm device driver.  This driver provides support for the
+# Direct Rendering Infrastructure (DRI) in XFree86 4.1.0 and higher.
+
+ccflags-y := -Iinclude/drm
+r128-y   := r128_drv.o r128_cce.o r128_state.o r128_irq.o
+
+r128-$(CONFIG_COMPAT)   += r128_ioc32.o
+
+obj-$(CONFIG_DRM_R128)	+= r128.o

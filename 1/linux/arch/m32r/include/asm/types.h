@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:30999263e807b82f2caa74533d4d9f134dfb3ff04169457815cad3dc1437dafe
-size 219
+#ifndef _ASM_M32R_TYPES_H
+#define _ASM_M32R_TYPES_H
+
+#include <uapi/asm/types.h>
+
+/*
+ * These aren't exported outside the kernel to avoid name space clashes
+ */
+
+#define BITS_PER_LONG 32
+
+#endif /* _ASM_M32R_TYPES_H */

@@ -1,3 +1,28 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ed7955ad649f3ba7a6422d5f4e5a87dc56a0401756e6f1786c5ff750586c49f0
-size 796
+#ifndef __SPARC_SIGNAL_H
+#define __SPARC_SIGNAL_H
+
+#ifndef __ASSEMBLY__
+#include <linux/personality.h>
+#include <linux/types.h>
+#endif
+#include <uapi/asm/signal.h>
+
+#ifndef __ASSEMBLY__
+/*
+ * DJHR
+ * SA_STATIC_ALLOC is used for the sparc32 system to indicate that this
+ * interrupt handler's irq structure should be statically allocated
+ * by the request_irq routine.
+ * The alternative is that arch/sparc/kernel/irq.c has carnal knowledge
+ * of interrupt usage and that sucks. Also without a flag like this
+ * it may be possible for the free_irq routine to attempt to free
+ * statically allocated data.. which is NOT GOOD.
+ *
+ */
+#define SA_STATIC_ALLOC         0x8000
+
+#define __ARCH_HAS_KA_RESTORER
+#define __ARCH_HAS_SA_RESTORER
+
+#endif /* !(__ASSEMBLY__) */
+#endif /* !(__SPARC_SIGNAL_H) */

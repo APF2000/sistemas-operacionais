@@ -1,3 +1,20 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:fb2cdf066699a7ff2859629707528dd1331e593d459b84e074657cd46d73f1c2
-size 419
+#ifndef __UM_SLIP_H
+#define __UM_SLIP_H
+
+#include "slip_common.h"
+
+struct slip_data {
+	void *dev;
+	char name[sizeof("slnnnnn\0")];
+	char *addr;
+	char *gate_addr;
+	int slave;
+	struct slip_proto slip;
+};
+
+extern const struct net_user_info slip_user_info;
+
+extern int slip_user_read(int fd, void *buf, int len, struct slip_data *pri);
+extern int slip_user_write(int fd, void *buf, int len, struct slip_data *pri);
+
+#endif

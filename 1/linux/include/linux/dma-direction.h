@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:accf5e0d1f5d4a928c402d06ab701de6fe917f5e5938847a0e9b55e7fece372c
-size 299
+#ifndef _LINUX_DMA_DIRECTION_H
+#define _LINUX_DMA_DIRECTION_H
+/*
+ * These definitions mirror those in pci.h, so they can be used
+ * interchangeably with their PCI_ counterparts.
+ */
+enum dma_data_direction {
+	DMA_BIDIRECTIONAL = 0,
+	DMA_TO_DEVICE = 1,
+	DMA_FROM_DEVICE = 2,
+	DMA_NONE = 3,
+};
+#endif

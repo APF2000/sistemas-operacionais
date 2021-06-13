@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e5ada06da5ac0bd2accc9607f1fbcd41735ac541da7208daf4a43edc3a67fedd
-size 523
+#ifndef SND_USB_MIXER_QUIRKS_H
+#define SND_USB_MIXER_QUIRKS_H
+
+int snd_usb_mixer_apply_create_quirk(struct usb_mixer_interface *mixer);
+
+void snd_emuusb_set_samplerate(struct snd_usb_audio *chip,
+			       unsigned char samplerate_id);
+
+void snd_usb_mixer_rc_memory_change(struct usb_mixer_interface *mixer,
+				    int unitid);
+
+void snd_usb_mixer_fu_apply_quirk(struct usb_mixer_interface *mixer,
+				  struct usb_mixer_elem_info *cval, int unitid,
+				  struct snd_kcontrol *kctl);
+
+#endif /* SND_USB_MIXER_QUIRKS_H */
+

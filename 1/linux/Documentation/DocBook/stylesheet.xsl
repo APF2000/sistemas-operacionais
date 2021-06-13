@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c547095e5c1a0b493857062d74e582077872798d18e2eb1f750dd84cd83de8e4
-size 493
+<?xml version="1.0" encoding="UTF-8"?>
+<stylesheet xmlns="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<param name="chunk.quietly">1</param>
+<param name="funcsynopsis.style">ansi</param>
+<param name="funcsynopsis.tabular.threshold">80</param>
+<param name="callout.graphics">0</param>
+<!-- <param name="paper.type">A4</param> -->
+<param name="generate.consistent.ids">1</param>
+<param name="generate.section.toc.level">2</param>
+<param name="use.id.as.filename">1</param>
+</stylesheet>

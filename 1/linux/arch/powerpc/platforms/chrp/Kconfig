@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4b7fc99341b413911c14bf39966de405892fbb04e732c17cae2a874215b13e71
-size 334
+config PPC_CHRP
+	bool "Common Hardware Reference Platform (CHRP) based machines"
+	depends on 6xx
+	select HAVE_PCSPKR_PLATFORM
+	select MPIC
+	select PPC_I8259
+	select PPC_INDIRECT_PCI
+	select PPC_RTAS
+	select PPC_RTAS_DAEMON
+	select RTAS_ERROR_LOGGING
+	select PPC_MPC106
+	select PPC_UDBG_16550
+	select PPC_NATIVE
+	select PCI
+	default y

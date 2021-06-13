@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:0f91dfd9df120188ef7bdb14612ba50efc57046e8188de6df2aa4b2eaf42c9b6
-size 96
+[config]
+command = stat
+args    = -e cycles kill >/dev/null 2>&1
+ret     = 1
+
+[event:base-stat]

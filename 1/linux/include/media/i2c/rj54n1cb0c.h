@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:10375a33ab73859e48662b6ff33435ea459b3490079f4613404724d821168dbc
-size 425
+/*
+ * RJ54N1CB0C Private data
+ *
+ * Copyright (C) 2009, Guennadi Liakhovetski <g.liakhovetski@gmx.de>
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 2 as
+ * published by the Free Software Foundation.
+ */
+
+#ifndef __RJ54N1CB0C_H__
+#define __RJ54N1CB0C_H__
+
+struct rj54n1_pdata {
+	unsigned int	mclk_freq;
+	bool		ioctl_high;
+};
+
+#endif

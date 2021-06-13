@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:0b03a25dd74d82db44df2c86ebd6cafac1288a2e3cd2bbb0d402f7cfd71157cf
-size 292
+#
+# Makefile for the I-Force driver
+#
+# By Johann Deneux <johann.deneux@gmail.com>
+#
+
+obj-$(CONFIG_JOYSTICK_IFORCE)	+= iforce.o
+
+iforce-y := iforce-ff.o iforce-main.o iforce-packets.o
+iforce-$(CONFIG_JOYSTICK_IFORCE_232)	+= iforce-serio.o
+iforce-$(CONFIG_JOYSTICK_IFORCE_USB)	+= iforce-usb.o

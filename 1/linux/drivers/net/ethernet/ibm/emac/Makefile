@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:bcf6bef73fd26e92a5e138c06e240d8898e12ed6e93a42b05c34d3da92c0d8ae
-size 260
+#
+# Makefile for the PowerPC 4xx on-chip ethernet driver
+#
+
+obj-$(CONFIG_IBM_EMAC) += ibm_emac.o
+
+ibm_emac-y := mal.o core.o phy.o
+ibm_emac-$(CONFIG_IBM_EMAC_ZMII) += zmii.o
+ibm_emac-$(CONFIG_IBM_EMAC_RGMII) += rgmii.o
+ibm_emac-$(CONFIG_IBM_EMAC_TAH) += tah.o

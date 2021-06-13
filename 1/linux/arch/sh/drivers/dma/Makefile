@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2f8943bcfca7c52b1b5c87d527e2ac3bdaef0a7c9b3eebcb333cc0d88f4dddab
-size 251
+#
+# Makefile for the SuperH DMA specific kernel interface routines under Linux.
+#
+
+obj-$(CONFIG_SH_DMA_API)	+= dma-sh.o dma-api.o dma-sysfs.o
+obj-$(CONFIG_PVR2_DMA)		+= dma-pvr2.o
+obj-$(CONFIG_G2_DMA)		+= dma-g2.o
+obj-$(CONFIG_SH_DMABRG)		+= dmabrg.o

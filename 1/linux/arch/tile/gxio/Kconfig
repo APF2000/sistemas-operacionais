@@ -1,3 +1,33 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:93a4449b192c1f874e82f7a1d2f309f6fc48a9a434f7328ace96a15960c43779
-size 865
+# Support direct access to TILE-Gx hardware from user space, via the
+# gxio library, or from kernel space, via kernel IORPC support.
+config TILE_GXIO
+	bool
+	depends on TILEGX
+
+# Support direct access to the common I/O DMA facility within the
+# TILE-Gx mPIPE and Trio hardware from kernel space.
+config TILE_GXIO_DMA
+	bool
+	select TILE_GXIO
+
+# Support direct access to the TILE-Gx mPIPE hardware from kernel space.
+config TILE_GXIO_MPIPE
+	bool
+	select TILE_GXIO
+	select TILE_GXIO_DMA
+
+# Support direct access to the TILE-Gx TRIO hardware from kernel space.
+config TILE_GXIO_TRIO
+	bool
+	select TILE_GXIO
+	select TILE_GXIO_DMA
+
+# Support direct access to the TILE-Gx USB hardware from kernel space.
+config TILE_GXIO_USB_HOST
+	bool
+	select TILE_GXIO
+
+# Support direct access to the TILE-Gx UART hardware from kernel space.
+config TILE_GXIO_UART
+	bool
+	select TILE_GXIO

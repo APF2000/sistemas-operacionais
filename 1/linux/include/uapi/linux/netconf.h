@@ -1,3 +1,28 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:51309e128ec1e2f8a8086e139006efa54bc555aef7d3ddb1b668433cf724c3a1
-size 541
+#ifndef _UAPI_LINUX_NETCONF_H_
+#define _UAPI_LINUX_NETCONF_H_
+
+#include <linux/types.h>
+#include <linux/netlink.h>
+
+struct netconfmsg {
+	__u8	ncm_family;
+};
+
+enum {
+	NETCONFA_UNSPEC,
+	NETCONFA_IFINDEX,
+	NETCONFA_FORWARDING,
+	NETCONFA_RP_FILTER,
+	NETCONFA_MC_FORWARDING,
+	NETCONFA_PROXY_NEIGH,
+	NETCONFA_IGNORE_ROUTES_WITH_LINKDOWN,
+	NETCONFA_INPUT,
+	__NETCONFA_MAX
+};
+#define NETCONFA_MAX	(__NETCONFA_MAX - 1)
+#define NETCONFA_ALL	-1
+
+#define NETCONFA_IFINDEX_ALL		-1
+#define NETCONFA_IFINDEX_DEFAULT	-2
+
+#endif /* _UAPI_LINUX_NETCONF_H_ */

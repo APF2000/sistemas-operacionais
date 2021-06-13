@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1440fa423c60620b9724b004a99abaf2f56f7ddea7976e20ba7c409605dc7010
-size 185
+#
+# Makefile for building the Extended Verification Module(EVM)
+#
+obj-$(CONFIG_EVM) += evm.o
+
+evm-y := evm_main.o evm_crypto.o evm_secfs.o
+evm-$(CONFIG_FS_POSIX_ACL) += evm_posix_acl.o

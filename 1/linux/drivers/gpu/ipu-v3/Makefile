@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:95710332263bc6991853ba19a29b6b0a8e87ed0adba87ecd3f5810554c8deae2
-size 260
+obj-$(CONFIG_IMX_IPUV3_CORE) += imx-ipu-v3.o
+
+imx-ipu-v3-objs := ipu-common.o ipu-cpmem.o ipu-csi.o ipu-dc.o ipu-di.o \
+		ipu-dp.o ipu-dmfc.o ipu-ic.o ipu-image-convert.o \
+		ipu-smfc.o ipu-vdi.o
+
+ifdef CONFIG_DRM
+	imx-ipu-v3-objs += ipu-pre.o ipu-prg.o
+endif

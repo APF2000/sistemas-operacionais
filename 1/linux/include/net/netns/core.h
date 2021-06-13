@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5ab490296c4bd4d1855231387d80e0419b31a287ebd607828a52495e5a52d155
-size 246
+#ifndef __NETNS_CORE_H__
+#define __NETNS_CORE_H__
+
+struct ctl_table_header;
+struct prot_inuse;
+
+struct netns_core {
+	/* core sysctls */
+	struct ctl_table_header	*sysctl_hdr;
+
+	int	sysctl_somaxconn;
+
+	struct prot_inuse __percpu *inuse;
+};
+
+#endif

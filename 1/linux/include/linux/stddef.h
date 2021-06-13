@@ -1,3 +1,30 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c4785d72890ea3de9c8b8892f8e6016de5c629bdd5d098b933365baf533d56f7
-size 581
+#ifndef _LINUX_STDDEF_H
+#define _LINUX_STDDEF_H
+
+#include <uapi/linux/stddef.h>
+
+#undef NULL
+#define NULL ((void *)0)
+
+enum {
+	false	= 0,
+	true	= 1
+};
+
+#undef offsetof
+#ifdef __compiler_offsetof
+#define offsetof(TYPE, MEMBER)	__compiler_offsetof(TYPE, MEMBER)
+#else
+#define offsetof(TYPE, MEMBER)	((size_t)&((TYPE *)0)->MEMBER)
+#endif
+
+/**
+ * offsetofend(TYPE, MEMBER)
+ *
+ * @TYPE: The type of the structure
+ * @MEMBER: The member within the structure to get the end offset of
+ */
+#define offsetofend(TYPE, MEMBER) \
+	(offsetof(TYPE, MEMBER)	+ sizeof(((TYPE *)0)->MEMBER))
+
+#endif

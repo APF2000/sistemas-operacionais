@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:424482a7321ebf677997eaebc63530e953a58a854aff30e4fe77b0127b5834b7
-size 266
+#ifndef DECOMPRESS_BUNZIP2_H
+#define DECOMPRESS_BUNZIP2_H
+
+int bunzip2(unsigned char *inbuf, long len,
+	    long (*fill)(void*, unsigned long),
+	    long (*flush)(void*, unsigned long),
+	    unsigned char *output,
+	    long *pos,
+	    void(*error)(char *x));
+#endif

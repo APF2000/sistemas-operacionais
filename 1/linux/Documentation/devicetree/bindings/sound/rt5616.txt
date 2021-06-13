@@ -1,3 +1,32 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:04a898e679d0dde620fb6b0e72b23dcb3dfb133043cf31e1b0018c41558d4b49
-size 470
+RT5616 audio CODEC
+
+This device supports I2C only.
+
+Required properties:
+
+- compatible : "realtek,rt5616".
+
+- reg : The I2C address of the device.
+
+Optional properties:
+
+- clocks: The phandle of the master clock to the CODEC.
+
+- clock-names: Should be "mclk".
+
+Pins on the device (for linking into audio routes) for RT5616:
+
+  * IN1P
+  * IN2P
+  * IN2N
+  * LOUTL
+  * LOUTR
+  * HPOL
+  * HPOR
+
+Example:
+
+codec: rt5616@1b {
+	compatible = "realtek,rt5616";
+	reg = <0x1b>;
+};

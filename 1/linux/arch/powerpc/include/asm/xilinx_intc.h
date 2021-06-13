@@ -1,3 +1,20 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d6b79f07864e67d73fe7fa2fcd447e99f1f7bbdda60a3d410609e40f0f772f01
-size 598
+/*
+ * Xilinx intc external definitions
+ *
+ * Copyright 2007 Secret Lab Technologies Ltd.
+ *
+ * This program is free software; you can redistribute  it and/or modify it
+ * under  the terms of  the GNU General  Public License as published by the
+ * Free Software Foundation;  either version 2 of the  License, or (at your
+ * option) any later version.
+ */
+#ifndef _ASM_POWERPC_XILINX_INTC_H
+#define _ASM_POWERPC_XILINX_INTC_H
+
+#ifdef __KERNEL__
+
+extern void __init xilinx_intc_init_tree(void);
+extern unsigned int xintc_get_irq(void);
+
+#endif /* __KERNEL__ */
+#endif /* _ASM_POWERPC_XILINX_INTC_H */

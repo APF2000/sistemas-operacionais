@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a476f256de75bc0d2a275afe682542ae1b8d359f3e9ef09e2d47367a8928ecdd
-size 436
+obj-$(CONFIG_OPROFILE) += oprofile.o
+
+CFLAGS_common.o	+= -DUTS_MACHINE='"$(UTS_MACHINE)"'
+
+DRIVER_OBJS = $(addprefix ../../../drivers/oprofile/, \
+		oprof.o cpu_buffer.o buffer_sync.o \
+		event_buffer.o oprofile_files.o \
+		oprofilefs.o oprofile_stats.o \
+		timer_int.o )
+
+ifeq ($(CONFIG_HW_PERF_EVENTS),y)
+DRIVER_OBJS += $(addprefix ../../../drivers/oprofile/, oprofile_perf.o)
+endif
+
+oprofile-y	:= $(DRIVER_OBJS) common.o backtrace.o

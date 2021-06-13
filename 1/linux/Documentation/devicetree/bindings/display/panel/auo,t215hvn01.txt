@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:6db88839fe251ba39f2a673c922dae5fce6ac42b2b756d7864cf795c02129ca2
-size 246
+AU Optronics Corporation 21.5" FHD (1920x1080) color TFT LCD panel
+
+Required properties:
+- compatible: should be "auo,t215hvn01"
+
+This binding is compatible with the simple-panel binding, which is specified
+in simple-panel.txt in this directory.

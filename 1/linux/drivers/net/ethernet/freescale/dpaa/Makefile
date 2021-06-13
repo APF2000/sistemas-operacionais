@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a48f8068486beeae26da0603422e122ca2263da4ed476765a1878721a7a209b4
-size 298
+#
+# Makefile for the Freescale DPAA Ethernet controllers
+#
+
+# Include FMan headers
+FMAN        = $(srctree)/drivers/net/ethernet/freescale/fman
+ccflags-y += -I$(FMAN)
+
+obj-$(CONFIG_FSL_DPAA_ETH) += fsl_dpa.o
+
+fsl_dpa-objs += dpaa_eth.o dpaa_ethtool.o dpaa_eth_sysfs.o
+CFLAGS_dpaa_eth.o := -I$(src)

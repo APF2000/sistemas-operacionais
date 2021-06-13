@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2f5c326a47bbb1419df2111b26a4f541d3156a1c8615f34a7ee4aaecbe063c77
-size 444
+#ifndef __UM_CACHE_H
+#define __UM_CACHE_H
+
+
+#if defined(CONFIG_UML_X86) && !defined(CONFIG_64BIT)
+# define L1_CACHE_SHIFT		(CONFIG_X86_L1_CACHE_SHIFT)
+#elif defined(CONFIG_UML_X86) /* 64-bit */
+# define L1_CACHE_SHIFT		6 /* Should be 7 on Intel */
+#else
+/* XXX: this was taken from x86, now it's completely random. Luckily only
+ * affects SMP padding. */
+# define L1_CACHE_SHIFT		5
+#endif
+
+#define L1_CACHE_BYTES		(1 << L1_CACHE_SHIFT)
+
+#endif

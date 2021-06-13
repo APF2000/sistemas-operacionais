@@ -1,3 +1,5 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:68bc57333acee371aaa88d04138dbadef13e0c2f74dcbc26ec43f69ed7bf2c2d
-size 87
+#ifdef __arch_v32
+#include <asm/ptrace_v32.h>
+#else
+#include <asm/ptrace_v10.h>
+#endif

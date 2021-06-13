@@ -1,3 +1,20 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2f3fdb812a68ed2a6fe22e8ece344cb6c62c21501a449613fd2425b254823594
-size 330
+#
+# Makefile for the Ingenic JZ4740.
+#
+
+# Object file lists.
+
+obj-y += prom.o time.o reset.o setup.o \
+	platform.o timer.o
+
+obj-$(CONFIG_MACH_JZ4740) += gpio.o
+
+CFLAGS_setup.o = -I$(src)/../../../scripts/dtc/libfdt
+
+# board specific support
+
+obj-$(CONFIG_JZ4740_QI_LB60)	+= board-qi_lb60.o
+
+# PM support
+
+obj-$(CONFIG_PM) += pm.o

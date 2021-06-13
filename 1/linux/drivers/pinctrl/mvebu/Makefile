@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:bf3a13c0d754c15c56659481bd5c89bef4c6e20cae1160bfc69681d55afd73d4
-size 537
+obj-$(CONFIG_PINCTRL_MVEBU)	+= pinctrl-mvebu.o
+obj-$(CONFIG_PINCTRL_DOVE)	+= pinctrl-dove.o
+obj-$(CONFIG_PINCTRL_KIRKWOOD)	+= pinctrl-kirkwood.o
+obj-$(CONFIG_PINCTRL_ARMADA_370) += pinctrl-armada-370.o
+obj-$(CONFIG_PINCTRL_ARMADA_375) += pinctrl-armada-375.o
+obj-$(CONFIG_PINCTRL_ARMADA_38X) += pinctrl-armada-38x.o
+obj-$(CONFIG_PINCTRL_ARMADA_39X) += pinctrl-armada-39x.o
+obj-$(CONFIG_PINCTRL_ARMADA_XP)  += pinctrl-armada-xp.o
+obj-$(CONFIG_PINCTRL_ARMADA_37XX)  += pinctrl-armada-37xx.o
+obj-$(CONFIG_PINCTRL_ORION)  += pinctrl-orion.o

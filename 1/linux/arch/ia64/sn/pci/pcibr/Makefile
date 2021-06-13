@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:0b388d6e908fd4aedad6a15e4a5f1a84c6308d96668e547a5f5536914a297682
-size 397
+#
+# This file is subject to the terms and conditions of the GNU General Public
+# License.  See the file "COPYING" in the main directory of this archive
+# for more details.
+#
+# Copyright (C) 2002-2004 Silicon Graphics, Inc.  All Rights Reserved.
+#
+# Makefile for the sn2 io routines.
+
+ccflags-y := -Iarch/ia64/sn/include
+
+obj-y				+=  pcibr_dma.o pcibr_reg.o \
+				    pcibr_ate.o pcibr_provider.o

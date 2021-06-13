@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:03b76e4bb6414e111f4561dffccd6268681629d44d793d96f9551354d8b994f4
-size 313
+* GPIO beeper device tree bindings
+
+Register a beeper connected to GPIO pin.
+
+Required properties:
+- compatible:	Should be "gpio-beeper".
+- gpios:	From common gpio binding; gpio connection to beeper enable pin.
+
+Example:
+	beeper: beeper {
+		compatible = "gpio-beeper";
+		gpios = <&gpio3 23 GPIO_ACTIVE_HIGH>;
+	};

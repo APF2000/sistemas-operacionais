@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b03ccb1139570ca4a8d194e1f57f2b97e8af5feb848d684a58afed98afceab65
-size 273
+config IMX_IPUV3_CORE
+	tristate "IPUv3 core support"
+	depends on SOC_IMX5 || SOC_IMX6Q || ARCH_MULTIPLATFORM
+	select GENERIC_IRQ_CHIP
+	help
+	  Choose this if you have a i.MX5/6 system and want to use the Image
+	  Processing Unit. This option only enables IPU base support.

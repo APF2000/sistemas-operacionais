@@ -1,3 +1,20 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:12c065b2f211b6cd51288daa6859e8bb63c278b480d63a3ea88afb4cb10671ae
-size 572
+/*
+ *  Port on Texas Instruments TMS320C6x architecture
+ *
+ *  Copyright (C) 2004, 2009, 2010 Texas Instruments Incorporated
+ *  Author: Aurelien Jacquiot (aurelien.jacquiot@jaluna.com)
+ *
+ *  This program is free software; you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License version 2 as
+ *  published by the Free Software Foundation.
+ */
+
+#ifndef _ASM_C6X_HARDIRQ_H
+#define _ASM_C6X_HARDIRQ_H
+
+extern void ack_bad_irq(int irq);
+#define ack_bad_irq ack_bad_irq
+
+#include <asm-generic/hardirq.h>
+
+#endif /* _ASM_C6X_HARDIRQ_H */

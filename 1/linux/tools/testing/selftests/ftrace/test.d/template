@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e134676bce1f0a6dec4b17e8f4d0f4df4211a0fbf4d13cca01b4c23bddf8cbff
-size 430
+#!/bin/sh
+# description: %HERE DESCRIBE WHAT THIS DOES%
+# you have to add ".tc" extention for your testcase file
+# Note that all tests are run with "errexit" option.
+
+exit 0 # Return 0 if the test is passed, otherwise return !0
+# If the test could not run because of lack of feature, call exit_unsupported
+# If the test returned unclear results, call exit_unresolved
+# If the test is a dummy, or a placeholder, call exit_untested

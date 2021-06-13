@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:65f8f1c37e5f08955a835720c2867e8b3e73713f373733fa196078ef8fe91ada
-size 148
+[config]
+command = record
+args    = -j ind_call kill >/dev/null 2>&1
+
+[event:base-record]
+sample_period=4000
+sample_type=2311
+branch_sample_type=64

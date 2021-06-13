@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:72e78edabeac8bb1ba05aa511d24e0cfd91d52030bb1da0f456714a44cebb924
-size 228
+config DRM_ARCPGU
+	tristate "ARC PGU"
+	depends on DRM && OF
+	select DRM_KMS_CMA_HELPER
+	select DRM_KMS_HELPER
+	help
+	  Choose this option if you have an ARC PGU controller.
+
+	  If M is selected the module will be called arcpgu.

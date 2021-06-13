@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:01e97942c6e62becba36045bb5ef1c10ce86c80e16eebb471672f840a6046e52
-size 256
+# Note: the following conditions must always be true:
+#   ZRELADDR == virt_to_phys(TEXTADDR)
+#   PARAMS_PHYS must be within 4MB of ZRELADDR
+#   INITRD_PHYS must be in RAM
+
+   zreladdr-y	+= 0x00008000
+params_phys-y	:= 0x00000100
+initrd_phys-y	:= 0x00800000

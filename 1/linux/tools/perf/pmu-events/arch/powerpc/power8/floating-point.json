@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:7b7898724406f17e40bb78f3c0317cb32373d00a3773a7662cc86a73dde60abc
-size 302
+[
+  {,
+    "EventCode": "0x2000e",
+    "EventName": "PM_FXU_BUSY",
+    "BriefDescription": "fxu0 busy and fxu1 busy",
+    "PublicDescription": ""
+  },
+  {,
+    "EventCode": "0x1000e",
+    "EventName": "PM_FXU_IDLE",
+    "BriefDescription": "fxu0 idle and fxu1 idle",
+    "PublicDescription": ""
+  },
+]

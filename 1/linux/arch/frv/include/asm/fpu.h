@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d9f2334171500ee7d349dc5037e6ed8359f288c7230a43503d023e35c425f61e
-size 222
+#ifndef __ASM_FPU_H
+#define __ASM_FPU_H
+
+
+/*
+ * MAX floating point unit state size (FSAVE/FRESTORE)
+ */
+
+#define kernel_fpu_end() do { asm volatile("bar":::"memory"); preempt_enable(); } while(0)
+
+#endif /* __ASM_FPU_H */

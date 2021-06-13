@@ -1,3 +1,21 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5a61a81e3b34bc93598d10f3b12865926dd7dc180b12393c8812509178042163
-size 469
+#ifndef _ASM_METAG_DMA_MAPPING_H
+#define _ASM_METAG_DMA_MAPPING_H
+
+extern const struct dma_map_ops metag_dma_ops;
+
+static inline const struct dma_map_ops *get_arch_dma_ops(struct bus_type *bus)
+{
+	return &metag_dma_ops;
+}
+
+/*
+ * dma_alloc_noncoherent() returns non-cacheable memory, so there's no need to
+ * do any flushing here.
+ */
+static inline void
+dma_cache_sync(struct device *dev, void *vaddr, size_t size,
+	       enum dma_data_direction direction)
+{
+}
+
+#endif

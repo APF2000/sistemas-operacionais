@@ -1,3 +1,22 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:428b4dc062de8f7fb0421f2443db32b3e63b50df464d1a699d0b6c8b281524e0
-size 684
+#
+# linux/drivers/mtd/devices/Makefile
+#
+
+obj-$(CONFIG_MTD_DOCG3)		+= docg3.o
+obj-$(CONFIG_MTD_SLRAM)		+= slram.o
+obj-$(CONFIG_MTD_PHRAM)		+= phram.o
+obj-$(CONFIG_MTD_PMC551)	+= pmc551.o
+obj-$(CONFIG_MTD_MS02NV)	+= ms02-nv.o
+obj-$(CONFIG_MTD_MTDRAM)	+= mtdram.o
+obj-$(CONFIG_MTD_LART)		+= lart.o
+obj-$(CONFIG_MTD_BLOCK2MTD)	+= block2mtd.o
+obj-$(CONFIG_MTD_DATAFLASH)	+= mtd_dataflash.o
+obj-$(CONFIG_MTD_M25P80)	+= m25p80.o
+obj-$(CONFIG_MTD_SPEAR_SMI)	+= spear_smi.o
+obj-$(CONFIG_MTD_SST25L)	+= sst25l.o
+obj-$(CONFIG_MTD_BCM47XXSFLASH)	+= bcm47xxsflash.o
+obj-$(CONFIG_MTD_ST_SPI_FSM)    += st_spi_fsm.o
+obj-$(CONFIG_MTD_POWERNV_FLASH)	+= powernv_flash.o
+
+
+CFLAGS_docg3.o			+= -I$(src)

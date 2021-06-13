@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e060ffa726070323f33bb3b18ba017cc943e1c0b5412c28700ea29e9caf8638b
-size 398
+#
+# Arch-specific CryptoAPI modules.
+#
+
+avx2_supported := $(call as-instr,vpgatherdd %ymm0$(comma)(%eax$(comma)%ymm1\
+                                $(comma)4)$(comma)%ymm2,yes,no)
+ifeq ($(avx2_supported),yes)
+	obj-$(CONFIG_CRYPTO_SHA512_MB) += sha512-mb.o
+	sha512-mb-y := sha512_mb.o sha512_mb_mgr_flush_avx2.o \
+	     sha512_mb_mgr_init_avx2.o sha512_mb_mgr_submit_avx2.o sha512_x4_avx2.o
+endif

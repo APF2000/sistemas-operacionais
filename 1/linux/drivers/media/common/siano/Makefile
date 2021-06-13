@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ce4b905738f0dc96aea22a6deedf80817da4b0d8aa5e03b464437eb3d6be0afd
-size 366
+smsmdtv-objs := smscoreapi.o sms-cards.o smsendian.o
+smsdvb-objs := smsdvb-main.o
+
+obj-$(CONFIG_SMS_SIANO_MDTV) += smsmdtv.o smsdvb.o
+
+ifeq ($(CONFIG_SMS_SIANO_RC),y)
+  smsmdtv-objs += smsir.o
+endif
+
+ifeq ($(CONFIG_SMS_SIANO_DEBUGFS),y)
+  smsdvb-objs += smsdvb-debugfs.o
+endif
+
+ccflags-y += -Idrivers/media/dvb-core
+ccflags-y += $(extra-cflags-y) $(extra-cflags-m)
+

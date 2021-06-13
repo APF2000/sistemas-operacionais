@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:abf26bde563c7b171e6b59fc52984f25f0c1db66cb8132fa204207fd499dbe8f
-size 413
+#ifndef __ASM_BITREV_H
+#define __ASM_BITREV_H
+static __always_inline __attribute_const__ u32 __arch_bitrev32(u32 x)
+{
+	__asm__ ("rbit %w0, %w1" : "=r" (x) : "r" (x));
+	return x;
+}
+
+static __always_inline __attribute_const__ u16 __arch_bitrev16(u16 x)
+{
+	return __arch_bitrev32((u32)x) >> 16;
+}
+
+static __always_inline __attribute_const__ u8 __arch_bitrev8(u8 x)
+{
+	return __arch_bitrev32((u32)x) >> 24;
+}
+
+#endif

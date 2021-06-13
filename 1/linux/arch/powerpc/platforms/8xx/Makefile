@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5703c00ccfd8dc2d129d2bfbe57fb96e133b86bd80bf0684fafcf2f1def6b0a8
-size 306
+#
+# Makefile for the PowerPC 8xx linux kernel.
+#
+obj-$(CONFIG_PPC_8xx)	  += m8xx_setup.o
+obj-$(CONFIG_MPC885ADS)   += mpc885ads_setup.o
+obj-$(CONFIG_MPC86XADS)   += mpc86xads_setup.o
+obj-$(CONFIG_PPC_EP88XC)  += ep88xc.o
+obj-$(CONFIG_PPC_ADDER875) += adder875.o
+obj-$(CONFIG_TQM8XX)      += tqm8xx_setup.o

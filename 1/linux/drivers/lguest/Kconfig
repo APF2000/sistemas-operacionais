@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:567162ccba530289cb24788bfb8bcd96338594a2123764f84b1c7d0a954f9193
-size 490
+config LGUEST
+	tristate "Linux hypervisor example code"
+	depends on X86_32 && EVENTFD && TTY && PCI_DIRECT
+	select HVC_DRIVER
+	---help---
+	  This is a very simple module which allows you to run
+	  multiple instances of the same Linux kernel, using the
+	  "lguest" command found in the tools/lguest directory.
+
+	  Note that "lguest" is pronounced to rhyme with "fell quest",
+	  not "rustyvisor". See tools/lguest/lguest.txt.
+
+	  If unsure, say N.  If curious, say M.  If masochistic, say Y.

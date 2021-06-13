@@ -1,3 +1,21 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f71d3af34293720151237f76acf4086164cb6c4b4fa8f7cf95437a93f1cb9c0d
-size 634
+config SND_SOC_ADI
+	tristate "Audio support for Analog Devices reference designs"
+	depends on MICROBLAZE || ARCH_ZYNQ || COMPILE_TEST
+	help
+	  Audio support for various reference designs by Analog Devices.
+
+config SND_SOC_ADI_AXI_I2S
+	tristate "AXI-I2S support"
+	depends on SND_SOC_ADI
+	select SND_SOC_GENERIC_DMAENGINE_PCM
+	select REGMAP_MMIO
+	help
+	  ASoC driver for the Analog Devices AXI-I2S softcore peripheral.
+
+config SND_SOC_ADI_AXI_SPDIF
+	tristate "AXI-SPDIF support"
+	depends on SND_SOC_ADI
+	select SND_SOC_GENERIC_DMAENGINE_PCM
+	select REGMAP_MMIO
+	help
+	  ASoC driver for the Analog Devices AXI-SPDIF softcore peripheral.

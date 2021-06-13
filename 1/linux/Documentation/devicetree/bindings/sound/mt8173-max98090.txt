@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1f268ce42ff2f33e924b74c31a9275be2c599d4105142c737c75c01ab09114cc
-size 348
+MT8173 with MAX98090 CODEC
+
+Required properties:
+- compatible : "mediatek,mt8173-max98090"
+- mediatek,audio-codec: the phandle of the MAX98090 audio codec
+- mediatek,platform: the phandle of MT8173 ASoC platform
+
+Example:
+
+	sound {
+		compatible = "mediatek,mt8173-max98090";
+		mediatek,audio-codec = <&max98090>;
+		mediatek,platform = <&afe>;
+	};
+

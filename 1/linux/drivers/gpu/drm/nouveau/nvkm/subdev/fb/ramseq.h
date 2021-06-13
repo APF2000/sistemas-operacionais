@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f211e8cef69727e734b77c94a237a00ceacf2c70b599025a4a2bcac6916c5c16
-size 762
+#ifndef __NVKM_FBRAM_SEQ_H__
+#define __NVKM_FBRAM_SEQ_H__
+#include <subdev/bus/hwsq.h>
+
+#define ram_init(s,p)       hwsq_init(&(s)->base, (p))
+#define ram_exec(s,e)       hwsq_exec(&(s)->base, (e))
+#define ram_have(s,r)       ((s)->r_##r.addr != 0x000000)
+#define ram_rd32(s,r)       hwsq_rd32(&(s)->base, &(s)->r_##r)
+#define ram_wr32(s,r,d)     hwsq_wr32(&(s)->base, &(s)->r_##r, (d))
+#define ram_nuke(s,r)       hwsq_nuke(&(s)->base, &(s)->r_##r)
+#define ram_mask(s,r,m,d)   hwsq_mask(&(s)->base, &(s)->r_##r, (m), (d))
+#define ram_setf(s,f,d)     hwsq_setf(&(s)->base, (f), (d))
+#define ram_wait(s,f,d)     hwsq_wait(&(s)->base, (f), (d))
+#define ram_wait_vblank(s)  hwsq_wait_vblank(&(s)->base)
+#define ram_nsec(s,n)       hwsq_nsec(&(s)->base, (n))
+#endif

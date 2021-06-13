@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1922b5c8cc21918abed2afb5f3b685f798b25321d93aef42273d40eeb17150bc
-size 314
+#ifndef PLAT_FPGA_IRQ_H
+#define PLAT_FPGA_IRQ_H
+
+struct device_node;
+struct pt_regs;
+
+void fpga_handle_irq(struct pt_regs *regs);
+void fpga_irq_init(void __iomem *, const char *, int, int, u32,
+		struct device_node *node);
+int fpga_irq_of_init(struct device_node *node,
+		     struct device_node *parent);
+
+#endif

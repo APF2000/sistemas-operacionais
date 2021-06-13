@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:edb45df90d7973be525ab3948f8caf9635a0877231310cd8b8a823e68c376261
-size 199
+#
+# Makefile for ALSA
+# Copyright (c) 2001 by Jaroslav Kysela <perex@perex.cz>
+#
+
+snd-ad1816a-objs := ad1816a.o ad1816a_lib.o
+
+# Toplevel Module Dependency
+obj-$(CONFIG_SND_AD1816A) += snd-ad1816a.o

@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:124e601849077fb4123cd1c715cb69e5a6ef0eb2433597fde7ac739c4ba14bb5
-size 532
+What:		/sys/class/
+Date:		Febuary 2006
+Contact:	Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+Description:
+		The /sys/class directory will consist of a group of
+		subdirectories describing individual classes of devices
+		in the kernel.  The individual directories will consist
+		of either subdirectories, or symlinks to other
+		directories.
+
+		All programs that use this directory tree must be able
+		to handle both subdirectories or symlinks in order to
+		work properly.
+
+Users:
+	udev <linux-hotplug-devel@lists.sourceforge.net>

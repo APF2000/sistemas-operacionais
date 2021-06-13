@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c6e004881e136b914cf64881c137fda1687e20e91221a54d6f29128a4b0e16c1
-size 202
+#
+# Makefile for ALSA
+# Copyright (c) 2001 by Jaroslav Kysela <perex@perex.cz>
+#
+
+snd-vx-lib-objs := vx_core.o vx_hwdep.o vx_pcm.o vx_mixer.o vx_cmd.o vx_uer.o
+
+obj-$(CONFIG_SND_VX_LIB) += snd-vx-lib.o

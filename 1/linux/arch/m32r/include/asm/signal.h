@@ -1,3 +1,24 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:9afa88586611072d9e681ff581d91f5077ea7d73fc849c8545985ad36ceb9c14
-size 522
+#ifndef _ASM_M32R_SIGNAL_H
+#define _ASM_M32R_SIGNAL_H
+
+#include <uapi/asm/signal.h>
+
+/* Most things should be clean enough to redefine this at will, if care
+   is taken to make libc match.  */
+
+#define _NSIG		64
+#define _NSIG_BPW	32
+#define _NSIG_WORDS	(_NSIG / _NSIG_BPW)
+
+typedef unsigned long old_sigset_t;		/* at least 32 bits */
+
+typedef struct {
+	unsigned long sig[_NSIG_WORDS];
+} sigset_t;
+
+#define __ARCH_HAS_SA_RESTORER
+#include <asm/sigcontext.h>
+
+#undef __HAVE_ARCH_SIG_BITOPS
+
+#endif  /* _ASM_M32R_SIGNAL_H */

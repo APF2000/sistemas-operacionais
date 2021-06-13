@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:18cc86d1ecb14723debcaf97b6089ac383cea2c4dfc239c555a4495601241f46
-size 276
+#
+# This is a modified version of zlib, which does all memory
+# allocation ahead of time.
+#
+# This is the compression code, see zlib_inflate for the
+# decompression code.
+#
+
+obj-$(CONFIG_ZLIB_DEFLATE) += zlib_deflate.o
+
+zlib_deflate-objs := deflate.o deftree.o deflate_syms.o

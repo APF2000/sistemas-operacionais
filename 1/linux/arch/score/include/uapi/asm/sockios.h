@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:17c48254d4f18d600218d314f0e3e92fe375f37f5251f868b0d1678f48efcb9f
-size 127
+#ifndef _ASM_SCORE_SOCKIOS_H
+#define _ASM_SCORE_SOCKIOS_H
+
+#include <asm-generic/sockios.h>
+
+#endif /* _ASM_SCORE_SOCKIOS_H */

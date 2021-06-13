@@ -1,3 +1,3 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:aee4030102141a66ea9c9cdabe8dc78ec1dc3dc041b48fa8e505728f261519e7
-size 109
+obj-$(CONFIG_SOC_PNX833X)	+= common/
+obj-$(CONFIG_NXP_STB220)	+= stb22x/
+obj-$(CONFIG_NXP_STB225)	+= stb22x/

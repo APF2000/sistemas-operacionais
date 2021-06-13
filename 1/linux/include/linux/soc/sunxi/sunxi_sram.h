@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:695974367ca25ce555165dba1ce5aad0f662173f0d4f4077693acb4d1bd7da5b
-size 504
+/*
+ * Allwinner SoCs SRAM Controller Driver
+ *
+ * Copyright (C) 2015 Maxime Ripard
+ *
+ * Author: Maxime Ripard <maxime.ripard@free-electrons.com>
+ *
+ * This file is licensed under the terms of the GNU General Public
+ * License version 2.  This program is licensed "as is" without any
+ * warranty of any kind, whether express or implied.
+ */
+
+#ifndef _SUNXI_SRAM_H_
+#define _SUNXI_SRAM_H_
+
+int sunxi_sram_claim(struct device *dev);
+int sunxi_sram_release(struct device *dev);
+
+#endif /* _SUNXI_SRAM_H_ */

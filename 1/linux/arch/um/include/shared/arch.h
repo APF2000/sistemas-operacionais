@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:6e9b6e3f198fbbb34ae135c674f56b117b0a62f269ffae376ce545bc30469d89
-size 350
+/*
+ * Copyright (C) 2007 Jeff Dike (jdike@{addtoit,linux.intel}.com)
+ * Licensed under the GPL
+ */
+
+#ifndef __ARCH_H__
+#define __ARCH_H__
+
+#include <sysdep/ptrace.h>
+
+extern void arch_check_bugs(void);
+extern int arch_fixup(unsigned long address, struct uml_pt_regs *regs);
+extern void arch_examine_signal(int sig, struct uml_pt_regs *regs);
+
+#endif

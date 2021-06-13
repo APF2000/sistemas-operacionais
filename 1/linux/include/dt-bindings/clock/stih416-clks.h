@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:fa2cfa402a1c3bd0c18282a301383b5144deddc69de3a5776c4e48c3528a8cd8
-size 270
+/*
+ * This header provides constants clk index STMicroelectronics
+ * STiH416 SoC.
+ */
+#ifndef _CLK_STIH416
+#define _CLK_STIH416
+
+/* CLOCKGEN A0 */
+#define CLK_ICN_REG		0
+#define CLK_ETH1_PHY		4
+
+/* CLOCKGEN A1 */
+#define CLK_ICN_IF_2		0
+#define CLK_GMAC0_PHY		3
+
+#endif

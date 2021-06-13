@@ -1,3 +1,25 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:754e5f294558b10e5e7b9f5f09487e11f125d18bba9e3bdc18e1ee935cfd8819
-size 484
+#ifndef _LIBLOCKDEP_SPINLOCK_H_
+#define _LIBLOCKDEP_SPINLOCK_H_
+
+#include <pthread.h>
+#include <stdbool.h>
+
+#define arch_spinlock_t pthread_mutex_t
+#define __ARCH_SPIN_LOCK_UNLOCKED PTHREAD_MUTEX_INITIALIZER
+
+static inline void arch_spin_lock(arch_spinlock_t *mutex)
+{
+	pthread_mutex_lock(mutex);
+}
+
+static inline void arch_spin_unlock(arch_spinlock_t *mutex)
+{
+	pthread_mutex_unlock(mutex);
+}
+
+static inline bool arch_spin_is_locked(arch_spinlock_t *mutex)
+{
+	return true;
+}
+
+#endif

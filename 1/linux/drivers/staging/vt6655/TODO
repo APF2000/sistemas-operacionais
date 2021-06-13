@@ -1,3 +1,21 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4905ed0e068af0ae3e5eb722e87f9584d79fc1d9a61f5bb53ad7b5bc525d24e7
-size 614
+TODO:
+- remove __cplusplus ifdefs -- done
+- prepare for merge with vt6656 driver:
+  - rename DEVICE_PRT() to DBG_PRT() -- done
+  - share 80211*.h includes
+  - split rf.c
+  - remove dead code
+  - abstract VT3253 chipset specific code
+- add common vt665x infrastructure
+- kill ttype.h
+- switch to use LIB80211
+- switch to use MAC80211
+- verify unsigned long usage for x86-64 arch
+- reduce .data footprint
+- use kernel coding style
+- checkpatch.pl fixes
+- sparse fixes
+- integrate with drivers/net/wireless
+
+Please send any patches to Greg Kroah-Hartman <greg@kroah.com>
+and Forest Bond <forest@alittletooquiet.net>.

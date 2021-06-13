@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4d96d85eaf16d95bc2f13a369bbe4e5181d11b52f6b4e78f75e39ea040a2f4ec
-size 189
+#ifndef _UAPI_ASM_SCORE_SETUP_H
+#define _UAPI_ASM_SCORE_SETUP_H
+
+#define COMMAND_LINE_SIZE	256
+#define MEMORY_START		0
+#define MEMORY_SIZE		0x2000000
+
+
+#endif /* _UAPI_ASM_SCORE_SETUP_H */

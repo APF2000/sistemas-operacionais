@@ -1,3 +1,5 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:34a8ef0a10299ee9cb8b0595d5fb0261878520b34e5105e9fae12c391f32f0c3
-size 118
+ifndef NO_DWARF
+PERF_HAVE_DWARF_REGS := 1
+endif
+PERF_HAVE_JITDUMP := 1
+PERF_HAVE_ARCH_REGS_QUERY_REGISTER_OFFSET := 1

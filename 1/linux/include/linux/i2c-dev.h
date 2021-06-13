@@ -1,3 +1,28 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d1d6a1422e6d0961e27e0015acb9a02126440d26032da3d317b3cdd08ee76540
-size 1051
+/*
+    i2c-dev.h - i2c-bus driver, char device interface
+
+    Copyright (C) 1995-97 Simon G. Vogl
+    Copyright (C) 1998-99 Frodo Looijaard <frodol@dds.nl>
+
+    This program is free software; you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation; either version 2 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program; if not, write to the Free Software
+    Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+    MA 02110-1301 USA.
+*/
+#ifndef _LINUX_I2C_DEV_H
+#define _LINUX_I2C_DEV_H
+
+#include <uapi/linux/i2c-dev.h>
+
+#define I2C_MAJOR	89		/* Device major number		*/
+#endif /* _LINUX_I2C_DEV_H */

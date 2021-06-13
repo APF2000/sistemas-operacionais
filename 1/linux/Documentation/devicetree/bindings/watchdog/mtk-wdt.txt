@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:cbaf102639ed09756a07890a8c77258327c8c8eaf75f6fc8d32e3062087405bf
-size 394
+Mediatek SoCs Watchdog timer
+
+Required properties:
+
+- compatible should contain:
+	* "mediatek,mt2701-wdt" for MT2701 compatible watchdog timers
+	* "mediatek,mt6589-wdt" for all compatible watchdog timers (MT2701,
+		MT6589)
+
+- reg : Specifies base physical address and size of the registers.
+
+Example:
+
+wdt: watchdog@010000000 {
+	compatible = "mediatek,mt6589-wdt";
+	reg = <0x10000000 0x18>;
+};

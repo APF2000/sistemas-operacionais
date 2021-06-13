@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:6c3ad93949eabeec0d8ae468b6c36c937e221a819be176c349f1304fcd063526
-size 308
+config USB_RAINSHADOW_CEC
+	tristate "RainShadow Tech HDMI CEC"
+	depends on USB_ACM && CEC_CORE
+	select SERIO
+	select SERIO_SERPORT
+	---help---
+	  This is a cec driver for the RainShadow Tech HDMI CEC device.
+
+	  To compile this driver as a module, choose M here: the
+	  module will be called rainshadow-cec.

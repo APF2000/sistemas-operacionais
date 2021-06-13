@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:3287de8fea16c6821cb040bf65300868586e4d8c06da0d9f69a12bee40cdee73
-size 354
+Device-Tree bindings for hdmiphy driver
+
+Required properties:
+- compatible: value should be one of the following:
+	1) "samsung,exynos5-hdmiphy" <DEPRECATED>
+	2) "samsung,exynos4210-hdmiphy".
+	3) "samsung,exynos4212-hdmiphy".
+- reg: I2C address of the hdmiphy device.
+
+Example:
+
+	hdmiphy {
+		compatible = "samsung,exynos4210-hdmiphy";
+		reg = <0x38>;
+	};

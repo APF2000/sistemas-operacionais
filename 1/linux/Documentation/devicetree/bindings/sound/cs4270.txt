@@ -1,3 +1,21 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:6f8f8918058300c848d72e52eca699493d2a3f0e14a716273d7b743ec6e382b5
-size 412
+CS4270 audio CODEC
+
+The driver for this device currently only supports I2C.
+
+Required properties:
+
+  - compatible : "cirrus,cs4270"
+
+  - reg : the I2C address of the device for I2C
+
+Optional properties:
+
+  - reset-gpio : a GPIO spec for the reset pin. If specified, it will be
+		 deasserted before communication to the codec starts.
+
+Example:
+
+codec: cs4270@48 {
+	compatible = "cirrus,cs4270";
+	reg = <0x48>;
+};

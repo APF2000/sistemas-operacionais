@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b82189c63c8db35c59bab50a6a063ac585f8186c96ba4ff8ee19936436006f02
-size 354
+#ifndef _SPARC64_MMZONE_H
+#define _SPARC64_MMZONE_H
+
+#ifdef CONFIG_NEED_MULTIPLE_NODES
+
+#include <linux/cpumask.h>
+
+extern struct pglist_data *node_data[];
+
+#define NODE_DATA(nid)		(node_data[nid])
+
+extern int numa_cpu_lookup_table[];
+extern cpumask_t numa_cpumask_lookup_table[];
+
+#endif /* CONFIG_NEED_MULTIPLE_NODES */
+
+#endif /* _SPARC64_MMZONE_H */

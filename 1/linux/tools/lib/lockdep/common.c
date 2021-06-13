@@ -1,3 +1,28 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e9b1f2959326f888e8c642be86a13207f13409a159f118934d0fe6d136937749
-size 575
+#include <stddef.h>
+#include <stdbool.h>
+#include <linux/compiler.h>
+#include <linux/lockdep.h>
+#include <unistd.h>
+#include <sys/syscall.h>
+
+static __thread struct task_struct current_obj;
+
+/* lockdep wants these */
+bool debug_locks = true;
+bool debug_locks_silent;
+
+__attribute__((destructor)) static void liblockdep_exit(void)
+{
+	debug_check_no_locks_held();
+}
+
+struct task_struct *__curr(void)
+{
+	if (current_obj.pid == 0) {
+		/* Makes lockdep output pretty */
+		prctl(PR_GET_NAME, current_obj.comm);
+		current_obj.pid = syscall(__NR_gettid);
+	}
+
+	return &current_obj;
+}

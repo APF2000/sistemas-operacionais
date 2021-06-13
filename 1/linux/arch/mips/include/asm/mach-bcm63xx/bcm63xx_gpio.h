@@ -1,3 +1,34 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1bca064f18ee5d3c88c85e078f8e35175b2a2dc30e7a1a22e63b0b98d792ae76
-size 599
+#ifndef BCM63XX_GPIO_H
+#define BCM63XX_GPIO_H
+
+#include <linux/init.h>
+#include <bcm63xx_cpu.h>
+
+int __init bcm63xx_gpio_init(void);
+
+static inline unsigned long bcm63xx_gpio_count(void)
+{
+	switch (bcm63xx_get_cpu_id()) {
+	case BCM6328_CPU_ID:
+		return 32;
+	case BCM3368_CPU_ID:
+	case BCM6358_CPU_ID:
+		return 40;
+	case BCM6338_CPU_ID:
+		return 8;
+	case BCM6345_CPU_ID:
+		return 16;
+	case BCM6362_CPU_ID:
+		return 48;
+	case BCM6368_CPU_ID:
+		return 38;
+	case BCM6348_CPU_ID:
+	default:
+		return 37;
+	}
+}
+
+#define BCM63XX_GPIO_DIR_OUT	0x0
+#define BCM63XX_GPIO_DIR_IN	0x1
+
+#endif /* !BCM63XX_GPIO_H */

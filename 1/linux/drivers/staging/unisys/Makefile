@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:fd20c19e15f57204c0a2c0ccc7d8118e1d70d31dc85d7621f487c51802e000c6
-size 219
+#
+# Makefile for Unisys SPAR drivers
+#
+obj-$(CONFIG_UNISYS_VISORBUS)		+= visorbus/
+obj-$(CONFIG_UNISYS_VISORNIC)		+= visornic/
+obj-$(CONFIG_UNISYS_VISORINPUT)		+= visorinput/
+obj-$(CONFIG_UNISYS_VISORHBA)		+= visorhba/

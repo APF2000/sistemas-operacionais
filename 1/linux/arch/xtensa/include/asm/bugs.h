@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:16f829122bba2d251db0f3e89bc17473e653596729f2fd25872b261e66a363e1
-size 451
+/*
+ * include/asm-xtensa/bugs.h
+ *
+ * This is included by init/main.c to check for architecture-dependent bugs.
+ *
+ * Xtensa processors don't have any bugs.  :)
+ *
+ * This file is subject to the terms and conditions of the GNU General
+ * Public License.  See the file "COPYING" in the main directory of
+ * this archive for more details.
+ */
+
+#ifndef _XTENSA_BUGS_H
+#define _XTENSA_BUGS_H
+
+static void check_bugs(void) { }
+
+#endif /* _XTENSA_BUGS_H */

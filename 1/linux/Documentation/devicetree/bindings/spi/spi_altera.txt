@@ -1,3 +1,5 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:7ac633f99b150d9b47bde0c6bebcaf31e326b19fdf0264281ff19389b1270b10
-size 128
+Altera SPI
+
+Required properties:
+- compatible : should be "ALTR,spi-1.0". <DEPRECATED>
+- compatible : should be "altr,spi-1.0".

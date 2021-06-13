@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e031bdfb98cd1149dbe1ba9c66c7e7193fe4ea2643ee858cfa614db69ff6f5d3
-size 180
+#include "ppc_asm.h"
+
+	.text
+	.globl _zimage_start
+_zimage_start:
+	mfmsr   r10
+	rlwinm  r10,r10,0,~(1<<15)        /* Clear MSR_EE */
+	sync
+	mtmsr   r10
+	isync
+	b	_zimage_start_lib

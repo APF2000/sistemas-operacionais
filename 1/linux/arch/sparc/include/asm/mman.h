@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:27fb048624807d7dca19440016324d714c8c30e1d7334d849a337092e8fa4f8e
-size 265
+#ifndef __SPARC_MMAN_H__
+#define __SPARC_MMAN_H__
+
+#include <uapi/asm/mman.h>
+
+#ifndef __ASSEMBLY__
+#define arch_mmap_check(addr,len,flags)	sparc_mmap_check(addr,len)
+int sparc_mmap_check(unsigned long addr, unsigned long len);
+#endif
+#endif /* __SPARC_MMAN_H__ */

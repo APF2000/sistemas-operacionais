@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:46f02e3c2a990b50d3ed0822974d81dd2089f1128b0c9a6118731e6373881aba
-size 176
+obj-$(CONFIG_VIDEO_CAFE_CCIC) += cafe_ccic.o
+cafe_ccic-y := cafe-driver.o mcam-core.o
+
+obj-$(CONFIG_VIDEO_MMP_CAMERA) += mmp_camera.o
+mmp_camera-y := mmp-driver.o mcam-core.o
+

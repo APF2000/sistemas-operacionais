@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4594c6396f32e7d2dbf8023e198132a806d6edca3c2ea8d0e1f77765d8ff46bf
-size 189
+/*
+ * QLogic iSCSI HBA Driver
+ * Copyright (c)  2003-2013 QLogic Corporation
+ *
+ * See LICENSE.qla4xxx for copyright and licensing details.
+ */
+
+#define QLA4XXX_DRIVER_VERSION	"5.04.00-k6"

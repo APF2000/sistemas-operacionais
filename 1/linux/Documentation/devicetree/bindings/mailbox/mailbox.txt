@@ -1,3 +1,32 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:961004ca434cec553931a27c7eed8945570a99d9d7f196d64c1fbaf7a218830f
-size 652
+* Generic Mailbox Controller and client driver bindings
+
+Generic binding to provide a way for Mailbox controller drivers to
+assign appropriate mailbox channel to client drivers.
+
+* Mailbox Controller
+
+Required property:
+- #mbox-cells: Must be at least 1. Number of cells in a mailbox
+		specifier.
+
+Example:
+	mailbox: mailbox {
+		...
+		#mbox-cells = <1>;
+	};
+
+
+* Mailbox Client
+
+Required property:
+- mboxes: List of phandle and mailbox channel specifiers.
+
+Optional property:
+- mbox-names: List of identifier strings for each mailbox channel.
+
+Example:
+	pwr_cntrl: power {
+		...
+		mbox-names = "pwr-ctrl", "rpc";
+		mboxes = <&mailbox 0 &mailbox 1>;
+	};

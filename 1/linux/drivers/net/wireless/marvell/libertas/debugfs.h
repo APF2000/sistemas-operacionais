@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:dae980e70eb071349dc622d7194202d4354afce2ed205e88f1e5edbff5df1e73
-size 250
+#ifndef _LBS_DEBUGFS_H_
+#define _LBS_DEBUGFS_H_
+
+void lbs_debugfs_init(void);
+void lbs_debugfs_remove(void);
+
+void lbs_debugfs_init_one(struct lbs_private *priv, struct net_device *dev);
+void lbs_debugfs_remove_one(struct lbs_private *priv);
+
+#endif

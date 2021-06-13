@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a6b0bc46bb7636a7288b4a614a594ef1bbbcaf9a91b49fbf59dc3b2c8ae6a49c
-size 277
+#include <linux/types.h>
+#include <linux/errno.h>
+#include <linux/uaccess.h>
+
+int
+fnabs(u32 *frD, u32 *frB)
+{
+	frD[0] = frB[0] | 0x80000000;
+	frD[1] = frB[1];
+
+#ifdef DEBUG
+	printk("%s: D %p, B %p: ", __func__, frD, frB);
+	dump_double(frD);
+	printk("\n");
+#endif
+
+	return 0;
+}

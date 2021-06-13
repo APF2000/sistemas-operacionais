@@ -1,3 +1,47 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:90365f82b1d807522d6c484bbef4411a0e53317c880e061142deb53aabd391fa
-size 1546
+	.file	"div_small.S"
+/*---------------------------------------------------------------------------+
+ |  div_small.S                                                              |
+ |                                                                           |
+ | Divide a 64 bit integer by a 32 bit integer & return remainder.           |
+ |                                                                           |
+ | Copyright (C) 1992,1995                                                   |
+ |                       W. Metzenthen, 22 Parker St, Ormond, Vic 3163,      |
+ |                       Australia.  E-mail billm@jacobi.maths.monash.edu.au |
+ |                                                                           |
+ |                                                                           |
+ +---------------------------------------------------------------------------*/
+
+/*---------------------------------------------------------------------------+
+ |    unsigned long FPU_div_small(unsigned long long *x, unsigned long y)    |
+ +---------------------------------------------------------------------------*/
+
+#include "fpu_emu.h"
+
+.text
+ENTRY(FPU_div_small)
+	pushl	%ebp
+	movl	%esp,%ebp
+
+	pushl	%esi
+
+	movl	PARAM1,%esi	/* pointer to num */
+	movl	PARAM2,%ecx	/* The denominator */
+
+	movl	4(%esi),%eax	/* Get the current num msw */
+	xorl	%edx,%edx
+	divl	%ecx
+
+	movl	%eax,4(%esi)
+
+	movl	(%esi),%eax	/* Get the num lsw */
+	divl	%ecx
+
+	movl	%eax,(%esi)
+
+	movl	%edx,%eax	/* Return the remainder in eax */
+
+	popl	%esi
+
+	leave
+	ret
+

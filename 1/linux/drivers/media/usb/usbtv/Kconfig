@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:7ea3444cb5bf5d4d09c72d9b66d193a85bfcb6546a0b77174f4a9eb1f473fa5a
-size 368
+config VIDEO_USBTV
+        tristate "USBTV007 video capture support"
+        depends on VIDEO_V4L2 && SND
+        select SND_PCM
+        select VIDEOBUF2_VMALLOC
+
+        ---help---
+          This is a video4linux2 driver for USBTV007 based video capture devices.
+
+          To compile this driver as a module, choose M here: the
+          module will be called usbtv

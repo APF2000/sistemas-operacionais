@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:87f632763418408623fb89c45058eb22bffcb33250ccdfb2d811260c2b1105d0
-size 143
+#ifndef _ASM_SCORE_BYTEORDER_H
+#define _ASM_SCORE_BYTEORDER_H
+
+#include <linux/byteorder/little_endian.h>
+
+#endif /* _ASM_SCORE_BYTEORDER_H */

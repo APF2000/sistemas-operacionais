@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d3d42f57ad532024418016d74ae092103a6875d26b91d1ca257f830d2232eab6
-size 153
+#
+# Makefile for PPS generators.
+#
+
+obj-$(CONFIG_PPS_GENERATOR_PARPORT) += pps_gen_parport.o
+
+ifeq ($(CONFIG_PPS_DEBUG),y)
+EXTRA_CFLAGS += -DDEBUG
+endif

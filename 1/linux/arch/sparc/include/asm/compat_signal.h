@@ -1,3 +1,23 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a53dc782c457ad60821bbaeffb0178f8a31e947856f60bc2fbd397e585a4847a
-size 526
+#ifndef _COMPAT_SIGNAL_H
+#define _COMPAT_SIGNAL_H
+
+#include <linux/compat.h>
+#include <asm/signal.h>
+
+#ifdef CONFIG_COMPAT
+struct __new_sigaction32 {
+	unsigned int		sa_handler;
+	unsigned int    	sa_flags;
+	unsigned int		sa_restorer;     /* not used by Linux/SPARC yet */
+	compat_sigset_t 	sa_mask;
+};
+
+struct __old_sigaction32 {
+	unsigned int		sa_handler;
+	compat_old_sigset_t  	sa_mask;
+	unsigned int    	sa_flags;
+	unsigned int		sa_restorer;     /* not used by Linux/SPARC yet */
+};
+#endif
+
+#endif /* !(_COMPAT_SIGNAL_H) */

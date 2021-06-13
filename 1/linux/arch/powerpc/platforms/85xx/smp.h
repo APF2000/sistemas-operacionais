@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:eaee21f586af206ededda7ba9df7e3fa6a857d73b29bf988f191b91606751f96
-size 292
+#ifndef POWERPC_85XX_SMP_H_
+#define POWERPC_85XX_SMP_H_ 1
+
+#include <linux/init.h>
+
+#ifdef CONFIG_SMP
+void __init mpc85xx_smp_init(void);
+int __init mpc85xx_setup_pmc(void);
+#else
+static inline void mpc85xx_smp_init(void)
+{
+	/* Nothing to do */
+}
+#endif
+
+#endif /* not POWERPC_85XX_SMP_H_ */

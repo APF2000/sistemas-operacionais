@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1c234b4c9eebbdfdd8d7731a8f968d7dbf419ca228c29276b9583eff3c76ecfb
-size 180
+#ifndef ___ASM_SPARC_KDEBUG_H
+#define ___ASM_SPARC_KDEBUG_H
+#if defined(__sparc__) && defined(__arch64__)
+#include <asm/kdebug_64.h>
+#else
+#include <asm/kdebug_32.h>
+#endif
+#endif

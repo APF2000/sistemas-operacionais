@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:be78344b397899acf64a67252104fac952b2f8960df8d55b7bcfac3a7e1bbf91
-size 200
+/dts-v1/;
+
+#include "tegra210-p2530.dtsi"
+#include "tegra210-p2595.dtsi"
+
+/ {
+	model = "NVIDIA Tegra210 P2371 (P2530/P2595) reference design";
+	compatible = "nvidia,p2371-0000", "nvidia,tegra210";
+};

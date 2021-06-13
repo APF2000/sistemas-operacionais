@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:6a00b8c2eeaa28fb57f65c83f194584336a0b076888917a6d3d782b152772ba9
-size 185
+#
+# Makefile for MPLS.
+#
+obj-$(CONFIG_NET_MPLS_GSO) += mpls_gso.o
+obj-$(CONFIG_MPLS_ROUTING) += mpls_router.o
+obj-$(CONFIG_MPLS_IPTUNNEL) += mpls_iptunnel.o
+
+mpls_router-y := af_mpls.o

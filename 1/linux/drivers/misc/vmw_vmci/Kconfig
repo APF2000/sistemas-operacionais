@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c7853c72489ca4268acd9f253078e00647fe533cc976b935390e600f7ee811a6
-size 402
+#
+# VMware VMCI device
+#
+
+config VMWARE_VMCI
+	tristate "VMware VMCI Driver"
+	depends on X86 && PCI
+	help
+	  This is VMware's Virtual Machine Communication Interface.  It enables
+	  high-speed communication between host and guest in a virtual
+	  environment via the VMCI virtual device.
+
+	  If unsure, say N.
+
+	  To compile this driver as a module, choose M here: the
+	  module will be called vmw_vmci.

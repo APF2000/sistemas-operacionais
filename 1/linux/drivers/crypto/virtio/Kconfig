@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:cda0a6f07e63d80518ad6f2cbbce05102344dfd8b9a14aae3086184b1f877e70
-size 311
+config CRYPTO_DEV_VIRTIO
+	tristate "VirtIO crypto driver"
+	depends on VIRTIO
+	select CRYPTO_AEAD
+	select CRYPTO_AUTHENC
+	select CRYPTO_BLKCIPHER
+	select CRYPTO_ENGINE
+	default m
+	help
+	  This driver provides support for virtio crypto device. If you
+	  choose 'M' here, this module will be called virtio_crypto.

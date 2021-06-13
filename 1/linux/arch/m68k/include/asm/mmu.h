@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b841fe4db73d570e868aff36f228520174348248fb59b665d712c16c1f5560dd
-size 204
+#ifndef __MMU_H
+#define __MMU_H
+
+#ifdef CONFIG_MMU
+/* Default "unsigned long" context */
+typedef unsigned long mm_context_t;
+#else
+typedef struct {
+	unsigned long		end_brk;
+} mm_context_t;
+#endif
+
+#endif

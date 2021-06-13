@@ -1,3 +1,20 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:023493d6f2fd2084c20fd7dcc51c2d801ef2a789c24b8e3355a68ae7098d4055
-size 668
+/*
+ * Support for Intel Camera Imaging ISP subsystem.
+ * Copyright (c) 2015, Intel Corporation.
+ *
+ * This program is free software; you can redistribute it and/or modify it
+ * under the terms and conditions of the GNU General Public License,
+ * version 2, as published by the Free Software Foundation.
+ *
+ * This program is distributed in the hope it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+ * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for
+ * more details.
+ */
+
+#ifndef __IA_CSS_XNR3_WRAPPER_PARAM_H
+#define __IA_CSS_XNR3_WRAPPER_PARAM_H
+
+#include "ia_css_xnr3_param.h"
+
+#endif

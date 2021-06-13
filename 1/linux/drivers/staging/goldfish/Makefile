@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:bc0623303832300e403b12f3844f399e7b09458c55a0472564f50e7a5b3b40dc
-size 146
+#
+# Makefile for the Goldfish audio driver
+#
+
+obj-$(CONFIG_GOLDFISH_AUDIO) += goldfish_audio.o
+obj-$(CONFIG_MTD_GOLDFISH_NAND)	+= goldfish_nand.o

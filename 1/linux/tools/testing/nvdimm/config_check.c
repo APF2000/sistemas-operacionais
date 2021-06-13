@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d677b78e0892db72dc49d19b3eb3b397e0749f0545334dfe972ec1dfc871a140
-size 493
+#include <linux/bug.h>
+
+void check(void)
+{
+	/*
+	 * These kconfig symbols must be set to "m" for nfit_test to
+	 * load and operate.
+	 */
+	BUILD_BUG_ON(!IS_MODULE(CONFIG_LIBNVDIMM));
+	BUILD_BUG_ON(!IS_MODULE(CONFIG_BLK_DEV_PMEM));
+	BUILD_BUG_ON(!IS_MODULE(CONFIG_ND_BTT));
+	BUILD_BUG_ON(!IS_MODULE(CONFIG_ND_PFN));
+	BUILD_BUG_ON(!IS_MODULE(CONFIG_ND_BLK));
+	BUILD_BUG_ON(!IS_MODULE(CONFIG_ACPI_NFIT));
+	BUILD_BUG_ON(!IS_MODULE(CONFIG_DEV_DAX));
+	BUILD_BUG_ON(!IS_MODULE(CONFIG_DEV_DAX_PMEM));
+}

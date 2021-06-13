@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1c66425a361b6e62564cb9b38cc27bd4d319c4c8f3e45a6a4f8201867cbee946
-size 532
+#
+# Unisys visorbus configuration
+#
+
+config UNISYS_VISORBUS
+	tristate "Unisys visorbus driver"
+	depends on UNISYSSPAR
+	---help---
+	The visorbus driver is a virtualized bus for the Unisys s-Par firmware.
+	Virtualized devices allow Linux guests on a system to share disks and
+	network cards that do not have SR-IOV support, and to be accessed using
+	the partition desktop application. The visorbus driver is required to
+	discover devices on an s-Par guest, and must be present for any other
+	s-Par guest driver to function correctly.

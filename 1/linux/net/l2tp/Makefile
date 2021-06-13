@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:098db3c7c8524f655de1f3cdc0e3c38b0dcc9c1c677beb4fd6e8caad778c2983
-size 518
+#
+# Makefile for the L2TP.
+#
+
+obj-$(CONFIG_L2TP) += l2tp_core.o
+
+# Build l2tp as modules if L2TP is M
+obj-$(subst y,$(CONFIG_L2TP),$(CONFIG_PPPOL2TP)) += l2tp_ppp.o
+obj-$(subst y,$(CONFIG_L2TP),$(CONFIG_L2TP_IP)) += l2tp_ip.o
+obj-$(subst y,$(CONFIG_L2TP),$(CONFIG_L2TP_V3)) += l2tp_netlink.o
+obj-$(subst y,$(CONFIG_L2TP),$(CONFIG_L2TP_ETH)) += l2tp_eth.o
+obj-$(subst y,$(CONFIG_L2TP),$(CONFIG_L2TP_DEBUGFS)) += l2tp_debugfs.o
+ifneq ($(CONFIG_IPV6),)
+obj-$(subst y,$(CONFIG_L2TP),$(CONFIG_L2TP_IP)) += l2tp_ip6.o
+endif

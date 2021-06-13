@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:84eeb9a537b417d78eaf4c58a08ff4b0188aba12a28acdb1a0f6fa7ca825f0c5
-size 239
+* TI - DSP (Digital Signal Processor)
+
+TI DSP included in OMAP SoC
+
+Required properties:
+- compatible : Should be "ti,omap3-c64" for OMAP3 & 4
+- ti,hwmods: "dsp"
+
+Examples:
+
+dsp {
+    compatible = "ti,omap3-c64";
+    ti,hwmods = "dsp";
+};

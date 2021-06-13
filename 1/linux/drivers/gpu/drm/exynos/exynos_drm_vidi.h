@@ -1,3 +1,22 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:8b8dcafaa97ffbd426b86fdd28886975932951d15ef2162db4034ae9368b2c0e
-size 627
+/* exynos_drm_vidi.h
+ *
+ * Copyright (c) 2012 Samsung Electronics Co., Ltd.
+ * Author: Inki Dae <inki.dae@samsung.com>
+ *
+ * This program is free software; you can redistribute  it and/or modify it
+ * under  the terms of  the GNU General  Public License as published by the
+ * Free Software Foundation;  either version 2 of the  License, or (at your
+ * option) any later version.
+ */
+
+#ifndef _EXYNOS_DRM_VIDI_H_
+#define _EXYNOS_DRM_VIDI_H_
+
+#ifdef CONFIG_DRM_EXYNOS_VIDI
+int vidi_connection_ioctl(struct drm_device *drm_dev, void *data,
+				struct drm_file *file_priv);
+#else
+#define vidi_connection_ioctl	NULL
+#endif
+
+#endif

@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c6ff96702ced5d2da61a0e55374666a13723ce5bbd58033b0607053f9cf29ee3
-size 211
+#
+# Xilinx Clocking Wizard Driver
+#
+
+config COMMON_CLK_XLNX_CLKWZRD
+	tristate "Xilinx Clocking Wizard"
+	depends on COMMON_CLK && OF
+	---help---
+	  Support for the Xilinx Clocking Wizard IP core clock generator.

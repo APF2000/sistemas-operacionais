@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2396af63ed0fee3633e2131bbc1bd9b1ed865fd62fa5c279edf8c7a8c4548b39
-size 199
+config MACH_ASM9260
+	bool "Alphascale ASM9260"
+	depends on ARCH_MULTI_V5
+	select CPU_ARM926T
+	select ASM9260_TIMER
+	select GENERIC_CLOCKEVENTS
+	help
+	  Support for Alphascale ASM9260 based platform.

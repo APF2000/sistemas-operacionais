@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:0d1e893b622616bf86862fefae8f24d234864ed1b61846501d23f720668c78e6
-size 373
+#ifndef _CRYPTO_SHA256_GLUE_H
+#define _CRYPTO_SHA256_GLUE_H
+
+#include <linux/crypto.h>
+
+extern struct shash_alg sha256_neon_algs[2];
+
+int crypto_sha256_arm_update(struct shash_desc *desc, const u8 *data,
+			     unsigned int len);
+
+int crypto_sha256_arm_finup(struct shash_desc *desc, const u8 *data,
+			    unsigned int len, u8 *hash);
+
+#endif /* _CRYPTO_SHA256_GLUE_H */

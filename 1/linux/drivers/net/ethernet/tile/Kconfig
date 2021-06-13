@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2167bb3eeea1469dde5da6677546a17e2140fe699de86661ebbfef5a9b4d7e98
-size 472
+#
+# Tilera network device configuration
+#
+
+config TILE_NET
+	tristate "Tilera GBE/XGBE network driver support"
+	depends on TILE
+	default y
+	select CRC32
+	select TILE_GXIO_MPIPE if TILEGX
+	select HIGH_RES_TIMERS if TILEGX
+	imply PTP_1588_CLOCK if TILEGX
+	---help---
+	  This is a standard Linux network device driver for the
+	  on-chip Tilera Gigabit Ethernet and XAUI interfaces.
+
+	  To compile this driver as a module, choose M here: the module
+	  will be called tile_net.

@@ -1,3 +1,22 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:0ac5ae8bc583e02c1deb7b786e1ef60cac28c40987a2d590da3d6304539d8784
-size 445
+obj-m	:=
+
+KDIR	:= /lib/modules/$(shell uname -r)/build
+KMISC   := /lib/modules/$(shell uname -r)/cpufrequtils/
+
+ifeq ("$(CONFIG_X86_TSC)", "y")
+  obj-m	 += cpufreq-test_tsc.o
+endif
+
+default:
+	$(MAKE) -C $(KDIR) M=$(CURDIR)
+
+clean:
+	- rm -rf *.o *.ko .tmp-versions .*.cmd .*.mod.* *.mod.c
+	- rm -rf .tmp_versions* Module.symvers modules.order
+
+install: default
+	install -d $(KMISC)
+	install -m 644 -c *.ko $(KMISC)
+	/sbin/depmod -a
+
+all:	default

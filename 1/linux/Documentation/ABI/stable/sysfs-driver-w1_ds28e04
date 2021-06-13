@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ae4b49941fce243972b0c91a2da11de094c8f7fc3dffe4ac376bc6e676fce59f
-size 648
+What:		/sys/bus/w1/devices/.../pio
+Date:		May 2012
+Contact:	Markus Franke <franm@hrz.tu-chemnitz.de>
+Description:	read/write the contents of the two PIO's of the DS28E04-100
+		see Documentation/w1/slaves/w1_ds28e04 for detailed information
+Users:		any user space application which wants to communicate with DS28E04-100
+
+
+
+What:		/sys/bus/w1/devices/.../eeprom
+Date:		May 2012
+Contact:	Markus Franke <franm@hrz.tu-chemnitz.de>
+Description:	read/write the contents of the EEPROM memory of the DS28E04-100
+		see Documentation/w1/slaves/w1_ds28e04 for detailed information
+Users:		any user space application which wants to communicate with DS28E04-100

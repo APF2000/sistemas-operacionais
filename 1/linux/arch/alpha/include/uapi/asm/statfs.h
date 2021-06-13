@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4e61975c57e65781e29336141cea0a1598a645b56bc02deecec0127d11c97d6f
-size 251
+#ifndef _ALPHA_STATFS_H
+#define _ALPHA_STATFS_H
+
+#include <linux/types.h>
+
+/* Alpha is the only 64-bit platform with 32-bit statfs. And doesn't
+   even seem to implement statfs64 */
+#define __statfs_word __u32
+
+#include <asm-generic/statfs.h>
+
+#endif

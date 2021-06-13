@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f0c626bd1befa0441ae0daa5f23edc9379feb594e79941dcb268d2b69c1fd174
-size 308
+# Makefile for pstore selftests.
+# Expects pstore backend is registered.
+
+all:
+
+TEST_PROGS := pstore_tests pstore_post_reboot_tests
+TEST_FILES := common_tests pstore_crash_test
+EXTRA_CLEAN := logs/* *uuid
+
+include ../lib.mk
+
+run_crash:
+	@sh pstore_crash_test || { echo "pstore_crash_test: [FAIL]"; exit 1; }

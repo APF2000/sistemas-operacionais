@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:13616bc77eb63bd57048d346d2b4559c05c8ed90486fe156e83255127e43fcc8
-size 276
+Altera Arria10 Partial Reconfiguration IP
+
+Required properties:
+- compatible : should contain "altr,a10-pr-ip"
+- reg        : base address and size for memory mapped io.
+
+Example:
+
+	fpga_mgr: fpga-mgr@ff20c000 {
+		compatible = "altr,a10-pr-ip";
+		reg = <0xff20c000 0x10>;
+	};

@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:8ccb646362feb1ef533f10f02ed4ca9b85bbe55a37078951145a51e82a96a507
-size 300
+#ifndef _ASM_SPARC_UNALIGNED_H
+#define _ASM_SPARC_UNALIGNED_H
+
+#include <linux/unaligned/be_struct.h>
+#include <linux/unaligned/le_byteshift.h>
+#include <linux/unaligned/generic.h>
+#define get_unaligned	__get_unaligned_be
+#define put_unaligned	__put_unaligned_be
+
+#endif /* _ASM_SPARC_UNALIGNED_H */

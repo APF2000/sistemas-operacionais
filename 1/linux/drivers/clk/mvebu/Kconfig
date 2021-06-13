@@ -1,3 +1,51 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e9e7d816674b36dd46ec4717ab161824599a66a6e2f42613d556f822d4780b91
-size 656
+config MVEBU_CLK_COMMON
+	bool
+
+config MVEBU_CLK_CPU
+	bool
+
+config MVEBU_CLK_COREDIV
+	bool
+
+config ARMADA_370_CLK
+	bool
+	select MVEBU_CLK_COMMON
+	select MVEBU_CLK_CPU
+
+config ARMADA_375_CLK
+	bool
+	select MVEBU_CLK_COMMON
+
+config ARMADA_38X_CLK
+	bool
+	select MVEBU_CLK_COMMON
+
+config ARMADA_39X_CLK
+	bool
+	select MVEBU_CLK_COMMON
+
+config ARMADA_37XX_CLK
+       bool
+
+config ARMADA_XP_CLK
+	bool
+	select MVEBU_CLK_COMMON
+	select MVEBU_CLK_CPU
+
+config ARMADA_AP806_SYSCON
+	bool
+
+config ARMADA_CP110_SYSCON
+	bool
+
+config DOVE_CLK
+	bool
+	select MVEBU_CLK_COMMON
+
+config KIRKWOOD_CLK
+	bool
+	select MVEBU_CLK_COMMON
+
+config ORION_CLK
+	bool
+	select MVEBU_CLK_COMMON

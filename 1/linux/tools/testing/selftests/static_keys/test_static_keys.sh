@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d34bebf3c7fefbabee256f4799dae66d1574b1c5cae467e42e1a2636529c7a40
-size 377
+#!/bin/sh
+# Runs static keys kernel module tests
+
+if /sbin/modprobe -q test_static_key_base; then
+	if /sbin/modprobe -q test_static_keys; then
+		echo "static_key: ok"
+		/sbin/modprobe -q -r test_static_keys
+		/sbin/modprobe -q -r test_static_key_base
+	else
+		echo "static_keys: [FAIL]"
+		/sbin/modprobe -q -r test_static_key_base
+	fi
+else
+	echo "static_key: [FAIL]"
+	exit 1
+fi

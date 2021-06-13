@@ -1,3 +1,5 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ebe6f161979be66ed3a5d2ed3d497bb6bd3cb4bbf53ef1cc838d3897d37ab187
-size 245
+solo6x10-y := solo6x10-core.o solo6x10-i2c.o solo6x10-p2m.o solo6x10-v4l2.o \
+		solo6x10-tw28.o solo6x10-gpio.o solo6x10-disp.o solo6x10-enc.o \
+		solo6x10-v4l2-enc.o solo6x10-g723.o solo6x10-eeprom.o
+
+obj-$(CONFIG_VIDEO_SOLO6X10) += solo6x10.o

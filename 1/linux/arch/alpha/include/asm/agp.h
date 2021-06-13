@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:8205e01cef68342ffa5e67d1964248b0660c2870d693366a65caa2659b18cd21
-size 418
+#ifndef AGP_H
+#define AGP_H 1
+
+#include <asm/io.h>
+
+/* dummy for now */
+
+#define map_page_into_agp(page) 
+#define unmap_page_from_agp(page) 
+#define flush_agp_cache() mb()
+
+/* GATT allocation. Returns/accepts GATT kernel virtual address. */
+#define alloc_gatt_pages(order)		\
+	((char *)__get_free_pages(GFP_KERNEL, (order)))
+#define free_gatt_pages(table, order)	\
+	free_pages((unsigned long)(table), (order))
+
+#endif

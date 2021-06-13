@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:8a46bb6aaf9c57f9778d7b2f422f3a32359d16a3e795d2eb1bbee473269d430c
-size 416
+#ifndef __ASM_SN_HUB_H
+#define __ASM_SN_HUB_H
+
+#include <linux/types.h>
+#include <linux/cpumask.h>
+#include <asm/sn/types.h>
+#include <asm/sn/io.h>
+#include <asm/sn/klkernvars.h>
+#include <asm/xtalk/xtalk.h>
+
+/* ip27-hubio.c */
+extern unsigned long hub_pio_map(cnodeid_t cnode, xwidgetnum_t widget,
+			  unsigned long xtalk_addr, size_t size);
+extern void hub_pio_init(cnodeid_t cnode);
+
+#endif /* __ASM_SN_HUB_H */

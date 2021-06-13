@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2f616f55e5f8b718c424dff6a761a43c458b6a30e866907b6a367652ee60ca9c
-size 276
+/*
+
+ * Copyright (C) 2015 Thomas Meyer (thomas@m3y3r.de)
+ * Copyright (C) 2005 Jeff Dike (jdike@karaya.com)
+ * Licensed under the GPL
+ */
+
+#ifndef __STUB_DATA_H
+#define __STUB_DATA_H
+
+#include <time.h>
+
+struct stub_data {
+	unsigned long offset;
+	int fd;
+	long err;
+};
+
+#endif

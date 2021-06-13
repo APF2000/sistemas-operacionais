@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:40ea3edff99cd89f3d367199e99ce9f0352e0c1d3a80f5c3963daf8b955e9121
-size 436
+# Built-in dtb
+builtindtb-y		:= nsim_700
+
+ifneq ($(CONFIG_ARC_BUILTIN_DTB_NAME),"")
+	builtindtb-y	:= $(patsubst "%",%,$(CONFIG_ARC_BUILTIN_DTB_NAME))
+endif
+
+obj-y   += $(builtindtb-y).dtb.o
+dtb-y := $(builtindtb-y).dtb
+
+.SECONDARY: $(obj)/$(builtindtb-y).dtb.S
+
+dtstree		:= $(srctree)/$(src)
+dtb-$(CONFIG_OF_ALL_DTBS) := $(patsubst $(dtstree)/%.dts,%.dtb, $(wildcard $(dtstree)/*.dts))
+
+always := $(dtb-y)
+clean-files := *.dtb  *.dtb.S

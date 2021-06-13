@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:dd57532b767486eb052d80a2a6cfc485d6b9dbec5e9dd9c311d187ca74bdd528
-size 262
+#
+# Makefile for the DECstation family specific parts of the kernel
+#
+
+obj-y		:= ecc-berr.o int-handler.o ioasic-irq.o kn01-berr.o \
+		   kn02-irq.o kn02xa-berr.o platform.o reset.o setup.o time.o
+
+obj-$(CONFIG_TC)		+= tc.o
+obj-$(CONFIG_CPU_HAS_WB)	+= wbflush.o

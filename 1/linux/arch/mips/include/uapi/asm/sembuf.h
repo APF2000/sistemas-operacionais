@@ -1,3 +1,22 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2f646a8b16a562f183dbba1d2a218a632830707bcba30c69e73e5766d08be0ba
-size 603
+#ifndef _ASM_SEMBUF_H
+#define _ASM_SEMBUF_H
+
+/*
+ * The semid64_ds structure for the MIPS architecture.
+ * Note extra padding because this structure is passed back and forth
+ * between kernel and user space.
+ *
+ * Pad space is left for:
+ * - 2 miscellaneous 64-bit values
+ */
+
+struct semid64_ds {
+	struct ipc64_perm sem_perm;		/* permissions .. see ipc.h */
+	__kernel_time_t sem_otime;		/* last semop time */
+	__kernel_time_t sem_ctime;		/* last change time */
+	unsigned long	sem_nsems;		/* no. of semaphores in array */
+	unsigned long	__unused1;
+	unsigned long	__unused2;
+};
+
+#endif /* _ASM_SEMBUF_H */

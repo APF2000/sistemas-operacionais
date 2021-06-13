@@ -1,3 +1,23 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:8621a8d28289fdd5547d4302c4204b4e24ba1ea2bbd23e9cd9fd9e17a1c606b6
-size 584
+/*
+ * arch/arm/mach-sa1100/include/mach/cerf.h
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 2 as
+ * published by the Free Software Foundation.
+ *
+ * Apr-2003 : Removed some old PDA crud [FB]
+ */
+#ifndef _INCLUDE_CERF_H_
+#define _INCLUDE_CERF_H_
+
+
+#define CERF_ETH_IO			0xf0000000
+#define CERF_ETH_IRQ IRQ_GPIO26
+
+#define CERF_GPIO_CF_BVD2		19
+#define CERF_GPIO_CF_BVD1		20
+#define CERF_GPIO_CF_RESET		21
+#define CERF_GPIO_CF_IRQ		22
+#define CERF_GPIO_CF_CD			23
+
+#endif // _INCLUDE_CERF_H_

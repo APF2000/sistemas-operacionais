@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:eae8b139b23a8fa84383fcabc47573e7e6c56a2ad7b3a6288de4f8d31293c202
-size 188
+#ifndef ___ASM_SPARC_IRQFLAGS_H
+#define ___ASM_SPARC_IRQFLAGS_H
+#if defined(__sparc__) && defined(__arch64__)
+#include <asm/irqflags_64.h>
+#else
+#include <asm/irqflags_32.h>
+#endif
+#endif

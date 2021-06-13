@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d359e783e092e9a01693f5e4f527879a09be78664e6fb8be952823d05b923f48
-size 378
+#include <linux/tty.h>
+#include <linux/sched/signal.h>
+#include "dgnc_utils.h"
+
+/**
+ * dgnc_ms_sleep - Put the driver to sleep
+ * @ms - milliseconds to sleep
+ *
+ * Return: 0 if timed out, if interrupted by a signal return signal.
+ */
+int dgnc_ms_sleep(ulong ms)
+{
+	__set_current_state(TASK_INTERRUPTIBLE);
+	schedule_timeout((ms * HZ) / 1000);
+	return signal_pending(current);
+}

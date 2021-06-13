@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a5ed437e41ab9da22e26c96f65115a1d09589191b7efcfe272672fc12b1d0e4b
-size 482
+config DPTF_POWER
+	tristate "DPTF Platform Power Participant"
+	depends on X86
+	help
+	  This driver adds support for Dynamic Platform and Thermal Framework
+	  (DPTF) Platform Power Participant device (INT3407) support.
+	  This participant is responsible for exposing platform telemetry:
+		max_platform_power
+		platform_power_source
+		adapter_rating
+		battery_steady_power
+		charger_type
+
+	  To compile this driver as a module, choose M here:
+	  the module will be called dptf_power.

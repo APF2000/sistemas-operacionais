@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:84f65ad4c127e0d1a0945cdb3bd472154affaa92fa223021191b9db9eb2c6926
-size 367
+#ifndef _LINUX_GETOPT_H
+#define _LINUX_GETOPT_H
+
+#define OPT_NOPARAM	1
+#define OPT_INT		2
+#define OPT_STRING	4
+struct ncp_option {
+	const char *name;
+	unsigned int has_arg;
+	int val;
+};
+
+extern int ncp_getopt(const char *caller, char **options, const struct ncp_option *opts,
+		      char **optopt, char **optarg, unsigned long *value);
+
+#endif /* _LINUX_GETOPT_H */

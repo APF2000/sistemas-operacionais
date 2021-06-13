@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:9e801c53cb769d73bd2204e36c4515a693312238f7a87f9111dbe3446ab73d9b
-size 182
+#
+# Makefile for Hisilicon processors family
+#
+
+CFLAGS_platmcpm.o	:= -march=armv7-a
+
+obj-y	+= hisilicon.o
+obj-$(CONFIG_MCPM)		+= platmcpm.o
+obj-$(CONFIG_SMP)		+= platsmp.o hotplug.o

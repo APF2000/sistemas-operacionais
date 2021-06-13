@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:cb901b3e2e88cbedb0c952b6c857e643315c735d178dc6a20f596e84325129f1
-size 268
+#
+# IIO common modules
+#
+
+source "drivers/iio/common/cros_ec_sensors/Kconfig"
+source "drivers/iio/common/hid-sensors/Kconfig"
+source "drivers/iio/common/ms_sensors/Kconfig"
+source "drivers/iio/common/ssp_sensors/Kconfig"
+source "drivers/iio/common/st_sensors/Kconfig"

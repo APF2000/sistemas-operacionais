@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:752170a9bec91f3a98d90bc9016d037204ca5c79c4905c51040392ffbd9ab707
-size 546
+/*
+ * Copyright IBM Corporation, 2010
+ * Author Venkateswararao Jujjuri <jvrao@linux.vnet.ibm.com>
+ *
+ * This program is free software; you can redistribute it and/or modify it
+ * under the terms of version 2.1 of the GNU Lesser General Public License
+ * as published by the Free Software Foundation.
+ *
+ * This program is distributed in the hope that it would be useful, but
+ * WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ *
+ */
+
+void p9_release_pages(struct page **, int);

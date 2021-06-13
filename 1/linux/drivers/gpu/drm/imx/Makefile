@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1329018bc0b145b3da812feae5de291a572cfd571bb7761625509e45870f299c
-size 326
+
+imxdrm-objs := imx-drm-core.o ipuv3-crtc.o ipuv3-plane.o
+
+obj-$(CONFIG_DRM_IMX) += imxdrm.o
+
+obj-$(CONFIG_DRM_IMX_PARALLEL_DISPLAY) += parallel-display.o
+obj-$(CONFIG_DRM_IMX_TVE) += imx-tve.o
+obj-$(CONFIG_DRM_IMX_LDB) += imx-ldb.o
+
+obj-$(CONFIG_DRM_IMX_IPUV3)	+= imx-ipuv3-crtc.o
+obj-$(CONFIG_DRM_IMX_HDMI) += dw_hdmi-imx.o

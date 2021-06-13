@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:0421f6752a560f9767978cd0f3d7b5bd30dd3f501fec90b6d39346786836475f
-size 363
+KASAN_SANITIZE := n
+UBSAN_SANITIZE_kasan.o := n
+KCOV_INSTRUMENT := n
+
+CFLAGS_REMOVE_kasan.o = -pg
+# Function splitter causes unnecessary splits in __asan_load1/__asan_store1
+# see: https://gcc.gnu.org/bugzilla/show_bug.cgi?id=63533
+CFLAGS_kasan.o := $(call cc-option, -fno-conserve-stack -fno-stack-protector)
+
+obj-y := kasan.o report.o kasan_init.o quarantine.o

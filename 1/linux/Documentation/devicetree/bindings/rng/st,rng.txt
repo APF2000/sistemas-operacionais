@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f4e25bde7e7c6c9ecec1d85883ffd6e7ce74e9abc896448dc56d60984d688ec0
-size 389
+STMicroelectronics HW Random Number Generator
+----------------------------------------------
+
+Required parameters:
+compatible	: Should be "st,rng"
+reg		: Base address and size of IP's register map.
+clocks		: Phandle to device's clock (See: ../clocks/clock-bindings.txt)
+
+Example:
+
+rng@fee80000 {
+	compatible      = "st,rng";
+	reg		= <0xfee80000 0x1000>;
+	clocks          = <&clk_sysin>;
+}

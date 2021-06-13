@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:938998a9e397c291ea1afb0a5f9d809c57c0f741c3ecb8de9d5af18168a568f9
-size 236
+ToDo list (incomplete, unordered)
+	- add compile as module support
+	- move half of the nvec init stuff to i2c-tegra.c
+	- move event handling to nvec_events
+	- finish suspend/resume support
+	- add support for more device implementations

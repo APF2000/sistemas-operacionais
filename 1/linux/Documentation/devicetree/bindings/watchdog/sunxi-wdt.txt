@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ca0d42e000a84e3099bf5dc29e2fc246ea37c85f1da54316ab511542d730b559
-size 328
+Allwinner SoCs Watchdog timer
+
+Required properties:
+
+- compatible : should be either "allwinner,sun4i-a10-wdt" or
+               "allwinner,sun6i-a31-wdt"
+- reg : Specifies base physical address and size of the registers.
+
+Example:
+
+wdt: watchdog@01c20c90 {
+	compatible = "allwinner,sun4i-a10-wdt";
+	reg = <0x01c20c90 0x10>;
+};

@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:8b6428d5c47f94b65f1222a51ac40ea7e3935282a2fe9b6b115ee6e7d6e1a4f2
-size 423
+tm6000-y := tm6000-cards.o \
+		   tm6000-core.o  \
+		   tm6000-i2c.o   \
+		   tm6000-video.o \
+		   tm6000-stds.o \
+		   tm6000-input.o
+
+obj-$(CONFIG_VIDEO_TM6000) += tm6000.o
+obj-$(CONFIG_VIDEO_TM6000_ALSA) += tm6000-alsa.o
+obj-$(CONFIG_VIDEO_TM6000_DVB) += tm6000-dvb.o
+
+ccflags-y += -Idrivers/media/i2c
+ccflags-y += -Idrivers/media/tuners
+ccflags-y += -Idrivers/media/dvb-core
+ccflags-y += -Idrivers/media/dvb-frontends

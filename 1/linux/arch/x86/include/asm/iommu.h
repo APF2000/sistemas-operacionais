@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:527c0b32b7b77bcd4b0e0dd35d661c5f20a4fe8a7c0471c3baab9244bd5335b6
-size 299
+#ifndef _ASM_X86_IOMMU_H
+#define _ASM_X86_IOMMU_H
+
+extern const struct dma_map_ops nommu_dma_ops;
+extern int force_iommu, no_iommu;
+extern int iommu_detected;
+extern int iommu_pass_through;
+
+/* 10 seconds */
+#define DMAR_OPERATION_TIMEOUT ((cycles_t) tsc_khz*10*1000)
+
+#endif /* _ASM_X86_IOMMU_H */

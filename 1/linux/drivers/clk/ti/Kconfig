@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a399d264fd0afd59769071fc8cdabf6f4a27bfd78e3f0e8768385187389f7062
-size 220
+config COMMON_CLK_TI_ADPLL
+	tristate "Clock driver for dm814x ADPLL"
+	depends on ARCH_OMAP2PLUS || COMPILE_TEST
+	default y if SOC_TI81XX
+	---help---
+	  ADPLL clock driver for the dm814x SoC using common clock framework.

@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:541e650e21d1df64d833b4ce44c12080f77fca7b550bb5b234ed94c5234b37f4
-size 226
+/*
+ * Copyright 2004-2008 Analog Devices Inc.
+ *
+ * Licensed under the GPL-2 or later.
+ */
+
+#ifndef _BFIN_SEGMENT_H
+#define _BFIN_SEGMENT_H
+
+#define KERNEL_DS   (0x5)
+#define USER_DS     (0x1)
+
+#endif				/* _BFIN_SEGMENT_H */

@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c02363dd9fbce396f654671c8704286d395736ec9358021f0ef2ec9c81a23527
-size 235
+#
+# Makefile for the S3 Savage framebuffer driver
+#
+
+obj-$(CONFIG_FB_SAVAGE)			+= savagefb.o
+
+savagefb-y				+= savagefb_driver.o
+savagefb-$(CONFIG_FB_SAVAGE_I2C)	+= savagefb-i2c.o
+savagefb-$(CONFIG_FB_SAVAGE_ACCEL)	+= savagefb_accel.o

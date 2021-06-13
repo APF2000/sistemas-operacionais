@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:dc7f047471a26dc45de5c7c0fcc766f8a08f5b562bae0faadf1b2c3fe50bf923
-size 398
+/*
+ * This is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ */
+
+#ifndef FSL_DMA_H
+#define FSL_DMA_H
+/* fsl dma API for enxternal start */
+int fsl_dma_external_start(struct dma_chan *dchan, int enable);
+
+#endif

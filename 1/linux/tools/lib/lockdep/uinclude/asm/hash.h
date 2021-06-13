@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:049f0775e3433dbc26629c9f1e7875cdf6ab02711ab62ad71b10c306a24c0bf5
-size 105
+#ifndef __ASM_GENERIC_HASH_H
+#define __ASM_GENERIC_HASH_H
+
+/* Stub */
+
+#endif /* __ASM_GENERIC_HASH_H */

@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4d51e9f4c40b5ee5198ec9315c199ec76c483c88c2f46eef25d20df7b87ed65f
-size 572
+What:		/sys/kernel/debug/olpc-ec/cmd
+Date:		Dec 2011
+KernelVersion:	3.4
+Contact:	devel@lists.laptop.org
+Description:
+
+A generic interface for executing OLPC Embedded Controller commands and
+reading their responses.
+
+To execute a command, write data with the format: CC:N A A A A
+CC is the (hex) command, N is the count of expected reply bytes, and A A A A
+are optional (hex) arguments.
+
+To read the response (if any), read from the generic node after executing
+a command. Hex reply bytes will be returned, *whether or not* they came from
+the immediately previous command.

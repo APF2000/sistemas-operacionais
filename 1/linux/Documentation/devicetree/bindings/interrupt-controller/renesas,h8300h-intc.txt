@@ -1,3 +1,22 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:41457044c83897d6bf8c9a78dfe4eb32a6d8e5df33dd63179d26ca349e1f7050
-size 608
+* H8/300H Interrupt controller
+
+Required properties:
+
+- compatible: has to be "renesas,h8300h-intc", "renesas,h8300-intc" as fallback.
+- #interrupt-cells: has to be <2>: an interrupt index and flags, as defined in
+  interrupts.txt in this directory
+- regs: Base address of interrupt controller registers.
+
+Optional properties:
+
+- any properties, listed in interrupts.txt, and any standard resource allocation
+  properties
+
+Example:
+
+	h8intc: interrupt-controller@fee012 {
+		compatible = "renesas,h8300h-intc", "renesas,h8300-intc";
+		#interrupt-cells = <2>;
+		interrupt-controller;
+		reg = <0xfee012 7>;
+	};

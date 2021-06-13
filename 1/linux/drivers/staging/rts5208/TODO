@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:0a30de40f62d22fd42317f4bfe4caf01024370439ca6106653256a22ac065f03
-size 176
+TODO:
+- use kernel coding style
+- checkpatch.pl fixes
+- We will use the stack in drivers/mmc to implement
+  rts5208/5288 in the future
+
+Micky Ching <micky_ching@realsil.com.cn>

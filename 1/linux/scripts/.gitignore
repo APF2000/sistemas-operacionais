@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d1d37dc1a3533bd1f6a78fc5fcebee9c60b81ca187d7b00f08edc525dfca0ef8
-size 170
+#
+# Generated files
+#
+conmakehash
+kallsyms
+pnmtologo
+unifdef
+ihex2fw
+recordmcount
+docproc
+check-lc_ctype
+sortextable
+asn1_compiler
+extract-cert
+sign-file
+insert-sys-cert

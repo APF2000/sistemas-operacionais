@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:30ade3d8adc78fc0b32d7fed9df11c5111060405f2114aa31ce29e1cc0a4a919
-size 567
+/*
+ * omap iommu: main structures
+ *
+ * Copyright (C) 2008-2009 Nokia Corporation
+ *
+ * Written by Hiroshi DOYU <Hiroshi.DOYU@nokia.com>
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 2 as
+ * published by the Free Software Foundation.
+ */
+
+#include <linux/platform_device.h>
+
+struct iommu_platform_data {
+	const char *reset_name;
+	int (*assert_reset)(struct platform_device *pdev, const char *name);
+	int (*deassert_reset)(struct platform_device *pdev, const char *name);
+};

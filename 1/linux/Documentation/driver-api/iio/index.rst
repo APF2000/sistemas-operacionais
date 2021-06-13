@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a4a2f4bfc35ae0a85c6570d06c08fef95c1767184b9865a16c1b5168ca2c95ac
-size 205
+.. include:: <isonum.txt>
+
+Industrial I/O
+==============
+
+**Copyright** |copy| 2015 Intel Corporation
+
+Contents:
+
+.. toctree::
+   :maxdepth: 2
+
+   intro
+   core
+   buffers
+   triggers
+   triggered-buffers

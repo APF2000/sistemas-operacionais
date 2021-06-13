@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:aeef94b301d0054187bc65b1c93a89c025e81c7b8eed76ec05a6a3ec4198f1be
-size 250
+#ifndef _CS4271_PRIV_H
+#define _CS4271_PRIV_H
+
+#include <linux/regmap.h>
+
+extern const struct of_device_id cs4271_dt_ids[];
+extern const struct regmap_config cs4271_regmap_config;
+
+int cs4271_probe(struct device *dev, struct regmap *regmap);
+
+#endif

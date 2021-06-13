@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5de3eb24121e756209f160d3be1f0fb18b36f35b8bead10909658ac54ef6a4d3
-size 349
+# Core
+obj-y				+= pinctrl-mtk-common.o
+
+# SoC Drivers
+obj-$(CONFIG_PINCTRL_MT2701)	+= pinctrl-mt2701.o
+obj-$(CONFIG_PINCTRL_MT7623)	+= pinctrl-mt7623.o
+obj-$(CONFIG_PINCTRL_MT8135)	+= pinctrl-mt8135.o
+obj-$(CONFIG_PINCTRL_MT8127)	+= pinctrl-mt8127.o
+obj-$(CONFIG_PINCTRL_MT8173)	+= pinctrl-mt8173.o
+obj-$(CONFIG_PINCTRL_MT6397)	+= pinctrl-mt6397.o

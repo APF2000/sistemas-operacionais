@@ -1,3 +1,5 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:8d6134fdd193594564c31aa545400c2dd4b484555a6c4e0d118da65611e70550
-size 215
+saa7146-objs    := saa7146_i2c.o saa7146_core.o
+saa7146_vv-objs := saa7146_fops.o saa7146_video.o saa7146_hlp.o saa7146_vbi.o
+
+obj-$(CONFIG_VIDEO_SAA7146) += saa7146.o
+obj-$(CONFIG_VIDEO_SAA7146_VV) += saa7146_vv.o

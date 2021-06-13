@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d4cba7cb062d07db6a720b48bb3b5af5b76ece625753cfbe858fa2258b589f08
-size 338
+What:		/config/usb-gadget/gadget/functions/hid.name
+Date:		Nov 2014
+KernelVersion:	3.19
+Description:
+		The attributes:
+
+		protocol	- HID protocol to use
+		report_desc	- blob corresponding to HID report descriptors
+				except the data passed through /dev/hidg<N>
+		report_length	- HID report length
+		subclass	- HID device subclass to use

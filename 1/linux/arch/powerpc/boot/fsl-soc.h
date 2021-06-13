@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:3a972d8884810cbae9413f512aa6f1f0d87b4ff744d22642bf77ef5101551f25
-size 112
+#ifndef _PPC_BOOT_FSL_SOC_H_
+#define _PPC_BOOT_FSL_SOC_H_
+
+#include "types.h"
+
+u32 *fsl_get_immr(void);
+
+#endif

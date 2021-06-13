@@ -1,3 +1,27 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c7b6af4cdd2704425f97f8809a7052bf0de609395fb28f8a5ef2a99ce3688895
-size 611
+#include <libunwind-x86.h>
+#include <stdlib.h>
+
+extern int UNW_OBJ(dwarf_search_unwind_table) (unw_addr_space_t as,
+					       unw_word_t ip,
+					       unw_dyn_info_t *di,
+					       unw_proc_info_t *pi,
+					       int need_unwind_info, void *arg);
+
+
+#define dwarf_search_unwind_table UNW_OBJ(dwarf_search_unwind_table)
+
+static unw_accessors_t accessors;
+
+int main(void)
+{
+	unw_addr_space_t addr_space;
+
+	addr_space = unw_create_addr_space(&accessors, 0);
+	if (addr_space)
+		return 0;
+
+	unw_init_remote(NULL, addr_space, NULL);
+	dwarf_search_unwind_table(addr_space, 0, NULL, NULL, 0, NULL);
+
+	return 0;
+}

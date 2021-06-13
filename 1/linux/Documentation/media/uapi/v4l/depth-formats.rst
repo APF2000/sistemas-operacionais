@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ebf997724b7d20889c311a2ef1dc2c59b647fc93d2311c04a1579aa55d253410
-size 232
+.. -*- coding: utf-8; mode: rst -*-
+
+.. _depth-formats:
+
+*************
+Depth Formats
+*************
+
+Depth data provides distance to points, mapped onto the image plane
+
+
+.. toctree::
+    :maxdepth: 1
+
+    pixfmt-inzi
+    pixfmt-z16

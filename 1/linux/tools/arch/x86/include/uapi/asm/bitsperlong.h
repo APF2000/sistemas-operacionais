@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:72a7512f96a88adfcf71f12f2a3e86ddb6a7bd696380d8c001ec1577153effc8
-size 257
+#ifndef __ASM_X86_BITSPERLONG_H
+#define __ASM_X86_BITSPERLONG_H
+
+#if defined(__x86_64__) && !defined(__ILP32__)
+# define __BITS_PER_LONG 64
+#else
+# define __BITS_PER_LONG 32
+#endif
+
+#include <asm-generic/bitsperlong.h>
+
+#endif /* __ASM_X86_BITSPERLONG_H */

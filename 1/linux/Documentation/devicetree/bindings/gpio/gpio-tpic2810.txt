@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e81da379ea6dfcd4900e749205d0f9b30cd6751ead174affcca863a932401751
-size 380
+TPIC2810 GPIO controller bindings
+
+Required properties:
+ - compatible		: Should be "ti,tpic2810".
+ - reg			: The I2C address of the device
+ - gpio-controller	: Marks the device node as a GPIO controller.
+ - #gpio-cells		: Should be two. For consumer use see gpio.txt.
+
+Example:
+
+	gpio@60 {
+		compatible = "ti,tpic2810";
+		reg = <0x60>;
+		gpio-controller;
+		#gpio-cells = <2>;
+	};

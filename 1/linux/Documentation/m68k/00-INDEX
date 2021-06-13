@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:00e11f470397523b0df86279b5647101d322db07e74dc7e5232fb629a8255be7
-size 136
+00-INDEX
+	- this file
+README.buddha
+	- Amiga Buddha and Catweasel IDE Driver
+kernel-options.txt
+	- command line options for Linux/m68k
+

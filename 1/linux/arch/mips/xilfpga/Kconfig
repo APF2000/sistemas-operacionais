@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c97f2a57e6a500417812ad22ab86354976f9046a75a51e825827b8f38922419c
-size 149
+choice
+	prompt "Machine type"
+	depends on MACH_XILFPGA
+	default XILFPGA_NEXYS4DDR
+
+config XILFPGA_NEXYS4DDR
+	bool "Nexys4DDR by Digilent"
+
+endchoice

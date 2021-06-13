@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:87d2ed19375569b4383bbb6e5e7b57e01bd1da3e623036d08e4e78b10fa5c501
-size 140
+#ifndef _UAPI_ASM_POWERPC_SETUP_H
+#define _UAPI_ASM_POWERPC_SETUP_H
+
+#define COMMAND_LINE_SIZE	2048
+
+#endif /* _UAPI_ASM_POWERPC_SETUP_H */

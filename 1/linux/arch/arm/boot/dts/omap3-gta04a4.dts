@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:676dd2f7f3b1746f7a17b333dd8d2e63c11fd1af2e249a425f046075ae5575c4
-size 322
+/*
+ * Copyright (C) 2014 Marek Belisko <marek@goldelico.com>
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 2 as
+ * published by the Free Software Foundation.
+ */
+
+#include "omap3-gta04.dtsi"
+
+/ {
+	model = "Goldelico GTA04A4";
+};

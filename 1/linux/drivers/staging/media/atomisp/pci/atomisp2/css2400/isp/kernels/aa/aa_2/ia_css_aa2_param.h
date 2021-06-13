@@ -1,3 +1,24 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:bd793c3a64634bcd112c17ae613ee11e6875b3c773a03e8809320e1ff694cc0b
-size 722
+/*
+ * Support for Intel Camera Imaging ISP subsystem.
+ * Copyright (c) 2015, Intel Corporation.
+ *
+ * This program is free software; you can redistribute it and/or modify it
+ * under the terms and conditions of the GNU General Public License,
+ * version 2, as published by the Free Software Foundation.
+ *
+ * This program is distributed in the hope it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+ * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for
+ * more details.
+ */
+
+#ifndef __IA_CSS_AA_PARAM_H
+#define __IA_CSS_AA_PARAM_H
+
+#include "type_support.h"
+
+struct sh_css_isp_aa_params {
+	int32_t strength;
+};
+
+#endif /* __IA_CSS_AA_PARAM_H */

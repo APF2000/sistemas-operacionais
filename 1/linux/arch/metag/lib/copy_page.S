@@ -1,3 +1,20 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:99371515659aeae80b48a2b5e1b49ed30338a6e99daba02573ed2dea2864b9c9
-size 456
+        ! Copyright 2007,2008 Imagination Technologies Ltd.
+
+#include <asm/page.h>
+
+        .text
+        .global	_copy_page
+        .type   _copy_page,function
+	!! D1Ar1 - to
+	!! D0Ar2 - from
+_copy_page:
+	MOV  D0FrT,#PAGE_SIZE
+$Lcopy_page_loop:
+	GETL D0Re0,D1Re0,[D0Ar2++]
+	GETL D0Ar6,D1Ar5,[D0Ar2++]
+	SETL [D1Ar1++],D0Re0,D1Re0
+	SETL [D1Ar1++],D0Ar6,D1Ar5
+	SUBS D0FrT,D0FrT,#16
+	BNZ  $Lcopy_page_loop
+	MOV  PC,D1RtP
+        .size	_copy_page,.-_copy_page

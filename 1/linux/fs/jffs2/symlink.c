@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a0c2fffbb657089b573a15694d0612d24a557d2e3a40bce45545e109341a44a1
-size 417
+/*
+ * JFFS2 -- Journalling Flash File System, Version 2.
+ *
+ * Copyright © 2001-2007 Red Hat, Inc.
+ *
+ * Created by David Woodhouse <dwmw2@infradead.org>
+ *
+ * For licensing information, see the file 'LICENCE' in this directory.
+ *
+ */
+
+#include "nodelist.h"
+
+const struct inode_operations jffs2_symlink_inode_operations =
+{
+	.get_link =	simple_get_link,
+	.setattr =	jffs2_setattr,
+	.listxattr =	jffs2_listxattr,
+};

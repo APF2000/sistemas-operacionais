@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:69803f7d9b0dbfb954829f96b69cc3a3a371912be9bccac762151684d8c8f9c2
-size 375
+#
+# Makefile for the linux kernel.
+#
+# Note! Dependencies are done automagically by 'make dep', which also
+# removes any old dependencies. DON'T put your own dependencies here
+# unless it's something special (ie not a .c file).
+#
+# Note 2! The CFLAGS definitions are now in the main makefile...
+
+obj-y   := unit-init.o leds.o irq-fpga.o
+
+obj-$(CONFIG_SMSC911X) += smsc911x.o

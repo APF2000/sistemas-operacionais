@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:df19914255d723ed432e099db40f524bac664e5269638aa122e632b305a5b257
-size 248
+#include <linux/linkage.h>
+#include <asm/asm-offsets.h>
+
+	.align 2
+.L_vdso_data_ptr:
+	.long	_start - . - VDSO_DATA_SIZE
+
+ENTRY(__get_datapage)
+	.fnstart
+	adr	r0, .L_vdso_data_ptr
+	ldr	r1, [r0]
+	add	r0, r0, r1
+	bx	lr
+	.fnend
+ENDPROC(__get_datapage)

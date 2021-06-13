@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:adced78bb404b119da1fe123837a7f4a085e1d2cc9ea2cc43afabb8a6b81fc42
-size 612
+Description
+
+  DRBD is a shared-nothing, synchronously replicated block device. It
+  is designed to serve as a building block for high availability
+  clusters and in this context, is a "drop-in" replacement for shared
+  storage. Simplistically, you could see it as a network RAID 1.
+
+  Please visit http://www.drbd.org to find out more.
+
+The here included files are intended to help understand the implementation
+
+DRBD-8.3-data-packets.svg, DRBD-data-packets.svg  
+  relates some functions, and write packets.
+
+conn-states-8.dot, disk-states-8.dot, node-states-8.dot
+  The sub graphs of DRBD's state transitions

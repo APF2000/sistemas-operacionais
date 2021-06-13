@@ -1,3 +1,27 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:88046e6c84367085c6379917d80f45b8bcd0d245b1fa323841cf2426bcbcffe3
-size 641
+/*
+ * Copyright 2013 Christian Hemp, Phytec Messtechnik GmbH
+ *
+ * The code contained herein is licensed under the GNU General Public
+ * License. You may obtain a copy of the GNU General Public License
+ * Version 2 or later at the following locations:
+ *
+ * http://www.opensource.org/licenses/gpl-license.html
+ * http://www.gnu.org/copyleft/gpl.html
+ */
+
+/dts-v1/;
+#include "imx6q-phytec-pfla02.dtsi"
+#include "imx6qdl-phytec-pbab01.dtsi"
+
+/ {
+	model = "Phytec phyFLEX-i.MX6 Quad Carrier-Board";
+	compatible = "phytec,imx6q-pbab01", "phytec,imx6q-pfla02", "fsl,imx6q";
+
+	chosen {
+		stdout-path = &uart4;
+	};
+};
+
+&sata {
+	status = "okay";
+};

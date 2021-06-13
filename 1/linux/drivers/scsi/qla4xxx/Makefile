@@ -1,3 +1,5 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c40515f44a831d20d93807067f563bc523d5f81399dd5dbba603a1d44a0abc1a
-size 175
+qla4xxx-y := ql4_os.o ql4_init.o ql4_mbx.o ql4_iocb.o ql4_isr.o \
+		ql4_nx.o ql4_nvram.o ql4_dbg.o ql4_attr.o ql4_bsg.o ql4_83xx.o
+
+obj-$(CONFIG_SCSI_QLA_ISCSI) += qla4xxx.o
+

@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1f25dd43cdc011d3cd781ef729764232b0cbc8b420eaadf991f2981638601fce
-size 536
+/*
+ * datastream.h
+ *
+ */
+
+struct buffer_head *befs_read_datastream(struct super_block *sb,
+					 const befs_data_stream *ds,
+					 befs_off_t pos, uint *off);
+
+int befs_fblock2brun(struct super_block *sb, const befs_data_stream *data,
+		     befs_blocknr_t fblock, befs_block_run *run);
+
+size_t befs_read_lsymlink(struct super_block *sb, const befs_data_stream *data,
+			  void *buff, befs_off_t len);
+
+befs_blocknr_t befs_count_blocks(struct super_block *sb,
+			  const befs_data_stream *ds);
+
+extern const befs_inode_addr BAD_IADDR;

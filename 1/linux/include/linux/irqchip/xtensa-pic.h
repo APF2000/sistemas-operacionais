@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d52048658d4fabdb0950b5c729abfa0fcffb040676e7abb6144a1de76566b0c6
-size 532
+/*
+ * Xtensa built-in interrupt controller
+ *
+ * Copyright (C) 2002 - 2013 Tensilica, Inc.
+ * Copyright (C) 1992, 1998 Linus Torvalds, Ingo Molnar
+ *
+ * This file is subject to the terms and conditions of the GNU General Public
+ * License.  See the file "COPYING" in the main directory of this archive
+ * for more details.
+ */
+
+#ifndef __LINUX_IRQCHIP_XTENSA_PIC_H
+#define __LINUX_IRQCHIP_XTENSA_PIC_H
+
+struct device_node;
+int xtensa_pic_init_legacy(struct device_node *interrupt_parent);
+
+#endif /* __LINUX_IRQCHIP_XTENSA_PIC_H */

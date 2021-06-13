@@ -1,3 +1,20 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b3c6065e3672ce407eb099eae97e091b4582d314814bd86ee99cb2b82f753745
-size 446
+#ifndef __ASM_GENERIC_TLBFLUSH_H
+#define __ASM_GENERIC_TLBFLUSH_H
+/*
+ * This is a dummy tlbflush implementation that can be used on all
+ * nommu architectures.
+ * If you have an MMU, you need to write your own functions.
+ */
+#ifdef CONFIG_MMU
+#error need to implement an architecture specific asm/tlbflush.h
+#endif
+
+#include <linux/bug.h>
+
+static inline void flush_tlb_mm(struct mm_struct *mm)
+{
+	BUG();
+}
+
+
+#endif /* __ASM_GENERIC_TLBFLUSH_H */

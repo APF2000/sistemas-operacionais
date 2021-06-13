@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:7c3b1d7c369ea4395ac3c8732ab042f428ed43bf85a758b05fcee463fd6aba2a
-size 364
+Imagination Technologies' Pistachio SoC based Marduk Board
+==========================================================
+
+Compatible string must be "img,pistachio-marduk", "img,pistachio"
+
+Hardware and other related documentation is available at
+https://docs.creatordev.io/ci40/
+
+It is also known as Creator Ci40. Marduk is legacy name and will
+be there for decades.

@@ -1,3 +1,21 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a26536e20e3ee2992fc2b207d5ccbd06511fbcf19e63e61d591c9eb35276418c
-size 493
+/*
+ * Platform data for Arizona micsupp regulator
+ *
+ * Copyright 2017 Cirrus Logic
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 2 as
+ * published by the Free Software Foundation.
+ */
+
+#ifndef ARIZONA_MICSUPP_H
+#define ARIZONA_MICSUPP_H
+
+struct regulator_init_data;
+
+struct arizona_micsupp_pdata {
+	/** Regulator configuration for micsupp */
+	const struct regulator_init_data *init_data;
+};
+
+#endif

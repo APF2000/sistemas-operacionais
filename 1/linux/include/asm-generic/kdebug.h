@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b2f918b683a2520f22ef22ed0961745e066485bfa4b8a66b6653166cce6159ec
-size 143
+#ifndef _ASM_GENERIC_KDEBUG_H
+#define _ASM_GENERIC_KDEBUG_H
+
+enum die_val {
+	DIE_UNUSED,
+	DIE_OOPS = 1,
+};
+
+#endif /* _ASM_GENERIC_KDEBUG_H */

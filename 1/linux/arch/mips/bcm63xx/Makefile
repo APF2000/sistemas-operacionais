@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c7d7472df3dd662f626e581b533a25bc945dbdaaccbb671e3fba4072562aeb21
-size 278
+obj-y		+= clk.o cpu.o cs.o gpio.o irq.o nvram.o prom.o reset.o \
+		   setup.o timer.o dev-dsp.o dev-enet.o dev-flash.o \
+		   dev-pcmcia.o dev-rng.o dev-spi.o dev-hsspi.o dev-uart.o \
+		   dev-wdt.o dev-usb-usbd.o
+obj-$(CONFIG_EARLY_PRINTK)	+= early_printk.o
+
+obj-y		+= boards/

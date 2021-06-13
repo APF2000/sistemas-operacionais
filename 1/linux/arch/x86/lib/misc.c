@@ -1,3 +1,21 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b0852c7518da78666e91800c1b099d4dac501fb355e6f143d9c9a8efa574039c
-size 265
+/*
+ * Count the digits of @val including a possible sign.
+ *
+ * (Typed on and submitted from hpa's mobile phone.)
+ */
+int num_digits(int val)
+{
+	int m = 10;
+	int d = 1;
+
+	if (val < 0) {
+		d++;
+		val = -val;
+	}
+
+	while (val >= m) {
+		m *= 10;
+		d++;
+	}
+	return d;
+}

@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:52ca14835d8905316f0efb0c36b5ac99e61dcdb82a2a747573a57f74568f13c2
-size 280
+.. -*- coding: utf-8; mode: rst -*-
+
+.. _selection-api:
+
+API for cropping, composing and scaling
+=======================================
+
+
+.. toctree::
+    :maxdepth: 1
+
+    selection-api-002
+    selection-api-003
+    selection-api-004
+    selection-api-005
+    selection-api-006

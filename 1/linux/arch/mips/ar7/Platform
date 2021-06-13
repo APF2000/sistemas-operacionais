@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4b24c32ec4a50b963a361d0c9bee6849a7866f2fcc5c17e65a8d04790303e76a
-size 171
+#
+# Texas Instruments AR7
+#
+platform-$(CONFIG_AR7)		+= ar7/
+cflags-$(CONFIG_AR7)		+= -I$(srctree)/arch/mips/include/asm/mach-ar7
+load-$(CONFIG_AR7)		+= 0xffffffff94100000

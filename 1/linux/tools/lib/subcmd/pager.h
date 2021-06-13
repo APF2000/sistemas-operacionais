@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2ed2c121f71351b3f7f819798dd22d539bc380707888dedea0ece15097444620
-size 228
+#ifndef __SUBCMD_PAGER_H
+#define __SUBCMD_PAGER_H
+
+extern void pager_init(const char *pager_env);
+
+extern void setup_pager(void);
+extern int pager_in_use(void);
+extern int pager_get_columns(void);
+
+#endif /* __SUBCMD_PAGER_H */

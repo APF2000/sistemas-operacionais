@@ -1,3 +1,30 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:609fde3528b01262728fb6e27a4757c5498102b60607ebbbbe5d9ae028cac66c
-size 458
+#ifndef _ASM_C6X_LINKAGE_H
+#define _ASM_C6X_LINKAGE_H
+
+#ifdef __ASSEMBLER__
+
+#define __ALIGN		.align 2
+#define __ALIGN_STR	".align 2"
+
+#ifndef __DSBT__
+#define ENTRY(name)		\
+	.global name @		\
+	__ALIGN @		\
+name:
+#else
+#define ENTRY(name)		\
+	.global name @		\
+	.hidden name @		\
+	__ALIGN @		\
+name:
+#endif
+
+#define ENDPROC(name)		\
+	.type name, @function @	\
+	.size name, . - name
+
+#endif
+
+#include <asm-generic/linkage.h>
+
+#endif /* _ASM_C6X_LINKAGE_H */

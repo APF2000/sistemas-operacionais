@@ -1,3 +1,28 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1efc3f15d627a70b45c473522905a10bc25e81b737c29f425e03329060ef5743
-size 437
+#!/bin/bash
+#
+# Convert a template file into something like RST
+#
+# fix <function>
+# feed to pandoc
+# fix \_
+# title line?
+#
+set -eu
+
+if [ "$#" != "2" ]; then
+	echo "$0 <docbook file> <rst file>"
+	exit
+fi
+
+DIR=$(dirname $0)
+
+in=$1
+rst=$2
+tmp=$rst.tmp
+
+cp $in $tmp
+sed --in-place -f $DIR/convert_template.sed $tmp
+pandoc -s -S -f docbook -t rst -o $rst $tmp
+sed --in-place -f $DIR/post_convert.sed $rst
+rm $tmp
+echo "book writen to $rst"

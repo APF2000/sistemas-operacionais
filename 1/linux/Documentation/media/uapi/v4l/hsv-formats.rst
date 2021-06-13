@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:24ed6b2cac98cf9fa5aa3079fef2b8fe1035b3e8f0b41ef2d96246f563627dc4
-size 440
+.. -*- coding: utf-8; mode: rst -*-
+
+.. _hsv-formats:
+
+***********
+HSV Formats
+***********
+
+These formats store the color information of the image
+in a geometrical representation. The colors are mapped into a
+cylinder, where the angle is the HUE, the height is the VALUE
+and the distance to the center is the SATURATION. This is a very
+useful format for image segmentation algorithms.
+
+
+.. toctree::
+    :maxdepth: 1
+
+    pixfmt-packed-hsv

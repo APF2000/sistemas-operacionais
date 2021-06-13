@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1de3271ee21ef108685158999c79198bcacae8ea82a23c48daea1d34ebfeaf21
-size 248
+#!/bin/sh
+# Runs API tests for struct ww_mutex (Wait/Wound mutexes)
+
+if /sbin/modprobe -q test-ww_mutex; then
+       /sbin/modprobe -q -r test-ww_mutex
+       echo "locking/ww_mutex: ok"
+else
+       echo "locking/ww_mutex: [FAIL]"
+       exit 1
+fi

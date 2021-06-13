@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:058cdb334c2148dba78840876480a76310dbd260f01b0739657e8e5135c3397b
-size 235
+#ifndef __SOUND_JULI_H
+#define __SOUND_JULI_H
+
+#define JULI_DEVICE_DESC		"{ESI,Juli@},"
+
+#define VT1724_SUBDEVICE_JULI		0x31305345	/* Juli@ */
+
+extern struct snd_ice1712_card_info  snd_vt1724_juli_cards[];
+
+#endif	/* __SOUND_JULI_H */

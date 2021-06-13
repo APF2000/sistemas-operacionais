@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:464af0a114e7891be2af258553495245ead1c3eff96c2a4e32baceeb243fee14
-size 198
+#ifndef _ASM_M32R_SWAB_H
+#define _ASM_M32R_SWAB_H
+
+#include <linux/types.h>
+
+#if !defined(__STRICT_ANSI__) || defined(__KERNEL__)
+#  define __SWAB_64_THRU_32__
+#endif
+
+#endif /* _ASM_M32R_SWAB_H */

@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b10bfef096eb2970028aa5cfabcc87df83fdb57145970ab028c71935db413e33
-size 266
+#ifndef __HDAC_HDMI_H__
+#define __HDAC_HDMI_H__
+
+int hdac_hdmi_jack_init(struct snd_soc_dai *dai, int pcm,
+				struct snd_soc_jack *jack);
+
+int hdac_hdmi_jack_port_init(struct snd_soc_codec *codec,
+			struct snd_soc_dapm_context *dapm);
+#endif /* __HDAC_HDMI_H__ */

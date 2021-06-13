@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:06cff973cf3140f3aa666899d167e62f68e8b11fb79a344a3b48c0ffbf4bec86
-size 430
+#ifndef __ASM_MACH_BMIPS_CPU_FEATURE_OVERRIDES_H
+#define __ASM_MACH_BMIPS_CPU_FEATURE_OVERRIDES_H
+
+/* Invariants across all BMIPS processors */
+#define cpu_has_vtag_icache		0
+#define cpu_icache_snoops_remote_store	1
+
+/* Processor ISA compatibility is MIPS32R1 */
+#define cpu_has_mips32r1		1
+#define cpu_has_mips32r2		0
+#define cpu_has_mips64r1		0
+#define cpu_has_mips64r2		0
+
+#endif /* __ASM_MACH_BMIPS_CPU_FEATURE_OVERRIDES_H */

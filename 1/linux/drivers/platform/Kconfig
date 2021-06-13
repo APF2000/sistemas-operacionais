@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f6af30293ef3bc1ec7d5fb7b44f814825f7ce3d2774ef15015ce480372095840
-size 190
+if X86
+source "drivers/platform/x86/Kconfig"
+endif
+if MIPS
+source "drivers/platform/mips/Kconfig"
+endif
+
+source "drivers/platform/goldfish/Kconfig"
+
+source "drivers/platform/chrome/Kconfig"

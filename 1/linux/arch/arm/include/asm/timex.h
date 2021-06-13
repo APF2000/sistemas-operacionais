@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4e57d7826562ed50dd61bbaec64c5a64b53e33ffa5f765ed4b15be124075928a
-size 483
+/*
+ *  arch/arm/include/asm/timex.h
+ *
+ *  Copyright (C) 1997,1998 Russell King
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 2 as
+ * published by the Free Software Foundation.
+ *
+ *  Architecture Specific TIME specifications
+ */
+#ifndef _ASMARM_TIMEX_H
+#define _ASMARM_TIMEX_H
+
+typedef unsigned long cycles_t;
+#define get_cycles()	({ cycles_t c; read_current_timer(&c) ? 0 : c; })
+
+#endif

@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:7c495e8431307d83c725907c669ce2aa759731dfc8821162eb21cea904060dcb
-size 500
+What		/sys/bus/iio/devices/iio:deviceX/in_proximity_input
+Date:		March 2014
+KernelVersion:	3.15
+Contact:	Matt Ranostay <mranostay@gmail.com>
+Description:
+		Get the current distance in meters of storm (1km steps)
+		1000-40000 = distance in meters
+
+What		/sys/bus/iio/devices/iio:deviceX/sensor_sensitivity
+Date:		March 2014
+KernelVersion:	3.15
+Contact:	Matt Ranostay <mranostay@gmail.com>
+Description:
+		Show or set the gain boost of the amp, from 0-31 range.
+		18 = indoors (default)
+		14 = outdoors

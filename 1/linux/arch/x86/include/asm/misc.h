@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:11c2a5855f1bd1b79e9b84a7416c05db926f30e0aa519eddc0c503a3b9698a0d
-size 104
+#ifndef _ASM_X86_MISC_H
+#define _ASM_X86_MISC_H
+
+int num_digits(int val);
+
+#endif /* _ASM_X86_MISC_H */

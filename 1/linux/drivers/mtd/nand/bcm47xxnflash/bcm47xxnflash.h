@@ -1,3 +1,25 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:cdc8ad5658146cf2fc9288bbc35bc64a7262e67eedd4700cfea4ee1bfb7d636a
-size 432
+#ifndef __BCM47XXNFLASH_H
+#define __BCM47XXNFLASH_H
+
+#ifndef pr_fmt
+#define pr_fmt(fmt)		KBUILD_MODNAME ": " fmt
+#endif
+
+#include <linux/mtd/mtd.h>
+#include <linux/mtd/nand.h>
+
+struct bcm47xxnflash {
+	struct bcma_drv_cc *cc;
+
+	struct nand_chip nand_chip;
+
+	unsigned curr_command;
+	int curr_page_addr;
+	int curr_column;
+
+	u8 id_data[8];
+};
+
+int bcm47xxnflash_ops_bcm4706_init(struct bcm47xxnflash *b47n);
+
+#endif /* BCM47XXNFLASH */

@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:01c31c9e35f990b76a1708236a41acdb02474ebe8bc5de8ae55be31a18837bb7
-size 213
+#ifndef _FLASH_H
+#define _FLASH_H
+
+#define FLASH_MINOR		 160	/* MAJOR is 10 - miscdevice */
+#define CMD_WRITE_DISABLE	 0
+#define CMD_WRITE_ENABLE	 0x28
+#define CMD_WRITE_BASE64K_ENABLE 0x47
+
+#endif /* _FLASH_H */

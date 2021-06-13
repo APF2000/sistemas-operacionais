@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:feba72ff774bff2b6bda7e9a74fa69a9396aa87a5e394fefd93c0042f6087cfb
-size 560
+/*
+ * Copyright (C) STMicroelectronics SA 2015
+ * Authors: Hugues Fruchet <hugues.fruchet@st.com>
+ *          Fabrice Lecoultre <fabrice.lecoultre@st.com>
+ *          for STMicroelectronics.
+ * License terms:  GNU General Public License (GPL), version 2
+ */
+
+#ifndef DELTA_DEBUG_H
+#define DELTA_DEBUG_H
+
+char *delta_streaminfo_str(struct delta_streaminfo *s, char *str,
+			   unsigned int len);
+char *delta_frameinfo_str(struct delta_frameinfo *f, char *str,
+			  unsigned int len);
+void delta_trace_summary(struct delta_ctx *ctx);
+
+#endif /* DELTA_DEBUG_H */

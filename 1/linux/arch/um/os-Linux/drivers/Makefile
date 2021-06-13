@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e389f741ed020c3c14f005bdc12d4de549bb4cb57e322aa1043e0cec6d4235d4
-size 315
+# 
+# Copyright (C) 2000, 2002 Jeff Dike (jdike@karaya.com)
+# Licensed under the GPL
+#
+
+ethertap-objs := ethertap_kern.o ethertap_user.o
+tuntap-objs := tuntap_kern.o tuntap_user.o
+
+obj-y = 
+obj-$(CONFIG_UML_NET_ETHERTAP) += ethertap.o
+obj-$(CONFIG_UML_NET_TUNTAP) += tuntap.o
+
+include arch/um/scripts/Makefile.rules

@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:346f540c95726758d282551418355be24d86fe9f468e9ff74b49f4e468a377dd
-size 123
+#ifndef __MACH_PXA930_H
+#define __MACH_PXA930_H
+
+#include "pxa3xx.h"
+#include "mfp-pxa930.h"
+
+#endif /* __MACH_PXA930_H */

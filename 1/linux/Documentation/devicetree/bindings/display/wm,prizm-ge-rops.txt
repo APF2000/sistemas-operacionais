@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:61a015787d440f41fc129deb831ab49f9c0dda6838e3b8e6070fe8ac2148b56e
-size 312
+VIA/Wondermedia Graphics Engine Controller
+-----------------------------------------------------
+
+Required properties:
+- compatible : "wm,prizm-ge-rops"
+- reg : Should contain 1 register ranges(address and length)
+
+Example:
+
+	ge_rops@d8050400 {
+		compatible = "wm,prizm-ge-rops";
+		reg = <0xd8050400 0x100>;
+	};

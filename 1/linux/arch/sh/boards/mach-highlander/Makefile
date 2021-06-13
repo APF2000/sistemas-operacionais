@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:7ba4c12c18f70ac37cba73cb3132bd2ecd3cdc22ff184e000810c0f936f1e16d
-size 299
+#
+# Makefile for the Highlander specific parts of the kernel
+#
+obj-y				:= setup.o
+obj-$(CONFIG_SH_R7780RP)	+= irq-r7780rp.o
+obj-$(CONFIG_SH_R7780MP)	+= irq-r7780mp.o
+obj-$(CONFIG_SH_R7785RP)	+= irq-r7785rp.o pinmux-r7785rp.o
+
+ifneq ($(CONFIG_SH_R7785RP),y)
+obj-$(CONFIG_PUSH_SWITCH)	+= psw.o
+endif

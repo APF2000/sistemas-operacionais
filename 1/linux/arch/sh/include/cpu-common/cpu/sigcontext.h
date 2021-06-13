@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:19a782ad4e3bdebb7372d24e92019697967e326bb78c58f9d64ecfffb5f39403
-size 346
+#ifndef __ASM_CPU_SH2_SIGCONTEXT_H
+#define __ASM_CPU_SH2_SIGCONTEXT_H
+
+struct sigcontext {
+	unsigned long	oldmask;
+
+	/* CPU registers */
+	unsigned long sc_regs[16];
+	unsigned long sc_pc;
+	unsigned long sc_pr;
+	unsigned long sc_sr;
+	unsigned long sc_gbr;
+	unsigned long sc_mach;
+	unsigned long sc_macl;
+};
+
+#endif /* __ASM_CPU_SH2_SIGCONTEXT_H */

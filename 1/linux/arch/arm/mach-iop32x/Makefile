@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d218f69954a64d7bd22568ed010c11f06d806d2a369a9f4962f4a37bd79514a8
-size 252
+#
+# Makefile for the linux kernel.
+#
+
+obj-y			:= irq.o
+
+obj-$(CONFIG_MACH_GLANTANK) += glantank.o
+obj-$(CONFIG_ARCH_IQ80321) += iq80321.o
+obj-$(CONFIG_ARCH_IQ31244) += iq31244.o
+obj-$(CONFIG_MACH_N2100) += n2100.o
+obj-$(CONFIG_MACH_EM7210) += em7210.o

@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:dd5d8e9b49760ebeb3e73d95d7517465827fc1e1a27498c1ba2bbdd1123fe87a
-size 430
+== ST STMPE PWM controller ==
+
+This is a PWM block embedded in the ST Microelectronics STMPE
+(ST Multi-Purpose Expander) chips. The PWM is registered as a
+subdevices of the STMPE MFD device.
+
+Required properties:
+- compatible: should be:
+  - "st,stmpe-pwm"
+- #pwm-cells: should be 2. See pwm.txt in this directory for a description of
+  the cells format.
+
+Example:
+
+pwm0: pwm {
+	compatible = "st,stmpe-pwm";
+	#pwm-cells = <2>;
+};

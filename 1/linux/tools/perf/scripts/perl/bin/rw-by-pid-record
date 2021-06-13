@@ -1,3 +1,2 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:03350e1781aa28a6642a808de70bf9dd0b765c478a103a6a9dfab11bffbf422a
-size 135
+#!/bin/bash
+perf record -e syscalls:sys_enter_read -e syscalls:sys_exit_read -e syscalls:sys_enter_write -e syscalls:sys_exit_write $@

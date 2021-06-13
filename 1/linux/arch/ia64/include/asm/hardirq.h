@@ -1,3 +1,26 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5b9dae24bc989943312fc82c9fa8a4e29e7f8c67d0a1dc5ac8303472e2c8de50
-size 525
+#ifndef _ASM_IA64_HARDIRQ_H
+#define _ASM_IA64_HARDIRQ_H
+
+/*
+ * Modified 1998-2002, 2004 Hewlett-Packard Co
+ *	David Mosberger-Tang <davidm@hpl.hp.com>
+ */
+
+/*
+ * No irq_cpustat_t for IA-64.  The data is held in the per-CPU data structure.
+ */
+
+#define __ARCH_IRQ_STAT	1
+
+#define local_softirq_pending()		(local_cpu_data->softirq_pending)
+
+#include <linux/threads.h>
+#include <linux/irq.h>
+
+#include <asm/processor.h>
+
+extern void __iomem *ipi_base_addr;
+
+void ack_bad_irq(unsigned int irq);
+
+#endif /* _ASM_IA64_HARDIRQ_H */

@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:eb9b59cfd6079c273b3889b5dae5df9c249e4216266c2b153060650428363283
-size 271
+/* 
+ * Copyright (C) 2002 Jeff Dike (jdike@karaya.com)
+ * Licensed under the GPL
+ */
+
+#ifndef __SIGIO_H__
+#define __SIGIO_H__
+
+extern int write_sigio_irq(int fd);
+extern int register_sigio_fd(int fd);
+extern void sigio_lock(void);
+extern void sigio_unlock(void);
+
+#endif

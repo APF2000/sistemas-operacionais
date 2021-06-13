@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:537e1dbf826b6146171d436e0c850bf0dad45c75075f6b8a4440c4bfead86a44
-size 195
+#
+# Makefile for H8/300-specific library files..
+#
+
+lib-y  = memcpy.o memset.o abs.o strncpy.o \
+	 mulsi3.o udivsi3.o muldi3.o moddivsi3.o \
+	 ashldi3.o lshrdi3.o ashrdi3.o ucmpdi2.o \
+	 delay.o

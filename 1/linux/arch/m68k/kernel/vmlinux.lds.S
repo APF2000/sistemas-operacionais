@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:add97fd5f9d0c4293b49f81428d1f6960b4ceaf9ab2b175d33711c8cc576ac79
-size 258
+#if defined(CONFIG_MMU) && !defined(CONFIG_COLDFIRE)
+PHDRS
+{
+  text PT_LOAD FILEHDR PHDRS FLAGS (7);
+  data PT_LOAD FLAGS (7);
+}
+#ifdef CONFIG_SUN3
+#include "vmlinux-sun3.lds"
+#else
+#include "vmlinux-std.lds"
+#endif
+#else
+#include "vmlinux-nommu.lds"
+#endif

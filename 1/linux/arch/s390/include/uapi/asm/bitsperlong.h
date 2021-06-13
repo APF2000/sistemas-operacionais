@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:95b0657028de5d2b53dad9851665ab5c4b88cf854ed451bb2d714e67f11e3442
-size 230
+#ifndef __ASM_S390_BITSPERLONG_H
+#define __ASM_S390_BITSPERLONG_H
+
+#ifndef __s390x__
+#define __BITS_PER_LONG 32
+#else
+#define __BITS_PER_LONG 64
+#endif
+
+#include <asm-generic/bitsperlong.h>
+
+#endif /* __ASM_S390_BITSPERLONG_H */
+

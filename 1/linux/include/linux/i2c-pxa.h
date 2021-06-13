@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e806cc60ea862cf258e0de51c626bf90460d7054294005f61c52cdd128dbdbdc
-size 399
+#ifndef _LINUX_I2C_ALGO_PXA_H
+#define _LINUX_I2C_ALGO_PXA_H
+
+typedef enum i2c_slave_event_e {
+	I2C_SLAVE_EVENT_START_READ,
+	I2C_SLAVE_EVENT_START_WRITE,
+	I2C_SLAVE_EVENT_STOP
+} i2c_slave_event_t;
+
+struct i2c_slave_client {
+	void *data;
+	void (*event)(void *ptr, i2c_slave_event_t event);
+	int  (*read) (void *ptr);
+	void (*write)(void *ptr, unsigned int val);
+};
+
+#endif /* _LINUX_I2C_ALGO_PXA_H */

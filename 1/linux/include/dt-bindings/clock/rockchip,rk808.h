@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:125c95d5a0327fd0d27c8345f528219cf6951097efb678a40568ba4b06959962
-size 205
+/*
+ * This header provides constants clk index RK808 pmic clkout
+ */
+#ifndef _CLK_ROCKCHIP_RK808
+#define _CLK_ROCKCHIP_RK808
+
+/* CLOCKOUT index */
+#define RK808_CLKOUT0		0
+#define RK808_CLKOUT1		1
+
+#endif

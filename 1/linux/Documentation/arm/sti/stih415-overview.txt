@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:7c9aacf2175d373e4e73b11e91196e25157b3015e023c9a56710c04d0cf84811
-size 307
+			STiH415 Overview
+			================
+
+Introduction
+------------
+
+    The STiH415 is the next generation of HD, AVC set-top box processors
+    for satellite, cable, terrestrial and IP-STB markets.
+
+    Features
+    - ARM Cortex-A9 1.0 GHz, dual-core CPU
+    - SATA2x2,USB 2.0x3, PCIe, Gbit Ethernet MACx2

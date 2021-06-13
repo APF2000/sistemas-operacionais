@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1227f25fbc919a4f705ea02a63ef6dd8fed639d8fd3ef787d9f54639d30b60e6
-size 154
+#define _GNU_SOURCE
+#include <unistd.h>
+#include <sys/syscall.h>
+
+#define __NR_hello_world 400
+
+long hello_world()
+{
+	return syscall(__NR_hello_world);
+}

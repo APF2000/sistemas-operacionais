@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f0720a3e143c112af26e6793e7c5393c79cc8b80ec9f99dcc17e504755c8d6ef
-size 161
+#ifndef _LIBLOCKDEP_LINUX_STRINGIFY_H_
+#define _LIBLOCKDEP_LINUX_STRINGIFY_H_
+
+#define __stringify_1(x...)	#x
+#define __stringify(x...)	__stringify_1(x)
+
+#endif

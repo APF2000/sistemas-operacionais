@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:0fbf30eee0db547ad369ec6cc2e14c21156ccb703678cb9beac6268f58512053
-size 204
+usbvision-objs  := usbvision-core.o usbvision-video.o usbvision-i2c.o usbvision-cards.o
+
+obj-$(CONFIG_VIDEO_USBVISION) += usbvision.o
+
+ccflags-y += -Idrivers/media/i2c
+ccflags-y += -Idrivers/media/tuners

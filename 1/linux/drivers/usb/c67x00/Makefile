@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5007d901a09c60ed8937ef16a1b18560890f8d065c3965592f42ba1a2cea0fd9
-size 161
+#
+# Makefile for Cypress C67X00 USB Controller
+#
+
+obj-$(CONFIG_USB_C67X00_HCD)	+= c67x00.o
+
+c67x00-y := c67x00-drv.o c67x00-ll-hpi.o c67x00-hcd.o c67x00-sched.o

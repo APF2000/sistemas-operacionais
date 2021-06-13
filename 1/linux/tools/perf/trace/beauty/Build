@@ -1,3 +1,1 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:769eef03edfcc7a25358d1c8604ae62aff361019f6ad709d2704290e6322aa46
-size 21
+libperf-y += statx.o

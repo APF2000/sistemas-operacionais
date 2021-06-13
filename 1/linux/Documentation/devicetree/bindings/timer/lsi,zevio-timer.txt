@@ -1,3 +1,33 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f86dd84028b1fc21a00d60a2e9ab127705d1bd875276cb5f584610caba757ca4
-size 719
+TI-NSPIRE timer
+
+Required properties:
+
+- compatible : should be "lsi,zevio-timer".
+- reg : The physical base address and size of the timer (always first).
+- clocks: phandle to the source clock.
+
+Optional properties:
+
+- interrupts : The interrupt number of the first timer.
+- reg : The interrupt acknowledgement registers
+	(always after timer base address)
+
+If any of the optional properties are not given, the timer is added as a
+clock-source only.
+
+Example:
+
+timer {
+	compatible = "lsi,zevio-timer";
+	reg = <0x900D0000 0x1000>, <0x900A0020 0x8>;
+	interrupts = <19>;
+	clocks = <&timer_clk>;
+};
+
+Example (no clock-events):
+
+timer {
+	compatible = "lsi,zevio-timer";
+	reg = <0x900D0000 0x1000>;
+	clocks = <&timer_clk>;
+};

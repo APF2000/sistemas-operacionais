@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:66fa8c9e5d647ed435d71a401e5089c9ade3972308c308bc0b27f99346581416
-size 340
+#ifndef _UAPI_LINUX_SIGNAL_H
+#define _UAPI_LINUX_SIGNAL_H
+
+#include <asm/signal.h>
+#include <asm/siginfo.h>
+
+#define SS_ONSTACK	1
+#define SS_DISABLE	2
+
+/* bit-flags */
+#define SS_AUTODISARM	(1U << 31)	/* disable sas during sighandling */
+/* mask for all SS_xxx flags */
+#define SS_FLAG_BITS	SS_AUTODISARM
+
+#endif /* _UAPI_LINUX_SIGNAL_H */

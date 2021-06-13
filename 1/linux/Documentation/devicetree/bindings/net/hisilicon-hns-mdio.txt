@@ -1,3 +1,27 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:52ddf6d7232ab85f698a88650de9ee6bce04646fdda5afaa0315696917272f3b
-size 872
+Hisilicon MDIO bus controller
+
+Properties:
+- compatible: can be one of:
+	"hisilicon,hns-mdio"
+	"hisilicon,mdio"
+  "hisilicon,hns-mdio" is recommended to be used for hip05 and later SOCs,
+  while "hisilicon,mdio" is optional for backwards compatibility only on
+  hip04 Soc.
+- reg: The base address of the MDIO bus controller register bank.
+- #address-cells: Must be <1>.
+- #size-cells: Must be <0>.  MDIO addresses have no size component.
+
+Typically an MDIO bus might have several children.
+
+Example:
+         mdio@803c0000 {
+                   #address-cells = <1>;
+                   #size-cells = <0>;
+                   compatible = "hisilicon,hns-mdio","hisilicon,mdio";
+                   reg = <0x0 0x803c0000 0x0 0x10000>;
+
+                   ethernet-phy@0 {
+                            ...
+                            reg = <0>;
+                   };
+         };

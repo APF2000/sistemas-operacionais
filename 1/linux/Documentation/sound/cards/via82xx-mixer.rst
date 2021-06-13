@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c0bdc2d380f2f05aa000a4814ba05a9129e023b6ec60c826d82b962fe871e02a
-size 310
+=============
+VIA82xx mixer
+=============
+
+On many VIA82xx boards, the ``Input Source Select`` mixer control does not work.
+Setting it to ``Input2`` on such boards will cause recording to hang, or fail
+with EIO (input/output error) via OSS emulation.  This control should be left
+at ``Input1`` for such cards.

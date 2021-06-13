@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:758a3878fad59a465f9d0c02117f3a38b1a6aa1fba1560bd95537e3683809ec7
-size 330
+dtb-$(CONFIG_ARCH_HISI) += hi3660-hikey960.dtb
+dtb-$(CONFIG_ARCH_HISI) += hi3798cv200-poplar.dtb
+dtb-$(CONFIG_ARCH_HISI) += hi6220-hikey.dtb
+dtb-$(CONFIG_ARCH_HISI) += hip05-d02.dtb
+dtb-$(CONFIG_ARCH_HISI) += hip06-d03.dtb
+dtb-$(CONFIG_ARCH_HISI) += hip07-d05.dtb
+
+always		:= $(dtb-y)
+subdir-y	:= $(dts-dirs)
+clean-files	:= *.dtb

@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f5578e6af33711b20ba01ebf5d5d81ad552d7c969adab0312974036dbfa55f5c
-size 225
+#ifndef _PERF_ASM_UACCESS_H_
+#define _PERF_ASM_UACCESS_H_
+
+#define __get_user(src, dest)						\
+({									\
+	(src) = *dest;							\
+	0;								\
+})
+
+#define get_user	__get_user
+
+#define access_ok(type, addr, size)	1
+
+#endif

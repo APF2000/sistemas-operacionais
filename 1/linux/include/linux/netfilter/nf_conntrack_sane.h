@@ -1,3 +1,21 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:73d9bcf4f21c83134898b98a7afc4613b6d5ce89f7a266e846c677f5fc08352f
-size 357
+#ifndef _NF_CONNTRACK_SANE_H
+#define _NF_CONNTRACK_SANE_H
+/* SANE tracking. */
+
+#ifdef __KERNEL__
+
+#define SANE_PORT	6566
+
+enum sane_state {
+	SANE_STATE_NORMAL,
+	SANE_STATE_START_REQUESTED,
+};
+
+/* This structure exists only once per master */
+struct nf_ct_sane_master {
+	enum sane_state state;
+};
+
+#endif /* __KERNEL__ */
+
+#endif /* _NF_CONNTRACK_SANE_H */

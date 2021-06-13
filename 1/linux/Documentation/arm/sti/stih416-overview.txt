@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:7b0a9075a812bfa2a61b85f891debc7d206155d67aaa188e719784ae5db3332a
-size 306
+			STiH416 Overview
+			================
+
+Introduction
+------------
+
+    The STiH416 is the next generation of HD, AVC set-top box processors
+    for satellite, cable, terrestrial and IP-STB markets.
+
+    Features
+    - ARM Cortex-A9 1.2 GHz dual core CPU
+    - SATA2x2,USB 2.0x3, PCIe, Gbit Ethernet MACx2

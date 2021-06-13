@@ -1,3 +1,20 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5eaffa9f03cc776e7177c771f4cfb7976a896f2b7902737edbc5335ac7889c4e
-size 488
+Broadcom BCM2835 I2C controller
+
+Required properties:
+- compatible : Should be "brcm,bcm2835-i2c".
+- reg: Should contain register location and length.
+- interrupts: Should contain interrupt.
+- clocks : The clock feeding the I2C controller.
+
+Recommended properties:
+- clock-frequency : desired I2C bus clock frequency in Hz.
+
+Example:
+
+i2c@20205000 {
+	compatible = "brcm,bcm2835-i2c";
+	reg = <0x7e205000 0x1000>;
+	interrupts = <2 21>;
+	clocks = <&clk_i2c>;
+	clock-frequency = <100000>;
+};

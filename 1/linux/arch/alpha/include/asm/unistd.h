@@ -1,3 +1,20 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e496ff0033d1c8db2cda30ba3ea81e651f504b9fa13445bd13c4b63f1d1b1ee8
-size 493
+#ifndef _ALPHA_UNISTD_H
+#define _ALPHA_UNISTD_H
+
+#include <uapi/asm/unistd.h>
+
+#define NR_SYSCALLS			514
+
+#define __ARCH_WANT_OLD_READDIR
+#define __ARCH_WANT_STAT64
+#define __ARCH_WANT_SYS_GETHOSTNAME
+#define __ARCH_WANT_SYS_FADVISE64
+#define __ARCH_WANT_SYS_GETPGRP
+#define __ARCH_WANT_SYS_OLD_GETRLIMIT
+#define __ARCH_WANT_SYS_OLDUMOUNT
+#define __ARCH_WANT_SYS_SIGPENDING
+#define __ARCH_WANT_SYS_FORK
+#define __ARCH_WANT_SYS_VFORK
+#define __ARCH_WANT_SYS_CLONE
+
+#endif /* _ALPHA_UNISTD_H */

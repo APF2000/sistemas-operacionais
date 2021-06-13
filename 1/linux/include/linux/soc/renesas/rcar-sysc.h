@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:21f88c4b70e2817c480b7afcbb1a8350121465e41ce97b794967ca03251bef88
-size 402
+#ifndef __LINUX_SOC_RENESAS_RCAR_SYSC_H__
+#define __LINUX_SOC_RENESAS_RCAR_SYSC_H__
+
+#include <linux/types.h>
+
+struct rcar_sysc_ch {
+	u16 chan_offs;
+	u8 chan_bit;
+	u8 isr_bit;
+};
+
+int rcar_sysc_power_down(const struct rcar_sysc_ch *sysc_ch);
+int rcar_sysc_power_up(const struct rcar_sysc_ch *sysc_ch);
+void rcar_sysc_init(phys_addr_t base, u32 syscier);
+
+#endif /* __LINUX_SOC_RENESAS_RCAR_SYSC_H__ */

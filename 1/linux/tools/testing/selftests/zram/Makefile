@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:efb8bf6317576e3ece4864e9a8e87938b4aeac79e2e6aaea06c4293a8d5a08b1
-size 117
+all:
+
+TEST_PROGS := zram.sh
+TEST_FILES := zram01.sh zram02.sh zram_lib.sh
+EXTRA_CLEAN := err.log
+
+include ../lib.mk
+

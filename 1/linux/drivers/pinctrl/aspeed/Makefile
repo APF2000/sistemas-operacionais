@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c3fffaaf4e7d191dacd421cb34b84d264a5cf0182790fcf5c5f531252b6cd8d3
-size 214
+# Aspeed pinctrl support
+
+ccflags-y += -Woverride-init
+obj-$(CONFIG_PINCTRL_ASPEED)	+= pinctrl-aspeed.o
+obj-$(CONFIG_PINCTRL_ASPEED_G4)	+= pinctrl-aspeed-g4.o
+obj-$(CONFIG_PINCTRL_ASPEED_G5)	+= pinctrl-aspeed-g5.o

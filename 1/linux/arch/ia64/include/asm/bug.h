@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:66360e6bd6921de742c19648ddf8b23023f60cb45c2ef11747ccbb0343c93566
-size 311
+#ifndef _ASM_IA64_BUG_H
+#define _ASM_IA64_BUG_H
+
+#ifdef CONFIG_BUG
+#define ia64_abort()	__builtin_trap()
+#define BUG() do { printk("kernel BUG at %s:%d!\n", __FILE__, __LINE__); ia64_abort(); } while (0)
+
+/* should this BUG be made generic? */
+#define HAVE_ARCH_BUG
+#endif
+
+#include <asm-generic/bug.h>
+
+#endif

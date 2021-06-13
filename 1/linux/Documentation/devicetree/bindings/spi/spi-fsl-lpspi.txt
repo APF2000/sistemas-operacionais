@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:cc22a97338d9dd213679d343f5d28b86bd5e56450c36899fab23ec35323875c2
-size 548
+* Freescale Low Power SPI (LPSPI) for i.MX
+
+Required properties:
+- compatible :
+  - "fsl,imx7ulp-spi" for LPSPI compatible with the one integrated on i.MX7ULP soc
+- reg : address and length of the lpspi master registers
+- interrupt-parent : core interrupt controller
+- interrupts : lpspi interrupt
+- clocks : lpspi clock specifier
+
+Examples:
+
+lpspi2: lpspi@40290000 {
+	compatible = "fsl,imx7ulp-spi";
+	reg = <0x40290000 0x10000>;
+	interrupt-parent = <&intc>;
+	interrupts = <GIC_SPI 28 IRQ_TYPE_LEVEL_HIGH>;
+	clocks = <&clks IMX7ULP_CLK_LPSPI2>;
+};

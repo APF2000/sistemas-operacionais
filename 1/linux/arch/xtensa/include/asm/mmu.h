@@ -1,3 +1,22 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:7d39a3582755aef29aa938105202311b23f74a1ba073dab8cb0f0d9ec349e4a2
-size 462
+/*
+ * This file is subject to the terms and conditions of the GNU General Public
+ * License.  See the file "COPYING" in the main directory of this archive
+ * for more details.
+ *
+ * Copyright (C) 2001 - 2013 Tensilica Inc.
+ */
+
+#ifndef _XTENSA_MMU_H
+#define _XTENSA_MMU_H
+
+#ifndef CONFIG_MMU
+#include <asm-generic/mmu.h>
+#else
+
+typedef struct {
+	unsigned long asid[NR_CPUS];
+	unsigned int cpu;
+} mm_context_t;
+
+#endif /* CONFIG_MMU */
+#endif	/* _XTENSA_MMU_H */

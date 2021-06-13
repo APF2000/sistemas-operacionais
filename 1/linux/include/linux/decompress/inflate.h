@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b3ca16c99b08c52be6d456175e165c17f6c6c359c2e01bb983273f3144358e29
-size 275
+#ifndef LINUX_DECOMPRESS_INFLATE_H
+#define LINUX_DECOMPRESS_INFLATE_H
+
+int gunzip(unsigned char *inbuf, long len,
+	   long (*fill)(void*, unsigned long),
+	   long (*flush)(void*, unsigned long),
+	   unsigned char *output,
+	   long *pos,
+	   void(*error_fn)(char *x));
+#endif

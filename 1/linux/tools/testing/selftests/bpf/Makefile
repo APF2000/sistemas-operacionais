@@ -1,3 +1,39 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:7076cee2c91ae5401ec2cf1862196fbcb85346e95c7410a9ea0dac9139c15c31
-size 904
+LIBDIR := ../../../lib
+BPFDIR := $(LIBDIR)/bpf
+APIDIR := ../../../include/uapi
+GENDIR := ../../../../include/generated
+GENHDR := $(GENDIR)/autoconf.h
+
+ifneq ($(wildcard $(GENHDR)),)
+  GENFLAGS := -DHAVE_GENHDR
+endif
+
+CFLAGS += -Wall -O2 -I$(APIDIR) -I$(LIBDIR) -I$(GENDIR) $(GENFLAGS) -I../../../include
+LDLIBS += -lcap -lelf
+
+TEST_GEN_PROGS = test_verifier test_tag test_maps test_lru_map test_lpm_map test_progs
+
+TEST_GEN_FILES = test_pkt_access.o test_xdp.o test_l4lb.o test_tcp_estats.o
+
+TEST_PROGS := test_kmod.sh
+
+include ../lib.mk
+
+BPFOBJ := $(OUTPUT)/libbpf.a
+
+$(TEST_GEN_PROGS): $(BPFOBJ)
+
+.PHONY: force
+
+# force a rebuild of BPFOBJ when its dependencies are updated
+force:
+
+$(BPFOBJ): force
+	$(MAKE) -C $(BPFDIR) OUTPUT=$(OUTPUT)/
+
+CLANG ?= clang
+
+%.o: %.c
+	$(CLANG) -I. -I../../../include/uapi -I../../../../samples/bpf/ \
+		-Wno-compare-distinct-pointer-types \
+		-O2 -target bpf -c $< -o $@

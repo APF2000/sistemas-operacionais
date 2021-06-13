@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c382bdb503d581dc313baaf6f627c9392c68736aa93165f4d7dcd5a1540dac25
-size 316
+RsaPrivKey ::= SEQUENCE {
+	version		INTEGER,
+	n		INTEGER ({ rsa_get_n }),
+	e		INTEGER ({ rsa_get_e }),
+	d		INTEGER ({ rsa_get_d }),
+	prime1		INTEGER ({ rsa_get_p }),
+	prime2		INTEGER ({ rsa_get_q }),
+	exponent1	INTEGER ({ rsa_get_dp }),
+	exponent2	INTEGER ({ rsa_get_dq }),
+	coefficient	INTEGER ({ rsa_get_qinv })
+}

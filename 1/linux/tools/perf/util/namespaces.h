@@ -1,3 +1,26 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:01b44b40c5eff1ccbe0f049b386057a887083ce326faf0102142a47d74d2f289
-size 640
+/*
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License, version 2, as
+ * published by the Free Software Foundation.
+ *
+ * Copyright (C) 2017 Hari Bathini, IBM Corporation
+ */
+
+#ifndef __PERF_NAMESPACES_H
+#define __PERF_NAMESPACES_H
+
+#include "../perf.h"
+#include <linux/list.h>
+
+struct namespaces_event;
+
+struct namespaces {
+	struct list_head list;
+	u64 end_time;
+	struct perf_ns_link_info link_info[];
+};
+
+struct namespaces *namespaces__new(struct namespaces_event *event);
+void namespaces__free(struct namespaces *namespaces);
+
+#endif  /* __PERF_NAMESPACES_H */

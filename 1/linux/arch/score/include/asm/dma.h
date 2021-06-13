@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b1dff6fa34bd80f52b4885f3572ab8a7e73e1cdf50cc4f550255b2b709628c42
-size 132
+#ifndef _ASM_SCORE_DMA_H
+#define _ASM_SCORE_DMA_H
+
+#include <asm/io.h>
+
+#define MAX_DMA_ADDRESS		(0)
+
+#endif /* _ASM_SCORE_DMA_H */

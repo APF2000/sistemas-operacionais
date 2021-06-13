@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:3c76a3a9ae632f18680990c00556bf02bec717c69579d8a85bac6a359c39a63a
-size 261
+obj-$(CONFIG_ASYNC_CORE) += async_tx.o
+obj-$(CONFIG_ASYNC_MEMCPY) += async_memcpy.o
+obj-$(CONFIG_ASYNC_XOR) += async_xor.o
+obj-$(CONFIG_ASYNC_PQ) += async_pq.o
+obj-$(CONFIG_ASYNC_RAID6_RECOV) += async_raid6_recov.o
+obj-$(CONFIG_ASYNC_RAID6_TEST) += raid6test.o

@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:263e800cb1e350691229a77754bcc56e04d5dd064b2770961d426e56f4e269d3
-size 200
+#
+# Makefile for Exar Corp's X3100 Series 10 GbE PCIe I/O
+# Virtualized Server Adapter linux driver
+
+obj-$(CONFIG_VXGE) += vxge.o
+
+vxge-objs := vxge-config.o vxge-traffic.o vxge-ethtool.o vxge-main.o

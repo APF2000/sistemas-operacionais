@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c5ebee3d105877a41b36bb7ce5d7a00dbde3589a7c40eec4113f1ff774950784
-size 254
+#ifndef _LIB_KSTRTOX_H
+#define _LIB_KSTRTOX_H
+
+#define KSTRTOX_OVERFLOW	(1U << 31)
+const char *_parse_integer_fixup_radix(const char *s, unsigned int *base);
+unsigned int _parse_integer(const char *s, unsigned int base, unsigned long long *res);
+
+#endif

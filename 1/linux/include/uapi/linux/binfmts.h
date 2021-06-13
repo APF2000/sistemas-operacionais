@@ -1,3 +1,20 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:22ee192702b86c49d5538f01cd99f6e2d0b884d1ea5ef627808b619f0e997e4d
-size 580
+#ifndef _UAPI_LINUX_BINFMTS_H
+#define _UAPI_LINUX_BINFMTS_H
+
+#include <linux/capability.h>
+
+struct pt_regs;
+
+/*
+ * These are the maximum length and maximum number of strings passed to the
+ * execve() system call.  MAX_ARG_STRLEN is essentially random but serves to
+ * prevent the kernel from being unduly impacted by misaddressed pointers.
+ * MAX_ARG_STRINGS is chosen to fit in a signed 32-bit integer.
+ */
+#define MAX_ARG_STRLEN (PAGE_SIZE * 32)
+#define MAX_ARG_STRINGS 0x7FFFFFFF
+
+/* sizeof(linux_binprm->buf) */
+#define BINPRM_BUF_SIZE 128
+
+#endif /* _UAPI_LINUX_BINFMTS_H */

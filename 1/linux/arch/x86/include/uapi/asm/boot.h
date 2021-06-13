@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:59579fb074f0deacee8ba87a431749a4c0fc53d834b86a3456baa9792bb73d01
-size 275
+#ifndef _UAPI_ASM_X86_BOOT_H
+#define _UAPI_ASM_X86_BOOT_H
+
+/* Internal svga startup constants */
+#define NORMAL_VGA	0xffff		/* 80x25 mode */
+#define EXTENDED_VGA	0xfffe		/* 80x50 mode */
+#define ASK_VGA		0xfffd		/* ask for it at bootup */
+
+
+#endif /* _UAPI_ASM_X86_BOOT_H */

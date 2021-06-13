@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f456a2ea6c94033ab9d5ad9ceba63ce88c18ca9378b6f32568572cb34f919554
-size 398
+#
+# Makefile for the network team driver
+#
+
+obj-$(CONFIG_NET_TEAM) += team.o
+obj-$(CONFIG_NET_TEAM_MODE_BROADCAST) += team_mode_broadcast.o
+obj-$(CONFIG_NET_TEAM_MODE_ROUNDROBIN) += team_mode_roundrobin.o
+obj-$(CONFIG_NET_TEAM_MODE_RANDOM) += team_mode_random.o
+obj-$(CONFIG_NET_TEAM_MODE_ACTIVEBACKUP) += team_mode_activebackup.o
+obj-$(CONFIG_NET_TEAM_MODE_LOADBALANCE) += team_mode_loadbalance.o

@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1b3c37d366491378c0dc92d41e11d63013103965748247f54abbab13cfe789d3
-size 233
+#ifndef BUG_ON_H
+#define BUG_ON_H
+
+#include <assert.h>
+
+#define BUG() assert(0)
+#define BUG_ON(x) assert(!(x))
+
+/* Does it make sense to treat warnings as errors? */
+#define WARN() BUG()
+#define WARN_ON(x) (BUG_ON(x), false)
+
+#endif

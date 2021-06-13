@@ -1,3 +1,21 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:74c2622dde7b0a26d6aaa3c49437966476a769e2d96ca3e76c8cf0c7e16c74e3
-size 523
+/*
+ * arch/arm/mach-w90x900/nuc960.h
+ *
+ * Copyright (c) 2008 Nuvoton corporation
+ *
+ * Header file for NUC900 CPU support
+ *
+ * Wan ZongShun <mcuos.com@gmail.com>
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 2 as
+ * published by the Free Software Foundation.
+ *
+ */
+#include "nuc9xx.h"
+
+/* extern file from nuc960.c */
+
+extern void nuc960_board_init(void);
+extern void nuc960_init_clocks(void);
+extern void nuc960_map_io(void);

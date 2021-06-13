@@ -1,3 +1,23 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c3a43e153368d5e890eceb53fd0e4242fb766cf236a5d096312f72f6de22d2ef
-size 401
+#ifndef __UML_LONGJMP_H
+#define __UML_LONGJMP_H
+
+#include <sysdep/archsetjmp.h>
+#include <os.h>
+
+extern int setjmp(jmp_buf);
+extern void longjmp(jmp_buf, int);
+
+#define UML_LONGJMP(buf, val) do { \
+	longjmp(*buf, val);	\
+} while(0)
+
+#define UML_SETJMP(buf) ({ \
+	int n;	   \
+	volatile int enable;	\
+	enable = get_signals(); \
+	n = setjmp(*buf); \
+	if(n != 0) \
+		set_signals(enable); \
+	n; })
+
+#endif

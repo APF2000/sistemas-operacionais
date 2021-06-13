@@ -1,3 +1,20 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ff1ac2fe298f8308e995c606ff50ae5a3eba05e3d01bb3d975aa869218a7e733
-size 230
+P3
+# Standard console colors
+16 1
+255
+  0   0   0
+  0   0 170
+  0 170   0
+  0 170 170
+170   0   0
+170   0 170
+170  85   0
+170 170 170
+ 85  85  85
+ 85  85 255
+ 85 255  85
+ 85 255 255
+255  85  85
+255  85 255
+255 255  85
+255 255 255

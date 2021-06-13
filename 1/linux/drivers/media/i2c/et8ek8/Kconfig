@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:3a4e37eeafd3e671d4711108a7885d728f46ab9a4a2fabd428038d0d848ea7a9
-size 240
+config VIDEO_ET8EK8
+	tristate "ET8EK8 camera sensor support"
+	depends on I2C && VIDEO_V4L2 && VIDEO_V4L2_SUBDEV_API
+	---help---
+	  This is a driver for the Toshiba ET8EK8 5 MP camera sensor.
+	  It is used for example in Nokia N900 (RX-51).

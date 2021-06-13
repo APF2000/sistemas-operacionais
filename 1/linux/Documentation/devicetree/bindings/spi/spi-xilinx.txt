@@ -1,3 +1,22 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a8657ec642a4faf05545f0b4868b9bfd49b93ba5b763428ad5035f420d82ff92
-size 650
+Xilinx SPI controller Device Tree Bindings
+-------------------------------------------------
+
+Required properties:
+- compatible		: Should be "xlnx,xps-spi-2.00.a" or "xlnx,xps-spi-2.00.b"
+- reg			: Physical base address and size of SPI registers map.
+- interrupts		: Property with a value describing the interrupt
+			  number.
+- interrupt-parent	: Must be core interrupt controller
+
+Optional properties:
+- xlnx,num-ss-bits	: Number of chip selects used.
+
+Example:
+	axi_quad_spi@41e00000 {
+			compatible = "xlnx,xps-spi-2.00.a";
+			interrupt-parent = <&intc>;
+			interrupts = <0 31 1>;
+			reg = <0x41e00000 0x10000>;
+			xlnx,num-ss-bits = <0x1>;
+	};
+

@@ -1,3 +1,25 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:41b3d43f2986e1d7fa880a79965cc1d2324fe3cba9728defce53e077a123a3c0
-size 265
+#ifdef DEFINE_DWARF_REGSTR_TABLE
+/* This is included in perf/util/dwarf-regs.c */
+
+const char * const sh_regstr_tbl[] = {
+	"r0",
+	"r1",
+	"r2",
+	"r3",
+	"r4",
+	"r5",
+	"r6",
+	"r7",
+	"r8",
+	"r9",
+	"r10",
+	"r11",
+	"r12",
+	"r13",
+	"r14",
+	"r15",
+	"pc",
+	"pr",
+};
+
+#endif

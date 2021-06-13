@@ -1,3 +1,32 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d6d366973d854849d6e4029e733594f9338c2e7e66a5e76e028b6b6fdbe281c6
-size 524
+#!/usr/bin/perl
+
+open (IN,"ktest.pl");
+while (<IN>) {
+    # hashes are now used
+    if (/\$opt\{"?([A-Z].*?)(\[.*\])?"?\}/ ||
+	/^\s*"?([A-Z].*?)"?\s*=>\s*/ ||
+	/set_test_option\("(.*?)"/) {
+	$opt{$1} = 1;
+    }
+}
+close IN;
+
+open (IN, "sample.conf");
+while (<IN>) {
+    if (/^\s*#?\s*([A-Z]\S*)\s*=/) {
+	$samp{$1} = 1;
+    }
+}
+close IN;
+
+foreach $opt (keys %opt) {
+    if (!defined($samp{$opt})) {
+	print "opt = $opt\n";
+    }
+}
+
+foreach $samp (keys %samp) {
+    if (!defined($opt{$samp})) {
+	print "samp = $samp\n";
+    }
+}

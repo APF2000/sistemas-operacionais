@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:009399e9e4132d0cc92a1ec58de2f51cc5743a8f58da82a9238a7ed87fb7aaa4
-size 120
+#ifndef BCM63XX_DEV_PCI_H_
+#define BCM63XX_DEV_PCI_H_
+
+extern int bcm63xx_pci_enabled;
+
+#endif /* BCM63XX_DEV_PCI_H_ */

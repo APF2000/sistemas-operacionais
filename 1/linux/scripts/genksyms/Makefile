@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ae4fe656f181a1f9a3e33d085a88013cb856fcf588f8883a5927028352ae3606
-size 413
+
+hostprogs-y	:= genksyms
+always		:= $(hostprogs-y)
+
+genksyms-objs	:= genksyms.o parse.tab.o lex.lex.o
+
+# -I needed for generated C source (shipped source)
+HOSTCFLAGS_parse.tab.o := -I$(src)
+HOSTCFLAGS_lex.lex.o := -I$(src)
+
+# dependencies on generated files need to be listed explicitly
+$(obj)/lex.lex.o: $(obj)/keywords.hash.c $(obj)/parse.tab.h
+
+clean-files	:= keywords.hash.c lex.lex.c parse.tab.c parse.tab.h

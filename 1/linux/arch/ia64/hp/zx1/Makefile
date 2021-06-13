@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:23eabcb4e928eab097318e6e108392f27ae25200cc84bca28772688ed2bddfa9
-size 194
+#
+# ia64/hp/zx1/Makefile
+#
+# Copyright (C) 2002 Hewlett Packard
+# Copyright (C) Alex Williamson (alex_williamson@hp.com)
+#
+
+obj-$(CONFIG_IA64_GENERIC) += hpzx1_machvec.o hpzx1_swiotlb_machvec.o

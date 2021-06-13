@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5d6d64d948c8d273c41bb237faf7083d5efcc2a1ded7074857e792de438c0d81
-size 264
+config DM_PERSISTENT_DATA
+       tristate
+       depends on BLK_DEV_DM
+       select LIBCRC32C
+       select DM_BUFIO
+       ---help---
+	 Library providing immutable on-disk data structure support for
+	 device-mapper targets such as the thin provisioning target.
+

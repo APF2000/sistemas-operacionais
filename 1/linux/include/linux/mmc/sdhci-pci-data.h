@@ -1,3 +1,20 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e97c10d3e3b6dbe84c21919cc80d53f77e9d56bf07b2f8b4de14cd52b9597e7b
-size 485
+#ifndef LINUX_MMC_SDHCI_PCI_DATA_H
+#define LINUX_MMC_SDHCI_PCI_DATA_H
+
+struct pci_dev;
+
+struct sdhci_pci_data {
+	struct pci_dev	*pdev;
+	int		slotno;
+	int		rst_n_gpio; /* Set to -EINVAL if unused */
+	int		cd_gpio;    /* Set to -EINVAL if unused */
+	int		(*setup)(struct sdhci_pci_data *data);
+	void		(*cleanup)(struct sdhci_pci_data *data);
+};
+
+extern struct sdhci_pci_data *(*sdhci_pci_get_data)(struct pci_dev *pdev,
+				int slotno);
+
+extern int sdhci_pci_spt_drive_strength;
+
+#endif

@@ -1,3 +1,2 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:3342ab64fcfcc2bae71270d5bfa2fdaeef8384268b34fc833d8b72b590cbd9fd
-size 44
+CONFIG_RCU_PERF_TEST=y
+CONFIG_PRINTK_TIME=y

@@ -1,3 +1,33 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1bb6cf7a947f4b1e91a1db1d0c862d4ff59782fd0d5ea3ebe9e3c35b3ec43ed1
-size 1004
+/*
+ * Copyright (C) 2012-2017 ARM Limited or its affiliates.
+ * 
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 2 as
+ * published by the Free Software Foundation.
+ * 
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, see <http://www.gnu.org/licenses/>.
+ */
+
+/* Dummy pal_log_plat for test driver in kernel */
+
+#ifndef _SSI_PAL_LOG_PLAT_H_
+#define _SSI_PAL_LOG_PLAT_H_
+
+#if defined(DEBUG)
+
+#define __CC_PAL_LOG_PLAT(level, format, ...) printk(level "cc7x_test::" format , ##__VA_ARGS__)
+
+#else /* Disable all prints */
+
+#define __CC_PAL_LOG_PLAT(...)  do {} while (0)
+
+#endif
+
+#endif /*_SASI_PAL_LOG_PLAT_H_*/
+

@@ -1,3 +1,3 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:62ac57899d565442046c255b596912a6686b21d242aaaa858bdbb197b8d176ec
-size 93
+wl12xx-objs	= main.o cmd.o acx.o debugfs.o scan.o event.o
+
+obj-$(CONFIG_WL12XX)		+= wl12xx.o

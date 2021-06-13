@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:9bbd6777bfc08b478380f4d978628112072efb859d7645317bf3106fe5969f4c
-size 333
+#
+# USB Monitor configuration
+#
+
+config USB_MON
+	tristate "USB Monitor"
+	help
+	  If you select this option, a component which captures the USB traffic
+	  between peripheral-specific drivers and HC drivers will be built.
+	  For more information, see <file:Documentation/usb/usbmon.txt>.
+
+	  If unsure, say Y, if allowed, otherwise M.

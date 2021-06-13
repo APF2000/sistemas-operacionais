@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:409c2ce57882e61f0cc3509d914f14c49d107647113a208327eefc2faac49674
-size 441
+Zodiac RAVE Watchdog Timer
+
+Required properties:
+- compatible: must be "zii,rave-wdt"
+- reg: i2c slave address of device, usually 0x38
+
+Optional Properties:
+- timeout-sec: Watchdog timeout value in seconds.
+- reset-duration-ms: Duration of the pulse generated when the watchdog times
+  out. Value in milliseconds.
+
+Example:
+
+	watchdog@38 {
+		compatible = "zii,rave-wdt";
+		reg = <0x38>;
+		timeout-sec = <30>;
+		reset-duration-ms = <30>;
+	};

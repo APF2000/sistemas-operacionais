@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c58d6bb2d6f47bad55f7fa90d6749de69c8e3629fc4f572f079192d6e93dd466
-size 176
+#ifndef _PARISC_SIGINFO_H
+#define _PARISC_SIGINFO_H
+
+#if defined(__LP64__)
+#define __ARCH_SI_PREAMBLE_SIZE   (4 * sizeof(int))
+#endif
+
+#include <asm-generic/siginfo.h>
+
+#endif

@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:3ae69af5db3c01dbeb0841189e18f910fdf7cab5378bd30a445952bed76b4aaf
-size 207
+#ifndef TOOLS_ARCH_ARM64_UAPI_ASM_MMAN_FIX_H
+#define TOOLS_ARCH_ARM64_UAPI_ASM_MMAN_FIX_H
+#include <uapi/asm-generic/mman.h>
+/* MAP_32BIT is undefined on arm64, fix it for perf */
+#define MAP_32BIT	0
+#endif

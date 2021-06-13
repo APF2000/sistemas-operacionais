@@ -1,3 +1,27 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ab11d9db59d0740c8e0d3ebdfceadbbacff098f14c2c08fff1c956c10a39b844
-size 561
+#ifndef __PERF_COMM_H
+#define __PERF_COMM_H
+
+#include "../perf.h"
+#include <linux/rbtree.h>
+#include <linux/list.h>
+
+struct comm_str;
+
+struct comm {
+	struct comm_str *comm_str;
+	u64 start;
+	struct list_head list;
+	bool exec;
+	union { /* Tool specific area */
+		void	*priv;
+		u64	db_id;
+	};
+};
+
+void comm__free(struct comm *comm);
+struct comm *comm__new(const char *str, u64 timestamp, bool exec);
+const char *comm__str(const struct comm *comm);
+int comm__override(struct comm *comm, const char *str, u64 timestamp,
+		   bool exec);
+
+#endif  /* __PERF_COMM_H */

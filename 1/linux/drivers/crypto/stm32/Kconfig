@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:bf1d50217be9a0cd6b3dab9acc61221f521a4ddf8ed6c1106f0f421a838df6db
-size 237
+config CRYPTO_DEV_STM32
+	tristate "Support for STM32 crypto accelerators"
+	depends on ARCH_STM32
+	select CRYPTO_HASH
+	help
+          This enables support for the CRC32 hw accelerator which can be found
+	  on STMicroelectronis STM32 SOC.

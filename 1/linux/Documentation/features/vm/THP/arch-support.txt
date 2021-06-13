@@ -1,3 +1,39 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f0469242276922d226f0e03a805e01531bab7724b014f3863231a09588feca98
-size 1102
+#
+# Feature name:          THP
+#         Kconfig:       HAVE_ARCH_TRANSPARENT_HUGEPAGE
+#         description:   arch supports transparent hugepages
+#
+    -----------------------
+    |         arch |status|
+    -----------------------
+    |       alpha: | TODO |
+    |         arc: |  ok  |
+    |         arm: |  ok  |
+    |       arm64: |  ok  |
+    |    blackfin: |  ..  |
+    |         c6x: |  ..  |
+    |        cris: |  ..  |
+    |         frv: |  ..  |
+    |       h8300: |  ..  |
+    |     hexagon: |  ..  |
+    |        ia64: | TODO |
+    |        m32r: |  ..  |
+    |        m68k: |  ..  |
+    |       metag: | TODO |
+    |  microblaze: |  ..  |
+    |        mips: |  ok  |
+    |     mn10300: |  ..  |
+    |       nios2: |  ..  |
+    |    openrisc: |  ..  |
+    |      parisc: | TODO |
+    |     powerpc: |  ok  |
+    |        s390: |  ok  |
+    |       score: |  ..  |
+    |          sh: |  ..  |
+    |       sparc: |  ok  |
+    |        tile: | TODO |
+    |          um: |  ..  |
+    |   unicore32: |  ..  |
+    |         x86: |  ok  |
+    |      xtensa: |  ..  |
+    -----------------------

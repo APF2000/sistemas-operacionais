@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:853bd22b4580a63bd98ba6218336f7e50ad3f973123d0b22c6fd3a2d245adf9b
-size 325
+/*
+ * Based on <asm-i386/mman.h>.
+ *
+ * Modified 1998-2000, 2002
+ *	David Mosberger-Tang <davidm@hpl.hp.com>, Hewlett-Packard Co
+ */
+#ifndef _UAPI_ASM_IA64_MMAN_H
+#define _UAPI_ASM_IA64_MMAN_H
+
+
+#include <asm-generic/mman.h>
+
+#define MAP_GROWSUP	0x0200		/* register stack-like segment */
+
+
+#endif /* _UAPI_ASM_IA64_MMAN_H */

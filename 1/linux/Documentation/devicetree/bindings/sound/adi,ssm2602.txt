@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d0baf01189f2ed53217a06dfb22992774b503cf62ae10a8f62fa950830c510ab
-size 521
+Analog Devices SSM2602, SSM2603 and SSM2604 I2S audio CODEC devices
+
+SSM2602 support both I2C and SPI as the configuration interface,
+the selection is made by the MODE strap-in pin.
+SSM2603 and SSM2604 only support I2C as the configuration interface.
+
+Required properties:
+
+  - compatible : One of "adi,ssm2602", "adi,ssm2603" or "adi,ssm2604"
+
+  - reg : the I2C address of the device for I2C, the chip select
+          number for SPI.
+
+ Example:
+
+	ssm2602: ssm2602@1a {
+		compatible = "adi,ssm2602";
+		reg = <0x1a>;
+	};

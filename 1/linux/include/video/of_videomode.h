@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:797245f8637b65ddeedc90e62c50670e6f58aff4514fa3f5145904e9e134cb53
-size 367
+/*
+ * Copyright 2012 Steffen Trumtrar <s.trumtrar@pengutronix.de>
+ *
+ * videomode of-helpers
+ *
+ * This file is released under the GPLv2
+ */
+
+#ifndef __LINUX_OF_VIDEOMODE_H
+#define __LINUX_OF_VIDEOMODE_H
+
+struct device_node;
+struct videomode;
+
+int of_get_videomode(struct device_node *np, struct videomode *vm,
+		     int index);
+
+#endif /* __LINUX_OF_VIDEOMODE_H */

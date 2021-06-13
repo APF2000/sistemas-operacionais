@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:348899730c0535bb5a77726febe0b9cebee38cab01da45ef913c5d3f987b4d86
-size 546
+#
+# Makefile for the kernel miscellaneous SPARC device drivers.
+#
+# Dave Redman Frame Buffer tuning support.
+#
+# 7 October 2000, Bartlomiej Zolnierkiewicz <bkz@linux-ide.org>
+# Rewritten to use lists instead of if-statements.
+#
+
+bbc-objs := bbc_i2c.o bbc_envctrl.o
+
+obj-$(CONFIG_ENVCTRL)			+= envctrl.o
+obj-$(CONFIG_DISPLAY7SEG)		+= display7seg.o
+obj-$(CONFIG_OBP_FLASH)			+= flash.o
+obj-$(CONFIG_SUN_OPENPROMIO)		+= openprom.o
+obj-$(CONFIG_TADPOLE_TS102_UCTRL)	+= uctrl.o
+obj-$(CONFIG_SUN_JSFLASH)		+= jsflash.o
+obj-$(CONFIG_BBC_I2C)			+= bbc.o

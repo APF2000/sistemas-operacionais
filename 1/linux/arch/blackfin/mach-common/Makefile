@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:06370dfa2e44937fd2ab7a77949c8848fd6f168532cbee7d9c25fbe75d448b79
-size 395
+#
+# arch/blackfin/mach-common/Makefile
+#
+
+obj-y := \
+	cache.o cache-c.o entry.o head.o \
+	interrupt.o arch_checks.o ints-priority.o
+
+obj-$(CONFIG_PM)          += pm.o
+ifneq ($(CONFIG_BF60x),y)
+obj-$(CONFIG_PM)	  += dpmc_modes.o
+endif
+obj-$(CONFIG_SCB_PRIORITY)	+= scb-init.o
+obj-$(CONFIG_CPU_VOLTAGE) += dpmc.o
+obj-$(CONFIG_SMP)         += smp.o
+obj-$(CONFIG_BFIN_KERNEL_CLOCK) += clocks-init.o

@@ -1,3 +1,1 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1768e6bda17c21f012a2b95aa55db3b58fc130476adc6a68e3c02e1e953249f1
-size 40
+libperf-$(CONFIG_DWARF) += dwarf-regs.o

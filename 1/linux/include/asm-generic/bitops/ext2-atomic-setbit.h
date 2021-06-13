@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:0ef327924a0b9a294f88281d7261263afd2cf53fcc324c5e6aec15e14e99a55d
-size 364
+#ifndef _ASM_GENERIC_BITOPS_EXT2_ATOMIC_SETBIT_H_
+#define _ASM_GENERIC_BITOPS_EXT2_ATOMIC_SETBIT_H_
+
+/*
+ * Atomic bitops based version of ext2 atomic bitops
+ */
+
+#define ext2_set_bit_atomic(l, nr, addr)	test_and_set_bit_le(nr, addr)
+#define ext2_clear_bit_atomic(l, nr, addr)	test_and_clear_bit_le(nr, addr)
+
+#endif /* _ASM_GENERIC_BITOPS_EXT2_ATOMIC_SETBIT_H_ */

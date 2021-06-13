@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2224af8a90a475c82535660588e480bf0ef579e853026b41a1aed90df9df1b67
-size 278
+#
+# Makefile for PTP 1588 clock support.
+#
+
+ptp-y					:= ptp_clock.o ptp_chardev.o ptp_sysfs.o
+obj-$(CONFIG_PTP_1588_CLOCK)		+= ptp.o
+obj-$(CONFIG_PTP_1588_CLOCK_IXP46X)	+= ptp_ixp46x.o
+obj-$(CONFIG_PTP_1588_CLOCK_PCH)	+= ptp_pch.o
+obj-$(CONFIG_PTP_1588_CLOCK_KVM)	+= ptp_kvm.o

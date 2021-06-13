@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d68ea895a052b22c7e670c5f6150b1b3d32e607fb9d1334bb40b6779421d29be
-size 315
+#ifndef __NV10_FENCE_H_
+#define __NV10_FENCE_H_
+
+#include "nouveau_fence.h"
+#include "nouveau_bo.h"
+
+struct nv10_fence_chan {
+	struct nouveau_fence_chan base;
+	struct nvif_object sema;
+};
+
+struct nv10_fence_priv {
+	struct nouveau_fence_priv base;
+	struct nouveau_bo *bo;
+	spinlock_t lock;
+	u32 sequence;
+};
+
+#endif

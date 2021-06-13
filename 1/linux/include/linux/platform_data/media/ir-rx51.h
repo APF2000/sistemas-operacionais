@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:3989b60168d0aa576769f553a920326544fc9f1ebd96891f4f72b3db7e755441
-size 140
+#ifndef _IR_RX51_H
+#define _IR_RX51_H
+
+struct ir_rx51_platform_data {
+	int(*set_max_mpu_wakeup_lat)(struct device *dev, long t);
+};
+
+#endif

@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d0a6c84c63ecbcca7cfd21fc15b297f2bd452891dde1e023721868e5f38c06f9
-size 242
+* MEMSIC MMC35240 magnetometer sensor
+
+Required properties:
+
+  - compatible : should be "memsic,mmc35240"
+  - reg : the I2C address of the magnetometer
+
+Example:
+
+mmc35240@30 {
+        compatible = "memsic,mmc35240";
+        reg = <0x30>;
+};

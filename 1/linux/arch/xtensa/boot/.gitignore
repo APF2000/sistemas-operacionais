@@ -1,3 +1,3 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b4143b4e18c72832d165b3a72a397595189254d6af462f6bcdeda7b144addfa3
-size 28
+uImage
+zImage.redboot
+*.dtb

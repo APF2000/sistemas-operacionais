@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c3dff0ad2afe406d9859562289b2fe90ff07a66922b11e0783c1e5a3b259f4a8
-size 344
+#ifdef __uClinux__
+#include <asm/io_no.h>
+#else
+#include <asm/io_mm.h>
+#endif
+
+#define readb_relaxed(addr)	readb(addr)
+#define readw_relaxed(addr)	readw(addr)
+#define readl_relaxed(addr)	readl(addr)
+
+#define writeb_relaxed(b, addr)	writeb(b, addr)
+#define writew_relaxed(b, addr)	writew(b, addr)
+#define writel_relaxed(b, addr)	writel(b, addr)

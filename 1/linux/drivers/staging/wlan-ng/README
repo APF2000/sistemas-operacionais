@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:0ba0885f99a30c277f41ef01d61d23034e386e28a046c0ddd8c893c69182cebd
-size 291
+TODO:
+	- checkpatch.pl cleanups
+	- sparse warnings
+	- move to use the in-kernel wireless stack
+
+Please send any patches or complaints about this driver to Greg
+Kroah-Hartman <greg@kroah.com> and don't bother the upstream wireless
+kernel developers about it, they want nothing to do with it.

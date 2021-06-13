@@ -1,3 +1,23 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:aaf87665a174fcc90c6e38e5c4bb5b1526ab92204b356726c66cb164997e5a02
-size 588
+comment "VME Bridge Drivers"
+
+config VME_CA91CX42
+	tristate "Universe II"
+	depends on VIRT_TO_BUS
+	help
+	 If you say Y here you get support for the Tundra CA91C142
+	 (Universe II) VME bridge chip.
+
+config VME_TSI148
+	tristate "Tempe"
+	depends on HAS_DMA
+	help
+	 If you say Y here you get support for the Tundra TSI148 VME bridge
+	 chip.
+
+config VME_FAKE
+	tristate "Fake"
+	help
+	 If you say Y here you get support for the fake VME bridge. This
+	 provides a virtualised VME Bus for devices with no VME bridge. This
+	 is mainly useful for VME development (in the absence of VME
+	 hardware).

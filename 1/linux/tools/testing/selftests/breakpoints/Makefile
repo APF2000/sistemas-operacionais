@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:8365f3f7c52e4d43b210ba7d8e587caea37f957fff27e5d63fcc4eb07428e2fb
-size 361
+# Taken from perf makefile
+uname_M := $(shell uname -m 2>/dev/null || echo not)
+ARCH ?= $(shell echo $(uname_M) | sed -e s/i.86/x86/ -e s/x86_64/x86/)
+
+ifeq ($(ARCH),x86)
+TEST_GEN_PROGS := breakpoint_test
+endif
+ifneq (,$(filter $(ARCH),aarch64 arm64))
+TEST_GEN_PROGS := breakpoint_test_arm64
+endif
+
+TEST_GEN_PROGS += step_after_suspend_test
+
+include ../lib.mk
+

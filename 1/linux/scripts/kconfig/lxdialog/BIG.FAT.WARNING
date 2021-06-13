@@ -1,3 +1,4 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:fafb1692d3d4f88b12fc38a4ddfd818927b0c094f34eb5fdf05000694306de75
-size 234
+This is NOT the official version of dialog.  This version has been
+significantly modified from the original.  It is for use by the Linux
+kernel configuration script.  Please do not bother Savio Lam with 
+questions about this program.

@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:0e93facf963a0fb6b70a29fae0d7e2ef36a2afdc958eb7818ada3f18c78a0a33
-size 505
+#ifndef _ASM_IA64_MACHVEC_HPSIM_h
+#define _ASM_IA64_MACHVEC_HPSIM_h
+
+extern ia64_mv_setup_t hpsim_setup;
+extern ia64_mv_irq_init_t hpsim_irq_init;
+
+/*
+ * This stuff has dual use!
+ *
+ * For a generic kernel, the macros are used to initialize the
+ * platform's machvec structure.  When compiling a non-generic kernel,
+ * the macros are used directly.
+ */
+#define ia64_platform_name	"hpsim"
+#define platform_setup		hpsim_setup
+#define platform_irq_init	hpsim_irq_init
+
+#endif /* _ASM_IA64_MACHVEC_HPSIM_h */

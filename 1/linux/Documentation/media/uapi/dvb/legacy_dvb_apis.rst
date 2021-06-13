@@ -1,3 +1,20 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:870a073a66fbefdf9c330d12ba961f886b39283463186ae9e6688a250f2e1ba0
-size 467
+.. -*- coding: utf-8; mode: rst -*-
+
+.. _legacy_dvb_apis:
+
+*******************
+DVB Deprecated APIs
+*******************
+
+The APIs described here are kept only for historical reasons. There's
+just one driver for a very legacy hardware that uses this API. No modern
+drivers should use it. Instead, audio and video should be using the V4L2
+and ALSA APIs, and the pipelines should be set using the Media
+Controller API
+
+
+.. toctree::
+    :maxdepth: 1
+
+    video
+    audio

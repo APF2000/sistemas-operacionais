@@ -1,3 +1,30 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a608e5f52b2e71ad0420d26a397a70d53f646195493645c019bb2d8b683a29f0
-size 875
+/*
+ * Support for Intel Camera Imaging ISP subsystem.
+ * Copyright (c) 2015, Intel Corporation.
+ *
+ * This program is free software; you can redistribute it and/or modify it
+ * under the terms and conditions of the GNU General Public License,
+ * version 2, as published by the Free Software Foundation.
+ *
+ * This program is distributed in the hope it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+ * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for
+ * more details.
+ */
+
+#ifndef __IA_CSS_BNR_PARAM_H
+#define __IA_CSS_BNR_PARAM_H
+
+#include "type_support.h"
+
+/* BNR (Bayer Noise Reduction) */
+struct sh_css_isp_bnr_params {
+	int32_t gain_all;
+	int32_t gain_dir;
+	int32_t threshold_low;
+	int32_t threshold_width_log2;
+	int32_t threshold_width;
+	int32_t clip;
+};
+
+#endif /* __IA_CSS_BNR_PARAM_H */

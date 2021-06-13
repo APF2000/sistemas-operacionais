@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:196cf0852584ae1e5ca5632a2f3fdedcc0eb8c87f8641f935e92dd998fe902b6
-size 305
+#ifndef _UAPI__ASM_GENERIC_PARAM_H
+#define _UAPI__ASM_GENERIC_PARAM_H
+
+#ifndef HZ
+#define HZ 100
+#endif
+
+#ifndef EXEC_PAGESIZE
+#define EXEC_PAGESIZE	4096
+#endif
+
+#ifndef NOGROUP
+#define NOGROUP		(-1)
+#endif
+
+#define MAXHOSTNAMELEN	64	/* max length of hostname */
+
+
+#endif /* _UAPI__ASM_GENERIC_PARAM_H */

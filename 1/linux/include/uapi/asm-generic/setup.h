@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:248f034ba61cbf0e9b6b15159f6b8654ba29e86ae86ece8f9626509831bbe5aa
-size 127
+#ifndef __ASM_GENERIC_SETUP_H
+#define __ASM_GENERIC_SETUP_H
+
+#define COMMAND_LINE_SIZE	512
+
+#endif	/* __ASM_GENERIC_SETUP_H */

@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:92dcc87a7182b8700b2f899efefc8ea4a0ffec3968f2807166300e46f0d18a8c
-size 240
+#ifndef ARCH_PERF_COMMON_H
+#define ARCH_PERF_COMMON_H
+
+#include "../util/env.h"
+
+extern const char *objdump_path;
+
+int perf_env__lookup_objdump(struct perf_env *env);
+const char *normalize_arch(char *arch);
+
+#endif /* ARCH_PERF_COMMON_H */

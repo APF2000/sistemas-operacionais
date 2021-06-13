@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:81a1a33f19e864ceff8c1d02c57d381f20f72ffda4a756a663b02161b2c9c766
-size 310
+nanoEngine
+----------
+
+"nanoEngine" is a SA1110 based single board computer from 
+Bright Star Engineering Inc.  See www.brightstareng.com/arm
+for more info.
+(Ref: Stuart Adams <sja@brightstareng.com>)
+
+Also visit Larry Doolittle's "Linux for the nanoEngine" site:
+http://www.brightstareng.com/arm/nanoeng.htm
+

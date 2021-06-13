@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e804ca41edba65cca86621cd957a2497b23871bb0e362cabbc6309d827366ad0
-size 340
+#ifndef _ASM_PARISC_FTRACE_H
+#define _ASM_PARISC_FTRACE_H
+
+#ifndef __ASSEMBLY__
+extern void mcount(void);
+
+#define MCOUNT_INSN_SIZE 4
+
+extern unsigned long sys_call_table[];
+
+extern unsigned long return_address(unsigned int);
+
+#define ftrace_return_address(n) return_address(n)
+
+#endif /* __ASSEMBLY__ */
+
+#endif /* _ASM_PARISC_FTRACE_H */

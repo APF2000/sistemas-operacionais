@@ -1,3 +1,26 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c8b542825c04da97ab2aac84a1a1db98b6e45d84ab7c909fe80cd57d33560818
-size 532
+#ifndef __TOOLS_KALLSYMS_H_
+#define __TOOLS_KALLSYMS_H_ 1
+
+#include <elf.h>
+#include <linux/ctype.h>
+#include <linux/types.h>
+
+#ifndef KSYM_NAME_LEN
+#define KSYM_NAME_LEN 256
+#endif
+
+static inline u8 kallsyms2elf_binding(char type)
+{
+	if (type == 'W')
+		return STB_WEAK;
+
+	return isupper(type) ? STB_GLOBAL : STB_LOCAL;
+}
+
+u8 kallsyms2elf_type(char type);
+
+int kallsyms__parse(const char *filename, void *arg,
+		    int (*process_symbol)(void *arg, const char *name,
+					  char type, u64 start));
+
+#endif /* __TOOLS_KALLSYMS_H_ */

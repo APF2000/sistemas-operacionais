@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:91874b1281848b0126a5a31de458b5f6af261d07f9b575960a62e87acf041328
-size 254
+obj-$(CONFIG_SCSI_ISCI) += isci.o
+isci-objs := init.o phy.o request.o \
+	     remote_device.o port.o \
+	     host.o task.o probe_roms.o \
+	     remote_node_context.o \
+	     remote_node_table.o \
+	     unsolicited_frame_control.o \
+	     port_config.o \

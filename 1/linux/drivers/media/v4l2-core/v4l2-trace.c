@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d23721f308b49c0dd94e7149552d1703cc8a844ee10f60e2acbc40d428fabc03
-size 343
+#include <media/v4l2-common.h>
+#include <media/v4l2-fh.h>
+#include <media/videobuf2-v4l2.h>
+
+#define CREATE_TRACE_POINTS
+#include <trace/events/v4l2.h>
+
+EXPORT_TRACEPOINT_SYMBOL_GPL(vb2_v4l2_buf_done);
+EXPORT_TRACEPOINT_SYMBOL_GPL(vb2_v4l2_buf_queue);
+EXPORT_TRACEPOINT_SYMBOL_GPL(vb2_v4l2_dqbuf);
+EXPORT_TRACEPOINT_SYMBOL_GPL(vb2_v4l2_qbuf);

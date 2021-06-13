@@ -1,3 +1,21 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c4f3d3a7eead366a6040f9fce96292bb261540bfc7281f5f7fb2d35d195727eb
-size 589
+USB GPIO Extcon device
+
+This is a virtual device used to generate USB cable states from the USB ID pin
+connected to a GPIO pin.
+
+Required properties:
+- compatible: Should be "linux,extcon-usb-gpio"
+
+Either one of id-gpio or vbus-gpio must be present. Both can be present as well.
+- id-gpio: gpio for USB ID pin. See gpio binding.
+- vbus-gpio: gpio for USB VBUS pin.
+
+Example: Examples of extcon-usb-gpio node in dra7-evm.dts as listed below:
+	extcon_usb1 {
+		compatible = "linux,extcon-usb-gpio";
+		id-gpio = <&gpio6 1 GPIO_ACTIVE_HIGH>;
+	}
+
+	&omap_dwc3_1 {
+		extcon = <&extcon_usb1>;
+	};

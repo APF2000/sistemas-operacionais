@@ -1,3 +1,31 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d90ed0cd8e90f9fd5e2c4b135e1ec043cb055bb5242647015761198eb687fc12
-size 814
+/*
+ * Copyright(c) 2014 Intel Corporation.
+ *
+ * This program is free software; you can redistribute it and/or modify it
+ * under the terms and conditions of the GNU General Public License,
+ * version 2, as published by the Free Software Foundation.
+ *
+ * This program is distributed in the hope it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+ * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for
+ * more details.
+ */
+
+#ifndef GPIO_DW_APB_H
+#define GPIO_DW_APB_H
+
+struct dwapb_port_property {
+	struct fwnode_handle *fwnode;
+	unsigned int	idx;
+	unsigned int	ngpio;
+	unsigned int	gpio_base;
+	unsigned int	irq;
+	bool		irq_shared;
+};
+
+struct dwapb_platform_data {
+	struct dwapb_port_property *properties;
+	unsigned int nports;
+};
+
+#endif

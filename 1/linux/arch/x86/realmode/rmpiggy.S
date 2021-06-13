@@ -1,3 +1,20 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:9e5f64fb4b20d29c12c8f46decdb7692fa9fe3787a39c7036c324af528276674
-size 422
+/*
+ * Wrapper script for the realmode binary as a transport object
+ * before copying to low memory.
+ */
+#include <linux/linkage.h>
+#include <asm/page_types.h>
+
+	.section ".init.data","aw"
+
+	.balign PAGE_SIZE
+
+GLOBAL(real_mode_blob)
+	.incbin	"arch/x86/realmode/rm/realmode.bin"
+END(real_mode_blob)
+
+GLOBAL(real_mode_blob_end);
+
+GLOBAL(real_mode_relocs)
+	.incbin	"arch/x86/realmode/rm/realmode.relocs"
+END(real_mode_relocs)

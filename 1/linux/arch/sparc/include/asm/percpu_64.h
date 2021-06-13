@@ -1,3 +1,24 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d2f3d4a3f7adb11b14988221fab817adc6c4ac1683bc1105eebdeb8153d7a44e
-size 476
+#ifndef __ARCH_SPARC64_PERCPU__
+#define __ARCH_SPARC64_PERCPU__
+
+#include <linux/compiler.h>
+
+register unsigned long __local_per_cpu_offset asm("g5");
+
+#ifdef CONFIG_SMP
+
+#include <asm/trap_block.h>
+
+#define __per_cpu_offset(__cpu) \
+	(trap_block[(__cpu)].__per_cpu_base)
+#define per_cpu_offset(x) (__per_cpu_offset(x))
+
+#define __my_cpu_offset __local_per_cpu_offset
+
+#else /* ! SMP */
+
+#endif	/* SMP */
+
+#include <asm-generic/percpu.h>
+
+#endif /* __ARCH_SPARC64_PERCPU__ */

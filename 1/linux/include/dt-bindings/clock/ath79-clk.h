@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f8b70ff01a264dafb179304f04c0a756e962768a9a912e6d60b978e159c16b19
-size 479
+/*
+ * Copyright (C) 2014, 2016 Antony Pavlov <antonynpavlov@gmail.com>
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 2 as
+ * published by the Free Software Foundation.
+ *
+ */
+
+#ifndef __DT_BINDINGS_ATH79_CLK_H
+#define __DT_BINDINGS_ATH79_CLK_H
+
+#define ATH79_CLK_CPU		0
+#define ATH79_CLK_DDR		1
+#define ATH79_CLK_AHB		2
+
+#define ATH79_CLK_END		3
+
+#endif /* __DT_BINDINGS_ATH79_CLK_H */

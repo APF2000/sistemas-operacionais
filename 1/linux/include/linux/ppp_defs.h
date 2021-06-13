@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:cad134edf577eb6f4e17797c2d95c0d01a638288374441e9dc9b23326303f723
-size 454
+/*
+ * ppp_defs.h - PPP definitions.
+ *
+ * Copyright 1994-2000 Paul Mackerras.
+ *
+ *  This program is free software; you can redistribute it and/or
+ *  modify it under the terms of the GNU General Public License
+ *  version 2 as published by the Free Software Foundation.
+ */
+#ifndef _PPP_DEFS_H_
+#define _PPP_DEFS_H_
+
+#include <linux/crc-ccitt.h>
+#include <uapi/linux/ppp_defs.h>
+
+#define PPP_FCS(fcs, c) crc_ccitt_byte(fcs, c)
+#endif /* _PPP_DEFS_H_ */

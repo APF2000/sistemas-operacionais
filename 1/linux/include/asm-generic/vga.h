@@ -1,3 +1,24 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:22ba771bd8f6aa17869e82dc447866e5bb2eda9fa25fed5de1800dde0487f1b8
-size 548
+/*
+ *	Access to VGA videoram
+ *
+ *	(c) 1998 Martin Mares <mj@ucw.cz>
+ */
+#ifndef __ASM_GENERIC_VGA_H
+#define __ASM_GENERIC_VGA_H
+
+/*
+ *	On most architectures that support VGA, we can just
+ *	recalculate addresses and then access the videoram
+ *	directly without any black magic.
+ *
+ *	Everyone else needs to ioremap the address and use
+ *	proper I/O accesses.
+ */
+#ifndef VGA_MAP_MEM
+#define VGA_MAP_MEM(x, s) (unsigned long)phys_to_virt(x)
+#endif
+
+#define vga_readb(x) (*(x))
+#define vga_writeb(x, y) (*(y) = (x))
+
+#endif /* _ASM_GENERIC_VGA_H */

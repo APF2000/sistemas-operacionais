@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:9c113b701e9d986620d79ebc121bc7fd367d4c40ffe399d1ad893f90f6a1647c
-size 158
+#ifndef _XT_LENGTH_H
+#define _XT_LENGTH_H
+
+#include <linux/types.h>
+
+struct xt_length_info {
+    __u16	min, max;
+    __u8	invert;
+};
+
+#endif /*_XT_LENGTH_H*/

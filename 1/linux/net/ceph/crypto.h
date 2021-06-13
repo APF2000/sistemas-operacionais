@@ -1,3 +1,35 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5b1c9123151a03e83ae8e56b3312aacc9a361a10c2f9cff9a9fcad0f1eafaf45
-size 1002
+#ifndef _FS_CEPH_CRYPTO_H
+#define _FS_CEPH_CRYPTO_H
+
+#include <linux/ceph/types.h>
+#include <linux/ceph/buffer.h>
+
+/*
+ * cryptographic secret
+ */
+struct ceph_crypto_key {
+	int type;
+	struct ceph_timespec created;
+	int len;
+	void *key;
+	struct crypto_skcipher *tfm;
+};
+
+int ceph_crypto_key_clone(struct ceph_crypto_key *dst,
+			  const struct ceph_crypto_key *src);
+int ceph_crypto_key_encode(struct ceph_crypto_key *key, void **p, void *end);
+int ceph_crypto_key_decode(struct ceph_crypto_key *key, void **p, void *end);
+int ceph_crypto_key_unarmor(struct ceph_crypto_key *key, const char *in);
+void ceph_crypto_key_destroy(struct ceph_crypto_key *key);
+
+/* crypto.c */
+int ceph_crypt(const struct ceph_crypto_key *key, bool encrypt,
+	       void *buf, int buf_len, int in_len, int *pout_len);
+int ceph_crypto_init(void);
+void ceph_crypto_shutdown(void);
+
+/* armor.c */
+int ceph_armor(char *dst, const char *src, const char *end);
+int ceph_unarmor(char *dst, const char *src, const char *end);
+
+#endif

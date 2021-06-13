@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:72e3225448cfe387ff6ca50f952ad2ff8e35503bc118372bd4a8ef817e3b7c11
-size 200
+#ifndef ___TOOLS_LINUX_ASM_SPARC_BARRIER_H
+#define ___TOOLS_LINUX_ASM_SPARC_BARRIER_H
+#if defined(__sparc__) && defined(__arch64__)
+#include "barrier_64.h"
+#else
+#include "barrier_32.h"
+#endif
+#endif

@@ -1,3 +1,21 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a3ceef2160f797013a9524677fb587978d4a9e792ac6a4520ba81058de5f687b
-size 556
+/*
+ *    SCLP Event Type (ET) 7 - Diagnostic Test FTP Services, useable on LPAR
+ *
+ *    Notice that all functions exported here are not reentrant.
+ *    So usage should be exclusive, ensured by the caller (e.g. using a
+ *    mutex).
+ *
+ *    Copyright IBM Corp. 2013
+ *    Author(s): Ralf Hoppe (rhoppe@de.ibm.com)
+ */
+
+#ifndef __SCLP_FTP_H__
+#define __SCLP_FTP_H__
+
+#include "hmcdrv_ftp.h"
+
+int sclp_ftp_startup(void);
+void sclp_ftp_shutdown(void);
+ssize_t sclp_ftp_cmd(const struct hmcdrv_ftp_cmdspec *ftp, size_t *fsize);
+
+#endif	 /* __SCLP_FTP_H__ */

@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:8cd85cb02d1d58df9df157488c8a8bf8d52a25070975af8e58ffb1fad647303c
-size 392
+/* 
+ * Copyright (C) 2002 Jeff Dike (jdike@karaya.com)
+ * Licensed under the GPL
+ */
+
+#ifndef __FRAME_KERN_H_
+#define __FRAME_KERN_H_
+
+extern int setup_signal_stack_sc(unsigned long stack_top, struct ksignal *ksig,
+				 struct pt_regs *regs, sigset_t *mask);
+extern int setup_signal_stack_si(unsigned long stack_top, struct ksignal *ksig,
+				 struct pt_regs *regs, sigset_t *mask);
+
+#endif
+

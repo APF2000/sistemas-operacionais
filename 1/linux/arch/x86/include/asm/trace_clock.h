@@ -1,3 +1,20 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:34b9ac48fe8b222a7b979de5a64bbffbb275d440de38ac6dd77ee9f74a811e83
-size 367
+#ifndef _ASM_X86_TRACE_CLOCK_H
+#define _ASM_X86_TRACE_CLOCK_H
+
+#include <linux/compiler.h>
+#include <linux/types.h>
+
+#ifdef CONFIG_X86_TSC
+
+extern u64 notrace trace_clock_x86_tsc(void);
+
+# define ARCH_TRACE_CLOCKS \
+	{ trace_clock_x86_tsc,	"x86-tsc",	.in_ns = 0 },
+
+#else /* !CONFIG_X86_TSC */
+
+#define ARCH_TRACE_CLOCKS
+
+#endif
+
+#endif  /* _ASM_X86_TRACE_CLOCK_H */

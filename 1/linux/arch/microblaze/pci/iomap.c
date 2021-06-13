@@ -1,3 +1,21 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d8f48f95c4f6d4554f3c480de0736d639d67ec64429b694697b7fd87e2e52236
-size 430
+/*
+ * ppc64 "iomap" interface implementation.
+ *
+ * (C) Copyright 2004 Linus Torvalds
+ */
+#include <linux/init.h>
+#include <linux/pci.h>
+#include <linux/mm.h>
+#include <linux/export.h>
+#include <linux/io.h>
+#include <asm/pci-bridge.h>
+
+void pci_iounmap(struct pci_dev *dev, void __iomem *addr)
+{
+	if (isa_vaddr_is_ioport(addr))
+		return;
+	if (pcibios_vaddr_is_ioport(addr))
+		return;
+	iounmap(addr);
+}
+EXPORT_SYMBOL(pci_iounmap);

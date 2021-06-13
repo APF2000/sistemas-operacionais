@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f5c0ebf7cf10b0e60e8cc0a9d2634db1d8c644da0631dc955e4ec46cfd8b3f4b
-size 450
+#include <string.h>
+
+#include <linux/perf_event.h>
+
+#include "../../util/intel-pt.h"
+#include "../../util/intel-bts.h"
+#include "../../util/pmu.h"
+
+struct perf_event_attr *perf_pmu__get_default_config(struct perf_pmu *pmu __maybe_unused)
+{
+#ifdef HAVE_AUXTRACE_SUPPORT
+	if (!strcmp(pmu->name, INTEL_PT_PMU_NAME))
+		return intel_pt_pmu_default_config(pmu);
+	if (!strcmp(pmu->name, INTEL_BTS_PMU_NAME))
+		pmu->selectable = true;
+#endif
+	return NULL;
+}

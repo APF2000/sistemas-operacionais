@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:add37e3b73cf0fda67996d53f651411bf282556fcbb61d6e6d7d06cbd8393a11
-size 319
+Device-Tree bindings for hdmiddc driver
+
+Required properties:
+- compatible: value should be one of the following
+	1) "samsung,exynos5-hdmiddc" <DEPRECATED>
+	2) "samsung,exynos4210-hdmiddc"
+
+- reg: I2C address of the hdmiddc device.
+
+Example:
+
+	hdmiddc {
+		compatible = "samsung,exynos4210-hdmiddc";
+		reg = <0x50>;
+	};

@@ -1,3 +1,25 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:aa10b6556cbe3e51cb7045257662c889623382a0cf3edff27aa46694e3056b0b
-size 682
+/*
+ *  Support for the Marvell PXA168 Teton BGA Development Platform.
+ *
+ *  This program is free software; you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License version 2 as
+ *  publishhed by the Free Software Foundation.
+ */
+#ifndef __ASM_MACH_TETON_BGA_H
+#define __ASM_MACH_TETON_BGA_H
+
+/* GPIOs */
+#define MMC_PWENA_GPIO		27
+#define USBHPENB_GPIO		55
+#define RTC_INT_GPIO		78
+#define LCD_VBLK_EN_GPIO	79
+#define LCD_DVDD_EN_GPIO	80
+#define RST_WIFI_GPIO		81
+#define CF_PWEN_GPIO		82
+#define USB_OC_GPIO		83
+#define PWM_GPIO		84
+#define USBHPENA_GPIO		85
+#define TS_INT_GPIO		86
+#define CIR_GPIO		108
+
+#endif /* __ASM_MACH_TETON_BGA_H */

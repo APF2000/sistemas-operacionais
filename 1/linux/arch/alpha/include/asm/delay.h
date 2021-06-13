@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d201f135505fbd9b967a372a4de615b7057983d63c940b37e7295e8e3fea8e96
-size 225
+#ifndef __ALPHA_DELAY_H
+#define __ALPHA_DELAY_H
+
+extern void __delay(int loops);
+extern void udelay(unsigned long usecs);
+
+extern void ndelay(unsigned long nsecs);
+#define ndelay ndelay
+
+#endif /* defined(__ALPHA_DELAY_H) */

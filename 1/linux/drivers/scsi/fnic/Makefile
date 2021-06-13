@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:867d24c2c4fe2ea0069fcd26b6677e9cacacc9e55a580dd3daee624563473ddc
-size 253
+obj-$(CONFIG_FCOE_FNIC) += fnic.o
+
+fnic-y	:= \
+	fnic_attrs.o \
+	fnic_isr.o \
+	fnic_main.o \
+	fnic_res.o \
+	fnic_fcs.o \
+	fnic_scsi.o \
+	fnic_trace.o \
+	fnic_debugfs.o \
+	vnic_cq.o \
+	vnic_dev.o \
+	vnic_intr.o \
+	vnic_rq.o \
+	vnic_wq_copy.o \
+	vnic_wq.o

@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c92990433ae2bb630ed2d45c25dcd7c73bda4cc241dae7cf55cee7259e43e079
-size 404
+config DRM_FSL_DCU
+	tristate "DRM Support for Freescale DCU"
+	depends on DRM && OF && ARM && COMMON_CLK
+	select BACKLIGHT_CLASS_DEVICE
+	select BACKLIGHT_LCD_SUPPORT
+	select DRM_KMS_HELPER
+	select DRM_KMS_CMA_HELPER
+	select DRM_PANEL
+	select REGMAP_MMIO
+	select VIDEOMODE_HELPERS
+	help
+	  Choose this option if you have an Freescale DCU chipset.
+	  If M is selected the module will be called fsl-dcu-drm.

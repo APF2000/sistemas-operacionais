@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ea591f86f7b751defb476921c0950dd8f3cb6226660f90d95658c3bf1ed892ef
-size 247
+#
+# Jz4740 Platform Support
+#
+snd-soc-jz4740-i2s-objs := jz4740-i2s.o
+
+obj-$(CONFIG_SND_JZ4740_SOC_I2S) += snd-soc-jz4740-i2s.o
+
+# Jz4740 Machine Support
+snd-soc-qi-lb60-objs := qi_lb60.o
+
+obj-$(CONFIG_SND_JZ4740_SOC_QI_LB60) += snd-soc-qi-lb60.o

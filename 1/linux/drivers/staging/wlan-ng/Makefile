@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:808c9a467b8644d39a19cfeecce04200f523b2710144aaac1f512b381a7f62f8
-size 138
+obj-$(CONFIG_PRISM2_USB) += prism2_usb.o
+
+prism2_usb-y := prism2usb.o \
+		p80211conv.o \
+		p80211req.o \
+		p80211wep.o \
+		p80211netdev.o

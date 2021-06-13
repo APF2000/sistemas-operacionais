@@ -1,3 +1,28 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4967c9ba9d7327235b9a8ea6f67b6cd32470f11c3ba4e993d4d78be1962a27e0
-size 750
+#
+# Nuvoton network device configuration
+#
+
+config NET_VENDOR_NUVOTON
+	bool "Nuvoton devices"
+	default y
+	depends on ARM && ARCH_W90X900
+	---help---
+	  If you have a network (Ethernet) card belonging to this class, say Y.
+
+	  Note that the answer to this question doesn't directly affect the
+	  kernel: saying N will just cause the configurator to skip all
+	  the questions about Nuvoton cards. If you say Y, you will be asked
+	  for your specific card in the following questions.
+
+if NET_VENDOR_NUVOTON
+
+config W90P910_ETH
+	tristate "Nuvoton w90p910 Ethernet support"
+	depends on ARM && ARCH_W90X900
+	select PHYLIB
+	select MII
+	---help---
+	  Say Y here if you want to use built-in Ethernet ports
+	  on w90p910 processor.
+
+endif # NET_VENDOR_NUVOTON

@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:92a4499dc55dbe18f446f7bcee152597d27727f23f697a3deb4ef0b701bf01f3
-size 156
+#
+# Makefile for Bosch BMI160 IMU
+#
+obj-$(CONFIG_BMI160) += bmi160_core.o
+obj-$(CONFIG_BMI160_I2C) += bmi160_i2c.o
+obj-$(CONFIG_BMI160_SPI) += bmi160_spi.o

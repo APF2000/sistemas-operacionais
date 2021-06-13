@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:00b0db68cd632b9f40342250813a4b6623ecb3e2f305e5bd8968e0b835f6a9f6
-size 454
+/*
+ * Copyright 2008 Red Hat, Inc. All rights reserved.
+ * Copyright 2008 Ian Kent <raven@themaw.net>
+ *
+ * This file is part of the Linux kernel and is made available under
+ * the terms of the GNU General Public License, version 2, or at your
+ * option, any later version, incorporated herein by reference.
+ */
+
+#ifndef _LINUX_AUTO_DEV_IOCTL_H
+#define _LINUX_AUTO_DEV_IOCTL_H
+
+#include <uapi/linux/auto_dev-ioctl.h>
+#endif	/* _LINUX_AUTO_DEV_IOCTL_H */

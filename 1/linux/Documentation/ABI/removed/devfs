@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:6528a53601ec021041576812702b2a78263834c9fbe7f979e68ded61f5e428f7
-size 471
+What:		devfs
+Date:		July 2005 (scheduled), finally removed in kernel v2.6.18
+Contact:	Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+Description:
+	devfs has been unmaintained for a number of years, has unfixable
+	races, contains a naming policy within the kernel that is
+	against the LSB, and can be replaced by using udev.
+	The files fs/devfs/*, include/linux/devfs_fs*.h were removed,
+	along with the assorted devfs function calls throughout the
+	kernel tree.
+
+Users:

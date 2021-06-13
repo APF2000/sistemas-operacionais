@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:8eba68b6ef365c8ae58ef540e304e3d233bc5fb6c38ed783c1a5daf562360c30
-size 290
+# Samsung pin control drivers
+
+obj-$(CONFIG_PINCTRL_SAMSUNG)	+= pinctrl-samsung.o
+obj-$(CONFIG_PINCTRL_EXYNOS)	+= pinctrl-exynos.o
+obj-$(CONFIG_PINCTRL_EXYNOS5440)	+= pinctrl-exynos5440.o
+obj-$(CONFIG_PINCTRL_S3C24XX)	+= pinctrl-s3c24xx.o
+obj-$(CONFIG_PINCTRL_S3C64XX)	+= pinctrl-s3c64xx.o

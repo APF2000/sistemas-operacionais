@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1dc4004561a2349ae15f2c26acf0dac2af5cf466d2ca7a9ac4732f9f382ddcbf
-size 459
+/*
+ * TS3A227E Autonous Audio Accessory Detection and Configureation Switch
+ *
+ * Copyright (C) 2014 Google, Inc.
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 2 as
+ * published by the Free Software Foundation.
+ */
+
+#ifndef _TS3A227E_H
+#define _TS3A227E_H
+
+int ts3a227e_enable_jack_detect(struct snd_soc_component *component,
+				struct snd_soc_jack *jack);
+
+#endif

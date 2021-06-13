@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a3c813b6afec16156f8f545fc50a1d597fd350992e2f2fd3b9d001a8f8d49734
-size 81
+bootsect
+bzImage
+cpustr.h
+mkcpustr
+voffset.h
+zoffset.h
+setup
+setup.bin
+setup.elf

@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b9703827002a664791d3fa6d6588815b961520137d716c30f7bb798a83b80786
-size 277
+#ifndef _XTENSA_BYTEORDER_H
+#define _XTENSA_BYTEORDER_H
+
+#ifdef __XTENSA_EL__
+#include <linux/byteorder/little_endian.h>
+#elif defined(__XTENSA_EB__)
+#include <linux/byteorder/big_endian.h>
+#else
+# error processor byte order undefined!
+#endif
+
+#endif /* _XTENSA_BYTEORDER_H */

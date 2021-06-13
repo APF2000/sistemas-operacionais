@@ -1,3 +1,22 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a4473bf7385539f9f2d0dd0f0bd0a90a5988b4516f242272fe736a856f1a37ae
-size 518
+#ifndef _ASM_SCORE_SIGCONTEXT_H
+#define _ASM_SCORE_SIGCONTEXT_H
+
+/*
+ * Keep this struct definition in sync with the sigcontext fragment
+ * in arch/score/tools/offset.c
+ */
+struct sigcontext {
+	unsigned int		sc_regmask;
+	unsigned int		sc_psr;
+	unsigned int		sc_condition;
+	unsigned long		sc_pc;
+	unsigned long		sc_regs[32];
+	unsigned int		sc_ssflags;
+	unsigned int		sc_mdceh;
+	unsigned int		sc_mdcel;
+	unsigned int		sc_ecr;
+	unsigned long		sc_ema;
+	unsigned long		sc_sigset[4];
+};
+
+#endif /* _ASM_SCORE_SIGCONTEXT_H */

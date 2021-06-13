@@ -1,3 +1,3 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5ec271f9a1a417da8570446ac4eaf0f4c1a9cfedc41c1113d31477d46e62edef
-size 153
+libperf-y += Context.o
+
+CFLAGS_Context.o += $(PYTHON_EMBED_CCOPTS) -Wno-redundant-decls -Wno-strict-prototypes -Wno-unused-parameter -Wno-nested-externs

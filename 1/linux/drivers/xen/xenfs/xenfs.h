@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:928873a76ea184bfb325a0c1ac739f5c441969cab281427150e9629937f372be
-size 237
+#ifndef _XENFS_XENBUS_H
+#define _XENFS_XENBUS_H
+
+extern const struct file_operations xsd_kva_file_ops;
+extern const struct file_operations xsd_port_file_ops;
+extern const struct file_operations xensyms_ops;
+
+#endif	/* _XENFS_XENBUS_H */

@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:593549c0d1e8411c9f22e716e5f52d12f7e668960f8922943ea38d341d0c34f2
-size 248
+config LLC
+	tristate
+	depends on NET
+
+config LLC2
+	tristate "ANSI/IEEE 802.2 LLC type 2 Support"
+	select LLC
+	help
+	  This is a Logical Link Layer type 2, connection oriented support. 
+	  Select this if you want to have support for PF_LLC sockets.

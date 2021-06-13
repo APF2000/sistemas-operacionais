@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1d737b46fdfa1c0a80f9ad8ceff89c98c08f34fa1fb7ea482a96d2a3f52bd6d7
-size 198
+#ifndef SWPHY_H
+#define SWPHY_H
+
+struct fixed_phy_status;
+
+int swphy_validate_state(const struct fixed_phy_status *state);
+int swphy_read_reg(int reg, const struct fixed_phy_status *state);
+
+#endif

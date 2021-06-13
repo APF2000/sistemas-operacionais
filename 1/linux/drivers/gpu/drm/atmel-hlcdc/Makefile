@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b82d407991523e13eef54c42a7443fad751e0be7f742f1f44b3de1cbc82e3b3f
-size 160
+atmel-hlcdc-dc-y := atmel_hlcdc_crtc.o \
+		atmel_hlcdc_dc.o \
+		atmel_hlcdc_output.o \
+		atmel_hlcdc_plane.o
+
+obj-$(CONFIG_DRM_ATMEL_HLCDC)	+= atmel-hlcdc-dc.o

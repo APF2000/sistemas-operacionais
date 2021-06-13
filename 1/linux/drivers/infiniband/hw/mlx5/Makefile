@@ -1,3 +1,4 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b7f6578e1735f17239cab61dfa7daa17d1dd810214d2599b23d694f3416574ec
-size 190
+obj-$(CONFIG_MLX5_INFINIBAND)	+= mlx5_ib.o
+
+mlx5_ib-y :=	main.o cq.o doorbell.o qp.o mem.o srq.o mr.o ah.o mad.o gsi.o ib_virt.o cmd.o
+mlx5_ib-$(CONFIG_INFINIBAND_ON_DEMAND_PAGING) += odp.o

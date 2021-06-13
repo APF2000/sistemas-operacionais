@@ -1,3 +1,31 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e40dfe7d9fafe329903de35eaba9d03f17c51ee56cfe6950649e43e15dc77f6a
-size 744
+#include <linux/phy/phy.h>
+
+/**
+ * Helper that registers PHY for a ULPI device and adds a lookup for binding it
+ * and it's controller, which is always the parent.
+ */
+static inline struct phy
+*ulpi_phy_create(struct ulpi *ulpi, const struct phy_ops *ops)
+{
+	struct phy *phy;
+	int ret;
+
+	phy = phy_create(&ulpi->dev, NULL, ops);
+	if (IS_ERR(phy))
+		return phy;
+
+	ret = phy_create_lookup(phy, "usb2-phy", dev_name(ulpi->dev.parent));
+	if (ret) {
+		phy_destroy(phy);
+		return ERR_PTR(ret);
+	}
+
+	return phy;
+}
+
+/* Remove a PHY that was created with ulpi_phy_create() and it's lookup. */
+static inline void ulpi_phy_destroy(struct ulpi *ulpi, struct phy *phy)
+{
+	phy_remove_lookup(phy, "usb2-phy", dev_name(ulpi->dev.parent));
+	phy_destroy(phy);
+}

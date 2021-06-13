@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:727113d1e1fa579e64b541c2d11114db4b491f08f9a51e467fbfb23f85d39def
-size 325
+WM8737 audio CODEC
+
+This device supports both I2C and SPI (configured with pin strapping
+on the board).
+
+Required properties:
+
+  - compatible : "wlf,wm8737"
+
+  - reg : the I2C address of the device for I2C, the chip select
+          number for SPI.
+
+Example:
+
+codec: wm8737@1a {
+	compatible = "wlf,wm8737";
+	reg = <0x1a>;
+};

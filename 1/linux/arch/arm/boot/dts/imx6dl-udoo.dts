@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:605f9897a5db6f4761bf12121b13e8d6610afab3af677a9fced7922b1eadbc6c
-size 463
+/*
+ * Copyright 2013 Freescale Semiconductor, Inc.
+ *
+ * Author: Fabio Estevam <fabio.estevam@freescale.com>
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 2 as
+ * published by the Free Software Foundation.
+ *
+ */
+/dts-v1/;
+#include "imx6dl.dtsi"
+#include "imx6qdl-udoo.dtsi"
+
+/ {
+	model = "Udoo i.MX6 Dual-lite Board";
+	compatible = "udoo,imx6dl-udoo", "fsl,imx6dl";
+};

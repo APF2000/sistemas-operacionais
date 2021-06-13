@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2d7090185f35ca226406376d3da7b378f8f91707c3ab409558ecdcf5cc22e3f3
-size 191
+obj-$(CONFIG_USB_BDC_UDC)	+= bdc.o
+bdc-y	:= bdc_core.o bdc_cmd.o bdc_ep.o bdc_udc.o
+
+ifneq ($(CONFIG_USB_GADGET_VERBOSE),)
+	bdc-y			+= bdc_dbg.o
+endif
+
+obj-$(CONFIG_USB_BDC_PCI)	+= bdc_pci.o

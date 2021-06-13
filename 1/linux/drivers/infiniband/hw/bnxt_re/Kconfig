@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f98d124fbe3566828b1c07ebd59025c5bacbfdf1e1b3c1e8403ec1c7aa73600a
-size 363
+config INFINIBAND_BNXT_RE
+    tristate "Broadcom Netxtreme HCA support"
+    depends on ETHERNET && NETDEVICES && PCI && INET && DCB
+    select NET_VENDOR_BROADCOM
+    select BNXT
+    ---help---
+	  This driver supports Broadcom NetXtreme-E 10/25/40/50 gigabit
+	  RoCE HCAs.  To compile this driver as a module, choose M here:
+	  the module will be called bnxt_re.

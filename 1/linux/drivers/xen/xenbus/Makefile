@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d92784eba913aaa39e7b551e65e5a251bdd5ee4a5ae8851b85d0eae5b6bf1fda
-size 393
+obj-y	+= xenbus.o
+obj-y	+= xenbus_dev_frontend.o
+
+xenbus-objs =
+xenbus-objs += xenbus_client.o
+xenbus-objs += xenbus_comms.o
+xenbus-objs += xenbus_xs.o
+xenbus-objs += xenbus_probe.o
+
+xenbus-be-objs-$(CONFIG_XEN_BACKEND) += xenbus_probe_backend.o
+xenbus-objs += $(xenbus-be-objs-y)
+
+obj-$(CONFIG_XEN_BACKEND) += xenbus_dev_backend.o
+obj-$(CONFIG_XEN_XENBUS_FRONTEND) += xenbus_probe_frontend.o

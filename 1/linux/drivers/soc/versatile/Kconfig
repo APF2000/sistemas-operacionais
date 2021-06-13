@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c3b4f59bd09a500deaf9b945978cb4eefafef2adf36a52a43f690b87de1438df
-size 565
+#
+# ARM Versatile SoC drivers
+#
+config SOC_INTEGRATOR_CM
+	bool "SoC bus device for the ARM Integrator platform core modules"
+	depends on ARCH_INTEGRATOR
+	select SOC_BUS
+	help
+	  Include support for the SoC bus on the ARM Integrator platform
+	  core modules providing some sysfs information about the ASIC
+	  variant.
+
+config SOC_REALVIEW
+	bool "SoC bus device for the ARM RealView platforms"
+	depends on ARCH_REALVIEW
+	select SOC_BUS
+	help
+	  Include support for the SoC bus on the ARM RealView platforms
+	  providing some sysfs information about the ASIC variant.

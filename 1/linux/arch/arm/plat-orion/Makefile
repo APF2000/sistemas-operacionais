@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:976558869a3776361143f5720277c0b4cc4e92cf02d1b124e9c85958ad5508f5
-size 275
+#
+# Makefile for the linux kernel.
+#
+ccflags-$(CONFIG_ARCH_MULTIPLATFORM) := -I$(srctree)/$(src)/include
+
+orion-gpio-$(CONFIG_GPIOLIB)      += gpio.o
+obj-$(CONFIG_PLAT_ORION_LEGACY)   += irq.o pcie.o time.o common.o mpp.o
+obj-$(CONFIG_PLAT_ORION_LEGACY)   += $(orion-gpio-y)

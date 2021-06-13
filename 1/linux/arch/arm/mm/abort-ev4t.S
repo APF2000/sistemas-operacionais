@@ -1,3 +1,27 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:9817aad286ad729562fa900cf95c0ef6d4313561df99eb82f57c557586485931
-size 846
+#include <linux/linkage.h>
+#include <asm/assembler.h>
+#include "abort-macro.S"
+/*
+ * Function: v4t_early_abort
+ *
+ * Params  : r2 = pt_regs
+ *	   : r4 = aborted context pc
+ *	   : r5 = aborted context psr
+ *
+ * Returns : r4 - r11, r13 preserved
+ *
+ * Purpose : obtain information about current aborted instruction.
+ * Note: we read user space.  This means we might cause a data
+ * abort here if the I-TLB and D-TLB aren't seeing the same
+ * picture.  Unfortunately, this does happen.  We live with it.
+ */
+	.align	5
+ENTRY(v4t_early_abort)
+	mrc	p15, 0, r1, c5, c0, 0		@ get FSR
+	mrc	p15, 0, r0, c6, c0, 0		@ get FAR
+	do_thumb_abort fsr=r1, pc=r4, psr=r5, tmp=r3
+	ldreq	r3, [r4]			@ read aborted ARM instruction
+	bic	r1, r1, #1 << 11 | 1 << 10	@ clear bits 11 and 10 of FSR
+	tst	r3, #1 << 20			@ check write
+	orreq	r1, r1, #1 << 11
+	b	do_DataAbort

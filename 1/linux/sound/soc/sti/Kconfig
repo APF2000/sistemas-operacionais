@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5519168665cdb2efd0ae968fe412abc71a42942ca7556c573c797de56a978070
-size 301
+#
+# STM SoC audio configuration
+#
+menuconfig SND_SOC_STI
+	tristate "SoC Audio support for STI System-On-Chip"
+	depends on SND_SOC
+	depends on ARCH_STI || COMPILE_TEST
+	select SND_SOC_GENERIC_DMAENGINE_PCM
+	help
+		Say Y if you want to enable ASoC-support for
+		any of the STI platforms (e.g. STIH416).

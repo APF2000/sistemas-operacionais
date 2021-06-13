@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c18bd2d4347d68a54b756519856d831000cf6c473dc644f2b73ccdeecf741761
-size 246
+The modular sound driver patches were funded by Red Hat Software 
+(www.redhat.com). The sound driver here is thus a modified version of 
+Hannu's code. Please bear that in mind when considering the appropriate
+forums for bug reporting. 
+
+Alan Cox

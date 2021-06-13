@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:9f9bc75bea7a561fabb549b312d4ede426579f130a0dc4fe2bdf18e30eb147b5
-size 268
+/*
+ * Broadcom Northstar NAND.
+ *
+ * Copyright (C) 2016 Rafał Miłecki <rafal.milecki@gmail.com>
+ *
+ * Licensed under the ISC license.
+ */
+
+#include "bcm5301x-nand-cs0.dtsi"
+
+&nandcs {
+	nand-ecc-algo = "bch";
+	nand-ecc-strength = <1>;
+	nand-ecc-step-size = <512>;
+};

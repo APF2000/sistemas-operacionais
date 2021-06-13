@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:53500040a708a4a44d0af486e11e853f3dc95c6d82adcc4fc1b85d2338dfaf3b
-size 511
+ROCKCHIP with RT5645/RT5650 CODECS
+
+Required properties:
+- compatible: "rockchip,rockchip-audio-rt5645"
+- rockchip,model: The user-visible name of this sound complex
+- rockchip,i2s-controller: The phandle of the Rockchip I2S controller that's
+  connected to the CODEC
+- rockchip,audio-codec: The phandle of the RT5645/RT5650 audio codec
+
+Example:
+
+sound {
+	compatible = "rockchip,rockchip-audio-rt5645";
+	rockchip,model = "ROCKCHIP-I2S";
+	rockchip,i2s-controller = <&i2s>;
+	rockchip,audio-codec = <&rt5645>;
+};

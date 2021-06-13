@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e07827a582d1d483cbf91fcebfc23e574a09e860d01c1e65d8608e7ce2b34e99
-size 372
+/*
+ * This file is subject to the terms and conditions of the GNU General Public
+ * License.  See the file "COPYING" in the main directory of this archive
+ * for more details.
+ *
+ * Copyright (c) 2002-2003 Silicon Graphics, Inc.  All Rights Reserved.
+ */
+
+#define MACHVEC_PLATFORM_NAME	sn2
+#define MACHVEC_PLATFORM_HEADER	<asm/machvec_sn2.h>
+#include <asm/machvec_init.h>

@@ -1,3 +1,20 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:bb1f61cba64d7c84c87ef43a42707a75b23fd468af0e591c7ad467c8865fcafa
-size 522
+#
+# Kbuild for the OSD modules
+#
+# Copyright (C) 2008 Panasas Inc.  All rights reserved.
+#
+# Authors:
+#   Boaz Harrosh <ooo@electrozaur.com>
+#   Benny Halevy <bhalevy@panasas.com>
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License version 2
+#
+
+# libosd.ko - osd-initiator library
+libosd-y := osd_initiator.o
+obj-$(CONFIG_SCSI_OSD_INITIATOR) += libosd.o
+
+# osd.ko - SCSI ULD and char-device
+osd-y := osd_uld.o
+obj-$(CONFIG_SCSI_OSD_ULD) += osd.o

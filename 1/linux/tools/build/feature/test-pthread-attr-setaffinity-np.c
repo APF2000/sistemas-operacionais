@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:27c8d718ab5fc4bcfc170aa9f0da2aed9077d1c073d660732b59c8bc4b753d76
-size 271
+#include <stdint.h>
+#include <pthread.h>
+#include <sched.h>
+
+int main(void)
+{
+	int ret = 0;
+	pthread_attr_t thread_attr;
+	cpu_set_t cs;
+
+	pthread_attr_init(&thread_attr);
+	CPU_ZERO(&cs);
+
+	ret = pthread_attr_setaffinity_np(&thread_attr, sizeof(cs), &cs);
+
+	return ret;
+}

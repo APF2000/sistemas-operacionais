@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:7f23d3c3bfc498ff5bc0b7aff15403a602884aeae9cf689e474eaefcae98601f
-size 256
+/*
+ * Packet network namespace
+ */
+#ifndef __NETNS_PACKET_H__
+#define __NETNS_PACKET_H__
+
+#include <linux/rculist.h>
+#include <linux/mutex.h>
+
+struct netns_packet {
+	struct mutex		sklist_lock;
+	struct hlist_head	sklist;
+};
+
+#endif /* __NETNS_PACKET_H__ */

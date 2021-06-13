@@ -1,3 +1,25 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:320a38795f73c92b4ae49b177bac8d6eadcd077ebb1df14d07739f84ac5662b2
-size 708
+#
+# S/390 block devices
+#
+
+dasd_eckd_mod-objs := dasd_eckd.o dasd_3990_erp.o dasd_alias.o
+dasd_fba_mod-objs  := dasd_fba.o
+dasd_diag_mod-objs := dasd_diag.o
+dasd_mod-objs      := dasd.o dasd_ioctl.o dasd_proc.o dasd_devmap.o \
+			dasd_genhd.o dasd_erp.o
+ifdef CONFIG_DASD_EER
+dasd_mod-objs      += dasd_eer.o
+endif
+
+obj-$(CONFIG_DASD) += dasd_mod.o
+obj-$(CONFIG_DASD_DIAG) += dasd_diag_mod.o
+obj-$(CONFIG_DASD_ECKD) += dasd_eckd_mod.o
+obj-$(CONFIG_DASD_FBA)  += dasd_fba_mod.o
+obj-$(CONFIG_BLK_DEV_XPRAM) += xpram.o
+obj-$(CONFIG_DCSSBLK) += dcssblk.o
+
+scm_block-objs := scm_drv.o scm_blk.o
+ifdef CONFIG_SCM_BLOCK_CLUSTER_WRITE
+scm_block-objs += scm_blk_cluster.o
+endif
+obj-$(CONFIG_SCM_BLOCK) += scm_block.o

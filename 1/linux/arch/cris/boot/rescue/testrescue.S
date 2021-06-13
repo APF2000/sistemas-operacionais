@@ -1,3 +1,24 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:be5bc3d1ed4d2d90b33ba7a27edaf72b5a374102b9a044c5b180df588dd9631e
-size 369
+/*
+ * Simple testcode to download by the rescue block.
+ * Just lights some LEDs to show it was downloaded correctly.
+ *
+ * Copyright (C) 1999 Axis Communications AB
+ */
+
+#define ASSEMBLER_MACROS_ONLY
+#include <arch/sv_addr_ag.h>
+
+	.text
+
+	nop
+	nop
+	moveq	-1, $r2
+	move.b	$r2, [R_PORT_PA_DIR]
+	moveq	0, $r2
+	move.b	$r2, [R_PORT_PA_DATA]
+
+endless:
+	nop
+	ba	endless
+	nop
+

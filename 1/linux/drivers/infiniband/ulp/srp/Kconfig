@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:701b9f86461e8d3a0f3587d47a3b7b2cfc2dca40050411bcbc02395fce86dbb8
-size 355
+config INFINIBAND_SRP
+	tristate "InfiniBand SCSI RDMA Protocol"
+	depends on SCSI
+	select SCSI_SRP_ATTRS
+	---help---
+	  Support for the SCSI RDMA Protocol over InfiniBand.  This
+	  allows you to access storage devices that speak SRP over
+	  InfiniBand.
+
+	  The SRP protocol is defined by the INCITS T10 technical
+	  committee.  See <http://www.t10.org/>.
+

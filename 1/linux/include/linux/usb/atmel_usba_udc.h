@@ -1,3 +1,23 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:588ece15e9c3a838e18e688c0d2efed8a3dfcf38a69751e5d956da2bfca7be3c
-size 382
+/*
+ * Platform data definitions for Atmel USBA gadget driver.
+ */
+#ifndef __LINUX_USB_USBA_H
+#define __LINUX_USB_USBA_H
+
+struct usba_ep_data {
+	char	*name;
+	int	index;
+	int	fifo_size;
+	int	nr_banks;
+	int	can_dma;
+	int	can_isoc;
+};
+
+struct usba_platform_data {
+	int			vbus_pin;
+	int			vbus_pin_inverted;
+	int			num_ep;
+	struct usba_ep_data	ep[0];
+};
+
+#endif /* __LINUX_USB_USBA_H */

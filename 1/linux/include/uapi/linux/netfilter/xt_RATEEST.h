@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:7a46a91b8a02dee29dff66f983c387c0bc11411f9a8d3d28f7e96f19c2d90421
-size 327
+#ifndef _XT_RATEEST_TARGET_H
+#define _XT_RATEEST_TARGET_H
+
+#include <linux/types.h>
+#include <linux/if.h>
+
+struct xt_rateest_target_info {
+	char			name[IFNAMSIZ];
+	__s8			interval;
+	__u8		ewma_log;
+
+	/* Used internally by the kernel */
+	struct xt_rateest	*est __attribute__((aligned(8)));
+};
+
+#endif /* _XT_RATEEST_TARGET_H */

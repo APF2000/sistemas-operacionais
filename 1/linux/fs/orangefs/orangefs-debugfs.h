@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:833d50f92b778992c1db62cba4c1ebd1085b5761f7d394d2dda46d38fd77bde5
-size 309
+int orangefs_debugfs_init(int);
+void orangefs_debugfs_cleanup(void);
+int orangefs_client_debug_init(void);
+int orangefs_prepare_debugfs_help_string(int);
+int orangefs_debugfs_new_client_mask(void __user *);
+int orangefs_debugfs_new_client_string(void __user *);
+int orangefs_debugfs_new_debug(void __user *);

@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f5d8034d8dfbdcfdfcb3f59e898e1d1628c77cd1ba7c563cbbf5828746c1502e
-size 367
+#ifndef __ALPHA_SWITCH_TO_H
+#define __ALPHA_SWITCH_TO_H
+
+
+struct task_struct;
+extern struct task_struct *alpha_switch_to(unsigned long, struct task_struct *);
+
+#define switch_to(P,N,L)						 \
+  do {									 \
+    (L) = alpha_switch_to(virt_to_phys(&task_thread_info(N)->pcb), (P)); \
+    check_mmu_context();						 \
+  } while (0)
+
+#endif /* __ALPHA_SWITCH_TO_H */

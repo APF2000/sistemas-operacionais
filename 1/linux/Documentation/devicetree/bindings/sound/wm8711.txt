@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2377f44b723e67021c88e38003bb0494b4c465d6160de89d6a94736d3d70b349
-size 325
+WM8711 audio CODEC
+
+This device supports both I2C and SPI (configured with pin strapping
+on the board).
+
+Required properties:
+
+  - compatible : "wlf,wm8711"
+
+  - reg : the I2C address of the device for I2C, the chip select
+          number for SPI.
+
+Example:
+
+codec: wm8711@1a {
+	compatible = "wlf,wm8711";
+	reg = <0x1a>;
+};

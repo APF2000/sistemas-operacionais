@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:aeb437047119b5f57c7b998c50ace56593321871fdf780e39af4b9baad9b0dec
-size 255
+#
+# RapidIO master port configuration
+#
+
+config RAPIDIO_TSI721
+	tristate "IDT Tsi721 PCI Express SRIO Controller support"
+	depends on RAPIDIO && PCIEPORTBUS
+	default "n"
+	---help---
+	  Include support for IDT Tsi721 PCI Express Serial RapidIO controller.

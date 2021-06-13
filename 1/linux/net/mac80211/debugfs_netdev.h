@@ -1,3 +1,24 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:93387c7290c88d8b5dc305027aacac47498359bafa4f59cdf24714360b259cc8
-size 732
+/* routines exported for debugfs handling */
+
+#ifndef __IEEE80211_DEBUGFS_NETDEV_H
+#define __IEEE80211_DEBUGFS_NETDEV_H
+
+#include "ieee80211_i.h"
+
+#ifdef CONFIG_MAC80211_DEBUGFS
+void ieee80211_debugfs_add_netdev(struct ieee80211_sub_if_data *sdata);
+void ieee80211_debugfs_remove_netdev(struct ieee80211_sub_if_data *sdata);
+void ieee80211_debugfs_rename_netdev(struct ieee80211_sub_if_data *sdata);
+#else
+static inline void ieee80211_debugfs_add_netdev(
+	struct ieee80211_sub_if_data *sdata)
+{}
+static inline void ieee80211_debugfs_remove_netdev(
+	struct ieee80211_sub_if_data *sdata)
+{}
+static inline void ieee80211_debugfs_rename_netdev(
+	struct ieee80211_sub_if_data *sdata)
+{}
+#endif
+
+#endif /* __IEEE80211_DEBUGFS_NETDEV_H */

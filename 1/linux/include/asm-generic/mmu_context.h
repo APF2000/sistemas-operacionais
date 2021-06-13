@@ -1,3 +1,45 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:56278fd04c5b61f9bdd125ed53e466c9a75ec677354b7c2139d4df0793d383f7
-size 842
+#ifndef __ASM_GENERIC_MMU_CONTEXT_H
+#define __ASM_GENERIC_MMU_CONTEXT_H
+
+/*
+ * Generic hooks for NOMMU architectures, which do not need to do
+ * anything special here.
+ */
+
+#include <asm-generic/mm_hooks.h>
+
+struct task_struct;
+struct mm_struct;
+
+static inline void enter_lazy_tlb(struct mm_struct *mm,
+			struct task_struct *tsk)
+{
+}
+
+static inline int init_new_context(struct task_struct *tsk,
+			struct mm_struct *mm)
+{
+	return 0;
+}
+
+static inline void destroy_context(struct mm_struct *mm)
+{
+}
+
+static inline void deactivate_mm(struct task_struct *task,
+			struct mm_struct *mm)
+{
+}
+
+static inline void switch_mm(struct mm_struct *prev,
+			struct mm_struct *next,
+			struct task_struct *tsk)
+{
+}
+
+static inline void activate_mm(struct mm_struct *prev_mm,
+			       struct mm_struct *next_mm)
+{
+}
+
+#endif /* __ASM_GENERIC_MMU_CONTEXT_H */

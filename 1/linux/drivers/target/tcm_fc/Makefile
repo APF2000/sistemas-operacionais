@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e9b85d982b42ba5af3fc50a760788253abce919bbef6383e4a27e922f4d2e2ea
-size 103
+tcm_fc-y +=		tfc_cmd.o \
+			tfc_conf.o \
+			tfc_io.o \
+			tfc_sess.o
+
+obj-$(CONFIG_TCM_FC)	+= tcm_fc.o

@@ -1,3 +1,4 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:10e09cce3c0798236cf209e0e87ed0f6d8bba47c494bd5b89605e5482a0175f0
-size 170
+obj-$(CONFIG_RPMSG)		+= rpmsg_core.o
+obj-$(CONFIG_RPMSG_CHAR)	+= rpmsg_char.o
+obj-$(CONFIG_RPMSG_QCOM_SMD)	+= qcom_smd.o
+obj-$(CONFIG_RPMSG_VIRTIO)	+= virtio_rpmsg_bus.o

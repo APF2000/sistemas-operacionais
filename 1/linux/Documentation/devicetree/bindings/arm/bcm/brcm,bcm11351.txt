@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b5d9ed8b44b29cb1ed8df6f652a0af38a6aee0c05cbdbe9bc0589b0b05b18191
-size 330
+Broadcom BCM11351 device tree bindings
+-------------------------------------------
+
+Boards with the bcm281xx SoC family (which includes bcm11130, bcm11140,
+bcm11351, bcm28145, bcm28155 SoCs) shall have the following properties:
+
+Required root node property:
+
+compatible = "brcm,bcm11351";
+DEPRECATED: compatible = "bcm,bcm11351";

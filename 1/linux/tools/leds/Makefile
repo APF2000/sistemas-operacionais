@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b8aae9d1da2a2aaf5c74dadf43546109f1e8140b6ea3f0fb4c9ecef91f5fdda7
-size 232
+# Makefile for LEDs tools
+
+CC = $(CROSS_COMPILE)gcc
+CFLAGS = -Wall -Wextra -g -I../../include/uapi
+
+all: uledmon led_hw_brightness_mon
+%: %.c
+	$(CC) $(CFLAGS) -o $@ $^
+
+clean:
+	$(RM) uledmon led_hw_brightness_mon
+
+.PHONY: all clean

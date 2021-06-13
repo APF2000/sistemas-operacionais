@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:dcfee73a0900a8a8d8b8c583257538fe141a5ebf08002679936070337d27f6c4
-size 160
+#
+# Makefile for the linux journaling routines.
+#
+
+obj-$(CONFIG_JBD2) += jbd2.o
+
+jbd2-objs := transaction.o commit.o recovery.o checkpoint.o revoke.o journal.o

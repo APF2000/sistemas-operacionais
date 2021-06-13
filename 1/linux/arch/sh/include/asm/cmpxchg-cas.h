@@ -1,3 +1,24 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5b3b98d34cd7f299a1a9e5568ab08a30547141d5d84d0c7e8c6d9fc723c1c9f8
-size 510
+#ifndef __ASM_SH_CMPXCHG_CAS_H
+#define __ASM_SH_CMPXCHG_CAS_H
+
+static inline unsigned long
+__cmpxchg_u32(volatile u32 *m, unsigned long old, unsigned long new)
+{
+	__asm__ __volatile__("cas.l %1,%0,@r0"
+		: "+r"(new)
+		: "r"(old), "z"(m)
+		: "t", "memory" );
+	return new;
+}
+
+static inline unsigned long xchg_u32(volatile u32 *m, unsigned long val)
+{
+	unsigned long old;
+	do old = *m;
+	while (__cmpxchg_u32(m, old, val) != old);
+	return old;
+}
+
+#include <asm/cmpxchg-xchg.h>
+
+#endif /* __ASM_SH_CMPXCHG_CAS_H */

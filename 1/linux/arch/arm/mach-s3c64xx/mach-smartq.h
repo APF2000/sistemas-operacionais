@@ -1,3 +1,20 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d876c62f5f69a8b45101ce1184e2a73a06695eeed77e198cf9fb69b4f240eaa9
-size 488
+/*
+ * linux/arch/arm/mach-s3c64xx/mach-smartq.h
+ *
+ * Copyright (C) 2010 Maurus Cuelenaere
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 2 as
+ * published by the Free Software Foundation.
+ *
+ */
+
+#ifndef __MACH_SMARTQ_H
+#define __MACH_SMARTQ_H __FILE__
+
+#include <linux/init.h>
+
+extern void __init smartq_map_io(void);
+extern void __init smartq_machine_init(void);
+
+#endif /* __MACH_SMARTQ_H */

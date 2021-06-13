@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:3cf9ac1c97811f6239c4aef1ef2c9b221854b5ede1bdcf5e09188993d3058af6
-size 294
+
+
+generated-y += syscalls_32.h
+generated-y += syscalls_64.h
+generated-y += unistd_32_ia32.h
+generated-y += unistd_64_x32.h
+generated-y += xen-hypercalls.h
+
+generic-y += clkdev.h
+generic-y += dma-contiguous.h
+generic-y += early_ioremap.h
+generic-y += mcs_spinlock.h
+generic-y += mm-arch-hooks.h

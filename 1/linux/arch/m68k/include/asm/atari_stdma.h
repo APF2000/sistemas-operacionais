@@ -1,3 +1,22 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:013cd52329a01f9bc517dde948d85fa9cb8d212c3dac0184706354b59bbba6d1
-size 475
+
+#ifndef _atari_stdma_h
+#define _atari_stdma_h
+
+
+#include <linux/interrupt.h>
+
+
+/***************************** Prototypes *****************************/
+
+int stdma_try_lock(irq_handler_t, void *);
+void stdma_lock(irq_handler_t handler, void *data);
+void stdma_release( void );
+int stdma_islocked( void );
+int stdma_is_locked_by(irq_handler_t);
+void stdma_init( void );
+
+/************************* End of Prototypes **************************/
+
+
+
+#endif  /* _atari_stdma_h */

@@ -1,3 +1,20 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:77b2fffb01c8ce5347a81912e85574a4f0dc93938d6446e936b88045b8e1536d
-size 528
+Widgets:
+
+This mainly specifies audio off-codec DAPM widgets.
+
+Each entry is a pair of strings in DT:
+
+	"template-wname", "user-supplied-wname"
+
+The "template-wname" being the template widget name and currently includes:
+"Microphone", "Line", "Headphone" and "Speaker".
+
+The "user-supplied-wname" being the user specified widget name.
+
+For instance:
+	simple-audio-widgets =
+		"Microphone", "Microphone Jack",
+		"Line", "Line In Jack",
+		"Line", "Line Out Jack",
+		"Headphone", "Headphone Jack",
+		"Speaker", "Speaker External";

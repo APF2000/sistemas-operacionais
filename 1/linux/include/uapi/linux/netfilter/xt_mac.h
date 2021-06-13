@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c2a7a467194a5b159e197724f07a89e19e717c95af2ca9c8d1d6f1217edecd6d
-size 164
+#ifndef _XT_MAC_H
+#define _XT_MAC_H
+
+#include <linux/if_ether.h>
+
+struct xt_mac_info {
+    unsigned char srcaddr[ETH_ALEN];
+    int invert;
+};
+#endif /*_XT_MAC_H*/

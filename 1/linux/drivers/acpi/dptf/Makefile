@@ -1,3 +1,4 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:30d56db419a5c639576409b8fe71b4e9a63334e61261ce05fe4100cfee707577
-size 122
+obj-$(CONFIG_ACPI)             += int340x_thermal.o
+obj-$(CONFIG_DPTF_POWER)	+= dptf_power.o
+
+ccflags-y += -Idrivers/acpi

@@ -1,3 +1,29 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4f415ea1894b7b2147248a99da80fc50c44542dbb3d0dbe18aaf8a028cdca96f
-size 650
+#ifndef __ASM_IDLE_H
+#define __ASM_IDLE_H
+
+#include <linux/cpuidle.h>
+#include <linux/linkage.h>
+
+extern void (*cpu_wait)(void);
+extern void r4k_wait(void);
+extern asmlinkage void __r4k_wait(void);
+extern void r4k_wait_irqoff(void);
+
+static inline int using_rollback_handler(void)
+{
+	return cpu_wait == r4k_wait;
+}
+
+extern int mips_cpuidle_wait_enter(struct cpuidle_device *dev,
+				   struct cpuidle_driver *drv, int index);
+
+#define MIPS_CPUIDLE_WAIT_STATE {\
+	.enter			= mips_cpuidle_wait_enter,\
+	.exit_latency		= 1,\
+	.target_residency	= 1,\
+	.power_usage		= UINT_MAX,\
+	.name			= "wait",\
+	.desc			= "MIPS wait",\
+}
+
+#endif /* __ASM_IDLE_H  */

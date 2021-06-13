@@ -1,3 +1,21 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a573dce16ffadc60dbd29106bb0e351ab211da36cd7630cd7b8a1466e349f552
-size 544
+Freebird-1.1 is produced by Legend(C), Inc.
+http://web.archive.org/web/*/http://www.legend.com.cn
+and software/linux maintained by Coventive(C), Inc.
+(http://www.coventive.com)
+
+Based on the Nicolas's strongarm kernel tree.
+
+===============================================================
+Maintainer:
+
+Chester Kuo <chester@coventive.com>
+	    <chester@linux.org.tw>
+
+Author :
+Tim wu <timwu@coventive.com>
+CIH <cih@coventive.com>
+Eric Peng <ericpeng@coventive.com>
+Jeff Lee <jeff_lee@coventive.com>
+Allen Cheng
+Tony Liu <tonyliu@coventive.com>
+

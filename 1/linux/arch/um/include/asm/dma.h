@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:37f55545e7173b5c533c682db167e52ccf892ae39dc274236d1a18e7a4c2984d
-size 141
+#ifndef __UM_DMA_H
+#define __UM_DMA_H
+
+#include <asm/io.h>
+
+extern unsigned long uml_physmem;
+
+#define MAX_DMA_ADDRESS (uml_physmem)
+
+#endif

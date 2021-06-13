@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2dbdaf27a0e9400881d13788a103ba66f9a993ac4380d7a647570711e267dbf8
-size 191
+#include <linux/types.h>
+#include <linux/errno.h>
+#include <linux/uaccess.h>
+
+int
+frsqrte(void *frD, void *frB)
+{
+#ifdef DEBUG
+	printk("%s: %p %p\n", __func__, frD, frB);
+#endif
+	return 0;
+}

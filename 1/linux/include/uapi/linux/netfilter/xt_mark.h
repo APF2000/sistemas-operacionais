@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:9500d5e463a9d49ae27aeb6fff919938497fc83d3a1b79d29bebac4e1d3cfe42
-size 197
+#ifndef _XT_MARK_H
+#define _XT_MARK_H
+
+#include <linux/types.h>
+
+struct xt_mark_tginfo2 {
+	__u32 mark, mask;
+};
+
+struct xt_mark_mtinfo1 {
+	__u32 mark, mask;
+	__u8 invert;
+};
+
+#endif /*_XT_MARK_H*/

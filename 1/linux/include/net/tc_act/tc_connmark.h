@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:9650d688da5ea10f1a27941cb89ca2b7f7ca12388d0379dae825bf4d4b187324
-size 258
+#ifndef __NET_TC_CONNMARK_H
+#define __NET_TC_CONNMARK_H
+
+#include <net/act_api.h>
+
+struct tcf_connmark_info {
+	struct tc_action common;
+	struct net *net;
+	u16 zone;
+};
+
+#define to_connmark(a) ((struct tcf_connmark_info *)a)
+
+#endif /* __NET_TC_CONNMARK_H */

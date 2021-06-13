@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:0366838a6e8216c0c63f181cb83cf6c9f6244197379700924272a4cfc85a9201
-size 205
+#ifndef _ASM_FB_H_
+#define _ASM_FB_H_
+#include <linux/fb.h>
+
+#define fb_pgprotect(...) do {} while (0)
+
+static inline int fb_is_primary_device(struct fb_info *info)
+{
+	return 0;
+}
+
+#endif /* _ASM_FB_H_ */

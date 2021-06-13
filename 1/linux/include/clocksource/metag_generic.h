@@ -1,3 +1,21 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a950f949c58126da2fb865d82562c1b60da5255d608bd4c0385ef7d070f3e7aa
-size 800
+/*
+ * Copyright (C) 2013 Imaginaton Technologies Ltd.
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 2 as
+ * published by the Free Software Foundation.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+#ifndef __CLKSOURCE_METAG_GENERIC_H
+#define __CLKSOURCE_METAG_GENERIC_H
+
+extern int metag_generic_timer_init(void);
+
+#endif /* __CLKSOURCE_METAG_GENERIC_H */

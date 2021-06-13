@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:256e36cff52d6a9c4b3c1c1ebbea178963f8ff8b69cb4963cb90f7d41ccc6d7b
-size 284
+#include <linux/syscalls.h>
+#include <linux/signal.h>
+#include <linux/unistd.h>
+
+#undef __SYSCALL
+#define __SYSCALL(nr, call) [nr] = (call),
+
+#define sys_mmap2 sys_mmap_pgoff
+
+asmlinkage int sys_rt_sigreturn(void);
+
+void *_sys_call_table[__NR_syscalls] = {
+#include <asm/unistd.h>
+};

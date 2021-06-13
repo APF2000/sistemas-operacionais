@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:037660502ded250b588f44c8afe01f678e83f954d093d5ec1dcb6a6227655b80
-size 333
+config ARCH_ALPINE
+	bool "Annapurna Labs Alpine platform"
+	depends on ARCH_MULTI_V7
+	select ALPINE_MSI
+	select ARM_AMBA
+	select ARM_GIC
+	select GENERIC_IRQ_CHIP
+	select HAVE_ARM_ARCH_TIMER
+	select HAVE_SMP
+	select MFD_SYSCON
+	select PCI
+	select PCI_HOST_GENERIC
+	help
+	  This enables support for the Annapurna Labs Alpine V1 boards.

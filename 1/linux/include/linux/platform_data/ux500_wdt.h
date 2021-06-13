@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1532599c2100a0b5dbc11e0cda8bd40c3a0dc86a3d278ca3c3203905296b83ff
-size 320
+/*
+ * Copyright (C) ST Ericsson SA 2011
+ *
+ * License Terms: GNU General Public License v2
+ *
+ * STE Ux500 Watchdog platform data
+ */
+#ifndef __UX500_WDT_H
+#define __UX500_WDT_H
+
+/**
+ * struct ux500_wdt_data
+ */
+struct ux500_wdt_data {
+	unsigned int timeout;
+	bool has_28_bits_resolution;
+};
+
+#endif /* __UX500_WDT_H */

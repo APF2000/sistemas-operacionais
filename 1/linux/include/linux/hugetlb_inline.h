@@ -1,3 +1,22 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:cb6cda10adfed977c1300d3ed38b61b6fc051dad646f881e2a96df2ed1de44ee
-size 335
+#ifndef _LINUX_HUGETLB_INLINE_H
+#define _LINUX_HUGETLB_INLINE_H
+
+#ifdef CONFIG_HUGETLB_PAGE
+
+#include <linux/mm.h>
+
+static inline bool is_vm_hugetlb_page(struct vm_area_struct *vma)
+{
+	return !!(vma->vm_flags & VM_HUGETLB);
+}
+
+#else
+
+static inline bool is_vm_hugetlb_page(struct vm_area_struct *vma)
+{
+	return false;
+}
+
+#endif
+
+#endif

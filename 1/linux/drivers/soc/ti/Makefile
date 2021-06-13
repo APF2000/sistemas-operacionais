@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b4b671e96d7ad200ad17998687682a4d03b84cc9522fc4ccb4ab177bd2a32158
-size 283
+#
+# TI Keystone SOC drivers
+#
+obj-$(CONFIG_KEYSTONE_NAVIGATOR_QMSS)	+= knav_qmss.o
+knav_qmss-y := knav_qmss_queue.o knav_qmss_acc.o
+obj-$(CONFIG_KEYSTONE_NAVIGATOR_DMA)	+= knav_dma.o
+obj-$(CONFIG_WKUP_M3_IPC)		+= wkup_m3_ipc.o
+obj-$(CONFIG_TI_SCI_PM_DOMAINS)		+= ti_sci_pm_domains.o

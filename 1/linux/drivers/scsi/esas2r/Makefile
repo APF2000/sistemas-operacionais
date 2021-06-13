@@ -1,3 +1,5 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:6af9ecc6c8664eba15babc578ea9823f42bbe150992d9d304a3a98214b994912
-size 203
+obj-$(CONFIG_SCSI_ESAS2R)	+= esas2r.o
+
+esas2r-objs := esas2r_log.o esas2r_disc.o esas2r_flash.o esas2r_init.o \
+	 esas2r_int.o esas2r_io.o esas2r_ioctl.o esas2r_targdb.o   \
+	 esas2r_vda.o esas2r_main.o

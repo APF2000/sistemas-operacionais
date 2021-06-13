@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d338fa18063b92d91aecbdc537b02593a0053e770188c1175dadf67a3e9721c8
-size 464
+#
+# Impedance Converter, Network Analyzer drivers
+#
+menu "Network Analyzer, Impedance Converters"
+
+config AD5933
+	tristate "Analog Devices AD5933, AD5934 driver"
+	depends on I2C
+	select IIO_BUFFER
+	select IIO_KFIFO_BUF
+	help
+	  Say yes here to build support for Analog Devices Impedance Converter,
+	  Network Analyzer, AD5933/4, provides direct access via sysfs.
+
+	  To compile this driver as a module, choose M here: the
+	  module will be called ad5933.
+
+endmenu

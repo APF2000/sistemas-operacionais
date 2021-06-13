@@ -1,3 +1,25 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ac2735fa14a5da81830923e790101e6cf866e039d9a37d6e573f83a403c7d0f9
-size 481
+#
+# Makefile for the drm device driver.  This driver provides support for the
+# Direct Rendering Infrastructure (DRI)
+#
+
+obj-y += dss/
+obj-y += displays/
+
+ccflags-y := -Iinclude/drm
+omapdrm-y := omap_drv.o \
+	omap_irq.o \
+	omap_debugfs.o \
+	omap_crtc.o \
+	omap_plane.o \
+	omap_encoder.o \
+	omap_connector.o \
+	omap_fb.o \
+	omap_gem.o \
+	omap_gem_dmabuf.o \
+	omap_dmm_tiler.o \
+	tcm-sita.o
+
+omapdrm-$(CONFIG_DRM_FBDEV_EMULATION) += omap_fbdev.o
+
+obj-$(CONFIG_DRM_OMAP)	+= omapdrm.o

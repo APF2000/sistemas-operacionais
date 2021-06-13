@@ -1,3 +1,22 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:29034ac961302cf8307f20f00530df6a6cc635da8e6862b208af208939599eef
-size 601
+#ifndef SMPBOOT_H
+#define SMPBOOT_H
+
+struct task_struct;
+
+#ifdef CONFIG_GENERIC_SMP_IDLE_THREAD
+struct task_struct *idle_thread_get(unsigned int cpu);
+void idle_thread_set_boot_cpu(void);
+void idle_threads_init(void);
+#else
+static inline struct task_struct *idle_thread_get(unsigned int cpu) { return NULL; }
+static inline void idle_thread_set_boot_cpu(void) { }
+static inline void idle_threads_init(void) { }
+#endif
+
+int smpboot_create_threads(unsigned int cpu);
+int smpboot_park_threads(unsigned int cpu);
+int smpboot_unpark_threads(unsigned int cpu);
+
+void __init cpuhp_threads_init(void);
+
+#endif

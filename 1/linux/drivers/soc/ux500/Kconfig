@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:6f9d1b48edaf7bc2de78095c19f4f2b9e2e35c90367ecb9605d7735fe62c220e
-size 248
+config UX500_SOC_ID
+	bool "SoC bus for ST-Ericsson ux500"
+	depends on ARCH_U8500 || COMPILE_TEST
+	default ARCH_U8500
+	help
+	  Include support for the SoC bus on the ARM RealView platforms
+	  providing some sysfs information about the ASIC variant.

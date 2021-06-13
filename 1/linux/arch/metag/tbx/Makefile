@@ -1,3 +1,21 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ff47c7fc8adb463bb3880268c6112539f8701fb297463cfd26cba1f96b3c5053
-size 433
+#
+# Makefile for TBX library files..
+#
+
+asflags-y		+= -mmetac=2.1 -Wa,-mfpu=metac21 -mdsp
+asflags-$(CONFIG_SMP)	+= -DTBX_PERCPU_SP_SAVE
+
+ccflags-y		+= -mmetac=2.1
+
+lib-y			+= tbicore.o
+lib-y			+= tbictx.o
+lib-y			+= tbidefr.o
+lib-y			+= tbilogf.o
+lib-y			+= tbipcx.o
+lib-y			+= tbiroot.o
+lib-y			+= tbisoft.o
+lib-y			+= tbistring.o
+lib-y			+= tbitimer.o
+
+lib-$(CONFIG_METAG_DSP)	+= tbidspram.o
+lib-$(CONFIG_METAG_FPU)	+= tbictxfpu.o

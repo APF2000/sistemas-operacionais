@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:cbb1ff85499e08ae9dfba46d93170816e7f698e61df47b87e271c501611ab49e
-size 399
+/*
+ * Copyright (c) 2006 Simtec Electronics
+ *	Ben Dooks <ben@simtec.co.uk>
+ *
+ * Common code for SMDK2410 and SMDK2440 boards
+ *
+ * http://www.fluff.org/ben/smdk2440/
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 2 as
+ * published by the Free Software Foundation.
+*/
+
+extern void smdk_machine_init(void);

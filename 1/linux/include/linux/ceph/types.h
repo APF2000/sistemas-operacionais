@@ -1,3 +1,29 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:cd6913cfe4b24a3d63db4d8629cb5e954ca2e9e6a442f9e059cb1a7a2e1d8c32
-size 508
+#ifndef _FS_CEPH_TYPES_H
+#define _FS_CEPH_TYPES_H
+
+/* needed before including ceph_fs.h */
+#include <linux/in.h>
+#include <linux/types.h>
+#include <linux/fcntl.h>
+#include <linux/string.h>
+
+#include <linux/ceph/ceph_fs.h>
+#include <linux/ceph/ceph_frag.h>
+#include <linux/ceph/ceph_hash.h>
+
+/*
+ * Identify inodes by both their ino AND snapshot id (a u64).
+ */
+struct ceph_vino {
+	u64 ino;
+	u64 snap;
+};
+
+
+/* context for the caps reservation mechanism */
+struct ceph_cap_reservation {
+	int count;
+};
+
+
+#endif

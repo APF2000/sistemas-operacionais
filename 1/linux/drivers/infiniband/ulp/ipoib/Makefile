@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:3f698f17932f7f32b82888f63b5111b046f377a25e703b5b9f2cc5c6f574ea04
-size 344
+obj-$(CONFIG_INFINIBAND_IPOIB)			+= ib_ipoib.o
+
+ib_ipoib-y					:= ipoib_main.o \
+						   ipoib_ib.o \
+						   ipoib_multicast.o \
+						   ipoib_verbs.o \
+						   ipoib_vlan.o \
+						   ipoib_ethtool.o \
+						   ipoib_netlink.o
+ib_ipoib-$(CONFIG_INFINIBAND_IPOIB_CM)		+= ipoib_cm.o
+ib_ipoib-$(CONFIG_INFINIBAND_IPOIB_DEBUG)	+= ipoib_fs.o
+

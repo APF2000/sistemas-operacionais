@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2506deabe23030ef1a2aad5e80f3b701885ba969e36c225f49f4492a59c2e032
-size 342
+#
+# Common TXx9
+#
+obj-$(CONFIG_MACH_TX39XX)      += generic/
+obj-$(CONFIG_MACH_TX49XX)      += generic/
+
+#
+# Toshiba JMR-TX3927 board
+#
+obj-$(CONFIG_TOSHIBA_JMR3927)  += jmr3927/
+
+#
+# Toshiba RBTX49XX boards
+#
+obj-$(CONFIG_TOSHIBA_RBTX4927) += rbtx4927/
+obj-$(CONFIG_TOSHIBA_RBTX4938) += rbtx4938/
+obj-$(CONFIG_TOSHIBA_RBTX4939) += rbtx4939/

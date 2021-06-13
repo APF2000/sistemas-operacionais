@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:43d0cf3cf13a5607348b20fad7762b3642e3ab6fbf1b403532bc601f82703f08
-size 270
+#ifndef __ASM_GENERIC_HW_IRQ_H
+#define __ASM_GENERIC_HW_IRQ_H
+/*
+ * hw_irq.h has internal declarations for the low-level interrupt
+ * controller, like the original i8259A.
+ * In general, this is not needed for new architectures.
+ */
+
+#endif /* __ASM_GENERIC_HW_IRQ_H */

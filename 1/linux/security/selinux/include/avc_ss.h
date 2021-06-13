@@ -1,3 +1,28 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:61b8d718d8a88ee5a0513f6e7e5c3822cdccf9c7005e93ac0859cb2ed7e0f516
-size 577
+/*
+ * Access vector cache interface for the security server.
+ *
+ * Author : Stephen Smalley, <sds@epoch.ncsc.mil>
+ */
+#ifndef _SELINUX_AVC_SS_H_
+#define _SELINUX_AVC_SS_H_
+
+#include "flask.h"
+
+int avc_ss_reset(u32 seqno);
+
+/* Class/perm mapping support */
+struct security_class_mapping {
+	const char *name;
+	const char *perms[sizeof(u32) * 8 + 1];
+};
+
+extern struct security_class_mapping secclass_map[];
+
+/*
+ * The security server must be initialized before
+ * any labeling or access decisions can be provided.
+ */
+extern int ss_initialized;
+
+#endif /* _SELINUX_AVC_SS_H_ */
+

@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:6040f1a59d6a49d6f893de0f48081cb2888c3b9b5019fb0c91278dde880f35d4
-size 171
+#ifndef _SND_SOC_CODEC_TAS5086_H_
+#define _SND_SOC_CODEC_TAS5086_H_
+
+#define TAS5086_CLK_IDX_MCLK	0
+#define TAS5086_CLK_IDX_SCLK	1
+
+#endif /* _SND_SOC_CODEC_TAS5086_H_ */

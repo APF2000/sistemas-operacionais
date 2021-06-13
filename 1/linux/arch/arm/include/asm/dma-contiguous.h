@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a055205ffa538628ae9059c3d7b43e4376a94882e55dccd8926a0081ab3d449d
-size 226
+#ifndef ASMARM_DMA_CONTIGUOUS_H
+#define ASMARM_DMA_CONTIGUOUS_H
+
+#ifdef __KERNEL__
+#ifdef CONFIG_DMA_CMA
+
+#include <linux/types.h>
+
+void dma_contiguous_early_fixup(phys_addr_t base, unsigned long size);
+
+#endif
+#endif
+
+#endif

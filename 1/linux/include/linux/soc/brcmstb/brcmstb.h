@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:3e7e57f94b91c36c32c9147f5d67b991960253ed1c3cfe1caba3d15141200084
-size 256
+#ifndef __BRCMSTB_SOC_H
+#define __BRCMSTB_SOC_H
+
+/*
+ * Bus Interface Unit control register setup, must happen early during boot,
+ * before SMP is brought up, called by machine entry point.
+ */
+void brcmstb_biuctrl_init(void);
+
+#endif /* __BRCMSTB_SOC_H */

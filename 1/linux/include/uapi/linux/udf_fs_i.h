@@ -1,3 +1,21 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:344fce7f7a13add0e0f5ca9ef33cc9cc1d1f17815060e0f139e56ed814fbe1d2
-size 634
+/*
+ * udf_fs_i.h
+ *
+ * This file is intended for the Linux kernel/module. 
+ *
+ * COPYRIGHT
+ *	This file is distributed under the terms of the GNU General Public
+ *	License (GPL). Copies of the GPL can be obtained from:
+ *		ftp://prep.ai.mit.edu/pub/gnu/GPL
+ *	Each contributing author retains all rights to their own work.
+ */
+#ifndef _UDF_FS_I_H
+#define _UDF_FS_I_H 1
+
+/* exported IOCTLs, we have 'l', 0x40-0x7f */
+#define UDF_GETEASIZE   _IOR('l', 0x40, int)
+#define UDF_GETEABLOCK  _IOR('l', 0x41, void *)
+#define UDF_GETVOLIDENT _IOR('l', 0x42, void *)
+#define UDF_RELOCATE_BLOCKS _IOWR('l', 0x43, long)
+
+#endif /* _UDF_FS_I_H */

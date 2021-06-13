@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b05abee7f5da033b5f7e8319a952c5cec3ada312f4fa9de7ed93cbb8d1065fe5
-size 384
+/* mt9v011 sensor
+ *
+ * Copyright (C) 2011 Hans Verkuil <hverkuil@xs4all.nl>
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 2 as
+ * published by the Free Software Foundation.
+ */
+
+#ifndef __MT9V011_H__
+#define __MT9V011_H__
+
+struct mt9v011_platform_data {
+	unsigned xtal;	/* Hz */
+};
+
+#endif

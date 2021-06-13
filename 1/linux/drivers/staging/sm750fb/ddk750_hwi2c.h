@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:bd7e04dd75c4b60af962d6a475e3b6413f0de4fae848b2d3a496c371d9a7ac5d
-size 334
+#ifndef DDK750_HWI2C_H__
+#define DDK750_HWI2C_H__
+
+/* hwi2c functions */
+int sm750_hw_i2c_init(unsigned char bus_speed_mode);
+void sm750_hw_i2c_close(void);
+
+unsigned char sm750_hw_i2c_read_reg(unsigned char addr, unsigned char reg);
+int sm750_hw_i2c_write_reg(unsigned char addr, unsigned char reg,
+			   unsigned char data);
+#endif

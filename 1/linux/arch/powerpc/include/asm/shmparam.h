@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:44a966098b20959c7b66a100d111aabccbd0c08abc45ab721ce424f7b22456f1
-size 167
+#ifndef _ASM_POWERPC_SHMPARAM_H
+#define _ASM_POWERPC_SHMPARAM_H
+
+#define	SHMLBA PAGE_SIZE		 /* attach addr a multiple of this */
+
+#endif	/* _ASM_POWERPC_SHMPARAM_H */

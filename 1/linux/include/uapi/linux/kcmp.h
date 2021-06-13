@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:50cf6916a858bdc3abc96dd9cc0608b8253f498a90505c74d4098a1287ad72d9
-size 229
+#ifndef _UAPI_LINUX_KCMP_H
+#define _UAPI_LINUX_KCMP_H
+
+/* Comparison type */
+enum kcmp_type {
+	KCMP_FILE,
+	KCMP_VM,
+	KCMP_FILES,
+	KCMP_FS,
+	KCMP_SIGHAND,
+	KCMP_IO,
+	KCMP_SYSVSEM,
+
+	KCMP_TYPES,
+};
+
+#endif /* _UAPI_LINUX_KCMP_H */

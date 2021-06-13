@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f8716901e46bc632f0731cd98a907e226fc582fa10d3e87a45a73c3d26dd9cef
-size 271
+/* Changed from asm-m68k version, Lineo Inc. 	May 2001	*/
+
+#ifndef _ASM_BFIN_PCI_H
+#define _ASM_BFIN_PCI_H
+
+#include <linux/scatterlist.h>
+#include <asm-generic/pci.h>
+
+#define PCIBIOS_MIN_IO 0x00001000
+#define PCIBIOS_MIN_MEM 0x10000000
+
+#endif				/* _ASM_BFIN_PCI_H */

@@ -1,3 +1,20 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e183c90dd32ac0d291bd5166f56908fed4dce4a8c17da3fecf84064e50eaf19c
-size 520
+#
+# arch/xtensa/boot/dts/Makefile
+#
+# This file is subject to the terms and conditions of the GNU General Public
+# License.  See the file "COPYING" in the main directory of this archive
+# for more details.
+#
+#
+
+BUILTIN_DTB := $(patsubst "%",%,$(CONFIG_BUILTIN_DTB)).dtb.o
+ifneq ($(CONFIG_BUILTIN_DTB),"")
+obj-$(CONFIG_OF) += $(BUILTIN_DTB)
+endif
+
+dtstree := $(srctree)/$(src)
+dtb-$(CONFIG_OF_ALL_DTBS) := $(patsubst $(dtstree)/%.dts,%.dtb, $(wildcard $(dtstree)/*.dts))
+
+always += $(dtb-y)
+clean-files += *.dtb *.dtb.S
+

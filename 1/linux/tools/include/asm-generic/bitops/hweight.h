@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5eb0f80219d902a0185275ea7ffef1a7e7f2a3e1e67ef86e2fc8c5f05d11b389
-size 251
+#ifndef _TOOLS_LINUX_ASM_GENERIC_BITOPS_HWEIGHT_H_
+#define _TOOLS_LINUX_ASM_GENERIC_BITOPS_HWEIGHT_H_
+
+#include <asm-generic/bitops/arch_hweight.h>
+#include <asm-generic/bitops/const_hweight.h>
+
+#endif /* _TOOLS_LINUX_ASM_GENERIC_BITOPS_HWEIGHT_H_ */

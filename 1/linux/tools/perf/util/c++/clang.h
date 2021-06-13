@@ -1,3 +1,26 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:453c910032796d370a3dfa6ec1bdbf36c7a3476eddf0b66e8720014b68016588
-size 548
+#ifndef PERF_UTIL_CLANG_H
+#define PERF_UTIL_CLANG_H
+
+#include "llvm/ADT/StringRef.h"
+#include "llvm/IR/LLVMContext.h"
+#include "llvm/IR/Module.h"
+#include "llvm/Option/Option.h"
+#include <memory>
+
+namespace perf {
+
+using namespace llvm;
+
+std::unique_ptr<Module>
+getModuleFromSource(opt::ArgStringList CFlags,
+		    StringRef Name, StringRef Content);
+
+std::unique_ptr<Module>
+getModuleFromSource(opt::ArgStringList CFlags,
+		    StringRef Path);
+
+std::unique_ptr<llvm::SmallVectorImpl<char>>
+getBPFObjectFromModule(llvm::Module *Module);
+
+}
+#endif

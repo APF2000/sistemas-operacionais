@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:8aaaf528e2ab540d67a9fc8b43fed7e3c3614327c6c5c6a87ac552efec72f51a
-size 176
+#ifndef ___ASM_SPARC_TIMER_H
+#define ___ASM_SPARC_TIMER_H
+#if defined(__sparc__) && defined(__arch64__)
+#include <asm/timer_64.h>
+#else
+#include <asm/timer_32.h>
+#endif
+#endif

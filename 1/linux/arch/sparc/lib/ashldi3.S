@@ -1,3 +1,37 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ec56a69aea6fa8acf139ea1c82e1bd8bd68f3fdbd9e3b09ec7f16d082cb638d9
-size 511
+/*
+ * ashldi3.S:	GCC emits these for certain drivers playing
+ *		with long longs.
+ *
+ * Copyright (C) 1999 David S. Miller (davem@redhat.com)
+ */
+
+#include <linux/linkage.h>
+#include <asm/export.h>
+
+	.text
+ENTRY(__ashldi3)
+	cmp	%o2, 0
+	be	9f
+	 mov	0x20, %g2
+
+	sub	%g2, %o2, %g2
+	cmp	%g2, 0
+	bg	7f
+	 sll	%o0, %o2, %g3
+
+	neg	%g2
+	clr	%o5
+	b	8f
+	 sll	%o1, %g2, %o4
+7:
+	srl	%o1, %g2, %g2
+	sll	%o1, %o2, %o5
+	or	%g3, %g2, %o4
+8:
+	mov	%o4, %o0
+	mov	%o5, %o1
+9:
+	retl
+	 nop
+ENDPROC(__ashldi3)
+EXPORT_SYMBOL(__ashldi3)

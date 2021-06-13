@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:652c23b8da7021217b736a224527a6b7c1775599a486aeb9ea1803aa8de67c28
-size 429
+# Makefile for the kernel ISDN subsystem and device drivers.
+
+# Object files in subdirectories
+
+obj-$(CONFIG_ISDN_I4L)			+= i4l/
+obj-$(CONFIG_ISDN_CAPI)			+= capi/
+obj-$(CONFIG_MISDN)			+= mISDN/
+obj-$(CONFIG_ISDN)			+= hardware/
+obj-$(CONFIG_ISDN_DIVERSION)		+= divert/
+obj-$(CONFIG_ISDN_DRV_HISAX)		+= hisax/
+obj-$(CONFIG_ISDN_DRV_LOOP)		+= isdnloop/
+obj-$(CONFIG_HYSDN)			+= hysdn/
+obj-$(CONFIG_ISDN_DRV_GIGASET)		+= gigaset/

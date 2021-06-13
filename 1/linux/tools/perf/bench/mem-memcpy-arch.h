@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:0413fa170e043003e84941c441e38d220d84824b53c20c09c97210adfee5edf4
-size 179
+
+#ifdef HAVE_ARCH_X86_64_SUPPORT
+
+#define MEMCPY_FN(fn, name, desc)		\
+	void *fn(void *, const void *, size_t);
+
+#include "mem-memcpy-x86-64-asm-def.h"
+
+#undef MEMCPY_FN
+
+#endif
+

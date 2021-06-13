@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:6bd994979c9eb84e5b098cf14ba07a103ea5caa7db56556f4e743d33068f5e51
-size 128
+#ifndef __ARCH_S390_IOCTLS_H__
+#define __ARCH_S390_IOCTLS_H__
+
+#define FIOQSIZE	0x545E
+
+#include <asm-generic/ioctls.h>
+
+#endif

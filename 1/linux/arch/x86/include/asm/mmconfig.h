@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:abb6ded251bfe58d56f15b7f26a04d7e68ef5ed403c4b530a6d3bdbbc89a0a0c
-size 335
+#ifndef _ASM_X86_MMCONFIG_H
+#define _ASM_X86_MMCONFIG_H
+
+#ifdef CONFIG_PCI_MMCONFIG
+extern void fam10h_check_enable_mmcfg(void);
+extern void check_enable_amd_mmconf_dmi(void);
+#else
+static inline void fam10h_check_enable_mmcfg(void) { }
+static inline void check_enable_amd_mmconf_dmi(void) { }
+#endif
+
+#endif /* _ASM_X86_MMCONFIG_H */

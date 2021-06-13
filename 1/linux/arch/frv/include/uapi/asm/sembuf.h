@@ -1,3 +1,26 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b5f0d8dddf06c57ec2c425e7f34f76ddbcab5b3b51bfd40d01134095268e82be
-size 697
+#ifndef _ASM_SEMBUF_H
+#define _ASM_SEMBUF_H
+
+/*
+ * The semid64_ds structure for FR-V architecture.
+ * Note extra padding because this structure is passed back and forth
+ * between kernel and user space.
+ *
+ * Pad space is left for:
+ * - 64-bit time_t to solve y2038 problem
+ * - 2 miscellaneous 32-bit values
+ */
+
+struct semid64_ds {
+	struct ipc64_perm	sem_perm;	/* permissions .. see ipc.h */
+	__kernel_time_t		sem_otime;	/* last semop time */
+	unsigned long		__unused1;
+	__kernel_time_t		sem_ctime;	/* last change time */
+	unsigned long		__unused2;
+	unsigned long		sem_nsems;	/* no. of semaphores in array */
+	unsigned long		__unused3;
+	unsigned long		__unused4;
+};
+
+#endif /* _ASM_SEMBUF_H */
+

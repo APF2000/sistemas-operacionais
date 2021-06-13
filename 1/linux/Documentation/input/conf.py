@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d48522f0e5507bb759ecc420fb79629931b2f7eb93e8e04908999445dafc45df
-size 225
+# -*- coding: utf-8; mode: python -*-
+
+project = "The Linux input driver subsystem"
+
+tags.add("subproject")
+
+latex_documents = [
+    ('index', 'linux-input.tex', project,
+     'The kernel development community', 'manual'),
+]

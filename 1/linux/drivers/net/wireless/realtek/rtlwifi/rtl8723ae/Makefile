@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:147c242d45724b2211aea8907d6317f96c904a82b367a39fabda1a81374a15b0
-size 205
+rtl8723ae-objs :=		\
+		dm.o		\
+		fw.o		\
+		hal_btc.o	\
+		hal_bt_coexist.o\
+		hw.o		\
+		led.o		\
+		phy.o		\
+		pwrseq.o	\
+		rf.o		\
+		sw.o		\
+		table.o		\
+		trx.o		\
+
+
+obj-$(CONFIG_RTL8723AE) += rtl8723ae.o

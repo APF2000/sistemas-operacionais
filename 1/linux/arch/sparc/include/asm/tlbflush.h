@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b1e34c39cdc1be241754dce0fbe86fc312352c9cb3580b5ff1b927406cbb4038
-size 188
+#ifndef ___ASM_SPARC_TLBFLUSH_H
+#define ___ASM_SPARC_TLBFLUSH_H
+#if defined(__sparc__) && defined(__arch64__)
+#include <asm/tlbflush_64.h>
+#else
+#include <asm/tlbflush_32.h>
+#endif
+#endif

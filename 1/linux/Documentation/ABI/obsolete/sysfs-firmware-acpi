@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4d8a855ea4d51a8d66d701c54bbec083ad0f8f89e24e5b07fcf54498a6d8865d
-size 384
+What:		/sys/firmware/acpi/hotplug/force_remove
+Date:		Mar 2017
+Contact:	Rafael J. Wysocki <rafael.j.wysocki@intel.com>
+Description:
+		Since the force_remove is inherently broken and dangerous to
+		use for some hotplugable resources like memory (because ignoring
+		the offline failure might lead to memory corruption and crashes)
+		enabling this knob is not safe and thus unsupported.

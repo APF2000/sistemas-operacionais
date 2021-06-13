@@ -1,3 +1,5 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a1184a45afdb6ef074db5ec8bc721681a9538afc8a858a4b8cff741ea200beba
-size 197
+#ifndef _PERF_PARSE_REGS_OPTIONS_H
+#define _PERF_PARSE_REGS_OPTIONS_H 1
+struct option;
+int parse_regs(const struct option *opt, const char *str, int unset);
+#endif /* _PERF_PARSE_REGS_OPTIONS_H */

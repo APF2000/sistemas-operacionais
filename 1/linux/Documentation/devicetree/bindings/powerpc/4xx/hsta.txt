@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a9bcf4dc00bc06b5c6cd8e6dd8f1c22251867fbae2ca10fec010d88f4030b570
-size 796
+
+ppc476gtr High Speed Serial Assist (HSTA) node
+==============================================
+
+The 476gtr SoC contains a high speed serial assist module attached
+between the plb4 and plb6 system buses to provide high speed data
+transfer between memory and system peripherals as well as support for
+PCI message signalled interrupts.
+
+Currently only the MSI support is used by Linux using the following
+device tree entries:
+
+Require properties:
+- compatible		: "ibm,476gtr-hsta-msi", "ibm,hsta-msi"
+- reg			: register mapping for the HSTA MSI space
+- interrupt-parent	: parent controller for mapping interrupts
+- interrupts		: ordered interrupt mapping for each MSI in the register
+			  space. The first interrupt should be associated with a
+			  register offset of 0x00, the second to 0x10, etc.

@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:0454de3add00c21e66ddd2cd56fac7d210d04a6c99bb0dda1ee9b6e655b31287
-size 434
+/*
+ * Copyright (C) 2004 - 2007 Jeff Dike (jdike@{addtoit,linux.intel}.com)
+ * Licensed under the GPL
+ */
+
+#include <sysdep/stub.h>
+#include <sysdep/faultinfo.h>
+#include <sysdep/mcontext.h>
+
+void __attribute__ ((__section__ (".__syscall_stub")))
+stub_segv_handler(int sig, siginfo_t *info, void *p)
+{
+	struct ucontext *uc = p;
+
+	GET_FAULTINFO_FROM_MC(*((struct faultinfo *) STUB_DATA),
+			      &uc->uc_mcontext);
+	trap_myself();
+}
+

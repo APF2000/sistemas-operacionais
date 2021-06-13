@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:041831a1d230574cf9763ee6631482d65e2f316a02d50840df56f00736502dcf
-size 320
+This binding is based on the matrix-keymap binding with the following
+changes:
+
+keypad,num-rows and keypad,num-columns are required.
+
+Required properties:
+- compatible: "ti,tca8418"
+- reg: the I2C address
+- interrupts: IRQ line number, should trigger on falling edge
+- linux,keymap: Keys definitions, see keypad-matrix.

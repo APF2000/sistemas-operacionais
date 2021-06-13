@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a01b223fe023764eb42ac185640214d402c4a74765ff46f4c1671a4ca7acba33
-size 171
+/*
+ * wanrouter.h	Legacy declarations kept around until X25 is removed
+ */
+
+#ifndef	_ROUTER_H
+#define	_ROUTER_H
+
+#include <uapi/linux/wanrouter.h>
+
+#endif	/* _ROUTER_H */

@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:db4a11f699053f260731cc1811eef3ba137e1293619d7adef0d4d659b87235d1
-size 330
+* Kirkwood Thermal
+
+This version is for Kirkwood 88F8262 & 88F6283 SoCs. Other kirkwoods
+don't contain a thermal sensor.
+
+Required properties:
+- compatible : "marvell,kirkwood-thermal"
+- reg : Address range of the thermal registers
+
+Example:
+
+	thermal@10078 {
+		compatible = "marvell,kirkwood-thermal";
+		reg = <0x10078 0x4>;
+	};

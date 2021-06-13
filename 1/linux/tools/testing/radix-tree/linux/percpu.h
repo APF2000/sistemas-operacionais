@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b10eccbeb8da0937fb991d60c2f112c43d03bd9edd4b5c45ee3b456a9e9fd1bc
-size 428
+#define DECLARE_PER_CPU(type, val) extern type val
+#define DEFINE_PER_CPU(type, val) type val
+
+#define __get_cpu_var(var)	var
+#define this_cpu_ptr(var)	var
+#define this_cpu_read(var)	var
+#define this_cpu_xchg(var, val)		uatomic_xchg(&var, val)
+#define this_cpu_cmpxchg(var, old, new)	uatomic_cmpxchg(&var, old, new)
+#define per_cpu_ptr(ptr, cpu)   ({ (void)(cpu); (ptr); })
+#define per_cpu(var, cpu)	(*per_cpu_ptr(&(var), cpu))

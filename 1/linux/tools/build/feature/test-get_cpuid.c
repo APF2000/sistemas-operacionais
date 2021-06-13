@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ec7ebc3c58203ce9ce39ea77520aa1f03e88cca77c9fb4b392c0cea7c81ac6a6
-size 140
+#include <cpuid.h>
+
+int main(void)
+{
+	unsigned int eax = 0, ebx = 0, ecx = 0, edx = 0;
+	return __get_cpuid(0x15, &eax, &ebx, &ecx, &edx);
+}

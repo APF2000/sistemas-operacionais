@@ -1,3 +1,24 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:256d378ba8fb531751b7965dea895f96d532ced33f392ece181428e07c3330e0
-size 539
+#include <sys/types.h>
+#include <linux/kernel.h>
+#include <stdio.h>
+
+int vscnprintf(char *buf, size_t size, const char *fmt, va_list args)
+{
+       int i = vsnprintf(buf, size, fmt, args);
+       ssize_t ssize = size;
+
+       return (i >= ssize) ? (ssize - 1) : i;
+}
+
+int scnprintf(char * buf, size_t size, const char * fmt, ...)
+{
+       ssize_t ssize = size;
+       va_list args;
+       int i;
+
+       va_start(args, fmt);
+       i = vsnprintf(buf, size, fmt, args);
+       va_end(args);
+
+       return (i >= ssize) ? (ssize - 1) : i;
+}

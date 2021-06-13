@@ -1,3 +1,4 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4e708e094da3172e801f3a41a2d765e4148c22225600285b84d266e5f7be4750
-size 141
+nvkm-y += nvkm/engine/msppp/base.o
+nvkm-y += nvkm/engine/msppp/g98.o
+nvkm-y += nvkm/engine/msppp/gt215.o
+nvkm-y += nvkm/engine/msppp/gf100.o

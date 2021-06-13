@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:745d3edc20741e1d19e0249af96b5477625b7b442c5409061409a8b345a60863
-size 184
+#ifndef __ASM_RCAR_GEN2_H__
+#define __ASM_RCAR_GEN2_H__
+
+void rcar_gen2_timer_init(void);
+void rcar_gen2_reserve(void);
+void rcar_gen2_pm_init(void);
+
+#endif /* __ASM_RCAR_GEN2_H__ */

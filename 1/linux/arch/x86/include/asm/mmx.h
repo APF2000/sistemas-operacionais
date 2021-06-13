@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b8af916fcc28b5f950c0889d25cb39d90c9bc187cb19dd4cee34b04f4530380c
-size 298
+#ifndef _ASM_X86_MMX_H
+#define _ASM_X86_MMX_H
+
+/*
+ *	MMX 3Dnow! helper operations
+ */
+
+#include <linux/types.h>
+
+extern void *_mmx_memcpy(void *to, const void *from, size_t size);
+extern void mmx_clear_page(void *page);
+extern void mmx_copy_page(void *to, void *from);
+
+#endif /* _ASM_X86_MMX_H */

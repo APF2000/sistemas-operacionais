@@ -1,3 +1,3 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:cef5fb7b3b9efeb312854aece4ce0a89c3a01efc6d89629c3c81a29fd1c6efc5
-size 124
+obj-$(CONFIG_MIPS_GPR) += board-gpr.o
+obj-$(CONFIG_MIPS_MTX1) += board-mtx1.o
+obj-$(CONFIG_MIPS_XXS1500) += board-xxs1500.o

@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2c060a26eab2c1d76bba8bbecaebc49d8238eb02ec51c304c1dffa2f9b41e8ad
-size 240
+#ifndef _DW2102_H_
+#define _DW2102_H_
+
+#define DVB_USB_LOG_PREFIX "dw2102"
+#include "dvb-usb.h"
+
+#define deb_xfer(args...) dprintk(dvb_usb_dw2102_debug, 0x02, args)
+#define deb_rc(args...)   dprintk(dvb_usb_dw2102_debug, 0x04, args)
+#endif

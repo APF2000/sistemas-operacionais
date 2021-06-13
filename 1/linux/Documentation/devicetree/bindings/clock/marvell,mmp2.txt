@@ -1,3 +1,21 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:29c0e9b2ae537a62bad88aba055963df035ab17a1e9bb6034ed6fe3c534ec3f4
-size 723
+* Marvell MMP2 Clock Controller
+
+The MMP2 clock subsystem generates and supplies clock to various
+controllers within the MMP2 SoC.
+
+Required Properties:
+
+- compatible: should be one of the following.
+  - "marvell,mmp2-clock" - controller compatible with MMP2 SoC.
+
+- reg: physical base address of the clock subsystem and length of memory mapped
+  region. There are 3 places in SOC has clock control logic:
+  "mpmu", "apmu", "apbc". So three reg spaces need to be defined.
+
+- #clock-cells: should be 1.
+- #reset-cells: should be 1.
+
+Each clock is assigned an identifier and client nodes use this identifier
+to specify the clock which they consume.
+
+All these identifier could be found in <dt-bindings/clock/marvell-mmp2.h>.

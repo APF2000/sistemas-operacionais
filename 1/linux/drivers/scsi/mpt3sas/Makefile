@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2a1083f079a06bc8a851bd527fd4299be4545acd44e3c9d8125fb04882b4a69d
-size 235
+# mpt3sas makefile
+obj-$(CONFIG_SCSI_MPT3SAS) += mpt3sas.o
+mpt3sas-y +=  mpt3sas_base.o     \
+		mpt3sas_config.o \
+		mpt3sas_scsih.o      \
+		mpt3sas_transport.o     \
+		mpt3sas_ctl.o	\
+		mpt3sas_trigger_diag.o \
+		mpt3sas_warpdrive.o

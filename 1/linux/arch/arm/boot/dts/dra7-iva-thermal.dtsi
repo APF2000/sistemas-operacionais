@@ -1,3 +1,27 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:73818ff1f1f586744b9c696db369807320b352a5c7a0217a3daeaa270fe7e9c7
-size 706
+/*
+ * Device Tree Source for DRA7x SoC IVA thermal
+ *
+ * Copyright (C) 2016 Texas Instruments Incorporated - http://www.ti.com/
+ *
+ * This file is licensed under the terms of the GNU General Public License
+ * version 2.  This program is licensed "as is" without any warranty of any
+ * kind, whether express or implied.
+ */
+
+#include <dt-bindings/thermal/thermal.h>
+
+iva_thermal: iva_thermal {
+	polling-delay-passive = <250>; /* milliseconds */
+	polling-delay = <500>; /* milliseconds */
+
+			/* sensor       ID */
+	thermal-sensors = <&bandgap     4>;
+
+	trips {
+		iva_crit: iva_crit {
+			temperature = <125000>; /* milliCelsius */
+			hysteresis = <2000>; /* milliCelsius */
+			type = "critical";
+		};
+	};
+};

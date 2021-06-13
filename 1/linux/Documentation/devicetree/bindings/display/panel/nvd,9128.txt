@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c28b4410ca8c1ac393817e44f611ff625cf75f1ed5e49313c628c7d3d2a95659
-size 226
+New Vision Display 7.0" 800 RGB x 480 TFT LCD panel
+
+Required properties:
+- compatible: should be "nvd,9128"
+
+This binding is compatible with the simple-panel binding, which is specified
+in simple-panel.txt in this directory.

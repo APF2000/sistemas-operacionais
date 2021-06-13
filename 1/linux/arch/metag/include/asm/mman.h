@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2ea5e63f17386fd409d3326a59263e15b4c6e313690d57478445f46868f7320a
-size 267
+#ifndef __METAG_MMAN_H__
+#define __METAG_MMAN_H__
+
+#include <uapi/asm/mman.h>
+
+#ifndef __ASSEMBLY__
+#define arch_mmap_check metag_mmap_check
+int metag_mmap_check(unsigned long addr, unsigned long len,
+		     unsigned long flags);
+#endif
+#endif /* __METAG_MMAN_H__ */

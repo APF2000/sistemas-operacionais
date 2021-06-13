@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:168c8990e36604c88895856577b66fc2d1fcf51bd3bdc8a2daf8ef9644f02070
-size 205
+#ifndef _ASM_IA64_POSIX_TYPES_H
+#define _ASM_IA64_POSIX_TYPES_H
+
+typedef unsigned long	__kernel_sigset_t;	/* at least 32 bits */
+
+#include <asm-generic/posix_types.h>
+
+#endif /* _ASM_IA64_POSIX_TYPES_H */

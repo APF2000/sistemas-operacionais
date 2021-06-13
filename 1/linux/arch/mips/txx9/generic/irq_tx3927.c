@@ -1,3 +1,25 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5137e1fde3290f936ce525b38e6739a6af49e3f72e47c9b73f261fbc0431f6ba
-size 657
+/*
+ * Common tx3927 irq handler
+ *
+ * This file is subject to the terms and conditions of the GNU General Public
+ * License.  See the file "COPYING" in the main directory of this archive
+ * for more details.
+ *
+ * Copyright 2001 MontaVista Software Inc.
+ * Copyright (C) 2000-2001 Toshiba Corporation
+ */
+#include <linux/init.h>
+#include <asm/txx9irq.h>
+#include <asm/txx9/tx3927.h>
+
+void __init tx3927_irq_init(void)
+{
+	int i;
+
+	txx9_irq_init(TX3927_IRC_REG);
+	/* raise priority for timers, sio */
+	for (i = 0; i < TX3927_NR_TMR; i++)
+		txx9_irq_set_pri(TX3927_IR_TMR(i), 6);
+	for (i = 0; i < TX3927_NR_SIO; i++)
+		txx9_irq_set_pri(TX3927_IR_SIO(i), 7);
+}

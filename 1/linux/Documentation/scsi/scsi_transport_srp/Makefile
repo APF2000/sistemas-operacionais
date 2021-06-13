@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:0adcb3bd40420c3cc57427300011150fc98b19f62cb43f1a693dbd705d7987eb
-size 193
+all: rport_state_diagram.svg rport_state_diagram.png
+
+rport_state_diagram.svg: rport_state_diagram.dot
+	dot -Tsvg -o $@ $<
+
+rport_state_diagram.png: rport_state_diagram.dot
+	dot -Tpng -o $@ $<

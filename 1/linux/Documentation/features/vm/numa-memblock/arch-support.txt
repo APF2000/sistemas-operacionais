@@ -1,3 +1,39 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:6da99457b60ee2e9dfe0ffb4260b49a5c60cdb585d4114a796455f6fd879cb29
-size 1103
+#
+# Feature name:          numa-memblock
+#         Kconfig:       HAVE_MEMBLOCK_NODE_MAP
+#         description:   arch supports NUMA aware memblocks
+#
+    -----------------------
+    |         arch |status|
+    -----------------------
+    |       alpha: | TODO |
+    |         arc: |  ..  |
+    |         arm: |  ..  |
+    |       arm64: |  ..  |
+    |    blackfin: |  ..  |
+    |         c6x: |  ..  |
+    |        cris: |  ..  |
+    |         frv: |  ..  |
+    |       h8300: |  ..  |
+    |     hexagon: |  ..  |
+    |        ia64: |  ok  |
+    |        m32r: | TODO |
+    |        m68k: |  ..  |
+    |       metag: |  ok  |
+    |  microblaze: |  ok  |
+    |        mips: |  ok  |
+    |     mn10300: | TODO |
+    |       nios2: |  ..  |
+    |    openrisc: |  ..  |
+    |      parisc: |  ..  |
+    |     powerpc: |  ok  |
+    |        s390: |  ok  |
+    |       score: |  ok  |
+    |          sh: |  ok  |
+    |       sparc: |  ok  |
+    |        tile: | TODO |
+    |          um: |  ..  |
+    |   unicore32: |  ..  |
+    |         x86: |  ok  |
+    |      xtensa: |  ..  |
+    -----------------------

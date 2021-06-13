@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:13ac0db4adc3117dc5e6623c8095e6e993d5efc1262f0612e44cb49a866cb8f2
-size 174
+#ifndef _C6X_MEGAMOD_PIC_H
+#define _C6X_MEGAMOD_PIC_H
+
+#ifdef __KERNEL__
+
+extern void __init megamod_pic_init(void);
+
+#endif /* __KERNEL__ */
+#endif /* _C6X_MEGAMOD_PIC_H */

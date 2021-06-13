@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:21d568979aaba5783ede9294f05c1be3e2f42923f3b5fb2b63a4480a086ff7e7
-size 230
+# Makefile for the dss1_divert ISDN module
+
+# Each configuration option enables a list of files.
+
+obj-$(CONFIG_ISDN_DIVERSION)	+= dss1_divert.o
+
+# Multipart objects.
+
+dss1_divert-y			:= isdn_divert.o divert_procfs.o divert_init.o

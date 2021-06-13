@@ -1,3 +1,5 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:fd5d100741ddc0641cf12964aebd86217fb63291d38ac1910d3933432ecbaa08
-size 220
+OBJECT_FILES_NON_STANDARD_efi_thunk_$(BITS).o := y
+
+obj-$(CONFIG_EFI) 		+= quirks.o efi.o efi_$(BITS).o efi_stub_$(BITS).o
+obj-$(CONFIG_EARLY_PRINTK_EFI)	+= early_printk.o
+obj-$(CONFIG_EFI_MIXED)		+= efi_thunk_$(BITS).o

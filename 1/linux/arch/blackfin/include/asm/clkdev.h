@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:16d756c0ca79af6a4f6d8abfa9dd712d6e54597ab1fa828265622dbbdc4bcf42
-size 279
+#ifndef __ASM_CLKDEV__H_
+#define __ASM_CLKDEV__H_
+
+#include <linux/slab.h>
+
+static inline struct clk_lookup_alloc *__clkdev_alloc(size_t size)
+{
+	return kzalloc(size, GFP_KERNEL);
+}
+
+#ifndef CONFIG_COMMON_CLK
+#define __clk_put(clk)
+#define __clk_get(clk) ({ 1; })
+#endif
+
+#endif

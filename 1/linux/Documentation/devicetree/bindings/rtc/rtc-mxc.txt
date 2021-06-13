@@ -1,3 +1,26 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d79ada46640c49f98359d678e7af8c0caa8e91a3a351fb0fa724d1c2cad67761
-size 678
+* Real Time Clock of the i.MX SoCs
+
+RTC controller for the i.MX SoCs
+
+Required properties:
+- compatible: Should be "fsl,imx1-rtc" or "fsl,imx21-rtc".
+- reg: physical base address of the controller and length of memory mapped
+  region.
+- interrupts: IRQ line for the RTC.
+- clocks: should contain two entries:
+  * one for the input reference
+  * one for the the SoC RTC
+- clock-names: should contain:
+  * "ref" for the input reference clock
+  * "ipg" for the SoC RTC clock
+
+Example:
+
+rtc@10007000 {
+	compatible = "fsl,imx21-rtc";
+	reg = <0x10007000 0x1000>;
+	interrupts = <22>;
+	clocks = <&clks IMX27_CLK_CKIL>,
+		 <&clks IMX27_CLK_RTC_IPG_GATE>;
+	clock-names = "ref", "ipg";
+};

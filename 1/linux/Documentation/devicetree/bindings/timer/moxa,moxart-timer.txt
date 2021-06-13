@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e0428c856f146f6c535ac659f71f8d184f86a221d1294116e1e772f27d5bae3a
-size 451
+MOXA ART timer
+
+Required properties:
+
+- compatible : Must be one of:
+ 	- "moxa,moxart-timer"
+ 	- "aspeed,ast2400-timer"
+- reg : Should contain registers location and length
+- interrupts : Should contain the timer interrupt number
+- clocks : Should contain phandle for the clock that drives the counter
+
+Example:
+
+	timer: timer@98400000 {
+		compatible = "moxa,moxart-timer";
+		reg = <0x98400000 0x42>;
+		interrupts = <19 1>;
+		clocks = <&coreclk>;
+	};

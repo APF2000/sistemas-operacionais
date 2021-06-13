@@ -1,3 +1,21 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:938e0a6e82063b001f64104147290f8c10c57d27850892963f6be7d164934ff1
-size 587
+/*
+ * SH_DAC specific configuration, for the dac_audio platform_device
+ *
+ * Copyright (C) 2009 Rafael Ignacio Zurita <rizurita@yahoo.com>
+ *
+ * This program is free software; you can redistribute it and/or modify it
+ * under the terms of the GNU General Public License version 2 as published
+ * by the Free Software Foundation.
+ */
+
+#ifndef __INCLUDE_SH_DAC_AUDIO_H
+#define __INCLUDE_SH_DAC_AUDIO_H
+
+struct dac_audio_pdata {
+	int buffer_size;
+	int channel;
+	void (*start)(struct dac_audio_pdata *pd);
+	void (*stop)(struct dac_audio_pdata *pd);
+};
+
+#endif /* __INCLUDE_SH_DAC_AUDIO_H */

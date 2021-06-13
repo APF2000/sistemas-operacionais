@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:273279d6bac6c7b2c6cd32c45a23ff887e6842bc0e6d8458b091e416841cd7e5
-size 184
+#!/bin/sh
+
+echo "int foo(void) { char X[200]; return 3; }" | $* -S -x c -c -O0 -fstack-protector - -o - 2> /dev/null | grep -q "%gs"
+if [ "$?" -eq "0" ] ; then
+	echo y
+else
+	echo n
+fi

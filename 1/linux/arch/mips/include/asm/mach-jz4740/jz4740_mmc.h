@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:deb46a65cf2a6bc2b9cb6252507d6cb8511df9d43619805fdcc017d736cee00e
-size 293
+#ifndef __LINUX_MMC_JZ4740_MMC
+#define __LINUX_MMC_JZ4740_MMC
+
+struct jz4740_mmc_platform_data {
+	int gpio_power;
+	int gpio_card_detect;
+	int gpio_read_only;
+	unsigned card_detect_active_low:1;
+	unsigned read_only_active_low:1;
+	unsigned power_active_low:1;
+
+	unsigned data_1bit:1;
+};
+
+#endif

@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:59506fbe72ed9c2031911c717842f076978e24cb03e626f14caf991096d4e6c5
-size 270
+#ifndef PERF_COMPRESS_H
+#define PERF_COMPRESS_H
+
+#ifdef HAVE_ZLIB_SUPPORT
+int gzip_decompress_to_file(const char *input, int output_fd);
+#endif
+
+#ifdef HAVE_LZMA_SUPPORT
+int lzma_decompress_to_file(const char *input, int output_fd);
+#endif
+
+#endif /* PERF_COMPRESS_H */

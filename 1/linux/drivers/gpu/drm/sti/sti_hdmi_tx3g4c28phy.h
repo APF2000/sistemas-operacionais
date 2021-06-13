@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f208dda6833fc9bd1a2a47d01205844365d1a4b6ca80f04ba95200b3bed13a99
-size 337
+/*
+ * Copyright (C) STMicroelectronics SA 2014
+ * Author: Benjamin Gaignard <benjamin.gaignard@st.com> for STMicroelectronics.
+ * License terms:  GNU General Public License (GPL), version 2
+ */
+
+#ifndef _STI_HDMI_TX3G4C28PHY_H_
+#define _STI_HDMI_TX3G4C28PHY_H_
+
+#include "sti_hdmi.h"
+
+extern struct hdmi_phy_ops tx3g4c28phy_ops;
+
+#endif

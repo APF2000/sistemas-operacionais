@@ -1,3 +1,20 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:cf6cdb1d198a87eae45b66b0ff604cf4b95d7dc0a46c50c3413781f8c09274a2
-size 424
+
+# This filter requires one command line option of form -vN=n
+# where n must be a decimal number.
+#
+# Repeat each input line containing $$ n times, replacing $$ with 0...n-1.
+# Replace each $# with n, and each $* with a single $.
+
+BEGIN {
+	n = N + 0
+}
+{
+	if (/\$\$/) { rep = n } else { rep = 1 }
+	for (i = 0; i < rep; ++i) {
+		tmp = $0
+		gsub(/\$\$/, i, tmp)
+		gsub(/\$\#/, n, tmp)
+		gsub(/\$\*/, "$", tmp)
+		print tmp
+	}
+}

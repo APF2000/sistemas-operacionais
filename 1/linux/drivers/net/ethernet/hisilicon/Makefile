@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:52b2d499aa0d2087000408dc87126663e335c5504c49a32f88dea378e01a987d
-size 246
+#
+# Makefile for the HISILICON network device drivers.
+#
+
+obj-$(CONFIG_HIX5HD2_GMAC) += hix5hd2_gmac.o
+obj-$(CONFIG_HIP04_ETH) += hip04_eth.o
+obj-$(CONFIG_HNS_MDIO) += hns_mdio.o
+obj-$(CONFIG_HNS) += hns/
+obj-$(CONFIG_HISI_FEMAC) += hisi_femac.o

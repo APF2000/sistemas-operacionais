@@ -1,3 +1,46 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ede0bf41692440c3b2dd4a1b9428701546adbe1078c7274b5be725f1ca90d86c
-size 1441
+/*
+ *  Driver for Dummy Frontend
+ *
+ *  Written by Emard <emard@softhome.net>
+ *
+ *  This program is free software; you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation; either version 2 of the License, or
+ *  (at your option) any later version.
+ *
+ *  This program is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *
+ *  GNU General Public License for more details.
+ */
+
+#ifndef DVB_DUMMY_FE_H
+#define DVB_DUMMY_FE_H
+
+#include <linux/dvb/frontend.h>
+#include "dvb_frontend.h"
+
+#if IS_REACHABLE(CONFIG_DVB_DUMMY_FE)
+extern struct dvb_frontend* dvb_dummy_fe_ofdm_attach(void);
+extern struct dvb_frontend* dvb_dummy_fe_qpsk_attach(void);
+extern struct dvb_frontend* dvb_dummy_fe_qam_attach(void);
+#else
+static inline struct dvb_frontend *dvb_dummy_fe_ofdm_attach(void)
+{
+	printk(KERN_WARNING "%s: driver disabled by Kconfig\n", __func__);
+	return NULL;
+}
+static inline struct dvb_frontend *dvb_dummy_fe_qpsk_attach(void)
+{
+	printk(KERN_WARNING "%s: driver disabled by Kconfig\n", __func__);
+	return NULL;
+}
+static inline struct dvb_frontend *dvb_dummy_fe_qam_attach(void)
+{
+	printk(KERN_WARNING "%s: driver disabled by Kconfig\n", __func__);
+	return NULL;
+}
+#endif /* CONFIG_DVB_DUMMY_FE */
+
+#endif // DVB_DUMMY_FE_H

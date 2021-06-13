@@ -1,3 +1,2 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:15e5e84e469337dfe0495f3bc60226da2153e96f042750f844654dfb7359933d
-size 78
+#!/bin/bash
+perf record -a -e kmem:kmalloc -e irq:softirq_entry -e kmem:kfree

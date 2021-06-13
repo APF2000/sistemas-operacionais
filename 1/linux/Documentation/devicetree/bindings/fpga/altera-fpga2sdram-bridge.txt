@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:3149bf9e8f15a08f94248b4a8da53ab1acf8ff92a0a601b114c7d0f8fca0702e
-size 456
+Altera FPGA To SDRAM Bridge Driver
+
+Required properties:
+- compatible		: Should contain "altr,socfpga-fpga2sdram-bridge"
+
+Optional properties:
+- bridge-enable		: 0 if driver should disable bridge at startup
+			  1 if driver should enable bridge at startup
+			  Default is to leave bridge in current state.
+
+Example:
+	fpga_bridge3: fpga-bridge@ffc25080 {
+		compatible = "altr,socfpga-fpga2sdram-bridge";
+		reg = <0xffc25080 0x4>;
+		bridge-enable = <0>;
+	};

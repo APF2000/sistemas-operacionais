@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ad94fafee1df13a00db70acec65d214a57dbf0c6fcc1e8e418c27e17944723a2
-size 172
+ES7134 i2s DA converter
+
+Required properties:
+- compatible : "everest,es7134" or "everest,es7144"
+
+Example:
+
+i2s_codec: external-codec {
+	compatible = "everest,es7134";
+};

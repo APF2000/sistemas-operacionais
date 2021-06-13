@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:0b4f2a9a06829b36808e9d5de01f8cab7b2bed532511befdee3460d493845344
-size 254
+#ifndef __NVKM_MSPPP_PRIV_H__
+#define __NVKM_MSPPP_PRIV_H__
+#include <engine/msppp.h>
+
+int nvkm_msppp_new_(const struct nvkm_falcon_func *, struct nvkm_device *,
+		    int index, struct nvkm_engine **);
+
+void g98_msppp_init(struct nvkm_falcon *);
+#endif

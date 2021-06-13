@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:634bbaa135e383a9c717e1ec75f1d87707cb605f71deb017dc24e7776d331cc0
-size 396
+
+For generic kernel features that need architecture support, the
+arch-support.txt file in each feature directory shows the arch
+support matrix, for all upstream Linux architectures.
+
+The meaning of entries in the tables is:
+
+    | ok |  # feature supported by the architecture
+    |TODO|  # feature not yet supported by the architecture
+    | .. |  # feature cannot be supported by the hardware
+

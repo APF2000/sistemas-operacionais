@@ -1,3 +1,27 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e44510594b982d278334a9d17006a581f302efe0bf19cee2b3be426a454d9db6
-size 729
+Marvell Armada 38x Platforms Device Tree Bindings
+-------------------------------------------------
+
+Boards with a SoC of the Marvell Armada 38x family shall have the
+following property:
+
+Required root node property:
+
+ - compatible: must contain "marvell,armada380"
+
+In addition, boards using the Marvell Armada 385 SoC shall have the
+following property before the previous one:
+
+Required root node property:
+
+compatible: must contain "marvell,armada385"
+
+In addition, boards using the Marvell Armada 388 SoC shall have the
+following property before the previous one:
+
+Required root node property:
+
+compatible: must contain "marvell,armada388"
+
+Example:
+
+compatible = "marvell,a385-rd", "marvell,armada385", "marvell,armada380";

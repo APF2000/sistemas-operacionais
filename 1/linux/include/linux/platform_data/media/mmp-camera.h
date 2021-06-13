@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2cbe4ba8495a1170c8546a8a26760521e7d30f8f8415ef3e1c15f5983fed8b5b
-size 179
+/*
+ * Information for the Marvell Armada MMP camera
+ */
+
+struct mmp_camera_platform_data {
+	struct platform_device *i2c_device;
+	int sensor_power_gpio;
+	int sensor_reset_gpio;
+};

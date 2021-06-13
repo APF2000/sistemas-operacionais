@@ -1,3 +1,22 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:876b0633d2f07f718366fca5b013175482f385c5b90bb313cb9b9d1ec3a589ae
-size 671
+#ifdef ISP2401
+/**
+Support for Intel Camera Imaging ISP subsystem.
+Copyright (c) 2010 - 2015, Intel Corporation.
+
+This program is free software; you can redistribute it and/or modify it
+under the terms and conditions of the GNU General Public License,
+version 2, as published by the Free Software Foundation.
+
+This program is distributed in the hope it will be useful, but WITHOUT
+ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for
+more details.
+*/
+
+#ifndef __IA_CSS_YUV444_IO_TYPES
+#define __IA_CSS_YUV444_IO_TYPES
+
+#include "../common/ia_css_common_io_types.h"
+
+#endif
+#endif

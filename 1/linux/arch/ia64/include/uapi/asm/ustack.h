@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:cd7ec30defa31ed4f041ce6fa37bdd4bf1e43f01650e86afbcc19e7ffd00696b
-size 233
+#ifndef _UAPI_ASM_IA64_USTACK_H
+#define _UAPI_ASM_IA64_USTACK_H
+
+/*
+ * Constants for the user stack size
+ */
+
+
+/* Make a default stack size of 2GiB */
+#define DEFAULT_USER_STACK_SIZE	(1UL << 31)
+
+#endif /* _UAPI_ASM_IA64_USTACK_H */

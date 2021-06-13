@@ -1,3 +1,25 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:55206e0c478f1874ed541440afa99959e13f87620c2c1f1da70d613f8c24015e
-size 436
+/*
+ * Linker script for x32 vDSO.
+ * We #include the file to define the layout details.
+ *
+ * This file defines the version script giving the user-exported symbols in
+ * the DSO.
+ */
+
+#define BUILD_VDSOX32
+
+#include "vdso-layout.lds.S"
+
+/*
+ * This controls what userland symbols we export from the vDSO.
+ */
+VERSION {
+	LINUX_2.6 {
+	global:
+		__vdso_clock_gettime;
+		__vdso_gettimeofday;
+		__vdso_getcpu;
+		__vdso_time;
+	local: *;
+	};
+}

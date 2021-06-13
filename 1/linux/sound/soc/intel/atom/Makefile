@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1b2414c04afa5a2a89d9abff6e4d35b77759424dc44e14a381092ad5dbed2c31
-size 255
+snd-soc-sst-atom-hifi2-platform-objs :=	sst-mfld-platform-pcm.o \
+					sst-mfld-platform-compress.o \
+					sst-atom-controls.o
+
+obj-$(CONFIG_SND_SST_ATOM_HIFI2_PLATFORM) += snd-soc-sst-atom-hifi2-platform.o
+
+# DSP driver
+obj-$(CONFIG_SND_SST_IPC) += sst/

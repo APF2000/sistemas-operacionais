@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f4c889618e09f465d786448249d82f05253c4c958b07c35039eb43278e6b0c8e
-size 324
+#ifndef _ASM_CRIS_ARCH_THREAD_INFO_H
+#define _ASM_CRIS_ARCH_THREAD_INFO_H
+
+/* Return a thread_info struct. */
+static inline struct thread_info *current_thread_info(void)
+{
+	struct thread_info *ti;
+
+	__asm__ __volatile__ ("and.d $sp, %0" : "=r" (ti) : "0" (~8191UL));
+	return ti;
+}
+
+#endif /* _ASM_CRIS_ARCH_THREAD_INFO_H */

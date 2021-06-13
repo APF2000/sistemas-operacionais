@@ -1,3 +1,28 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:673bfaf93726222320c2f98c2bd6985fbabbc75e65864af1970c445c76f03311
-size 695
+/*
+ * Copyright (C) 2004, 2007-2010, 2011-2012 Synopsys, Inc. (www.synopsys.com)
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 2 as
+ * published by the Free Software Foundation.
+ *
+ * Vineetg: May 16th, 2008
+ *  - Current macro is now implemented as "global register" r25
+ */
+
+#ifndef _ASM_ARC_CURRENT_H
+#define _ASM_ARC_CURRENT_H
+
+#ifndef __ASSEMBLY__
+
+#ifdef CONFIG_ARC_CURR_IN_REG
+
+register struct task_struct *curr_arc asm("r25");
+#define current (curr_arc)
+
+#else
+#include <asm-generic/current.h>
+#endif /* ! CONFIG_ARC_CURR_IN_REG */
+
+#endif /* ! __ASSEMBLY__ */
+
+#endif /* _ASM_ARC_CURRENT_H */

@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:fffef749aa447bd3662577fd92987275c6f3f85f7875369ee0f0354cf1719bd9
-size 433
+/*
+ * au1550_spi.h - Au1550 PSC SPI controller driver - platform data structure
+ */
+
+#ifndef _AU1550_SPI_H_
+#define _AU1550_SPI_H_
+
+struct au1550_spi_info {
+	u32 mainclk_hz;		/* main input clock frequency of PSC */
+	u16 num_chipselect;	/* number of chipselects supported */
+	void (*activate_cs)(struct au1550_spi_info *spi, int cs, int polarity);
+	void (*deactivate_cs)(struct au1550_spi_info *spi, int cs, int polarity);
+};
+
+#endif

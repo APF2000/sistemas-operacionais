@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:002a2136f73c227a09f44d31305c815a2d0cd2cb0454cab8ff5c9338951cda2d
-size 254
+/*
+ * eeprom.h:  Definitions for the Sun eeprom.
+ *
+ * Copyright (C) 1995 David S. Miller (davem@caip.rutgers.edu)
+ */
+
+/* The EEPROM and the Mostek Mk48t02 use the same IO address space
+ * for their registers/data areas.  The IDPROM lives here too.
+ */

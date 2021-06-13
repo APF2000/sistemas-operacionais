@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:384b9e8fa76f93fc473ef68bb66e3ca321a3958a874c1e9e37fd4fffcff6d69d
-size 147
+#if defined(__i386__) || defined(__x86_64__)
+DEF(amd_fam14h)
+DEF(intel_nhm)
+DEF(intel_snb)
+DEF(intel_hsw_ext)
+DEF(mperf)
+#endif
+DEF(cpuidle_sysfs)

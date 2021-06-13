@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:3124b3f5eae9be02b9284cc0effb0bb495e6335110a16e5e55b12630f895dcb0
-size 346
+This drivers still needs a lot of work. I can list all cleanups to do but it's
+going to be long. So, I'm writing "cleanups" and not the list.
+
+Arnaud
+
+TODO:
+- clean ups
+- sort out dup ids with SiS driver
+- remove useless/wrong/unused code...
+- get rid of non-linux related stuff
+
+Please send patches to:
+Arnaud Patard <arnaud.patard@rtp-net.org>

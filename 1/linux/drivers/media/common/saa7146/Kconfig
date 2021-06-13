@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:6a1e795a1ed0665dee1078aee4d374af6d2f639b91f0ed643354201b0f3197d5
-size 158
+config VIDEO_SAA7146
+	tristate
+	depends on I2C && PCI
+
+config VIDEO_SAA7146_VV
+	tristate
+	depends on VIDEO_V4L2
+	select VIDEOBUF_DMA_SG
+	select VIDEO_SAA7146

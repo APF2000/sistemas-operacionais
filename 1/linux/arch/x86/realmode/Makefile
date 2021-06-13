@@ -1,3 +1,20 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:97133a76afaa28e5028bd3911ae14d19b4b87dd19ffa63c0f9f3e78337ab0efc
-size 419
+#
+# arch/x86/realmode/Makefile
+#
+# This file is subject to the terms and conditions of the GNU General Public
+# License.  See the file "COPYING" in the main directory of this archive
+# for more details.
+#
+#
+KASAN_SANITIZE			:= n
+OBJECT_FILES_NON_STANDARD	:= y
+
+subdir- := rm
+
+obj-y += init.o
+obj-y += rmpiggy.o
+
+$(obj)/rmpiggy.o: $(obj)/rm/realmode.bin
+
+$(obj)/rm/realmode.bin: FORCE
+	$(Q)$(MAKE) $(build)=$(obj)/rm $@

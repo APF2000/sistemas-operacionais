@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e66382135e8cae4da395b276a4fba31518b5cf497b1ada56f2c061a2ecaafdbf
-size 686
+What:		/sys/devices/.../firmware_node/
+Date:		September 2012
+Contact:	<>
+Description:
+		The /sys/devices/.../firmware_node directory contains attributes
+		allowing the user space to check and modify some firmware
+		related properties of given device.
+
+What:		/sys/devices/.../firmware_node/description
+Date:		September 2012
+Contact:	Lance Ortiz <lance.ortiz@hp.com>
+Description:
+		The /sys/devices/.../firmware/description attribute contains a string
+		that describes the device as provided by the _STR method in the ACPI
+		namespace.  This attribute is read-only.  If the device does not have
+		an _STR method associated with it in the ACPI namespace, this
+		attribute is not present.

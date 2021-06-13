@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5eac4a040d9e95fc300dfe289c9e300985ed1602a57576bfb993eb8c1cd87070
-size 294
+TODO:
+	- get bus width input instead of hardcoded bus width
+	- get it reviewed
+
+Please send any patches for this driver to Insop Song<insop.song@gainspeed.com>
+and Greg Kroah-Hartman <gregkh@linuxfoundation.org>.
+And please CC to "Staging subsystem" mail list <devel@driverdev.osuosl.org> too.

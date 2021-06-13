@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f74ad3ac2773354da0ff8e550a13bf4f12f709831d0559a4e93599756c274eef
-size 340
+#ifndef _ASM_GENERIC_BITOPS_BUILTIN___FFS_H_
+#define _ASM_GENERIC_BITOPS_BUILTIN___FFS_H_
+
+/**
+ * __ffs - find first bit in word.
+ * @word: The word to search
+ *
+ * Undefined if no bit exists, so code should check against 0 first.
+ */
+static __always_inline unsigned long __ffs(unsigned long word)
+{
+	return __builtin_ctzl(word);
+}
+
+#endif

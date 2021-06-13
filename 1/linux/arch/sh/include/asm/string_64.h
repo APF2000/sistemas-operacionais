@@ -1,3 +1,20 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d4f5454423d95a644a158370eaa1ff775fadc07b8e2d6166c05aefccef2090ca
-size 460
+#ifndef __ASM_SH_STRING_64_H
+#define __ASM_SH_STRING_64_H
+
+#ifdef __KERNEL__
+
+#define __HAVE_ARCH_MEMSET
+extern void *memset(void *__s, int __c, size_t __count);
+
+#define __HAVE_ARCH_MEMCPY
+extern void *memcpy(void *dest, const void *src, size_t count);
+
+#define __HAVE_ARCH_STRLEN
+extern size_t strlen(const char *);
+
+#define __HAVE_ARCH_STRCPY
+extern char *strcpy(char *__dest, const char *__src);
+
+#endif /* __KERNEL__ */
+
+#endif /* __ASM_SH_STRING_64_H */

@@ -1,3 +1,21 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:953fe4a05d60abc451d55ca4610e56b1d289eb2ad4e6cf4e6484a343dcc89284
-size 291
+source "init/Kconfig"
+
+source "kernel/Kconfig.freezer"
+
+source "arch/um/Kconfig.char"
+
+source "drivers/Kconfig"
+
+source "net/Kconfig"
+
+source "arch/um/Kconfig.net"
+
+source "fs/Kconfig"
+
+source "security/Kconfig"
+
+source "crypto/Kconfig"
+
+source "lib/Kconfig"
+
+source "arch/um/Kconfig.debug"

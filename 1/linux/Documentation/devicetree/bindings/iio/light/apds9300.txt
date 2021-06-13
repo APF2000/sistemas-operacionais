@@ -1,3 +1,22 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b0a6405d0b9d2737640d85d06c9f5034b69960533dbd17f1833cf0213f3af0c0
-size 460
+* Avago APDS9300 ambient light sensor
+
+http://www.avagotech.com/docs/AV02-1077EN
+
+Required properties:
+
+  - compatible : should be "avago,apds9300"
+  - reg : the I2C address of the sensor
+
+Optional properties:
+
+  - interrupt-parent : should be the phandle for the interrupt controller
+  - interrupts : interrupt mapping for GPIO IRQ
+
+Example:
+
+apds9300@39 {
+	compatible = "avago,apds9300";
+	reg = <0x39>;
+	interrupt-parent = <&gpio2>;
+	interrupts = <29 8>;
+};

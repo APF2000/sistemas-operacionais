@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:103c1231964076e735f54e2742a39e2fe853553dd756f986eed1771aeab5045c
-size 336
+#ifndef __LINUX_PLATFORM_DATA_EFM32_SPI_H__
+#define __LINUX_PLATFORM_DATA_EFM32_SPI_H__
+
+#include <linux/types.h>
+
+/**
+ * struct efm32_spi_pdata
+ * @location: pinmux location for the I/O pins (to be written to the ROUTE
+ * 	register)
+ */
+struct efm32_spi_pdata {
+	u8 location;
+};
+#endif /* ifndef __LINUX_PLATFORM_DATA_EFM32_SPI_H__ */

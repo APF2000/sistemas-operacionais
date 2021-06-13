@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:76343e78d4f5d890afcea4de2a1ab4f6deb5929c5c982f2d738458b4de4e3692
-size 355
+#ifndef _LINUX_MPLS_H
+#define _LINUX_MPLS_H
+
+#include <uapi/linux/mpls.h>
+
+#define MPLS_TTL_MASK		(MPLS_LS_TTL_MASK >> MPLS_LS_TTL_SHIFT)
+#define MPLS_BOS_MASK		(MPLS_LS_S_MASK >> MPLS_LS_S_SHIFT)
+#define MPLS_TC_MASK		(MPLS_LS_TC_MASK >> MPLS_LS_TC_SHIFT)
+#define MPLS_LABEL_MASK		(MPLS_LS_LABEL_MASK >> MPLS_LS_LABEL_SHIFT)
+
+#endif  /* _LINUX_MPLS_H */

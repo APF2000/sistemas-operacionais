@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d64e7d32d9b5164f2e1a5f3dede85d2e586eb9b022059ebaaf81df45847000b5
-size 238
+Broadcom North Star 2 (NS2) device tree bindings
+------------------------------------------------
+
+Boards with NS2 shall have the following properties:
+
+Required root node property:
+
+NS2 SVK board
+compatible = "brcm,ns2-svk", "brcm,ns2";

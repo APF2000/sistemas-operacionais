@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d54b03c618688e8f50845d5fb4038f967b24072f29d5a482f50e0ea30e4221c2
-size 248
+#
+# Makefile for Broadcom 10-Gigabit ethernet driver
+#
+
+obj-$(CONFIG_BNX2X) += bnx2x.o
+
+bnx2x-y := bnx2x_main.o bnx2x_link.o bnx2x_cmn.o bnx2x_ethtool.o bnx2x_stats.o bnx2x_dcb.o bnx2x_sp.o
+bnx2x-$(CONFIG_BNX2X_SRIOV) += bnx2x_vfpf.o bnx2x_sriov.o

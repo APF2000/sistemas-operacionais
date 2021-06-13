@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:49d094548ca19bba6e2349b6b73cad5bd17d1edc02729a0ec642879149764651
-size 343
+# Platform
+snd-soc-txx9aclc-objs := txx9aclc.o
+snd-soc-txx9aclc-ac97-objs := txx9aclc-ac97.o
+
+obj-$(CONFIG_SND_SOC_TXX9ACLC) += snd-soc-txx9aclc.o
+obj-$(CONFIG_SND_SOC_TXX9ACLC_AC97) += snd-soc-txx9aclc-ac97.o
+
+# Machine
+snd-soc-txx9aclc-generic-objs := txx9aclc-generic.o
+
+obj-$(CONFIG_SND_SOC_TXX9ACLC_GENERIC) += snd-soc-txx9aclc-generic.o

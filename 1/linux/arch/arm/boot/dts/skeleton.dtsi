@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b2d14deaa584e4f52cef6c9ce1b6a9264066ee5c17bf22d377ca15fa924f21d0
-size 519
+/*
+ * This file is deprecated, and will be removed once existing users have been
+ * updated. New dts{,i} files should *not* include skeleton.dtsi, and should
+ * instead explicitly provide the below nodes only as required.
+ *
+ * Skeleton device tree; the bare minimum needed to boot; just include and
+ * add a compatible value.  The bootloader will typically populate the memory
+ * node.
+ */
+
+/ {
+	#address-cells = <1>;
+	#size-cells = <1>;
+	chosen { };
+	aliases { };
+	memory { device_type = "memory"; reg = <0 0>; };
+};

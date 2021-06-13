@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:bf8a2e3aaf08bc12f9d3e1f14545ee64766cd2f4bd71f019e75e0c5a517e131f
-size 354
+config INFINIBAND_OPA_VNIC
+	tristate "Intel OPA VNIC support"
+	depends on X86_64 && INFINIBAND
+	---help---
+	This is Omni-Path (OPA) Virtual Network Interface Controller (VNIC)
+	driver for Ethernet over Omni-Path feature. It implements the HW
+	independent VNIC functionality. It interfaces with Linux stack for
+	data path and IB MAD for the control path.

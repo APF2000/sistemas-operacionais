@@ -1,3 +1,2 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:acf9ff9a434f64abdf9c8c8d7cf60c76d54c42e794017011bf5427af16f9402f
-size 69
+nvkm-y += nvkm/engine/sec2/base.o
+nvkm-y += nvkm/engine/sec2/gp102.o

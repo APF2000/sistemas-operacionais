@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:705e747698557f07d2aa31c68c41277d4b5bb6e85de9fd52deda93ecef915f40
-size 285
+#ifndef __ASM_OPENRISC_STRING_H
+#define __ASM_OPENRISC_STRING_H
+
+#define __HAVE_ARCH_MEMSET
+extern void *memset(void *s, int c, __kernel_size_t n);
+
+#define __HAVE_ARCH_MEMCPY
+extern void *memcpy(void *dest, __const void *src, __kernel_size_t n);
+
+#endif /* __ASM_OPENRISC_STRING_H */

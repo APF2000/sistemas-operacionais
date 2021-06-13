@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f14bf9085430e2bc707bf27c705af8635785db8392dc2863611f6962f79820ee
-size 133
+#ifndef __ASM_SH73A0_H__
+#define __ASM_SH73A0_H__
+
+extern const struct smp_operations sh73a0_smp_ops;
+
+#endif /* __ASM_SH73A0_H__ */

@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:6a932657fc46bdd7948aae7024b90f015d6d7ce5e377a6eeb59dc445b5d768a5
-size 234
+#ifndef _PROBE_ROMS_H_
+#define _PROBE_ROMS_H_
+struct pci_dev;
+
+extern void __iomem *pci_map_biosrom(struct pci_dev *pdev);
+extern void pci_unmap_biosrom(void __iomem *rom);
+extern size_t pci_biosrom_size(struct pci_dev *pdev);
+#endif

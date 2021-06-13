@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4d55196b268d5eef0136c12a374d95fd911fc66048ae082e5bef8fdad3949d90
-size 293
+#
+# ia64/platform/hp/common/Makefile
+#
+# Copyright (C) 2002 Hewlett Packard
+# Copyright (C) Alex Williamson (alex_williamson@hp.com)
+#
+
+obj-y := sba_iommu.o
+obj-$(CONFIG_IA64_HP_ZX1_SWIOTLB) += hwsw_iommu.o
+obj-$(CONFIG_IA64_GENERIC) += hwsw_iommu.o
+obj-$(CONFIG_IA64_HP_AML_NFW) += aml_nfw.o

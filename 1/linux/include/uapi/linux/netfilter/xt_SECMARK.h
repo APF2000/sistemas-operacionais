@@ -1,3 +1,22 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:9d42867a8c54aa9f1e0c69b33970ef3245df744c12a40ac8496982b0c69e40a6
-size 486
+#ifndef _XT_SECMARK_H_target
+#define _XT_SECMARK_H_target
+
+#include <linux/types.h>
+
+/*
+ * This is intended for use by various security subsystems (but not
+ * at the same time).
+ *
+ * 'mode' refers to the specific security subsystem which the
+ * packets are being marked for.
+ */
+#define SECMARK_MODE_SEL	0x01		/* SELinux */
+#define SECMARK_SECCTX_MAX	256
+
+struct xt_secmark_target_info {
+	__u8 mode;
+	__u32 secid;
+	char secctx[SECMARK_SECCTX_MAX];
+};
+
+#endif /*_XT_SECMARK_H_target */

@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:781009712e013410e8e39c96c13c269d2a5ed2aa0ae6f563f50cd0be223eec19
-size 227
+#ifndef __MOCK_GEM_DEVICE_H__
+#define __MOCK_GEM_DEVICE_H__
+
+struct drm_i915_private;
+
+struct drm_i915_private *mock_gem_device(void);
+void mock_device_flush(struct drm_i915_private *i915);
+
+#endif /* !__MOCK_GEM_DEVICE_H__ */

@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a1efd66a28759fee8651dabf0ae4bf884fa56b5ce5b47856b34fd71807bedc08
-size 336
+#ifndef GPIO_REG_H
+#define GPIO_REG_H
+
+struct device;
+struct irq_domain;
+
+struct gpio_chip *gpio_reg_init(struct device *dev, void __iomem *reg,
+	int base, int num, const char *label, u32 direction, u32 def_out,
+	const char *const *names, struct irq_domain *irqdom, const int *irqs);
+
+int gpio_reg_resume(struct gpio_chip *gc);
+
+#endif

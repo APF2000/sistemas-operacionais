@@ -1,3 +1,24 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2ff33f450f01475b75de549491fe610ae54c253db2d004a6b4e41a7e58912986
-size 653
+/*
+ * Copyright (C) 2004, 2007-2010, 2011-2012 Synopsys, Inc. (www.synopsys.com)
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 2 as
+ * published by the Free Software Foundation.
+ */
+
+#ifndef _ASM_ARC_SYSCALLS_H
+#define _ASM_ARC_SYSCALLS_H  1
+
+#include <linux/compiler.h>
+#include <linux/linkage.h>
+#include <linux/types.h>
+
+int sys_clone_wrapper(int, int, int, int, int);
+int sys_cacheflush(uint32_t, uint32_t uint32_t);
+int sys_arc_settls(void *);
+int sys_arc_gettls(void);
+int sys_arc_usr_cmpxchg(int *, int, int);
+
+#include <asm-generic/syscalls.h>
+
+#endif

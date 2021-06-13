@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ec49e4fdf52b5824a6a6bbda9a8ed253076607ab74861d13a6c43484e09edf40
-size 195
+#ifndef _PPC_BOOT_MPC8xx_H_
+#define _PPC_BOOT_MPC8xx_H_
+
+#include "types.h"
+
+void mpc8xx_set_clocks(u32 sysclk);
+
+u32 mpc885_get_clock(u32 crystal);
+int mpc885_fixup_clocks(u32 crystal);
+
+#endif

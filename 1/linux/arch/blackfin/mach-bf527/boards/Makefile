@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:79dd3328c782e963cc5c20090400e47e92f2ce33ede87299b29daacd86546ff0
-size 359
+#
+# arch/blackfin/mach-bf527/boards/Makefile
+#
+
+obj-$(CONFIG_BFIN527_EZKIT)            += ezkit.o
+obj-$(CONFIG_BFIN527_EZKIT_V2)         += ezkit.o
+obj-$(CONFIG_BFIN527_BLUETECHNIX_CM)   += cm_bf527.o
+obj-$(CONFIG_BFIN526_EZBRD)            += ezbrd.o
+obj-$(CONFIG_BFIN527_AD7160EVAL)       += ad7160eval.o
+obj-$(CONFIG_BFIN527_TLL6527M)         += tll6527m.o

@@ -1,3 +1,42 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4832a71879cfe827e43604dd117552817b8a1f254d6b6e94fd8a747201fdc1f6
-size 859
+/*
+ *  linux/arch/arm/mm/iomap.c
+ *
+ * Map IO port and PCI memory spaces so that {read,write}[bwl] can
+ * be used to access this memory.
+ */
+#include <linux/module.h>
+#include <linux/pci.h>
+#include <linux/ioport.h>
+#include <linux/io.h>
+
+unsigned long vga_base;
+EXPORT_SYMBOL(vga_base);
+
+#ifdef __io
+void __iomem *ioport_map(unsigned long port, unsigned int nr)
+{
+	return __io(port);
+}
+EXPORT_SYMBOL(ioport_map);
+
+void ioport_unmap(void __iomem *addr)
+{
+}
+EXPORT_SYMBOL(ioport_unmap);
+#endif
+
+#ifdef CONFIG_PCI
+unsigned long pcibios_min_io = 0x1000;
+EXPORT_SYMBOL(pcibios_min_io);
+
+unsigned long pcibios_min_mem = 0x01000000;
+EXPORT_SYMBOL(pcibios_min_mem);
+
+void pci_iounmap(struct pci_dev *dev, void __iomem *addr)
+{
+	if ((unsigned long)addr >= VMALLOC_START &&
+	    (unsigned long)addr < VMALLOC_END)
+		iounmap(addr);
+}
+EXPORT_SYMBOL(pci_iounmap);
+#endif

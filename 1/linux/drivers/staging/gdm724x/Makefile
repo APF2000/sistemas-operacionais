@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:cab4930db2d87db6df9c304b849c249d1503cb8bd7d38cf51abdd57b5e8e500f
-size 182
+obj-$(CONFIG_LTE_GDM724X) := gdmulte.o
+gdmulte-y += gdm_lte.o netlink_k.o
+gdmulte-y += gdm_usb.o gdm_endian.o
+
+obj-$(CONFIG_LTE_GDM724X) += gdmtty.o
+gdmtty-y := gdm_tty.o gdm_mux.o
+

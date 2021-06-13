@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:28292551ce142d075340ba28852751ba84864ffef2d1d10ee6f18485931b7dd8
-size 177
+choice
+	prompt "Board support"
+	depends on BCM63XX
+	default BOARD_BCM963XX
+
+config BOARD_BCM963XX
+       bool "Generic Broadcom 963xx boards"
+	select SSB
+       help
+
+endchoice

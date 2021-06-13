@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2735bdb226bb02731cf82245174bfa09ea53778748a820bbc7390590499dee97
-size 241
+#
+# Makefile for the Linux - z/VM Monitor Stream.
+#
+
+obj-$(CONFIG_APPLDATA_BASE) += appldata_base.o
+obj-$(CONFIG_APPLDATA_MEM) += appldata_mem.o
+obj-$(CONFIG_APPLDATA_OS) += appldata_os.o
+obj-$(CONFIG_APPLDATA_NET_SUM) += appldata_net_sum.o

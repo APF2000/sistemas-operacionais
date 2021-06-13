@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:818eb72a0c24882a72404fc88f402d4c4125b58751da63dc9105de65c58f90ba
-size 327
+ccflags-y :=  -Idrivers/net/ethernet/intel/i40e
+
+obj-$(CONFIG_INFINIBAND_I40IW) += i40iw.o
+
+i40iw-objs :=\
+               i40iw_cm.o i40iw_ctrl.o \
+               i40iw_hmc.o i40iw_hw.o i40iw_main.o  \
+               i40iw_pble.o i40iw_puda.o i40iw_uk.o i40iw_utils.o \
+               i40iw_verbs.o i40iw_virtchnl.o i40iw_vf.o

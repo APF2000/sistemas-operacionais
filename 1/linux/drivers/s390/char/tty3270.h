@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:95f9cf3c4a1ca6450ec6c798f1d375ad43eba43e020566c082a322dbcf3a6320
-size 259
+/*
+ *    Copyright IBM Corp. 2007
+ *
+ */
+
+#ifndef __DRIVERS_S390_CHAR_TTY3270_H
+#define __DRIVERS_S390_CHAR_TTY3270_H
+
+#include <linux/tty.h>
+#include <linux/tty_driver.h>
+
+extern struct tty_driver *tty3270_driver;
+
+#endif /* __DRIVERS_S390_CHAR_TTY3270_H */

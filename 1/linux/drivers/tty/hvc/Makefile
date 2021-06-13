@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:0f6187a4920f1af747a9f2bb60f80b68a1ce3ff8ab1b26294acfae211a8332a1
-size 515
+obj-$(CONFIG_HVC_CONSOLE)	+= hvc_vio.o hvsi_lib.o
+obj-$(CONFIG_HVC_OPAL)		+= hvc_opal.o hvsi_lib.o
+obj-$(CONFIG_HVC_OLD_HVSI)	+= hvsi.o
+obj-$(CONFIG_HVC_RTAS)		+= hvc_rtas.o
+obj-$(CONFIG_HVC_TILE)		+= hvc_tile.o
+obj-$(CONFIG_HVC_DCC)		+= hvc_dcc.o
+obj-$(CONFIG_HVC_DRIVER)	+= hvc_console.o
+obj-$(CONFIG_HVC_IRQ)		+= hvc_irq.o
+obj-$(CONFIG_HVC_XEN)		+= hvc_xen.o
+obj-$(CONFIG_HVC_IUCV)		+= hvc_iucv.o
+obj-$(CONFIG_HVC_UDBG)		+= hvc_udbg.o
+obj-$(CONFIG_HVC_BFIN_JTAG)	+= hvc_bfin_jtag.o
+obj-$(CONFIG_HVCS)		+= hvcs.o

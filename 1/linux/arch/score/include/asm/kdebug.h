@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ae5a9ecd04744da405dcca6b918586d902dc1c524fe008d7ac781c9f12895bae
-size 123
+#ifndef _ASM_SCORE_KDEBUG_H
+#define _ASM_SCORE_KDEBUG_H
+
+#include <asm-generic/kdebug.h>
+
+#endif /* _ASM_SCORE_KDEBUG_H */

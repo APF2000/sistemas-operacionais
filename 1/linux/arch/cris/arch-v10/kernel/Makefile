@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:9a64aa142383aca75872c09a6037ebda68c7f9f6f6f7014b71c81e1e21998d3e
-size 332
+#
+# Makefile for the linux kernel.
+#
+
+extra-y	:= head.o
+
+
+obj-y   := entry.o traps.o shadows.o debugport.o irq.o \
+	   process.o setup.o signal.o traps.o time.o ptrace.o \
+	   dma.o io_interface_mux.o
+
+obj-$(CONFIG_ETRAX_KGDB) += kgdb.o
+obj-$(CONFIG_ETRAX_FAST_TIMER) += fasttimer.o
+obj-$(CONFIG_MODULES)    += crisksyms.o
+
+clean:
+

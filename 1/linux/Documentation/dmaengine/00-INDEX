@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:89cf6c0e9f2baa93d0a686150a96014ede3c85245612fde91606da126b753996
-size 170
+00-INDEX
+	- this file.
+client.txt
+	-the DMA Engine API Guide.
+dmatest.txt
+	- how to compile, configure and use the dmatest system.
+provider.txt
+	- the DMA controller API.

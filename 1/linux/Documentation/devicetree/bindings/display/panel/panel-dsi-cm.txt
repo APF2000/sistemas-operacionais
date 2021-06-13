@@ -1,3 +1,29 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:62e02b3d98461929a50f8b42a07a6a9b1c7db549a400c377077e62286ff971e8
-size 504
+Generic MIPI DSI Command Mode Panel
+===================================
+
+Required properties:
+- compatible: "panel-dsi-cm"
+
+Optional properties:
+- label: a symbolic name for the panel
+- reset-gpios: panel reset gpio
+- te-gpios: panel TE gpio
+
+Required nodes:
+- Video port for DSI input
+
+Example
+-------
+
+lcd0: display {
+	compatible = "tpo,taal", "panel-dsi-cm";
+	label = "lcd0";
+
+	reset-gpios = <&gpio4 6 GPIO_ACTIVE_HIGH>;
+
+	port {
+		lcd0_in: endpoint {
+			remote-endpoint = <&dsi1_out_ep>;
+		};
+	};
+};

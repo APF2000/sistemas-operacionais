@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:586d3c1c53450ee9473a6f65ae3d03ccbe2e4f9ea22abc3269196470f83e8499
-size 240
+#ifndef DECOMPRESS_UNLZ4_H
+#define DECOMPRESS_UNLZ4_H
+
+int unlz4(unsigned char *inbuf, long len,
+	long (*fill)(void*, unsigned long),
+	long (*flush)(void*, unsigned long),
+	unsigned char *output,
+	long *pos,
+	void(*error)(char *x));
+#endif

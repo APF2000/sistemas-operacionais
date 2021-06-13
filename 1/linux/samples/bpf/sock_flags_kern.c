@@ -1,3 +1,44 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:69890ee12a8c07145466943e26c177707af59b27c7dbb85cb8a4a9cbcd3aa3b5
-size 986
+#include <uapi/linux/bpf.h>
+#include <linux/socket.h>
+#include <linux/net.h>
+#include <uapi/linux/in.h>
+#include <uapi/linux/in6.h>
+#include "bpf_helpers.h"
+
+SEC("cgroup/sock1")
+int bpf_prog1(struct bpf_sock *sk)
+{
+	char fmt[] = "socket: family %d type %d protocol %d\n";
+
+	bpf_trace_printk(fmt, sizeof(fmt), sk->family, sk->type, sk->protocol);
+
+	/* block PF_INET6, SOCK_RAW, IPPROTO_ICMPV6 sockets
+	 * ie., make ping6 fail
+	 */
+	if (sk->family == PF_INET6 &&
+	    sk->type == SOCK_RAW   &&
+	    sk->protocol == IPPROTO_ICMPV6)
+		return 0;
+
+	return 1;
+}
+
+SEC("cgroup/sock2")
+int bpf_prog2(struct bpf_sock *sk)
+{
+	char fmt[] = "socket: family %d type %d protocol %d\n";
+
+	bpf_trace_printk(fmt, sizeof(fmt), sk->family, sk->type, sk->protocol);
+
+	/* block PF_INET, SOCK_RAW, IPPROTO_ICMP sockets
+	 * ie., make ping fail
+	 */
+	if (sk->family == PF_INET &&
+	    sk->type == SOCK_RAW  &&
+	    sk->protocol == IPPROTO_ICMP)
+		return 0;
+
+	return 1;
+}
+
+char _license[] SEC("license") = "GPL";

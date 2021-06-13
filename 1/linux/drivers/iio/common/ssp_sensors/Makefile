@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:459063648015b213a84005553c73a9ed94485115daabefbe456e840e9bc7dd62
-size 194
+#
+# Makefile for SSP sensor drivers and commons.
+#
+
+sensorhub-objs				:= ssp_dev.o ssp_spi.o
+obj-$(CONFIG_IIO_SSP_SENSORHUB)		+= sensorhub.o
+
+obj-$(CONFIG_IIO_SSP_SENSORS_COMMONS) 	+= ssp_iio.o

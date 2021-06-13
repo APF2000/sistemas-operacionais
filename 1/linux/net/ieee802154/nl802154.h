@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:554d93b8e67c3ed51caf7b82801c5b2836163a1d8153bfd6297fc6dbb70d74dc
-size 154
+#ifndef __IEEE802154_NL802154_H
+#define __IEEE802154_NL802154_H
+
+int nl802154_init(void);
+void nl802154_exit(void);
+
+#endif /* __IEEE802154_NL802154_H */

@@ -1,3 +1,45 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:90a821de43a0cfc5df598d7c034423b39f80f27358ac94967ed3416fc6d6db85
-size 773
+/*
+ * Andrew Lunn <andrew@lunn.ch>
+ * Ben Peddell <klightspeed@killerwolves.net>
+ *
+ * This file is licensed under the terms of the GNU General Public
+ * License version 2.  This program is licensed "as is" without any
+ * warranty of any kind, whether express or implied.
+ */
+
+/dts-v1/;
+
+#include "kirkwood.dtsi"
+#include "kirkwood-6282.dtsi"
+#include "kirkwood-synology.dtsi"
+
+/ {
+	model = "Synology DS111";
+	compatible = "synology,ds111", "marvell,kirkwood";
+
+	memory {
+		device_type = "memory";
+		reg = <0x00000000 0x8000000>;
+	};
+
+	chosen {
+		bootargs = "console=ttyS0,115200n8";
+		stdout-path = &uart0;
+	};
+
+	gpio-fan-100-15-35-1 {
+		status = "okay";
+	};
+
+	gpio-leds-hdd-21-1 {
+		status = "okay";
+	};
+};
+
+&s35390a {
+	status = "okay";
+};
+
+&pcie1 {
+	status = "okay";
+};

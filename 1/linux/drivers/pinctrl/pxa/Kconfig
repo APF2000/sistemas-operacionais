@@ -1,3 +1,25 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:82205a5c0c0ab904d8c3e2eed1d4b5e850f3b632ea35eb2dfd8fdfa92727123f
-size 576
+if (ARCH_PXA || COMPILE_TEST)
+
+config PINCTRL_PXA
+	bool
+	select PINMUX
+	select PINCONF
+	select GENERIC_PINCONF
+
+config PINCTRL_PXA25X
+	tristate "Marvell PXA25x pin controller driver"
+	select PINCTRL_PXA
+	default y if PXA25x
+	help
+	  This is the pinctrl, pinmux, pinconf driver for the Marvell
+	  PXA2xx block found in the pxa25x platforms.
+
+config PINCTRL_PXA27X
+	tristate "Marvell PXA27x pin controller driver"
+	select PINCTRL_PXA
+	default y if PXA27x
+	help
+	  This is the pinctrl, pinmux, pinconf driver for the Marvell
+	  PXA2xx block found in the pxa27x platforms.
+
+endif

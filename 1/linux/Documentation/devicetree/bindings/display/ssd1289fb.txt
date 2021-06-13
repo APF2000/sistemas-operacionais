@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:11ea217eacb8b3b96d874c6589cf05dd5ede2a28ee6797196d80473d6e18e88c
-size 392
+* Solomon SSD1289 Framebuffer Driver
+
+Required properties:
+  - compatible: Should be "solomon,ssd1289fb". The only supported bus for
+    now is lbc.
+  - reg: Should contain address of the controller on the LBC bus. The detail
+    was described in Documentation/devicetree/bindings/powerpc/fsl/lbc.txt
+
+Examples:
+display@2,0 {
+	compatible = "solomon,ssd1289fb";
+	reg = <0x2 0x0000 0x0004>;
+};

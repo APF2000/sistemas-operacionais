@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:02e55b34c7a99d5c2bfdfd7bca92406c327601e08b9cfa28fc693e46985c5fec
-size 328
+mISDN is a new modular ISDN driver, in the long term it should replace
+the old I4L driver architecture for passiv ISDN cards.
+It was designed to allow a broad range of applications and interfaces
+but only have the basic function in kernel, the interface to the user
+space is based on sockets with a own address family AF_ISDN.
+

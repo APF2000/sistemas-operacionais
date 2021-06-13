@@ -1,3 +1,25 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:347e8c8374d350445a77febb462fb9c609016d00289d3530067bea12dd649e45
-size 514
+#ifndef __PERF_UNWIND_LIBDW_H
+#define __PERF_UNWIND_LIBDW_H
+
+#include <elfutils/libdwfl.h>
+#include "unwind.h"
+
+struct machine;
+struct perf_sample;
+struct thread;
+
+bool libdw__arch_set_initial_registers(Dwfl_Thread *thread, void *arg);
+
+struct unwind_info {
+	Dwfl			*dwfl;
+	struct perf_sample      *sample;
+	struct machine          *machine;
+	struct thread           *thread;
+	unwind_entry_cb_t	cb;
+	void			*arg;
+	int			max_stack;
+	int			idx;
+	struct unwind_entry	entries[];
+};
+
+#endif /* __PERF_UNWIND_LIBDW_H */

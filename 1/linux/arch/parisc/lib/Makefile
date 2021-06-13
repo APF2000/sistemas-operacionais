@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:63ae448569b05f834130ff2e18b26d9b7730e44ecf85755200dd18ed2a58426a
-size 156
+#
+# Makefile for parisc-specific library files
+#
+
+lib-y	:= lusercopy.o bitops.o checksum.o io.o memset.o memcpy.o \
+	   ucmpdi2.o delay.o
+
+obj-y	:= iomap.o

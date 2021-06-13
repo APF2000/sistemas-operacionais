@@ -1,3 +1,4 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:46acaf26eb9640d6fb056ae426dff4c489de13951515ab3a81222d61a54349a8
-size 211
+/* Bit used for the pseudo-hwcap for non-negative segments.  We use
+   bit 1 to avoid bugs in some versions of glibc when bit 0 is
+   used; the choice is otherwise arbitrary. */
+#define VDSO_NOTE_NONEGSEG_BIT	1

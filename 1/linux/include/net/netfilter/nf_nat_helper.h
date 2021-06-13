@@ -1,3 +1,40 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:bebe1da551529be25d6c312909c339ed515d7909453eadb2149d5b208fc202f7
-size 1322
+#ifndef _NF_NAT_HELPER_H
+#define _NF_NAT_HELPER_H
+/* NAT protocol helper routines. */
+
+#include <net/netfilter/nf_conntrack.h>
+
+struct sk_buff;
+
+/* These return true or false. */
+bool __nf_nat_mangle_tcp_packet(struct sk_buff *skb, struct nf_conn *ct,
+				enum ip_conntrack_info ctinfo,
+				unsigned int protoff, unsigned int match_offset,
+				unsigned int match_len, const char *rep_buffer,
+				unsigned int rep_len, bool adjust);
+
+static inline bool nf_nat_mangle_tcp_packet(struct sk_buff *skb,
+					    struct nf_conn *ct,
+					    enum ip_conntrack_info ctinfo,
+					    unsigned int protoff,
+					    unsigned int match_offset,
+					    unsigned int match_len,
+					    const char *rep_buffer,
+					    unsigned int rep_len)
+{
+	return __nf_nat_mangle_tcp_packet(skb, ct, ctinfo, protoff,
+					  match_offset, match_len,
+					  rep_buffer, rep_len, true);
+}
+
+bool nf_nat_mangle_udp_packet(struct sk_buff *skb, struct nf_conn *ct,
+			      enum ip_conntrack_info ctinfo,
+			      unsigned int protoff, unsigned int match_offset,
+			      unsigned int match_len, const char *rep_buffer,
+			      unsigned int rep_len);
+
+/* Setup NAT on this expected conntrack so it follows master, but goes
+ * to port ct->master->saved_proto. */
+void nf_nat_follow_master(struct nf_conn *ct, struct nf_conntrack_expect *this);
+
+#endif

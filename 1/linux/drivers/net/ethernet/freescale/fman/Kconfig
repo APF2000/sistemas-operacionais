@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2cc29111e48cfecf27fddd90196da247c4c1d6f5a6cee476926b6b35a2a93cc3
-size 233
+config FSL_FMAN
+	tristate "FMan support"
+	depends on FSL_SOC || ARCH_LAYERSCAPE || COMPILE_TEST
+	select GENERIC_ALLOCATOR
+	select PHYLIB
+	default n
+	help
+		Freescale Data-Path Acceleration Architecture Frame Manager
+		(FMan) support

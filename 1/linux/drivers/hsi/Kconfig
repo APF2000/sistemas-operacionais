@@ -1,3 +1,20 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:91b1aa0164cddb0c12480d0f21b733ba26c1e27f6309cd7798e72f7e034acea7
-size 372
+#
+# HSI driver configuration
+#
+menuconfig HSI
+	tristate "HSI support"
+	---help---
+	  The "High speed synchronous Serial Interface" is
+	  synchronous serial interface used mainly to connect
+	  application engines and cellular modems.
+
+if HSI
+
+config HSI_BOARDINFO
+	bool
+	default y
+
+source "drivers/hsi/controllers/Kconfig"
+source "drivers/hsi/clients/Kconfig"
+
+endif # HSI

@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a9af3fe42141834ff70f0a8ee9e4040b99b2d35698219a25009f479bc1ab1025
-size 445
+ARM PL061 GPIO controller
+
+Required properties:
+- compatible : "arm,pl061", "arm,primecell"
+- #gpio-cells : Should be two. The first cell is the pin number and the
+  second cell is used to specify optional parameters:
+  - bit 0 specifies polarity (0 for normal, 1 for inverted)
+- gpio-controller : Marks the device node as a GPIO controller.
+- interrupts : Interrupt mapping for GPIO IRQ.
+- gpio-ranges : Interaction with the PINCTRL subsystem.

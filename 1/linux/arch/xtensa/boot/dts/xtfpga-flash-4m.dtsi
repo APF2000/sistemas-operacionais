@@ -1,3 +1,20 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:20095f281f72f6f258859c73fc0909649d418de58697f94976c04ceaca3f8449
-size 392
+/ {
+	soc {
+		flash: flash@08000000 {
+			#address-cells = <1>;
+			#size-cells = <1>;
+			compatible = "cfi-flash";
+			reg = <0x08000000 0x00400000>;
+			bank-width = <2>;
+			device-width = <2>;
+			partition@0x0 {
+				label = "boot loader area";
+				reg = <0x00000000 0x003f0000>;
+			};
+			partition@0x3f0000 {
+				label = "boot environment";
+				reg = <0x003f0000 0x00010000>;
+			};
+		};
+	};
+};

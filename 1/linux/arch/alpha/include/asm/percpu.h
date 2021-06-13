@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:7b774187cd556fa1937051f0a2cc9f827036b555da8f490753c341b45d2fd07b
-size 488
+#ifndef __ALPHA_PERCPU_H
+#define __ALPHA_PERCPU_H
+
+/*
+ * To calculate addresses of locally defined variables, GCC uses
+ * 32-bit displacement from the GP. Which doesn't work for per cpu
+ * variables in modules, as an offset to the kernel per cpu area is
+ * way above 4G.
+ *
+ * Always use weak definitions for percpu variables in modules.
+ */
+#if defined(MODULE) && defined(CONFIG_SMP)
+#define ARCH_NEEDS_WEAK_PER_CPU
+#endif
+
+#include <asm-generic/percpu.h>
+
+#endif /* __ALPHA_PERCPU_H */

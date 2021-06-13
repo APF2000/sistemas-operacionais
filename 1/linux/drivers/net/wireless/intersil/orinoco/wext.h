@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:7cf8f391653762ee844357f7e875e88bccdc77658a37dcc6472456ff60524013
-size 287
+/* Wireless extensions support.
+ *
+ * See copyright notice in main.c
+ */
+#ifndef _ORINOCO_WEXT_H_
+#define _ORINOCO_WEXT_H_
+
+#include <net/iw_handler.h>
+
+/* Structure defining all our WEXT handlers */
+extern const struct iw_handler_def orinoco_handler_def;
+
+#endif /* _ORINOCO_WEXT_H_ */

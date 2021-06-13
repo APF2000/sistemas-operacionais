@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1e2b3485d759d42db08f1922e54da0b4982904e3b1c94115b14572c2fc9488e5
-size 166
+#
+# Makefile for the Linux minix filesystem routines.
+#
+
+obj-$(CONFIG_MINIX_FS) += minix.o
+
+minix-objs := bitmap.o itree_v1.o itree_v2.o namei.o inode.o file.o dir.o

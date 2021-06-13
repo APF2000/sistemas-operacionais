@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5bb56690dedc652ff0260628cf8cbee710c537e67ede68388796b4136d05ee05
-size 285
+/dts-v1/;
+/include/ "xtfpga.dtsi"
+/include/ "xtfpga-flash-16m.dtsi"
+
+/ {
+	compatible = "cdns,xtensa-lx200";
+	memory@0 {
+		device_type = "memory";
+		reg = <0x00000000 0x06000000>;
+	};
+	pic: pic {
+		compatible = "cdns,xtensa-mx";
+		#interrupt-cells = <2>;
+		interrupt-controller;
+	};
+};

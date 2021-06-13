@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:81aebfe7daf88fc420f57b634d6aa57ba3d62b35a730d43f9842eb6333bd4efc
-size 309
+SPEAr Misc configuration
+===========================
+SPEAr SOCs have some miscellaneous registers which are used to configure
+few properties of different peripheral controllers.
+
+misc node required properties:
+
+- compatible Should be	"st,spear1340-misc", "syscon".
+- reg: Address range of misc space up to 8K

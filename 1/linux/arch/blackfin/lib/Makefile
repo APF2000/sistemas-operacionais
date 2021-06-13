@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2708d119e9e4d236b14c65972da07e68dfec736a1538c609fbbe78ff76f0a892
-size 273
+#
+# arch/blackfin/lib/Makefile
+#
+
+lib-y := \
+	ashldi3.o ashrdi3.o lshrdi3.o \
+	muldi3.o divsi3.o udivsi3.o modsi3.o umodsi3.o \
+	memcpy.o memset.o memcmp.o memchr.o memmove.o \
+	strcmp.o strcpy.o strncmp.o strncpy.o \
+	umulsi3_highpart.o smulsi3_highpart.o \
+	ins.o outs.o

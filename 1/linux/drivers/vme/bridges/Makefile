@@ -1,3 +1,3 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:9dabc87f2424ac323f483fa112ff5c03363f50f3477f031dd646b4148ce9b188
-size 124
+obj-$(CONFIG_VME_CA91CX42)	+= vme_ca91cx42.o
+obj-$(CONFIG_VME_TSI148)	+= vme_tsi148.o
+obj-$(CONFIG_VME_FAKE)		+= vme_fake.o

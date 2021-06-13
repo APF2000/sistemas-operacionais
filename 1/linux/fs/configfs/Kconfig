@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e67024da5de6d996f9abe19fb6f54ad1ec5aabe43f7a36d7f32a567daefb969a
-size 447
+config CONFIGFS_FS
+	tristate "Userspace-driven configuration filesystem"
+	select SYSFS
+	help
+	  configfs is a RAM-based filesystem that provides the converse
+	  of sysfs's functionality. Where sysfs is a filesystem-based
+	  view of kernel objects, configfs is a filesystem-based manager
+	  of kernel objects, or config_items.
+
+	  Both sysfs and configfs can and should exist together on the
+	  same system. One is not a replacement for the other.

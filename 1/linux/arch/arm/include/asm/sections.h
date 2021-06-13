@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:73cd56aeba7eb94414b1897f9207b64f317a086a1229906189da78775ef78d96
-size 150
+#ifndef _ASM_ARM_SECTIONS_H
+#define _ASM_ARM_SECTIONS_H
+
+#include <asm-generic/sections.h>
+
+extern char _exiprom[];
+
+#endif	/* _ASM_ARM_SECTIONS_H */

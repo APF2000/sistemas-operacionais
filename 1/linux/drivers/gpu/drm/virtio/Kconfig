@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:7488a7790860654cb2dc14785edb90272a5c5f9f0c0e11a84d6ebc147b74df5d
-size 259
+config DRM_VIRTIO_GPU
+	tristate "Virtio GPU driver"
+	depends on DRM && VIRTIO && MMU
+	select DRM_KMS_HELPER
+	select DRM_TTM
+	help
+	   This is the virtual GPU driver for virtio.  It can be used with
+	   QEMU based VMMs (like KVM or Xen).
+
+	   If unsure say M.

@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:010a53eeb7fda5108501835d32f684d5abde22333ecc08147682383b526ba334
-size 382
+* Semtech SX8654 I2C Touchscreen Controller
+
+Required properties:
+- compatible: must be "semtech,sx8654"
+- reg: i2c slave address
+- interrupt-parent: the phandle for the interrupt controller
+- interrupts: touch controller interrupt
+
+Example:
+
+	sx8654@48 {
+		compatible = "semtech,sx8654";
+		reg = <0x48>;
+		interrupt-parent = <&gpio6>;
+		interrupts = <3 IRQ_TYPE_EDGE_FALLING>;
+	};

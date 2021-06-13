@@ -1,3 +1,5 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:375dc43ed791a6d5dc72bc8fbfb1b9f3b6ebe8a9083ba80c0b4b8e0753cef4bd
-size 144
+obj-$(CONFIG_CRYPTO_DEV_VIRTIO) += virtio_crypto.o
+virtio_crypto-objs := \
+	virtio_crypto_algs.o \
+	virtio_crypto_mgr.o \
+	virtio_crypto_core.o

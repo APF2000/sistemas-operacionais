@@ -1,3 +1,42 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c043be6a966e975805db31e81070e16636809ce3f3f8e5652f4def5dfa60e77f
-size 780
+/*
+ * Copyright 2015, Michael Neuling, IBM Corp.
+ * Licensed under GPLv2.
+ *
+ * Edited: Rashmica Gupta, Nov 2015
+ *
+ * This test does a fork syscall inside a transaction. Basic sniff test
+ * to see if we can enter the kernel during a transaction.
+ */
+
+#include <errno.h>
+#include <inttypes.h>
+#include <pthread.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+
+#include "utils.h"
+#include "tm.h"
+
+int test_fork(void)
+{
+	SKIP_IF(!have_htm());
+
+	asm __volatile__(
+		"tbegin.;"
+		"blt    1f; "
+		"li     0, 2;"  /* fork syscall */
+		"sc  ;"
+		"tend.;"
+		"1: ;"
+		: : : "memory", "r0");
+	/* If we reach here, we've passed.  Otherwise we've probably crashed
+	 * the kernel */
+
+	return 0;
+}
+
+int main(int argc, char *argv[])
+{
+	return test_harness(test_fork, "tm_fork");
+}

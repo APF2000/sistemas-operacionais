@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4962df40368787fd4885454181348bb94418c086d58c478f679b7bea4d86d4ba
-size 151
+#
+# Generated files
+#
+gen_init_cpio
+initramfs_data.cpio
+initramfs_data.cpio.gz
+initramfs_data.cpio.bz2
+initramfs_data.cpio.lzma
+initramfs_list
+include

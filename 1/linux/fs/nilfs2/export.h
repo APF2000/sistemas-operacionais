@@ -1,3 +1,25 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1aeaa2d194bbac6a5bc39e843a35389b1deb824664860f79c9ea2b5339e9a6fd
-size 466
+#ifndef NILFS_EXPORT_H
+#define NILFS_EXPORT_H
+
+#include <linux/exportfs.h>
+
+extern const struct export_operations nilfs_export_ops;
+
+/**
+ * struct nilfs_fid - NILFS file id type
+ * @cno: checkpoint number
+ * @ino: inode number
+ * @gen: file generation (version) for NFS
+ * @parent_gen: parent generation (version) for NFS
+ * @parent_ino: parent inode number
+ */
+struct nilfs_fid {
+	u64 cno;
+	u64 ino;
+	u32 gen;
+
+	u32 parent_gen;
+	u64 parent_ino;
+} __packed;
+
+#endif

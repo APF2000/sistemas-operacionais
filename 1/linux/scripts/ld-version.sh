@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:be6ff92d517060b4a90b8feaa51448312d5a06f644436e8cebeaebb630ddde4c
-size 234
+#!/usr/bin/awk -f
+# extract linker version number from stdin and turn into single number
+	{
+	gsub(".*\\)", "");
+	gsub(".*version ", "");
+	gsub("-.*", "");
+	split($1,a, ".");
+	print a[1]*100000000 + a[2]*1000000 + a[3]*10000;
+	exit
+	}

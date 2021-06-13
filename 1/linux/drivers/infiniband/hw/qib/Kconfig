@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:56516fd6407b73c81ad7d55845dd629bd0c0ae3971dbd8ae188db43aca8322db
-size 496
+config INFINIBAND_QIB
+	tristate "Intel PCIe HCA support"
+	depends on 64BIT && INFINIBAND_RDMAVT
+	---help---
+	This is a low-level driver for Intel PCIe QLE InfiniBand host
+	channel adapters.  This driver does not support the Intel
+	HyperTransport card (model QHT7140).
+
+config INFINIBAND_QIB_DCA
+	bool "QIB DCA support"
+	depends on INFINIBAND_QIB && DCA && SMP && !(INFINIBAND_QIB=y && DCA=m)
+	default y
+	---help---
+	Setting this enables DCA support on some Intel chip sets
+	with the iba7322 HCA.

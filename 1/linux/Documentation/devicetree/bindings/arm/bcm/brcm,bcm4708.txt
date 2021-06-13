@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:8e8e8cba871cefba2f4db816b7b673f81b5c1dd7598033d102341b59ad61bd24
-size 294
+Broadcom BCM4708 device tree bindings
+-------------------------------------------
+
+Boards with the BCM4708 SoC shall have the following properties:
+
+Required root node property:
+
+bcm4708
+compatible = "brcm,bcm4708";
+
+bcm4709
+compatible = "brcm,bcm4709";
+
+bcm53012
+compatible = "brcm,bcm53012";

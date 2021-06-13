@@ -1,3 +1,5 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:6aad167d0a5038cf82753a7a910eeeea961761648ae1365d23c24b8a2aded52f
-size 245
+obj-$(CONFIG_SND_SUN4I_CODEC) += sun4i-codec.o
+obj-$(CONFIG_SND_SUN4I_I2S) += sun4i-i2s.o
+obj-$(CONFIG_SND_SUN4I_SPDIF) += sun4i-spdif.o
+obj-$(CONFIG_SND_SUN8I_CODEC_ANALOG) += sun8i-codec-analog.o
+obj-$(CONFIG_SND_SUN8I_CODEC) += sun8i-codec.o

@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5ccdbd14f1b558bbe9549238d7f31bbe53dc207a39bc09967c7be27ec31f0538
-size 268
+#ifndef _PERF_PARSE_BRANCH_OPTIONS_H
+#define _PERF_PARSE_BRANCH_OPTIONS_H 1
+#include <stdint.h>
+int parse_branch_stack(const struct option *opt, const char *str, int unset);
+int parse_branch_str(const char *str, __u64 *mode);
+#endif /* _PERF_PARSE_BRANCH_OPTIONS_H */

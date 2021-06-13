@@ -1,3 +1,22 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:69c4914aaabe15a3e25d2c85059b81ed592f9413fabe443238e61ddd1b0a0a7f
-size 511
+obj-$(CONFIG_ATH5K)		+= ath5k/
+obj-$(CONFIG_ATH9K_HW)		+= ath9k/
+obj-$(CONFIG_CARL9170)		+= carl9170/
+obj-$(CONFIG_ATH6KL)		+= ath6kl/
+obj-$(CONFIG_AR5523)		+= ar5523/
+obj-$(CONFIG_WIL6210)		+= wil6210/
+obj-$(CONFIG_ATH10K)		+= ath10k/
+obj-$(CONFIG_WCN36XX)		+= wcn36xx/
+
+obj-$(CONFIG_ATH_COMMON)	+= ath.o
+
+ath-objs :=	main.o \
+		regd.o \
+		hw.o \
+		key.o \
+		dfs_pattern_detector.o \
+		dfs_pri_detector.o
+
+ath-$(CONFIG_ATH_DEBUG) += debug.o
+ath-$(CONFIG_ATH_TRACEPOINTS) += trace.o
+
+CFLAGS_trace.o := -I$(src)

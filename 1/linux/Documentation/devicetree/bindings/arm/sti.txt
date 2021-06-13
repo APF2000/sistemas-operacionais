@@ -1,3 +1,23 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2674fc2bea8301327f98d8d74f5eb73cdde90defc019b3f8bce44fb993bcb7c9
-size 704
+ST STi Platforms Device Tree Bindings
+---------------------------------------
+
+Boards with the ST STiH415 SoC shall have the following properties:
+Required root node property:
+compatible = "st,stih415";
+
+Boards with the ST STiH416 SoC shall have the following properties:
+Required root node property:
+compatible = "st,stih416";
+
+Boards with the ST STiH407 SoC shall have the following properties:
+Required root node property:
+compatible = "st,stih407";
+
+Boards with the ST STiH410 SoC shall have the following properties:
+Required root node property:
+compatible = "st,stih410";
+
+Boards with the ST STiH418 SoC shall have the following properties:
+Required root node property:
+compatible = "st,stih418";
+

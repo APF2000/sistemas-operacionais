@@ -1,3 +1,27 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:0c904e9076d801959fe2233ffd87e0e10ec8b7a20ea8d0fd2d84cb5b3ccaff81
-size 375
+==================================
+Linux GPU Driver Developer's Guide
+==================================
+
+.. toctree::
+
+   introduction
+   drm-internals
+   drm-mm
+   drm-kms
+   drm-kms-helpers
+   drm-uapi
+   i915
+   meson
+   tinydrm
+   vc4
+   vga-switcheroo
+   vgaarbiter
+   bridge/dw-hdmi
+   todo
+
+.. only::  subproject and html
+
+   Indices
+   =======
+
+   * :ref:`genindex`

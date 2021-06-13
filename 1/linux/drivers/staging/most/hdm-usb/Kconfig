@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:6b932b19032c4bca74925c65c1151016b5d280c8a6a4de6f69a2415a1d44cda5
-size 334
+#
+# MOST USB configuration
+#
+
+config HDM_USB
+	tristate "USB HDM"
+	depends on USB && NET
+	select AIM_NETWORK
+	---help---
+	  Say Y here if you want to connect via USB to network tranceiver.
+	  This device driver depends on the networking AIM.
+
+	  To compile this driver as a module, choose M here: the
+	  module will be called hdm_usb.

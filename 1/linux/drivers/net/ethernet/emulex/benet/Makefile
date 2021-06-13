@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c3aabdf623d981221f0d06930702d3ce74566a4785f91cfdb513903ea72d3c1e
-size 166
+#
+# Makefile to build the network driver for ServerEngine's BladeEngine.
+#
+
+obj-$(CONFIG_BE2NET) += be2net.o
+
+be2net-y :=  be_main.o be_cmds.o be_ethtool.o be_roce.o

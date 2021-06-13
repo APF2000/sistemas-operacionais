@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a16070f5a89f5241d9415295e80d21d5f951550fb8694019219693382c4bc2f2
-size 111
+libperf-y += header.o
+libperf-y += kvm-stat.o
+
+libperf-$(CONFIG_DWARF) += dwarf-regs.o
+
+libperf-y += machine.o

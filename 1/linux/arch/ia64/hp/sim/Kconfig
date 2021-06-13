@@ -1,3 +1,22 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:60b2dfc3230820cb660a13327cfa657e179100498d9d58875794f1b07ab53a70
-size 371
+
+menu "HP Simulator drivers"
+	depends on IA64_HP_SIM || IA64_GENERIC
+
+config HP_SIMETH
+	bool "Simulated Ethernet "
+	depends on NET
+
+config HP_SIMSERIAL
+	bool "Simulated serial driver support"
+	depends on TTY
+
+config HP_SIMSERIAL_CONSOLE
+	bool "Console for HP simulator"
+	depends on HP_SIMSERIAL
+
+config HP_SIMSCSI
+	bool "Simulated SCSI disk"
+	depends on SCSI=y
+
+endmenu
+

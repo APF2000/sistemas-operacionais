@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:285b73b422762ffe74fa1f17f0c7219577bd92fc66e72da1d2d1168b048ba9b7
-size 704
+config DRM_CIRRUS_QEMU
+	tristate "Cirrus driver for QEMU emulated device"
+	depends on DRM && PCI && MMU
+	select DRM_KMS_HELPER
+	select DRM_TTM
+	help
+	 This is a KMS driver for emulated cirrus device in qemu.
+	 It is *NOT* intended for real cirrus devices. This requires
+	 the modesetting userspace X.org driver.
+
+	 Cirrus is obsolete, the hardware was designed in the 90ies
+	 and can't keep up with todays needs.  More background:
+	 https://www.kraxel.org/blog/2014/10/qemu-using-cirrus-considered-harmful/
+
+	 Better alternatives are:
+	   - stdvga (DRM_BOCHS, qemu -vga std, default in qemu 2.2+)
+	   - qxl (DRM_QXL, qemu -vga qxl, works best with spice)
+	   - virtio (DRM_VIRTIO_GPU), qemu -vga virtio)

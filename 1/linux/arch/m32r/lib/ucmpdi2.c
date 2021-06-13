@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:3ef50db68ab663cddbd131bfb771621fb21be66e7beb786dbedb6111954dff7a
-size 435
+#include "libgcc.h"
+
+int __ucmpdi2(unsigned long long a, unsigned long long b)
+{
+	const DWunion au = {.ll = a};
+	const DWunion bu = {.ll = b};
+
+	if ((unsigned int)au.s.high < (unsigned int)bu.s.high)
+		return 0;
+	else if ((unsigned int)au.s.high > (unsigned int)bu.s.high)
+		return 2;
+	if ((unsigned int)au.s.low < (unsigned int)bu.s.low)
+		return 0;
+	else if ((unsigned int)au.s.low > (unsigned int)bu.s.low)
+		return 2;
+	return 1;
+}

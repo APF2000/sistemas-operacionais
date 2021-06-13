@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ce2d656c16522bbbf5643313c100ca43e001c5476bc1d6074368a622b1fca215
-size 265
+#ifndef __NOUVEAU_USIF_H__
+#define __NOUVEAU_USIF_H__
+
+void usif_client_init(struct nouveau_cli *);
+void usif_client_fini(struct nouveau_cli *);
+int  usif_ioctl(struct drm_file *, void __user *, u32);
+int  usif_notify(const void *, u32, const void *, u32);
+
+#endif

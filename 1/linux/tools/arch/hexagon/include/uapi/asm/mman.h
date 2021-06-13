@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a89378a0c4339ae191f2e395de21d4582c05634ec66ab01f5b01223885c0c1fa
-size 213
+#ifndef TOOLS_ARCH_HEXAGON_UAPI_ASM_MMAN_FIX_H
+#define TOOLS_ARCH_HEXAGON_UAPI_ASM_MMAN_FIX_H
+#include <uapi/asm-generic/mman.h>
+/* MAP_32BIT is undefined on hexagon, fix it for perf */
+#define MAP_32BIT	0
+#endif

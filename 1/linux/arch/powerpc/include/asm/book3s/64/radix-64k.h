@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:730c79d1387b4fad7f3562b29ca033fb3f49c92bfe8cfffa2afbde88d6a3158f
-size 356
+#ifndef _ASM_POWERPC_PGTABLE_RADIX_64K_H
+#define _ASM_POWERPC_PGTABLE_RADIX_64K_H
+
+/*
+ * For 64K page size supported index is 13/9/9/5
+ */
+#define RADIX_PTE_INDEX_SIZE  5  /* 2MB huge page */
+#define RADIX_PMD_INDEX_SIZE  9  /* 1G huge page */
+#define RADIX_PUD_INDEX_SIZE	 9
+#define RADIX_PGD_INDEX_SIZE  13
+
+#endif /* _ASM_POWERPC_PGTABLE_RADIX_64K_H */

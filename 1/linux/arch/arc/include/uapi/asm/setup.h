@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:912597b995d31303358123a60b52846bb7e461e74385e94461b4460e19a50301
-size 242
+/*
+ * setup.h is part of userspace header ABI so UAPI scripts have to generate it
+ * even if there's nothing to export - causing empty <uapi/asm/setup.h>
+ * However to prevent "patch" from discarding it we add this placeholder
+ * comment
+ */

@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:de2ec62eedf87ba572b2119dc0588af5eb8951a3afb3772b8c5420eb09f2444b
-size 314
+#ifndef __SUN3_HEAD_H
+#define __SUN3_HEAD_H
+
+#define KERNBASE        0xE000000  /* First address the kernel will eventually be */
+#define LOAD_ADDR       0x4000      /* prom jumps to us here unless this is elf /boot */
+#define FC_CONTROL  3
+#define FC_SUPERD    5
+#define FC_CPU      7
+
+#endif /* __SUN3_HEAD_H */

@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:3099bf336bf1f44988f467e0daa2ccb0a12a92c0cae93bf3440f4054f9f4f8f9
-size 445
+#
+# Makefile for USB Core files and filesystem
+#
+
+usbcore-y := usb.o hub.o hcd.o urb.o message.o driver.o
+usbcore-y += config.o file.o buffer.o sysfs.o endpoint.o
+usbcore-y += devio.o notify.o generic.o quirks.o devices.o
+usbcore-y += port.o
+
+usbcore-$(CONFIG_OF)		+= of.o
+usbcore-$(CONFIG_USB_PCI)		+= hcd-pci.o
+usbcore-$(CONFIG_ACPI)		+= usb-acpi.o
+
+obj-$(CONFIG_USB)		+= usbcore.o
+
+obj-$(CONFIG_USB_LEDS_TRIGGER_USBPORT)	+= ledtrig-usbport.o

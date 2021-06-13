@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c4bc94a60b97cc5eb615d04902070addece4e439eaba0c803696b724b1f5f745
-size 167
+CFLAGS := $(CFLAGS) -Wall -D_GNU_SOURCE
+LDFLAGS := $(LDFLAGS) -lm
+
+TEST_GEN_FILES := msr aperf
+
+TEST_PROGS := run.sh
+
+include ../lib.mk
+
+$(TEST_GEN_FILES): $(HEADERS)

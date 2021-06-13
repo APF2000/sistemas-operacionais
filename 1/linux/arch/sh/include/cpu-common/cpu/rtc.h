@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:8c434a93bba6e769a468e6b2fbf00b8983f78a21d955ee1d6dcffe0dd830d1c8
-size 194
+#ifndef __ASM_SH_CPU_SH2_RTC_H
+#define __ASM_SH_CPU_SH2_RTC_H
+
+#define rtc_reg_size		sizeof(u16)
+#define RTC_BIT_INVERTED	0
+#define RTC_DEF_CAPABILITIES	0UL
+
+#endif /* __ASM_SH_CPU_SH2_RTC_H */

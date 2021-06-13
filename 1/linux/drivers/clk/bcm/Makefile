@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:867dc478f15ae5aa203030e1b71524b5bdd9858ade399ee338af5f3a1a712ba5
-size 574
+obj-$(CONFIG_CLK_BCM_63XX)	+= clk-bcm63xx.o
+obj-$(CONFIG_CLK_BCM_KONA)	+= clk-kona.o
+obj-$(CONFIG_CLK_BCM_KONA)	+= clk-kona-setup.o
+obj-$(CONFIG_CLK_BCM_KONA)	+= clk-bcm281xx.o
+obj-$(CONFIG_CLK_BCM_KONA)	+= clk-bcm21664.o
+obj-$(CONFIG_COMMON_CLK_IPROC)	+= clk-iproc-armpll.o clk-iproc-pll.o clk-iproc-asiu.o
+obj-$(CONFIG_ARCH_BCM2835)	+= clk-bcm2835.o
+obj-$(CONFIG_ARCH_BCM2835)	+= clk-bcm2835-aux.o
+obj-$(CONFIG_ARCH_BCM_53573)	+= clk-bcm53573-ilp.o
+obj-$(CONFIG_CLK_BCM_CYGNUS)	+= clk-cygnus.o
+obj-$(CONFIG_CLK_BCM_NSP)	+= clk-nsp.o
+obj-$(CONFIG_CLK_BCM_NS2)	+= clk-ns2.o

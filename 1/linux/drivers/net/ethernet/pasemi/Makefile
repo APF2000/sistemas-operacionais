@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f932ffcbcec4462466853ac900a172b95382b813f3516ada81e691abcff670c0
-size 163
+#
+# Makefile for the A Semi network device drivers.
+#
+
+obj-$(CONFIG_PASEMI_MAC) += pasemi_mac_driver.o
+pasemi_mac_driver-objs := pasemi_mac.o pasemi_mac_ethtool.o

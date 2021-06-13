@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:726d28f1a70a93c20a62d64c3bd7956c98a11e6811971d1d20eeb6a4713efe35
-size 244
+00-INDEX
+	- This file
+slaves/
+	- Drivers that provide support for specific family codes.
+masters/
+	- Individual chips providing 1-wire busses.
+w1.generic
+	- The 1-wire (w1) bus
+w1.netlink
+	- Userspace communication protocol over connector [1].

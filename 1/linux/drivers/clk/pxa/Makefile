@@ -1,3 +1,4 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:7118f650fe54128921e9c1c00498118a83592bc8e5ca2e1f218b9f02974a670a
-size 136
+obj-y				+= clk-pxa.o
+obj-$(CONFIG_PXA25x)		+= clk-pxa25x.o
+obj-$(CONFIG_PXA27x)		+= clk-pxa27x.o
+obj-$(CONFIG_PXA3xx)		+= clk-pxa3xx.o

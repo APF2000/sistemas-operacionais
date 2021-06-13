@@ -1,3 +1,20 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:13a4aec7944aa1ec8ee9f7aeda33af2ea387ccefcd90117441cbba181309f8df
-size 497
+Inno audio codec for RK3036
+
+Inno audio codec is integrated inside RK3036 SoC.
+
+Required properties:
+- compatible : Should be "rockchip,rk3036-codec".
+- reg : The registers of codec.
+- clock-names : Should be "acodec_pclk".
+- clocks : The clock of codec.
+- rockchip,grf : The phandle of grf device node.
+
+Example:
+
+	acodec: acodec-ana@20030000 {
+		compatible = "rk3036-codec";
+		reg = <0x20030000 0x4000>;
+		rockchip,grf = <&grf>;
+		clock-names = "acodec_pclk";
+		clocks = <&cru ACLK_VCODEC>;
+	};

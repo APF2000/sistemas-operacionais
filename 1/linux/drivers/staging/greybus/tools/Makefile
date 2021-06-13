@@ -1,3 +1,31 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d500fa855de156bc0e7b009c727f2e597d6759a5928fe951cbce1998b3216e1b
-size 548
+ifeq ($(strip $(V)), 1)
+  Q =
+else
+  Q = @
+endif
+
+CFLAGS	+= -std=gnu99 -Wall -Wextra -g \
+	    -D_GNU_SOURCE \
+	    -Wno-unused-parameter \
+	    -Wmaybe-uninitialized \
+	    -Wredundant-decls \
+	    -Wcast-align \
+	    -Wsign-compare \
+	    -Wno-missing-field-initializers
+
+CC	:= $(CROSS_COMPILE)gcc
+
+TOOLS = loopback_test
+
+all: $(TOOLS)
+
+%.o: %.c ../greybus_protocols.h
+	@echo '  TARGET_CC $@'
+	$(Q)$(CC) $(CFLAGS) -c $< -o $@
+
+loopback_%: loopback_%.o
+	@echo '  TARGET_LD $@'
+	$(Q)$(CC) $(CFLAGS) $(LDFLAGS) $^ -o $@
+
+clean::
+	rm -f *.o $(TOOLS)

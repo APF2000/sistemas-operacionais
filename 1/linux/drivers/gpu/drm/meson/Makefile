@@ -1,3 +1,5 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f59d8c5aa20440403454008c91aae2ff70f295b4f54f4088ddeaf1ab0af0a81c
-size 243
+meson-drm-y := meson_drv.o meson_plane.o meson_crtc.o meson_venc_cvbs.o
+meson-drm-y += meson_viu.o meson_vpp.o meson_venc.o meson_vclk.o meson_canvas.o
+
+obj-$(CONFIG_DRM_MESON) += meson-drm.o
+obj-$(CONFIG_DRM_MESON_DW_HDMI) += meson_dw_hdmi.o

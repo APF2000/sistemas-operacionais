@@ -1,3 +1,22 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:cd31439bea8d8b5acc15cacb8982b642e46f95b6118624c0e12dedf6edc82c74
-size 466
+/* Null profiling driver
+ *
+ * Copyright (C) 2003  Paul Mundt
+ *
+ * This file is subject to the terms and conditions of the GNU General Public
+ * Licence.  See the file "COPYING" in the main directory of this archive
+ * for more details.
+ */
+#include <linux/kernel.h>
+#include <linux/oprofile.h>
+#include <linux/init.h>
+#include <linux/errno.h>
+
+int __init oprofile_arch_init(struct oprofile_operations *ops)
+{
+	return -ENODEV;
+}
+
+void oprofile_arch_exit(void)
+{
+}
+

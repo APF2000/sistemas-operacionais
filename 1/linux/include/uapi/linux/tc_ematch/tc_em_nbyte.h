@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4c36b8e1ce1711279f7c16dd742e5228b33a4d4c7a411671ca4b40df645fca55
-size 192
+#ifndef __LINUX_TC_EM_NBYTE_H
+#define __LINUX_TC_EM_NBYTE_H
+
+#include <linux/types.h>
+#include <linux/pkt_cls.h>
+
+struct tcf_em_nbyte {
+	__u16		off;
+	__u16		len:12;
+	__u8		layer:4;
+};
+
+#endif

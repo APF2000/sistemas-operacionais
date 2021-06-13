@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:93ed569b534542740d32a2cf42111c4590b7ff0c3d04f5089188ca1ac1b0557a
-size 542
+/*
+ * Copyright 2008-2009 Freescale Semiconductor, Inc. All Rights Reserved.
+ *
+ *
+ * The code contained herein is licensed under the GNU General Public
+ * License. You may obtain a copy of the GNU General Public License
+ * Version 2 or later at the following locations:
+ *
+ * http://www.opensource.org/licenses/gpl-license.html
+ * http://www.gnu.org/copyleft/gpl.html
+ */
+
+#ifndef __ASM_ARCH_MXC_3DS_DB_H__
+#define __ASM_ARCH_MXC_3DS_DB_H__
+
+extern int __init mxc_expio_init(u32 base, u32 intr_gpio);
+
+#endif /* __ASM_ARCH_MXC_3DS_DB_H__ */

@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:23ff32ff950544ea1ab48f3721161a2f4a0ac2804fd414b0021a05996649bbfa
-size 280
+Synopsys ARC Free Running 64-bit Local Timer for ARC HS CPUs
+- clocksource provider for UP SoC
+
+Required properties:
+
+- compatible : should be "snps,archs-rtc"
+- clocks     : phandle to the source clock
+
+Example:
+
+	rtc {
+		compatible = "snps,arc-rtc";
+		clocks = <&core_clk>;
+	};

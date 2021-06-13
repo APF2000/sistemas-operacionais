@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2707ad730baa02ae389f5fe49763ea41a7c8f1cdf1a3982a2a6affa3c00fdb87
-size 383
+* EZchip NPS Management Ethernet port driver
+
+Required properties:
+- compatible: Should be "ezchip,nps-mgt-enet"
+- reg: Address and length of the register set for the device
+- interrupts: Should contain the ENET interrupt
+
+Examples:
+
+	ethernet@f0003000 {
+		compatible = "ezchip,nps-mgt-enet";
+		reg = <0xf0003000 0x44>;
+		interrupts = <7>;
+		mac-address = [ 00 11 22 33 44 55 ];
+	};

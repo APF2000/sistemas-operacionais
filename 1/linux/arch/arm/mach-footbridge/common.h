@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:88a8592a7848b462dd474a4725a6f132e3e4fb395ade4fbfde48e9cc42a0a7d2
-size 364
+#include <linux/reboot.h>
+
+extern void footbridge_timer_init(void);
+extern void isa_timer_init(void);
+
+extern void isa_rtc_init(void);
+
+extern void footbridge_map_io(void);
+extern void footbridge_init_irq(void);
+
+extern void isa_init_irq(unsigned int irq);
+extern void footbridge_restart(enum reboot_mode, const char *);
+
+extern void footbridge_sched_clock(void);

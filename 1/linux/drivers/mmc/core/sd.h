@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:05a4bb45d38d0cc4dbb6504043aa72f558fc01a1ffef107d2bfb7ab6c8398160
-size 517
+#ifndef _MMC_CORE_SD_H
+#define _MMC_CORE_SD_H
+
+#include <linux/types.h>
+
+extern struct device_type sd_type;
+
+struct mmc_host;
+struct mmc_card;
+
+int mmc_sd_get_cid(struct mmc_host *host, u32 ocr, u32 *cid, u32 *rocr);
+int mmc_sd_get_csd(struct mmc_host *host, struct mmc_card *card);
+void mmc_decode_cid(struct mmc_card *card);
+int mmc_sd_setup_card(struct mmc_host *host, struct mmc_card *card,
+	bool reinit);
+unsigned mmc_sd_get_max_clock(struct mmc_card *card);
+int mmc_sd_switch_hs(struct mmc_card *card);
+
+#endif

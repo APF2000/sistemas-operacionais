@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ab96c8068df3469bac8073544a8f72cbb0038ccfbc16eac3190e1cddb889e803
-size 350
+* Power Management Controller (PMC)
+
+Required properties:
+- compatible: Should be "atmel,<chip>-pmc".
+	<chip> can be: at91rm9200, at91sam9260, at91sam9g45, at91sam9n12,
+	at91sam9x5, sama5d3
+
+- reg: Should contain PMC registers location and length
+
+Examples:
+	pmc: pmc@fffffc00 {
+		compatible = "atmel,at91rm9200-pmc";
+		reg = <0xfffffc00 0x100>;
+	};

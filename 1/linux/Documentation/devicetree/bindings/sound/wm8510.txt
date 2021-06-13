@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f463535808b598dbb55fcada88c8862db23f8f7d88dd90a52377b1970a334a01
-size 325
+WM8510 audio CODEC
+
+This device supports both I2C and SPI (configured with pin strapping
+on the board).
+
+Required properties:
+
+  - compatible : "wlf,wm8510"
+
+  - reg : the I2C address of the device for I2C, the chip select
+          number for SPI.
+
+Example:
+
+codec: wm8510@1a {
+	compatible = "wlf,wm8510";
+	reg = <0x1a>;
+};

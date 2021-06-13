@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f71e3ef0c2d07a90d93d005d9d9d68628d1fd2722e0a45ab9daa74c8362db70a
-size 286
+* Maxim (Dallas) DS1742/DS1743 Real Time Clock
+
+Required properties:
+- compatible: Should contain "maxim,ds1742".
+- reg: Physical base address of the RTC and length of memory
+  mapped region.
+
+Example:
+	rtc: rtc@10000000 {
+		compatible = "maxim,ds1742";
+		reg = <0x10000000 0x800>;
+	};

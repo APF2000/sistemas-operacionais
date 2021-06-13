@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e1ace15ae8b5e4f9b52b42a9a709894cacda47499aa776acff2a2265e26a05a6
-size 119
+#ifndef _ASM_SCORE_TYPES_H
+#define _ASM_SCORE_TYPES_H
+
+#include <asm-generic/types.h>
+
+#endif /* _ASM_SCORE_TYPES_H */

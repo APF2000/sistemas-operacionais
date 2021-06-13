@@ -1,3 +1,3 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:095d3047ede0b9649b88d6673d87789ca7daa631aeae2dec5115705fac0a7d84
-size 83
+obj-$(CONFIG_ACPI_NFIT) := nfit.o
+nfit-y := core.o
+nfit-$(CONFIG_X86_MCE) += mce.o

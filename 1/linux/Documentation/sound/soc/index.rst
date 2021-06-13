@@ -1,3 +1,20 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:18c4393f34bef0715f3d51a19f6abf5e322c22b699d549d7f82c05293109b111
-size 254
+==============
+ALSA SoC Layer
+==============
+
+The documentation is spilt into the following sections:-
+
+.. toctree::
+   :maxdepth: 2
+
+   overview
+   codec
+   dai
+   dapm
+   platform
+   machine
+   pops-clicks
+   clocking
+   jack
+   dpcm
+   codec-to-codec

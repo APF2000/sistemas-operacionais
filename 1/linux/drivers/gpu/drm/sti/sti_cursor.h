@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:34f86eb84abd956de039874c1e009c9ed47e47d3718874ed54d1adeb1d547c06
-size 417
+/*
+ * Copyright (C) STMicroelectronics SA 2013
+ * Authors: Vincent Abriou <vincent.abriou@st.com> for STMicroelectronics.
+ * License terms:  GNU General Public License (GPL), version 2
+ */
+
+#ifndef _STI_CURSOR_H_
+#define _STI_CURSOR_H_
+
+struct drm_plane *sti_cursor_create(struct drm_device *drm_dev,
+				    struct device *dev, int desc,
+				    void __iomem *baseaddr,
+				    unsigned int possible_crtcs);
+
+#endif

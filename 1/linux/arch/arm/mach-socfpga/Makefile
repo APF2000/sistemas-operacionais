@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:de19f24de8f77e084a66a444ff139721e966cd810513dda6c03cff8bd598f08c
-size 242
+#
+# Makefile for the linux kernel.
+#
+
+obj-y					:= socfpga.o
+obj-$(CONFIG_SMP)	+= headsmp.o platsmp.o
+obj-$(CONFIG_SOCFPGA_SUSPEND)	+= pm.o self-refresh.o
+obj-$(CONFIG_EDAC_ALTERA_L2C)	+= l2_cache.o
+obj-$(CONFIG_EDAC_ALTERA_OCRAM)	+= ocram.o

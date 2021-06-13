@@ -1,3 +1,5 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ea3ddb47c253660d97020801ad84e13252559db710141cf34928567ff66e0e5d
-size 192
+obj-$(CONFIG_SND_BCM2835)	+= snd-bcm2835.o
+snd-bcm2835-objs		:= bcm2835.o bcm2835-ctl.o bcm2835-pcm.o bcm2835-vchiq.o
+
+ccflags-y += -Idrivers/staging/vc04_services -D__VCCOREVER__=0x04000000
+

@@ -1,3 +1,28 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ca8cd202970c914e40849ad567e1e173bb63652197c9b169037bf06ee1e7937a
-size 486
+/*
+ * ioctl interface for /dev/clp
+ *
+ * Copyright IBM Corp. 2016
+ * Author(s): Martin Schwidefsky <schwidefsky@de.ibm.com>
+ */
+
+#ifndef _ASM_CLP_H
+#define _ASM_CLP_H
+
+#include <linux/types.h>
+#include <linux/ioctl.h>
+
+struct clp_req {
+	unsigned int c : 1;
+	unsigned int r : 1;
+	unsigned int lps : 6;
+	unsigned int cmd : 8;
+	unsigned int : 16;
+	unsigned int reserved;
+	__u64 data_p;
+};
+
+#define CLP_IOCTL_MAGIC 'c'
+
+#define CLP_SYNC _IOWR(CLP_IOCTL_MAGIC, 0xC1, struct clp_req)
+
+#endif

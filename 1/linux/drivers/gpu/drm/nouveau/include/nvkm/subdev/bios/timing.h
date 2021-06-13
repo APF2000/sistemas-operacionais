@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2a73318266779862d6b4f538c6c2265b8b39d3aec6b2e2b05515b399bbb4cc9a
-size 405
+#ifndef __NVBIOS_TIMING_H__
+#define __NVBIOS_TIMING_H__
+#include <subdev/bios/ramcfg.h>
+
+u32 nvbios_timingTe(struct nvkm_bios *,
+		    u8 *ver, u8 *hdr, u8 *cnt, u8 *len, u8 *snr, u8 *ssz);
+u32 nvbios_timingEe(struct nvkm_bios *, int idx,
+		    u8 *ver, u8 *hdr, u8 *cnt, u8 *len);
+u32 nvbios_timingEp(struct nvkm_bios *, int idx,
+		    u8 *ver, u8 *hdr, u8 *cnt, u8 *len, struct nvbios_ramcfg *);
+#endif

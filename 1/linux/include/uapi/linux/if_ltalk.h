@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4db6a76fac8c1dcbd76c010e94c489f6e970c671375b427f57e414683738feea
-size 162
+#ifndef _UAPI__LINUX_LTALK_H
+#define _UAPI__LINUX_LTALK_H
+
+#define LTALK_HLEN		1
+#define LTALK_MTU		600
+#define LTALK_ALEN		1
+
+
+#endif /* _UAPI__LINUX_LTALK_H */

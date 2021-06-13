@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:92bd6ab237cd086468c3d4bf971d4601d5abae05ef7f1687c3aabb5d663355ac
-size 234
+NAU8810 audio CODEC
+
+This device supports I2C only.
+
+Required properties:
+
+  - compatible : "nuvoton,nau8810"
+
+  - reg : the I2C address of the device.
+
+Example:
+
+codec: nau8810@1a {
+	compatible = "nuvoton,nau8810";
+	reg = <0x1a>;
+};

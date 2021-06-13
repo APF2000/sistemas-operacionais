@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:65de1dd5799832ae384722d0fb4abe293c44361107560bddd3f6f1fb30c44c89
-size 260
+#
+# Makefile for the Nios2-specific parts of the memory manager.
+#
+
+obj-y	+= cacheflush.o
+obj-y	+= dma-mapping.o
+obj-y	+= extable.o
+obj-y	+= fault.o
+obj-y	+= init.o
+obj-y	+= ioremap.o
+obj-y	+= mmu_context.o
+obj-y	+= pgtable.o
+obj-y	+= tlb.o
+obj-y	+= uaccess.o

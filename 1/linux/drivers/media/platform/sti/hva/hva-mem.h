@@ -1,3 +1,34 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a462379188f834a6153f6a25bbf3bcd3b1f76562e445432e8c79991519ac8ff2
-size 741
+/*
+ * Copyright (C) STMicroelectronics SA 2015
+ * Authors: Yannick Fertre <yannick.fertre@st.com>
+ *          Hugues Fruchet <hugues.fruchet@st.com>
+ * License terms:  GNU General Public License (GPL), version 2
+ */
+
+#ifndef HVA_MEM_H
+#define HVA_MEM_H
+
+/**
+ * struct hva_buffer - hva buffer
+ *
+ * @name:  name of requester
+ * @paddr: physical address (for hardware)
+ * @vaddr: virtual address (kernel can read/write)
+ * @size:  size of buffer
+ */
+struct hva_buffer {
+	const char		*name;
+	dma_addr_t		paddr;
+	void			*vaddr;
+	u32			size;
+};
+
+int hva_mem_alloc(struct hva_ctx *ctx,
+		  __u32 size,
+		  const char *name,
+		  struct hva_buffer **buf);
+
+void hva_mem_free(struct hva_ctx *ctx,
+		  struct hva_buffer *buf);
+
+#endif /* HVA_MEM_H */

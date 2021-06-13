@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:895e5fd09c2cf8c9dd59b3c84a4230dd0f20c7e2c0f3c62bbff5e5b2e5eaac8e
-size 150
+#ifndef _ASM_KEXEC_BZIMAGE64_H
+#define _ASM_KEXEC_BZIMAGE64_H
+
+extern struct kexec_file_ops kexec_bzImage64_ops;
+
+#endif  /* _ASM_KEXE_BZIMAGE64_H */

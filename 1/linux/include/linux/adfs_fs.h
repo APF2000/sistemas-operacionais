@@ -1,3 +1,23 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:0f97111603d2a600de4f89d5069ef13b8489aebb665da9711075284bfb5bfa45
-size 535
+#ifndef _ADFS_FS_H
+#define _ADFS_FS_H
+
+#include <uapi/linux/adfs_fs.h>
+
+/*
+ * Calculate the boot block checksum on an ADFS drive.  Note that this will
+ * appear to be correct if the sector contains all zeros, so also check that
+ * the disk size is non-zero!!!
+ */
+static inline int adfs_checkbblk(unsigned char *ptr)
+{
+	unsigned int result = 0;
+	unsigned char *p = ptr + 511;
+
+	do {
+	        result = (result & 0xff) + (result >> 8);
+        	result = result + *--p;
+	} while (p != ptr);
+
+	return (result & 0xff) != ptr[511];
+}
+#endif

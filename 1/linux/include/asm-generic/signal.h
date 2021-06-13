@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f1b3c9852f44fa2721b88830804d9fabd25d6e0f245dc642242f6ea3ceabe3ea
-size 269
+#ifndef __ASM_GENERIC_SIGNAL_H
+#define __ASM_GENERIC_SIGNAL_H
+
+#include <uapi/asm-generic/signal.h>
+
+#ifndef __ASSEMBLY__
+#ifdef SA_RESTORER
+#endif
+
+#include <asm/sigcontext.h>
+#undef __HAVE_ARCH_SIG_BITOPS
+
+#endif /* __ASSEMBLY__ */
+#endif /* _ASM_GENERIC_SIGNAL_H */

@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:15a5e8253a082d7f83c078fa8cf7102e9632d9bdcc1a47d27af2e8d652ee315f
-size 181
+#ifndef __ASM_MIPS_BITSPERLONG_H
+#define __ASM_MIPS_BITSPERLONG_H
+
+#define __BITS_PER_LONG _MIPS_SZLONG
+
+#include <asm-generic/bitsperlong.h>
+
+#endif /* __ASM_MIPS_BITSPERLONG_H */

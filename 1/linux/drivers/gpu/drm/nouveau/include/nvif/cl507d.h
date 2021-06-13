@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:17b823296d6c768bc103616cf0304ced9ae2ea1fc21d33ebc6a1bfdb3f415bcc
-size 232
+#ifndef __NVIF_CL507D_H__
+#define __NVIF_CL507D_H__
+
+struct nv50_disp_core_channel_dma_v0 {
+	__u8  version;
+	__u8  pad01[7];
+	__u64 pushbuf;
+};
+
+#define NV50_DISP_CORE_CHANNEL_DMA_V0_NTFY_UEVENT                          0x00
+#endif

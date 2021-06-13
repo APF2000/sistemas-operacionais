@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d64f685399d499f986a854427cad16476e3a3f863ee0bad0dd775cdb9096b19b
-size 474
+Kernel driver mxc_w1
+====================
+
+Supported chips:
+  * Freescale MX27, MX31 and probably other i.MX SoCs
+    Datasheets:
+        http://www.freescale.com/files/32bit/doc/data_sheet/MCIMX31.pdf?fpsp=1
+	http://cache.freescale.com/files/dsp/doc/archive/MCIMX27.pdf?fsrch=1&WT_TYPE=
+	Data%20Sheets&WT_VENDOR=FREESCALE&WT_FILE_FORMAT=pdf&WT_ASSET=Documentation
+
+Author: Originally based on Freescale code, prepared for mainline by
+	Sascha Hauer <s.hauer@pengutronix.de>

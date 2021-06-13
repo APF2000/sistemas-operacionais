@@ -1,3 +1,23 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:22469a932f0f982ed6428bd65422c16a42c44d52e7f8432e5649cdc3e315da6f
-size 448
+/*
+ * Callers outside of misc.c need access to the error reporting routines,
+ * but the *_putstr() functions need to stay in misc.c because of how
+ * memcpy() and memmove() are defined for the compressed boot environment.
+ */
+#include "misc.h"
+#include "error.h"
+
+void warn(char *m)
+{
+	error_putstr("\n\n");
+	error_putstr(m);
+	error_putstr("\n\n");
+}
+
+void error(char *m)
+{
+	warn(m);
+	error_putstr(" -- System halted");
+
+	while (1)
+		asm("hlt");
+}

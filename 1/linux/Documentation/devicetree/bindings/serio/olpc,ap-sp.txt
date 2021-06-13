@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:82aa59c2b11a82b0a0da4f41603fa0f590ccb3533e754811113325a0ca615454
-size 273
+OLPC AP-SP serio interface
+
+Required properties:
+- compatible : "olpc,ap-sp"
+- reg : base address and length of SoC's WTM registers
+- interrupts : SP-AP interrupt
+
+Example:
+	ap-sp@d4290000 {
+		compatible = "olpc,ap-sp";
+		reg = <0xd4290000 0x1000>;
+		interrupts = <40>;
+	}

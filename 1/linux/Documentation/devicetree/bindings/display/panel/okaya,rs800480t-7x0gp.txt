@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:34d4d5e4a3f100e598f8fe69a6645823f86208a234a7cd0201aded04dea3c85b
-size 250
+OKAYA Electric America, Inc. RS800480T-7X0GP 7" WVGA LCD panel
+
+Required properties:
+- compatible: should be "okaya,rs800480t-7x0gp"
+
+This binding is compatible with the simple-panel binding, which is specified
+in simple-panel.txt in this directory.

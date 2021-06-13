@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e99eb0bd69479ee3b84b477b1a90be0fc2997c78a9c6b526979aa9e561d540c9
-size 300
+#ifndef _ASM_CRIS_INTMEM_H
+#define _ASM_CRIS_INTMEM_H
+
+void* crisv32_intmem_alloc(unsigned size, unsigned align);
+void crisv32_intmem_free(void* addr);
+void* crisv32_intmem_phys_to_virt(unsigned long addr);
+unsigned long crisv32_intmem_virt_to_phys(void *addr);
+
+#endif /* _ASM_CRIS_ARCH_INTMEM_H */

@@ -1,3 +1,25 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b157269e64d7b138d73a35b64f223ba1510ef45ce50c95a95dd9ec18c9b5ce98
-size 740
+/*
+ *
+ * Layer 1 defines
+ *
+ * Copyright 2008  by Karsten Keil <kkeil@novell.com>
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 2 as
+ * published by the Free Software Foundation.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ */
+
+#define FLG_L1_ACTIVATING	1
+#define FLG_L1_ACTIVATED	2
+#define FLG_L1_DEACTTIMER	3
+#define FLG_L1_ACTTIMER		4
+#define FLG_L1_T3RUN		5
+#define FLG_L1_PULL_REQ		6
+#define FLG_L1_UINT		7
+#define FLG_L1_DBLOCKED		8

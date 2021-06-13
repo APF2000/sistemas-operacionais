@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4430413f5dd7005c06deb0f2ad629773d02c584ae9552f582d8a261b98437022
-size 324
+#
+# Makefile for ALSA
+# Copyright (c) 2002 by David S. Miller <davem@redhat.com>
+#
+
+snd-sun-amd7930-objs := amd7930.o
+snd-sun-cs4231-objs := cs4231.o
+snd-sun-dbri-objs := dbri.o
+
+obj-$(CONFIG_SND_SUN_AMD7930) += snd-sun-amd7930.o
+obj-$(CONFIG_SND_SUN_CS4231) += snd-sun-cs4231.o
+obj-$(CONFIG_SND_SUN_DBRI) += snd-sun-dbri.o

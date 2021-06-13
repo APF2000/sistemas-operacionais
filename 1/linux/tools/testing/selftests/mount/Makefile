@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:fa22b811329a89704c7399f8277e260f41cc2be31e686b7507ac31bd15b10805
-size 367
+# Makefile for mount selftests.
+CFLAGS = -Wall \
+         -O2
+
+TEST_GEN_PROGS := unprivileged-remount-test
+
+include ../lib.mk
+
+override RUN_TESTS := if [ -f /proc/self/uid_map ] ; \
+		      then	\
+				./unprivileged-remount-test ; \
+		      else	\
+				echo "WARN: No /proc/self/uid_map exist, test skipped." ; \
+		      fi
+override EMIT_TESTS := echo "$(RUN_TESTS)"
+

@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:bb20a267871fe1afcb23853e100bfa5e397eae05308acde327711c5b74f98b79
-size 287
+#ifndef __DT_C8SECTPFE_H
+#define __DT_C8SECTPFE_H
+
+#define STV0367_TDA18212_NIMA_1	0
+#define STV0367_TDA18212_NIMA_2	1
+#define STV0367_TDA18212_NIMB_1	2
+#define STV0367_TDA18212_NIMB_2	3
+
+#define STV0903_6110_LNB24_NIMA	4
+#define STV0903_6110_LNB24_NIMB	5
+
+#endif /* __DT_C8SECTPFE_H */

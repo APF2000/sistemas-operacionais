@@ -1,3 +1,2 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:04033f8880e0c0acc983ad8c164b49b0a932ec85c226c5b07f55e5db9f0987e1
-size 14
+*.dtb*
+uImage

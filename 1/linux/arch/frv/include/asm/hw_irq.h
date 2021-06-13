@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:13ccd97f84cf45a412dbde81318e97e33937ff10b61cda99bf1a87428630ee9f
-size 484
+/* hw_irq.h: FR-V specific h/w IRQ stuff
+ *
+ * Copyright (C) 2003 Red Hat, Inc. All Rights Reserved.
+ * Written by David Howells (dhowells@redhat.com)
+ *
+ * This program is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License
+ * as published by the Free Software Foundation; either version
+ * 2 of the License, or (at your option) any later version.
+ */
+
+#ifndef _ASM_HW_IRQ_H
+#define _ASM_HW_IRQ_H
+
+
+#endif /* _ASM_HW_IRQ_H */

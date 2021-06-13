@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:45a261fbeecf5d1cc18f6c8ed7bd0d0bf93036400d894bd032b53a6b94ecb346
-size 306
+88pm860x-backlight bindings
+
+Optional properties:
+  - marvell,88pm860x-iset: Current supplies on backlight device.
+  - marvell,88pm860x-pwm: PWM frequency on backlight device.
+
+Example:
+
+	backlights {
+		backlight-0 {
+			marvell,88pm860x-iset = <4>;
+			marvell,88pm860x-pwm = <3>;
+		};
+		backlight-2 {
+		};

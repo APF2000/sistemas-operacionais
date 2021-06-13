@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a6cc2ed0810ea334d6e56970b9065e6b32f71b2fc6595a94c6426b5e32de74d9
-size 264
+obj-$(CONFIG_VHOST_NET) += vhost_net.o
+vhost_net-y := net.o
+
+obj-$(CONFIG_VHOST_SCSI) += vhost_scsi.o
+vhost_scsi-y := scsi.o
+
+obj-$(CONFIG_VHOST_VSOCK) += vhost_vsock.o
+vhost_vsock-y := vsock.o
+
+obj-$(CONFIG_VHOST_RING) += vringh.o
+
+obj-$(CONFIG_VHOST)	+= vhost.o

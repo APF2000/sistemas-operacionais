@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:816779334d14c6bdcb7daee034cde30261d19439f1f51fbf154ff780ba2e7168
-size 125
+#define _GNU_SOURCE
+#include <fcntl.h>
+
+int main(int argc, char **argv)
+{
+        splice(0, 0, 1, 0, 1<<30, 0);
+	return 0;
+}

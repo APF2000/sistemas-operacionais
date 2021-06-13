@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:fb2f7fdd4e78773a8fb803368ae15a03933d10bb9e253562d315503cd29b1880
-size 248
+subdir-ccflags-$(CONFIG_PPC_WERROR) := -Werror
+
+obj-y				+= xics-common.o
+obj-$(CONFIG_PPC_ICP_NATIVE)	+= icp-native.o
+obj-$(CONFIG_PPC_ICP_HV)	+= icp-hv.o
+obj-$(CONFIG_PPC_ICS_RTAS)	+= ics-rtas.o
+obj-$(CONFIG_PPC_POWERNV)	+= ics-opal.o icp-opal.o

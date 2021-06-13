@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c208e7610cf6ab00513ac075dbc9c80a57fcb50d482a25d4ca73a2abbfcb9e9d
-size 447
+# Berlin SoC Family
+dtb-$(CONFIG_ARCH_BERLIN) += berlin4ct-dmp.dtb
+dtb-$(CONFIG_ARCH_BERLIN) += berlin4ct-stb.dtb
+
+# Mvebu SoC Family
+dtb-$(CONFIG_ARCH_MVEBU) += armada-3720-db.dtb
+dtb-$(CONFIG_ARCH_MVEBU) += armada-3720-espressobin.dtb
+dtb-$(CONFIG_ARCH_MVEBU) += armada-7040-db.dtb
+dtb-$(CONFIG_ARCH_MVEBU) += armada-8040-db.dtb
+dtb-$(CONFIG_ARCH_MVEBU) += armada-8040-mcbin.dtb
+
+always		:= $(dtb-y)
+subdir-y	:= $(dts-dirs)
+clean-files	:= *.dtb

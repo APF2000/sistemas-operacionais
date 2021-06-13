@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:cf743848403399b46b0128b266901a38ea5c352b2e2571774894dda25921f0fd
-size 574
+The ncpfs filesystem understands the NCP protocol, designed by the
+Novell Corporation for their NetWare(tm) product.  NCP is functionally
+similar to the NFS used in the TCP/IP community.
+To mount a NetWare filesystem, you need a special mount program, which
+can be found in the ncpfs package.  The home site for ncpfs is
+ftp.gwdg.de/pub/linux/misc/ncpfs, but sunsite and its many mirrors
+will have it as well.
+
+Related products are linware and mars_nwe, which will give Linux partial
+NetWare server functionality.
+
+mars_nwe can be found on ftp.gwdg.de/pub/linux/misc/ncpfs.

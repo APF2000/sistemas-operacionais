@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:80ad2c2b3e3904d8611d0e7538812533f90bc389b27df5b6617a1ff8bc78f340
-size 288
+# TODO: all of these should be removed
+ccflags-y := -DLINUX -D__KERNEL__ -D__NO_VERSION__
+ccflags-y += -DHOSTAP
+
+vt6655_stage-y +=	device_main.o \
+	card.o \
+	channel.o \
+	mac.o \
+	baseband.o \
+	rxtx.o \
+	dpc.o \
+	power.o \
+	srom.o \
+	key.o \
+	rf.o
+
+obj-$(CONFIG_VT6655) +=	vt6655_stage.o

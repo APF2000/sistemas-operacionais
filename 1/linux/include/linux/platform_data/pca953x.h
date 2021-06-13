@@ -1,3 +1,30 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1261dd7d8444368e964064f1a2ff80f3f65da7ec4a67465b01400cf338c76b68
-size 651
+#ifndef _LINUX_PCA953X_H
+#define _LINUX_PCA953X_H
+
+#include <linux/types.h>
+#include <linux/i2c.h>
+
+/* platform data for the PCA9539 16-bit I/O expander driver */
+
+struct pca953x_platform_data {
+	/* number of the first GPIO */
+	unsigned	gpio_base;
+
+	/* initial polarity inversion setting */
+	u32		invert;
+
+	/* interrupt base */
+	int		irq_base;
+
+	void		*context;	/* param to setup/teardown */
+
+	int		(*setup)(struct i2c_client *client,
+				unsigned gpio, unsigned ngpio,
+				void *context);
+	int		(*teardown)(struct i2c_client *client,
+				unsigned gpio, unsigned ngpio,
+				void *context);
+	const char	*const *names;
+};
+
+#endif /* _LINUX_PCA953X_H */

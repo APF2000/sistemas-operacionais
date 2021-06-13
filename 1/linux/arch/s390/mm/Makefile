@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2fa621efc38bc4d243bdc7a5dfd6ea257ad33f58664d9ee774858e8fb961890f
-size 366
+#
+# Makefile for the linux s390-specific parts of the memory manager.
+#
+
+obj-y		:= init.o fault.o extmem.o mmap.o vmem.o maccess.o
+obj-y		+= page-states.o gup.o pageattr.o mem_detect.o
+obj-y		+= pgtable.o pgalloc.o
+
+obj-$(CONFIG_CMM)		+= cmm.o
+obj-$(CONFIG_HUGETLB_PAGE)	+= hugetlbpage.o
+obj-$(CONFIG_S390_PTDUMP)	+= dump_pagetables.o
+obj-$(CONFIG_PGSTE)		+= gmap.o

@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:3a5f50683b4ba78564c3fe2ffefc4ec91d0bd7770b46ee6488249a62f70e31f5
-size 227
+#include <plat/sram.h>
+
+extern void omap_sram_reprogram_clock(u32 dpllctl, u32 ckctl);
+
+/* Do not use these */
+extern void omap1_sram_reprogram_clock(u32 ckctl, u32 dpllctl);
+extern unsigned long omap1_sram_reprogram_clock_sz;

@@ -1,3 +1,71 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:dd12d5a45c6ee4ee971e5c0cf178325ae38c8f948e93299b7dddcc6f4a1a181c
-size 1068
+.. -*- coding: utf-8; mode: rst -*-
+
+.. _VIDEO_GET_SIZE:
+
+==============
+VIDEO_GET_SIZE
+==============
+
+Name
+----
+
+VIDEO_GET_SIZE
+
+.. attention:: This ioctl is deprecated.
+
+Synopsis
+--------
+
+.. c:function:: int ioctl(int fd, VIDEO_GET_SIZE, video_size_t *size)
+    :name: VIDEO_GET_SIZE
+
+
+Arguments
+---------
+
+.. flat-table::
+    :header-rows:  0
+    :stub-columns: 0
+
+
+    -  .. row 1
+
+       -  int fd
+
+       -  File descriptor returned by a previous call to open().
+
+    -  .. row 2
+
+       -  int request
+
+       -  Equals VIDEO_GET_SIZE for this command.
+
+    -  .. row 3
+
+       -  video_size_t \*size
+
+       -  Returns the size and aspect ratio.
+
+
+Description
+-----------
+
+This ioctl returns the size and aspect ratio.
+
+.. c:type:: video_size_t
+
+.. code-block::c
+
+	typedef struct {
+		int w;
+		int h;
+		video_format_t aspect_ratio;
+	} video_size_t;
+
+
+Return Value
+------------
+
+On success 0 is returned, on error -1 and the ``errno`` variable is set
+appropriately. The generic error codes are described at the
+:ref:`Generic Error Codes <gen-errors>` chapter.

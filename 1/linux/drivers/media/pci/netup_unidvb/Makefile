@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:77c40bafe74e671ef207cbcb1a54a60d6000059ee16edc86a0e6259ccf7b78bb
-size 292
+netup-unidvb-objs += netup_unidvb_core.o
+netup-unidvb-objs += netup_unidvb_i2c.o
+netup-unidvb-objs += netup_unidvb_ci.o
+netup-unidvb-objs += netup_unidvb_spi.o
+
+obj-$(CONFIG_DVB_NETUP_UNIDVB) += netup-unidvb.o
+
+ccflags-y += -Idrivers/media/dvb-core
+ccflags-y += -Idrivers/media/dvb-frontends

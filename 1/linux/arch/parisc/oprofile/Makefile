@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:efa2aa14bc17f83e959a692e6df374f56b2a7ed0c92e7e23733ba13982b57d45
-size 259
+obj-$(CONFIG_OPROFILE) += oprofile.o
+
+DRIVER_OBJS = $(addprefix ../../../drivers/oprofile/, \
+		oprof.o cpu_buffer.o buffer_sync.o \
+		event_buffer.o oprofile_files.o \
+		oprofilefs.o oprofile_stats.o \
+		timer_int.o )
+
+oprofile-y				:= $(DRIVER_OBJS) init.o

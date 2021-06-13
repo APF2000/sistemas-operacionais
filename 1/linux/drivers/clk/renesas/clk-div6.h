@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:13df6b7154044ad2032eba9d9571493e03816fd164a203d7f8eba483c7363c04
-size 201
+#ifndef __RENESAS_CLK_DIV6_H__
+#define __RENESAS_CLK_DIV6_H__
+
+struct clk *cpg_div6_register(const char *name, unsigned int num_parents,
+			      const char **parent_names, void __iomem *reg);
+
+#endif

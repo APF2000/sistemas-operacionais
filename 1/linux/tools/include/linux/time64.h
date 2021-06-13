@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4449ffb68224f09d90b5c860d88f9f800f417f9f85e12852a0eb4743c1fd4b8c
-size 308
+#ifndef _TOOLS_LINUX_TIME64_H
+#define _TOOLS_LINUX_TIME64_H
+
+#define MSEC_PER_SEC	1000L
+#define USEC_PER_MSEC	1000L
+#define NSEC_PER_USEC	1000L
+#define NSEC_PER_MSEC	1000000L
+#define USEC_PER_SEC	1000000L
+#define NSEC_PER_SEC	1000000000L
+#define FSEC_PER_SEC	1000000000000000LL
+
+#endif /* _LINUX_TIME64_H */

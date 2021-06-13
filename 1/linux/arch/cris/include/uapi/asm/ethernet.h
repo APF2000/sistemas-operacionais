@@ -1,3 +1,21 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e4c5a25c0875060eeeb323d4eb3e948bb9823b75f6ae88c109c3af6c7ee353e3
-size 860
+/*  
+ * ioctl defines for ethernet driver
+ *
+ * Copyright (c) 2001 Axis Communications AB
+ * 
+ * Author: Mikael Starvik 
+ *
+ */
+
+#ifndef _CRIS_ETHERNET_H
+#define _CRIS_ETHERNET_H
+#define SET_ETH_SPEED_AUTO      SIOCDEVPRIVATE          /* Auto neg speed */
+#define SET_ETH_SPEED_10        SIOCDEVPRIVATE+1        /* 10 Mbps */
+#define SET_ETH_SPEED_100       SIOCDEVPRIVATE+2        /* 100 Mbps. */
+#define SET_ETH_DUPLEX_AUTO     SIOCDEVPRIVATE+3        /* Auto neg duplex */
+#define SET_ETH_DUPLEX_HALF     SIOCDEVPRIVATE+4        /* Full duplex */
+#define SET_ETH_DUPLEX_FULL     SIOCDEVPRIVATE+5        /* Half duplex */
+#define SET_ETH_ENABLE_LEDS     SIOCDEVPRIVATE+6        /* Enable net LEDs */
+#define SET_ETH_DISABLE_LEDS    SIOCDEVPRIVATE+7        /* Disable net LEDs */
+#define SET_ETH_AUTONEG         SIOCDEVPRIVATE+8
+#endif /* _CRIS_ETHERNET_H */

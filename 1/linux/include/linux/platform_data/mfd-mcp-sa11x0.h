@@ -1,3 +1,20 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b682b72ff43c9245346cc6edb05a3106946a7015c651fae435c7c8d2520e2b77
-size 418
+/*
+ *  Copyright (C) 2005 Russell King.
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 2 as
+ * published by the Free Software Foundation.
+ */
+#ifndef __MFD_MCP_SA11X0_H
+#define __MFD_MCP_SA11X0_H
+
+#include <linux/types.h>
+
+struct mcp_plat_data {
+	u32 mccr0;
+	u32 mccr1;
+	unsigned int sclk_rate;
+	void *codec_pdata;
+};
+
+#endif

@@ -1,3 +1,21 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4d6c439d614a8597b7f9774b1ad05e6dd69e2d7f5cabe6e81583cbd7b93fbd3f
-size 389
+#ifndef __NVBIOS_INIT_H__
+#define __NVBIOS_INIT_H__
+
+struct nvbios_init {
+	struct nvkm_subdev *subdev;
+	struct nvkm_bios *bios;
+	u16 offset;
+	struct dcb_output *outp;
+	int crtc;
+
+	/* internal state used during parsing */
+	u8 execute;
+	u32 nested;
+	u16 repeat;
+	u16 repend;
+	u32 ramcfg;
+};
+
+int nvbios_exec(struct nvbios_init *);
+int nvbios_init(struct nvkm_subdev *, bool execute);
+#endif

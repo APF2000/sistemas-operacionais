@@ -1,3 +1,4 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b041556966228ad3f901536fedc8dfa5e9101b2bb7476fb3ccfc9993f465eee2
-size 191
+obj-$(CONFIG_SMC)	+= smc.o
+obj-$(CONFIG_SMC_DIAG)	+= smc_diag.o
+smc-y := af_smc.o smc_pnet.o smc_ib.o smc_clc.o smc_core.o smc_wr.o smc_llc.o
+smc-y += smc_cdc.o smc_tx.o smc_rx.o smc_close.o

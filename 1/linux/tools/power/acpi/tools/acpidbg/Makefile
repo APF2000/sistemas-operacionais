@@ -1,3 +1,25 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:54a40c9f144e80fd40afc82eb5b85fa7da166804f41641cbdfd1b47c17ae4249
-size 648
+# tools/power/acpi/tools/acpidbg/Makefile - ACPI tool Makefile
+#
+# Copyright (c) 2015, Intel Corporation
+#   Author: Lv Zheng <lv.zheng@intel.com>
+#
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU General Public License
+# as published by the Free Software Foundation; version 2
+# of the License.
+
+include ../../Makefile.config
+
+TOOL = acpidbg
+vpath %.c \
+	../../../../../drivers/acpi/acpica\
+	../../common\
+	../../os_specific/service_layers\
+	.
+CFLAGS += -DACPI_APPLICATION -DACPI_SINGLE_THREAD -DACPI_DEBUGGER\
+	-I.
+LDFLAGS += -lpthread
+TOOL_OBJS = \
+	acpidbg.o
+
+include ../../Makefile.rules

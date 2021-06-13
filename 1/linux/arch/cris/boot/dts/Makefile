@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d73dd4e62bb5dcd72c9487a4d3e9f49fc8b939b51d9441558a31fe6f663f9ad6
-size 159
+BUILTIN_DTB := $(patsubst "%",%,$(CONFIG_BUILTIN_DTB)).dtb.o
+ifneq ($(CONFIG_BUILTIN_DTB),"")
+obj-$(CONFIG_OF) += $(BUILTIN_DTB)
+endif
+
+clean-files := *.dtb.S

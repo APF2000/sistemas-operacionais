@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ee6696b9910b1623d37120c2daf90cfdc867ec5c7e3f4aba7e0687ec9d88a222
-size 392
+#
+# Makefile for the Tile-Gx device access support.
+#
+
+obj-$(CONFIG_TILE_GXIO) += iorpc_globals.o kiorpc.o
+obj-$(CONFIG_TILE_GXIO_DMA) += dma_queue.o
+obj-$(CONFIG_TILE_GXIO_MPIPE) += mpipe.o iorpc_mpipe.o iorpc_mpipe_info.o
+obj-$(CONFIG_TILE_GXIO_TRIO) += trio.o iorpc_trio.o
+obj-$(CONFIG_TILE_GXIO_UART) += uart.o iorpc_uart.o
+obj-$(CONFIG_TILE_GXIO_USB_HOST) += usb_host.o iorpc_usb_host.o

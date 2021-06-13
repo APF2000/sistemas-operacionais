@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:6f250dd43b61cc685458eec8b381ba81a92e002ce6401cd2d5377ba0129c27c2
-size 229
+/*
+ *  S390 version
+ *    Copyright IBM Corp. 1999, 2010
+ */
+
+#ifndef _UAPI_ASM_S390_SETUP_H
+#define _UAPI_ASM_S390_SETUP_H
+
+#define COMMAND_LINE_SIZE	4096
+
+#define ARCH_COMMAND_LINE_SIZE	896
+
+#endif /* _UAPI_ASM_S390_SETUP_H */

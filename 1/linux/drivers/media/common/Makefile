@@ -1,3 +1,4 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:0300ad6d6e794fb22e0d5711cc14fede00cdf7d77458bb2e99bf724f30dea0a0
-size 178
+obj-y += b2c2/ saa7146/ siano/ v4l2-tpg/
+obj-$(CONFIG_VIDEO_CX2341X) += cx2341x.o
+obj-$(CONFIG_VIDEO_TVEEPROM) += tveeprom.o
+obj-$(CONFIG_CYPRESS_FIRMWARE) += cypress_firmware.o

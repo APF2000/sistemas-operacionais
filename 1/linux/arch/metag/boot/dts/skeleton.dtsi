@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:71723420d39d376783d8605ed05484665a6d057d58ce82b84cf699f292c809b6
-size 323
+/*
+ * Skeleton device tree; the bare minimum needed to boot; just include and
+ * add a compatible value.  The bootloader will typically populate the memory
+ * node.
+ */
+
+/ {
+	compatible = "img,meta";
+	#address-cells = <1>;
+	#size-cells = <1>;
+	chosen { };
+	aliases { };
+	memory { device_type = "memory"; reg = <0 0>; };
+};

@@ -1,3 +1,3 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:734109bfcfcf8855dc65a1e28382e918a62979b2093ecdc46e54e260a6cfe287
-size 168
+obj-$(CONFIG_CRYPTO_DEV_PPC4XX) += crypto4xx.o
+crypto4xx-y :=  crypto4xx_core.o crypto4xx_alg.o crypto4xx_sa.o
+crypto4xx-$(CONFIG_HW_RANDOM_PPC4XX) += crypto4xx_trng.o

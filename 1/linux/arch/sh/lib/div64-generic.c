@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:8d96be04c4c7b4c47db65288a77c6855489be32cf3428f7d09a843bf05008b19
-size 283
+/*
+ * Generic __div64_32 wrapper for __xdiv64_32.
+ */
+
+#include <linux/types.h>
+#include <asm/div64.h>
+
+extern uint64_t __xdiv64_32(u64 n, u32 d);
+
+uint32_t __div64_32(u64 *xp, u32 y)
+{
+	uint32_t rem;
+	uint64_t q = __xdiv64_32(*xp, y);
+
+	rem = *xp - q * y;
+	*xp = q;
+
+	return rem;
+}

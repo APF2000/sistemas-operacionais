@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:8fb1d69516ae40a3ace313c17d3819bf8bbaf5362dd83b15a4180566fdcaa426
-size 229
+config SCSI_HISI_SAS
+	tristate "HiSilicon SAS"
+	depends on HAS_DMA && HAS_IOMEM
+	depends on ARM64 || COMPILE_TEST
+	select SCSI_SAS_LIBSAS
+	select BLK_DEV_INTEGRITY
+	depends on ATA
+	help
+		This driver supports HiSilicon's SAS HBA

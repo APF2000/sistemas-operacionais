@@ -1,3 +1,26 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:391fa8a96dfeae56ce47109d5ce4c8f338d2e655306fa3ae5f648b6e929111af
-size 817
+/*
+ *  Linux X.25 packet to device interface
+ *
+ *  This program is free software; you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation; either version 2 of the License, or
+ *  (at your option) any later version.
+ *
+ *  This program is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ *  GNU General Public License for more details.
+ */
+
+#ifndef _IF_X25_H
+#define _IF_X25_H
+
+#include <linux/types.h>
+
+/* Documentation/networking/x25-iface.txt */
+#define X25_IFACE_DATA		0x00
+#define X25_IFACE_CONNECT	0x01
+#define X25_IFACE_DISCONNECT	0x02
+#define X25_IFACE_PARAMS	0x03
+
+#endif /* _IF_X25_H */

@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5a8d268570fe5f058297a85686fa5ce877c1c64cc262142aedf6c8ba5a590103
-size 200
+#ifndef _LINUX_SECUREBITS_H
+#define _LINUX_SECUREBITS_H 1
+
+#include <uapi/linux/securebits.h>
+
+#define issecure(X)		(issecure_mask(X) & current_cred_xxx(securebits))
+#endif /* !_LINUX_SECUREBITS_H */

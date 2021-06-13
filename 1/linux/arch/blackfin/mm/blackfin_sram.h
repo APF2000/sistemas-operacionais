@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2faa4a851aa69be4daac0b6fd632272e4620b7b4f5a4293aa8fce227af2c60b9
-size 243
+/*
+ * Local prototypes meant for internal use only
+ *
+ * Copyright 2006-2009 Analog Devices Inc.
+ *
+ * Licensed under the GPL-2 or later.
+ */
+
+#ifndef __BLACKFIN_SRAM_H__
+#define __BLACKFIN_SRAM_H__
+
+extern void *l1sram_alloc(size_t);
+
+#endif

@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ef250265b3ed93b12fcdb0f49d52b0ecaa864100c3e5b595019104410d0e3a1b
-size 443
+/*
+ * include/asm-xtensa/serial.h
+ *
+ * Configuration details for 8250, 16450, 16550, etc. serial ports
+ *
+ * This file is subject to the terms and conditions of the GNU General Public
+ * License.  See the file "COPYING" in the main directory of this archive
+ * for more details.
+ *
+ * Copyright (C) 2001 - 2005 Tensilica Inc.
+ */
+
+#ifndef _XTENSA_SERIAL_H
+#define _XTENSA_SERIAL_H
+
+#include <platform/serial.h>
+
+#endif	/* _XTENSA_SERIAL_H */

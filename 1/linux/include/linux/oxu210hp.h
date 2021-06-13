@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d967881c297e751f236424d26fa3c91ad439f083d51a0e678f2baca23b2023ec
-size 158
+/* platform data for the OXU210HP HCD */
+
+struct oxu210hp_platform_data {
+	unsigned int bus16:1;
+	unsigned int use_hcd_otg:1;
+	unsigned int use_hcd_sph:1;
+};

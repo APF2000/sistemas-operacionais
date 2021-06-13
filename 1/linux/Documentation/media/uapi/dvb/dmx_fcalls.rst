@@ -1,3 +1,27 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:bb6c42c4db6145f20d6c65ec583678a4f8b415fede971f90a59f5c3a77ac9a53
-size 426
+.. -*- coding: utf-8; mode: rst -*-
+
+.. _dmx_fcalls:
+
+********************
+Demux Function Calls
+********************
+
+.. toctree::
+    :maxdepth: 1
+
+    dmx-fopen
+    dmx-fclose
+    dmx-fread
+    dmx-fwrite
+    dmx-start
+    dmx-stop
+    dmx-set-filter
+    dmx-set-pes-filter
+    dmx-set-buffer-size
+    dmx-get-event
+    dmx-get-stc
+    dmx-get-pes-pids
+    dmx-get-caps
+    dmx-set-source
+    dmx-add-pid
+    dmx-remove-pid

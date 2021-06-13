@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ceb3f575c7f52035398eeb5dc44c500b0a0814d158e06e163e59ddfd22e050cf
-size 225
+obj-$(CONFIG_WLCORE)			+= wlcore/
+obj-$(CONFIG_WL12XX)			+= wl12xx/
+obj-$(CONFIG_WL1251)			+= wl1251/
+obj-$(CONFIG_WL18XX)			+= wl18xx/
+
+# small builtin driver bit
+obj-$(CONFIG_WILINK_PLATFORM_DATA)	+= wilink_platform_data.o

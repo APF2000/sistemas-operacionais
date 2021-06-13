@@ -1,3 +1,32 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:fb07cd00ce07ff84f412160f0006964d2a420a42ed2b014ee33d0b3053b2b37b
-size 724
+#ifndef __ASM_LIBGCC_H
+#define __ASM_LIBGCC_H
+
+#include <asm/byteorder.h>
+
+typedef int word_type __attribute__ ((mode (__word__)));
+
+#ifdef __BIG_ENDIAN
+struct DWstruct {
+	int high, low;
+};
+#elif defined(__LITTLE_ENDIAN)
+struct DWstruct {
+	int low, high;
+};
+#else
+#error I feel sick.
+#endif
+
+typedef union {
+	struct DWstruct s;
+	long long ll;
+} DWunion;
+
+extern long long __ashldi3(long long u, word_type b);
+extern long long __ashrdi3(long long u, word_type b);
+extern word_type __cmpdi2(long long a, long long b);
+extern long long __lshrdi3(long long u, word_type b);
+extern long long __muldi3(long long u, long long v);
+extern word_type __ucmpdi2(unsigned long long a, unsigned long long b);
+
+#endif /* __ASM_LIBGCC_H */

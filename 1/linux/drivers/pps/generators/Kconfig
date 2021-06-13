@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d9037d675e670c0129f4159c62c774e0c2800edac8135e1c28f9856db3912d63
-size 400
+#
+# PPS generators configuration
+#
+
+comment "PPS generators support"
+
+config PPS_GENERATOR_PARPORT
+	tristate "Parallel port PPS signal generator"
+	depends on PARPORT && BROKEN
+	help
+	  If you say yes here you get support for a PPS signal generator which
+	  utilizes STROBE pin of a parallel port to send PPS signals. It uses
+	  parport abstraction layer and hrtimers to precisely control the signal.

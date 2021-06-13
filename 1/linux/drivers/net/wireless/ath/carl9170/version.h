@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ff2bf515846d800fbde1ce3dd5b7d65efd91efc09ecc2759af45524abb07a5c2
-size 256
+#ifndef __CARL9170_SHARED_VERSION_H
+#define __CARL9170_SHARED_VERSION_H
+#define CARL9170FW_VERSION_YEAR 16
+#define CARL9170FW_VERSION_MONTH 2
+#define CARL9170FW_VERSION_DAY 15
+#define CARL9170FW_VERSION_GIT "1.9.9"
+#endif /* __CARL9170_SHARED_VERSION_H */

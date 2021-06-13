@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5518c66816be73623489c370756ddd334ab63c807dd7af5ff7e24be8a7685027
-size 411
+#define memset MEMSET /* don't hide glibc's memset() */
+#define altinstr_replacement text
+#define globl p2align 4; .globl
+#include "../../arch/x86/lib/memset_64.S"
+
+/*
+ * We need to provide note.GNU-stack section, saying that we want
+ * NOT executable stack. Otherwise the final linking will assume that
+ * the ELF stack should not be restricted at all and set it RWX.
+ */
+.section .note.GNU-stack,"",@progbits

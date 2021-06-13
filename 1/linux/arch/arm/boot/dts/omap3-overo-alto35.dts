@@ -1,3 +1,22 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:91a24e1b75f6ec761e0c15fe99c8d0e1c7bc7f939ca4143634adef6c057294e1
-size 551
+/*
+ * Copyright (C) 2014 Florian Vaussard, EPFL Mobots group
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 2 as
+ * published by the Free Software Foundation.
+ */
+
+/*
+ * Alto35 expansion board is manufactured by Gumstix Inc.
+ */
+
+/dts-v1/;
+
+#include "omap3-overo.dtsi"
+#include "omap3-overo-alto35-common.dtsi"
+
+/ {
+	model = "OMAP35xx Gumstix Overo on Alto35";
+	compatible = "gumstix,omap3-overo-alto35", "gumstix,omap3-overo", "ti,omap3430", "ti,omap3";
+};
+

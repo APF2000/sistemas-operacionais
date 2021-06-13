@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e3bd71f6c631e8051343ab2af6636760668c011ca13cee3181a4b9082a7e34ba
-size 160
+#ifndef __MACH_PXA3XX_H	
+#define __MACH_PXA3XX_H
+
+#include <mach/hardware.h>
+#include <mach/pxa3xx-regs.h>
+#include <mach/irqs.h>
+
+#endif /* __MACH_PXA3XX_H */

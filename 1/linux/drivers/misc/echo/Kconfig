@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e3fbcd33a1424d6a24342fe42f1ffd9660dfcc0a4df48548baf312732de75eaf
-size 251
+config ECHO
+	tristate "Line Echo Canceller support"
+	default n
+	---help---
+	  This driver provides line echo cancelling support for mISDN and
+	  Zaptel drivers.
+
+	  To compile this driver as a module, choose M here. The module
+	  will be called echo.

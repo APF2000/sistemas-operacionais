@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:39428cd2158244638ee55b38dfe232bc3badd2be2668fbc8df3dd78d97550f7b
-size 269
+#
+# Makefile for the USB input drivers
+#
+
+usbhid-y	:= hid-core.o hid-quirks.o
+usbhid-$(CONFIG_USB_HIDDEV)	+= hiddev.o
+usbhid-$(CONFIG_HID_PID)	+= hid-pidff.o
+
+obj-$(CONFIG_USB_HID)		+= usbhid.o
+obj-$(CONFIG_USB_KBD)		+= usbkbd.o
+obj-$(CONFIG_USB_MOUSE)		+= usbmouse.o
+

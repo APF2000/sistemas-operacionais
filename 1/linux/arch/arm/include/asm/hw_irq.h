@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:bc35b4e1be13564ea53a12cd3a5795acacda72ef8a678891be97e9461c30b415
-size 310
+/*
+ * Nothing to see here yet
+ */
+#ifndef _ARCH_ARM_HW_IRQ_H
+#define _ARCH_ARM_HW_IRQ_H
+
+static inline void ack_bad_irq(int irq)
+{
+	extern unsigned long irq_err_count;
+	irq_err_count++;
+	pr_crit("unexpected IRQ trap at vector %02x\n", irq);
+}
+
+#define ARCH_IRQ_INIT_FLAGS	(IRQ_NOREQUEST | IRQ_NOPROBE)
+
+#endif

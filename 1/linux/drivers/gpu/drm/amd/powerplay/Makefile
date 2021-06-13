@@ -1,3 +1,22 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:68c07b62a198bddaf8e0a45710dabc6d02d607c42f224b53ebb69ac4c7063606
-size 574
+
+subdir-ccflags-y += -Iinclude/drm  \
+		-I$(FULL_AMD_PATH)/powerplay/inc/  \
+		-I$(FULL_AMD_PATH)/include/asic_reg  \
+		-I$(FULL_AMD_PATH)/include  \
+		-I$(FULL_AMD_PATH)/powerplay/smumgr\
+		-I$(FULL_AMD_PATH)/powerplay/hwmgr \
+		-I$(FULL_AMD_PATH)/powerplay/eventmgr
+
+AMD_PP_PATH = ../powerplay
+
+PP_LIBS = smumgr hwmgr eventmgr
+
+AMD_POWERPLAY = $(addsuffix /Makefile,$(addprefix $(FULL_AMD_PATH)/powerplay/,$(PP_LIBS)))
+
+include $(AMD_POWERPLAY)
+
+POWER_MGR = amd_powerplay.o
+
+AMD_PP_POWER = $(addprefix $(AMD_PP_PATH)/,$(POWER_MGR))
+
+AMD_POWERPLAY_FILES += $(AMD_PP_POWER)

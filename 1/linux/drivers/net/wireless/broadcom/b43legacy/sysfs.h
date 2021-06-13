@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f397aefe4583386d8f72c120e539f3e2b6362b0d01d72542d959aa137db92796
-size 234
+#ifndef B43legacy_SYSFS_H_
+#define B43legacy_SYSFS_H_
+
+struct b43legacy_wldev;
+
+int b43legacy_sysfs_register(struct b43legacy_wldev *dev);
+void b43legacy_sysfs_unregister(struct b43legacy_wldev *dev);
+
+#endif /* B43legacy_SYSFS_H_ */

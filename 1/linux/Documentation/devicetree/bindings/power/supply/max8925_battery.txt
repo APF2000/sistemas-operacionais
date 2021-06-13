@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:28d1afd41a0a997da0ac22a7b92e9b8fdc821943cc75f121365c56f7e8a2aa57
-size 480
+max8925-battery bindings
+~~~~~~~~~~~~~~~~
+
+Optional properties :
+ - batt-detect: whether support battery detect
+ - topoff-threshold: set charging current in topoff mode
+ - fast-charge: set charging current in fast mode
+ - no-temp-support: whether support temperature protection detect
+ - no-insert-detect: whether support insert detect
+
+Example:
+	charger {
+		batt-detect = <0>;
+		topoff-threshold = <1>;
+		fast-charge = <7>;
+		no-temp-support = <0>;
+		no-insert-detect = <0>;
+	};

@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:144e9dd47eb97a2c228532ad7d5f8dbf733e8e0534d532e440d228e350017f96
-size 177
+#
+# Makefile for ALSA
+# Copyright (c) 2001 by Jaroslav Kysela <perex@perex.cz>
+#
+
+snd-nm256-objs := nm256.o
+
+# Toplevel Module Dependency
+obj-$(CONFIG_SND_NM256) += snd-nm256.o

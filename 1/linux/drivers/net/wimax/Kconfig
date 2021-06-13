@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:860aae7732064d5de3ccf2eddf725ca4739924d3495a4f603cdc4f8d10193c01
-size 248
+#
+# WiMAX LAN device drivers configuration
+#
+
+
+comment "Enable WiMAX (Networking options) to see the WiMAX drivers"
+	depends on WIMAX = n
+
+if WIMAX
+
+menu "WiMAX Wireless Broadband devices"
+
+source "drivers/net/wimax/i2400m/Kconfig"
+
+endmenu
+
+endif

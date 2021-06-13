@@ -1,3 +1,20 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d5874cab910a5c80a9f0ee2952a663af447203ebd3395e6eabfe132723798653
-size 356
+#ifndef _ASM_FUTEX_H
+#define _ASM_FUTEX_H
+
+#ifdef __KERNEL__
+
+#include <linux/futex.h>
+#include <asm/errno.h>
+#include <linux/uaccess.h>
+
+extern int futex_atomic_op_inuser(int encoded_op, u32 __user *uaddr);
+
+static inline int
+futex_atomic_cmpxchg_inatomic(u32 *uval, u32 __user *uaddr,
+			      u32 oldval, u32 newval)
+{
+	return -ENOSYS;
+}
+
+#endif
+#endif

@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:471a89935887b43ac83262476fced8694202a5fd2236bbc53076725c08f6a873
-size 168
+#ifndef ___ASM_SPARC_PCI_H
+#define ___ASM_SPARC_PCI_H
+#if defined(__sparc__) && defined(__arch64__)
+#include <asm/pci_64.h>
+#else
+#include <asm/pci_32.h>
+#endif
+#endif

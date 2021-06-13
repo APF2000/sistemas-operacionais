@@ -1,3 +1,35 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2b12ce363ca870efbb1fe17fb4a1b120cdccf41a3020f3ee685e56b7f0c33c67
-size 877
+#ifndef BCM63XX_NVRAM_H
+#define BCM63XX_NVRAM_H
+
+#include <linux/types.h>
+
+/**
+ * bcm63xx_nvram_init() - initializes nvram
+ * @nvram:	address of the nvram data
+ *
+ * Initialized the local nvram copy from the target address and checks
+ * its checksum.
+ */
+void bcm63xx_nvram_init(void *nvram);
+
+/**
+ * bcm63xx_nvram_get_name() - returns the board name according to nvram
+ *
+ * Returns the board name field from nvram. Note that it might not be
+ * null terminated if it is exactly 16 bytes long.
+ */
+u8 *bcm63xx_nvram_get_name(void);
+
+/**
+ * bcm63xx_nvram_get_mac_address() - register & return a new mac address
+ * @mac:	pointer to array for allocated mac
+ *
+ * Registers and returns a mac address from the allocated macs from nvram.
+ *
+ * Returns 0 on success.
+ */
+int bcm63xx_nvram_get_mac_address(u8 *mac);
+
+int bcm63xx_nvram_get_psi_size(void);
+
+#endif /* BCM63XX_NVRAM_H */

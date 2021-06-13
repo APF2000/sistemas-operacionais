@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:614156d898111018b08e7f703825f632698b6a4fd10883c9c602ff8d54cc324a
-size 167
+#ifndef SOUND_SOC_CODECS_ADAU_PLL_H
+#define SOUND_SOC_CODECS_ADAU_PLL_H
+
+int adau_calc_pll_cfg(unsigned int freq_in, unsigned int freq_out,
+	uint8_t regs[5]);
+
+#endif

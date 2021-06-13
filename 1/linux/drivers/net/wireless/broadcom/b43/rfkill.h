@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1baa851ab3c6f2ccd88184df86757e8013ba8ce5c75560c00389ba68f55317a2
-size 214
+#ifndef B43_RFKILL_H_
+#define B43_RFKILL_H_
+
+struct ieee80211_hw;
+struct b43_wldev;
+
+void b43_rfkill_poll(struct ieee80211_hw *hw);
+
+bool b43_is_hw_radio_enabled(struct b43_wldev *dev);
+
+#endif /* B43_RFKILL_H_ */

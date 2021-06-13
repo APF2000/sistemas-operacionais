@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d9aa726918469aa859e66c00d7ac34a05f88d932c810cec6ca5b34289c508140
-size 187
+#!/bin/sh
+# description: Basic test for tracers
+# flags: instance
+test -f available_tracers
+for t in `cat available_tracers`; do
+  echo $t > current_tracer
+done
+echo nop > current_tracer

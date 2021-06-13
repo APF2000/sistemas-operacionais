@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:0d716255ae67043966770bac9a3af67a7e325fb47c9a6e231fb1a07a92c7a799
-size 341
+ST Microelectronics DDC I2C
+
+Required properties :
+- compatible : Must be "st,ddci2c"
+- reg: physical base address of the controller and length of memory mapped
+     region.
+- interrupts: interrupt number to the cpu.
+- #address-cells = <1>;
+- #size-cells = <0>;
+
+Optional properties:
+- Child nodes conforming to i2c bus binding
+
+Examples :
+

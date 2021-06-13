@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e2875bbd61b7daf212061aa1709c8c3b5da5b64050ca0f0b6dee61174f9de265
-size 281
+typedef struct vmidi_devc {
+	   int dev;
+
+	/* State variables */
+	   int opened;
+	   spinlock_t lock;
+
+	/* MIDI fields */
+	   int my_mididev;
+	   int pair_mididev;
+	   int input_opened;
+	   int intr_active;
+	   void (*midi_input_intr) (int dev, unsigned char data);
+	} vmidi_devc;

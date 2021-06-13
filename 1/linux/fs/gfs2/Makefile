@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:15a74fedd78b3d8095673a8c44ba1c3f9607bd36e9b7a09e43150500cebaab7a
-size 308
+ccflags-y := -I$(src)
+obj-$(CONFIG_GFS2_FS) += gfs2.o
+gfs2-y := acl.o bmap.o dir.o xattr.o glock.o \
+	glops.o log.o lops.o main.o meta_io.o \
+	aops.o dentry.o export.o file.o \
+	ops_fstype.o inode.o quota.o \
+	recovery.o rgrp.o super.o sys.o trans.o util.o
+
+gfs2-$(CONFIG_GFS2_FS_LOCKING_DLM) += lock_dlm.o
+

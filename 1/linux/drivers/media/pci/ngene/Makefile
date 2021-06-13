@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a05096725923a5be3b6f740c6bb58cfaea7d094fd9b8fca470dc5b76179930ae
-size 349
+#
+# Makefile for the nGene device driver
+#
+
+ngene-objs := ngene-core.o ngene-i2c.o ngene-cards.o ngene-dvb.o
+
+obj-$(CONFIG_DVB_NGENE) += ngene.o
+
+ccflags-y += -Idrivers/media/dvb-core/
+ccflags-y += -Idrivers/media/dvb-frontends/
+ccflags-y += -Idrivers/media/tuners/
+
+# For the staging CI driver cxd2099
+ccflags-y += -Idrivers/staging/media/cxd2099/

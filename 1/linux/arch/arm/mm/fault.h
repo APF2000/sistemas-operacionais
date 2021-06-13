@@ -1,3 +1,32 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:871041738bff7582eb5fa6fd4923b807de2aa8fa784cdcc262f42ce4cfb22b43
-size 669
+#ifndef __ARCH_ARM_FAULT_H
+#define __ARCH_ARM_FAULT_H
+
+/*
+ * Fault status register encodings.  We steal bit 31 for our own purposes.
+ */
+#define FSR_LNX_PF		(1 << 31)
+#define FSR_WRITE		(1 << 11)
+#define FSR_FS4			(1 << 10)
+#define FSR_FS3_0		(15)
+#define FSR_FS5_0		(0x3f)
+
+#ifdef CONFIG_ARM_LPAE
+#define FSR_FS_AEA		17
+
+static inline int fsr_fs(unsigned int fsr)
+{
+	return fsr & FSR_FS5_0;
+}
+#else
+#define FSR_FS_AEA		22
+
+static inline int fsr_fs(unsigned int fsr)
+{
+	return (fsr & FSR_FS3_0) | (fsr & FSR_FS4) >> 6;
+}
+#endif
+
+void do_bad_area(unsigned long addr, unsigned int fsr, struct pt_regs *regs);
+void early_abt_enable(void);
+
+#endif	/* __ARCH_ARM_FAULT_H */

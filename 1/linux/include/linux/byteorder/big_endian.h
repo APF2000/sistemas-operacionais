@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:7d9a2485e15f9ad7e64a36f987ca02da36ac5c4cc7c7b39f4723c351d3a5c2ed
-size 203
+#ifndef _LINUX_BYTEORDER_BIG_ENDIAN_H
+#define _LINUX_BYTEORDER_BIG_ENDIAN_H
+
+#include <uapi/linux/byteorder/big_endian.h>
+
+#include <linux/byteorder/generic.h>
+#endif /* _LINUX_BYTEORDER_BIG_ENDIAN_H */

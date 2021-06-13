@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a8da50062d6bd4c3f55a54eacf8b57df72201254a0b94b3e5ca58633be54012f
-size 463
+== ST SPEAr SoC PWM controller ==
+
+Required properties:
+- compatible: should be one of:
+  - "st,spear320-pwm"
+  - "st,spear1340-pwm"
+- reg: physical base address and length of the controller's registers
+- #pwm-cells: should be 2. See pwm.txt in this directory for a description of
+  the cells format.
+
+Example:
+
+        pwm: pwm@a8000000 {
+            compatible ="st,spear320-pwm";
+            reg = <0xa8000000 0x1000>;
+            #pwm-cells = <2>;
+        };

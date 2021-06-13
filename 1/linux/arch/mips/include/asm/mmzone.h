@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:fba167d44fa0f3193342c87464dd3da7e76c8a766a34e64b880949136875349c
-size 364
+/*
+ * Written by Kanoj Sarcar (kanoj@sgi.com) Aug 99
+ * Rewritten for Linux 2.6 by Christoph Hellwig (hch@lst.de) Jan 2004
+ */
+#ifndef _ASM_MMZONE_H_
+#define _ASM_MMZONE_H_
+
+#include <asm/page.h>
+#include <mmzone.h>
+
+#ifdef CONFIG_DISCONTIGMEM
+
+#define pfn_to_nid(pfn)		pa_to_nid((pfn) << PAGE_SHIFT)
+
+#endif /* CONFIG_DISCONTIGMEM */
+
+#endif /* _ASM_MMZONE_H_ */

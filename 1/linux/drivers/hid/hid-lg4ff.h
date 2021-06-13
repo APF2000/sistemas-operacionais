@@ -1,3 +1,22 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:421aad0d3557513027de07c69e57987e902fb85943ac8e2939dd209237c200b1
-size 977
+#ifndef __HID_LG4FF_H
+#define __HID_LG4FF_H
+
+#ifdef CONFIG_LOGIWHEELS_FF
+extern int lg4ff_no_autoswitch; /* From hid-lg.c */
+
+int lg4ff_adjust_input_event(struct hid_device *hid, struct hid_field *field,
+			     struct hid_usage *usage, s32 value, struct lg_drv_data *drv_data);
+int lg4ff_raw_event(struct hid_device *hdev, struct hid_report *report,
+		u8 *rd, int size, struct lg_drv_data *drv_data);
+int lg4ff_init(struct hid_device *hdev);
+int lg4ff_deinit(struct hid_device *hdev);
+#else
+static inline int lg4ff_adjust_input_event(struct hid_device *hid, struct hid_field *field,
+					   struct hid_usage *usage, s32 value, struct lg_drv_data *drv_data) { return 0; }
+static inline int lg4ff_raw_event(struct hid_device *hdev, struct hid_report *report,
+		u8 *rd, int size, struct lg_drv_data *drv_data) { return 0; }
+static inline int lg4ff_init(struct hid_device *hdev) { return -1; }
+static inline int lg4ff_deinit(struct hid_device *hdev) { return -1; }
+#endif
+
+#endif

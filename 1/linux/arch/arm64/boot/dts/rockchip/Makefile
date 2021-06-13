@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:bd1853239af96be33b81d650291d1917d473067e7c71758e769342d34b69947e
-size 467
+dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3328-evb.dtb
+dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3368-evb-act8846.dtb
+dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3368-geekbox.dtb
+dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3368-orion-r68-meta.dtb
+dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3368-px5-evb.dtb
+dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3368-r88.dtb
+dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3399-evb.dtb
+dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3399-gru-kevin.dtb
+
+always		:= $(dtb-y)
+subdir-y	:= $(dts-dirs)
+clean-files	:= *.dtb

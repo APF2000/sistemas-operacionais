@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:cdbfea49d6dde0fd060427ecdd553b5955ea3f9ca4e3b567bde912fa03fa0a7e
-size 190
+#ifndef _ASM_TOPOLOGY_H
+#define _ASM_TOPOLOGY_H
+
+#ifdef CONFIG_NUMA
+
+#error NUMA not supported yet
+
+#endif /* CONFIG_NUMA */
+
+#include <asm-generic/topology.h>
+
+#endif /* _ASM_TOPOLOGY_H */

@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:aff32d5b37644681e6a2dd933593290822f15df70576256c0a716d9955070d35
-size 190
+#ifndef _ASMSPARC_PARAM_H
+#define _ASMSPARC_PARAM_H
+
+#define EXEC_PAGESIZE	8192    /* Thanks for sun4's we carry baggage... */
+#include <asm-generic/param.h>
+
+#endif /* _ASMSPARC_PARAM_H */

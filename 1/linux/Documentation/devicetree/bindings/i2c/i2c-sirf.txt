@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f4c81b4d90bcfac6a66b94edfdc60996f53f8827f8922b8f8b879368263a31a2
-size 522
+I2C for SiRFprimaII platforms
+
+Required properties :
+- compatible : Must be "sirf,prima2-i2c"
+- reg: physical base address of the controller and length of memory mapped
+     region.
+- interrupts: interrupt number to the cpu.
+
+Optional properties:
+- clock-frequency : Constains desired I2C/HS-I2C bus clock frequency in Hz.
+  The absence of the property indicates the default frequency 100 kHz.
+
+Examples :
+
+i2c0: i2c@b00e0000 {
+    compatible = "sirf,prima2-i2c";
+    reg = <0xb00e0000 0x10000>;
+    interrupts = <24>;
+};

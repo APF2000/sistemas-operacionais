@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:431003e705e7357ab2e5f22e478aad72446f737604c8d59cd6f5a6233b2a9ccd
-size 338
+libperf-y += setup.o
+libperf-y += helpline.o
+libperf-y += progress.o
+libperf-y += util.o
+libperf-y += hist.o
+libperf-y += stdio/hist.o
+
+CFLAGS_setup.o += -DLIBDIR="BUILD_STR($(LIBDIR))"
+
+libperf-$(CONFIG_SLANG) += browser.o
+libperf-$(CONFIG_SLANG) += browsers/
+libperf-$(CONFIG_SLANG) += tui/
+
+CFLAGS_browser.o += -DENABLE_SLFUTURE_CONST

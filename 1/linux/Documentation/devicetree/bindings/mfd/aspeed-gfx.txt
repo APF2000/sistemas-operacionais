@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b53b499bc7c59ab35db696d3be4c1d946b8b3a45b0ceb527743e16c88baa88b7
-size 483
+* Device tree bindings for Aspeed SoC Display Controller (GFX)
+
+The Aspeed SoC Display Controller primarily does as its name suggests, but also
+participates in pinmux requests on the g5 SoCs. It is therefore considered a
+syscon device.
+
+Required properties:
+- compatible:		"aspeed,ast2500-gfx", "syscon"
+- reg:			contains offset/length value of the GFX memory
+			region.
+
+Example:
+
+gfx: display@1e6e6000 {
+	compatible = "aspeed,ast2500-gfx", "syscon";
+	reg = <0x1e6e6000 0x1000>;
+};

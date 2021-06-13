@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:edf2d72e180fdd1fc5e6da14c7de48b8ce633d52a8a18e9fdb0f02cf78dbc4b6
-size 445
+/*
+ * Copyright (C) 2010 Tobias Klauser <tklauser@distanz.ch>
+ * Copyright (C) 2004 Microtronix Datacom Ltd.
+ *
+ * This file is subject to the terms and conditions of the GNU General Public
+ * License. See the file "COPYING" in the main directory of this archive
+ * for more details.
+ */
+
+#ifndef _ASM_NIOS2_MMU_H
+#define _ASM_NIOS2_MMU_H
+
+/* Default "unsigned long" context */
+typedef unsigned long mm_context_t;
+
+#endif /* _ASM_NIOS2_MMU_H */

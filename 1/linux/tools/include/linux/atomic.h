@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:902de33c7d3b1b51335338a68c107d0f333f7af006f4e2e83e4ac35e79225d93
-size 324
+#ifndef __TOOLS_LINUX_ATOMIC_H
+#define __TOOLS_LINUX_ATOMIC_H
+
+#include <asm/atomic.h>
+
+/* atomic_cmpxchg_relaxed */
+#ifndef atomic_cmpxchg_relaxed
+#define  atomic_cmpxchg_relaxed		atomic_cmpxchg
+#define  atomic_cmpxchg_release         atomic_cmpxchg
+#endif /* atomic_cmpxchg_relaxed */
+
+#endif /* __TOOLS_LINUX_ATOMIC_H */

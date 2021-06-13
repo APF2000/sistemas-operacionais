@@ -1,3 +1,4 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ec19122fbde6129e61b5ab13c1121db9d221210d856b54499fdefbb570694fa2
-size 176
+adv7511-y := adv7511_drv.o
+adv7511-$(CONFIG_DRM_I2C_ADV7511_AUDIO) += adv7511_audio.o
+adv7511-$(CONFIG_DRM_I2C_ADV7533) += adv7533.o
+obj-$(CONFIG_DRM_I2C_ADV7511) += adv7511.o

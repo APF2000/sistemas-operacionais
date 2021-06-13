@@ -1,3 +1,21 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:42a8c583cf5e77108e52786112a1708d5879cd9c9060e20a5e8046ab1a1ca537
-size 469
+/*
+ * Implementation of the security services.
+ *
+ * Author : Stephen Smalley, <sds@epoch.ncsc.mil>
+ */
+#ifndef _SS_SERVICES_H_
+#define _SS_SERVICES_H_
+
+#include "policydb.h"
+#include "sidtab.h"
+
+extern struct policydb policydb;
+
+void services_compute_xperms_drivers(struct extended_perms *xperms,
+				struct avtab_node *node);
+
+void services_compute_xperms_decision(struct extended_perms_decision *xpermd,
+					struct avtab_node *node);
+
+#endif	/* _SS_SERVICES_H_ */
+

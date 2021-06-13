@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5534d0c556b8e63e3c2007edc7863b0456679a25c83d11e37a71fe11adbb60fe
-size 270
+
+obj-$(CONFIG_DECNET) += decnet.o
+
+decnet-y := af_decnet.o dn_nsp_in.o dn_nsp_out.o \
+	    dn_route.o dn_dev.o dn_neigh.o dn_timer.o
+decnet-$(CONFIG_DECNET_ROUTER) += dn_fib.o dn_rules.o dn_table.o
+decnet-y += sysctl_net_decnet.o
+
+obj-$(CONFIG_NETFILTER) += netfilter/
+

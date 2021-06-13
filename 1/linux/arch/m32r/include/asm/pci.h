@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e16124629894a9931989d3a6dff1ced3a4abae1559055675edf0cf6cceb07d65
-size 108
+#ifndef _ASM_M32R_PCI_H
+#define _ASM_M32R_PCI_H
+
+#include <asm-generic/pci.h>
+
+#endif /* _ASM_M32R_PCI_H */

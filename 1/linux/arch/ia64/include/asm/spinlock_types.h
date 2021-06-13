@@ -1,3 +1,21 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4b7df98f2f4a0f2faefdc9e43a81b031d4a4f07886cb6ff80bdeaf3667fbd91d
-size 436
+#ifndef _ASM_IA64_SPINLOCK_TYPES_H
+#define _ASM_IA64_SPINLOCK_TYPES_H
+
+#ifndef __LINUX_SPINLOCK_TYPES_H
+# error "please don't include this file directly"
+#endif
+
+typedef struct {
+	volatile unsigned int lock;
+} arch_spinlock_t;
+
+#define __ARCH_SPIN_LOCK_UNLOCKED	{ 0 }
+
+typedef struct {
+	volatile unsigned int read_counter	: 31;
+	volatile unsigned int write_lock	:  1;
+} arch_rwlock_t;
+
+#define __ARCH_RW_LOCK_UNLOCKED		{ 0, 0 }
+
+#endif

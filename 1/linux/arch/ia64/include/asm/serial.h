@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:8f8391668b87f25236138630ca06ea5efa1b10ed8f1f30edd8095e43f1295525
-size 446
+/*
+ * Derived from the i386 version.
+ */
+
+/*
+ * This assumes you have a 1.8432 MHz clock for your UART.
+ *
+ * It'd be nice if someone built a serial card with a 24.576 MHz
+ * clock, since the 16550A is capable of handling a top speed of 1.5
+ * megabits/second; but this requires the faster clock.
+ */
+#define BASE_BAUD ( 1843200 / 16 )
+
+/*
+ * All legacy serial ports should be enumerated via ACPI namespace, so
+ * we need not list them here.
+ */

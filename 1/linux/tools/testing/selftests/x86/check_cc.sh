@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:0ca85ea34f7e8d9d84c80c3df62aea867d3523f32c14155cd289553d316975bc
-size 250
+#!/bin/sh
+# check_cc.sh - Helper to test userspace compilation support
+# Copyright (c) 2015 Andrew Lutomirski
+# GPL v2
+
+CC="$1"
+TESTPROG="$2"
+shift 2
+
+if "$CC" -o /dev/null "$TESTPROG" -O0 "$@" 2>/dev/null; then
+    echo 1
+else
+    echo 0
+fi
+
+exit 0

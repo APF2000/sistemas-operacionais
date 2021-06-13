@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2c06ac60d2d878c38043802335a1f77d2319ecbcd902af846e961c13fe8b581a
-size 174
+libertas_tf-objs := main.o cmd.o
+
+libertas_tf_usb-objs += if_usb.o
+
+obj-$(CONFIG_LIBERTAS_THINFIRM) += libertas_tf.o
+obj-$(CONFIG_LIBERTAS_THINFIRM_USB) += libertas_tf_usb.o

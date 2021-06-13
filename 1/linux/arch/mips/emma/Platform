@@ -1,3 +1,4 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:fbb761ad35d4e07bb053ebcc1d6c53b2849e433073af09f1ebaf4d8ed9c31708
-size 178
+platform-$(CONFIG_SOC_EMMA2RH)	+= emma/
+cflags-$(CONFIG_SOC_EMMA2RH)	+=					\
+		-I$(srctree)/arch/mips/include/asm/mach-emma2rh
+load-$(CONFIG_NEC_MARKEINS)	+= 0xffffffff88100000

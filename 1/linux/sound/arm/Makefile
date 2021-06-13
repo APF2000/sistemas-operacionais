@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:de26f5c6a8a32a82f34a0e24752cbdd3decc32b49b03dfbb469a9ca2df662ace
-size 423
+#
+# Makefile for ALSA
+#
+
+obj-$(CONFIG_SND_ARMAACI)	+= snd-aaci.o
+snd-aaci-objs			:= aaci.o
+
+obj-$(CONFIG_SND_PXA2XX_PCM)	+= snd-pxa2xx-pcm.o
+snd-pxa2xx-pcm-objs		:= pxa2xx-pcm.o
+
+obj-$(CONFIG_SND_PXA2XX_LIB)	+= snd-pxa2xx-lib.o
+snd-pxa2xx-lib-y		:= pxa2xx-pcm-lib.o
+snd-pxa2xx-lib-$(CONFIG_SND_PXA2XX_LIB_AC97)	+= pxa2xx-ac97-lib.o
+
+obj-$(CONFIG_SND_PXA2XX_AC97)	+= snd-pxa2xx-ac97.o
+snd-pxa2xx-ac97-objs		:= pxa2xx-ac97.o

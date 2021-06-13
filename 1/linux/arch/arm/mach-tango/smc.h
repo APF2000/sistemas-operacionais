@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:220053cd9892c2fd627230ff569efcaf30552f8e809f82817a42e5f80eb53890
-size 394
+extern int tango_smc(unsigned int val, unsigned int service);
+
+#define tango_set_l2_control(val)	tango_smc(val, 0x102)
+#define tango_start_aux_core(val)	tango_smc(val, 0x104)
+#define tango_set_aux_boot_addr(val)	tango_smc(val, 0x105)
+#define tango_suspend(val)		tango_smc(val, 0x120)
+#define tango_aux_core_die(val)		tango_smc(val, 0x121)
+#define tango_aux_core_kill(val)	tango_smc(val, 0x122)

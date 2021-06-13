@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b6968d96c24712c91da0663e8c94891cbfd200e3b1350372e517f2b5f4e7179a
-size 315
+#!/bin/sh
+# Runs hardware independent tests for i915 (drivers/gpu/drm/i915)
+
+if ! /sbin/modprobe -q -r i915; then
+	echo "drivers/gpu/i915: [SKIP]"
+	exit 77
+fi
+
+if /sbin/modprobe -q i915 mock_selftests=-1; then
+	/sbin/modprobe -q -r i915
+	echo "drivers/gpu/i915: ok"
+else
+	echo "drivers/gpu/i915: [FAIL]"
+	exit 1
+fi

@@ -1,3 +1,22 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:8dc1c7fc1535152617558019da7f0133f33900b66c51510017d2f9999565852d
-size 397
+#ifndef __LINUX_TC_IPT_H
+#define __LINUX_TC_IPT_H
+
+#include <linux/pkt_cls.h>
+
+#define TCA_ACT_IPT 6
+#define TCA_ACT_XT 10
+
+enum {
+	TCA_IPT_UNSPEC,
+	TCA_IPT_TABLE,
+	TCA_IPT_HOOK,
+	TCA_IPT_INDEX,
+	TCA_IPT_CNT,
+	TCA_IPT_TM,
+	TCA_IPT_TARG,
+	TCA_IPT_PAD,
+	__TCA_IPT_MAX
+};
+#define TCA_IPT_MAX (__TCA_IPT_MAX - 1)
+                                                                                
+#endif

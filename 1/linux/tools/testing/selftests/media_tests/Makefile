@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ba052ef292497d0e2498a36a3d60946b15f64d1692ffa64772436f926594df1d
-size 176
+TEST_PROGS := media_device_test media_device_open video_device_test
+all: $(TEST_PROGS)
+
+include ../lib.mk
+
+clean:
+	rm -fr media_device_test media_device_open video_device_test

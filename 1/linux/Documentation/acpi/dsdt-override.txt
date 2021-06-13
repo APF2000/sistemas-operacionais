@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:57a13cca5c1fad4109bc7d943e503125c66d7127ca6f8e2040009ed7631ca164
-size 245
+Linux supports a method of overriding the BIOS DSDT:
+
+CONFIG_ACPI_CUSTOM_DSDT builds the image into the kernel.
+
+When to use this method is described in detail on the
+Linux/ACPI home page:
+https://01.org/linux-acpi/documentation/overriding-dsdt

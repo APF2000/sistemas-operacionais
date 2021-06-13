@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1985e647911f447552a5581f9e64d2384500347dad9f1c2fc066b6ea1795b56d
-size 284
+/*
+ * Simple string functions.
+ *
+ * Copyright (C) 2014 Red Hat Inc.
+ *
+ * Author:
+ *       Vivek Goyal <vgoyal@redhat.com>
+ *
+ * This source code is licensed under the GNU General Public License,
+ * Version 2.  See the file COPYING for more details.
+ */
+
+#include "../boot/string.c"

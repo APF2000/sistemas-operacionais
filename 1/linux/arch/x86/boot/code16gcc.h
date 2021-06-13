@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:3803a870b7b4265e32eba097f2b4508e764e39163a6569e752ffc6a6e5ba3486
-size 277
+#
+# code16gcc.h
+#
+# This file is added to the assembler via -Wa when compiling 16-bit C code.
+# This is done this way instead via asm() to make sure gcc does not reorder
+# things around us.
+#
+# gcc 4.9+ has a real -m16 option so we can drop this hack long term.
+#
+
+	.code16gcc

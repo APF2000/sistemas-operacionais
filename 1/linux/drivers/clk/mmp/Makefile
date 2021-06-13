@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:7c6640cf96f9c5177f092ea996a3311b48e3df4506e6b5a9e1afdfa80f06a934
-size 402
+#
+# Makefile for mmp specific clk
+#
+
+obj-y += clk-apbc.o clk-apmu.o clk-frac.o clk-mix.o clk-gate.o clk.o
+
+obj-$(CONFIG_RESET_CONTROLLER) += reset.o
+
+obj-$(CONFIG_MACH_MMP_DT) += clk-of-pxa168.o clk-of-pxa910.o
+obj-$(CONFIG_MACH_MMP2_DT) += clk-of-mmp2.o
+
+obj-$(CONFIG_CPU_PXA168) += clk-pxa168.o
+obj-$(CONFIG_CPU_PXA910) += clk-pxa910.o
+obj-$(CONFIG_CPU_MMP2) += clk-mmp2.o
+
+obj-y += clk-of-pxa1928.o

@@ -1,3 +1,29 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:3dbc50bd592fb2a3751d537e6c7c9e63b1dcbe5c7ac4d1747e0b0e69784c2239
-size 786
+/*
+ * wm8350.h - WM8903 audio codec interface
+ *
+ * Copyright 2008 Wolfson Microelectronics PLC.
+ *
+ *  This program is free software; you can redistribute  it and/or modify it
+ *  under  the terms of  the GNU General  Public License as published by the
+ *  Free Software Foundation;  either version 2 of the  License, or (at your
+ *  option) any later version.
+ */
+
+#ifndef _WM8350_H
+#define _WM8350_H
+
+#include <sound/soc.h>
+#include <linux/mfd/wm8350/audio.h>
+
+enum wm8350_jack {
+	WM8350_JDL = 1,
+	WM8350_JDR = 2,
+};
+
+int wm8350_hp_jack_detect(struct snd_soc_codec *codec, enum wm8350_jack which,
+			  struct snd_soc_jack *jack, int report);
+int wm8350_mic_jack_detect(struct snd_soc_codec *codec,
+			   struct snd_soc_jack *jack,
+			   int detect_report, int short_report);
+
+#endif

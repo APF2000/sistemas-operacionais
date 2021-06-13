@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2e2b150a44f9381600888cfec2d25e8bb2f51875d0b913785287d071494a34e3
-size 365
+/*
+ * This file is subject to the terms and conditions of the GNU General Public
+ * License.  See the file "COPYING" in the main directory of this archive
+ * for more details.
+ *
+ * Copyright (c) 2008 Silicon Graphics, Inc.  All Rights Reserved.
+ */
+
+#define MACHVEC_PLATFORM_NAME	uv
+#define MACHVEC_PLATFORM_HEADER	<asm/machvec_uv.h>
+#include <asm/machvec_init.h>

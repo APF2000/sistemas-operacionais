@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:fd11d45d72342c84838e913833d089eb33fa05f74ff2836d1b5e17b2c394aa69
-size 413
+#ifdef DEFINE_DWARF_REGSTR_TABLE
+/* This is included in perf/util/dwarf-regs.c */
+
+static const char * const x86_32_regstr_tbl[] = {
+	"%ax", "%cx", "%dx", "%bx", "$stack",/* Stack address instead of %sp */
+	"%bp", "%si", "%di",
+};
+
+static const char * const x86_64_regstr_tbl[] = {
+	"%ax", "%dx", "%cx", "%bx", "%si", "%di",
+	"%bp", "%sp", "%r8", "%r9", "%r10", "%r11",
+	"%r12", "%r13", "%r14", "%r15",
+};
+#endif

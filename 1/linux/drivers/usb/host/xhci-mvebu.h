@@ -1,3 +1,24 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:816683116c63de22c9e4d3c53e0faa22f56a65c9851bcc174ee0c22ed53f2cd2
-size 583
+/*
+ * Copyright (C) 2014 Marvell
+ *
+ * Gregory Clement <gregory.clement@free-electrons.com>
+ *
+ * This file is licensed under the terms of the GNU General Public
+ * License version 2.  This program is licensed "as is" without any
+ * warranty of any kind, whether express or implied.
+ */
+
+#ifndef __LINUX_XHCI_MVEBU_H
+#define __LINUX_XHCI_MVEBU_H
+
+struct usb_hcd;
+
+#if IS_ENABLED(CONFIG_USB_XHCI_MVEBU)
+int xhci_mvebu_mbus_init_quirk(struct usb_hcd *hcd);
+#else
+static inline int xhci_mvebu_mbus_init_quirk(struct usb_hcd *hcd)
+{
+	return 0;
+}
+#endif
+#endif /* __LINUX_XHCI_MVEBU_H */

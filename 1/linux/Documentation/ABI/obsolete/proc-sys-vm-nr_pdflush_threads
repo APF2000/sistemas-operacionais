@@ -1,3 +1,5 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c0ae7fa3c3251181b5365d7b7746da8c78f3663a006d321f1b81bba56ff20888
-size 248
+What:		/proc/sys/vm/nr_pdflush_threads
+Date:		June 2012
+Contact:	Wanpeng Li <liwp@linux.vnet.ibm.com>
+Description: Since pdflush is replaced by per-BDI flusher, the interface of old pdflush
+             exported in /proc/sys/vm/ should be removed.

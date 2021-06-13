@@ -1,3 +1,2 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4d88863722a774e92f996e63bcd8d4be2bfe29ab7440d1016a37f26aef0f1151
-size 85
+obj-$(CONFIG_ATL1C) += atl1c.o
+atl1c-objs := atl1c_main.o atl1c_hw.o atl1c_ethtool.o

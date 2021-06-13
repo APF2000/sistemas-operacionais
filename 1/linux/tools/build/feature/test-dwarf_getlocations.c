@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ad97c09191d6fb3ba51a20471ba8cd0657dffe1ab6b690efe10de26dd9b60026
-size 268
+#include <stdlib.h>
+#include <elfutils/libdw.h>
+
+int main(void)
+{
+	Dwarf_Addr base, start, end;
+	Dwarf_Attribute attr;
+	Dwarf_Op *op;
+        size_t nops;
+	ptrdiff_t offset = 0;
+        return (int)dwarf_getlocations(&attr, offset, &base, &start, &end, &op, &nops);
+}

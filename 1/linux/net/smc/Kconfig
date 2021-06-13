@@ -1,3 +1,20 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:0c7500f109962cb8f1f4491fb81a92a7275384b903fcde93870175357e40f60d
-size 614
+config SMC
+	tristate "SMC socket protocol family"
+	depends on INET && INFINIBAND
+	---help---
+	  SMC-R provides a "sockets over RDMA" solution making use of
+	  RDMA over Converged Ethernet (RoCE) technology to upgrade
+	  AF_INET TCP connections transparently.
+	  The Linux implementation of the SMC-R solution is designed as
+	  a separate socket family SMC.
+
+	  Select this option if you want to run SMC socket applications
+
+config SMC_DIAG
+	tristate "SMC: socket monitoring interface"
+	depends on SMC
+	---help---
+	  Support for SMC socket monitoring interface used by tools such as
+	  smcss.
+
+	  if unsure, say Y.

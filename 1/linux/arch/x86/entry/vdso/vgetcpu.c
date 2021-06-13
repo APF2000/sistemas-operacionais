@@ -1,3 +1,28 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:fad3b90e12138e3d5c79d0dd1c658c6b8db58c6ae393ea7375129d33003f05d4
-size 572
+/*
+ * Copyright 2006 Andi Kleen, SUSE Labs.
+ * Subject to the GNU Public License, v.2
+ *
+ * Fast user context implementation of getcpu()
+ */
+
+#include <linux/kernel.h>
+#include <linux/getcpu.h>
+#include <linux/time.h>
+#include <asm/vgtod.h>
+
+notrace long
+__vdso_getcpu(unsigned *cpu, unsigned *node, struct getcpu_cache *unused)
+{
+	unsigned int p;
+
+	p = __getcpu();
+
+	if (cpu)
+		*cpu = p & VGETCPU_CPU_MASK;
+	if (node)
+		*node = p >> 12;
+	return 0;
+}
+
+long getcpu(unsigned *cpu, unsigned *node, struct getcpu_cache *tcache)
+	__attribute__((weak, alias("__vdso_getcpu")));

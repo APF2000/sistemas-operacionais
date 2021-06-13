@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:96b8c624d6da4eb1e404ac8a307669a9544445f49009aff7d55c7f986b4d8e97
-size 415
+libperf-$(CONFIG_LIBPERL)   += trace-event-perl.o
+libperf-$(CONFIG_LIBPYTHON) += trace-event-python.o
+
+CFLAGS_trace-event-perl.o += $(PERL_EMBED_CCOPTS) -Wno-redundant-decls -Wno-strict-prototypes -Wno-unused-parameter -Wno-shadow -Wno-nested-externs -Wno-undef -Wno-switch-default
+
+CFLAGS_trace-event-python.o += $(PYTHON_EMBED_CCOPTS) -Wno-redundant-decls -Wno-strict-prototypes -Wno-unused-parameter -Wno-shadow

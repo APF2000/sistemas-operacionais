@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:3d989154e700b58de34d079e2700e15d8f4a49e0dee12d8bbc7eef825966463e
-size 281
+#ifndef ASM_PARISC_RUNWAY_H
+#define ASM_PARISC_RUNWAY_H
+#ifdef __KERNEL__
+
+/* declared in arch/parisc/kernel/setup.c */
+extern struct proc_dir_entry * proc_runway_root;
+
+#define RUNWAY_STATUS	0x10
+#define RUNWAY_DEBUG	0x40
+
+#endif /* __KERNEL__ */
+#endif /* ASM_PARISC_RUNWAY_H */

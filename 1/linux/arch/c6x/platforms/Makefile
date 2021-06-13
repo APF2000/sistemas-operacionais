@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:42d0562c48579c3ecca8d29ee96b6c08987a6d6e5c19add316e15ec0687356e1
-size 266
+#
+# Makefile for arch/c6x/platforms
+#
+# Copyright 2010, 2011 Texas Instruments Incorporated
+#
+
+obj-y = cache.o megamod-pic.o pll.o plldata.o timer64.o
+obj-y += dscr.o
+
+# SoC objects
+obj-$(CONFIG_SOC_TMS320C6455)   += emif.o
+obj-$(CONFIG_SOC_TMS320C6457)   += emif.o

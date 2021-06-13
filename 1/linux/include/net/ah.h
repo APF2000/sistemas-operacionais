@@ -1,3 +1,22 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b395c33b7f60629485e5b0907d5941f040b22b8be95c7b343e03287526dd882c
-size 343
+#ifndef _NET_AH_H
+#define _NET_AH_H
+
+#include <linux/skbuff.h>
+
+struct crypto_ahash;
+
+struct ah_data {
+	int			icv_full_len;
+	int			icv_trunc_len;
+
+	struct crypto_ahash	*ahash;
+};
+
+struct ip_auth_hdr;
+
+static inline struct ip_auth_hdr *ip_auth_hdr(const struct sk_buff *skb)
+{
+	return (struct ip_auth_hdr *)skb_transport_header(skb);
+}
+
+#endif

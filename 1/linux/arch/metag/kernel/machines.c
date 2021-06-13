@@ -1,3 +1,20 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:850022f5cc6b8178096416d94d7347c9b2f3b7fad2cec4d5e1fbc80d9afa8c01
-size 359
+/*
+ *  arch/metag/kernel/machines.c
+ *
+ *  Copyright (C) 2012 Imagination Technologies Ltd.
+ *
+ *  Generic Meta Boards.
+ */
+
+#include <linux/init.h>
+#include <asm/irq.h>
+#include <asm/mach/arch.h>
+
+static const char *meta_boards_compat[] __initdata = {
+	"img,meta",
+	NULL,
+};
+
+MACHINE_START(META, "Generic Meta")
+	.dt_compat	= meta_boards_compat,
+MACHINE_END

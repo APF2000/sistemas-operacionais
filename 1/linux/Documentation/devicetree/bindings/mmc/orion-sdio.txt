@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:cf513068f3f30fe3babad3c5130fbc4156a07f123db793813ca88ce84883e94e
-size 424
+* Marvell orion-sdio controller
+
+This file documents differences between the core properties in mmc.txt
+and the properties used by the orion-sdio driver.
+
+- compatible: Should be "marvell,orion-sdio"
+- clocks: reference to the clock of the SDIO interface
+
+Example:
+
+	mvsdio@d00d4000 {
+		compatible = "marvell,orion-sdio";
+		reg = <0xd00d4000 0x200>;
+		interrupts = <54>;
+		clocks = <&gateclk 17>;
+		status = "disabled";
+	};

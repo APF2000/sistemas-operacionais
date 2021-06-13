@@ -1,3 +1,50 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:86c31e9664bbaf1c6521a2474005fb68d45caa5e3ffca40c3ac38873d0339d42
-size 852
+PCI Support Library
+-------------------
+
+.. kernel-doc:: drivers/pci/pci.c
+   :export:
+
+.. kernel-doc:: drivers/pci/pci-driver.c
+   :export:
+
+.. kernel-doc:: drivers/pci/remove.c
+   :export:
+
+.. kernel-doc:: drivers/pci/search.c
+   :export:
+
+.. kernel-doc:: drivers/pci/msi.c
+   :export:
+
+.. kernel-doc:: drivers/pci/bus.c
+   :export:
+
+.. kernel-doc:: drivers/pci/access.c
+   :export:
+
+.. kernel-doc:: drivers/pci/irq.c
+   :export:
+
+.. kernel-doc:: drivers/pci/htirq.c
+   :export:
+
+.. kernel-doc:: drivers/pci/probe.c
+   :export:
+
+.. kernel-doc:: drivers/pci/slot.c
+   :export:
+
+.. kernel-doc:: drivers/pci/rom.c
+   :export:
+
+.. kernel-doc:: drivers/pci/iov.c
+   :export:
+
+.. kernel-doc:: drivers/pci/pci-sysfs.c
+   :internal:
+
+PCI Hotplug Support Library
+---------------------------
+
+.. kernel-doc:: drivers/pci/hotplug/pci_hotplug_core.c
+   :export:

@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1a4e36aa15abb923a0f2414c3a8e7f3571a2b7222de634dcc35d708d0986c41a
-size 443
+#
+# create a compressed vmlinux image from the original vmlinux
+#
+
+targets		:= vmlinux head.o misc.o piggy.o vmlinux.lds
+asflags-y	:=
+
+OBJECTS = $(obj)/head.o $(obj)/misc.o
+
+LDFLAGS_vmlinux := -T
+
+$(obj)/vmlinux: $(obj)/vmlinux.lds $(OBJECTS) $(obj)/piggy.o FORCE
+	$(call if_changed,ld)
+
+LDFLAGS_piggy.o := -r --format binary --oformat elf32-littlenios2 -T
+
+$(obj)/piggy.o: $(obj)/vmlinux.scr $(obj)/../vmlinux.gz FORCE
+	$(call if_changed,ld)

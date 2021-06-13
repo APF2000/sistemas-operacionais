@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:de753ec7dd27f26d5131399db1956c06172ce61cecfe63128570114f5bf06a54
-size 147
+#ifndef _M68K_HP300HW_H
+#define _M68K_HP300HW_H
+
+#include <asm/bootinfo-hp300.h>
+
+
+extern unsigned long hp300_model;
+
+#endif /* _M68K_HP300HW_H */

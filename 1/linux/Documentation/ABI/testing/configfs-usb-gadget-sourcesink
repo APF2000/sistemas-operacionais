@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c92f8fd818be4efb3e73c194062d8e4dbed34c71683fd6a1a82bb8572d9cf047
-size 416
+What:		/config/usb-gadget/gadget/functions/SourceSink.name
+Date:		Nov 2013
+KernelVersion:	3.13
+Description:
+		The attributes:
+
+		pattern		- 0 (all zeros), 1 (mod63), 2 (none)
+		isoc_interval	- 1..16
+		isoc_maxpacket	- 0 - 1023 (fs), 0 - 1024 (hs/ss)
+		isoc_mult	- 0..2 (hs/ss only)
+		isoc_maxburst	- 0..15 (ss only)
+		buflen		- buffer length
+		bulk_qlen	- depth of queue for bulk
+		iso_qlen	- depth of queue for iso

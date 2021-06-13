@@ -1,3 +1,24 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:703d757deb778c810b85e6f9d705c5ceea78a73de5fdcade134f623f39f76c85
-size 626
+/*
+ * Copyright (C) ST-Ericsson SA 2012
+ *
+ * Author: Ola Lilja <ola.o.lilja@stericsson.com>,
+ *         Roger Nilsson <roger.xr.nilsson@stericsson.com>
+ *         for ST-Ericsson.
+ *
+ * License terms:
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 2 as published
+ * by the Free Software Foundation.
+ */
+#ifndef UX500_PCM_H
+#define UX500_PCM_H
+
+#include <asm/page.h>
+
+#include <linux/workqueue.h>
+
+int ux500_pcm_register_platform(struct platform_device *pdev);
+int ux500_pcm_unregister_platform(struct platform_device *pdev);
+
+#endif

@@ -1,3 +1,22 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e01da1787cf97d66347fb571d7722df28e1f2f558ff5712e1969d32f8cbf840b
-size 392
+#ifndef __NVBIOS_ICCSENSE_H__
+#define __NVBIOS_ICCSENSE_H__
+struct pwr_rail_resistor_t {
+	u8 mohm;
+	bool enabled;
+};
+
+struct pwr_rail_t {
+	u8 mode;
+	u8 extdev_id;
+	u8 resistor_count;
+	struct pwr_rail_resistor_t resistors[3];
+	u16 config;
+};
+
+struct nvbios_iccsense {
+	int nr_entry;
+	struct pwr_rail_t *rail;
+};
+
+int nvbios_iccsense_parse(struct nvkm_bios *, struct nvbios_iccsense *);
+#endif

@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1a2ede8089b73891b00b39ec33d6a651bfeb881c84c626d82b77f58e20ddc067
-size 341
+#ifndef __ASM_ARCH_W90P910_KEYPAD_H
+#define __ASM_ARCH_W90P910_KEYPAD_H
+
+#include <linux/input/matrix_keypad.h>
+
+extern void mfp_set_groupi(struct device *dev);
+
+struct w90p910_keypad_platform_data {
+	const struct matrix_keymap_data *keymap_data;
+
+	unsigned int	prescale;
+	unsigned int	debounce;
+};
+
+#endif /* __ASM_ARCH_W90P910_KEYPAD_H */

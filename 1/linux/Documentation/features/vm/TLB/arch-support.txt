@@ -1,3 +1,39 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4ec10798ea6fdc88e8f9aa1e42a071da3dba0ddf79edd8520b2de137ae11692c
-size 1157
+#
+# Feature name:          batch-unmap-tlb-flush
+#         Kconfig:       ARCH_WANT_BATCHED_UNMAP_TLB_FLUSH
+#         description:   arch supports deferral of TLB flush until multiple pages are unmapped
+#
+    -----------------------
+    |         arch |status|
+    -----------------------
+    |       alpha: | TODO |
+    |         arc: | TODO |
+    |         arm: | TODO |
+    |       arm64: | TODO |
+    |    blackfin: | TODO |
+    |         c6x: |  ..  |
+    |        cris: |  ..  |
+    |         frv: |  ..  |
+    |       h8300: |  ..  |
+    |     hexagon: | TODO |
+    |        ia64: | TODO |
+    |        m32r: | TODO |
+    |        m68k: |  ..  |
+    |       metag: | TODO |
+    |  microblaze: |  ..  |
+    |        mips: | TODO |
+    |     mn10300: | TODO |
+    |       nios2: |  ..  |
+    |    openrisc: |  ..  |
+    |      parisc: | TODO |
+    |     powerpc: | TODO |
+    |        s390: | TODO |
+    |       score: |  ..  |
+    |          sh: | TODO |
+    |       sparc: | TODO |
+    |        tile: | TODO |
+    |          um: |  ..  |
+    |   unicore32: |  ..  |
+    |         x86: |  ok  |
+    |      xtensa: | TODO |
+    -----------------------

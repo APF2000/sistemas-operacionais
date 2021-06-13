@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:feead5e10b5beaee45c56316370083c0ff026270e2fb5c826745062b79f9178e
-size 202
+What:		/sys/kernel/mm
+Date:		July 2008
+Contact:	Nishanth Aravamudan <nacc@us.ibm.com>, VM maintainers
+Description:
+		/sys/kernel/mm/ should contain any and all VM
+		related information in /sys/kernel/.

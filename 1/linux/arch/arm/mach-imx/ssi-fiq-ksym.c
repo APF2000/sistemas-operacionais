@@ -1,3 +1,20 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a71bd418c1884a1a2b480545d888a8807b4a94ac55009f8a98672036d0f31fd1
-size 554
+/*
+ * Exported ksyms for the SSI FIQ handler
+ *
+ * Copyright (C) 2009, Sascha Hauer <s.hauer@pengutronix.de>
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 2 as
+ * published by the Free Software Foundation.
+ */
+
+#include <linux/module.h>
+
+#include <linux/platform_data/asoc-imx-ssi.h>
+
+EXPORT_SYMBOL(imx_ssi_fiq_tx_buffer);
+EXPORT_SYMBOL(imx_ssi_fiq_rx_buffer);
+EXPORT_SYMBOL(imx_ssi_fiq_start);
+EXPORT_SYMBOL(imx_ssi_fiq_end);
+EXPORT_SYMBOL(imx_ssi_fiq_base);
+

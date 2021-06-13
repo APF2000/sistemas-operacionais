@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5220bb07e6614debc2d077d4c88da93044377d7d4c66cf10fc8f69c351e0b85d
-size 417
+/*
+ *  linux/arch/arm/lib/testclearbit.S
+ *
+ *  Copyright (C) 1995-1996 Russell King
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 2 as
+ * published by the Free Software Foundation.
+ */
+#include <linux/linkage.h>
+#include <asm/assembler.h>
+#include "bitops.h"
+                .text
+
+testop	_test_and_clear_bit, bicne, strne

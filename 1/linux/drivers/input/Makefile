@@ -1,3 +1,30 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c5648c23cf5b45d24f4b9ae3221f2af7cc13a74ca4e5381c79db1959454eeaaa
-size 909
+#
+# Makefile for the input core drivers.
+#
+
+# Each configuration option enables a list of files.
+
+obj-$(CONFIG_INPUT)		+= input-core.o
+input-core-y := input.o input-compat.o input-mt.o ff-core.o
+
+obj-$(CONFIG_INPUT_FF_MEMLESS)	+= ff-memless.o
+obj-$(CONFIG_INPUT_POLLDEV)	+= input-polldev.o
+obj-$(CONFIG_INPUT_SPARSEKMAP)	+= sparse-keymap.o
+obj-$(CONFIG_INPUT_MATRIXKMAP)	+= matrix-keymap.o
+
+obj-$(CONFIG_INPUT_LEDS)	+= input-leds.o
+obj-$(CONFIG_INPUT_MOUSEDEV)	+= mousedev.o
+obj-$(CONFIG_INPUT_JOYDEV)	+= joydev.o
+obj-$(CONFIG_INPUT_EVDEV)	+= evdev.o
+obj-$(CONFIG_INPUT_EVBUG)	+= evbug.o
+
+obj-$(CONFIG_INPUT_KEYBOARD)	+= keyboard/
+obj-$(CONFIG_INPUT_MOUSE)	+= mouse/
+obj-$(CONFIG_INPUT_JOYSTICK)	+= joystick/
+obj-$(CONFIG_INPUT_TABLET)	+= tablet/
+obj-$(CONFIG_INPUT_TOUCHSCREEN)	+= touchscreen/
+obj-$(CONFIG_INPUT_MISC)	+= misc/
+
+obj-$(CONFIG_INPUT_APMPOWER)	+= apm-power.o
+
+obj-$(CONFIG_RMI4_CORE)		+= rmi4/

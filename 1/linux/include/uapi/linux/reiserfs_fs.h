@@ -1,3 +1,26 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:040b0e2ec9daf1d7848a5ff58d33993f275e8575982e490899a5eb8129fa2179
-size 712
+/*
+ * Copyright 1996, 1997, 1998 Hans Reiser, see reiserfs/README for licensing and copyright details
+ */
+#ifndef _LINUX_REISER_FS_H
+#define _LINUX_REISER_FS_H
+
+#include <linux/types.h>
+#include <linux/magic.h>
+
+/*
+ *  include/linux/reiser_fs.h
+ *
+ *  Reiser File System constants and structures
+ *
+ */
+
+/* ioctl's command */
+#define REISERFS_IOC_UNPACK		_IOW(0xCD,1,long)
+/* define following flags to be the same as in ext2, so that chattr(1),
+   lsattr(1) will work with us. */
+#define REISERFS_IOC_GETFLAGS		FS_IOC_GETFLAGS
+#define REISERFS_IOC_SETFLAGS		FS_IOC_SETFLAGS
+#define REISERFS_IOC_GETVERSION		FS_IOC_GETVERSION
+#define REISERFS_IOC_SETVERSION		FS_IOC_SETVERSION
+
+#endif				/* _LINUX_REISER_FS_H */

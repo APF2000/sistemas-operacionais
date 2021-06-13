@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b4409962a43fb6181cd3a228075cf5a031689bc14ebcd5f50154563a4070f394
-size 395
+#ifndef __NVKM_ICCSENSE_H__
+#define __NVKM_ICCSENSE_H__
+
+#include <core/subdev.h>
+
+struct nvkm_iccsense {
+	struct nvkm_subdev subdev;
+	bool data_valid;
+	struct list_head sensors;
+	struct list_head rails;
+
+	u32 power_w_max;
+	u32 power_w_crit;
+};
+
+int gf100_iccsense_new(struct nvkm_device *, int index, struct nvkm_iccsense **);
+int nvkm_iccsense_read_all(struct nvkm_iccsense *iccsense);
+#endif

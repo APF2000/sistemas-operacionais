@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a9ae15317997fa9fced5dba1119847b1aabda3646c8e59f02a1ba3aeb280e259
-size 317
+#
+# Makefile for the Linux VLAN layer.
+#
+obj-$(subst m,y,$(CONFIG_VLAN_8021Q))	+= vlan_core.o
+obj-$(CONFIG_VLAN_8021Q)		+= 8021q.o
+
+8021q-y					:= vlan.o vlan_dev.o vlan_netlink.o
+8021q-$(CONFIG_VLAN_8021Q_GVRP)		+= vlan_gvrp.o
+8021q-$(CONFIG_VLAN_8021Q_MVRP)		+= vlan_mvrp.o
+8021q-$(CONFIG_PROC_FS)			+= vlanproc.o
+

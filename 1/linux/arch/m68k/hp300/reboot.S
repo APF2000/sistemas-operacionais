@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:814cadc7c17f5464e454b30ebfc85d7a6d9e7417929c58993d051fe7c35df090
-size 513
+/*
+ *  linux/arch/m68k/hp300/reboot.S
+ *
+ *  Copyright (C) 1998 Philip Blundell <philb@gnu.org>
+ *
+ *  Do the dirty work of rebooting the machine.  Basically we need to undo all the
+ *  good stuff that head.S did when we started up.  The caches and MMU must be
+ *  disabled and then we jump back to the PROM.  This is a bit gruesome but we put
+ *  a brave face on it.
+ */
+
+/* XXX Doesn't work yet.  Not sure why and can't be bothered to fix it at the moment. */
+
+	.globl	hp300_reset
+hp300_reset:
+	jmp	hp300_reset

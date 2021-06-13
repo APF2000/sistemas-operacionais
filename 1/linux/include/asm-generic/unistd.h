@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:6d4069676ac1e3709833b2115eaa1e9a1001728d96bf49ce0c02bad9e749a037
-size 279
+#include <uapi/asm-generic/unistd.h>
+#include <linux/export.h>
+
+/*
+ * These are required system calls, we should
+ * invert the logic eventually and let them
+ * be selected by default.
+ */
+#if __BITS_PER_LONG == 32
+#define __ARCH_WANT_STAT64
+#define __ARCH_WANT_SYS_LLSEEK
+#endif

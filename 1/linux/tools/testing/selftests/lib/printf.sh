@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c258bb16fefe1287a5a1431690918f23e4a030fa25dfb5ab262e9731f9a2a2d6
-size 203
+#!/bin/sh
+# Runs printf infrastructure using test_printf kernel module
+
+if /sbin/modprobe -q test_printf; then
+	/sbin/modprobe -q -r test_printf
+	echo "printf: ok"
+else
+	echo "printf: [FAIL]"
+	exit 1
+fi

@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:13a4fb7c8c638ea59759790c73a34a453aff697a9a48c1bdea9ea764248d42b9
-size 119
+#ifndef _ASM_SCORE_LOCAL_H
+#define _ASM_SCORE_LOCAL_H
+
+#include <asm-generic/local.h>
+
+#endif /* _ASM_SCORE_LOCAL_H */

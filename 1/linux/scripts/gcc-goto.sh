@@ -1,3 +1,21 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b23ed5e34a58a63127d0a234072a87e72c6d1a2c1218c7522765bb73a8333614
-size 495
+#!/bin/sh
+# Test for gcc 'asm goto' support
+# Copyright (C) 2010, Jason Baron <jbaron@redhat.com>
+
+cat << "END" | $@ -x c - -c -o /dev/null >/dev/null 2>&1 && echo "y"
+int main(void)
+{
+#if defined(__arm__) || defined(__aarch64__)
+	/*
+	 * Not related to asm goto, but used by jump label
+	 * and broken on some ARM GCC versions (see GCC Bug 48637).
+	 */
+	static struct { int dummy; int state; } tp;
+	asm (".long %c0" :: "i" (&tp.state));
+#endif
+
+entry:
+	asm goto ("" :::: entry);
+	return 0;
+}
+END

@@ -1,3 +1,71 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:7c123fdbb53cecd57373039f4c2a7a4269228e93a3c6badaf110caa0ab47bd30
-size 1196
+1) OF unittest platform device
+
+** unittest
+
+Required properties:
+- compatible: must be "unittest"
+
+All other properties are optional.
+
+Example:
+	unittest {
+		compatible = "unittest";
+		status = "okay";
+	};
+
+2) OF unittest i2c adapter platform device
+
+** platform device unittest adapter
+
+Required properties:
+- compatible: must be unittest-i2c-bus
+
+Children nodes contain unittest i2c devices.
+
+Example:
+	unittest-i2c-bus {
+		compatible = "unittest-i2c-bus";
+		status = "okay";
+	};
+
+3) OF unittest i2c device
+
+** I2C unittest device
+
+Required properties:
+- compatible: must be unittest-i2c-dev
+
+All other properties are optional
+
+Example:
+	unittest-i2c-dev {
+		compatible = "unittest-i2c-dev";
+		status = "okay";
+	};
+
+4) OF unittest i2c mux device
+
+** I2C unittest mux
+
+Required properties:
+- compatible: must be unittest-i2c-mux
+
+Children nodes contain unittest i2c bus nodes per channel.
+
+Example:
+	unittest-i2c-mux {
+		compatible = "unittest-i2c-mux";
+		status = "okay";
+		#address-cells = <1>;
+		#size-cells = <0>;
+		channel-0 {
+			reg = <0>;
+			#address-cells = <1>;
+			#size-cells = <0>;
+			i2c-dev {
+				reg = <8>;
+				compatible = "unittest-i2c-dev";
+				status = "okay";
+			};
+		};
+	};

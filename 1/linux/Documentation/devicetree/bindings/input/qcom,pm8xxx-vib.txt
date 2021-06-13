@@ -1,3 +1,23 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1ea06d5c3ecd73f75936652bba46fd6acb4d12c40db43b3801b41a339f158263
-size 386
+Qualcomm PM8xxx PMIC Vibrator
+
+PROPERTIES
+
+- compatible:
+	Usage: required
+	Value type: <string>
+	Definition: must be one of:
+		    "qcom,pm8058-vib"
+		    "qcom,pm8916-vib"
+		    "qcom,pm8921-vib"
+
+- reg:
+	Usage: required
+	Value type: <prop-encoded-array>
+	Definition: address of vibration control register
+
+EXAMPLE
+
+	vibrator@4a {
+		compatible = "qcom,pm8058-vib";
+		reg = <0x4a>;
+	};

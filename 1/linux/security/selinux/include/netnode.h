@@ -1,3 +1,34 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:9915024fccd205f5b5af30464d515fa6eca8053b28c5783ce0a6249b01a43ef2
-size 995
+/*
+ * Network node table
+ *
+ * SELinux must keep a mapping of network nodes to labels/SIDs.  This
+ * mapping is maintained as part of the normal policy but a fast cache is
+ * needed to reduce the lookup overhead since most of these queries happen on
+ * a per-packet basis.
+ *
+ * Author: Paul Moore <paul@paul-moore.com>
+ *
+ */
+
+/*
+ * (c) Copyright Hewlett-Packard Development Company, L.P., 2007
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of version 2 of the GNU General Public License as
+ * published by the Free Software Foundation.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ */
+
+#ifndef _SELINUX_NETNODE_H
+#define _SELINUX_NETNODE_H
+
+void sel_netnode_flush(void);
+
+int sel_netnode_sid(void *addr, u16 family, u32 *sid);
+
+#endif

@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f9a67ce517aed2c8ce58536c096b561d626ff5899e84ff10b480284bc0092aff
-size 465
+V3 Semiconductor V360 EPC PCI bridge
+
+This bridge is found in the ARM Integrator/AP (Application Platform)
+
+Integrator-specific notes:
+
+- syscon: should contain a link to the syscon device node (since
+  on the Integrator, some registers in the syscon are required to
+  operate the V3).
+
+V360 EPC specific notes:
+
+- reg: should contain the base address of the V3 adapter.
+- interrupts: should contain a reference to the V3 error interrupt
+  as routed on the system.

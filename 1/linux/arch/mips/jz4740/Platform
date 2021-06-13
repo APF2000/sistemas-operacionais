@@ -1,3 +1,4 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b222a677363b7fa3d771a34e0cbf95808cf7f4d52cb7e6ced64ab4b7f631771e
-size 224
+platform-$(CONFIG_MACH_INGENIC)	+= jz4740/
+cflags-$(CONFIG_MACH_INGENIC)	+= -I$(srctree)/arch/mips/include/asm/mach-jz4740
+load-$(CONFIG_MACH_INGENIC)	+= 0xffffffff80010000
+zload-$(CONFIG_MACH_INGENIC)	+= 0xffffffff80600000

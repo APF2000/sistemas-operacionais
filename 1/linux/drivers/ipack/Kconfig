@@ -1,3 +1,24 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:6b93303e75c4af605b004c0f0ee278d866fd2fc28a8edd860cc0c8be957a7b9e
-size 630
+#
+# IPACK configuration.
+#
+
+menuconfig IPACK_BUS
+	tristate "IndustryPack bus support"
+	depends on HAS_IOMEM
+	---help---
+	  This option provides support for the IndustryPack framework.  There
+	  are IndustryPack carrier boards, which interface another bus (such as
+	  PCI) to an IndustryPack bus, and IndustryPack modules, that are
+	  hosted on these buses.  While IndustryPack modules can provide a
+	  large variety of functionality, they are most often found in
+	  industrial control applications.
+
+	  Say N if unsure.
+
+if IPACK_BUS
+
+source "drivers/ipack/carriers/Kconfig"
+
+source "drivers/ipack/devices/Kconfig"
+
+endif # IPACK

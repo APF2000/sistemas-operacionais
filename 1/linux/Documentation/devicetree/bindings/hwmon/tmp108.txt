@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b68871a5ca0726258816245ef37e9c60de3d7ed515e341f4d2c6f856c51e2c8f
-size 283
+TMP108 temperature sensor
+-------------------------
+
+This device supports I2C only.
+
+Requires node properties:
+- compatible : "ti,tmp108"
+- reg : the I2C address of the device. This is 0x48, 0x49, 0x4a, or 0x4b.
+
+Example:
+	tmp108@48 {
+		compatible = "ti,tmp108";
+		reg = <0x48>;
+	};

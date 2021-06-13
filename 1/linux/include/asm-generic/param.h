@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d287f07a4a1ea10830afbb2e13a9014891018bb33cad7e67da97eb21955c7fa8
-size 328
+#ifndef __ASM_GENERIC_PARAM_H
+#define __ASM_GENERIC_PARAM_H
+
+#include <uapi/asm-generic/param.h>
+
+# undef HZ
+# define HZ		CONFIG_HZ	/* Internal kernel timer frequency */
+# define USER_HZ	100		/* some user interfaces are */
+# define CLOCKS_PER_SEC	(USER_HZ)       /* in "ticks" like times() */
+#endif /* __ASM_GENERIC_PARAM_H */

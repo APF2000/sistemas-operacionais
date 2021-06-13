@@ -1,3 +1,22 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:6d5e36c36217a6947d2c359cbedd224cc5cb6c2d17a9cf778b0d17f60f3c48bd
-size 319
+#include <linux/mm.h>
+
+#include <asm/pgtable.h>
+
+#include "pte.h"
+
+pte_t *kmemcheck_pte_lookup(unsigned long address)
+{
+	pte_t *pte;
+	unsigned int level;
+
+	pte = lookup_address(address, &level);
+	if (!pte)
+		return NULL;
+	if (level != PG_LEVEL_4K)
+		return NULL;
+	if (!pte_hidden(*pte))
+		return NULL;
+
+	return pte;
+}
+

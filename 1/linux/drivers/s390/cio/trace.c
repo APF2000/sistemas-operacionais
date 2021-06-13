@@ -1,3 +1,24 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:731b298719a1a085a469791042ea9b8ce1ccf6962568f7879f3253a1ec02f902
-size 679
+/*
+ * Tracepoint definitions for s390_cio
+ *
+ * Copyright IBM Corp. 2015
+ * Author(s): Peter Oberparleiter <oberpar@linux.vnet.ibm.com>
+ */
+
+#include <asm/crw.h>
+#include "cio.h"
+
+#define CREATE_TRACE_POINTS
+#include "trace.h"
+
+EXPORT_TRACEPOINT_SYMBOL(s390_cio_stsch);
+EXPORT_TRACEPOINT_SYMBOL(s390_cio_msch);
+EXPORT_TRACEPOINT_SYMBOL(s390_cio_tsch);
+EXPORT_TRACEPOINT_SYMBOL(s390_cio_tpi);
+EXPORT_TRACEPOINT_SYMBOL(s390_cio_ssch);
+EXPORT_TRACEPOINT_SYMBOL(s390_cio_csch);
+EXPORT_TRACEPOINT_SYMBOL(s390_cio_hsch);
+EXPORT_TRACEPOINT_SYMBOL(s390_cio_xsch);
+EXPORT_TRACEPOINT_SYMBOL(s390_cio_rsch);
+EXPORT_TRACEPOINT_SYMBOL(s390_cio_rchp);
+EXPORT_TRACEPOINT_SYMBOL(s390_cio_chsc);

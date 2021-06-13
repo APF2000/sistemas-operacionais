@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4acbff05d1653c975a58b69c7491ba9a68f531b1dc04359af8a775da09578fad
-size 174
+#ifndef _UAPI_CAN_VXCAN_H
+#define _UAPI_CAN_VXCAN_H
+
+enum {
+	VXCAN_INFO_UNSPEC,
+	VXCAN_INFO_PEER,
+
+	__VXCAN_INFO_MAX
+#define VXCAN_INFO_MAX	(__VXCAN_INFO_MAX - 1)
+};
+
+#endif

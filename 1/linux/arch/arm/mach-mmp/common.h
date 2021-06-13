@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b3f376552105d58b60e8b9c7ac066c7372c43716ac9bc81dbe6b591843d09d64
-size 200
+#include <linux/reboot.h>
+#define ARRAY_AND_SIZE(x)	(x), ARRAY_SIZE(x)
+
+extern void timer_init(int irq);
+
+extern void __init mmp_map_io(void);
+extern void mmp_restart(enum reboot_mode, const char *);

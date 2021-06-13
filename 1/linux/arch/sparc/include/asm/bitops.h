@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:bfbcfc210ba919d3f157b6c006713f0eab68cf6cec5438b2ffc52fecaaf411d3
-size 180
+#ifndef ___ASM_SPARC_BITOPS_H
+#define ___ASM_SPARC_BITOPS_H
+#if defined(__sparc__) && defined(__arch64__)
+#include <asm/bitops_64.h>
+#else
+#include <asm/bitops_32.h>
+#endif
+#endif

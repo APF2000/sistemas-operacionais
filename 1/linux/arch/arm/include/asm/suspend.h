@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:bcdf068939a6322fd3c75b998121e804b37679d9726aca8688f3f38e6c050a53
-size 267
+#ifndef __ASM_ARM_SUSPEND_H
+#define __ASM_ARM_SUSPEND_H
+
+struct sleep_save_sp {
+	u32 *save_ptr_stash;
+	u32 save_ptr_stash_phys;
+};
+
+extern void cpu_resume(void);
+extern void cpu_resume_arm(void);
+extern int cpu_suspend(unsigned long, int (*)(unsigned long));
+
+#endif

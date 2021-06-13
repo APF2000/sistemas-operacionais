@@ -1,3 +1,30 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:6e246bbf97f8a7d8388e8936e95c060e0453a6b488c1b1070b75a11e1d66f2c6
-size 738
+/*
+ * Copyright (C) 2008-2009 Michal Simek <monstr@monstr.eu>
+ * Copyright (C) 2008-2009 PetaLogix
+ * Copyright (C) 2006 Atmark Techno, Inc.
+ *
+ * This file is subject to the terms and conditions of the GNU General Public
+ * License. See the file "COPYING" in the main directory of this archive
+ * for more details.
+ */
+#ifndef _ASM_MICROBLAZE_ELF_H
+#define _ASM_MICROBLAZE_ELF_H
+
+#include <uapi/asm/elf.h>
+
+#ifndef __uClinux__
+#ifndef ELF_GREG_T
+#endif
+#ifndef ELF_NGREG
+#endif
+#ifndef ELF_GREGSET_T
+#endif
+#ifndef ELF_FPREGSET_T
+#endif
+#ifdef __MICROBLAZEEL__
+#else
+#endif
+#define SET_PERSONALITY(ex) \
+	set_personality(PER_LINUX_32BIT | (current->personality & (~PER_MASK)))
+#endif /* __uClinux__ */
+#endif /* _ASM_MICROBLAZE_ELF_H */

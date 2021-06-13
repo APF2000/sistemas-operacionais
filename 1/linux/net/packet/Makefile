@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f777686b311248b8d369de209c239b3ab492dfd178bed4012a94463c8627ebe5
-size 144
+#
+# Makefile for the packet AF.
+#
+
+obj-$(CONFIG_PACKET) += af_packet.o
+obj-$(CONFIG_PACKET_DIAG) += af_packet_diag.o
+af_packet_diag-y += diag.o

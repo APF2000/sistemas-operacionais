@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:16abec986924bb17431d37f235da0b939c702c450bc3181521d449735fa42c23
-size 466
+hostprogs := jevents
+
+jevents-y	+= json.o jsmn.o jevents.o
+pmu-events-y	+= pmu-events.o
+JDIR		=  pmu-events/arch/$(ARCH)
+JSON		=  $(shell [ -d $(JDIR) ] &&				\
+			find $(JDIR) -name '*.json' -o -name 'mapfile.csv')
+#
+# Locate/process JSON files in pmu-events/arch/
+# directory and create tables in pmu-events.c.
+#
+$(OUTPUT)pmu-events/pmu-events.c: $(JSON) $(JEVENTS)
+	$(Q)$(call echo-cmd,gen)$(JEVENTS) $(ARCH) pmu-events/arch $(OUTPUT)pmu-events/pmu-events.c $(V)

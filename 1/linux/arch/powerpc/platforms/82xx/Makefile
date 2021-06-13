@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a9eb53575119dfd0ecb34a379813b7bb7ba086bde2bd753234266b10f96ddcc3
-size 274
+#
+# Makefile for the PowerPC 82xx linux kernel.
+#
+obj-$(CONFIG_MPC8272_ADS) += mpc8272_ads.o
+obj-$(CONFIG_CPM2) += pq2.o
+obj-$(CONFIG_PQ2_ADS_PCI_PIC) += pq2ads-pci-pic.o
+obj-$(CONFIG_PQ2FADS) += pq2fads.o
+obj-$(CONFIG_EP8248E) += ep8248e.o
+obj-$(CONFIG_MGCOGE) += km82xx.o

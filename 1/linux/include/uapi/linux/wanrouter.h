@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c93edd78397ec096bb2a9c2b7e844133ea29875efaf2facff48ca4c75f82193e
-size 405
+/*
+ * wanrouter.h	Legacy declarations kept around until X25 is removed
+ */
+
+#ifndef _UAPI_ROUTER_H
+#define _UAPI_ROUTER_H
+
+/* 'state' defines */
+enum wan_states
+{
+	WAN_UNCONFIGURED,	/* link/channel is not configured */
+	WAN_DISCONNECTED,	/* link/channel is disconnected */
+	WAN_CONNECTING,		/* connection is in progress */
+	WAN_CONNECTED		/* link/channel is operational */
+};
+
+#endif /* _UAPI_ROUTER_H */

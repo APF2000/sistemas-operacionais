@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:8724ed3bc9dae71e0baeb589a5cf6372fe7d3fed6e761e9e5bf5b91e41299959
-size 249
+#
+# Makefile for the Linux NFC NCI layer.
+#
+
+obj-$(CONFIG_NFC_NCI) += nci.o
+
+nci-objs := core.o data.o lib.o ntf.o rsp.o hci.o
+
+nci_spi-y += spi.o
+obj-$(CONFIG_NFC_NCI_SPI) += nci_spi.o
+
+nci_uart-y += uart.o
+obj-$(CONFIG_NFC_NCI_UART) += nci_uart.o

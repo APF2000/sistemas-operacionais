@@ -1,3 +1,26 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:65be4f450e6d67cd40a346816402681c9c42c57ff5beb0bb6dd8449deb6e06a5
-size 453
+/*
+ * arch/sh/boards/se/7619/setup.c
+ *
+ * Copyright (C) 2006 Yoshinori Sato
+ *
+ * Hitachi SH7619 SolutionEngine Support.
+ */
+
+#include <linux/init.h>
+#include <linux/platform_device.h>
+#include <asm/io.h>
+#include <asm/machvec.h>
+
+static int se7619_mode_pins(void)
+{
+	return MODE_PIN2 | MODE_PIN0;
+}
+
+/*
+ * The Machine Vector
+ */
+
+static struct sh_machine_vector mv_se __initmv = {
+	.mv_name		= "SolutionEngine",
+	.mv_mode_pins		= se7619_mode_pins,
+};

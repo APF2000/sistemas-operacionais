@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e9905ec9d0cdf19c5ad34dd138b6f994e824989ce476f2dfc60d5079900bc0c5
-size 434
+config USB_EMXX
+	tristate "EMXX USB Function Device Controller"
+ 	depends on USB_GADGET && (ARCH_SHMOBILE || (ARM && COMPILE_TEST))
+	help
+	   The Emma Mobile series of SoCs from Renesas Electronics and
+	   former NEC Electronics include USB Function hardware.
+
+	   Say "y" to link the driver statically, or "m" to build a
+	   dynamically linked module called "emxx_udc" and force all
+	   gadget drivers to also be dynamically linked.

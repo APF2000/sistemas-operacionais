@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1c79f64e7535c087078b06e3b5cb093e0861bbcde84a2e2d34852dc7e70eff10
-size 397
+TPS65090 Frontend PMU with Switchmode Charger
+
+Required Properties:
+-compatible: "ti,tps65090-charger"
+
+Optional Properties:
+-ti,enable-low-current-chrg: Enables charging when a low current is detected
+ while the default logic is to stop charging.
+
+This node is a subnode of the tps65090 PMIC.
+
+Example:
+
+	tps65090-charger {
+		compatible = "ti,tps65090-charger";
+		ti,enable-low-current-chrg;
+	};

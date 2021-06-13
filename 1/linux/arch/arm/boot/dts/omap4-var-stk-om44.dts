@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:df77313d35ad6b0f2e0ff5bb70d76f244169d4637b6e82c66c9059963976c1c9
-size 521
+/*
+ * Copyright (C) 2014 Joachim Eastwood <manabian@gmail.com>
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 2 as
+ * published by the Free Software Foundation.
+ */
+/dts-v1/;
+
+#include "omap4-var-som-om44.dtsi"
+#include "omap4-var-som-om44-wlan.dtsi"
+#include "omap4-var-om44customboard.dtsi"
+
+/ {
+	model = "Variscite VAR-STK-OM44";
+	compatible = "variscite,var-stk-om44", "variscite,var-som-om44", "ti,omap4460", "ti,omap4";
+};

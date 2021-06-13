@@ -1,3 +1,3 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:bb498a9037e261e99503590276abc721531525db6a5d8b61b9018a6aca859ec8
-size 168
+snd-oxfw-objs := oxfw-command.o oxfw-stream.o oxfw-pcm.o oxfw-proc.o \
+		 oxfw-midi.o oxfw-hwdep.o oxfw-spkr.o oxfw-scs1x.o oxfw.o
+obj-$(CONFIG_SND_OXFW) += snd-oxfw.o

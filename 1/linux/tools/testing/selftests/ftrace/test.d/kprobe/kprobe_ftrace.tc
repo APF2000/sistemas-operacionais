@@ -1,3 +1,55 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:076acc0049182f026dd50ec3ca7490543664704b1e07a5b1f44ebd919445ee5e
-size 1228
+#!/bin/sh
+# description: Kprobe dynamic event with function tracer
+
+[ -f kprobe_events ] || exit_unsupported # this is configurable
+grep function available_tracers || exit_unsupported # this is configurable
+
+# prepare
+echo nop > current_tracer
+echo _do_fork > set_ftrace_filter
+echo 0 > events/enable
+echo > kprobe_events
+echo 'p:testprobe _do_fork' > kprobe_events
+
+# kprobe on / ftrace off
+echo 1 > events/kprobes/testprobe/enable
+echo > trace
+( echo "forked")
+grep testprobe trace
+! grep '_do_fork <-' trace
+
+# kprobe on / ftrace on
+echo function > current_tracer
+echo > trace
+( echo "forked")
+grep testprobe trace
+grep '_do_fork <-' trace
+
+# kprobe off / ftrace on
+echo 0 > events/kprobes/testprobe/enable
+echo > trace
+( echo "forked")
+! grep testprobe trace
+grep '_do_fork <-' trace
+
+# kprobe on / ftrace on
+echo 1 > events/kprobes/testprobe/enable
+echo function > current_tracer
+echo > trace
+( echo "forked")
+grep testprobe trace
+grep '_do_fork <-' trace
+
+# kprobe on / ftrace off
+echo nop > current_tracer
+echo > trace
+( echo "forked")
+grep testprobe trace
+! grep '_do_fork <-' trace
+
+# cleanup
+echo nop > current_tracer
+echo > set_ftrace_filter
+echo 0 > events/kprobes/testprobe/enable
+echo > kprobe_events
+echo > trace

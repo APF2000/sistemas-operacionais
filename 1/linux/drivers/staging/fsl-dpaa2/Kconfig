@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1dcc0878ce13b021bfd555640b3d05747d97bc26ba4955a69165df5b5ac40439
-size 440
+#
+# Freescale DataPath Acceleration Architecture Gen2 (DPAA2) drivers
+#
+
+config FSL_DPAA2
+	bool "Freescale DPAA2 devices"
+	depends on FSL_MC_BUS
+	---help---
+	  Build drivers for Freescale DataPath Acceleration
+	  Architecture (DPAA2) family of SoCs.
+
+config FSL_DPAA2_ETH
+	tristate "Freescale DPAA2 Ethernet"
+	depends on FSL_DPAA2 && FSL_MC_DPIO
+	---help---
+	  Ethernet driver for Freescale DPAA2 SoCs, using the
+	  Freescale MC bus driver

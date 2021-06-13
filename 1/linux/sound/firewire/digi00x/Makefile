@@ -1,3 +1,4 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:773179aa25e46d5943fc74e808b2a20a7739d665a0432bbbfb015e00aa54c755
-size 231
+snd-firewire-digi00x-objs := amdtp-dot.o digi00x-stream.o digi00x-proc.o \
+			     digi00x-pcm.o digi00x-hwdep.o \
+			     digi00x-transaction.o digi00x-midi.o digi00x.o
+obj-$(CONFIG_SND_FIREWIRE_DIGI00X) += snd-firewire-digi00x.o

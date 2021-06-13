@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d4467fd38299ab866cee9f3b7cc1835db4a7a2abe56da517c1af9ce0aee5e2c8
-size 368
+#
+# Cavium crypto device configuration
+#
+
+config CRYPTO_DEV_CPT
+	tristate
+
+config CAVIUM_CPT
+	tristate "Cavium Cryptographic Accelerator driver"
+	depends on ARCH_THUNDER || COMPILE_TEST
+	depends on PCI_MSI && 64BIT
+	select CRYPTO_DEV_CPT
+	help
+	  Support for Cavium CPT block found in octeon-tx series of
+	  processors.
+
+	  To compile this as a module, choose M here.

@@ -1,3 +1,48 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ed204d69607fa54c6124b5b287c25afa25c207b2341e55fc61c8d6a73c557a05
-size 946
+
+/ {
+	aliases {
+		testcase-alias = &testcase;
+	};
+
+	testcase: testcase-data {
+		security-password = "password";
+		duplicate-name = "duplicate";
+		duplicate-name { };
+		phandle-tests {
+			provider0: provider0 {
+				#phandle-cells = <0>;
+			};
+
+			provider1: provider1 {
+				#phandle-cells = <1>;
+			};
+
+			provider2: provider2 {
+				#phandle-cells = <2>;
+			};
+
+			provider3: provider3 {
+				#phandle-cells = <3>;
+			};
+
+			consumer-a {
+				phandle-list =	<&provider1 1>,
+						<&provider2 2 0>,
+						<0>,
+						<&provider3 4 4 3>,
+						<&provider2 5 100>,
+						<&provider0>,
+						<&provider1 7>;
+				phandle-list-names = "first", "second", "third";
+
+				phandle-list-bad-phandle = <12345678 0 0>;
+				phandle-list-bad-args = <&provider2 1 0>,
+							<&provider3 0>;
+				empty-property;
+				string-property = "foobar";
+				unterminated-string = [40 41 42 43];
+				unterminated-string-list = "first", "second", [40 41 42 43];
+			};
+		};
+	};
+};

@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:3377b8e95e1edb71aae332a96baadddecc64cd02378f17fe109d1949e7198f39
-size 489
+#ifndef _ARCH_POWERPC_MM_VPHN_H_
+#define _ARCH_POWERPC_MM_VPHN_H_
+
+/* The H_HOME_NODE_ASSOCIATIVITY h_call returns 6 64-bit registers.
+ */
+#define VPHN_REGISTER_COUNT 6
+
+/*
+ * 6 64-bit registers unpacked into up to 24 be32 associativity values. To
+ * form the complete property we have to add the length in the first cell.
+ */
+#define VPHN_ASSOC_BUFSIZE (VPHN_REGISTER_COUNT*sizeof(u64)/sizeof(u16) + 1)
+
+extern int vphn_unpack_associativity(const long *packed, __be32 *unpacked);
+
+#endif

@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5b8e490ecf5932c581506a458ddd479b17fc0de8cda6c4be46bb4cca9075eaf8
-size 188
+config ORANGEFS_FS
+	tristate "ORANGEFS (Powered by PVFS) support"
+	select FS_POSIX_ACL
+	help
+	   Orange is a parallel file system designed for use on high end
+	   computing (HEC) systems.

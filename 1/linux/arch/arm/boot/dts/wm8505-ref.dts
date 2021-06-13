@@ -1,3 +1,36 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:66522362147d039de8651692986bc985e4a246d48cbb77d1bcd3f0ea29ab7cf5
-size 631
+/*
+ * wm8505-ref.dts - Device tree file for Wondermedia WM8505 reference netbook
+ *
+ * Copyright (C) 2012 Tony Prisk <linux@prisktech.co.nz>
+ *
+ * Licensed under GPLv2 or later
+ */
+
+/dts-v1/;
+/include/ "wm8505.dtsi"
+
+/ {
+	model = "Wondermedia WM8505 Netbook";
+};
+
+&fb {
+	bits-per-pixel = <32>;
+	display-timings {
+		native-mode = <&timing0>;
+		timing0: 800x480 {
+			clock-frequency = <0>; /* unused but required */
+			hactive = <800>;
+			vactive = <480>;
+			hfront-porch = <40>;
+			hback-porch = <88>;
+			hsync-len = <0>;
+			vback-porch = <32>;
+			vfront-porch = <11>;
+			vsync-len = <1>;
+		};
+	};
+};
+
+&uart0 {
+	status = "okay";
+};

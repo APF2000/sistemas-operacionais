@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:20f1aaf01f2dac1f41541c882c505f68f872380ba3204353deccf15e3aadc913
-size 426
+In order to use anything but the most primitive functions of ATM,
+several user-mode programs are required to assist the kernel. These
+programs and related material can be found via the ATM on Linux Web
+page at http://linux-atm.sourceforge.net/
+
+If you encounter problems with ATM, please report them on the ATM
+on Linux mailing list. Subscription information, archives, etc.,
+can be found on http://linux-atm.sourceforge.net/

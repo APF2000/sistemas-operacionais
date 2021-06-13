@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:3777322558edaefc7792c4c68ccb035d1fe013fead18baa0fb4ef75723927361
-size 222
+/dts-v1/;
+
+#include "omap2420-n8x0-common.dtsi"
+
+/ {
+	model = "Nokia N810";
+	compatible = "nokia,n810", "nokia,n8x0", "ti,omap2420", "ti,omap2";
+};
+
+&i2c2 {
+	aic3x@18 {
+		compatible = "tlv320aic3x";
+		reg = <0x18>;
+	};
+};

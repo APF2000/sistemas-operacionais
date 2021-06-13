@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:155f94921dd7895cf9e2fce00f196e3f28c84ec0f722590050b44297e7a05382
-size 246
+AU Optronics Corporation 13.3" FHD (1920x1080) color TFT-LCD panel
+
+Required properties:
+- compatible: should be "auo,b133htn01"
+
+This binding is compatible with the simple-panel binding, which is specified
+in simple-panel.txt in this directory.

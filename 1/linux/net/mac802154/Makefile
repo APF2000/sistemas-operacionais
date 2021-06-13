@@ -1,3 +1,5 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a443361a00a70f59d771ee2f597778a763ffddce0ae0229ddd6ec99f0a38d86b
-size 164
+obj-$(CONFIG_MAC802154)	+= mac802154.o
+mac802154-objs		:= main.o rx.o tx.o mac_cmd.o mib.o \
+			   iface.o llsec.o util.o cfg.o trace.o
+
+CFLAGS_trace.o := -I$(src)

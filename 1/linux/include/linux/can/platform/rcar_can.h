@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:707f5a1f1f007f8a843d194a12dc5976ef35447ccd9e037566879119b834006c
-size 417
+#ifndef _CAN_PLATFORM_RCAR_CAN_H_
+#define _CAN_PLATFORM_RCAR_CAN_H_
+
+#include <linux/types.h>
+
+/* Clock Select Register settings */
+enum CLKR {
+	CLKR_CLKP1 = 0,	/* Peripheral clock (clkp1) */
+	CLKR_CLKP2 = 1,	/* Peripheral clock (clkp2) */
+	CLKR_CLKEXT = 3	/* Externally input clock */
+};
+
+struct rcar_can_platform_data {
+	enum CLKR clock_select;	/* Clock source select */
+};
+
+#endif	/* !_CAN_PLATFORM_RCAR_CAN_H_ */

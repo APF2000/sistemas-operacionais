@@ -1,3 +1,37 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:8b0ce2b5e4a1b9593a5ca511ea264c3b25fd7da2a7dcc3f28fa4e7643da24e36
-size 758
+#ifndef _IPT_CLUSTERIP_H_target
+#define _IPT_CLUSTERIP_H_target
+
+#include <linux/types.h>
+#include <linux/if_ether.h>
+
+enum clusterip_hashmode {
+    CLUSTERIP_HASHMODE_SIP = 0,
+    CLUSTERIP_HASHMODE_SIP_SPT,
+    CLUSTERIP_HASHMODE_SIP_SPT_DPT,
+};
+
+#define CLUSTERIP_HASHMODE_MAX CLUSTERIP_HASHMODE_SIP_SPT_DPT
+
+#define CLUSTERIP_MAX_NODES 16
+
+#define CLUSTERIP_FLAG_NEW 0x00000001
+
+struct clusterip_config;
+
+struct ipt_clusterip_tgt_info {
+
+	__u32 flags;
+
+	/* only relevant for new ones */
+	__u8 clustermac[ETH_ALEN];
+	__u16 num_total_nodes;
+	__u16 num_local_nodes;
+	__u16 local_nodes[CLUSTERIP_MAX_NODES];
+	__u32 hash_mode;
+	__u32 hash_initval;
+
+	/* Used internally by the kernel */
+	struct clusterip_config *config;
+};
+
+#endif /*_IPT_CLUSTERIP_H_target*/

@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:72fac6ec5793ff83501dbb8fa9721b0d2dc2e0a1e34fbbfe26dfc4eca7c1a0d3
-size 268
+What:		/sys/bus/media/devices/.../model
+Date:		January 2011
+Contact:	Laurent Pinchart <laurent.pinchart@ideasonboard.com>
+		linux-media@vger.kernel.org
+Description:	Contains the device model name in UTF-8. The device version is
+		is not be appended to the model name.

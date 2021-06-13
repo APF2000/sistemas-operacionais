@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:72ad75c1d69338f0ce561b91cd4253e1bcf9b591c06020e5ff066d032e0fd2f6
-size 301
+/*
+ * Copyright 2004-2009 Analog Devices Inc.
+ *
+ * Licensed under the GPL-2 or later.
+ */
+
+#ifndef __BFIN_HARDIRQ_H
+#define __BFIN_HARDIRQ_H
+
+#define __ARCH_IRQ_EXIT_IRQS_DISABLED	1
+
+extern void ack_bad_irq(unsigned int irq);
+#define ack_bad_irq ack_bad_irq
+
+#include <asm-generic/hardirq.h>
+
+#endif

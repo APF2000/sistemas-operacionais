@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5b3101e5c251432b3bf7b00d108105f8a3d26a94bc2f7a5e8cd33fc243699d76
-size 403
+/* inffast.h -- header to use inffast.c
+ * Copyright (C) 1995-2003 Mark Adler
+ * For conditions of distribution and use, see copyright notice in zlib.h
+ */
+
+/* WARNING: this file should *not* be used by applications. It is
+   part of the implementation of the compression library and is
+   subject to change. Applications should only use zlib.h.
+ */
+
+void inflate_fast (z_streamp strm, unsigned start);

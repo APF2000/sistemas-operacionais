@@ -1,3 +1,29 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:18a8870245b59c65867b02c75f537640484cb994fd57b6ef839083a7784dad03
-size 983
+#ifndef __ASM_SH_SYSCALLS_32_H
+#define __ASM_SH_SYSCALLS_32_H
+
+#ifdef __KERNEL__
+
+#include <linux/compiler.h>
+#include <linux/linkage.h>
+#include <linux/types.h>
+
+struct pt_regs;
+
+asmlinkage int sys_sigreturn(void);
+asmlinkage int sys_rt_sigreturn(void);
+asmlinkage int sys_sh_pipe(void);
+asmlinkage ssize_t sys_pread_wrapper(unsigned int fd, char __user *buf,
+				     size_t count, long dummy, loff_t pos);
+asmlinkage ssize_t sys_pwrite_wrapper(unsigned int fd, const char __user *buf,
+				      size_t count, long dummy, loff_t pos);
+asmlinkage int sys_fadvise64_64_wrapper(int fd, u32 offset0, u32 offset1,
+					u32 len0, u32 len1, int advice);
+
+/* Misc syscall related bits */
+asmlinkage long do_syscall_trace_enter(struct pt_regs *regs);
+asmlinkage void do_syscall_trace_leave(struct pt_regs *regs);
+asmlinkage void do_notify_resume(struct pt_regs *regs, unsigned int save_r0,
+				 unsigned long thread_info_flags);
+
+#endif /* __KERNEL__ */
+#endif /* __ASM_SH_SYSCALLS_32_H */

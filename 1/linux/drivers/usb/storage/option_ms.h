@@ -1,3 +1,4 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:8e87941ae53324478fe3efed443db7c9fa15b5d7772329fd4ee487168e779f4e
-size 98
+#ifndef _OPTION_MS_H_
+#define _OPTION_MS_H_
+extern int option_ms_init(struct us_data *us);
+#endif

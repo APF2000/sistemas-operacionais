@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d54d921bbd8a2c46e33d661b883f7b9ffccb4c5c32a23372f08b12e38e599519
-size 256
+config VIDEO_SMIAPP
+	tristate "SMIA++/SMIA sensor support"
+	depends on I2C && VIDEO_V4L2 && VIDEO_V4L2_SUBDEV_API && HAVE_CLK
+	depends on MEDIA_CAMERA_SUPPORT
+	select VIDEO_SMIAPP_PLL
+	---help---
+	  This is a generic driver for SMIA++/SMIA camera modules.

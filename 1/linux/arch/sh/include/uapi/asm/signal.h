@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f1cde5415f1242bd0cbc123ae49f4baba240e4cbdd14f08517ae62b21618bebd
-size 306
+#ifndef __ASM_SH_SIGNAL_H
+#define __ASM_SH_SIGNAL_H
+
+#define SA_RESTORER	0x04000000
+
+#include <asm-generic/signal.h>
+
+#ifndef __KERNEL__
+struct old_sigaction {
+	__sighandler_t sa_handler;
+	old_sigset_t sa_mask;
+	unsigned long sa_flags;
+	void (*sa_restorer)(void);
+};
+#endif
+
+#endif /* __ASM_SH_SIGNAL_H */

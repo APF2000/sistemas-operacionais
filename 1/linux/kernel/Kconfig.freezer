@@ -1,3 +1,2 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:cf7b305badf209b6624f9d072521218536b7e53981a56d21766fa247474580f5
-size 52
+config FREEZER
+	def_bool PM_SLEEP || CGROUP_FREEZER

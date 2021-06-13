@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2107df065cdcd9336ed4595d0f83e337630c3ec31362c240f35ed9f43f5e0849
-size 262
+Texas Instruments PCM1681 8-channel PWM Processor
+
+Required properties:
+
+ - compatible:		Should contain "ti,pcm1681".
+ - reg:			The i2c address. Should contain <0x4c>.
+
+Examples:
+
+	i2c_bus {
+		pcm1681@4c {
+			compatible = "ti,pcm1681";
+			reg = <0x4c>;
+		};
+	};

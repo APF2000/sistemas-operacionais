@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a85c79c5475e9fa13910f486442369e0310412bbd7d7c81fdc2abfbcf33fb5e7
-size 255
+#ifndef BMG160_H_
+#define BMG160_H_
+
+extern const struct dev_pm_ops bmg160_pm_ops;
+
+int bmg160_core_probe(struct device *dev, struct regmap *regmap, int irq,
+		      const char *name);
+void bmg160_core_remove(struct device *dev);
+
+#endif  /* BMG160_H_ */

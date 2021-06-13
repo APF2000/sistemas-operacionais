@@ -1,3 +1,5 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:74d6981ef0c6efae739cc88f091287b165692cb1d9813cede221925efdc194d2
-size 143
+Altera UP PS/2 controller
+
+Required properties:
+- compatible : should be "ALTR,ps2-1.0". <DEPRECATED>
+- compatible : should be "altr,ps2-1.0".

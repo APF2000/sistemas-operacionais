@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:dee9e7b71a9dd21318f9a3a281774fae998df5c205fd42eb7401673178e3f62c
-size 448
+CFLAGS += -O2
+LDLIBS = -lrt -lpthread -lpopt
+TEST_GEN_PROGS := mq_open_tests mq_perf_tests
+
+include ../lib.mk
+
+override define RUN_TESTS
+	@./mq_open_tests /test1 || echo "selftests: mq_open_tests [FAIL]"
+	@./mq_perf_tests || echo "selftests: mq_perf_tests [FAIL]"
+endef
+
+override define EMIT_TESTS
+	echo "./mq_open_tests /test1 || echo \"selftests: mq_open_tests [FAIL]\""
+	echo "./mq_perf_tests || echo \"selftests: mq_perf_tests [FAIL]\""
+endef
+

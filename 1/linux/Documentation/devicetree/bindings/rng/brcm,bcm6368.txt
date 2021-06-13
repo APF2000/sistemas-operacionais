@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:9d7b18512889ec1d16b8381c999b44256ec6077527ff07b3417e749c692c607e
-size 425
+BCM6368 Random number generator
+
+Required properties:
+
+- compatible : should be "brcm,bcm6368-rng"
+- reg : Specifies base physical address and size of the registers
+- clocks : phandle to clock-controller plus clock-specifier pair
+- clock-names : "ipsec" as a clock name
+
+Example:
+	random: rng@10004180 {
+		compatible = "brcm,bcm6368-rng";
+		reg = <0x10004180 0x14>;
+
+		clocks = <&periph_clk 18>;
+		clock-names = "ipsec";
+	};

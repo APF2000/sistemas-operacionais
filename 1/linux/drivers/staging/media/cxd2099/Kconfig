@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:91eaf8c0f231b4db3a2ce4224cf8fa90463f12789708c6c5979ebc1c5f2c7a65
-size 458
+config DVB_CXD2099
+	tristate "CXD2099AR Common Interface driver"
+	depends on DVB_CORE && PCI && I2C
+	---help---
+	  Support for the CI module found on cards based on
+	  - Micronas ngene PCIe bridge: cineS2 etc.
+	  - Digital Devices PCIe bridge: Octopus series
+
+	  For now, data is passed through '/dev/dvb/adapterX/sec0':
+	    - Encrypted data must be written to 'sec0'.
+	    - Decrypted data can be read from 'sec0'.
+	    - Setup the CAM using device 'ca0'.

@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a8001aa2dcfd7f702387e6506e01848daa950c89a805ea467c2ac862e9ad559b
-size 246
+#
+# Makefile for RIO switches
+#
+
+obj-$(CONFIG_RAPIDIO_TSI57X)	+= tsi57x.o
+obj-$(CONFIG_RAPIDIO_CPS_XX)	+= idtcps.o
+obj-$(CONFIG_RAPIDIO_TSI568)	+= tsi568.o
+obj-$(CONFIG_RAPIDIO_CPS_GEN2)	+= idt_gen2.o
+obj-$(CONFIG_RAPIDIO_RXS_GEN3)	+= idt_gen3.o

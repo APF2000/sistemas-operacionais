@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:74f34b715a4c6d5feebb669a99f36ca09ab1ab1c3fd8963688fbb37a493f6399
-size 371
+#ifndef _ASM_M32R_BUGS_H
+#define _ASM_M32R_BUGS_H
+
+/*
+ * This is included by init/main.c to check for architecture-dependent bugs.
+ *
+ * Needs:
+ *     void check_bugs(void);
+ */
+#include <asm/processor.h>
+
+static void __init check_bugs(void)
+{
+	extern unsigned long loops_per_jiffy;
+
+	current_cpu_data.loops_per_jiffy = loops_per_jiffy;
+}
+
+#endif  /* _ASM_M32R_BUGS_H */

@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:fcee7fe5b9faeb1f486fe668087ac3329401674f726e57ad62b433c3e9eb5d1b
-size 304
+/*
+ * Read/write register macros used by *_defs.h
+ */
+
+#ifndef reg_rdwr_h
+#define reg_rdwr_h
+
+#ifndef REG_READ
+#define REG_READ(type, addr) (*((volatile type *) (addr)))
+#endif
+
+#ifndef REG_WRITE
+#define REG_WRITE(type, addr, val) \
+   do { *((volatile type *) (addr)) = (val); } while(0)
+#endif
+
+#endif

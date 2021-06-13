@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e4e6ade8aa27961f93d60ec5975047f74895e7abe95a187da144f0294a311416
-size 420
+/*
+ *    Copyright IBM Corp. 2017
+ *    Author(s): Claudio Imbrenda <imbrenda@linux.vnet.ibm.com>
+ */
+
+#ifndef PAGE_STATES_H
+#define PAGE_STATES_H
+
+#define ESSA_GET_STATE			0
+#define ESSA_SET_STABLE			1
+#define ESSA_SET_UNUSED			2
+#define ESSA_SET_VOLATILE		3
+#define ESSA_SET_POT_VOLATILE		4
+#define ESSA_SET_STABLE_RESIDENT	5
+#define ESSA_SET_STABLE_IF_RESIDENT	6
+
+#define ESSA_MAX	ESSA_SET_STABLE_IF_RESIDENT
+
+#endif

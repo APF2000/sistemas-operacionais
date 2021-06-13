@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c8e6718770ed194a1c9b3735d0cfc88876801cd14a64caa3b9185eb0435f649b
-size 321
+#
+# Makefile for the ORANGEFS filesystem.
+#
+
+obj-$(CONFIG_ORANGEFS_FS) += orangefs.o
+
+orangefs-objs := acl.o file.o orangefs-cache.o orangefs-utils.o xattr.o \
+		 dcache.o inode.o orangefs-sysfs.o orangefs-mod.o super.o \
+		 devorangefs-req.o namei.o symlink.o dir.o orangefs-bufmap.o \
+		 orangefs-debugfs.o waitqueue.o

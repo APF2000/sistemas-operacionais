@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:bc7761fb147d9d44171228b766f6ff8a020ea5f343f0cf101c81a0041086abbf
-size 121
+#ifndef _ASM_KMAP_TYPES_H
+#define _ASM_KMAP_TYPES_H
+
+#include <asm-generic/kmap_types.h>
+
+#endif /* _ASM_KMAP_TYPES_H */

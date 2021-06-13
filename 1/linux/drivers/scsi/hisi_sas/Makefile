@@ -1,3 +1,2 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:397d7f6e23011f3e6af9b4341aed0b91f0eacff68bb239510d4b1f79f61b98bf
-size 114
+obj-$(CONFIG_SCSI_HISI_SAS)		+= hisi_sas_main.o
+obj-$(CONFIG_SCSI_HISI_SAS)		+= hisi_sas_v1_hw.o hisi_sas_v2_hw.o

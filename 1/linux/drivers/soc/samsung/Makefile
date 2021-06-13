@@ -1,3 +1,5 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b91290c024e3dffc024a6f70a2fba8a4a8c6c703bb5443e853edcaa9c5d6f432
-size 202
+obj-$(CONFIG_EXYNOS_PMU)	+= exynos-pmu.o
+
+obj-$(CONFIG_EXYNOS_PMU_ARM_DRIVERS)	+= exynos3250-pmu.o exynos4-pmu.o \
+					exynos5250-pmu.o exynos5420-pmu.o
+obj-$(CONFIG_EXYNOS_PM_DOMAINS) += pm_domains.o

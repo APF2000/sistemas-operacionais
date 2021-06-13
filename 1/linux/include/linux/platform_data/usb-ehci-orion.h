@@ -1,3 +1,24 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:38ce05231bde81bb13ac75012600109bdbe9740a3758170891f93e90ce74ad2d
-size 440
+/*
+ * This file is licensed under the terms of the GNU General Public
+ * License version 2.  This program is licensed "as is" without any
+ * warranty of any kind, whether express or implied.
+ */
+
+#ifndef __USB_EHCI_ORION_H
+#define __USB_EHCI_ORION_H
+
+#include <linux/mbus.h>
+
+enum orion_ehci_phy_ver {
+	EHCI_PHY_ORION,
+	EHCI_PHY_DD,
+	EHCI_PHY_KW,
+	EHCI_PHY_NA,
+};
+
+struct orion_ehci_data {
+	enum orion_ehci_phy_ver phy_version;
+};
+
+
+#endif

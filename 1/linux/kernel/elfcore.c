@@ -1,3 +1,24 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:be7e9293fc11218022823d7977e2721ac52bd74e102f561066d32a58174dac99
-size 396
+#include <linux/elf.h>
+#include <linux/fs.h>
+#include <linux/mm.h>
+#include <linux/binfmts.h>
+
+Elf_Half __weak elf_core_extra_phdrs(void)
+{
+	return 0;
+}
+
+int __weak elf_core_write_extra_phdrs(struct coredump_params *cprm, loff_t offset)
+{
+	return 1;
+}
+
+int __weak elf_core_write_extra_data(struct coredump_params *cprm)
+{
+	return 1;
+}
+
+size_t __weak elf_core_extra_data_size(void)
+{
+	return 0;
+}

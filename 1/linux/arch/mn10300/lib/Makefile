@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:493c8396af1e38d12b90408e6d4dba90305da68c13d3358142fd78d40e4bd261
-size 217
+#
+# Makefile for the MN10300-specific library files..
+#
+
+lib-y = delay.o usercopy.o checksum.o bitops.o memcpy.o memmove.o memset.o
+lib-y += do_csum.o
+lib-y += __ashldi3.o __ashrdi3.o __lshrdi3.o negdi2.o __ucmpdi2.o

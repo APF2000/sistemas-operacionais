@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:0224d08e797c8a24aa99c11cff11c14a6b148332b431d3e8480506d1febc7e33
-size 346
+#
+# Makefile for the linux lock manager stuff
+#
+
+obj-$(CONFIG_LOCKD) += lockd.o
+
+lockd-objs-y := clntlock.o clntproc.o clntxdr.o host.o svc.o svclock.o \
+	        svcshare.o svcproc.o svcsubs.o mon.o xdr.o
+lockd-objs-$(CONFIG_LOCKD_V4) += clnt4xdr.o xdr4.o svc4proc.o
+lockd-objs-$(CONFIG_PROC_FS) += procfs.o
+lockd-objs		      := $(lockd-objs-y)

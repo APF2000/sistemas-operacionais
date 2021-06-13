@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f1f35a552d47aecc75bbc43ed4923bb2c37ffadbb964999c3077004a671de20f
-size 586
+#
+# PCI Express Root Port Device AER Debug Configuration
+#
+
+config PCIEAER_INJECT
+	tristate "PCIe AER error injector support"
+	depends on PCIEAER
+	default n
+	help
+	  This enables PCI Express Root Port Advanced Error Reporting
+	  (AER) software error injector.
+
+	  Debugging PCIe AER code is quite difficult because it is hard
+	  to trigger various real hardware errors. Software based
+	  error injection can fake almost all kinds of errors with the
+	  help of a user space helper tool aer-inject, which can be
+	  gotten from:
+	     http://www.kernel.org/pub/linux/utils/pci/aer-inject/

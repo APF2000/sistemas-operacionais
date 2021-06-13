@@ -1,3 +1,30 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:87d07bb9f4aefdf9dd7adc0c14d8925f654d2f30b2e6d043914ceb1e43efa91e
-size 905
+TWL BCI (Battery Charger Interface)
+
+The battery charger needs to interact with the USB phy in order
+to know when charging is permissible, and when there is a connection
+or disconnection.
+
+The choice of phy cannot be configured at a hardware level, so there
+is no value in explicit configuration in device-tree.  Rather
+if there is a sibling of the BCI node which is compatible with
+"ti,twl4030-usb", then that is used to determine when and how
+use USB power for charging.
+
+Required properties:
+- compatible:
+  - "ti,twl4030-bci"
+- interrupts: two interrupt lines from the TWL SIH (secondary
+  interrupt handler) - interrupts 9 and 2.
+
+Optional properties:
+- ti,bb-uvolt: microvolts for charging the backup battery.
+- ti,bb-uamp: microamps for charging the backup battery.
+
+Examples:
+
+bci {
+   compatible = "ti,twl4030-bci";
+   interrupts = <9>, <2>;
+   ti,bb-uvolt = <3200000>;
+   ti,bb-uamp = <150>;
+};

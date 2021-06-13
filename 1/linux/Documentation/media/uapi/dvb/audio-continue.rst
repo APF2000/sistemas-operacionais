@@ -1,3 +1,49 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:76176ab8f6e6a6374554a09a532a9357712cd8421893a483cd0e0d61d4639330
-size 784
+.. -*- coding: utf-8; mode: rst -*-
+
+.. _AUDIO_CONTINUE:
+
+==============
+AUDIO_CONTINUE
+==============
+
+Name
+----
+
+AUDIO_CONTINUE
+
+.. attention:: This ioctl is deprecated
+
+Synopsis
+--------
+
+.. c:function:: int  ioctl(int fd, AUDIO_CONTINUE)
+    :name: AUDIO_CONTINUE
+
+
+Arguments
+---------
+
+.. flat-table::
+    :header-rows:  0
+    :stub-columns: 0
+
+
+    -  .. row 1
+
+       -  int fd
+
+       -  File descriptor returned by a previous call to open().
+
+Description
+-----------
+
+This ioctl restarts the decoding and playing process previously paused
+with AUDIO_PAUSE command.
+
+
+Return Value
+------------
+
+On success 0 is returned, on error -1 and the ``errno`` variable is set
+appropriately. The generic error codes are described at the
+:ref:`Generic Error Codes <gen-errors>` chapter.
