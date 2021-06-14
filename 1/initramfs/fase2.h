@@ -12,6 +12,5 @@ long read_number()
 
 void write_number(long number)
 {
-	//pr_info("Teste");
-	syscall(__NR_write_number, 7);
+	syscall(__NR_write_number, number);
 }

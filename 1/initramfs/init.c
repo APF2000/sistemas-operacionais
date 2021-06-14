@@ -20,26 +20,16 @@ int main()
 {
 	long x;
 
-	int status = fork(); // cria filho que faz o mesmo que o pai
-	if(status) printf("Eu sou seu pai!\n");
-	else printf("Nãaaaaaaao!!!!\n");
-
-	printf("Status: %d\n", status);
-
+	
 	while(1){	
-		printf("[%d] CCCCCCCCCCCCCCCCCCCCCCCCCCCCC\n", status);
-
+		
 		x = read_number();
 		sleep(5);
 		x++;
 
-		printf("[%d] X apos sleep e +1 = %ld\n", status, x);	
-
+		
 		write_number(x);
 
-		printf("[%d] X fim = %ld\n", status, x);	
-
-		printf("[%d] FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF\n", status);	
 	}	
 
 	return 0;

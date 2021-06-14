@@ -1,7 +1,7 @@
 #include<linux/linkage.h>
 #include<linux/module.h>
 
-long num = 123456789;
+long num = 0;
 
 asmlinkage long sys_read_number(void)
 {
