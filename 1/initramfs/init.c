@@ -27,19 +27,21 @@ int main()
 	printf("Status: %d\n", status);
 
 	while(1){	
-		printf("[%d] CCCCCCCCCCCCCCCCCCCCCCCCCCCCC\n", status);
+		printf("[%d] {{{{{\n", status);
 
 		//x = read_number();
-		sleep(2);
+		
+		int time = rand() % 5;
+		sleep(time);
 		x++;
 
-		printf("[%d] X apos sleep e +1 = %ld\n", status, x);	
+		printf("[%d] X apos sleep(%d) e +1 = %ld\n", status, time, x);	
 
 		//write_number(x);
 
 		printf("[%d] X fim = %ld\n", status, x);	
 
-		printf("[%d] FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF\n", status);	
+		printf("[%d] }}}}}}\n", status);	
 	}	
 
 	return 0;
