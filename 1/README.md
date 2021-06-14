@@ -6,10 +6,15 @@ Puling: `docker pull tiagoshibata/pcs3746`
 
 Building: `cd docker ; docker build -t tiagoshibata/pcs3746 .`
 
-## Prepare environment
+## Prepare environment (when download)
 ln -f initramfs/init.c code/init.c
 ln -f linux/arch/arm/tools/syscall.tbl code/syscall.tbl
 ln -f linux/include/linux/syscalls.h code/syscalls.h
+
+## If you forgot last step
+ln -f code/init.c initramfs/init.c
+ln -f code/syscall.tbl linux/arch/arm/tools/syscall.tbl
+ln -f code/syscalls.h linux/include/linux/syscalls.h
 
 ## Remove large files
 git filter-branch --tree-filter 'rm --cached -f 1/linux/vmlinux.o 1/linux/.tmp_vmlinux2 1/linux/vmlinux 1/linux/.tmp_vmlinux1' --all
