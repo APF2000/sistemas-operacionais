@@ -19,6 +19,10 @@ ln -f code/syscalls.h linux/include/linux/syscalls.h
 ## Remove large files
 git filter-branch --tree-filter 'rm --cached -f 1/linux/vmlinux.o 1/linux/.tmp_vmlinux2 1/linux/vmlinux 1/linux/.tmp_vmlinux1' --all
 
+## Help
+cat log.txt | head -210 | tail -30
+clear && sudo ./run.sh > log.txt
+
 ## Running
 
 Clone this repository with `git clone --recursive https://github.com/tiagoshibata/pcs3746-sistemas-operacionais.git` to clone with submodules. The `./run.sh` script does most of the required work.

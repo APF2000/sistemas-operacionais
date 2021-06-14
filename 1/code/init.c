@@ -27,9 +27,10 @@ int main()
 	printf("Status: %d\n", status);
 
 	while(1){	
-		printf("[%d] {{{{{\n", status);
 
 		x = read_number(status);
+
+		printf("[%d] {{{{{\n", status);
 		
 		int time = rand() % 5;
 		sleep(time);
@@ -37,11 +38,12 @@ int main()
 
 		printf("[%d] X apos sleep(%d) e +1 = %ld\n", status, time, x);	
 
-		write_number(status, x);
 
 		printf("[%d] X fim = %ld\n", status, x);	
 
-		printf("[%d] }}}}}}\n", status);	
+		printf("[%d] }}}}}}\n", status);
+	
+		write_number(status, x);
 	}	
 
 	return 0;

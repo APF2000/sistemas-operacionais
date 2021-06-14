@@ -33,9 +33,14 @@ void leave_region(int process)
 	pr_info("Proc %d ta off\n", process);
 }
 
+int change_id(long id)
+{
+	return id ? 1 : 0;
+}
+
 asmlinkage long sys_read_number(long id)
 {
-	enter_region(id ? 0 : 1);
+	enter_region(change_id(id));
 
 	pr_info("Reading index %ld\n", id);
 	return num;
@@ -46,5 +51,5 @@ asmlinkage void sys_write_number(long id, long val)
 	pr_info("Write: %ld into index %ld\n", val, id);
 	num = val;
 
-	leave_region(id ? 0 : 1);
+	leave_region(change_id(id));
 }
