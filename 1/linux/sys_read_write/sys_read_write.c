@@ -1,18 +1,16 @@
 #include<linux/linkage.h>
 #include<linux/module.h>
 
-long num = 0;
+long values[5] = { 0, 1, 2, 3, 4 };
 
-asmlinkage long sys_read_number(void)
+asmlinkage long sys_read_number(long which)
 {
-	pr_info("Read: %ld\n", num);
-	return num;
+	pr_info("Reading index %ld\n", which);
+	return values[which];
 }
 
-asmlinkage void sys_write_number(long number)
+asmlinkage void sys_write_number(long which, long value)
 {
-	pr_info("Numero recebido: %ld\n", number);
-	pr_info("Write antes: %ld\n", num);
-	num = number;
-	pr_info("Write depois: %ld\n", num);
+	pr_info("Write: %ld into index %ld\n", value, which);
+	values[which] = value;
 }

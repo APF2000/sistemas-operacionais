@@ -5,12 +5,12 @@
 #define __NR_read_number 404
 #define __NR_write_number 405
 
-long read_number()
+long read_number(long which)
 {
-	return syscall(__NR_read_number);
+	return syscall(__NR_read_number, which);
 }
 
-void write_number(long number)
+void write_number(long which, long value)
 {
-	syscall(__NR_write_number, number);
+	syscall(__NR_write_number, which, value);
 }
