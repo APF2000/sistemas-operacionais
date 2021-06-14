@@ -1,7 +1,8 @@
 #include<linux/linkage.h>
 #include<linux/module.h>
 
-long values[5] = { 0, 1, 2, 3, 4 };
+//long values[5] = { 0, 1, 2, 3, 4 };
+long num;
 
 int interested[2] = { 0, 0 };
 int turn;
@@ -30,14 +31,14 @@ void leave_region(int process)
 	pr_info("Proc %d ta off\n", process);
 }
 
-asmlinkage long sys_read_number(long which)
+asmlinkage long sys_read_number(long id)
 {
-	pr_info("Reading index %ld\n", which);
-	return values[which];
+	pr_info("Reading index %ld\n", id);
+	return num;
 }
 
-asmlinkage void sys_write_number(long which, long value)
+asmlinkage void sys_write_number(long id, long val)
 {
-	pr_info("Write: %ld into index %ld\n", value, which);
-	values[which] = value;
+	pr_info("Write: %ld into index %ld\n", val, id);
+	num = val;
 }
