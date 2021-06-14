@@ -18,41 +18,61 @@
 
 int main()
 {
-	long x0;
-	long x1;
-	long x2;
-	long x3;
-	long x4;
 
-	// int status = fork(); // cria filho que faz o mesmo que o pai
-	// if(status) printf("Eu sou seu pai!\n");
-	// else printf("Nãaaaaaaao!!!!\n");
-	
-	while(1){	
-		
-		printf(" --- Read - Write Cyle --- \n");
+	int proc = fork(); // cria filho que faz o mesmo que o pai
+	if(proc) printf("Eu sou seu pai!\n");
+	else printf("Nãaaaaaaao!!!!\n");
 
-		x0 = read_number(0);
-		x1 = read_number(1);
-		x2 = read_number(2);
-		x3 = read_number(3);
-		x4 = read_number(4);
+/* MANEIRA 1
+	if(proc) {
+		printf("\nStatus: %d\n", proc);
+		while(1){	
+			printf("A");
+			sleep(1);
+			printf("B");
+			sleep(1);
+			printf("C");
+			sleep(1);
+			printf("D");
+			sleep(1);
+		}
+	}
 
-		printf("{ %ld, %ld, %ld, %ld, %ld }\n",x0,x1,x2,x3,x4);
+	if(!proc) {
+		printf("\nStatus: %d\n", proc);
+		while(1){	
+			printf("1");
+			sleep(1);
+			printf("2");
+			sleep(1);
+			printf("3");
+			sleep(1);
+			printf("4");
+			sleep(1);
+		}
+	}
+*/
 
-		sleep(5);
+/* MANEIRA 2. com e sem sleep depois de cada print
 
-		x0++;
-		x1++;
-		x2++;
-		x3++;
+	while(1){
 
-		write_number(0, x0);
-		write_number(1, x1);
-		write_number(2, x2);
-		write_number(3, x3);
+		if(proc) {
+			printf("A");
+			printf("B");
+			printf("C");		
+		}
 
-	}	
+		if(!proc) {
+			printf("1");
+			printf("2");
+			printf("3");		
+		}	
+	}
+
+
+*/
+
 
 	return 0;
 }
