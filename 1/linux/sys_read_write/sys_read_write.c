@@ -1,6 +1,8 @@
 #include<linux/linkage.h>
 #include<linux/module.h>
 
+#include<linux/sched.h>
+
 //long values[5] = { 0, 1, 2, 3, 4 };
 long num;
 
@@ -33,6 +35,8 @@ void leave_region(int process)
 
 asmlinkage long sys_read_number(long id)
 {
+	enter_region(id ? 0 : 1);
+
 	pr_info("Reading index %ld\n", id);
 	return num;
 }
@@ -41,4 +45,6 @@ asmlinkage void sys_write_number(long id, long val)
 {
 	pr_info("Write: %ld into index %ld\n", val, id);
 	num = val;
+
+	leave_region(id ? 0 : 1);
 }

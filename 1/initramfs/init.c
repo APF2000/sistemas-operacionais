@@ -18,61 +18,29 @@
 
 int main()
 {
+	long x;
 
-	int proc = fork(); // cria filho que faz o mesmo que o pai
-	if(proc) printf("Eu sou seu pai!\n");
+	int status = fork(); // cria filho que faz o mesmo que o pai
+	if(status) printf("Eu sou seu pai!\n");
 	else printf("Nãaaaaaaao!!!!\n");
 
-/* MANEIRA 1
-	if(proc) {
-		printf("\nStatus: %d\n", proc);
-		while(1){	
-			printf("A");
-			sleep(1);
-			printf("B");
-			sleep(1);
-			printf("C");
-			sleep(1);
-			printf("D");
-			sleep(1);
-		}
-	}
+	printf("Status: %d\n", status);
 
-	if(!proc) {
-		printf("\nStatus: %d\n", proc);
-		while(1){	
-			printf("1");
-			sleep(1);
-			printf("2");
-			sleep(1);
-			printf("3");
-			sleep(1);
-			printf("4");
-			sleep(1);
-		}
-	}
-*/
+	while(1){	
+		printf("[%d] CCCCCCCCCCCCCCCCCCCCCCCCCCCCC\n", status);
 
-/* MANEIRA 2. com e sem sleep depois de cada print
+		//x = read_number();
+		sleep(2);
+		x++;
 
-	while(1){
+		printf("[%d] X apos sleep e +1 = %ld\n", status, x);	
 
-		if(proc) {
-			printf("A");
-			printf("B");
-			printf("C");		
-		}
+		//write_number(x);
 
-		if(!proc) {
-			printf("1");
-			printf("2");
-			printf("3");		
-		}	
-	}
+		printf("[%d] X fim = %ld\n", status, x);	
 
-
-*/
-
+		printf("[%d] FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF\n", status);	
+	}	
 
 	return 0;
 }

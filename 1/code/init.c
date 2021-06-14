@@ -29,13 +29,13 @@ int main()
 	while(1){	
 		printf("[%d] CCCCCCCCCCCCCCCCCCCCCCCCCCCCC\n", status);
 
-		x = read_number();
-		sleep(5);
+		//x = read_number();
+		sleep(2);
 		x++;
 
 		printf("[%d] X apos sleep e +1 = %ld\n", status, x);	
 
-		write_number(x);
+		//write_number(x);
 
 		printf("[%d] X fim = %ld\n", status, x);	
 
