@@ -18,7 +18,7 @@
 
 int main()
 {
-	long x;
+	long x = 0;
 
 	int status = fork(); // cria filho que faz o mesmo que o pai
 	if(status) printf("Eu sou seu pai!\n");
@@ -29,7 +29,7 @@ int main()
 	while(1){	
 		printf("[%d] {{{{{\n", status);
 
-		//x = read_number();
+		x = read_number(status);
 		
 		int time = rand() % 5;
 		sleep(time);
@@ -37,7 +37,7 @@ int main()
 
 		printf("[%d] X apos sleep(%d) e +1 = %ld\n", status, time, x);	
 
-		//write_number(x);
+		write_number(status, x);
 
 		printf("[%d] X fim = %ld\n", status, x);	
 
