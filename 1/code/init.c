@@ -29,10 +29,13 @@ int main()
 	while(1){	
 
 		x = read_number(status);
-
-		printf("[%d] {{{{{\n", status);
 		
 		int time = rand() % 5;
+
+		printf("[%d] {{{{{\n", status);
+
+		printf("[%d] X antes sleep(%d)\n", status, time);	
+
 		sleep(time);
 		x++;
 
