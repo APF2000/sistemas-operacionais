@@ -16,6 +16,11 @@ ln -f code/init.c initramfs/init.c
 ln -f code/syscall.tbl linux/arch/arm/tools/syscall.tbl
 ln -f code/syscalls.h linux/include/linux/syscalls.h
 
+## Debug
+docker exec -ti fase2 bash
+su student
+arm-linux-gnueabi-nm  ~/src/initramfs/build/initramfs_root/init | grep read_number
+
 ## Remove large files
 git filter-branch --tree-filter 'rm --cached -f 1/linux/vmlinux.o 1/linux/.tmp_vmlinux2 1/linux/vmlinux 1/linux/.tmp_vmlinux1' --all
 
