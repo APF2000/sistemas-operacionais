@@ -17,6 +17,7 @@ ln -f code/syscall.tbl linux/arch/arm/tools/syscall.tbl
 ln -f code/syscalls.h linux/include/linux/syscalls.h
 
 ## Debug
+Lembrar de ir até docker/default_cmd.sh e adicionar "-s -S" no comando da última linha e rebuildar (estando na pasta docker/): "docker build -t tiagoshibata/pcs3746 . "
 docker exec -ti fase2 bash
 su student
 arm-linux-gnueabi-nm  ~/src/initramfs/build/initramfs_root/init | grep read_number
