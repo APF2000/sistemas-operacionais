@@ -42,6 +42,7 @@ int change_id(long id)
 
 asmlinkage long sys_read_number(long id)
 {
+	pr_info("Change id: %d\n", change_id(id));
 	enter_region(change_id(id));
 
 	pr_info("Reading index %ld\n", id);
