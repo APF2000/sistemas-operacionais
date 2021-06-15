@@ -15,10 +15,33 @@
 #include "stack.h"
 #include "fase2.h"
 
+long x = 0;
+
+void foo(int status)
+{	
+	int time = rand() % 5;
+
+	x = read_number(status);
+
+	printf("[%d] {{{{{\n", status);
+
+	printf("[%d] X antes sleep(%d)\n", status, time);	
+
+	sleep(time);
+	x++;
+
+	printf("[%d] X apos sleep(%d) e +1 = %ld\n", status, time, x);	
+
+
+	printf("[%d] X fim = %ld\n", status, x);	
+
+	printf("[%d] }}}}}}\n", status);
+
+	write_number(status, x);
+}
 
 int main()
 {
-	long x = 0;
 
 	int status = fork(); // cria filho que faz o mesmo que o pai
 	if(status) printf("Eu sou seu pai!\n");
@@ -26,28 +49,10 @@ int main()
 
 	printf("Status: %d\n", status);
 
-	while(1){	
-
-		x = read_number(status);
-		
-		int time = rand() % 5;
-
-		printf("[%d] {{{{{\n", status);
-
-		printf("[%d] X antes sleep(%d)\n", status, time);	
-
-		sleep(time);
-		x++;
-
-		printf("[%d] X apos sleep(%d) e +1 = %ld\n", status, time, x);	
-
-
-		printf("[%d] X fim = %ld\n", status, x);	
-
-		printf("[%d] }}}}}}\n", status);
-	
-		write_number(status, x);
-	}	
+	while(1){
+		if(status) foo(status);
+		else foo(status);
+	}
 
 	return 0;
 }

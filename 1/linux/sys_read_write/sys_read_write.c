@@ -42,7 +42,7 @@ int change_id(long id)
 
 asmlinkage long sys_read_number(long id)
 {
-	//enter_region(change_id(id));
+	enter_region(change_id(id));
 
 	pr_info("Reading index %ld\n", id);
 	return num;
@@ -53,5 +53,5 @@ asmlinkage void sys_write_number(long id, long val)
 	pr_info("Write: %ld into index %ld\n", val, id);
 	num = val;
 
-	//leave_region(change_id(id));
+	leave_region(change_id(id));
 }
