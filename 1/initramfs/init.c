@@ -19,20 +19,17 @@ long x = 0;
 
 void foo(int status)
 {	
-	int time = rand() % 5;
-
-	x = read_number(status);
-
-	// printf("[%d] {{{{{\n", status);
+	int time = rand() % 30;
 
 	printf("[%d] X=%d. Going to sleep...(for %ds)\n", status, x, time);	
 
 	sleep(time);
-	x=x+1;
-
+	
 	printf("[%d] Acordei! X=%d.\n", status, x);	
 
-	// printf("[%d] }}}}}}\n", status);
+	x = read_number(status);
+
+	x++;
 
 	write_number(status, x);
 }
