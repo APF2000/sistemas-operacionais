@@ -23,19 +23,16 @@ void foo(int status)
 
 	x = read_number(status);
 
-	printf("[%d] {{{{{\n", status);
+	// printf("[%d] {{{{{\n", status);
 
-	printf("[%d] X antes sleep(%d)\n", status, time);	
+	printf("[%d] X=%d. Going to sleep...(for %ds)\n", status, x, time);	
 
 	sleep(time);
-	x++;
+	x=x+1;
 
-	printf("[%d] X apos sleep(%d) e +1 = %ld\n", status, time, x);	
+	printf("[%d] Acordei! X=%d.\n", status, x);	
 
-
-	printf("[%d] X fim = %ld\n", status, x);	
-
-	printf("[%d] }}}}}}\n", status);
+	// printf("[%d] }}}}}}\n", status);
 
 	write_number(status, x);
 }
@@ -44,14 +41,12 @@ int main()
 {
 
 	int status = fork(); // cria filho que faz o mesmo que o pai
-	if(status) printf("Eu sou seu pai!\n");
-	else printf("Nãaaaaaaao!!!!\n");
+	if(status) printf("Eu sou seu pai! (%d)\n", status);
+	else printf("Nãaaaaaaao!!!! (%d)\n", status);
 
-	printf("Status: %d\n", status);
 
 	while(1){
-		if(status) foo(status);
-		else foo(status);
+		foo(status);
 	}
 
 	return 0;

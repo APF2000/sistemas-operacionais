@@ -40,19 +40,17 @@ int change_id(long id)
 	return id ? 1 : 0;
 }
 
-asmlinkage long sys_read_number(long id)
+asmlinkage long sys_read_number(long status)
 {
-	pr_info("Change id: %d\n", change_id(id));
-	enter_region(change_id(id));
-
-	pr_info("Reading index %ld\n", id);
+	pr_info("[%ld] Reading num.\n", status);
 	return num;
 }
 
-asmlinkage void sys_write_number(long id, long val)
+asmlinkage void sys_write_number(long status, long val)
 {
-	pr_info("Write: %ld into index %ld\n", val, id);
+	if(val == num) {
+		pr_info("Condição de corrida! Valor repetido! [%ld]=[%ld]\n", val, num);	
+	}
+	pr_info("[%ld] Writing %ld into num.\n", status, val);
 	num = val;
-
-	leave_region(change_id(id));
 }
