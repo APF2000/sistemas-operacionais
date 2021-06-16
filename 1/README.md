@@ -21,6 +21,9 @@ Lembrar de ir até docker/default_cmd.sh e adicionar "-s -S" no comando da últi
 docker exec -ti fase2 bash
 su student
 arm-linux-gnueabi-nm  ~/src/initramfs/build/initramfs_root/init | grep read_number
+b *0x00010620
+b *0x0001064c
+b *0x0001063c
 
 ## Remove large files
 git filter-branch --tree-filter 'rm --cached -f 1/linux/vmlinux.o 1/linux/.tmp_vmlinux2 1/linux/vmlinux 1/linux/.tmp_vmlinux1' --all
