@@ -15,7 +15,39 @@
 #include "stack.h"
 #include "fase2.h"
 
+#define TRUE 1
+#define FALSE 0
+
 long x = 0;
+
+int change_id(long status)
+{
+	return status ? 1 : 0;
+}
+
+// num, turn, interested[0], interested[1]
+void enter_region(long process)
+{
+	// int turn = ;
+	int other = 1 - process;
+	write_number(2+process,TRUE);  //interested[process] = TRUE;
+	write_number(1,process);	//turn = process;
+	
+
+	printf("[%ld] INICIO ENTER REGION. turn=[%ld] interested = { %d, %d } \n", process, read_number(1), read_number(2), read_number(3));
+
+	// while(turn == process && interested[other] == TRUE)
+	while(read_number(1) == process && read_number(3-process) == TRUE);
+
+	printf("[%d] FIM ENTER REGION. turn=[%ld] interested = { %d, %d } \n", process, read_number(1), read_number(2), read_number(3));
+}
+
+// num, turn, interested[0], interested[1]
+void leave_region(long process)
+{
+	write_number(2+process,FALSE);  //interested[process] = FALSE;
+	printf("[%d] LEFT REGION.\n", process);
+}
 
 void foo(int status)
 {	
@@ -27,11 +59,13 @@ void foo(int status)
 	
 	printf("[%d] Acordei! X=%d.\n", status, x);	
 
-	x = read_number(status);
+	enter_region(change_id(status));
+	x = read_number(0);
 
 	x++;
 
-	write_number(status, x);
+	write_number(0, x);
+	leave_region(change_id(status));
 }
 
 int main()
