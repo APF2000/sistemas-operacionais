@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <pthread.h>
 
 #include <sys/mount.h>
 #include <sys/stat.h>
@@ -15,44 +16,74 @@
 #include "stack.h"
 #include "fase2.h"
 
+#define TRUE 1
+#define FALSE 0
+
 long x = 0;
 
-void foo(int status)
+int change_id(long status)
+{
+	return status ? 1 : 0;
+}
+
+// num, turn, interested[0], interested[1]
+void enter_region(long process)
+{
+	int other = 1 - process;
+	write_number(2+process,TRUE);  //interested[process] = TRUE;
+	write_number(1,process);	//turn = process;
+	
+
+	printf("[%ld] INICIO ENTER REGION. turn=[%ld] interested = { %d, %d } \n", process, read_number(1), read_number(2), read_number(3));
+
+	// while(turn == process && interested[other] == TRUE)
+	while(read_number(1) == process && read_number(3-process) == TRUE);
+
+	printf("[%d] FIM ENTER REGION. turn=[%ld] interested = { %d, %d } \n", process, read_number(1), read_number(2), read_number(3));
+}
+
+// num, turn, interested[0], interested[1]
+void leave_region(long process)
+{
+	write_number(2+process,FALSE);  //interested[process] = FALSE;
+	printf("[%d] LEFT REGION.\n", process);
+}
+
+int *foo(int status)
 {	
-	int time = rand() % 5;
+	int i;
 
-	x = read_number(status);
-
-	printf("[%d] {{{{{\n", status);
-
-	printf("[%d] X antes sleep(%d)\n", status, time);	
-
-	sleep(time);
-	x++;
-
-	printf("[%d] X apos sleep(%d) e +1 = %ld\n", status, time, x);	
-
-
-	printf("[%d] X fim = %ld\n", status, x);	
-
-	printf("[%d] }}}}}}\n", status);
-
-	write_number(status, x);
+	for(i=0; i<5; i++){
+		enter_region(change_id(status));
+		x = read_number(0);
+		x++;
+		write_number(0, x);
+		leave_region(change_id(status));
+	}
+	return NULL;
 }
 
 int main()
 {
 
-	int status = fork(); // cria filho que faz o mesmo que o pai
-	if(status) printf("Eu sou seu pai!\n");
-	else printf("Nãaaaaaaao!!!!\n");
+	pthread_t th0, th1;
+	int *r_th0, *r_th1;
 
-	printf("Status: %d\n", status);
-
-	while(1){
-		if(status) foo(status);
-		else foo(status);
+	printf("Thread Main: Algoritmo de Peterson.");
+	if( pthread_create( &th0, NULL, (*void)foo, (void)0 ) != 0 ){
+		printf("Error pthread_create p/ Thread 0.");
+		exit(1);
 	}
+
+	if( pthread_create( &th1, NULL, (*void)foo, (void)1 ) != 0 ){
+		printf("Error pthread_create p/ Thread 1.");
+		exit(1);
+	}
+
+	pthread_join( th0, (void**) &r_th0 );
+	pthread_join( th1, (void**) &r_th1 ); 
+
+	while(1);
 
 	return 0;
 }
