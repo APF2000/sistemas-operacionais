@@ -34,12 +34,12 @@ void enter_region(long process)
 	write_number(1,process);	//turn = process;
 	
 
-	printf("[%ld] INICIO ENTER REGION. turn=[%ld] interested = { %d, %d } \n", process, read_number(1), read_number(2), read_number(3));
+	//printf("[%ld] INICIO ENTER REGION. turn=[%ld] interested = { %d, %d } \n", process, read_number(1), read_number(2), read_number(3));
 
 	// while(turn == process && interested[other] == TRUE)
 	while(read_number(1) == process && read_number(3-process) == TRUE);
 
-	printf("[%d] FIM ENTER REGION. turn=[%ld] interested = { %d, %d } \n", process, read_number(1), read_number(2), read_number(3));
+	printf("[%d] ENTER REGION. turn=[%ld] interested = { %d, %d } \n", process, read_number(1), read_number(2), read_number(3));
 }
 
 // num, turn, interested[0], interested[1]
@@ -53,11 +53,18 @@ int *foo(int status)
 {	
 	int i;
 
-	for(i=0; i<5; i++){
+	while(1){
 		enter_region(change_id(status));
 		x = read_number(0);
+		printf("[%d] Read number: %ld.\n", status, x);
+
+		printf("[%d] Sleeping for 3s.\n", status);
+		sleep(3);
+
 		x++;
+		printf("[%d] Going to write: %ld.\n", status, x);
 		write_number(0, x);
+		printf("[%d] Wrote: %ld.\n", status, x);
 		leave_region(change_id(status));
 	}
 	return NULL;
@@ -70,12 +77,12 @@ int main()
 	int *r_th0, *r_th1;
 
 	printf("Thread Main: Algoritmo de Peterson.");
-	if( pthread_create( &th0, NULL, (*void)foo, (void)0 ) != 0 ){
+	if( pthread_create( &th0, NULL, (void*)foo, 0 ) != 0 ){
 		printf("Error pthread_create p/ Thread 0.");
 		exit(1);
 	}
 
-	if( pthread_create( &th1, NULL, (*void)foo, (void)1 ) != 0 ){
+	if( pthread_create( &th1, NULL, (void*)foo, 1 ) != 0 ){
 		printf("Error pthread_create p/ Thread 1.");
 		exit(1);
 	}
