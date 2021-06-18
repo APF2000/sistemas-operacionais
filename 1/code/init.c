@@ -67,7 +67,7 @@ int *foo(struct aux input)
 
 	while(1){
 		enter_region(change_id(status), vals);
-		x = read_number(0);
+		x = (*vals)[0];//read_number(0);
 		printf("[%d] Read number: %ld.\n", status, x);
 
 		printf("[%d] Sleeping for 3s.\n", status);
@@ -75,7 +75,9 @@ int *foo(struct aux input)
 
 		x++;
 		printf("[%d] Going to write: %ld.\n", status, x);
-		write_number(0, x);
+		
+		
+		(*vals)[0] = x;//write_number(0, x);
 		printf("[%d] Wrote: %ld.\n", status, x);
 		leave_region(change_id(status), vals);
 	}
@@ -84,6 +86,8 @@ int *foo(struct aux input)
 
 int main()
 {
+	printf("\n\n\n\n\nMAIN ANTES DE TUDO\n\n\n");
+
 	int *values;//[4] = {0, 0, 0, 0}; // num, turn, interested[0], interested[1]
 	values = malloc(4 * sizeof(int));
 	values[0] = 0;
@@ -94,21 +98,21 @@ int main()
 	pthread_t th0, th1;
 	int *r_th0, *r_th1;
 
-	struct aux *a1, *a2;
-	a1->status = 0;
-	a1->vals = &values;
+	struct aux a1, a2;
+	a1.status = 0;
+	a1.vals = &values;
 
-	a2->status = 1;
-	a2->vals = &values;
+	a2.status = 1;
+	a2.vals = &values;
 
-	printf("Thread Main: Algoritmo de Peterson.");
-	if( pthread_create( &th0, NULL, (void*)foo, (void*)a1 ) != 0 ){
-		printf("Error pthread_create p/ Thread 0.");
+	printf("Thread Main: Algoritmo de Peterson.\n");
+	if( pthread_create( &th0, NULL, (void*)foo, (void*)(&a1) ) != 0 ){
+		printf("Error pthread_create p/ Thread 0.\n");
 		exit(1);
 	}
 
-	if( pthread_create( &th1, NULL, (void*)foo, (void*)a2 ) != 0 ){
-		printf("Error pthread_create p/ Thread 1.");
+	if( pthread_create( &th1, NULL, (void*)foo, (void*)(&a2) ) != 0 ){
+		printf("Error pthread_create p/ Thread 1.\n");
 		exit(1);
 	}
 
