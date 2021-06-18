@@ -51,20 +51,19 @@ void leave_region(long process)
 
 void foo(int status)
 {	
-	int time = rand() % 30;
-
-	printf("[%d] X=%d. Going to sleep...(for %ds)\n", status, x, time);	
-
-	sleep(time);
-	
-	printf("[%d] Acordei! X=%d.\n", status, x);	
+	int time = rand() % 5;	
 
 	enter_region(change_id(status));
 	x = read_number(0);
+	printf("[%d] X=%d. Going to sleep...(for %ds)\n", change_id(status), x, time);	
 
+	sleep(time);
+	
+	printf("[%d] Acordei! X=%d.\n", change_id(status), x);
 	x++;
 
 	write_number(0, x);
+	printf("[%d] Escrevi X=%d.\n", change_id(status), x);
 	leave_region(change_id(status));
 }
 
