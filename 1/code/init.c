@@ -29,33 +29,33 @@ int change_id(long status)
 // num, turn, interested[0], interested[1]
 void enter_region(long process, int **vals)
 {
-	printf("Comeco enter region, vals: %d -> %d\n", vals, vals[0]);
+	//printf("Comeco enter region, vals: %d -> %d\n", (*vals), (*vals)[0]);
 	//int other = 1 - process;
 	
 	//write_number(2+process,TRUE);  //interested[process] = TRUE;
 	//write_number(1,process);	//turn = process;
 	
-	vals[2 + process] = TRUE;
-	vals[1] = process;
-	printf("Depois de mexer no ponteiro\n");
+	(*vals)[2 + process] = TRUE;
+	(*vals)[1] = process;
+	//printf("Depois de mexer no ponteiro\n");
 
 	//printf("[%ld] INICIO ENTER REGION. turn=[%ld] interested = { %d, %d } \n", process, read_number(1), read_number(2), read_number(3));
 
 	// while(turn == process && interested[other] == TRUE)
-	while(vals[1] == process && vals[3-process] == TRUE);
+	while((*vals)[1] == process && (*vals)[3-process] == TRUE);
 
-	printf("Depois do while\n");
+	//printf("Depois do while\n");
 
-	printf("[%ld] ENTER REGION. turn=[%d] interested = { %d, %d } \n", process, vals[1], vals[2], vals[3]);
+	printf("[%ld] ENTER REGION. turn=[%d] interested = { %d, %d } \n", process, (*vals)[1], (*vals)[2], (*vals)[3]);
 }
 
 // num, turn, interested[0], interested[1]
 void leave_region(long process, int **vals)
 {
 	//write_number(2+process,FALSE);  //interested[process] = FALSE;
-	vals[2 + process] = FALSE;	
+	(*vals)[2 + process] = FALSE;	
 	
-	printf("[%d] LEFT REGION.\n", process);
+	printf("[%ld] LEFT REGION.\n", process);
 }
 
 struct aux{
@@ -65,22 +65,22 @@ struct aux{
 
 void *foo(void *v)
 {	
-	printf("Comeco do foo\n");
+	//printf("Comeco do foo\n");
 	//int i;
 	struct aux *input = (struct aux *) v;
 
-	printf("Vai pegar inputs\n");
+	//printf("Vai pegar inputs\n");
 	int status = input->status;
 	int **vals = input->vals;
-	printf("Pegou inputs: %d, %d -> {%d, %d, %d, %d}\n", status, vals, (*vals)[0], (*vals)[1], (*vals)[2], (*vals)[3]);
+	//printf("Pegou inputs: %d, %d -> {%d, %d, %d, %d}\n", status, vals, (*vals)[0], (*vals)[1], (*vals)[2], (*vals)[3]);
 
 	while(1){
-		printf("ANtes enter reigon\n");
+		//printf("ANtes enter reigon\n");
 		enter_region(change_id(status), vals);
-		printf("Depois enter reigon\n");
+		//printf("Depois enter reigon\n");
 
-		x = vals[0];//read_number(0);
-		printf("[%d] Read number: %ld.\n", status, x);
+		x = (*vals)[0];//read_number(0);
+		printf("[%d] Read number: \t\t%ld.\n", status, x);
 
 		printf("[%d] Sleeping for 3s.\n", status);
 		sleep(3);
@@ -89,8 +89,8 @@ void *foo(void *v)
 		printf("[%d] Going to write: %ld.\n", status, x);
 		
 		
-		vals[0] = x;//write_number(0, x);
-		printf("[%d] Wrote: %ld.\n", status, x);
+		(*vals)[0] = x;//write_number(0, x);
+		printf("[%d] Wrote: \t\t%ld.\n", status, x);
 		leave_region(change_id(status), vals);
 	}
 	return NULL;
@@ -98,7 +98,7 @@ void *foo(void *v)
 
 int main()
 {
-	printf("\n\n\n\n\nMAIN ANTES DE TUDO\n\n\n");
+	//printf("\n\n\n\n\nMAIN ANTES DE TUDO\n\n\n");
 
 	int *values;//[4] = {0, 0, 0, 0}; // num, turn, interested[0], interested[1]
 	values = malloc(4 * sizeof(int));
@@ -117,7 +117,7 @@ int main()
 	a2.status = 1;
 	a2.vals = &values;
 
-	printf("a1 = (%d, %d); a2 = (%d, %d)\n", a1.status, a1.vals, a2.status, a2.vals);
+	//printf("a1 = (%d, %d); a2 = (%d, %d)\n", a1.status, a1.vals, a2.status, a2.vals);
 
 	printf("Thread Main: Algoritmo de Peterson.\n");
 	if( pthread_create( &th0, NULL, (void*)foo, (void*)(&a1) ) != 0 ){
