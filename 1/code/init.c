@@ -63,15 +63,16 @@ struct aux{
 	int **vals;
 };
 
-int *foo(struct aux input)
+void *foo(void *v)
 {	
 	printf("Comeco do foo\n");
 	//int i;
+	struct aux *input = (struct aux *) v;
 
 	printf("Vai pegar inputs\n");
-	int status = input.status;
-	int **vals = input.vals;
-	printf("Pegou inputs: %d, %d, %d, %d, %d\n", status, vals[0], vals[1], vals[2], vals[3]);
+	int status = input->status;
+	int **vals = input->vals;
+	printf("Pegou inputs: %d, %d -> {%d, %d, %d, %d}\n", status, vals, (*vals)[0], (*vals)[1], (*vals)[2], (*vals)[3]);
 
 	while(1){
 		printf("ANtes enter reigon\n");
@@ -116,6 +117,8 @@ int main()
 	a2.status = 1;
 	a2.vals = &values;
 
+	printf("a1 = (%d, %d); a2 = (%d, %d)\n", a1.status, a1.vals, a2.status, a2.vals);
+
 	printf("Thread Main: Algoritmo de Peterson.\n");
 	if( pthread_create( &th0, NULL, (void*)foo, (void*)(&a1) ) != 0 ){
 		printf("Error pthread_create p/ Thread 0.\n");
@@ -129,7 +132,7 @@ int main()
 	}
 	printf("Depois do segundo IF\n");
 
-	/*if( pthread_join( th0, (void**) &r_th0 ) == 0){
+	if( pthread_join( th0, (void**) &r_th0 ) == 0){
 		printf("Thread 0 deu pau\n");
 	}
 	printf("Depois do join 1\n");
@@ -137,7 +140,7 @@ int main()
 	if( pthread_join( th1, (void**) &r_th1 ) == 0){
 		printf("Thread 1 deu pau\n");
 	} 
-	printf("Depois do join 2\n");*/
+	printf("Depois do join 2\n");
 
 	while(1){
 		//printf("While my guitar gently weeps\n");
