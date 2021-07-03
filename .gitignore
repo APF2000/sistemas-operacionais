@@ -2,3 +2,4 @@
 1/linux/.tmp_vmlinux2 
 1/linux/vmlinux 
 1/linux/.tmp_vmlinux1
+*.o
