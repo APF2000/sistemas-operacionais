@@ -21,6 +21,15 @@
 
 int main()
 {
+	int pid = fork();
+	if(pid) // pai
+	{
+		// roda syscall de monitoramento ? sera que precisa de syscall?
+	}else // filho
+	{
+		// gera interrupção => sera tratada
+	}
+	
 
 	return 0;
 }
