@@ -79,44 +79,11 @@ void *foo(void *v)
 int main()
 {
 
-	int *values;
-	values = malloc(4 * sizeof(int));
-	values[0] = 0;
-	values[1] = 0;
-	values[2] = 0;
-	values[3] = 0;
 
-	pthread_t th0, th1;
-	int *r_th0, *r_th1;
-
-	struct aux a1, a2;
-	a1.status = 0;
-	a1.vals = &values;
-
-	a2.status = 1;
-	a2.vals = &values;
-
-	printf("Thread Main: Algoritmo de Peterson.\n");
-
-	if( pthread_create( &th0, NULL, (void*)foo, (void*)(&a1) ) != 0 ){
-		printf("Error pthread_create p/ Thread 0.\n");
-		exit(1);
+	while(1){
+		sleep(5);
+		printf("Init\n");
 	}
-
-	if( pthread_create( &th1, NULL, (void*)foo, (void*)(&a2) ) != 0 ){
-		printf("Error pthread_create p/ Thread 1.\n");
-		exit(1);
-	}
-
-	if( pthread_join( th0, (void**) &r_th0 ) == 0){
-		printf("Thread 0 deu erro\n");
-	}
-
-	if( pthread_join( th1, (void**) &r_th1 ) == 0){
-		printf("Thread 1 deu erro\n");
-	} 
-
-	while(1){}
 
 	return 0;
 }

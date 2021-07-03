@@ -150,6 +150,8 @@ int driver_register(struct device_driver *drv)
 	int ret;
 	struct device_driver *other;
 
+	printk("\n\n\n\n\n\n  DRIVER REGISTER  \n\n\n\n\n\n");
+
 	BUG_ON(!drv->bus->p);
 
 	if ((drv->bus->probe && drv->probe) ||
