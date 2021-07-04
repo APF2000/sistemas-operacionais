@@ -913,4 +913,6 @@ asmlinkage long sys_continue_process(void);
 asmlinkage long sys_read_number(void);
 asmlinkage void sys_write_number(long number);
 
+asmlinkage long sys_kobject_add(void);
+
 #endif

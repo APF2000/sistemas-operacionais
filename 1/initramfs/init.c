@@ -9,12 +9,15 @@
 #include <sys/types.h>
 #include <sys/wait.h>
 
+
 #include <unistd.h>
 
 #include "hello_world.h"
 
 #include "stack.h"
 #include "fase2.h"
+
+#include "kobject_add.h"
 
 #define TRUE 1
 #define FALSE 0
@@ -76,9 +79,11 @@ void *foo(void *v)
 	return NULL;
 }
 
+//struct kobject * kobject_create_and_add ( const char * name, struct kobject * parent);
+
 int main()
 {
-
+	kobject_add();
 
 	while(1){
 		sleep(5);

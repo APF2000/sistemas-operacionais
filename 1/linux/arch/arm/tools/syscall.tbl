@@ -420,3 +420,4 @@
 403	common 	write_device		sys_write_device
 404	common 	read_number		sys_read_number
 405	common 	write_number		sys_write_number
+406 common	kobject_add		sys_kobject_add

@@ -34,6 +34,106 @@
 #include <asm/io.h>
 #include <asm/hw_irq.h>
 
+volatile int etx_value = 0;
+ 
+ 
+dev_t dev = 0;
+static struct class *dev_class;
+static struct cdev etx_cdev;
+struct kobject *kobj_ref;
+
+
+/*
+** Function Prototypes
+*/
+static int      __init etx_driver_init(void);
+static void     __exit etx_driver_exit(void);
+ 
+/*************** Driver functions **********************/
+static int      etx_open(struct inode *inode, struct file *file);
+static int      etx_release(struct inode *inode, struct file *file);
+static ssize_t  etx_read(struct file *filp, 
+                        char __user *buf, size_t len,loff_t * off);
+static ssize_t  etx_write(struct file *filp, 
+                        const char *buf, size_t len, loff_t * off);
+ 
+/*************** Sysfs functions **********************/
+static ssize_t  sysfs_show(struct kobject *kobj, 
+                        struct kobj_attribute *attr, char *buf);
+static ssize_t  sysfs_store(struct kobject *kobj, 
+                        struct kobj_attribute *attr,const char *buf, size_t count);
+
+
+
+/*
+** File operation sturcture
+*/
+static struct file_operations fops =
+{
+        .owner          = THIS_MODULE,
+        .read           = etx_read,
+        .write          = etx_write,
+        .open           = etx_open,
+        .release        = etx_release,
+};
+
+
+/*
+** This function will be called when we read the sysfs file
+*/
+static ssize_t sysfs_show(struct kobject *kobj, 
+                struct kobj_attribute *attr, char *buf)
+{
+        pr_info("Sysfs - Read!!!\n");
+        return sprintf(buf, "%d", etx_value);
+}
+/*
+** This function will be called when we write the sysfsfs file
+*/
+static ssize_t sysfs_store(struct kobject *kobj, 
+                struct kobj_attribute *attr,const char *buf, size_t count)
+{
+        pr_info("Sysfs - Write!!!\n");
+        sscanf(buf,"%d",&etx_value);
+        return count;
+}
+/*
+** This function will be called when we open the Device file
+*/ 
+static int etx_open(struct inode *inode, struct file *file)
+{
+        pr_info("Device File Opened...!!!\n");
+        return 0;
+}
+/*
+** This function will be called when we close the Device file
+*/ 
+static int etx_release(struct inode *inode, struct file *file)
+{
+        pr_info("Device File Closed...!!!\n");
+        return 0;
+}
+ 
+/*
+** This function will be called when we read the Device file
+*/
+static ssize_t etx_read(struct file *filp, 
+                char __user *buf, size_t len, loff_t *off)
+{
+        pr_info("Read function\n");
+        return 0;
+}
+/*
+** This function will be called when we write the Device file
+*/
+static ssize_t etx_write(struct file *filp, 
+                const char __user *buf, size_t len, loff_t *off)
+{
+        pr_info("Write Function\n");
+        return len;
+}
+
+struct kobj_attribute etx_attr = __ATTR(etx_value, 0660, sysfs_show, sysfs_store);
 
 
 static struct device *next_device(struct klist_iter *i)
@@ -168,7 +268,7 @@ int driver_register(struct device_driver *drv)
 	int ret;
 	struct device_driver *other;
 
-	printk("\n\n\n\n\n\n  DRIVER REGISTER  \n\n\n\n\n\n");
+	printk("\n  DRIVER REGISTER: %s  \n", drv->name);
 
 	BUG_ON(!drv->bus->p);
 
@@ -207,6 +307,8 @@ EXPORT_SYMBOL_GPL(driver_register);
  */
 void driver_unregister(struct device_driver *drv)
 {
+	printk("\nUNREGISTER\n");
+
 	if (!drv || !drv->p) {
 		WARN(1, "Unexpected driver unregister!\n");
 		return;
@@ -233,6 +335,8 @@ struct device_driver *driver_find(const char *name, struct bus_type *bus)
 	struct kobject *k = kset_find_obj(bus->p->drivers_kset, name);
 	struct driver_private *priv;
 
+	printk("\nDRIVER FIND: %s\n", name);
+
 	if (k) {
 		/* Drop reference added by kset_find_obj() */
 		kobject_put(k);
@@ -242,3 +346,66 @@ struct device_driver *driver_find(const char *name, struct bus_type *bus)
 	return NULL;
 }
 EXPORT_SYMBOL_GPL(driver_find);
+
+//Interrupt handler for IRQ 11. 
+static irqreturn_t irq_handler(int irq,void *dev_id) {
+  printk(KERN_INFO "Shared IRQ: Interrupt Occurred");
+  return IRQ_HANDLED;
+}
+EXPORT_SYMBOL_GPL(irq_handler);
+
+/*
+** Module Init function
+*/
+static int __init etx_driver_init(void)
+{
+        /*Allocating Major number*/
+        if((alloc_chrdev_region(&dev, 0, 1, "etx_Dev")) <0){
+                pr_info("Cannot allocate major number\n");
+                return -1;
+        }
+        pr_info("Major = %d Minor = %d \n",MAJOR(dev), MINOR(dev));
+ 
+        /*Creating cdev structure*/
+        cdev_init(&etx_cdev,&fops);
+ 
+        /*Adding character device to the system*/
+        if((cdev_add(&etx_cdev,dev,1)) < 0){
+            pr_info("Cannot add the device to the system\n");
+            goto r_class;
+        }
+ 
+        /*Creating struct class*/
+        if((dev_class = class_create(THIS_MODULE,"etx_class")) == NULL){
+            pr_info("Cannot create the struct class\n");
+            goto r_class;
+        }
+ 
+        /*Creating device*/
+        if((device_create(dev_class,NULL,dev,NULL,"etx_device")) == NULL){
+            pr_info("Cannot create the Device 1\n");
+            goto r_device;
+        }
+ 
+        /*Creating a directory in /sys/kernel/ */
+        kobj_ref = kobject_create_and_add("etx_sysfs",kernel_kobj);
+ 
+        /*Creating sysfs file for etx_value*/
+        if(sysfs_create_file(kobj_ref,&etx_attr.attr)){
+                pr_err("Cannot create sysfs file......\n");
+                goto r_sysfs;
+    }
+        pr_info("Device Driver Insert...Done!!!\n");
+        return 0;
+ 
+r_sysfs:
+        kobject_put(kobj_ref); 
+        sysfs_remove_file(kernel_kobj, &etx_attr.attr);
+ 
+r_device:
+        class_destroy(dev_class);
+r_class:
+        unregister_chrdev_region(dev,1);
+        cdev_del(&etx_cdev);
+        return -1;
+}
