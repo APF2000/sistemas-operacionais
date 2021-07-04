@@ -357,9 +357,33 @@ struct device_driver *driver_find(const char *name, struct bus_type *bus)
 }
 EXPORT_SYMBOL_GPL(driver_find);
 
+static const struct file_operations blocking_dev_fops = {
+.owner = THIS_MODULE,
+.read = blocking_dev_read
+};
+static struct miscdevice id_misc_device = {
+.minor = MISC_DYNAMIC_MINOR,
+.name = "blocking_dev",
+.fops = &blocking_dev_fops
+};
+
+static struct miscdevice id_misc_device = {
+.minor = MISC_DYNAMIC_MINOR,
+.name = "blocking_dev",
+.fops = &blocking_dev_fops
+};
 
 static int __init etx_driver_init(void)
 {
+		printk("\n\n\n\n\nDRIVER INITTTTTTTTTTTTTTTTTTTTTTTTT\n\n\n\n\n");
+
+		int retval;
+		retval = misc_register(&id_misc_device);
+		if(retval) pr_err("blocking : misc_register %d\n", retval);
+
+		//return retval;
+
+
         /*Allocating Major number*/
         if((alloc_chrdev_region(&dev, 0, 1, "etx_Dev")) <0){
                 printk(KERN_INFO "Cannot allocate major number\n");
@@ -426,6 +450,7 @@ static void __exit etx_driver_exit(void)
         cdev_del(&etx_cdev);
         unregister_chrdev_region(dev, 1);
         printk(KERN_INFO "Device Driver Remove...Done!!!\n");
+
 }
  
 module_init(etx_driver_init);

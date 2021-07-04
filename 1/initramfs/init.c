@@ -2,13 +2,17 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <pthread.h>
+#include <sys/mount.h>
+#include <sys/stat.h>
+#include <sys/types.h>
+#include <sys/wait.h>
+#include <unistd.h>
+#include <fcntl.h>
 
 #include <sys/mount.h>
 #include <sys/stat.h>
 #include <sys/types.h>
 #include <sys/wait.h>
-
 
 #include <unistd.h>
 
@@ -24,70 +28,43 @@
 
 long x = 0;
 
-int change_id(long status)
+
+void panic(const char *msg)
 {
-	return status ? 1 : 0;
+	fprintf(stderr, "%s: %s (errno = %d)\n", msg, strerror(errno), errno);
+	exit(-1);
 }
 
-// num, turn, interested[0], interested[1]
-void enter_region(long process, int **vals)
+void mount_fs()
 {
-	(*vals)[2 + process] = TRUE;
-	(*vals)[1] = process;
-
-	while((*vals)[1] == process && (*vals)[3-process] == TRUE);
-
-	printf("[%ld] ENTER REGION. turn=[%d] interested = { %d, %d } \n", process, (*vals)[1], (*vals)[2], (*vals)[3]);
+	printf("Mounting filesystems\n");
+	// If /sys is not created, make it read-only (mode = 444)
+	if (mkdir("/sys", 0x124) && errno != EEXIST)
+		panic("mkdir");
+	if (mount("none", "/sys", "sysfs", 0, ""))
+		panic("mount");
 }
-
-// num, turn, interested[0], interested[1]
-void leave_region(long process, int **vals)
-{
-	(*vals)[2 + process] = FALSE;	
-	
-	printf("[%ld] LEFT REGION.\n", process);
-}
-
-struct aux{
-	int status;
-	int **vals;
-};
-
-void *foo(void *v)
-{	
-	struct aux *input = (struct aux *) v;
-
-	int status = input->status;
-	int **vals = input->vals;
-
-	while(1){
-		enter_region(change_id(status), vals);
-
-		x = (*vals)[0];
-		printf("[%d] Read number: \t\t%ld.\n", status, x);
-
-		printf("[%d] Sleeping for 3s.\n", status);
-		sleep(3);
-
-		x++;
-		printf("[%d] Going to write: %ld.\n", status, x);
-		
-		(*vals)[0] = x;
-		printf("[%d] Wrote: \t\t%ld.\n", status, x);
-		leave_region(change_id(status), vals);
-	}
-	return NULL;
-}
-
-//struct kobject * kobject_create_and_add ( const char * name, struct kobject * parent);
 
 int main()
 {
-	kobject_add();
+	mount_fs();
 
-	while(1){
+	int fd = open("/sys/last_interrupt", O_RDONLY);
+	char buf[200];
+
+	while(1) {
+		if (lseek(fd, 0, SEEK_SET)) {
+			perror("lseek");
+		} else {
+			int size = read(fd, buf, 150);
+			if (size < 0) {
+				perror("read");
+			} else {
+				buf[size] = 0;
+				printf("%s", buf);
+			}
+		}
 		sleep(5);
-		printf("Init\n");
 	}
 
 	return 0;
