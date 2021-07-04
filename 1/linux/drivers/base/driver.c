@@ -34,6 +34,16 @@
 #include <asm/io.h>
 #include <asm/hw_irq.h>
 
+#define IRQ_NO 11
+
+//Interrupt handler for IRQ 11. 
+static irqreturn_t irq_handler(int irq,void *dev_id) {
+  printk(KERN_INFO "Shared IRQ: Interrupt Occurred");
+  return IRQ_HANDLED;
+}
+//EXPORT_SYMBOL_GPL(irq_handler);
+
+
 volatile int etx_value = 0;
  
  
@@ -347,43 +357,34 @@ struct device_driver *driver_find(const char *name, struct bus_type *bus)
 }
 EXPORT_SYMBOL_GPL(driver_find);
 
-//Interrupt handler for IRQ 11. 
-static irqreturn_t irq_handler(int irq,void *dev_id) {
-  printk(KERN_INFO "Shared IRQ: Interrupt Occurred");
-  return IRQ_HANDLED;
-}
-EXPORT_SYMBOL_GPL(irq_handler);
 
-/*
-** Module Init function
-*/
 static int __init etx_driver_init(void)
 {
         /*Allocating Major number*/
         if((alloc_chrdev_region(&dev, 0, 1, "etx_Dev")) <0){
-                pr_info("Cannot allocate major number\n");
+                printk(KERN_INFO "Cannot allocate major number\n");
                 return -1;
         }
-        pr_info("Major = %d Minor = %d \n",MAJOR(dev), MINOR(dev));
+        printk(KERN_INFO "Major = %d Minor = %d \n",MAJOR(dev), MINOR(dev));
  
         /*Creating cdev structure*/
         cdev_init(&etx_cdev,&fops);
  
         /*Adding character device to the system*/
         if((cdev_add(&etx_cdev,dev,1)) < 0){
-            pr_info("Cannot add the device to the system\n");
+            printk(KERN_INFO "Cannot add the device to the system\n");
             goto r_class;
         }
  
         /*Creating struct class*/
         if((dev_class = class_create(THIS_MODULE,"etx_class")) == NULL){
-            pr_info("Cannot create the struct class\n");
+            printk(KERN_INFO "Cannot create the struct class\n");
             goto r_class;
         }
  
         /*Creating device*/
         if((device_create(dev_class,NULL,dev,NULL,"etx_device")) == NULL){
-            pr_info("Cannot create the Device 1\n");
+            printk(KERN_INFO "Cannot create the Device 1\n");
             goto r_device;
         }
  
@@ -392,12 +393,17 @@ static int __init etx_driver_init(void)
  
         /*Creating sysfs file for etx_value*/
         if(sysfs_create_file(kobj_ref,&etx_attr.attr)){
-                pr_err("Cannot create sysfs file......\n");
+                printk(KERN_INFO"Cannot create sysfs file......\n");
                 goto r_sysfs;
-    }
-        pr_info("Device Driver Insert...Done!!!\n");
-        return 0;
- 
+        }
+        if (request_irq(IRQ_NO, irq_handler, IRQF_SHARED, "etx_device", (void *)(irq_handler))) {
+            printk(KERN_INFO "my_device: cannot register IRQ ");
+                    goto irq;
+        }
+        printk(KERN_INFO "Device Driver Insert...Done!!!\n");
+    return 0;
+irq:
+        //free_irq(IRQ_NO,(void *)(irq_handler));
 r_sysfs:
         kobject_put(kobj_ref); 
         sysfs_remove_file(kernel_kobj, &etx_attr.attr);
@@ -409,3 +415,23 @@ r_class:
         cdev_del(&etx_cdev);
         return -1;
 }
+ 
+static void __exit etx_driver_exit(void)
+{
+        free_irq(IRQ_NO,(void *)(irq_handler));
+        kobject_put(kobj_ref); 
+        sysfs_remove_file(kernel_kobj, &etx_attr.attr);
+        device_destroy(dev_class,dev);
+        class_destroy(dev_class);
+        cdev_del(&etx_cdev);
+        unregister_chrdev_region(dev, 1);
+        printk(KERN_INFO "Device Driver Remove...Done!!!\n");
+}
+ 
+module_init(etx_driver_init);
+module_exit(etx_driver_exit);
+ 
+MODULE_LICENSE("GPL");
+MODULE_AUTHOR("EmbeTronicX <embetronicx@gmail.com>");
+MODULE_DESCRIPTION("A simple device driver - Interrupts");
+MODULE_VERSION("1.9");
