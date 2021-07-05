@@ -357,7 +357,7 @@ struct device_driver *driver_find(const char *name, struct bus_type *bus)
 }
 EXPORT_SYMBOL_GPL(driver_find);
 
-static const struct file_operations blocking_dev_fops = {
+/*static const struct file_operations blocking_dev_fops = {
 .owner = THIS_MODULE,
 .read = blocking_dev_read
 };
@@ -371,15 +371,15 @@ static struct miscdevice id_misc_device = {
 .minor = MISC_DYNAMIC_MINOR,
 .name = "blocking_dev",
 .fops = &blocking_dev_fops
-};
+};*/
 
 static int __init etx_driver_init(void)
 {
 		printk("\n\n\n\n\nDRIVER INITTTTTTTTTTTTTTTTTTTTTTTTT\n\n\n\n\n");
 
-		int retval;
-		retval = misc_register(&id_misc_device);
-		if(retval) pr_err("blocking : misc_register %d\n", retval);
+		//int retval;
+		// retval = misc_register(&id_misc_device);
+		// if(retval) pr_err("blocking : misc_register %d\n", retval);
 
 		//return retval;
 
