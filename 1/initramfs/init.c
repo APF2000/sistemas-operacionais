@@ -54,8 +54,11 @@ int main()
 
 	while(1) {
 		if (lseek(fd, 0, SEEK_SET)) {
+			printf("TO NO IF\n");
 			perror("lseek");
 		} else {
+			printf("TO NO ELSE\n");
+
 			int size = read(fd, buf, 150);
 			if (size < 0) {
 				perror("read");
