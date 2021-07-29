@@ -1,4 +1,6 @@
 #!/bin/bash
+chmod 777 -R .
+
 docker run -ti --rm \
     -v "$PWD/../1/linux":/home/student/src/linux \
     -v "$PWD":/home/student/src/initramfs \
