@@ -16,7 +16,7 @@ int main()
 		vector[i] = 12345;
 	}
 
-	printf("ponteiro para o vetor: %lld\n", vector);
+	printf("ponteiro para o vetor: %lld\n", (long long)vector);
 	while(1);
 
 	return 0;
