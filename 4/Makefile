@@ -25,6 +25,7 @@ build_auxiliary_disk:
 		echo "dd if=/dev/urandom of=mnt/large_file bs=1M count=120" ; \
 	fi
 
+# se tamanho do swap nao mudar quando mudar o numeor abaixo, apagar 4/build/swap.img e tentar de novo
 build_swap:
 	if [ ! -f build/swap.img ] ; then \
 		fallocate -l 128M build/swap.img ; \
