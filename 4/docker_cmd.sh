@@ -37,9 +37,12 @@ if ! cd $SRC/initramfs ; then
 fi
 make ARCH=arm CROSS_COMPILE=arm-linux-gnueabi-
 
+# size = memoria total
+# mamxmem = ate onde pode estender
+
 BOOT=$SRC/linux/arch/arm/boot
 qemu-system-arm -M versatilepb \
-	-m size=32M,slots=1,maxmem=64M \
+	-m size=128M,slots=1,maxmem=256M \
 	-nographic -kernel $BOOT/zImage -dtb $BOOT/dts/versatile-pb.dtb \
     -initrd build/rootfs.gz \
     -append "root=/dev/sda virtio_pci.force_legacy=1" \
