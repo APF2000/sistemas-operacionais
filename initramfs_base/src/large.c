@@ -11,7 +11,7 @@ int main()
 
 	vector = malloc(size * sizeof(int));
 
-	printf("ponteiro para o vetor: %lld\n", (long long)vector);
+	printf("ponteiro para o vetor: %ld\n", (unsigned long)vector);
 
 	while(1)
 	{
